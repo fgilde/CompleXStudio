@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding = "utf-8"?>
+<snippet xmlns:MMString="http://www.macromedia.com/schemes/dat/string/" MMString:name = "Snippets/JavaScript/conversions/base_conversion/decToHex_csn/snippet/name/Decimal" MMString:description = "Snippets/JavaScript/conversions/base_conversion/decToHex_csn/snippet/description/Converts" preview="code" type="block">
+
+<insertText location="beforeSelection">
+<![CDATA[function decToHex(dec)
+{
+  var hexStr = "0123456789ABCDEF";
+  var low = dec % 16;
+  var high = (dec - low)/16;
+  hex = "" + hexStr.charAt(high) + hexStr.charAt(low);
+  return hex;
+}
+]]>
+</insertText>
+<insertText location="afterSelection"><![CDATA[]]>
+</insertText>
+</snippet>

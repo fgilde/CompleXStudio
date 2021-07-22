@@ -1,0 +1,376 @@
+<html>
+<link rel="stylesheet" href="josh.css">
+<body bgcolor="#FFFFFF">
+
+<div id="Beschreibung">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">input (type="submit")</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">2</span>  IE <span class="emphasis">3</span>  DOM <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Das <span class="literal">submit</span>-Objekt ist ein Formularsteuerelement, das mit einem <span class="literal">input</span>-Element erstellt wird, dessen <span class="literal">type</span>-Attribut auf <span class="literal">"submit"</span> gesetzt ist. Dieses Objekt ist mit dem <span class="literal">button</span>-Objekt vergleichbar, ein <span class="literal">submit</span>-Objekt verf&uuml;gt jedoch &uuml;ber eine h&ouml;here implizierte Leistung. Das <span class="literal">submit</span>-Objekt erfordert keine Skriptvorg&auml;nge, um seine Aufgabe auszuf&uuml;hren, d. h. das Formular an den Server zu &uuml;bertragen. Wenn Sie f&uuml;r eine Skriptaktion eine Schaltfl&auml;che ben&ouml;tigen, das Formular jedoch nicht &uuml;bertragen m&uuml;ssen, verwenden Sie stattdessen das <span class="literal">button</span>-Objekt oder das <span class="literal">input</span>-Schaltfl&auml;chenobjekt. Andernfalls l&auml;dt das <span class="literal">submit</span>-Objekt das aktuelle Dokument automatisch neu (indem es die Standardaktion des Formulars ausf&uuml;hrt und die URL der Seite aufruft) und zerst&ouml;rt dadurch m&ouml;glicherweise wichtige Skriptvariablen. Wenn Sie eine Formular&uuml;berpr&uuml;fung initiieren m&ouml;chten, verwenden Sie dazu die Ereignisbehandlungsroutine <span class="literal">onsubmit</span> des <span class="literal">form</span>-Objekts, und nicht die <span class="literal">onclick </span>-Ereignisbehandlungsroutine der Submit-Schaltfl&auml;che. Wenn die Ereignisbehandlungsroutine bei der Auswertung <span class="literal">true</span> ergibt, wird das Formular abgeschickt. Lautet das Ergebnis <span class="literal">false</span>, wird der &Uuml;bertragungsvorgang abgebrochen. Das Skript&auml;quivalent eines <span class="literal">input</span>-Objekts vom Typ <span class="literal">submit</span> ist die <span class="literal">submit( )</span>-Methode des <span class="literal">form</span>-Objekts.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="htmlequivalent"><span class="title">HTML-&Auml;quivalent</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>&lt;input type="submit"&gt;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectmodelreference"><span class="title">Objektmodellreferenz</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>[window.]document.<span class="replaceable">formName</span>.<span class="replaceable">elementName</span>
+[window.]document.forms[<span class="replaceable">i</span>].elements[<span class="replaceable">i</span>]
+[window.]document.getElementById("<span class="replaceable">elementID</span>")</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectspecificproperties"><span class="title">Objektspezifische Eigenschaften</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<table border="1"><tbody><tr><td><span class="literal">form</span></td><td><span class="literal">name</span></td><td><span class="literal">type</span></td><td><span class="literal">value</span></td>
+								</tr>
+							</tbody></table>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectspecificmethods"><span class="title">Objektspezifische Methoden</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<table border="1"><tbody><tr><td><span class="literal">createTextRange( )</span></td><td><span class="literal">handleEvent( )</span></td>
+								</tr>
+							</tbody></table>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectspecificeventhandlerproperties"><span class="title">Objektspezifische Ereignisbehandlungsroutineneigenschaften</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<table border="1"><tbody><th>Behandlungsroutine</th><th>NN</th><th>IE</th><th>DOM</th><tr><td>onblur</td><td>6</td><td>4</td><td>2</td>
+								</tr>
+								<tr><td>onclick</td><td>3</td><td>4</td><td>2</td>
+								</tr>
+								<tr><td>onfocus</td><td>6</td><td>4</td><td>2</td>
+								</tr>
+								<tr><td>onmousedown</td><td>4</td><td>4</td><td>2</td>
+								</tr>
+								<tr><td>onmousemove</td><td>6</td><td>4</td><td>2</td>
+								</tr>
+								<tr><td>onmouseout</td><td>6</td><td>4</td><td>2</td>
+								</tr>
+								<tr><td>onmouseover</td><td>6</td><td>4</td><td>2</td>
+								</tr>
+								<tr><td>onmouseup</td><td>4</td><td>4</td><td>2</td>
+								</tr>
+							</tbody></table>
+					</td>
+				</tr>
+			</table>
+		</div><div id="form">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">form</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">2</span>  IE <span class="emphasis">3</span>  DOM <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Schreibgesch&uuml;tzt</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Gibt eine Referenz auf das <span class="literal">form</span>-Element zur&uuml;ck, das das aktuelle Element enth&auml;lt. W&auml;hrend der Verarbeitung eines von diesem Element stammenden Ereignisses hat die Ereignisbehandlungsroutinenfunktion automatisch Zugriff auf das <span class="literal">input</span>-Element (als <span class="literal">target</span>- oder <span class="literal">srcElement</span>-Eigenschaft des Ereignisobjekts). Durch Lesen der <span class="literal">form</span>-Eigenschaft kann das Skript problemlos auf andere Steuerelemente innerhalb desselben Formulars zugreifen.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>var theForm = evt.srcElement.form;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p><span class="literal">form</span>-Elementobjektreferenz</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Standardwert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Keiner. </p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="name">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">name</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">2</span>  IE <span class="emphasis">3</span>  DOM <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Lesen/Schreiben</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Dies ist der dem Formularsteuerelement zugeordnete Bezeichner. Namen werden dem Benutzer nicht angezeigt, da die Beschriftungen f&uuml;r Steuerelemente, abh&auml;ngig von der Art des Steuerelements, &uuml;ber andere Wege zugewiesen werden. Namen von Formularsteuerelementen k&ouml;nnen auch durch Referenzen in Skripts mit den Objekten verkn&uuml;pft werden.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>document.orderForm.mySubmit.name = "sender";</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Ein von der Gro&szlig;-/Kleinschreibung abh&auml;ngiger Bezeichner, der den Regeln der Bezeichnerbenennung folgt: Er darf keine Leerzeichen enthalten, nicht mit einer Ziffer beginnen und sollte keine Satzzeichen enthalten (mit Ausnahme des Unterstrichs).
+</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Standardwert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Keiner.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="type">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">type</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">3  </span>IE <span class="emphasis">4  </span>DOM <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Schreibgesch&uuml;tzt</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Gibt den Typ des Formularsteuerelements zur&uuml;ck. Dieser Wert wird in Kleinbuchstaben zur&uuml;ckgegeben. Es kann notwendig sein, alle Formularsteuerelemente bei einer Suche nach bestimmten Typen zu durchlaufen, um eine Verarbeitung auszuf&uuml;hren (z. B. das Leeren aller Formularsteuerelemente des Typs <span class="literal">"text"</span>, w&auml;hrend alle anderen Steuerelemente unber&uuml;hrt bleiben).
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>if (document.forms[0].elements[3].type == "submit") {
+    // process submit input type here
+}</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Eine der folgenden Konstanten als Zeichenfolge: <span class="literal">button</span> | <span class="literal">checkbox</span> | <span class="literal">file</span> | <span class="literal">hidden</span> | <span class="literal">image</span> | <span class="literal">password</span> | <span class="literal">radio</span> | <span class="literal">reset</span> | <span class="literal">select-multiple</span> | <span class="literal">select-one</span> | <span class="literal">submit</span> | <span class="literal">text</span> | <span class="literal">textarea</span>.
+</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Standardwert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p><span class="literal">submit</span></p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="value">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">value</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">2</span>  IE <span class="emphasis">3</span>  DOM <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Lesen/Schreiben</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Dies ist einer der seltenen F&auml;lle, in denen die Beschriftung eines Formularsteuerelements durch die Eigenschaft <span class="literal">value</span> festgelegt wird: der Text, der auf der Schaltfl&auml;che "Abschicken" angezeigt wird.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>document.forms[0].mySubmit.value = "Send";</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Zeichenfolge.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Standardwert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p><span class="literal">Submit</span></p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="createTextRange( )">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">createTextRange( )</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">nicht zutreffend</span> IE <span class="emphasis">4(Win)</span>  DOM <span class="emphasis">nicht zutreffend</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Erstellt ein <span class="literal">TextRange</span>-Objekt, das den Beschriftungstext der Schaltfl&auml;che enth&auml;lt. Weitere Informationen finden Sie unter dem Objekt <span class="literal">TextRange</span>.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Parameter</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Keine. </p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Zur&uuml;ckgegebener Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p><span class="literal">TextRange</span>-Objekt.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="handleEvent( )">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">handleEvent( )</td><td valign="top" nowrap class="compatibility">NN |<span class="emphasis">4|</span>  IE <span class="emphasis">nicht zutreffend</span> DOM <span class="emphasis">nicht zutreffend</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">handleEvent(<span class="replaceable">event</span>)</p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Weist das Objekt an, ein Ereignis, dessen Spezifikationen als Parameter an die Methode &uuml;bergeben werden, zu akzeptieren und zu verarbeiten. Das Objekt muss eine Ereignisbehandlungsroutine f&uuml;r den Ereignistyp besitzen, um das Ereignis verarbeiten zu k&ouml;nnen. Nur Navigator 4.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Parameter</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<ul><li><span class="literal"></span>Ein <span class="literal">event</span>-Objekt von Navigator 4. </li></ul>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Zur&uuml;ckgegebener Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Keiner.</p>
+					</td>
+				</tr>
+			</table>
+		</div>
+
+</body>
+</html>

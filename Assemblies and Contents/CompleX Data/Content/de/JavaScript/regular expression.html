@@ -1,0 +1,457 @@
+<html>
+<link rel="stylesheet" href="josh.css">
+<body bgcolor="#FFFFFF">
+
+<div id="Beschreibung">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">regular expression</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">4</span> IE <span class="emphasis">4</span> ECMA <span class="emphasis">3</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Ein <span class="literal">regular expression</span>-Objekt ist eine Instanz des <span class="literal">RegExp</span>-Objekts. Jedes <span class="literal">regular expression</span>-Objekt besteht aus einem Muster, das verwendet wird, um innerhalb eines Strings nach &Uuml;bereinstimmungen zu suchen. Bei den Mustern f&uuml;r einen regul&auml;ren Ausdruck kann es sich um einfache Strings oder wesentlich komplexere Ausdr&uuml;cke handeln, deren Schreibweise im Grunde genommen eine eigene Sprache ist. Die Implementierung von regul&auml;ren Ausdr&uuml;cken in JavaScript 1.2 ist der Implementierung in Perl sehr &auml;hnlich. Weitere Informationen zu diesen Konzepten finden Sie in Ver&ouml;ffentlichungen zu JavaScript ab Version 1.2.
+</p>
+							</td>
+						</tr>
+						<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Zum Erstellen eines <span class="literal">regular expression</span>-Objekts setzen Sie das Muster in Vorw&auml;rtsschr&auml;gstriche und weisen den gesamten Ausdruck einer Variablen zu. Die folgende Anweisung erstellt beispielsweise einen regul&auml;ren Ausdruck, dessen Muster ein einfaches Wort ist:
+</p>
+<span class="PROGRAMLISTING"><pre>var re = /greet/;</pre></span>
+							</td>
+						</tr>
+						<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Die Variable <span class="literal">re</span> kann anschlie&szlig;end als Parameter in zahlreichen Methoden eingesetzt werden, die in einem String nach dem Muster suchen (Sie k&ouml;nnen einen Ausdruck auch direkt als Methodenparameter verwenden, anstatt ihn einer Variablen zuzuweisen).
+</p>
+							</td>
+						</tr>
+						<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Die Schreibweise regul&auml;rer Ausdr&uuml;cke setzt sich aus einer Reihe von Metazeichen zusammen, die z. T. f&uuml;r komplexe Begriffe stehen, z. B. die Begrenzung auf einer Seite eines Wortes, eine beliebige Ziffer oder ein oder mehrere Zeichen. Falls Sie z. B. nur dann nach dem obigen Zeichenmuster suchen m&ouml;chten, wenn es sich dabei um ein Wort handelt (und nicht um einen Wortteil, z. B. Begr&uuml;&szlig;ungen), wird mithilfe von Metazeichen angegeben, dass das Muster auf beiden Seiten Wortgrenzen enth&auml;lt:
+</p>
+<span class="PROGRAMLISTING"><pre>var re = /\bgreet\b/;</pre></span>
+							</td>
+						</tr>
+						<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>In der folgenden Tabelle finden Sie eine &Uuml;bersicht &uuml;ber die in JavaScript 1.2 verwendete Schreibweise f&uuml;r regul&auml;re Ausdr&uuml;cke:
+</p>
+							</td>
+						</tr>
+						<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Einen regul&auml;ren Ausdruck k&ouml;nnen Sie optional als globalen Ausdruck erstellen (empfehlenswert, wenn der regul&auml;re Ausdruck einen Suchen/Ersetzen-Vorgang innerhalb einer Methode ausf&uuml;hrt, wobei alle Ergebnisse automatisch ersetzt werden sollen), bei dem die Gro&szlig;-/Kleinschreibung in den &Uuml;bereinstimmungen ignoriert wird. Die Modifikatoren, die diese Schalter aktivieren, sind die Buchstaben <span class="literal">g</span> und <span class="literal">i</span>. Sie k&ouml;nnen einzeln oder kombiniert als <span class="literal">gi</span> verwendet werden.
+</p>
+							</td>
+						</tr>
+						<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Nachdem Sie ein Muster mit der Schreibweise f&uuml;r regul&auml;re Ausdr&uuml;cke erstellt haben, erfolgen alle Vorg&auml;nge in den Methoden des <span class="literal">regular expression</span>-Objekts und den Methoden des <span class="literal">String</span>-Objekts, die regul&auml;re Ausdr&uuml;cke als Parameter unterst&uuml;tzen.
+</p>
+							</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td>
+								<table border="1"><tbody><tr><th>Zeichen</th><th>&Uuml;bereinstimmung</th><th>Beispiel</th></tr>
+										<tr><td> \b</td><td>Wortgrenze</td><td><span class="literal">/\bto/</span> entspricht "tomorrow", <span class="literal">/to\b/</span> entspricht "Soweto"
+</td>
+										</tr>
+										<tr><td> \B</td><td>Wort ohne Wortgrenzen</td><td><span class="literal">/\Bto/</span> entspricht "stool" und "Soweto", <span class="literal">/to\B/</span> entspricht "stool" und "tomorrow"
+</td>
+										</tr>
+										<tr><td> \d</td><td>Ziffern 0 bis 9</td><td><span class="literal">/\d\d/</span> entspricht "42"
+</td>
+										</tr>
+										<tr><td> \D</td><td>Keine Ziffern</td><td><span class="literal">/\D\D/</span> entspricht "to"
+</td>
+										</tr>
+										<tr><td> \s</td><td>Ein einziges Leerzeichen</td><td><span class="literal">/under\sdog/</span> entspricht "under dog"
+</td>
+										</tr>
+										<tr><td> \S</td><td>Ein einziges Zeichen, das kein Leerzeichen ist</td><td><span class="literal">/under\Sdog/</span> entspricht "under-dog"
+</td>
+										</tr>
+										<tr><td> \w</td><td>Buchstabe, Ziffer oder Unterstrich</td><td><span class="literal">/1\w/</span> entspricht "1A"
+</td>
+										</tr>
+										<tr><td> \W</td><td>Kein Buchstabe, keine Ziffer und kein Unterstrich</td><td><span class="literal">/1\W/</span> entspricht "1%"
+</td>
+										</tr>
+										<tr><td> .</td><td>Beliebiges Zeichen au&szlig;er Zeilenvorschub</td><td><span class="literal">/../</span> entspricht "Z3"</td>
+										</tr>
+										<tr><td> [...]</td><td>Eines der in Klammern gesetzten Zeichen</td><td><span class="literal">/J[aeiou]y/</span> entspricht "Joy"
+</td>
+										</tr>
+										<tr><td> [^...]</td><td>Negierter Zeichensatz</td><td><span class="literal">/J[^eiou]y/</span> entspricht "Jay"
+</td>
+										</tr>
+										<tr><td> *</td><td>Null oder mehrere Male</td><td><span class="literal">/\d*/</span> entspricht "", "5" oder "444"
+</td>
+										</tr>
+										<tr><td> ?</td><td>Null oder ein Mal</td><td><span class="literal">/\d?/</span> entspricht "" oder "5"
+</td>
+										</tr>
+										<tr><td> +</td><td>Ein oder mehrere Male</td><td><span class="literal">/\d+/</span> entspricht "5" oder "444"
+</td>
+										</tr>
+										<tr><td> &#123;n}</td><td>Genau n mal</td><td><span class="literal">/\d&#123;2}/</span> entspricht "55"
+</td>
+										</tr>
+										<tr><td> &#123;n,}</td><td>n oder mehrere Male</td><td><span class="literal">/\d&#123;2,}/</span> entspricht "555"
+</td>
+										</tr>
+										<tr><td> &#123;n,m}</td><td>Mindestens n, maximal m mal</td><td><span class="literal">/\d&#123;2,4}/</span> entspricht "5555"
+</td>
+										</tr>
+										<tr><td> ^</td><td>Am Anfang eines Strings oder einer Zeile</td><td><span class="literal">/^Sally/</span> entspricht "Sally says..."
+</td>
+										</tr>
+										<tr><td> $</td><td>Am Ende eines Strings oder einer Zeile</td><td><span class="literal">/Sally.$/</span> entspricht "Hi, Sally."
+</td>
+										</tr>
+									</tbody></table>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="properties"><span class="title">Eigenschaften</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<table border="1"><tbody><tr><td><span class="literal">constructor</span></td><td> <span class="literal">Global</span></td><td> <span class="literal">ignoreCase</span></td><td> <span class="literal">lastIndex</span></td><td> <span class="literal">source</span></td>
+								</tr>
+							</tbody></table>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="methods"><span class="title">Methoden</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<table border="1"><tbody><tr><td><span class="literal">compile( )</span></td><td> <span class="literal">exec( )</span></td><td> <span class="literal">test( )</span></td>
+								</tr>
+							</tbody></table>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="creatingaregularexpressionobject"><span class="title">Creating a regular expression Object</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>var regExpressionObj = /pattern/ [g | i | gi];
+var regExpressionObj = new RegExp(["pattern", ["g" | "i" | "gi"]]);</pre>
+						</span></td>
+				</tr>
+			</table>
+		</div><div id="constructor">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">constructor</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">4</span> IE <span class="emphasis">4</span> ECMA <span class="emphasis">3</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Lesen/Schreiben</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Informationen finden Sie in der Abhandlung dieser Eigenschaft im Abschnitt &uuml;ber das <span class="literal">Array</span>-Objekt.</p>
+							</td>
+						</tr>
+			</table>
+		</div><div id="global, ignoreCase">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">global, ignoreCase</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">4</span> IE <span class="emphasis">5(Mac)/5.5(Win)</span> ECMA <span class="emphasis">3</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Schreibgesch&uuml;tzt</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Gibt den Booleschen Wert <span class="literal">true</span> zur&uuml;ck, wenn beim Erstellen der <span class="literal">regular expression</span>-Objektinstanz der Modifikator <span class="literal">g</span> oder <span class="literal">i</span> gesetzt wurde. Wenn beide Modifikatoren f&uuml;r ein <span class="literal">regular expression</span>-Objekt gesetzt sind (<span class="literal">gi</span>), m&uuml;ssen trotzdem beide Eigenschaften einzeln getestet werden.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>if (myRE.global &amp;&amp; myRE.ignoreCase) &#123;
+    ...
+}</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Boolescher Wert: <span class="literal">true</span> | <span class="literal">false</span>.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="lastIndex">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">lastIndex</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">4</span> IE <span class="emphasis">4</span> ECMA <span class="emphasis">3</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Lesen/Schreiben</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Dies ist der auf Null basierende Indexwert des Zeichens innerhalb des Strings, bei dem der n&auml;chste Suchvorgang f&uuml;r das Muster beginnt. Bei einer neuer Suche ist der Wert Null. Sie k&ouml;nnen den Wert auch manuell einstellen, wenn Sie die Suche an einer anderen Position starten oder einige Zeichen &uuml;berspringen m&ouml;chten.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>myRE.lastIndex = 30;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Integer.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="source">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">source</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">4</span> IE <span class="emphasis">4</span> ECMA <span class="emphasis">3</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Schreibgesch&uuml;tzt</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Gibt eine Stringversion der Zeichen zur&uuml;ck, die zum Erstellen des regul&auml;ren Ausdrucks verwendet wurden. Der Wert enth&auml;lt nicht die Vorw&auml;rtsschr&auml;gstriche, durch die der Ausdruck an beiden Seiten begrenzt wird.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>var myREasString = myRE.source;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>String.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="compile( )">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">compile( )</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">4</span> IE <span class="emphasis">4</span> ECMA <span class="emphasis">nicht zutreffend</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">compile("<span class="replaceable">pattern</span>"[, "g" | "i" | "gi"])</p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Kompiliert ein regul&auml;res Ausdruckmuster in ein echtes <span class="literal">regular expression</span>-Objekt. Diese Methode wird in erster Linie zum erneuten Kompilieren eines regul&auml;ren Ausdrucks verwendet, dessen Muster sich w&auml;hrend der Ausf&uuml;hrung eines Skripts ge&auml;ndert hat.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Parameter</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<ul><li><span class="literal"></span>Ein beliebiges regul&auml;res Ausdruckmuster als String in Anf&uuml;hrungszeichen. Die Modifikatoren f&uuml;r globale und/oder von der Gro&szlig;-/Kleinschreibung unabh&auml;ngige Suche m&uuml;ssen als separate Parameter in Anf&uuml;hrungszeichen &uuml;bergeben werden.
+</li></ul>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Zur&uuml;ckgegebener Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Referenz auf eine <span class="literal">regular expression</span>-Instanz.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="exec( )">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">exec( )</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">4</span> IE <span class="emphasis">4</span> ECMA <span class="emphasis">3</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">exec(<span class="replaceable">string</span>)</p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Sucht in dem als Parameter &uuml;bergebenen String nach dem aktuellen regul&auml;ren Ausdrucksmuster. Eine typische Sequenz weist das folgende Format auf:
+</p>
+							</td>
+						</tr>
+						<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Die Eigenschaften des statischen <span class="literal">RegExp</span>-Objekts und der <span class="literal">regular expression</span>-Instanz (im obigen Beispiel <span class="literal">myRE</span>) werden mit Informationen zu den Suchergebnissen aktualisiert. Dar&uuml;ber hinaus gibt die Methode <span class="literal">exec( )</span> ein Daten-Array zur&uuml;ck, das weitgehend den <span class="literal">RegExp</span>-Objekteigenschaften &auml;hnelt. Das zur&uuml;ckgegebene Array umfasst die folgenden Eigenschaften:
+</p>
+							</td>
+						</tr>
+						<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Sie k&ouml;nnen die Ergebnisse der Methode <span class="literal">exec( )</span> in einer Variablen speichern. Die <span class="literal">RegExp</span>-Eigenschaftenwerte &auml;ndern sich dagegen bei dem n&auml;chsten Vorgang, der mit dem regul&auml;ren Ausdruck ausgef&uuml;hrt wird. Ist der regul&auml;re Ausdruck f&uuml;r eine globale Suche eingerichtet, so wird der Suchvorgang bei einem anschlie&szlig;enden Aufruf von <span class="literal">myRE.exec("</span><span class="replaceable">someString</span><span class="literal">")</span> an der Position der letzten &Uuml;bereinstimmung fortgesetzt.
+</p>
+							</td>
+						</tr>
+						<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Wurde bei einem Aufruf von <span class="literal">exec( )</span> keine &Uuml;bereinstimmung gefunden, wird <span class="literal">null</span> zur&uuml;ckgegeben.
+</p>
+							</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td>
+								<table border="1"><tbody><tr><td></td><td>Der auf Null basierende Index des Anfangszeichens im String, der mit dem Muster &uuml;bereinstimmt.
+</td>
+										</tr>
+										<tr><td></td><td>Der urspr&uuml;ngliche String, nach dem gesucht wird</td>
+										</tr>
+										<tr><td></td><td>Ein String, der mit dem Muster &uuml;bereinstimmt</td>
+										</tr>
+										<tr><td></td><td>Strings mit den Ergebnissen, die mit der in Klammern gesetzten Unterkomponente &uuml;bereinstimmen</td>
+										</tr>
+									</tbody></table>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Parameter</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<ul><li><span class="literal"></span>Der zu suchende String.</li></ul>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Zur&uuml;ckgegebener Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Bei Erfolg ein Array mit &Uuml;bereinstimmungsinformationen; wird keine &Uuml;bereinstimmung gefunden, ist das Ergebnis <span class="literal">null</span>.
+</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="test( )">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">test( )</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">4</span> IE <span class="emphasis">4</span> ECMA <span class="emphasis">3</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">test(<span class="replaceable">string</span>)</p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Gibt den Booleschen Wert <span class="literal">true</span> zur&uuml;ck, wenn der als Parameter &uuml;bergebene String eine &Uuml;bereinstimmung mit dem regul&auml;ren Ausdruck enth&auml;lt. Andernfalls wird <span class="literal">false</span> zur&uuml;ckgegeben. Zu den Suchergebnissen sind keine weiteren Informationen verf&uuml;gbar. Diese Methode ist die schnellste M&ouml;glichkeit festzustellen, ob in einem String eine &Uuml;bereinstimmung mit einem Muster vorliegt.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Parameter</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<ul><li><span class="literal"></span>Der zu suchende String. </li></ul>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Zur&uuml;ckgegebener Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Boolescher Wert: <span class="literal">true</span> | <span class="literal">false</span>.</p>
+					</td>
+				</tr>
+			</table>
+		</div>
+
+</body>
+</html>

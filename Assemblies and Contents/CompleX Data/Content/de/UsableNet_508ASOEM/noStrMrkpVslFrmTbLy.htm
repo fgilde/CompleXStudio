@@ -1,0 +1,121 @@
+<html xmlns:un="http://usablenet.com/namespaces/508_rules">
+   <link rel="stylesheet" href="josh.css">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   
+      <title>Detailanzeige f&uuml;r Regel: Keine Struktur-Markups f&uuml;r visuelle Formatierungen verwenden</title>
+      <!--
+  508/W3C Accessibility Suite OEM V2 for Macromedia Dreamweaver
+  (C) Copyright 2001-2005 UsableNet Inc. All rights reserved.
+  -->
+   </head>
+   <body bgcolor="#ffffff">
+      <div id="Beschreibung">
+         <table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+            <tr>
+               <td valign="top" nowrap="true" class="name">Keine Struktur-Markups f&uuml;r visuelle Formatierungen verwenden</td>
+               <td valign="top" nowrap="true" class="compatibility">&nbsp;</td>
+            </tr>
+            <tr>
+               <td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+            </tr>
+            <tr>
+               <td valign="top" align="right" nowrap="true" colspan="2" class="requirements">WAI / WCAG 1.0 Priorit&auml;t 2 Checkpunkt 5.4</td>
+            </tr>
+            <tr>
+               <td colspan="2" class="clearseparation">&nbsp;</td>
+            </tr>
+            <tr>
+               <td colspan="2" class="clearseparation">&nbsp;</td>
+            </tr>
+            <tr>
+               <td valign="top" colspan="2" class="description"><b>Problembeschreibung</b><br>
+                  
+                           
+                  <p>
+                     Die Seiten enth&auml;lt eine Tabelle, die offenbar zur Darstellung tabellarischer Daten erstellt wurde anstelle zur Organisation
+                     des Layouts der Seite. ("Tabellarische Daten" sind hierbei Informationen, die in einem zweidimensionalen tabellarischen Raster
+                     angeordnet sind und eine logische Beziehung der in den Zellen der Tabelle enthaltenen Informationen nahelegen).
+                     	 
+                  </p>
+                  
+                  <p>
+                     Stellen Sie sicher, dass die Tabelle auch wirklich zur Darstellung tabellarischer Daten verwendet wird.
+                     
+                  </p>
+                  
+                  <p>
+                     Falls es in der Tabelle keine Beziehung zwischen den Daten der einzelnen Zellen gibt, sondern diese nur zur Darstellung eines
+                     Rasters dient, wird die Seite den Test nicht bestehen.
+                     
+                  </p>
+                  
+                        
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2" class="clearseparation">&nbsp;</td>
+            </tr>
+            <tr>
+               <td colspan="2" class="clearseparation">&nbsp;</td>
+            </tr>
+            <tr>
+               <td valign="top" colspan="2" class="description"><b>&Uuml;berpr&uuml;fung</b>
+                  
+                           
+                  <p>
+                     &uuml;berpr&uuml;fen Sie die Tabelle und deren Inhalt, um festzustellen, ob in der Tabelle tats&auml;chlich tabellarische Daten dargestellt
+                     werden. 
+                     	 
+                  </p>
+                  
+                  <p>
+                     Falls die Tabelle nur zu Layoutzwecken angelegt wurde, sollten keine Tags wie CAPTION, TH, THEAD oder TFOOT zur Darstellung
+                     der Formatierung verwendet werden.
+                     
+                  </p>
+                  
+                  
+                  <p>
+                     L&ouml;schen Sie alle CAPTIONs, THEADs und TFOOTs, und ersetzen Sie die THs mit TDs. Definieren Sie danach eine CSS-Klasse mit
+                     den erforderlichen Formatierungseigenschaften (wie z. B. "font-weight: bold; text-align: center;") und f&uuml;gen Sie diese Klasse
+                     in jedes neu erstellte TD ein.
+                     
+                  </p>
+                  
+                      
+                        
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2" class="clearseparation">&nbsp;</td>
+            </tr>
+            <tr>
+               <td colspan="2" class="clearseparation">&nbsp;</td>
+            </tr>
+            <tr>
+               <td valign="top" colspan="2" class="description"><b>Problemerkl&auml;rung</b><br>
+                  
+                           
+                  <p>
+                     Die Verwendung von Markups wie TH zur Darstellung visueller Effekte behindert die Zug&auml;nglichkeit. Einige assistive Techniken,
+                     wie beispielsweise lesende Browser verwenden vielmehr den Inhalt eines TH-Elements, damit ein Benutzer durch die Tabelle navigieren
+                     kann. Jedes Mal, wenn ein Benutzer in eine Tabellenzelle springt, versucht dieser Browser die mit einem TH-Element gekennzeichnete
+                     entsprechende Zelle der Kopfzeile zu finden und deren Inhalt zu lesen. Dies dient dazu, dass der Benutzer den Inhalt der aktuellen
+                     Zelle im Kontext erkennt.
+                     	 
+                  </p>
+                  
+                  <p>
+                     Wenn THs allerdings f&uuml;r rein visuelle Zwecke verwendet werden, wird der lesende Browser dem Benutzer nur sehr unzusammenh&auml;ngende
+                     und verwirrende Informationen darstellen.
+                     
+                  </p>
+                  
+                        
+               </td>
+            </tr>
+         </table>
+      </div>
+   </body>
+</html>

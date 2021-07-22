@@ -1,0 +1,780 @@
+<html>
+<link rel="stylesheet" href="josh.css">
+<body bgcolor="#FFFFFF">
+
+		<div id="Beschreibung">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">Global</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">2</span> IE <span class="emphasis">3</span> ECMA <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Das <span class="literal">Global</span>-Objekt ist in jedem Fenster oder Frame eines JavaScript-f&auml;higen Browsers enthalten (und wird automatisch f&uuml;r Sie erstellt). Es wird niemals explizit referenziert, doch Sie verwenden Referenzen auf seine Eigenschaften und Methoden, um beispielsweise Strings (mithilfe der Methode <span class="literal">parseInt( )</span> oder <span class="literal">parseFloat( )</span>) in Zahlenwerte umzuwandeln oder andere Aufgaben auszuf&uuml;hren. Eigenschaften werden als Konstanten behandelt und daher zu sich selbst ausgewertet. Als Objekt mit globaler Reichweite legt es seine Elemente f&uuml;r Skriptanweisungen auf der gesamten Seite offen.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="properties"><span class="title">Eigenschaften</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<table border="1"><tbody><tr><td><span class="literal">Infinity</span></td><td><span class="literal">NaN</span></td><td><span class="literal">undefined</span></td>
+								</tr>
+							</tbody></table>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="methods"><span class="title">Methoden</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<table border="1"><tbody><tr><td><span class="literal">atob( )</span></td><td><span class="literal">btoa( )</span></td><td><span class="literal">decodeURI( )</span></td>
+								</tr>
+								<tr><td><span class="literal">decodeURIComponent( )</span></td><td><span class="literal">encodeURI( )</span></td><td><span class="literal">encodeURIComponent( )</span></td>
+								</tr>
+								<tr><td><span class="literal">escape( )</span></td><td><span class="literal">eval( )</span></td><td><span class="literal">GetObject( )</span></td>
+								</tr>
+								<tr><td><span class="literal">isFinite( )</span></td><td><span class="literal">isNaN( )</span></td><td><span class="literal">parseInt( )</span></td>
+								</tr>
+								<tr><td><span class="literal">parseFloat( )</span></td><td><span class="literal">ScriptEngine( )</span></td><td><span class="literal">ScriptEngineBuildVersion( )</span></td>
+								</tr>
+								<tr><td><span class="literal">ScriptEngineMajorVersion( )</span></td><td><span class="literal">ScriptEngineMinorVersion( )</span></td><td><span class="literal">unescape( )</span></td>
+								</tr>
+								<tr><td><span class="literal">unwatch( )</span></td><td><span class="literal">watch( )</span></td><td></td>
+								</tr>
+							</tbody></table>
+					</td>
+				</tr>
+			</table>
+		</div><div id="Infinity">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">Infinity</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">4</span> IE <span class="emphasis">4</span> ECMA <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Schreibgesch&uuml;tzt</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Stellt eine positive (oder in Verbindung mit dem Operator <span class="literal">-</span> eine negative) unendliche Zahl bereit. Die Unendlichkeit von Zahlen ist in diesem Zusammenhang allerdings kein theoretisches, sondern ein h&ouml;chst praktisches Konzept: Alle Zahlenwerte kleiner als <span class="literal">Number.MIN_VALUE</span> oder gr&ouml;&szlig;er als <span class="literal">Number.MAX_VALUE</span> werden in JavaScript als unendliche Werte bezeichnet.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>var authorEgo = Infinity;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p><span class="literal">Infinity</span></p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="NaN">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">NaN</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">3</span> IE <span class="emphasis">4</span> ECMA <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Schreibgesch&uuml;tzt</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Dies ist ein Wert, bei dem es sich nicht um eine Zahl handelt. JavaScript gibt diesen Wert zur&uuml;ck, wenn eine numerische Operation aufgrund eines Fehlers in einem der Operanden zu einem nicht numerischen Ergebnis f&uuml;hrt. Falls Sie testen m&ouml;chten, ob es sich bei einem Wert nicht um eine Zahl handelt, sollten Sie die globale Funktion <span class="literal">isNaN( )</span> verwenden, anstatt einen Vergleich mit diesem Eigenschaftswert auszuf&uuml;hren. Diese globale Eigenschaft ist der Wert, zu dem <span class="literal">Number.NaN</span> ausgewertet wird.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p><span class="literal">NaN</span></p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="undefined">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">undefined</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">5.5(Win)</span> ECMA <span class="emphasis">2</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Schreibgesch&uuml;tzt</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Obwohl der Datentyp <span class="literal">undefined</span> schon lange von ECMAScript und den Browsern unterst&uuml;tzt wird, wurde er erst vor kurzem zu einer offiziellen Eigenschaft des <span class="literal">Global</span>-Objekts erhoben. Trotz der j&uuml;ngsten Kompatibilit&auml;tsbeurteilungen k&ouml;nnen Sie seinen Datentyp (auf den &uuml;ber den Operator <span class="literal">typeof</span> in Form eines Strings zugegriffen wird) problemlos auch in &auml;lteren Browsern verwenden.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p><span class="literal">undefined</span></p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="decodeURI( )">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">decodeURI( )</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">5.5(Win)</span> ECMA <span class="emphasis">3</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">decodeURI("<span class="replaceable">encodedURI</span>")</p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Gibt einen String zur&uuml;ck, in dem die meisten URI-kodierten Werte des Parameters in die urspr&uuml;nglichen Symbole zur&uuml;ck umgewandelt sind. Funktioniert nur mit Escape-kodierten Zeichen, die sich mit der Methode <span class="literal">encodeURI( )</span> kodieren lassen.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Parameter</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<ul><li><span class="literal"></span>Ein String mit einer relativen oder vollst&auml;ndigen kodierten URI.</li></ul>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Zur&uuml;ckgegebener Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>String.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="atob( ), btoa( )">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">atob( ), btoa( )</td><td valign="top" nowrap class="compatibility">NN<span class="emphasis"> 4</span>  IE<span class="emphasis"> nicht zutreffend</span>  ECMA<span class="emphasis"> nicht zutreffend</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">atob("<span class="replaceable">base64EncodedData</span>") btoa("<span class="replaceable">stringToBeEncoded</span>")</p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Mithilfe dieser Methoden k&ouml;nnen Sie beliebige Strings (einschlie&szlig;lich Strings mit Zeichen, die Bin&auml;rdaten und Unicode-Werte darstellen) in eine 65-Zeichen-Teilmenge des US-amerikanischen ASCII-Zeichensatzes umwandeln. Nach dieser so genannten Base64-Konvertierung lassen sich beliebige Daten auch noch mit den simpelsten Transportprotokollmechanismen &uuml;bertragen. Ausf&uuml;hrliche Informationen zu den Prinzipien und internen Mechanismen der Kodier-/Dekodierverfahren finden Sie im Dokument RFC 1521 der Internet Engineering Task Force (<span class="emphasis">http://www.ietf.org/rfc/rfc2045.txt</span>).
+</p>
+							</td>
+						</tr>
+						<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Verwenden Sie die Methode <span class="literal">btoa( )</span>, um Stringdaten in Base64-Daten umzuwandeln. Die auf diese Weise kodierten Daten bestehen ausschlie&szlig;lich aus den ASCII-Zeichen a-z, A-Z, 0-9 sowie den drei Symbolen /, + und =. Wenn Sie die Base64-kodierten Daten wieder in die urspr&uuml;ngliche Version zur&uuml;ck umwandeln m&ouml;chten, verwenden Sie die Methode <span class="literal">atob( )</span>.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Parameter</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<ul><li><span class="literal"></span>Ein String mit Base64-Daten, die entweder auf dem Client kodiert oder in bereits kodierter Form in einem Dokument von einem Server &uuml;bertragen wurden.
+</li><li><span class="literal"></span>Ein String, der f&uuml;r den internen oder externen Gebrauch in das Base64-Format kodiert werden soll. Ein kodierter Wert k&ouml;nnte beispielsweise der Eigenschaft <span class="literal">value</span> eines <span class="literal">input</span>-Elements zugewiesen werden, das an einen f&uuml;r den Empfang von Base64-Daten eingerichteten Serverprozess &uuml;bertragen werden soll.
+</li></ul>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Zur&uuml;ckgegebener Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>String.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="decodeURIComponent( )">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">decodeURIComponent( )</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">5.5(Win)</span> ECMA <span class="emphasis">3</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">decodeURIComponent("<span class="replaceable">encodedURIComponent</span>")</p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Gibt einen String zur&uuml;ck, in dem alle URI-kodierten Werte des Parameters in die urspr&uuml;nglichen Symbole zur&uuml;ck umgewandelt sind. Wird auf Datenabschnitte von URIs (ohne Protokoll) angewendet.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Parameter</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<ul><li><span class="literal"></span>Ein String mit einer relativen oder vollst&auml;ndigen kodierten URI bzw. Teilen einer URI.
+</li></ul>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Zur&uuml;ckgegebener Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>String.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="encodeURI( )">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">encodeURI( )</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">5.5(Win)</span> ECMA <span class="emphasis">3</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">encodeURI("<span class="replaceable">URIString</span>")</p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Gibt einen String zur&uuml;ck, in dem die meisten URI-kodierbaren Werte des Parameters in die entsprechenden Escape-Versionen (z. B. Leerzeichen in <span class="literal">%20</span>) umgewandelt sind. Folgende Zeichen werden von dieser Methode nicht umgewandelt:
+</p>
+							</td>
+						</tr>
+						<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Diese Zeichen sind an sich bereits zul&auml;ssige Symbole eines URI-Strings und sollten nicht konvertiert werden, da die URI durch die Umwandlung m&ouml;glicherweise ung&uuml;ltig wird.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Parameter</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<ul><li><span class="literal"></span>Ein String mit einer relativen oder vollst&auml;ndigen unverschl&uuml;sselten URI.</li></ul>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Zur&uuml;ckgegebener Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>String.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="encodeURIComponent( )">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">encodeURIComponent( )</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">5.5(Win)</span> ECMA <span class="emphasis">3</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">encodeURIComponent("<span class="replaceable">URIComponentString</span>")</p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Gibt einen String zur&uuml;ck, in dem alle Zeichen au&szlig;er den Buchstaben <span class="literal">A</span> bis <span class="literal">Z</span> (gro&szlig;- und kleingeschrieben) des Latin-Zeichensatzes, den Ziffern <span class="literal">0</span> bis <span class="literal">9</span> und einer Reihe URI-freundlicher Symbole (<span class="literal">-</span> <span class="literal">_</span> <span class="literal">.</span>
+<span class="literal">!</span> <span class="literal">~</span> <span class="literal">*</span>
+<span class="literal">(</span> <span class="literal">)</span> <span class="literal">'</span>
+<span class="replaceable">Leerzeichen</span>) in die entsprechenden Escape-Versionen (<span class="literal">%</span> gefolgt vom jeweiligen hexadezimalen Unicode-Wert) umgewandelt sind. Wird auf Datenabschnitte von URIs (ohne Protokoll) angewendet.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Parameter</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<ul><li><span class="literal"></span>Ein String mit einer relativen oder vollst&auml;ndigen unverschl&uuml;sselten URI bzw. Teilen einer URI.
+</li></ul>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Zur&uuml;ckgegebener Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>String.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="escape( )">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">escape( )</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">2</span> IE <span class="emphasis">3</span> ECMA <span class="emphasis">|1|</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">escape("<span class="replaceable">string</span>"[, 1])</p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Gibt eine URL-kodierte Version des Strings zur&uuml;ck, der als Parameter an die Funktion &uuml;bergeben wurde. Bei der URL-Kodierung werden die meisten nichtalphabetischen Zeichen (au&szlig;er <span class="literal">* _ + - . /</span> und, bei IE, <span class="literal">@</span>) in hexadezimale Werte (z. B. <span class="literal">%20</span> f&uuml;r das Leerzeichen) umgewandelt. Das Pluszeichen wird in URL-kodierten Strings in der Regel nicht verschl&uuml;sselt, da es als separate Komponente in Suchstrings verwendet wird. Wenn das Pluszeichen ebenfalls kodiert werden soll, bietet Navigator (nur Version 4) einen zweiten Parameter (den numerischen Wert 1), um den Schalter f&uuml;r diese Methode zu aktivieren. Beachten Sie, dass diese Methode in IE 5.5 f&uuml;r Windows und Netscape 6 zugunsten der Methoden <span class="literal">encodeURI( )</span> und <span class="literal">encodeURIComponent( )</span> verworfen wurde. Diese Methode wurde aus der ECMA-3-Spezifikation entfernt.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Parameter</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<ul><li><span class="literal"></span>Ein beliebiger Stringwert.</li></ul>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Zur&uuml;ckgegebener Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>String.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="eval( )">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">eval( )</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">2</span> IE <span class="emphasis">3</span> ECMA <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">eval("<span class="replaceable">string</span>")</p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Gibt eine Objektreferenz f&uuml;r das Objekt zur&uuml;ck, das im Parameter der Funktion als String beschrieben wird. Wenn beispielsweise ein Formular eine Reihe von Textfeldern enth&auml;lt, die mit <span class="literal">entry1</span>, <span class="literal">entry2</span>, <span class="literal">entry3</span> usw. bezeichnet sind, k&ouml;nnen Sie dennoch eine <span class="literal">for</span>-Schleife verwenden, um alle Elemente nach dem Namen zu durchlaufen. Dazu muss die Funktion <span class="literal">eval( )</span> die Stringdarstellung der Namen in Objektreferenzen umwandeln:
+</p>
+							</td>
+						</tr>
+						<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Bedenken Sie hierbei jedoch, dass die Methode <span class="literal">eval( )</span> die vielleicht ineffizienteste und am wenigsten rationelle Methode der gesamten JavaScript-Sprache ist. Es gibt viele andere und weit effizientere M&ouml;glichkeiten, ein Objekt im Dokumentbaum zu referenzieren, wenn Sie lediglich &uuml;ber die String-ID oder den Namen verf&uuml;gen, zum Beispiel die Methode <span class="literal">document.getElementByID( )</span> oder, f&uuml;r &auml;ltere Browser, benannte Indizes der Arrays <span class="literal">document.forms</span>, <span class="literal">document.images</span> und <span class="literal">document.formRef.elements</span>.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Parameter</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<ul><li><span class="literal"></span>Stringdarstellung einer Objektreferenz.</li></ul>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Zur&uuml;ckgegebener Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Objektreferenz.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="GetObject( )">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">GetObject( )</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">nicht zutreffend</span> IE <span class="emphasis">5(Win)</span> ECMA <span class="emphasis">nicht zutreffend</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">GetObject("<span class="replaceable">localPathName</span>"[, <span class="replaceable">appName</span>.<span class="replaceable">objectType</span>])</p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Gibt eine Referenz auf ein ActiveX-Objekt auf dem Client-Computer zur&uuml;ck, dessen Pfadname dem Skript bekannt ist. Dies ist eine Alternative zum Erstellen einer Instanz eines <span class="literal">ActiveXObject</span>-Objekts. Au&szlig;er dem Pfadnamen des Steuerelements k&ouml;nnen Sie auch eine Datendatei angeben, die zusammen mit der Anwendung des Steuerelements ge&ouml;ffnet werden soll. H&auml;ngen Sie zu diesem Zweck einfach den Namen der gew&uuml;nschten Datei mit einem vorangestellten Ausrufezeichen an den Wert des Parameters <span class="replaceable">localPathName</span> an. Weitere Informationen zum Aufrufen von ActiveX-Objekten (auch "Automatisierungsobjekte" genannt) finden Sie unter http://msdn.microsoft.com/scripting/jscript/doc/jsobjActiveXObject.htm.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Parameter</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<ul><li><span class="literal"></span>Ein String mit dem vollst&auml;ndigen Pfadnamen (einschlie&szlig;lich Volume) des Automatisierungsobjekts.
+</li><li><span class="literal"></span>Allgemeine Syntax zum Referenzieren einer bestimmten Anwendung und des Objekttyps, der von dem durch den Pfadnamen im ersten Parameter bezeichneten Automatisierungsobjekt unterst&uuml;tzt wird.
+</li></ul>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Zur&uuml;ckgegebener Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Objektreferenz.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="isFinite( )">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">isFinite( )</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">4</span> IE <span class="emphasis">4</span> ECMA <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">isFinite(<span class="replaceable">expression</span>)</p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Gibt den Booleschen Wert <span class="literal">true</span> zur&uuml;ck, wenn die als Parameter &uuml;bergebene Zahl zwischen <span class="literal">Number.MIN_VALUE</span> und einschlie&szlig;lich <span class="literal">Number.MAX_VALUE</span> liegt. Werden Stringwerte als Parameter &uuml;bergeben, gibt die Funktion <span class="literal">false</span> zur&uuml;ck.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Parameter</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<ul><li><span class="literal"></span>Ein beliebiger JavaScript-Ausdruck. </li></ul>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Zur&uuml;ckgegebener Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Boolescher Wert: <span class="literal">true</span> | <span class="literal">false</span>.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="isNaN( )">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">isNaN( )</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">2</span> IE <span class="emphasis">3</span> ECMA <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">isNaN(<span class="replaceable">expression</span>)</p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Gibt den Booleschen Wert <span class="literal">true</span> zur&uuml;ck, wenn sich der als Parameter &uuml;bergebene Ausdruck nicht als numerischer Wert auswerten l&auml;sst. Jeder Ausdruck, der als <span class="literal">NaN</span> ausgewertet wird (z. B. bei Ausf&uuml;hrung der Methode <span class="literal">parseInt( )</span> in Verbindung mit einem String, der nicht mit einer Ziffer beginnt), bewirkt, dass die Methode <span class="literal">isNaN( )</span> den Wert <span class="literal">true</span> zur&uuml;ckgibt.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Parameter</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<ul><li><span class="literal"></span>Ein beliebiger JavaScript-Ausdruck. </li></ul>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Zur&uuml;ckgegebener Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Boolescher Wert: <span class="literal">true</span> | <span class="literal">false</span>.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="parseInt( )">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">parseInt( )</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">2</span> IE <span class="emphasis">3</span> ECMA <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">parseInt("<span class="replaceable">string</span> "[, <span class="replaceable">radix</span>]) </p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Gibt den ganzzahligen Teil (als numerischer Datentyp in Base-8 oder Base-10) der Zahl in dem als Parameter &uuml;bergebenen String zur&uuml;ck. Der String muss zumindest mit einer Ziffer beginnen, andernfalls ist das Ergebnis <span class="literal">NaN</span>. Wenn der String mit Ziffern beginnt, aber auch Buchstaben oder Leerzeichen enth&auml;lt, werden bei der Umwandlung in einen Integer nur die numerischen Werte am Anfang des Strings bis zum ersten nichtnumerischen oder Leerzeichen ber&uuml;cksichtigt. Daher k&ouml;nnten Sie den folgenden Ausdruck verwenden:
+</p>
+							</td>
+						</tr>
+						<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>um nur den ganzzahligen Teil der Versionsnummer zu extrahieren, die einem langen von der Eigenschaft zur&uuml;ckgegebenen String voransteht.
+</p>
+							</td>
+						</tr>
+						<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Mit dem optionalen Parameter <span class="replaceable">radix</span> k&ouml;nnen Sie die Basis der Zahl angeben, die an die Funktion &uuml;bergeben wird. Ein Zahlenstring, der mit Null beginnt, wird in der Regel als oktale Zahl ausgewertet, was zu einer falschen Antwort f&uuml;hrt. Wenn Sie mit Base-10-Zahlen arbeiten, sollten Sie den <span class="replaceable">radix</span>-Wert 10 f&uuml;r alle <span class="literal">parseInt( )</span>-Funktionen verwenden.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Parameter</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<ul><li><span class="literal"></span>Ein String, der mit mindestens einer Ziffer beginnt.</li><li><span class="literal"></span>Eine Ganzzahl, die die Basis der als Stringparameter &uuml;bergebenen Zahl angibt (z. B. 2, 8, 10, 16).
+</li></ul>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Zur&uuml;ckgegebener Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Integer.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="parseFloat( )">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">parseFloat( )</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">2</span> IE <span class="emphasis">3</span> ECMA <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">parseFloat(<span class="replaceable">string</span>)</p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Gibt einen numerischen Wert (entweder als Integer- oder Flie&szlig;kommawert) f&uuml;r die Zahl im als Parameter &uuml;bergebenen String zur&uuml;ck. Der String muss zumindest mit einer Ziffer beginnen, andernfalls ist das Ergebnis <span class="literal">NaN</span>. Beginnt der String zwar mit Zahlen, enth&auml;lt aber au&szlig;erdem Buchstaben, werden nur die ersten Ziffern in einen Integerwert konvertiert. Daher k&ouml;nnten Sie den folgenden Ausdruck verwenden:
+</p>
+							</td>
+						</tr>
+						<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>um nur die vollst&auml;ndige Versionnummer (z. B. 4.03) zu extrahieren, die einem langen von der Eigenschaft zur&uuml;ckgegebenen String voransteht.
+</p>
+							</td>
+						</tr>
+						<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Weist der konvertierte Wert nach dem Dezimalpunkt nur Nullen auf, so ist der zur&uuml;ckgegebene Wert ein Integer. Flie&szlig;kommazahlen werden nur dann zur&uuml;ckgegeben, wenn dies f&uuml;r die Zahl erforderlich ist.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Parameter</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<ul><li><span class="literal"></span>Ein String, der mit mindestens einer Ziffer beginnt. </li></ul>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Zur&uuml;ckgegebener Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Zahl.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="ScriptEngine( ), ScriptEngineBuildVersion( ), ScriptEngineMajorVersion( ), ScriptEngineMinorVersion( )">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">ScriptEngine( ), ScriptEngineBuildVersion( ), ScriptEngineMajorVersion( ), ScriptEngineMinorVersion( )</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">nicht zutreffend</span> IE <span class="emphasis">4</span> ECMA <span class="emphasis">nicht zutreffend</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Diese Funktionen gelten ausschlie&szlig;lich f&uuml;r den Internet Explorer und legen Informationen zu Typ und Version der f&uuml;r den Aufruf der Methode verwendeten Skript-Engine (JScript, VBScript oder VBA) offen. Bei JScript bezieht sich die Version auf die Version der <span class="emphasis">Jscript.dll</span>-Datei, die mit den Zusatzdateien des Browsers installiert wurde. Die Hauptversion steht vor dem Dezimalpunkt, die Unterversion danach. Noch spezifischer ist die interne Build-Nummer, die von Microsoft zur Kennzeichnung einzelner Releases w&auml;hrend des Entwicklungsprozesses verwendet wird.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Parameter</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Keine. </p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Zur&uuml;ckgegebener Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p><span class="literal">ScriptEngine( )</span> gibt einen String mit den folgenden Engine-Namen zur&uuml;ck: <span class="literal">JScript</span> | <span class="literal">VBA</span> | <span class="literal">VBScript</span>. Alle anderen Funktionen geben Integerwerte zur&uuml;ck.
+</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="unescape( )">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">unescape( )</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">2</span> IE <span class="emphasis">3</span> ECMA <span class="emphasis">|1|</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">unescape(<span class="replaceable">string</span>)</p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Gibt eine dekodierte Version des URL-kodierten Strings zur&uuml;ck, der als Parameter an die Funktion &uuml;bergeben wurde. Bei der URL-Kodierung werden nichtalphabetische Zeichen (au&szlig;er <span class="literal">*</span> <span class="literal">_</span>
+<span class="literal">+</span> <span class="literal">-</span> <span class="literal">.</span>
+<span class="literal">/</span> und, bei IE, <span class="literal">@</span>) in hexadezimale Werte (z. B. <span class="literal">%20</span> f&uuml;r das Leerzeichen) umgewandelt. Beachten Sie, dass diese Methode in IE 5.5 f&uuml;r Windows und Netscape 6 zugunsten der Methoden <span class="literal">decodeURI( )</span> und <span class="literal">decodeURIComponent( )</span> verworfen wurde. Diese Methode wurde aus der ECMA-3-Spezifikation entfernt.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Parameter</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<ul><li><span class="literal"></span>Beliebiger URL-kodierter String. </li></ul>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Zur&uuml;ckgegebener Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>String.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="unwatch( ), watch( )">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">unwatch( ), watch( )</td><td valign="top" nowrap class="compatibility">NN<span class="emphasis"> 4</span>  IE<span class="emphasis"> nicht zutreffend</span>  ECMA<span class="emphasis"> nicht zutreffend</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">unwatch(<span class="replaceable">property</span>) watch(<span class="replaceable">property</span>, <span class="replaceable">funcHandler</span>) </p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Diese Funktionen gelten nur f&uuml;r den Navigator und werden haupts&auml;chlich von JavaScript-Debuggern verwendet. Wenn eine Anweisung die Funktion <span class="literal">watch( )</span> f&uuml;r ein Objekt aufruft, enthalten die Parameter die Eigenschaft, die es zu &uuml;berwachen gilt, und eine Referenz auf die Funktion, die aufgerufen werden soll, wenn der Wert der Eigenschaft durch eine Zuweisungsanweisung ge&auml;ndert wird. Zum Deaktivieren der &Uuml;berwachung rufen Sie die Funktion <span class="literal">unwatch( )</span> f&uuml;r die jeweilige Eigenschaft auf.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Parameter</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<ul><li><span class="literal"></span>Der Name der zu &uuml;berwachenden Objekteigenschaft.</li><li><span class="literal"></span>Der Name der Funktion (ohne Klammernpaar), die aufgerufen werden soll, wenn sich der Wert der &uuml;berwachten Eigenschaft &auml;ndert.
+</li></ul>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Zur&uuml;ckgegebener Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Keiner.</p>
+					</td>
+				</tr>
+			</table>
+		</div>
+
+</body>
+</html>

@@ -1,0 +1,92 @@
+<html>
+<link rel="stylesheet" href="josh.css">
+<body bgcolor="#FFFFFF">
+
+		<div id="Beschreibung">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">page-break-after, page-break-before</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">7</span> IE <span class="emphasis">4</span> CSS <span class="emphasis">2</span></td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Vererbt: Nein</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Legt fest, wie ein Seitenumbruch um ein Element behandelt werden soll, wenn das Dokument an einen Drucker gesendet wird. Seitenumbr&uuml;che werden im Browser nicht wie in Textverarbeitungsprogrammen dargestellt; auf dem Bildschirm wird der Inhalt kontinuierlich auf der ganzen L&auml;nge angezeigt.</p><p>Die ordnungsgem&auml;&szlig;e Verarbeitung von Seiten durch Drucker basiert auf dem CSS2-Konzept der <span class="emphasis">Seitenbox</span> &#8211; hierbei handelt es sich um einen rechteckigen Bereich, der die gedruckte Seite umfasst. Stilattribute f&uuml;r den Seitenumbruch erm&ouml;glichen es dem Browser, den Inhalt der Seitenboxen genau zu steuern. Ohne weitere Angaben (oder bei der Einstellung <span class="literal">auto</span>) teilt der Browser die Seiten f&uuml;r den Ausdruck &auml;hnlich wie fr&uuml;her so auf, dass auf den einzelnen Seiten so viel Inhalt wie m&ouml;glich erscheint.</p><p>Um oberhalb eines Elements einen Seitenumbruch zu erzwingen, muss diesem die Einstellung <span class="literal">page-break-before:always</span> zugewiesen werden. Entsprechend wird mit <span class="literal">page-break-after:always</span> ein Seitenumbruch unter einem Element erzeugt. Wenn Sie beispielsweise nach einer bestimmten Klasse von <span class="literal">br</span>-Elementen einen Seitenumbruch erzeugen m&ouml;chten, k&ouml;nnen Sie wie folgt eine Klassenselektor-Stylesheet-Regel einrichten:</p><p>Wenn Sie dann im Dokument einen Seitenumbruch erzwingen wollen, f&uuml;gen Sie das folgende Tag ein:</p><p>Bei den Attributeinstellungen <span class="literal">left</span> und <span class="literal">right</span> wird vorausgesetzt, dass der Browser gerade und ungerade Seiten f&uuml;r den doppelseitiges Druck erkennt (wie in CSS2 definiert). Da die R&auml;nder aufeinander folgender Seiten in diesem Fall &uuml;blicherweise unterschiedlich breit sind, m&uuml;ssen f&uuml;r die Definition neuer Bereiche auf der jeweiligen Seite ausreichend viele Seitenumbr&uuml;che erzwungen werden. Soll beispielsweise jedes <span class="literal">h1</span>-Element auf einer ungeraden (nach rechts weisenden) Seite beginnen, m&uuml;ssten Sie eine Umbruchregel wie folgt festlegen:</p><p>Mit diesem Attribut wird der Browser angewiesen, mindestens einen und h&ouml;chstens zwei Seitenumbr&uuml;che vor dem <span class="literal">h1</span>-Element einzuf&uuml;gen, damit dieses immer auf einer ungeraden Seite erscheint. Ein zweiter Seitenumbruch f&uuml;hrt jeweils zu einem leeren Seitenbereich.</p><p>Diese Attribute sind sehr sporadisch implementiert. Sie funktionieren zwar in gewissem Ma&szlig;e schon in IE 4, doch als Zielbrowser sollten Sie IE 5 oder sp&auml;ter verwenden. Selbst bei neueren IE-Versionen und bei Netscape 7 werden lediglich die Einstellungen <span class="literal">always</span> und <span class="literal">auto</span> unterst&uuml;tzt (Sie k&ouml;nnen auch per Skript einen leeren String zuordnen, der wie der CSS-Wert <span class="literal">avoid</span> funktioniert).</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="csssyntax"><span class="title">CSS-Syntax</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>page-break-after: <span class="replaceable">breakType</span>page-break-before: <span class="replaceable">breakType</span></pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+				</tr>
+				<tr>
+					<td><p>Vom Internet Explorer 4 werden vier Konstanten erkannt: <span class="literal">always</span> | <span class="literal">auto</span> | <span class="literal">left</span> | <span class="literal">right</span> (<span class="literal">left</span> und <span class="literal">right</span> werden aber wie <span class="literal">always</span> behandelt). Bei CSS2 kommt noch <span class="literal">avoid</span> hinzu, womit ein Seitenumbruch in diesem Element nach M&ouml;glichkeit vermieden wird.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="initvalue"><span class="title">Anfangswert</span></td>
+				</tr>
+				<tr>
+					<td><p><span class="literal">auto</span></p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>div.titlePage {page-break-before: always; page-break-after: always}</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="appliesto"><span class="title">Gilt f&uuml;r</span></td>
+				</tr>
+				<tr>
+					<td><p>Blockebenen-Elemente.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectmodelreference"><span class="title">Objektmodellreferenz</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>[window.]document.getElementById("<span class="replaceable">elementID</span>").style.pageBreakAfter[window.]document.getElementById("<span class="replaceable">elementID</span>").style.pageBreakBefore</pre>
+						</span></td>
+				</tr>
+			</table>
+		</div>
+</body>
+</html>

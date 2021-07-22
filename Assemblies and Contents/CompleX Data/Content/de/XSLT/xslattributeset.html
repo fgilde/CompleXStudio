@@ -1,0 +1,321 @@
+<html>
+<head>
+<title>&lt;xsl:attribute-set&gt;</title>
+</head>
+<body bgcolor="#FFFFFF" text="#000000">
+<div id="Beschreibung">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">&lt;xsl:attribute-set&gt;</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description">
+Diese Anweisung erlaubt Ihnen die Definition einer Gruppe von Attributen f&uuml;r das Ausgabedokument. Danach k&ouml;nnen Sie auf die gesamte Attributmenge durch ihren Namen verweisen und brauchen nicht alle Attribute einzeln zu erstellen. </td></tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Kategorie</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<p>Element der obersten Ebene</p>
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Obligatorische Attribute</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<dl>
+<dt>
+name
+</dt>
+<dd>
+Dieses Attribut definiert den Namen dieser Attributmenge.
+<P></p>
+</dl>
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Optionale Attribute</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<dl>
+<dt>
+use-attribute-sets
+</dt>
+<dd>
+Listet eine oder mehrere Attributmengen auf, die von diesem Attribut verwendet werden sollen. Wenn Sie mehrere Attributmengen angeben, sollten Sie die Namen durch Leerraumzeichen trennen. Mit Hilfe dieses Attributs k&ouml;nnen Sie weitere <span class="LITERAL">
+&lt;
+xsl:attribute-set
+&gt;
+</span>-Anweisungen in diese einbinden, doch sollten Sie sich dar&uuml;ber bewusst sein, dass eine <span class="LITERAL">
+&lt;
+xsl:attribute-set
+&gt;
+</span>-Anweisung, die direkt oder indirekt sich selbst einbettet, in einem Fehler resultiert. Anders ausgedr&uuml;ckt: wenn Attributmenge <span class="LITERAL">
+A
+</span> die Attributmenge <span class="LITERAL">
+B
+</span> einbettet, die wiederum die Attributmenge <span class="LITERAL">
+C
+</span> einbettet, die schlie&szlig;lich wieder die Attributmenge <span class="LITERAL">
+A
+</span> einbettet, so meldet der XSLT-Prozessor einen Fehler.
+<P></p>
+</dl>
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Inhalt</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<p>Eines oder mehrere <span class="LITERAL">&lt;xsl:attribute&gt;</span>-Elemente.</p>
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">&Uuml;bergeordnetes Element</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<p>
+<span class="LITERAL">&lt;xsl:stylesheet&gt;</span>. <span class="LITERAL">&lt;xsl:attribute-set&gt;</span> ist ein Element der obersten Ebene und kann nur dem Element <span class="LITERAL">&lt;xsl:stylesheet&gt;</span> untergeordnet werden.</p>
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Definition</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<p>XSLT-Abschnitt 7.1.4, Benannte Attributmengen</p>
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Beispiel</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<p>F&uuml;r dieses Beispiel wird ein Stylesheet erstellt, das die Attributmengen f&uuml;r regul&auml;ren Text, f&uuml;r betonten Text und f&uuml;r umfangreichen Text erstellt. Zur Abwechslung wird XSL-FO (XSL Formatting Objects) verwendet, um das XML-Dokument in eine PDF-Datei zu konvertieren. Hier das Stylesheet:</p>
+<span class="PROGRAMLISTING"><pre>
+&lt;?xml version="1.0"?&gt;
+&lt;xsl:stylesheet version="1.0" 
+  xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+  xmlns:fo="http://www.w3.org/1999/XSL/Format"&gt;
+
+  &lt;xsl:output method="html"/&gt;
+
+  &lt;xsl:attribute-set name="regular-text"&gt;
+    &lt;xsl:attribute name="font-size"&gt;12pt&lt;/xsl:attribute&gt;
+    &lt;xsl:attribute name="font-family"&gt;sans-serif&lt;/xsl:attribute&gt;
+  &lt;/xsl:attribute-set&gt;
+
+  &lt;xsl:attribute-set name="emphasized-text" use-attribute-sets="regular-text"&gt;
+    &lt;xsl:attribute name="font-style"&gt;italic&lt;/xsl:attribute&gt;
+  &lt;/xsl:attribute-set&gt;
+
+  &lt;xsl:attribute-set name="large-text" use-attribute-sets="regular-text"&gt;
+    &lt;xsl:attribute name="font-size"&gt;18pt&lt;/xsl:attribute&gt;
+    &lt;xsl:attribute name="font-weight"&gt;bold&lt;/xsl:attribute&gt;
+    &lt;xsl:attribute name="space-after.optimum"&gt;21pt&lt;/xsl:attribute&gt;
+  &lt;/xsl:attribute-set&gt;
+
+  &lt;xsl:template match="/"&gt;
+    &lt;fo:root xmlns:fo="http://www.w3.org/1999/XSL/Format"&gt;
+      &lt;fo:layout-master-set&gt;
+        &lt;fo:simple-page-master margin-right="75pt" margin-left="75pt" 
+          page-height="11in" page-width="8.5in"
+          margin-bottom="25pt" margin-top="25pt" master-name="main"&gt;
+          &lt;fo:region-before extent="25pt"/&gt;
+          &lt;fo:region-body margin-top="50pt" margin-bottom="50pt"/&gt;
+          &lt;fo:region-after extent="25pt"/&gt;
+        &lt;/fo:simple-page-master&gt;
+        &lt;fo:page-sequence-master master-name="standard"&gt;
+          &lt;fo:repeatable-page-master-alternatives&gt;
+            &lt;fo:conditional-page-master-reference master-name="main" 
+              odd-or-even="any"/&gt;
+          &lt;/fo:repeatable-page-master-alternatives&gt;
+        &lt;/fo:page-sequence-master&gt;
+      &lt;/fo:layout-master-set&gt;
+      
+      &lt;fo:page-sequence master-name="standard"&gt;
+        &lt;fo:flow flow-name="xsl-region-body"&gt;
+          &lt;xsl:apply-templates select="list"/&gt;
+        &lt;/fo:flow&gt;
+      &lt;/fo:page-sequence&gt;
+    &lt;/fo:root&gt;
+  &lt;/xsl:template&gt;
+
+  &lt;xsl:template match="list"&gt;
+    &lt;fo:block xsl:use-attribute-sets="large-text"&gt;
+      &lt;xsl:value-of select="title"/&gt;
+    &lt;/fo:block&gt;
+    &lt;fo:list-block provisional-distance-between-starts="0.4cm"
+      provisional-label-separation="0.15cm"&gt;
+      &lt;xsl:for-each select="listitem"&gt;
+        &lt;fo:list-item start-indent="0.5cm" space-after.optimum="17pt"&gt;
+          &lt;fo:list-item-label&gt;
+            &lt;fo:block xsl:use-attribute-sets="regular-text"&gt;*&lt;/fo:block&gt;
+          &lt;/fo:list-item-label&gt;
+          &lt;fo:list-item-body&gt;
+            &lt;fo:block xsl:use-attribute-sets="emphasized-text"&gt;
+              &lt;xsl:value-of select="."/&gt;
+            &lt;/fo:block&gt;
+          &lt;/fo:list-item-body&gt;
+        &lt;/fo:list-item&gt;
+      &lt;/xsl:for-each&gt;
+    &lt;/fo:list-block&gt;
+  &lt;/xsl:template&gt;
+
+&lt;/xsl:stylesheet&gt;</pre></span>
+<p>Beachten Sie, dass sowohl die Attributmenge <span class="LITERAL">emphasized-text</span> als auch <span class="LITERAL">large-text</span> die Attributmenge <span class="LITERAL">regular-text</span> als Basis verwenden.  Das in der Attributmenge <span class="LITERAL">large-text</span> definierte Attribut <span class="LITERAL">font-size</span> &uuml;berschreibt das von der Attributmenge <span class="LITERAL">regular-text</span> eingebundene Attribut <span class="LITERAL">font-size</span>.  Dieses Stylesheet wird auf das folgende XML-Dokument angewendet:</p>
+<span class="PROGRAMLISTING"><pre>
+&lt;?xml version="1.0"?&gt;
+&lt;list&gt;
+  &lt;title&gt;A few of my favorite albums&lt;/title&gt;
+  &lt;listitem&gt;A Love Supreme&lt;/listitem&gt;
+  &lt;listitem&gt;Beat Crazy&lt;/listitem&gt;
+  &lt;listitem&gt;Here Come the Warm Jets&lt;/listitem&gt;
+  &lt;listitem&gt;Kind of Blue&lt;/listitem&gt;
+  &lt;listitem&gt;London Calling&lt;/listitem&gt;
+  &lt;listitem&gt;Remain in Light&lt;/listitem&gt;
+  &lt;listitem&gt;The Joshua Tree&lt;/listitem&gt;
+  &lt;listitem&gt;The Indestructible Beat of Soweto&lt;/listitem&gt;
+&lt;/list&gt;</pre></span>
+<p>Das Stylesheet generiert eine etwas unordentliche Datei mit Formatierungsobjekten, die beschreiben, wie der Text des XML-Ausgangsdokuments dargestellt werden soll.  </p>
+<span class="PROGRAMLISTING"><pre>
+&lt;fo:root xmlns:fo="http://www.w3.org/1999/XSL/Format"&gt;
+&lt;fo:layout-master-set&gt;
+&lt;fo:simple-page-master master-name="main" margin-top="25pt" 
+margin-bottom="25pt" page-width="8.5in" page-height="11in" 
+margin-left="75pt" margin-right="75pt"&gt;
+&lt;fo:region-before extent="25pt"/&gt;
+&lt;fo:region-body margin-bottom="50pt" margin-top="50pt"/&gt;
+&lt;fo:region-after extent="25pt"/&gt;
+&lt;/fo:simple-page-master&gt;
+&lt;fo:page-sequence-master master-name="standard"&gt;
+&lt;fo:repeatable-page-master-alternatives&gt;
+&lt;fo:conditional-page-master-reference odd-or-even="any" master-name="main"/&gt;
+&lt;/fo:repeatable-page-master-alternatives&gt;
+&lt;/fo:page-sequence-master&gt;
+&lt;/fo:layout-master-set&gt;
+&lt;fo:page-sequence master-name="standard"&gt;
+&lt;fo:flow flow-name="xsl-region-body"&gt;
+&lt;fo:block font-size="18pt" font-family="sans-serif" 
+font-weight="bold" space-after.optimum="21pt"&gt;A few of my 
+favorite albums&lt;/fo:block&gt;
+&lt;fo:list-block provisional-label-separation="0.15cm" 
+provisional-distance-between-starts="0.4cm"&gt;
+&lt;fo:list-item space-after.optimum="17pt" start-indent="0.5cm"&gt;
+&lt;fo:list-item-label&gt;
+&lt;fo:block font-size="12pt" font-family="sans-serif"&gt;*&lt;/fo:block&gt;
+&lt;/fo:list-item-label&gt;
+&lt;fo:list-item-body&gt;
+&lt;fo:block font-size="12pt" font-family="sans-serif" 
+font-style="italic"&gt;A Love Supreme&lt;/fo:block&gt;
+&lt;/fo:list-item-body&gt;
+&lt;/fo:list-item&gt;
+&lt;fo:list-item space-after.optimum="17pt" start-indent="0.5cm"&gt;
+&lt;fo:list-item-label&gt;
+&lt;fo:block font-size="12pt" font-family="sans-serif"&gt;*&lt;/fo:block&gt;
+&lt;/fo:list-item-label&gt;
+&lt;fo:list-item-body&gt;
+&lt;fo:block font-size="12pt" font-family="sans-serif" 
+font-style="italic"&gt;Beat Crazy&lt;/fo:block&gt;
+&lt;/fo:list-item-body&gt;
+&lt;/fo:list-item&gt;
+&lt;fo:list-item space-after.optimum="17pt" start-indent="0.5cm"&gt;
+&lt;fo:list-item-label&gt;
+&lt;fo:block font-size="12pt" font-family="sans-serif"&gt;*&lt;/fo:block&gt;
+&lt;/fo:list-item-label&gt;
+&lt;fo:list-item-body&gt;
+&lt;fo:block font-size="12pt" font-family="sans-serif" 
+font-style="italic"&gt;Here Come the Warm Jets&lt;/fo:block&gt;
+&lt;/fo:list-item-body&gt;
+&lt;/fo:list-item&gt;
+&lt;fo:list-item space-after.optimum="17pt" start-indent="0.5cm"&gt;
+&lt;fo:list-item-label&gt;
+&lt;fo:block font-size="12pt" font-family="sans-serif"&gt;*&lt;/fo:block&gt;
+&lt;/fo:list-item-label&gt;
+&lt;fo:list-item-body&gt;
+&lt;fo:block font-size="12pt" font-family="sans-serif" 
+font-style="italic"&gt;Kind of Blue&lt;/fo:block&gt;
+&lt;/fo:list-item-body&gt;
+&lt;/fo:list-item&gt;
+&lt;fo:list-item space-after.optimum="17pt" start-indent="0.5cm"&gt;
+&lt;fo:list-item-label&gt;
+&lt;fo:block font-size="12pt" font-family="sans-serif"&gt;*&lt;/fo:block&gt;
+&lt;/fo:list-item-label&gt;
+&lt;fo:list-item-body&gt;
+&lt;fo:block font-size="12pt" font-family="sans-serif" 
+font-style="italic"&gt;London Calling&lt;/fo:block&gt;
+&lt;/fo:list-item-body&gt;
+&lt;/fo:list-item&gt;
+&lt;fo:list-item space-after.optimum="17pt" start-indent="0.5cm"&gt;
+&lt;fo:list-item-label&gt;
+&lt;fo:block font-size="12pt" font-family="sans-serif"&gt;*&lt;/fo:block&gt;
+&lt;/fo:list-item-label&gt;
+&lt;fo:list-item-body&gt;
+&lt;fo:block font-size="12pt" font-family="sans-serif" 
+font-style="italic"&gt;Remain in Light&lt;/fo:block&gt;
+&lt;/fo:list-item-body&gt;
+&lt;/fo:list-item&gt;
+&lt;fo:list-item space-after.optimum="17pt" start-indent="0.5cm"&gt;
+&lt;fo:list-item-label&gt;
+&lt;fo:block font-size="12pt" font-family="sans-serif"&gt;*&lt;/fo:block&gt;
+&lt;/fo:list-item-label&gt;
+&lt;fo:list-item-body&gt;
+&lt;fo:block font-size="12pt" font-family="sans-serif" 
+font-style="italic"&gt;The Joshua Tree&lt;/fo:block&gt;
+&lt;/fo:list-item-body&gt;
+&lt;/fo:list-item&gt;
+&lt;fo:list-item space-after.optimum="17pt" start-indent="0.5cm"&gt;
+&lt;fo:list-item-label&gt;
+&lt;fo:block font-size="12pt" font-family="sans-serif"&gt;*&lt;/fo:block&gt;
+&lt;/fo:list-item-label&gt;
+&lt;fo:list-item-body&gt;
+&lt;fo:block font-size="12pt" font-family="sans-serif" 
+font-style="italic"&gt;The Indestructible Beat of Soweto&lt;/fo:block&gt;
+&lt;/fo:list-item-body&gt;
+&lt;/fo:list-item&gt;
+&lt;/fo:list-block&gt;
+&lt;/fo:flow&gt;
+&lt;/fo:page-sequence&gt;
+&lt;/fo:root&gt;</pre></span>
+<p>Seien Sie sich bewusst, dass zum momentanen Zeitpunkt (May 2001) die XSL-FO-Spezifikation noch nicht abgeschlossen ist, es gibt also keine Garantie, dass diese Formatierungsobjekte mit zuk&uuml;nftigen XSL-FO-Tools korrekt funktionieren. So rufen Sie das FOP-Tool (Formatierungsobjekte-in-PDF-Umwandler) des Apache-XML-Projekts auf, um eine PDF-Datei zu erstellen:</p>
+<span class="PROGRAMLISTING"><pre>
+java org.apache.fop.apps.CommandLine test.fo test.pdf</pre></span>
+<p>Das FOP-Tool erstellt eine PDF-Datei, deren Darstellung Sie in <link linkend="xslt-appa-a4">Abbildung A-4</link> sehen k&ouml;nnen.</p>
+<figure label="A-4" id="xslt-appa-a4">
+        <p class="TITLE">Aus einer XSL-FO-Datei erzeugte PDF-Datei</p>
+        <graphic depth="309" width="455" fileref="figs/xslt.aa04.gif"/></figure>
+</td>
+</tr>
+</table>
+</div>
+</body>
+</html>

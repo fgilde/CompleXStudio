@@ -1,0 +1,127 @@
+<html>
+<head>
+<title>sum()-Funktion</title>
+</head>
+<body bgcolor="#FFFFFF" text="#000000">
+<div id="Beschreibung">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">sum()-Funktion</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description">
+Diese Funktion konvertiert alle Knoten der Knotenmenge im Argument in Zahlen und gibt dann die Summe aller dieser Zahlen zur&uuml;ck. Wenn ein Knoten der Knotenmenge sich nicht in eine Zahl konvertieren l&auml;sst (die Funktion <span class="LITERAL">number()</span> h&auml;tte den Wert <span class="LITERAL">NaN</span> geliefert), so gibt die Funktion <span class="LITERAL">sum()</span> den Wert <span class="LITERAL">NaN</span> zur&uuml;ck. </td></tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Eingaben</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<p>Eine Knotenmenge. Jeder Knoten in der Knotenmenge, der keine Zahl ist, wird in eine Zahl konvertiert als w&auml;re er an die Funktion <span class="LITERAL">number()</span> &uuml;bergeben worden. Anschlie&szlig;end werden die numerischen Werte aller Knoten addiert. </p>
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Ausgabe</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<p>Die Summe der numerischen Werte aller Knoten der Knotenmenge im Argument. Wenn ein Knoten der Knotenmenge im Argument sich nicht in eine Zahl konvertieren l&auml;sst, gibt die Funktion <span class="LITERAL">sum()</span> den Wert <span class="LITERAL">NaN</span> zur&uuml;ck.</p>
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Definition</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<p>XPath-Abschnitt 4.4, Zahlenfunktionen </p>
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Beispiel</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<p>Die Funktion <span class="LITERAL">sum()</span> wird durch das folgende XML-Dokument veranschaulicht:</p>
+<span class="PROGRAMLISTING"><pre>
+&lt;?xml version="1.0"?&gt;
+&lt;report&gt;
+  &lt;title&gt;Miles Flown in 2001&lt;/title&gt;
+  &lt;month sequence="01"&gt;
+    &lt;miles-flown&gt;12379&lt;/miles-flown&gt;
+    &lt;miles-earned&gt;35215&lt;/miles-earned&gt;
+  &lt;/month&gt;
+  &lt;month sequence="02"&gt;
+    &lt;miles-flown&gt;32857&lt;/miles-flown&gt;
+    &lt;miles-earned&gt;92731&lt;/miles-earned&gt;
+  &lt;/month&gt;
+  &lt;month sequence="03"&gt;
+    &lt;miles-flown&gt;19920&lt;/miles-flown&gt;
+    &lt;miles-earned&gt;76725&lt;/miles-earned&gt;
+  &lt;/month&gt;
+  &lt;month sequence="04"&gt;
+    &lt;miles-flown&gt;18903&lt;/miles-flown&gt;
+    &lt;miles-earned&gt;31781&lt;/miles-earned&gt;
+  &lt;/month&gt;
+&lt;/report&gt;</pre></span> <!--<?troff .Nd 10?>-->
+<p>Hier das Stylesheet, das die Funktion <span class="LITERAL">sum()</span> verwendet:</p>
+<span class="PROGRAMLISTING"><pre>
+&lt;?xml version="1.0"?&gt;
+&lt;xsl:stylesheet version="1.0" 
+  xmlns:xsl="http://www.w3.org/1999/XSL/Transform"&gt;
+
+  &lt;xsl:output method="text"/&gt;
+
+  &lt;xsl:variable name="newline"&gt;
+&lt;xsl:text&gt;
+&lt;/xsl:text&gt;
+  &lt;/xsl:variable&gt;
+
+  &lt;xsl:template match="/"&gt;
+    &lt;xsl:value-of select="$newline"/&gt;
+    &lt;xsl:text&gt;A test of the sum() function:&lt;/xsl:text&gt;
+
+    &lt;xsl:value-of select="$newline"/&gt;
+    &lt;xsl:value-of select="$newline"/&gt;
+    &lt;xsl:text&gt;Total miles flown this year:  &lt;/xsl:text&gt;
+    &lt;xsl:value-of 
+      select="format-number(sum(/report/month/miles-flown), '###,###')"/&gt;
+    &lt;xsl:value-of select="$newline"/&gt;
+    &lt;xsl:value-of select="$newline"/&gt;
+    &lt;xsl:text&gt;Total miles earned this year: &lt;/xsl:text&gt;
+    &lt;xsl:value-of 
+      select="format-number(sum(/report/month/miles-earned), '###,###')"/&gt;
+    &lt;xsl:value-of select="$newline"/&gt;
+    &lt;xsl:value-of select="$newline"/&gt;
+  &lt;/xsl:template&gt;
+
+&lt;/xsl:stylesheet&gt;</pre></span>
+<p>Wird das XML-Dokument mit diesem Stylesheet verarbeitet, generiert es die folgenden Ergebnisse:</p>
+<span class="PROGRAMLISTING"><pre>
+
+A test of the sum() function:
+
+Total miles flown this year:  84,059
+
+Total miles earned this year: 236,452
+</pre></span>
+</td>
+</tr>
+</table>
+</div>
+</body>
+</html>

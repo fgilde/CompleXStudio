@@ -1,0 +1,41 @@
+<html>
+<link rel="stylesheet" href="josh.css">
+<body bgcolor="#FFFFFF">
+
+		<div id="Beschreibung">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">onerror</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">3 </span>IE <span class="emphasis">4 </span>DOM <span class="emphasis">2</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Aufw&auml;rtsverbreitung: Nein; Abbruch m&ouml;glich: Ja</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Wird ausgel&ouml;st, nachdem einer von verschiedenen Fehlern aufgetreten ist, je nachdem, zu welchem Element oder Objekt die Ereignisbehandlungsroutine geh&ouml;rt. Bei Elementen, die externe Inhalte laden, also beispielsweise beim <span class="literal">img</span>-Element, l&ouml;sen Fehler beim Laden (z.&#160;B. ein ung&uuml;ltiger URL) das <span class="literal">onerror</span>-Ereignis im <span class="literal">img</span>-Element aus. Wenn das Ereignis <span class="literal">onerror</span> dem <span class="literal">window</span>-Objekt (oder dem <span class="literal">&lt;body&gt;</span>-Tag direkt) zugewiesen ist, wird es auch von allgemeinen Laufzeit-Skriptfehlern (nicht jedoch von Syntaxfehlern beim Kompilieren) ausgel&ouml;st. Bei &auml;lteren Browsern werden Skriptfehlermeldungen oftmals in hinderlichen Alarmdialogfeldern ausgegeben. Manche Skriptersteller verwendeten daher folgende Technik, um alle Laufzeitfehler abzufangen und die Anzeige dieser Meldungen zu unterbinden:
+</p>
+<span class="PROGRAMLISTING"><pre>function doNothing( ) &#123;return true;}
+window.onerror = doNothing;</pre></span>
+							</td>
+						</tr>
+						<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Dies ist im Hinblick auf das Debuggen nicht zu empfehlen, da es das Auffinden von Fehlern unn&ouml;tig erschwert. Weitere Informationen zum Verarbeiten von Fehlern aus dieser Behandlungsroutine finden Sie in der Abhandlung des <span class="literal">Error</span>-Objekts in Kapitel 9. Inzwischen setzen sich mehr und mehr modernere Browser durch, die weniger st&ouml;rende Verfahren der Ausnahmebehandlung verwenden.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="typicaltargets"><span class="title">Typische Ziele</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Elemente, die externe Inhalte laden, sowie das <span class="literal">window</span>-Objekt.
+</p>
+					</td>
+				</tr>
+			</table>
+		</div>
+</body>
+</html>

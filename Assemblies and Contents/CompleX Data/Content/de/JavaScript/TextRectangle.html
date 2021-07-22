@@ -1,0 +1,126 @@
+<html>
+<link rel="stylesheet" href="josh.css">
+<body bgcolor="#FFFFFF">
+
+		<div id="Beschreibung">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">TextRectangle</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">nicht zutreffend</span> IE <span class="emphasis">5(Win)</span> DOM <span class="emphasis">nicht zutreffend</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Ein <span class="literal">TextRectangle</span>-Objekt enth&auml;lt die Koordinaten der vier Kanten einer unsichtbaren Box, die eine Body-Text-Zeichenfolge umgibt. Zwei Methoden aller Elementobjekte und das <span class="literal">TextRange</span>-Objekt stellen Informationen zu zwei verschiedenen Arten von Textrechtecken bereit. Die Methode <span class="literal">getClientRects( )</span> gibt eine Sammlung mit zeilenweisen Textrechtecken und die Methode <span class="literal">getBoundingClientRect( )</span> ein einzelnes <span class="literal">TextRectangle</span>-Objekt zur&uuml;ck, das mit seinen Koordinaten alle zeilenweisen Rechtecke umfasst.
+</p>
+							</td>
+						</tr>
+						<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Beim Aufruf dieser beiden Methoden werden die Werte der Rechtecke sofort abgerufen. Wenn Sie die Gr&ouml;&szlig;e des Fensters oder den Inhalt des Zielobjekts &auml;ndern, ver&auml;ndern sich m&ouml;glicherweise auch die tats&auml;chlichen Rechtecke, die bereits ermittelten <span class="literal">TextRange</span>-Objekte spiegeln diese &Auml;nderungen jedoch nicht wider (da die Inhalte der einzelnen Zeilenrechtecke wahrscheinlich ge&auml;ndert werden). Daher sollten Sie die <span class="literal">TextRectangle</span>-Werte erst unmittelbar vor ihrer Verarbeitung in anderen Skriptanweisungen abrufen.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectmodelreference"><span class="title">Objektmodellreferenz</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre><span class="replaceable">elementOrTextRangeReference</span>.getBoundingClientRect( )
+<span class="replaceable">elementOrTextRangeReference</span>.getClientRects( )[i]</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectspecificproperties"><span class="title">Objektspezifische Eigenschaften</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<table border="1"><tbody><tr><td><span class="literal">bottom</span></td><td><span class="literal">left</span></td><td><span class="literal">top</span></td><td><span class="literal">right</span></td>
+								</tr>
+							</tbody></table>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectspecificmethods"><span class="title">Objektspezifische Methoden</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Keine.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectspecificeventhandlerproperties"><span class="title">Objektspezifische Ereignisbehandlungsroutineneigenschaften</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Keine.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="bottom, left, right, top">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">bottom, left, right, top</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">nicht zutreffend</span> IE <span class="emphasis">5(Win)</span> DOM <span class="emphasis">nicht zutreffend</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Schreibgesch&uuml;tzt</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Geben ganzzahlige Pixelwerte f&uuml;r die Browserfensterkoordinaten der Rechteckkanten zur&uuml;ck. Beachten Sie, dass diese Werte nicht in Bezug auf die Seite angegeben werden und sich daher &auml;ndern, wenn der Textbeh&auml;lter durch einen Bildlauf verschoben wird.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>var rightMostEdge = document.getElementById("myP").getBoundingClientRect( ).right;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Ganzzahlige Pixelma&szlig;e</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Standardwert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Keiner.</p>
+					</td>
+				</tr>
+			</table>
+		</div>
+
+</body>
+</html>

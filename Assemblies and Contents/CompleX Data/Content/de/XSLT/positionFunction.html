@@ -1,0 +1,158 @@
+<html>
+<head>
+<title>position()-Funktion</title>
+</head>
+<body bgcolor="#FFFFFF" text="#000000">
+<div id="Beschreibung">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">position()-Funktion</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description">
+Diese Funktion gibt Zahl eine zur&uuml;ck, die der Kontextposition des aktuellen Kontexts entspricht.</td></tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Eingaben</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<p>Keine</p>
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Ausgabe</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<p>Eine Zahl, die der Position des aktuellen Knotens im Bewertungskontext entspricht. </p>
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Definition</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<p>XPath-Abschnitt 4.1, Funktionen auf Knotenmengen</p>
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Beispiele</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<p>Das folgende Beispiel verwendet die Funktion <span class="LITERAL">position()</span>, um die Hintergrundfarbe der Zeilen einer Tabelle zu bestimmen. Die Hintergrundfarben durchschreiten die Optionen <span class="LITERAL">white</span>, <span class="LITERAL">darkgray</span> und <span class="LITERAL">lightgreen</span>. Es wird das folgende XML-Dokument verwendet:</p>
+<span class="PROGRAMLISTING"><pre>
+&lt;?xml version="1.0"?&gt;
+&lt;list&gt;
+  &lt;title&gt;A few of my favorite albums&lt;/title&gt;
+  &lt;listitem&gt;A Love Supreme&lt;/listitem&gt;
+  &lt;listitem&gt;Beat Crazy&lt;/listitem&gt;
+  &lt;listitem&gt;Here Come the Warm Jets&lt;/listitem&gt;
+  &lt;listitem&gt;Kind of Blue&lt;/listitem&gt;
+  &lt;listitem&gt;London Calling&lt;/listitem&gt;
+  &lt;listitem&gt;Remain in Light&lt;/listitem&gt;
+  &lt;listitem&gt;The Joshua Tree&lt;/listitem&gt;
+  &lt;listitem&gt;The Indestructible Beat of Soweto&lt;/listitem&gt;
+&lt;/list&gt;</pre></span>
+<p>Zur Erzeugung des HTML-Dokuments wird das folgende Stylesheet verwendet:</p>
+<span class="PROGRAMLISTING"><pre>
+&lt;?xml version="1.0"?&gt;
+&lt;xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform"&gt;
+
+  &lt;xsl:output method="html"/&gt;
+
+  &lt;xsl:template match="/"&gt;
+    &lt;html&gt;
+      &lt;head&gt;
+        &lt;title&gt;
+          &lt;xsl:value-of select="/list/title"/&gt;
+        &lt;/title&gt;
+      &lt;/head&gt;
+      &lt;body&gt;
+        &lt;h1&gt;
+          &lt;xsl:value-of select="/list/title"/&gt;
+        &lt;/h1&gt;
+        &lt;table border="1"&gt;
+          &lt;xsl:for-each select="/list/listitem"&gt;
+            &lt;xsl:variable name="background-color"&gt;
+              &lt;xsl:choose&gt;
+                &lt;xsl:when test="position() mod 3 = 1"&gt;white&lt;/xsl:when&gt;
+                &lt;xsl:when test="position() mod 3 = 2"&gt;darkgray&lt;/xsl:when&gt;
+                &lt;xsl:otherwise&gt;lightgreen&lt;/xsl:otherwise&gt;
+              &lt;/xsl:choose&gt;
+            &lt;/xsl:variable&gt;
+            &lt;tr bgcolor="{$background-color}"&gt;
+              &lt;td&gt;
+                &lt;b&gt;&lt;xsl:value-of select="."/&gt;&lt;/b&gt;
+              &lt;/td&gt;
+            &lt;/tr&gt;
+          &lt;/xsl:for-each&gt;
+        &lt;/table&gt;
+      &lt;/body&gt;
+    &lt;/html&gt;
+  &lt;/xsl:template&gt;
+
+&lt;/xsl:stylesheet&gt;</pre></span>
+<p>Das Stylesheet erzeugt das folgende Ergebnis:</p>
+<span class="PROGRAMLISTING"><pre>
+&lt;html&gt;
+&lt;head&gt;
+&lt;META http-equiv="Content-Type" content="text/html; charset=UTF-8"&gt;
+&lt;title&gt;A few of my favorite albums&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;h1&gt;A few of my favorite albums&lt;/h1&gt;
+&lt;table border="1"&gt;
+&lt;tr bgcolor="white"&gt;
+&lt;td&gt;&lt;b&gt;A Love Supreme&lt;/b&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr bgcolor="darkgray"&gt;
+&lt;td&gt;&lt;b&gt;Beat Crazy&lt;/b&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr bgcolor="lightgreen"&gt;
+&lt;td&gt;&lt;b&gt;Here Come the Warm Jets&lt;/b&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr bgcolor="white"&gt;
+&lt;td&gt;&lt;b&gt;Kind of Blue&lt;/b&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr bgcolor="darkgray"&gt;
+&lt;td&gt;&lt;b&gt;London Calling&lt;/b&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr bgcolor="lightgreen"&gt;
+&lt;td&gt;&lt;b&gt;Remain in Light&lt;/b&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr bgcolor="white"&gt;
+&lt;td&gt;&lt;b&gt;The Joshua Tree&lt;/b&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr bgcolor="darkgray"&gt;
+&lt;td&gt;&lt;b&gt;The Indestructible Beat of Soweto&lt;/b&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/table&gt;
+&lt;/body&gt;
+&lt;/html&gt;</pre></span>
+<p>Wie das HTML-Dokument in einem Browser angezeigt wird, sehen Sie in <link linkend="xslt-appc-c8">Abbildung C-8</link>.</p>
+<figure id="xslt-appc-c8" label="C-8">
+        <p class="TITLE">HTML-Datei, die Elemente in verschiedenen Hintergrundfarben anzeigt</p>
+        <graphic depth="293" width="413" fileref="figs/xslt.ac08.gif"/></figure>
+</td>
+</tr>
+</table>
+</div>
+</body>
+</html>

@@ -1,0 +1,182 @@
+<html>
+<link rel="stylesheet" href="josh.css">
+<body bgcolor="#FFFFFF">
+
+		<div id="Beschreibung">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">frames</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">2</span> IE <span class="emphasis">3</span> DOM <span class="emphasis">nicht zutreffend</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Eine Sammlung aller <span class="literal">frame</span>-Objekte, die im Fenster oder Frame definiert sind. Nur die Frames auf der ersten Ebene werden dem <span class="literal">frameset</span>-Objekt offen gelegt. Tiefer verschachtelte Frames erfordern eine Suche in den <span class="literal">frames</span>-Sammlungen verschachtelter <span class="literal">frameset</span>-Objekte. Die Objektsammlung enth&auml;lt auch <span class="literal">iframe</span>-Elemente, die im Fenster des Dokuments definiert sind. Beachten Sie, dass das <span class="literal">frames</span>-Objekt in einigen Unterversionen von Netscape 6 nicht wie erwartet funktioniert.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectmodelreference"><span class="title">Objektmodellreferenz</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>[<span class="replaceable">windowRef</span>.]frames</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectspecificproperties"><span class="title">Objektspezifische Eigenschaften</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<table border="1"><tbody><tr><td><span class="literal">length</span></td>
+								</tr>
+							</tbody></table>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectspecificmethods"><span class="title">Objektspezifische Methoden</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<table border="1"><tbody><tr><td><span class="literal">item( )</span></td><td><span class="literal">namedItem( )</span></td>
+								</tr>
+							</tbody></table>
+					</td>
+				</tr>
+			</table>
+		</div><div id="length">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">length</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">2</span> IE <span class="emphasis">3</span> DOM <span class="emphasis">nicht zutreffend</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Schreibgesch&uuml;tzt</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Gibt die Anzahl an untergeordneten Frames zur&uuml;ck, die in dem Frameset definiert sind, dessen Fenster die Referenz startet. Funktioniert in einigen Unterversionen von Netscape 6 nicht.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>var howMany = parent.frames.length;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Eine ganze Zahl. </p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="item( )">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">item( )</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">nicht zutreffend</span> IE <span class="emphasis">4</span>  DOM <span class="emphasis">nicht zutreffend</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">item(<span class="replaceable">index</span>)</p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Gibt ein einzelnes <span class="literal">window</span>-Objekt zur&uuml;ck, das dem mit dem Indexwert in der Quellcodereihenfolge &uuml;bereinstimmenden Element entspricht.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Parameter</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<ul><li><span class="literal"></span>Eine auf Null basierende ganze Zahl.</li></ul>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Zur&uuml;ckgegebener Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p><span class="literal">window</span>-Objekt.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="namedItem( )">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">namedItem( )</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">nicht zutreffend</span> IE <span class="emphasis">6</span>  DOM <span class="emphasis">nicht zutreffend</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">namedItem(<span class="replaceable">IDOrName</span>)</p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Gibt ein einzelnes Objekt oder eine Objektsammlung zur&uuml;ck, das bzw. die dem mit dem Wert der Parameterzeichenfolge &uuml;bereinstimmenden Element entspricht.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Parameter</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<ul><li><span class="literal"></span>Die Zeichenfolge, die denselben Wert wie das <span class="literal">id</span>- oder <span class="literal">name</span>-Attribut des gew&uuml;nschten Elements enth&auml;lt.
+</li></ul>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Zur&uuml;ckgegebener Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Ein Objekt oder eine Objektsammlung (Array). Falls keine &Uuml;bereinstimmung mit den Parametern vorliegt, lautet der zur&uuml;ckgegebene Wert <span class="literal">null</span>.
+</p>
+					</td>
+				</tr>
+			</table>
+		</div>
+
+</body>
+</html>

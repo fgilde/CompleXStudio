@@ -1,0 +1,134 @@
+<html xmlns:un="http://usablenet.com/namespaces/508_rules">
+   <link rel="stylesheet" href="josh.css">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   
+      <title>Detailanzeige f&uuml;r Regel: &ouml;ffentliche Textidentifizierer in DOCTYPE-Anweisungen verwenden</title>
+      <!--
+  508/W3C Accessibility Suite OEM V2 for Macromedia Dreamweaver
+  (C) Copyright 2001-2005 UsableNet Inc. All rights reserved.
+  -->
+   </head>
+   <body bgcolor="#ffffff">
+      <div id="Beschreibung">
+         <table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+            <tr>
+               <td valign="top" nowrap="true" class="name">&ouml;ffentliche Textidentifizierer in DOCTYPE-Anweisungen verwenden</td>
+               <td valign="top" nowrap="true" class="compatibility">&nbsp;</td>
+            </tr>
+            <tr>
+               <td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+            </tr>
+            <tr>
+               <td valign="top" align="right" nowrap="true" colspan="2" class="requirements">WAI / WCAG 1.0 Priorit&auml;t 2 Checkpunkt 3.2</td>
+            </tr>
+            <tr>
+               <td colspan="2" class="clearseparation">&nbsp;</td>
+            </tr>
+            <tr>
+               <td colspan="2" class="clearseparation">&nbsp;</td>
+            </tr>
+            <tr>
+               <td valign="top" colspan="2" class="description"><b>Problembeschreibung</b><br>
+                  
+                  
+                  <p>
+                       Das DOCTYPE-Element fehlt oder ist ung&uuml;ltig.
+                     
+                  </p>
+                  
+                        
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2" class="clearseparation">&nbsp;</td>
+            </tr>
+            <tr>
+               <td colspan="2" class="clearseparation">&nbsp;</td>
+            </tr>
+            <tr>
+               <td valign="top" colspan="2" class="description"><b>Probleml&ouml;sung</b>
+                  
+                  
+                  <p>
+                       Sollte ein DOCTYPE-Element fehlen, f&uuml;gen Sie eines hinzu. Wenn es fehlerhaft ist, korrigieren Sie es. <br>
+                     
+                  </p>
+                  
+                  
+                  <p>
+                     Sie k&ouml;nnen die G&uuml;ltigkeit der DOCTYPE-Deklaration mithilfe eines Validators &uuml;berpr&uuml;fen.
+                     
+                  </p>
+                  
+                  
+                  
+                  
+                  <p>
+                       In der DOCTYPE sollte die verwendete HTML-Sprachversion angegeben werden. So kann HTML 4.01 beispielsweise auf drei unterschiedlichen
+                     Varianten beruhen (also auf drei DTDs). Auf jeden Fall sollte eine der drei folgenden Dokumenttypdeklarationen in einem Dokument
+                     enthalten sein. Der Unterschied der DTDs liegt in den unterst&uuml;tzten Elementen.<br> Um einen DOCTYPE auf einer Seite zu definieren, f&uuml;gen Sie am Anfang des Dokuments unmittelbar vor dem <strong>HTML</strong>-Tag eine der folgenden Anweisungen ein:
+                     <pre>
+  &lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" 
+       "http://www.w3.org/TR/html4/strict.dtd"&gt;
+</pre> 
+                     <pre>
+  &lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" 
+       "http://www.w3.org/TR/html4/loose.dtd"&gt;
+</pre> 
+                     <pre>
+  &lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Frameset//EN" 
+       "http://www.w3.org/TR/html4/frameset.dtd"&gt;
+</pre> 
+                     
+                     Der folgende DOCTYPE gilt ausschlie&szlig;lich f&uuml;r XHTML (es gibt &auml;hnliche DOCTYPES f&uuml;r Transitional- und Frameset-Derivate,  Hinweise
+                     hierzu finden Sie auf der <strong>XHTML 1.0-Seite</strong>
+                     [http://www.w3.org/MarkUp/#xhtml1]
+                      von W3C):
+                     
+                     <pre>
+  &lt;!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"&gt;
+</pre>
+                     </p>
+                  
+                        
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2" class="clearseparation">&nbsp;</td>
+            </tr>
+            <tr>
+               <td colspan="2" class="clearseparation">&nbsp;</td>
+            </tr>
+            <tr>
+               <td valign="top" colspan="2" class="description"><b>Problemerkl&auml;rung</b><br>
+                  
+                  
+                  <p>
+                       Nach den HTML-Standards ist f&uuml;r jedes HTML-Dokument eine Dokumenttypdeklaration erforderlich. Dieser "DOCTYPE" leitet ein
+                     HTML-Dokument ein und gibt die f&uuml;r die Verarbeitung des Dokuments erwartete HTML-Version an.
+                     
+                  </p>
+                  
+                  <p>
+                     Die DOCTYPE-Deklaration bestimmt die Computersprache und die Version, in der das Dokument geschrieben wurde. Anhand dieser
+                     Information k&ouml;nnen die Browser die im Dokument verwendeten Zug&auml;nglichkeitsfunktionen korrekt interpretieren. <br> Diese Anforderung ist ein wesentlicher Aspekt bei der Zug&auml;nglichkeit, da assistive Technologien bei der Verarbeitung des
+                     Dokuments unter Umst&auml;nden auf diese Deklaration angewiesen sind.
+                     
+                  </p>
+                  
+                  <p>
+                     Bei der Verwendung nicht mit HTML erstellter Dokumente (z. B. bei SMIL- oder
+                     SVG-Dokumenten) sollten Sie die entsprechende DOCTYPE-Deklaration dieser Markup-Sprache verwenden, damit gew&auml;hrleistet ist, dass
+                     die Browser nicht versuchen, die Sprache f&auml;lschlicherweise als HTML zu interpretieren.
+                     
+                  </p>
+                  
+                        
+               </td>
+            </tr>
+         </table>
+      </div>
+   </body>
+</html>

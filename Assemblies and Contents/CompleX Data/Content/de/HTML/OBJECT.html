@@ -1,0 +1,1207 @@
+<html>
+<link rel="stylesheet" href="josh.css">
+<body bgcolor="#FFFFFF">
+
+		<div id="Beschreibung">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">&lt;OBJECT&gt;</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">4</span> IE <span class="emphasis">3</span> HTML <span class="emphasis">4</span>&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">&lt;OBJECT&gt;...&lt;/OBJECT&gt;</p>
+					</td><td valign="top" nowrap class="requirements">HTML-End-Tag: Erforderlich&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Das Element <span class="literal">object</span> liefert dem Browser Informationen zum Laden und Darstellen von Datentypen, f&uuml;r die der Browser selbst keine eigene Unterst&uuml;tzung bietet. Wenn der Browser ein externes Programm laden muss (wie ein Java-Applet, ein Plug-In oder eine andere Hilfskomponente), befinden sich die Informationen &uuml;ber den darzustellenden Inhalt im Element <span class="literal">object</span>, seinen Attributen und in den <span class="literal">param</span>-Elementen, die wahlweise im Element <span class="literal">object</span> verschachtelt sein k&ouml;nnen. Obwohl moderne Browser Elemente wie <span class="literal">applet</span> und <span class="literal">embed</span> erkennen, werden alle diese Informationen gem&auml;&szlig; HTML-Spezifikation zunehmend im Element <span class="literal">object</span> kombiniert.</p><p>Die HTML 4-Spezifikation erm&ouml;glicht das Verschachteln von <span class="literal">object</span>-Elementen, damit der Browser Alternativinhalt laden kann, wenn er nicht &uuml;ber die erforderlichen Plug-Ins oder andere Komponenten zur Darstellung von Inhalten verf&uuml;gt. Prinzipiell sollte der Browser in der Lage sein, die verschachtelten <span class="literal">object</span>-Elemente nacheinander zu durchlaufen, bis er ein Element findet, das er verarbeiten kann. Angenommen, das &auml;u&szlig;ere <span class="literal">object</span>-Element soll ein MPEG2-Video laden. Wenn kein entsprechender Player vorhanden ist, sucht der Browser das n&auml;chste verschachtelte <span class="literal">object</span>-Element, in diesem Fall ein JPEG-Bild, das aus dem Video stammt. Handelt es sich nicht um einen grafischen Browser, wird stattdessen einfacher HTML-Code dargestellt. Dieser HTML-Code befindet sich in der Hierarchie der verschachtelten <span class="literal">object</span>-Elemente am weitesten innen (obwohl es sich dabei nicht um ein <span class="literal">object</span>-Element handelt.</p><p>Einzelheiten dazu, welche Attribute f&uuml;r bestimmte Inhaltstypen und Objekte gelten und welche Werte in Frage kommen, finden Sie in der Dokumentation des Objekt- oder Plug-In-Anbieters. In dieser Dokumentation wird auch beschrieben, f&uuml;r welche Browser und Betriebssysteme die Funktionalit&auml;t verf&uuml;gbar ist.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>&lt;OBJECT id="earth" classid="clsid:83A38BF0-B33A-A4FF-C619A82E891D"&gt;&lt;PARAM name="srcStart" value="images/earth0.gif"&gt;&lt;PARAM name="frameCount" value="12"&gt;&lt;PARAM name="loop" value="-1"&lt;PARAM name="fps" value="10"&gt;&lt;/OBJECT&gt;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectmodelreference"><span class="title">Elementspezifische Attribute</span></td>
+</tr><tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+</tr><tr><td>
+        <table border="1">
+<tbody><tr><td><span class="literal">align</span></td><td><span class="literal">alt</span></td><td><span class="literal">archive</span></td><td><span class="literal">border</span></td><td><span class="literal">classid</span></td>
+								</tr>
+								<tr><td><span class="literal">code</span></td><td><span class="literal">codebase</span></td><td><span class="literal">codetype</span></td><td><span class="literal">data</span></td><td><span class="literal">declare</span></td>
+								</tr>
+								<tr><td><span class="literal">height</span></td><td><span class="literal">hspace</span></td><td><span class="literal">name</span></td><td><span class="literal">standby</span></td><td><span class="literal">type</span></td>
+								</tr>
+								<tr><td><span class="literal">usemap</span></td><td><span class="literal">vspace</span></td><td><span class="literal">width</span></td><td></td><td></td>
+								</tr>
+							</tbody></table>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectmodelreference"><span class="title">Elementspezifische Ereignisbehandlungsroutinenattribute</span></td>
+				</tr>
+				<tr>
+					<td><p>Keine.</p>
+					</td>
+				</tr>
+			</table>
+		</div>
+		<div id="accesskey">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">accesskey</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6 (siehe Text)</span> IE <span class="emphasis">4/5</span> HTML <span class="emphasis">4 (siehe Text)</span>&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">accesskey="<span class="replaceable">character</span>"</p>
+					</td><td valign="top" nowrap class="requirements">Optional&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Eine einzelne Buchstabentaste, durch die ein Element (in manchen Browsern) den Fokus erh&auml;lt oder ein Formularsteuerelement bzw. eine Link-Aktion aktiviert wird. Der Browser und das Betriebssystem bestimmen, ob zusammen mit der Buchstabentaste eine Zusatztaste (wie <span class="emphasis">Strg</span>, <span class="emphasis">Alt</span> oder <span class="emphasis">Befehl</span>) gedr&uuml;ckt werden muss, damit der Link aktiviert wird. In IE f&uuml;r Windows ab Version 4 und Netscape 6 muss gleichzeitig die <span class="emphasis">Alt</span>-Taste gedr&uuml;ckt werden, und bei der Buchstabentaste wird nicht zwischen Gro&szlig;- und Kleinschreibung unterschieden. In IE f&uuml;r den Macintosh ab Version 5 und der Macintosh-Version von Netscape 6 funktioniert die Zugriffstaste nur in Verbindung mit der <span class="emphasis">Ctrl</span>-Taste.</p><p>Obwohl das <span class="literal">accesskey</span>-Attribut hier als gemeinsames Attribut aufgef&uuml;hrt ist, wird es streng genommen nicht in allen Implementierungen unterst&uuml;tzt. HTML 4 und Netscape 6 erkennen dieses Attribut nur in Verbindung mit den folgenden Elementen: <span class="literal">a</span>, <span class="literal">area</span>, <span class="literal">button</span>, <span class="literal">input</span>, <span class="literal">label</span>, <span class="literal">legend</span> und <span class="literal">textarea</span>, IE 4 dar&uuml;ber hinaus f&uuml;r <span class="literal">applet</span>, <span class="literal">body</span>, <span class="literal">div</span>, <span class="literal">embed</span>, <span class="literal">isindex</span>, <span class="literal">marquee</span>, <span class="literal">object</span>, <span class="literal">select</span>, <span class="literal">span</span>, <span class="literal">table</span> und <span class="literal">td</span> (nicht jedoch f&uuml;r <span class="literal">label</span> und <span class="literal">legend</span>). IE 5 erkennt dieses Attribut in Verbindung mit allen darstellbaren Elementen, weist in diesem Zusammenhang jedoch eine Besonderheit auf: Au&szlig;er bei <span class="literal">input</span> und anderen formularbezogenen Elementen m&uuml;ssen sie einem Element f&uuml;r IE ab Version 5 au&szlig;erdem ein <span class="literal">tabindex</span>-Attribut mit einem beliebigen Wert zuweisen, damit der Benutzer in der Lage ist, ihm mithilfe der Schnellzugriffstaste den Fokus zu &uuml;bergeben.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>&lt;A href="http://www.megacorp.com/toc.html" accesskey="t"&gt;Table of Contents&lt;/A&gt;&lt;H2 class="subsection" accesskey="2" tabindex="0"&gt;Part Two&lt;/H2&gt;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+				</tr>
+				<tr>
+					<td><p>Ein einzelner Buchstabe des Dokumentsatzes.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Standardwert</span></td>
+				</tr>
+				<tr>
+					<td><p>Keiner.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectmodelreference"><span class="title">Objektmodellreferenz</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>[window.]document.links[i].accessKey[window.]document.anchors[i].accessKey[window.]document.<span class="replaceable">formName</span>.<span class="replaceable">elementName</span>.accessKey[window.]document.forms[i].elements[j].accessKey[window.]document.getElementById(<span class="replaceable">elementID).</span>accessKey</pre>
+						</span></td>
+				</tr>
+			</table>
+		</div>
+		<div id="align">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">align</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">4</span> IE <span class="emphasis">3</span> HTML <span class="emphasis">4</span>&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">align="<span class="replaceable">alignmentConstant</span>"</p>
+					</td><td valign="top" nowrap class="requirements">Optional&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Bestimmt, wie das Rechteck des Elements <span class="literal">object</span> im Verh&auml;ltnis zu dem Inhalt angeordnet wird, der das Element umgibt. Weitere Informationen hierzu finden Sie in den Ausf&uuml;hrung zur Ausrichtung von Elementen in Bezug auf Inhalte au&szlig;erhalb der Elementbox in Abschnitt 8.1.5 weiter vorne in diesem Kapitel.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>&lt;OBJECT ... align="baseline"&gt;&lt;/OBJECT&gt;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+				</tr>
+				<tr>
+					<td><p>Konstante. Siehe Abschnitt 8.1.5. </p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Standardwert</span></td>
+				</tr>
+				<tr>
+					<td><p><span class="literal">bottom (unten)</span></p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectmodelreference"><span class="title">Objektmodellreferenz</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>[window.]document.getElementById(<span class="replaceable">elementID</span>).align</pre>
+						</span></td>
+				</tr>
+			</table>
+		</div><div id="archive">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">archive</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">6</span> HTML <span class="emphasis">4</span>&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">archive="<span class="replaceable">URIList</span>"</p>
+					</td><td valign="top" nowrap class="requirements">Optional&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Eine durch Leerzeichen getrennte Liste mit URIs von Dateien, die das Laden und Ausf&uuml;hren des Elements <span class="literal">object</span> unterst&uuml;tzen. Wenn Sie die Dateien im Attribut <span class="literal">archive</span> explizit angeben, muss der Browser nicht darauf warten, dass die unterst&uuml;tzenden Dateien durch den Inhalt des Elements <span class="literal">object</span> aufgerufen werden. Stattdessen k&ouml;nnen die unterst&uuml;tzenden Dateien zusammen mit dem Hauptinhalt heruntergeladen werden. Das Attribut <span class="literal">archive</span> kann auch URIs enthalten, die dem Attribut <span class="literal">classid</span> oder <span class="literal">data</span> zugewiesen sind; eines dieser beiden Attribute muss jedoch trotzdem auf die URI mit dem Hauptinhalt verweisen. Browser der Version 6 bieten keine weitergehende Funktionalit&auml;t f&uuml;r dieses Attribut.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>&lt;OBJECT ... archive="/images/anim3.gif/images/anim4.gif"&gt;&lt;/OBJECT&gt;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+				</tr>
+				<tr>
+					<td><p>Eine vollst&auml;ndige oder relative URL.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Standardwert</span></td>
+				</tr>
+				<tr>
+					<td><p>Keiner. </p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectmodelreference"><span class="title">Objektmodellreferenz</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>[window.]document.getElementById(<span class="replaceable">elementID</span>).archive</pre>
+						</span></td>
+				</tr>
+			</table>
+		</div><div id="border">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">border</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">6</span> HTML <span class="emphasis">4</span>&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">border="<span class="replaceable">pixels"</span></p>
+					</td><td valign="top" nowrap class="requirements">Optional&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Die St&auml;rke des Rahmens, der das Element <span class="literal">object</span> umgibt. In HTML 4 wird Stylesheet-Rahmen Vorrang vor diesem Attribut einger&auml;umt. Wenn Sie mit dem Element <span class="literal">object</span> ein Bild f&uuml;r eine clientseitige Imagemap laden, k&ouml;nnen Sie das Attribut <span class="literal">border</span> auf Null setzen, um den in IE 5/Mac und Netscape 6 typischen Linkrahmen zu entfernen (siehe <span class="literal">usemap</span> weiter unten in diesem Abschnitt).</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>&lt;OBJECT ... border="4"&gt;&lt;/OBJECT&gt;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+				</tr>
+				<tr>
+					<td><p>Beliebiger ganzzahliger Pixelwert.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Standardwert</span></td>
+				</tr>
+				<tr>
+					<td><p>Keiner. </p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectmodelreference"><span class="title">Objektmodellreferenz</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>[window.]document.getElementById(<span class="replaceable">elementID</span>).bprder</pre>
+						</span></td>
+				</tr>
+			</table>
+		</div><div id="classid">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">classid</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">4</span> IE <span class="emphasis">3</span> HTML <span class="emphasis">4</span>&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">classid="<span class="replaceable">URL</span>"</p>
+					</td><td valign="top" nowrap class="requirements">Optional&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Die URL der Objektimplementierung. Dieses Attribut weist den Browser normalerweise an, ein Programm, ein Applet oder eine Klassendatei f&uuml;r ein Plug-In zu laden. In Internet Explorer kann diese URL auf das Verzeichnis <span class="emphasis">CLSID</span> verweisen, in dem alle IDs der registrierten ActiveX-Steuerelemente (wie beispielsweise DirectAnimation) gespeichert sind. Sie m&uuml;ssen den <span class="literal">classid</span>-Wert beim Anbieter des ActiveX-Steuerelements erfragen (wenn Sie sich auskennen, k&ouml;nnen Sie auch mit <span class="emphasis">Regedit</span> in der Registrierung nachschlagen). In Navigator 4 versucht der Java Archive (JAR) Installation Manager, ein Plug-In von der <span class="literal">classid</span>-URL zu installieren, falls dieses Plug-In f&uuml;r die im Attribut <span class="literal">data</span> angegebenen Daten nicht vorhanden ist. In Zukunft wird dieses Attribut m&ouml;glicherweise eingesetzt, um Java-Applets zu laden (in IE 4 wird dies zurzeit mit dem Attribut <span class="literal">code</span> durchgef&uuml;hrt). Bisher werden Java-Applets jedoch von beiden Browsern bis Version 6 nicht in dieser Weise unterst&uuml;tzt.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>&lt;OBJECT id="earth" classid="clsid:83A38BF0-B33A-A4FF-C619A82E891D"&gt;&lt;/OBJECT&gt;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+				</tr>
+				<tr>
+					<td><p>Eine vollst&auml;ndige oder relative URL.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Standardwert</span></td>
+				</tr>
+				<tr>
+					<td><p>Keiner.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectmodelreference"><span class="title">Objektmodellreferenz</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>[window.]document<span class="replaceable">.elementID</span>.classid</pre>
+						</span></td>
+				</tr>
+			</table>
+		</div><div id="code">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">code</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">nicht zutreffend</span> IE <span class="emphasis">4</span> HTML <span class="emphasis">nicht zutreffend</span>&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">code="<span class="replaceable">fileName.class</span>"</p>
+					</td><td valign="top" nowrap class="requirements">Optional&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Im Internet Explorer sorgt das Attribut <span class="literal">code</span> daf&uuml;r, dass <span class="literal">object</span>-Elemente die gleiche Funktion wie <span class="literal">applet</span>-Elemente erf&uuml;llen k&ouml;nnen, und zwar unter Verwendung der gleichen Attribute. Der Wert des Attributs <span class="literal">code</span> entspricht dem Namen der Java-Applet-Klassendatei. Wenn die Klassendatei sich nicht im gleichen Verzeichnis wie das Dokument befindet, muss der Verzeichnispfad wie auch beim Element <span class="literal">applet</span> dem Attribut <span class="literal">codebase</span> zugewiesen werden. Zur Weitergabe von Parametern an die Applets dienen <span class="literal">param</span>-Elemente, genau wie die in <span class="literal">applet</span>-Elementen verschachtelten <span class="literal">param</span>-Elemente. In IE scheint das Attribut <span class="literal">classid</span> lediglich zur Referenzierung von ActiveX-Steuerelementen verwendet zu werden.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>&lt;OBJECT code="fileReader.class" codebase="classes"&gt;&lt;/OBJECT&gt;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+				</tr>
+				<tr>
+					<td><p>Name der Applet-Klassendatei.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Standardwert</span></td>
+				</tr>
+				<tr>
+					<td><p>Keiner.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectmodelreference"><span class="title">Objektmodellreferenz</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>[window.]document<span class="replaceable">.elementID</span>.code</pre>
+						</span></td>
+				</tr>
+			</table>
+		</div><div id="codebase">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">codebase</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">4</span> IE <span class="emphasis">3</span> HTML <span class="emphasis">4</span>&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">codebase="<span class="replaceable">path</span>"</p>
+					</td><td valign="top" nowrap class="requirements">Optional&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Pfad zum Verzeichnis mit der Klassendatei, die entweder im Attribut <span class="literal">code</span> oder <span class="literal">classid</span> angegeben ist. Das Attribut <span class="literal">codebase</span> enth&auml;lt nur den Verzeichnispfad, nicht jedoch den Namen der Klassendatei. Dieses Attribut kann die vollst&auml;ndige URL des Verzeichnisses enthalten. Versuchen Sie jedoch nicht, auf eine Codebase zuzugreifen, die au&szlig;erhalb der Dom&auml;ne des aktuellen Dokuments liegt.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>&lt;OBJECT code="fileReader.class" codebase="classes"&gt;&lt;/OBJECT&gt;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+				</tr>
+				<tr>
+					<td><p>Pfadname (Gro&szlig;-/Kleinschreibung beachten). Normalerweise ein relativer Pfad zu dem Verzeichnis, in dem sich das aktuelle HTML-Dokument befindet.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Standardwert</span></td>
+				</tr>
+				<tr>
+					<td><p>Keiner.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectmodelreference"><span class="title">Objektmodellreferenz</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>[window.]document.getElementById(<span class="replaceable">elementID</span>).codeBase</pre>
+						</span></td>
+				</tr>
+			</table>
+		</div><div id="codetype">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">codetype</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">3</span> HTML <span class="emphasis">4</span>&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">codetype="<span class="replaceable">MIMEType</span>"</p>
+					</td><td valign="top" nowrap class="requirements">Optional&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Enth&auml;lt Informationen &uuml;ber den Inhaltstyp des Objekts, das im Attribut <span class="literal">classid</span> angegeben ist. Anhand dieser Informationen k&ouml;nnen Browser beispielsweise die Unterst&uuml;tzung f&uuml;r eine Ressource vorbereiten, f&uuml;r die ein Multimedia-Player oder ein Plug-In erforderlich ist. Wenn das Attribut <span class="literal">codetype</span> fehlt, sucht der Browser als N&auml;chstes nach der Einstellung des Attributs <span class="literal">type</span> (obwohl dieses Attribut normalerweise mit dem Inhalt assoziiert ist, der durch die URL im Attribut <span class="literal">data</span> verkn&uuml;pft ist). Sollten beide Attribute fehlen, ermittelt der Browser die Informationen zum Inhaltstyp beim Herunterladen direkt von der Ressource.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>&lt;OBJECT classid="clsid:83A38BF0-B33A-A4FF-C619A82E891D" codetype="application/x-crossword"&gt;&lt;/OBJECT&gt;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+				</tr>
+				<tr>
+					<td><p>MIME-Typ, bei dem es nicht auf die Gro&szlig;-/Kleinschreibung ankommt. Ein Verzeichnis der registrierten MIME-Typen finden Sie unter ftp://ftp.isi.edu/in-notes/iana/assignments/media-types/.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Standardwert</span></td>
+				</tr>
+				<tr>
+					<td><p>Keiner.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectmodelreference"><span class="title">Objektmodellreferenz</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>[window.]document.getElementById(<span class="replaceable">elementID</span>).codeType</pre>
+						</span></td>
+				</tr>
+			</table>
+		</div><div id="data">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">data</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">4</span> IE <span class="emphasis">3</span> HTML <span class="emphasis">4</span>&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">data="<span class="replaceable">URL</span>"</p>
+					</td><td valign="top" nowrap class="requirements">Optional&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Die URL einer Datei, die Daten f&uuml;r das Element <span class="literal">object</span> enth&auml;lt (nicht das Objekt selbst). Bei Daten, deren Inhalt mit einem beliebigen kompatiblen Objekt oder Plug-In ge&ouml;ffnet (und angezeigt oder wiedergegeben) werden kann, sind in der Regel die Attribute <span class="literal">data</span> und <span class="literal">type</span> ausreichend, um das Plug-In zu starten und den Inhalt zu laden. Ist f&uuml;r den Inhalt dagegen ein bestimmtes Plug-In oder ActiveX-Steuerelement erforderlich, sollten Sie zus&auml;tzlich das Attribut <span class="literal">classid</span> angeben und damit auf die Objektimplementierung verweisen. In diesem Fall k&ouml;nnen Sie den Inhaltstyp mit dem Attribut <span class="literal">codetype</span> oder <span class="literal">type</span> angeben. Relative URLs beziehen sich auf das Attribut <span class="literal">codebase</span>, falls vorhanden. Andernfalls ist die URL relativ zur URL des Dokuments.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>&lt;OBJECT data="proddemo.mpeg" type="application/mpeg"&gt;&lt;/OBJECT&gt;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+				</tr>
+				<tr>
+					<td><p>Eine vollst&auml;ndige oder relative URL.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Standardwert</span></td>
+				</tr>
+				<tr>
+					<td><p>Keiner.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectmodelreference"><span class="title">Objektmodellreferenz</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>[window.]document.getElementById(<span class="replaceable">elementID</span>).data</pre>
+						</span></td>
+				</tr>
+			</table>
+		</div><div id="declare">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">declare</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">6</span> HTML <span class="emphasis">4</span>&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">declare</p>
+					</td><td valign="top" nowrap class="requirements">Optional&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Das Attribut <span class="literal">declare</span> weist den Browser an, das aktuelle <span class="literal">object</span>-Element lediglich als Deklaration zu interpretieren, ohne das Objekt dabei zu instanziieren. Der Browser kann diese Gelegenheit nutzen, um im Voraus Daten zwischenzuspeichern, die das gegenw&auml;rtig geladene oder ausgef&uuml;hrte Objekt nicht ben&ouml;tigen. Das Objekt wird durch ein anderes <span class="literal">object</span>-Element gestartet, bei dem die Attribute <span class="literal">classid</span> und/oder <span class="literal">data</span> die gleichen Werte haben, das aber nicht &uuml;ber das Attribut <span class="literal">declare</span> verf&uuml;gt. Browser der Version 6 bieten keine weitergehende Funktionalit&auml;t f&uuml;r dieses Attribut.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>&lt;OBJECT classid="clsid:83A38BF0-B33A-A4FF-C619A82E891D" declare&gt;&lt;/OBJECT&gt;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+				</tr>
+				<tr>
+					<td><p>Ist dieses Attribut vorhanden, wird sein Wert auf <span class="literal">true</span> eingestellt.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Standardwert</span></td>
+				</tr>
+				<tr>
+					<td><p><span class="literal">false</span></p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectmodelreference"><span class="title">Objektmodellreferenz</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>[window.]document.getElementById(<span class="replaceable">elementID</span>).declare</pre>
+						</span></td>
+				</tr>
+			</table>
+		</div><div id="height, width">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">height, width</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">4</span> IE <span class="emphasis">3</span> HTML <span class="emphasis">4</span>&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">height="<span class="replaceable">length</span>" width="<span class="replaceable">length</span>"</p>
+					</td><td valign="top" nowrap class="requirements">Optional&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Die Werte der Attribute <span class="literal">height</span> und <span class="literal">width</span> bestimmen, wie viel Platz ein eingebettetes Objekt (oder das zugeh&ouml;rige Plug-In-Kontrollfeld) im Dokument einnimmt. In einigen Browserversionen brauchen Sie diese Attribute eventuell nicht anzugeben. In diesem Fall bestimmt das Design der Benutzeroberfl&auml;che des Plug-Ins die H&ouml;he und Breite des sichtbaren Rechtecks. Es empfiehlt sich, die Abmessungen der Plug-In-Kontrollfelder oder der Daten (wenn es sich um Bilder handelt) nach M&ouml;glichkeit genau anzugeben (die Kontrollfelder sind von Browser zu Browser und selbst bei verschiedenen Plug-Ins f&uuml;r den gleichen Browser unterschiedlich). In einigen F&auml;llen wird das Objekt eventuell nicht angezeigt, wenn Sie keinen ausreichenden Wert f&uuml;r die H&ouml;he auf der Seite angeben. Dies ist beispielsweise bei Navigator 4 f&uuml;r den Macintosh der Fall. Wenn die angegebenen Werte die Gr&ouml;&szlig;e des Objekts oder des zugeh&ouml;rigen Kontrollfelds &uuml;bersteigen, reserviert der Browser den resultierenden Leerraum auf der Seite. Dies kann das geplante Seitenlayout beeintr&auml;chtigen.</p><p>Wenn ein Objekt skriptf&auml;hig ist und sein Kontrollfeld nicht erscheinen soll, k&ouml;nnen Sie seine Abmessungen auf 0 oder 1 setzen. Stellen Sie das Tag an das Ende des Dokuments.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>&lt;OBJECT data="blues.aif" height="150" width="250"&gt;&lt;/OBJECT&gt;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+				</tr>
+				<tr>
+					<td><p>Positive Integerwerte (wahlweise in Anf&uuml;hrungszeichen) oder Prozents&auml;tze (in Anf&uuml;hrungszeichen).</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Standardwert</span></td>
+				</tr>
+				<tr>
+					<td><p>Keiner.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectmodelreference"><span class="title">Objektmodellreferenz</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>[window.]document.getElementById(<span class="replaceable">elementID</span>).height[window.]document.getElementById(<span class="replaceable">elementID</span>).width</pre>
+						</span></td>
+				</tr>
+			</table>
+		</div><div id="hspace, vspace">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">hspace, vspace</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">3</span> HTML <span class="emphasis">4</span>&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">hspace="<span class="replaceable">pixelCount"</span> vspace="<span class="replaceable">pixelCount"</span></p>
+					</td><td valign="top" nowrap class="requirements">Optional&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Ein aus Leerraum bestehender Rand, der den visuellen Inhalt im Rechteck des Elements <span class="literal">object</span> umgibt. <span class="literal">hspace</span> definiert den Rand auf der rechten und linken Seite des Rechtecks, <span class="literal">vspace</span> den Rand oben und unten.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>&lt;OBJECT data="blues.aif" height="150" width="250" vspace="10" hspace="10"&gt;&lt;/OBJECT&gt;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+				</tr>
+				<tr>
+					<td><p>Integerwert, der die Randbreite an den jeweiligen Seiten des Rechtecks f&uuml;r das <span class="literal">object</span>-Element in Pixel angibt.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Standardwert</span></td>
+				</tr>
+				<tr>
+					<td><p><span class="literal">0</span></p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectmodelreference"><span class="title">Objektmodellreferenz</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>[window.]document.getElementById(<span class="replaceable">elementID</span>).hspace[window.]document.getElementById(<span class="replaceable">elementID</span>).vspace</pre>
+						</span></td>
+				</tr>
+			</table>
+		</div>
+		<div id="lang">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">lang</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">3</span> IE <span class="emphasis">4</span> HTML <span class="emphasis">4</span>&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">lang="<span class="replaceable">languageCode</span>"</p>
+					</td><td valign="top" nowrap class="requirements">Optional&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Die f&uuml;r die Attributwerte und Inhalte des Elements verwendete Sprache. Mithilfe dieser Informationen ist der Browser besser in der Lage, bestimmte Details wie Ligaturen (sofern von der betreffenden Schrift unterst&uuml;tzt oder in der geschriebenen Sprache erforderlich), Anf&uuml;hrungszeichen und Worttrennungen korrekt darzustellen. Andere Anwendungen und Suchmaschinen k&ouml;nnen anhand dieser Informationen W&ouml;rterb&uuml;cher f&uuml;r die Rechtschreibpr&uuml;fung ausw&auml;hlen und Indizes erstellen.
+</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>&lt;SPAN lang="de"&gt;Deutsche Bundesbahn&lt;/SPAN&gt;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+				</tr>
+				<tr>
+					<td><p>Sprachcode, bei dem nicht zwischen Gro&szlig;- und Kleinschreibung unterschieden wird.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Standardwert</span></td>
+				</tr>
+				<tr>
+					<td><p>Vorgabe des Browsers.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectmodelreference"><span class="title">Objektmodellreferenz</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>[window.]document.getElementById(<span class="replaceable">elementID).</span>lang</pre>
+						</span></td>
+				</tr>
+			</table>
+		</div>
+		<div id="name">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">name</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">6</span> HTML <span class="emphasis">4</span>&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">name="<span class="replaceable">elementIdentifier</span>"</p>
+					</td><td valign="top" nowrap class="requirements">Optional&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Die HTML 4-Spezifikation sieht das Attribut <span class="literal">name</span> des <span class="literal">object</span>-Elements f&uuml;r F&auml;lle vor, in denen das Objekt Teil eines Formulars ist, das an den Server &uuml;bermittelt wird. Das Attribut <span class="literal">name</span> erf&uuml;llt hier den gleichen Zweck wie das Attribut <span class="literal">name</span> des <span class="literal">input</span>-Elements: Es dient als Bezeichnung f&uuml;r an den Server geschickte Daten. Wenn der Code, der in das Element <span class="literal">object</span> geladen wird, &uuml;ber ein HTML-Formular &uuml;bermittelt werden soll, muss er so programmiert werden, dass ein Wert zur&uuml;ckgegeben wird. Alle Mainstream-Browser bis einschlie&szlig;lich Version 6 behaupten, dieses Attribut aus Kompatibilit&auml;tsgr&uuml;nden zu unterst&uuml;tzen, sprechen aber nicht auf seinen Wert an. Zur Zuweisung eines Bezeichners, der von Skripts zur Referenzierung des Objekts verwendet werden kann, sollten Sie das Attribut <span class="literal">id</span> verwenden.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>&lt;OBJECT name="embedded" classid="clsid:83A38BF0-B33A-A4FF-C619A82E891D"height="150" width="250"&gt;&lt;/OBJECT&gt;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+				</tr>
+				<tr>
+					<td><p>Bezeichner (Gro&szlig;-/Kleinschreibung beachten).</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Standardwert</span></td>
+				</tr>
+				<tr>
+					<td><p>Keiner.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectmodelreference"><span class="title">Objektmodellreferenz</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>[window.]document.getElementById(<span class="replaceable">elementID</span>).name</pre>
+						</span></td>
+				</tr>
+			</table>
+		</div><div id="standby">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">standby</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">6</span> HTML <span class="emphasis">4</span>&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">standby="<span class="replaceable">HTMLText</span>"</p>
+					</td><td valign="top" nowrap class="requirements">Optional&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>HTML-Inhalt, der angezeigt werden soll, w&auml;hrend das <span class="literal">object</span> geladen wird. Dieses Attribut ist in Browsern der Version 6 noch nicht implementiert (funktioniert aber in IE 5/Mac). Der Meldungstext soll vermutlich in dem Rechteck angezeigt werden, das f&uuml;r das Element <span class="literal">object</span> vorgesehen ist. Dies ist mit der <span class="literal">alt</span>-Meldung vergleichbar, die beim Laden eines Bildes im Bereich f&uuml;r das Element <span class="literal">img</span> angezeigt wird.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>&lt;OBJECT classid="clsid:83A38BF0-B33A-A4FF-C619A82E891D"height="150" width="250" standby="Loading movie..."&gt;&lt;/OBJECT&gt;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+				</tr>
+				<tr>
+					<td><p>Beliebiger HTML-Inhalt.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Standardwert</span></td>
+				</tr>
+				<tr>
+					<td><p>Keiner. </p>
+					</td>
+				</tr>
+			</table>
+		</div>
+		<div id="tabindex">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">tabindex</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">4</span> HTML <span class="emphasis">4</span>&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">tabindex="<span class="replaceable">integer</span>"</p>
+					</td><td valign="top" nowrap class="requirements">Optional&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Eine Zahl, die die Anordnung dieses Elements innerhalb der Tabulatorreihenfolge aller aktivierbaren Elemente im Dokument angibt. F&uuml;r die Tabulatorreihenfolge gelten sehr strenge Regeln. Elemente, deren <span class="literal">tabindex</span>-Eigenschaften Werte (nicht Null) zugewiesen sind, befinden sich in der Reihenfolge an erster Stelle, wenn ein Benutzer die Tabulatortaste auf einer Seite verwendet. Zun&auml;chst wird der Fokus an das Element mit dem niedrigsten <span class="literal">tabindex</span>-Wert und dann jeweils an das Element mit dem n&auml;chsth&ouml;heren Wert &uuml;bergeben, bis das Element mit dem h&ouml;chsten Wert erreicht ist. Hierbei spielt die Position des jeweiligen Elements in der Seite oder im Dokument keine Rolle. Wenn zwei Elemente denselben <span class="literal">tabindex</span>-Wert aufweisen, erhalten sie den Fokus in der Reihenfolge, in der sie im Dokument enthalten sind. Anschlie&szlig;end folgen all diejenigen Elemente, die entweder das Attribut <span class="literal">tabindex</span> nicht unterst&uuml;tzen oder bei denen dieses Attribut auf Null gesetzt ist. Diese Elemente werden in der Reihenfolge aktiviert, in der sie im Dokument angeordnet sind. Beachten Sie, dass die Tabulatorreihenfolge bei einem erneuten Laden der aktuellen Seite nicht notwendigerweise zur&uuml;ckgesetzt wird. Daher ist die Steuerung der Tabulatorreihenfolge vor allem dann sinnvoll, wenn die logische Abfolge Ihrer aktivierbaren Elemente nicht mit ihrer Quellcodereihenfolge &uuml;bereinstimmt, der Benutzer also beispielsweise in der Lage sein soll, die Felder einer Tabellenspalte der Reihe nach zu aktivieren anstatt zeilenweise von Feld zu Feld zu springen.</p><p>Bei HTML 4 und Netscape 6 ist das <span class="literal">tabindex</span>-Attribut auf folgende Elemente beschr&auml;nkt: <span class="literal">a</span>, <span class="literal">area</span>, <span class="literal">button</span>, <span class="literal">input</span>, <span class="literal">object</span>, <span class="literal">select</span> und <span class="literal">textarea</span>. IE 4 unterst&uuml;tzt es dar&uuml;ber hinaus f&uuml;r die Elemente <span class="literal">applet</span>, <span class="literal">body</span>, <span class="literal">div</span>, <span class="literal">embed</span>, <span class="literal">isindex</span>, <span class="literal">marquee</span>, <span class="literal">span</span>, <span class="literal">table</span> und <span class="literal">td</span>. IE 5 erkennt dieses Attribut in Verbindung mit allen darstellbaren Elementen. Ein negativer Wert entfernt ein Element (nur in IE) vollst&auml;ndig aus der Tabulatorreihenfolge.</p><p>Da Hyperlinks und Anker in der Mac-Version von IE 4 nicht &uuml;ber die Tabulatortaste zu erreichen sind, wird der <span class="literal">tabindex</span> bei <span class="literal">a</span>-Elementen in dieser Version ignoriert.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>&lt;A href="chapter3.html" tabindex="3"&gt;Chapter 3&lt;/A&gt;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+				</tr>
+				<tr>
+					<td><p>Eine ganze Zahl zwischen 0 und 32767. In IE bewirkt das Einstellen des <span class="literal">tabindex</span>-Attributs auf einen negativen Wert, dass das entsprechende Element in der Tabulatorreihenfolge &uuml;bersprungen wird.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Standardwert</span></td>
+				</tr>
+				<tr>
+					<td><p>Keiner.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectmodelreference"><span class="title">Objektmodellreferenz</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>[window.]document.getElementById(<span class="replaceable">elementID).</span>tabIndex</pre>
+						</span></td>
+				</tr>
+			</table>
+		</div>
+		<div id="type">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">type</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">4</span> IE <span class="emphasis">3</span> HTML <span class="emphasis">4</span>&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">type="<span class="replaceable">MIMEType</span>"</p>
+					</td><td valign="top" nowrap class="requirements">Erforderlich&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Enth&auml;lt Informationen &uuml;ber den Inhaltstyp der Daten, die vom Attribut <span class="literal">data</span> referenziert werden. Anhand dieser Informationen k&ouml;nnen Browser beispielsweise die Unterst&uuml;tzung f&uuml;r eine Ressource vorbereiten, f&uuml;r die ein Multimedia-Player oder ein Plug-In erforderlich ist. Das Element <span class="literal">data</span> versucht zun&auml;chst, diese Informationen anhand des Attributs <span class="literal">codetype</span> zu ermitteln. Wenn das Attribut <span class="literal">codetype</span> fehlt, sucht der Browser als N&auml;chstes nach dem Attribut <span class="literal">type</span>. Sollten beide Attribute fehlen, ermittelt der Browser die Informationen zum Inhaltstyp beim Herunterladen direkt von der Ressource. Um sicherzugehen, sollten Sie f&uuml;r Bilddaten immer einen MIME-Typ angeben (z.&#160;B. <span class="literal">image/jpeg</span> oder <span class="literal">image/gif</span>).</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>&lt;OBJECT data="movies/prodDemo.mpeg" type="application/mpeg"&gt;&lt;/OBJECT&gt;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+				</tr>
+				<tr>
+					<td><p>MIME-Typ, bei dem es nicht auf die Gro&szlig;-/Kleinschreibung ankommt. Ein Verzeichnis der registrierten MIME-Typen finden Sie unter ftp://ftp.isi.edu/in-notes/iana/assignments/media-types/.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Standardwert</span></td>
+				</tr>
+				<tr>
+					<td><p>Keiner.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectmodelreference"><span class="title">Objektmodellreferenz</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>[window.]document.getElementById(<span class="replaceable">elementID</span>).type</pre>
+						</span></td>
+				</tr>
+			</table>
+		</div><div id="usemap">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">usemap</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">6</span> HTML <span class="emphasis">4</span>&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">usemap="<span class="replaceable">mapURL</span>"</p>
+					</td><td valign="top" nowrap class="requirements">Optional&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>In der HTML 4-Spezifikation ist das Attribut <span class="literal">usemap</span> f&uuml;r ein <span class="literal">object</span>-Element aufgelistet, damit das Element ein Bild laden kann, das sich als Imagemap verwenden l&auml;sst. Diese Funktionalit&auml;t ist in Browsern der Version 6 (und in IE 5/Mac) vorhanden.</p><p>Ordnen Sie dem Attribut <span class="literal">data</span> die URI des Bildes und der Eigenschaft <span class="literal">type</span> einen MIME-Typ f&uuml;r das Bild zu. Erstellen Sie ein separates Map-Element mit einem oder mehreren verschachtelten <span class="literal">area</span>-Elementen, und weisen Sie den Bezeichner <span class="literal">name</span> des <span class="literal">map</span>-Elements dem Attribut <span class="literal">usemap</span> des <span class="literal">object</span>-Elements zu. IE/Windows f&uuml;llt das Bild auf und f&uuml;gt Bildlaufleisten hinzu, was die browser&uuml;bergreifende Kompatibilit&auml;t u.&#160;U. beeintr&auml;chtigt. In Netscape 6 und IE 5/Mac wird die traditionelle clientseitige Imagemap-Funktionalit&auml;t durch das <span class="literal">object</span>-Element dupliziert. In diesen Browsern erscheint au&szlig;erdem der typische Linkrahmen um das Bild, es sei denn, Sie setzen das Attribut <span class="literal">border</span> auf Null.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>&lt;OBJECT data="navbar.jpg" type="image/jpeg" alt="Navigation Bar" usemap="#navbarMap" border="0"&gt;&lt;/OBJECT&gt;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+				</tr>
+				<tr>
+					<td><p>Siehe Attribut <span class="literal">usemap</span> des Elements <span class="literal">img</span>.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Standardwert</span></td>
+				</tr>
+				<tr>
+					<td><p>Keiner.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectmodelreference"><span class="title">Objektmodellreferenz</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>[window.]document.getElementById(<span class="replaceable">elementID</span>).useMap</pre>
+						</span></td>
+				</tr>
+			</table>
+		</div><div id="vspace">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">vspace</td><td valign="top" nowrap class="compatibility">&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Siehe hspace.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="width">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">width</td><td valign="top" nowrap class="compatibility">&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Siehe height. </p>
+					</td>
+				</tr>
+			</table>
+		</div>
+</body>
+</html>

@@ -1,0 +1,106 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{199356EB-CE62-4481-A0BD-B651E944AEE7}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CompleX_UnitTesting</RootNamespace>
+    <AssemblyName>CompleX UnitTesting</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation />
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="CoreTest.cs" />
+    <Compile Include="TagTest.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="AuthoringTests.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CompleX Dialogs\CompleX Presentation Controls.csproj">
+      <Project>{A01B3D7A-5CCC-4EA8-B1A3-8FE4EB508DC0}</Project>
+      <Name>CompleX Presentation Controls</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CompleX Executers\CompleX Executers.csproj">
+      <Project>{E76504A8-DC01-4799-8999-8B81F9988391}</Project>
+      <Name>CompleX Executers</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Complex Designers\Complex Designers.csproj">
+      <Project>{55A99D0B-C49E-462B-AA0E-63C547B460E0}</Project>
+      <Name>Complex Designers</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CompleX Library\CompleX Library.csproj">
+      <Project>{268EA5A6-4530-4550-B90D-0CB13834266A}</Project>
+      <Name>CompleX Library</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CompleX Scripting\CompleX.Scripting.csproj">
+      <Project>{0F1D1D69-7FBF-45AA-AB3C-FBC6EBCFE5E5}</Project>
+      <Name>CompleX.Scripting</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CompleX Types\CompleX Types.csproj">
+      <Project>{A6AC02F5-2519-418D-AC9B-0D750CFED944}</Project>
+      <Name>CompleX Types</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CompleX\CompleX Editor.csproj">
+      <Project>{01AACE3D-EA5F-4FC6-A8E1-F3AC880FB4CD}</Project>
+      <Name>CompleX Editor</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,1404 @@
+<html>
+<head>
+
+
+<title>Dictionary-Objekt</title>
+</head>
+<body bgcolor="#FFFFFF" text="#000000">
+<div id="Beschreibung">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">Dictionary-Objekt</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Erstellbar</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+<p>Ja</p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Bibliothek</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+<p>Microsoft Scripting Runtime</p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Beschreibung</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+<p>Das Dictionary-Objekt &auml;hnelt dem Collection-Objekt, basiert jedoch ungef&auml;hr auf dem assoziativen Perl-Array. Genau wie ein Array oder ein Collection-Objekt enth&auml;lt das Dictionary-Objekt so genannte <em>Elemente</em> oder <em>Mitglieder</em>, die wiederum Daten enthalten. Ein Dictionary-Objekt kann beliebige Daten enthalten, auch Objekte und andere Dictionary-Objekte. Zum Zugriff auf den Wert dieser Dictionary-Elemente verwenden Sie eindeutige <em>Schl&uuml;ssel</em> (oder benannte Werte), die mit den Daten gespeichert werden. Dies unterscheidet sich von der Verwendung der Ordinalposition des Elements in einem Array. Deshalb eignet sich ein Dictionary-Objekt ideal f&uuml;r den Zugriff auf Daten, die mit einem eindeutigen benannten Wert verkn&uuml;pft sind. 
+</p>
+
+<p>Sie k&ouml;nnen auf jedes in einem Dictionary-Objekt gespeicherte Element zugreifen, indem Sie das Konstrukt <span class="LITERAL">For</span> <span class="LITERAL">Each ...Next</span> verwenden. Es wird jedoch keine Variante mit dem im Dictionary-Objekt gespeicherten Datenwert zur&uuml;ckgegeben, sondern eine Variante mit dem Schl&uuml;ssel, der dem Mitglied zugeordnet ist. Sie m&uuml;ssen diesen Schl&uuml;ssel dann an die Methode Item &uuml;bergeben, um das Mitglied abzurufen, wie im folgenden Beispiel gezeigt:
+</p>
+
+<span class="PROGRAMLISTING"><pre>Dim vKey 
+Dim sItem, sMsg 
+Dim oDict 
+    
+Set oDict =  CreateObject(&quot;Scripting.Dictionary&quot;)
+oDict.Add &quot;One&quot;, &quot;Engine&quot;
+oDict.Add &quot;Two&quot;, &quot;Wheel&quot;
+oDict.Add &quot;Three&quot;, &quot;Tire&quot;
+oDict.Add &quot;Four&quot;, &quot;Spanner&quot;
+        
+For Each vKey In oDict
+   sItem = oDict.Item(vKey)
+   sMsg = sMsg &amp; sItem &amp; vbCrLf
+Next
+   
+MsgBox sMsg</pre></span>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Eigenschaften des Dictionary-Objekts</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Das Dictionary-Objekt hat die folgenden vier Eigenschaften:</p>
+
+<table border="1">
+
+
+
+<thead>
+<tr valign="top">
+<td>
+<p>Eigenschaft</p>
+</td>
+<td>
+<p>Beschreibung</p>
+</td>
+</tr>
+</thead>
+<tbody>
+<tr valign="top">
+<td>
+<p>CompareMode</p>
+</td>
+<td>
+<p>Bestimmt die Reihenfolge der Textvergleiche in der Eigenschaft Item</p>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<p>Count</p>
+</td>
+<td>
+<p>Gibt die Gesamtanzahl der Elemente im Dictionary an</p>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<p>Item</p>
+</td>
+<td>
+<p>Bewirkt das Einstellen oder Abrufen eines bestimmten Datenelements im Dictionary</p>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<p>Key</p>
+</td>
+<td>
+<p>Benennt einen vorhandenen Schl&uuml;ssel um</p>
+</td>
+</tr>
+</tbody>
+
+</table>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Methoden des Dictionary-Objekts</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<p>Das Dictionary-Objekt unterst&uuml;tzt die folgenden f&uuml;nf Methoden:</p>
+
+<table border="1">
+
+
+
+<thead>
+<tr valign="top">
+<td>
+<p>Methode</p>
+</td>
+<td>
+<p>Beschreibung</p>
+</td>
+</tr>
+</thead>
+<tbody>
+<tr valign="top">
+<td>
+<p>Add</p>
+</td>
+<td>
+<p>F&uuml;gt dem Dictionary ein Element und den zugeh&ouml;rigen Schl&uuml;ssel hinzu</p>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<p>Exists</p>
+</td>
+<td>
+<p>Bestimmt, ob ein bestimmter Schl&uuml;ssel im Dictionary vorhanden ist</p>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<p>Keys</p>
+</td>
+<td>
+<p>Gibt alle Schl&uuml;ssel im Dictionary zur&uuml;ck</p>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<p>Remove</p>
+</td>
+<td>
+<p>Entfernt ein Element aus dem Dictionary</p>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<p>Remove All</p>
+</td>
+<td>
+<p>Entfernt alle Daten aus dem Dictionary</p>
+</td>
+</tr>
+</tbody>
+
+</table>
+
+</td>
+</tr>
+</table>
+</div>
+<div id="DictionaryAddMethod">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+Methode Dictionary.Add</td>
+<td class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2">&nbsp;</td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="DESCRIPTIONTITLE">Syntax</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+<span class="PROGRAMLISTING"><pre><var class="replaceable">dictionaryobject</var>.Add <var class="replaceable">key</var>, <var class="replaceable">item</var></pre></span>
+
+<dl>
+<dt><var class="replaceable">dictionaryobject</var></dt>
+<dd>
+<p>Verwendung: Erforderlich</p>
+<p>Datentyp: Dictionary-Objekt</p>
+
+<p>Ein Verweis auf ein Dictionary-Objekt.</p>
+
+</dd>
+<dt><var class="replaceable">key</var></dt>
+<dd>
+<p>Verwendung: Erforderlich</p>
+<p>Datentyp: Beliebig</p>
+
+<p>Ein Schl&uuml;sselwert, der im Dictionary-Objekt nur einmal vorkommt.</p>
+
+</dd>
+<dt><var class="replaceable">item</var></dt>
+<dd>
+<p>Verwendung: Erforderlich</p>
+<p>Datentyp: Beliebig</p>
+
+<p>Das Element, das dem Dictionary hinzugef&uuml;gt werden soll.</p>
+</dd>
+
+</dl>
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="DESCRIPTIONTITLE">Beschreibung</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+<p>F&uuml;gt dem angegebenen Dictionary-Objekt einen Schl&uuml;ssel und das zugeh&ouml;rige Element hinzu.</p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="DESCRIPTIONTITLE">Wichtige Regeln</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+<ul><li>
+<p>Wenn der Schl&uuml;ssel nicht eindeutig ist, wird der Laufzeitfehler 457 ausgegeben. In dieser Fehlermeldung werden Sie darauf hingewiesen, dass der Schl&uuml;ssel bereits mit einem Element dieser Kollektion verkn&uuml;pft ist.
+</p>
+</li><li>
+<p><var class="replaceable">item</var> kann einen beliebigen Datentyp haben, auch Objekte und andere Dictionary-Objekte.
+</p>
+</li></ul>
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="DESCRIPTIONTITLE">Beispiel</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>In diesem Beispiel wird ein Dictionary-Objekt verwendet, um die Abk&uuml;rzungen und vollst&auml;ndigen Namen von US-Bundesstaaten zu speichern.
+</p>
+
+<span class="PROGRAMLISTING"><pre>Dim StateCode, StateName
+Dim StateDict
+Dim Key
+
+Set StateDict = CreateObject(&quot;Scripting.Dictionary&quot;)
+
+StateCode = &quot;CA&quot;
+StateName = &quot;California&quot;
+StateDict.Add StateCode, StateName
+
+StateCode = &quot;NY&quot;
+StateName = &quot;New York&quot;
+StateDict.Add StateCode, StateName
+
+StateCode = &quot;MI&quot;
+StateName = &quot;Michigan&quot;
+StateDict.Add StateCode, StateName
+
+Key = &quot;NY&quot;
+MsgBox StateDict.Item(Key)</pre></span>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="DESCRIPTIONTITLE">Tipps zur Programmierung</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+<ul><li>
+<p>Die Reihenfolge der Mitglieder in einem Dictionary-Objekt ist offiziell nicht definiert. Deshalb ist es nicht m&ouml;glich, die Position von einzelnen Mitgliedern zu steuern oder einzelne Mitglieder auf Grundlage ihrer Position im Dictionary-Objekt abzurufen. Ihr Code sollte daher keine Annahmen in Bezug auf die Position individueller Elemente in Dictionary-Objekten enthalten.
+</p>
+</li><li>
+<p>Nachdem Sie einen Schl&uuml;ssel und das zugeh&ouml;rige Datenelement hinzugef&uuml;gt haben, k&ouml;nnen Sie den Schl&uuml;ssel mit der Nur-Schreiben-Eigenschaft Key &auml;ndern.
+</p>
+</li><li>
+<p>Verwenden Sie das Dictionary-Objekt zum Speichern von Tabellen und besonders zum Speichern von einzelnen Datenelementen, die logisch &uuml;ber einen Schl&uuml;sselwert abgerufen werden k&ouml;nnen.
+</p>
+</li><li>
+<p>Das Dictionary-Objekt eignet sich nicht zum Speichern von Datens&auml;tzen mit mehreren Feldern. F&uuml;r solche F&auml;lle sind Klassen besser geeignet. Normalerweise speichern Sie einen Datensatz, indem Sie dem Dictionary ein Array hinzuf&uuml;gen, das die Feldwerte des Datensatzes darstellt. Das Zuweisen von Arrays zu Elementen im Dictionary-Objekt ist jedoch keine geeignete Programmiermethode, da einzelne Elemente des Arrays nicht mehr direkt bearbeitet werden k&ouml;nnen, nachdem sie dem Dictionary hinzugef&uuml;gt wurden.
+</p>
+</li></ul>
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="DESCRIPTIONTITLE">Siehe auch</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+<p><link linkend="ch10-38906">Eigenschaft Dictionary.Key</link></p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+<div id="DictionaryCompareModeProperty">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+Eigenschaft Dictionary.CompareMode</td>
+<td class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2">&nbsp;</td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="DESCRIPTIONTITLE">Datentyp</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Long</p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="DESCRIPTIONTITLE">Beschreibung</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+<p>Bewirkt das Einstellen oder die R&uuml;ckgabe des Modus, mit dem die Schl&uuml;ssel in einem Dictionary-Objekt verglichen werden.
+</p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="DESCRIPTIONTITLE">Wichtige Regeln</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+<ul><li>
+<p>CompareMode kann nur f&uuml;r ein Dictionary festgelegt werden, das keine Daten enth&auml;lt.
+</p>
+</li>
+<li>
+<p>Die Eigenschaft CompareMode kann einen der beiden folgenden Werte haben:</p>
+
+<dl>
+<dt>0, Bin&auml;r</dt>
+<dd>
+<p>Dies ist der Standardwert. Die Schl&uuml;ssel werden Byte f&uuml;r Byte mit einem String verglichen, um festzustellen, ob eine &Uuml;bereinstimmung gegeben ist.
+</p>
+</dd>
+
+
+<dt>1, Text</dt>
+<dd>
+<p>Beim Vergleich der Schl&uuml;ssel mit einem String wird die Gro&szlig;- und Kleinschreibung nicht ber&uuml;cksichtigt.
+</p>
+</dd>
+
+</dl>
+</li><li>
+Au&szlig;erdem kann der Wert von CompareMode gr&ouml;&szlig;er als 2 sein, um die Gebietsschema-ID (LCID) zu definieren, die f&uuml;r den Vergleich verwendet werden soll.</li>
+</ul>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="DESCRIPTIONTITLE">Tipps zur Programmierung</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+<ul><li>
+<p>Die Eigenschaft CompareMode muss nur dann explizit eingestellt werden, wenn Sie nicht den bin&auml;ren Standardvergleich verwenden m&ouml;chten.
+</p>
+</li><li>
+<p>Die Scripting Runtime-Typenbibliothek definiert Konstanten (<span class="LITERAL">BinaryCompare</span> und <span class="LITERAL">TextCompare</span>), die anstelle der numerischen Entsprechungen verwendet werden k&ouml;nnen. Dazu haben Sie drei M&ouml;glichkeiten. Erstens k&ouml;nnen Sie die Konstanten selbst definieren, indem Sie dem Skript folgenden Code hinzuf&uuml;gen:
+</p>
+
+<span class="PROGRAMLISTING"><pre>Const BinaryCompare = 0
+Const TextCompare = 1</pre></span>
+
+<p>Zweitens k&ouml;nnen Sie die entsprechenden Konstanten <span class="LITERAL">vbBinaryCompare</span> und <span class="LITERAL">vbTextCompare</span> verwenden, die in der VBScript-Bibliothek definiert sind.</p>
+
+<p>Und drittens k&ouml;nnen Sie im Rahmen der ASP-Programmierung die METADATA-Direktive verwenden, um auf die Scripting Runtime-Typenbibliothek zuzugreifen. Wenn Sie ein Windows Script Host-Skript entwickeln, k&ouml;nnen Sie die folgende Zeile in eine Windows Script Host-Datei (<filename>.wsf</filename>) einf&uuml;gen, um den Zugriff auf die Konstanten von der Scripting Runtime-Typenbibliothek zu erm&ouml;glichen:</p>
+
+<span class="PROGRAMLISTING"><pre>&lt;reference GUID=&quot;{420B2830-E718-11CF-893D-00A0C9054228}&quot; /&gt;</pre></span></li>
+
+<li>
+<p>Die Eigenschaft CompareMode gibt an, ob die Gro&szlig;- und Kleinschreibung ber&uuml;cksichtigt wird, wenn die vorhandenen Schl&uuml;sselnamen mit dem Argument <var class="replaceable">key</var> der Methoden Add und Exists sowie der Eigenschaften Item und Key des Dictionary-Objekts verglichen werden. Bei <span class="LITERAL">BinaryCompare</span> wird die Gro&szlig;- und Kleinschreibung ber&uuml;cksichtigt, bei <span class="LITERAL">TextCompare</span> dagegen nicht. Standardm&auml;&szlig;ig wird die Gro&szlig;- und Kleinschreibung beim Vergleich ber&uuml;cksichtigt.
+</p>
+</li></ul>
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+<div id="DictionaryCountProperty">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+Eigenschaft Dictionary.Count</td>
+<td class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2">&nbsp;</td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="DESCRIPTIONTITLE">Datentyp</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Long</p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="DESCRIPTIONTITLE">Beschreibung</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+<p>Eine schreibgesch&uuml;tzte Eigenschaft, die die Anzahl der Schl&uuml;ssel-/Elementpaare in einem Dictionary-Objekt zur&uuml;ckgibt.
+</p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="DESCRIPTIONTITLE">Wichtige Regeln</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Diese Eigenschaft gibt die tats&auml;chliche Anzahl der Elemente im Dictionary zur&uuml;ck. Wenn Sie die Eigenschaft Count zur Iteration der Elemente im Dictionary verwenden, w&uuml;rde der Code deshalb in etwa folgenderma&szlig;en aussehen:
+</p>
+
+<span class="PROGRAMLISTING"><pre>Dim ctr
+For ctr = 0 to dictionary.Count - 1
+   ' do something
+Next</pre></span>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+<div id="DictionaryExistsMethod">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+Methode Dictionary.Exists</td>
+<td class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2">&nbsp;</td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="DESCRIPTIONTITLE">Syntax</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+<span class="PROGRAMLISTING"><pre><var class="replaceable">dictionaryobject</var>.Exists(<var class="replaceable">key</var>) </pre></span>
+
+<dl>
+<dt><var class="replaceable">dictionaryobject</var></dt>
+<dd>
+<p>Verwendung: Erforderlich</p>
+<p>Datentyp: Dictionary-Objekt</p>
+
+<p>Ein Verweis auf ein Dictionary-Objekt.</p>
+
+</dd>
+<dt><var class="replaceable">key</var></dt>
+<dd>
+<p>Verwendung: Erforderlich</p>
+<p>Datentyp: String</p>
+
+<p>Der gesuchte Schl&uuml;sselwert.</p>
+</dd>
+
+</dl>
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="DESCRIPTIONTITLE">R&uuml;ckgabewert</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+<p>Boolesch</p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="DESCRIPTIONTITLE">Beschreibung</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+<p>Bestimmt, ob der angegebene Schl&uuml;ssel im Dictionary-Objekt vorhanden ist.</p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="DESCRIPTIONTITLE">Wichtige Regeln</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Gibt <span class="LITERAL">True</span> zur&uuml;ck, wenn der angegebene Schl&uuml;ssel im Dictionary-Objekt vorhanden ist. Andernfalls lautet die R&uuml;ckgabe <span class="LITERAL">False</span>.
+</p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="DESCRIPTIONTITLE">Tipps zur Programmierung</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+<ul><li>
+<p>Wenn Sie die Eigenschaft Item verwenden, um das Element eines nicht vorhandenen Schl&uuml;ssels zur&uuml;ckzugeben, oder wenn Sie einem nicht vorhandenen Schl&uuml;ssel einen neuen Schl&uuml;ssel zuweisen, wird der nicht vorhandene Schl&uuml;ssel dem Dictionary zusammen mit einem leeren Element hinzugef&uuml;gt. Um dies zu vermeiden, sollten Sie vor dem Fortfahren mit der Eigenschaft Exists sicherstellen, dass der Schl&uuml;ssel im Dictionary vorhanden ist.
+</p>
+</li><li>
+<p>Die Einstellung der Eigenschaft CompareMode des Dictionary-Objekts bestimmt, wie <var class="replaceable">key</var> mit den vorhandenen Schl&uuml;sselwerten verglichen wird.
+</p>
+</li></ul>
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="DESCRIPTIONTITLE">Beispiel</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+<span class="PROGRAMLISTING"><pre>If oDict.Exists(strOldKey) Then
+    oDict.Key(strOldKey) = strNewKey
+End If</pre></span>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+<div id="DictionaryItemProperty">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+Eigenschaft Dictionary.Item</td>
+<td class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2">&nbsp;</td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="DESCRIPTIONTITLE">Syntax</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Die Syntax zum Einstellen eines Elements lautet:</p>
+
+<span class="PROGRAMLISTING"><pre><var class="replaceable">dictionaryobject</var>.Item(<var class="replaceable">key</var>) = <var class="replaceable">item</var></pre></span>
+
+
+<p>Die Syntax zur R&uuml;ckgabe eines Elements lautet:</p>
+
+<span class="PROGRAMLISTING"><pre><var class="replaceable">value</var> = <var class="replaceable">dictionaryobject</var>.Item(<var class="replaceable">key</var>)</pre></span>
+
+<dl>
+<dt><var class="replaceable">dictionaryobject</var></dt>
+<dd>
+<p>Verwendung: Erforderlich</p>
+<p>Datentyp: Dictionary-Objekt</p>
+
+<p>Ein Verweis auf ein Dictionary-Objekt.</p>
+
+</dd>
+<dt><var class="replaceable">key</var></dt>
+<dd>
+<p>Verwendung: Erforderlich</p>
+<p>Datentyp: String</p>
+
+<p>Ein eindeutiger String-Schl&uuml;ssel f&uuml;r dieses Dictionary-Objekt.</p>
+
+</dd>
+<dt><var class="replaceable">item</var></dt>
+<dd>
+<p>Verwendung: Optional</p>
+<p>Datentyp: Beliebig</p>
+
+<p>Die mit <var class="replaceable">key</var> verkn&uuml;pften Daten.</p>
+</dd>
+
+</dl>
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="DESCRIPTIONTITLE">Datentyp</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Beliebig</p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="DESCRIPTIONTITLE">Beschreibung</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+<p>Bewirkt das Einstellen oder die R&uuml;ckgabe des Datenelements, das mit dem angegebenen Schl&uuml;ssel im Dictionary-Objekt verkn&uuml;pft werden soll.
+</p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="DESCRIPTIONTITLE">Wichtige Regeln</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+<ul><li>
+<p>Die Eigenschaft Item ist Standardmitglied des Dictionary-Objekts.</p>
+</li><li>
+<p>Der Datentyp entspricht dem zur&uuml;ckgegebenen Element.</p>
+</li><li>
+<p>Im Gegensatz zur Eigenschaft Item der meisten anderen Objekte kann die Eigenschaft Item des Dictionary-Objekts gelesen und geschrieben werden. Wenn Sie <var class="replaceable">item</var> auf einen nicht vorhandenen Schl&uuml;ssel einstellen, wird der Schl&uuml;ssel dem Dictionary hinzugef&uuml;gt, und das Element wird mit einer Art &quot;implizitem Hinzuf&uuml;gen&quot; mit dem Schl&uuml;ssel verkn&uuml;pft.
+</p>
+</li></ul>
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="DESCRIPTIONTITLE">Tipps zur Programmierung</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+<ul><li>
+<p>Bei einem Dictionary-Objekt ist es nicht m&ouml;glich, ein Element nach seiner Ordinalposition abzurufen.
+</p>
+</li><li>
+<p>Wenn Sie beim Versuch, ein Element abzurufen, einen nicht vorhandenen Schl&uuml;ssel angeben, verh&auml;lt sich das Dictionary auf unerwartete Weise: <var class="replaceable">key</var> wird dem Dictionary-Objekt zusammen mit einem leeren Element hinzugef&uuml;gt. Deshalb sollten Sie vor dem Einstellen oder der R&uuml;ckgabe eines Elements die Methode Exists verwenden, wie im Beispiel gezeigt.
+</p>
+</li><li>
+<p>Wenn das Element, das zugewiesen oder aus dem Dictionary-Objekt abgerufen werden soll, selbst ein Objekt ist, sollten Sie unbedingt das Schl&uuml;sselwort <span class="LITERAL">Set</span> verwenden, wenn Sie das Element einer Variablen oder dem Dictionary-Objekt zuweisen.
+</p>
+</li><li>
+<p>Der Wert der Eigenschaft CompareMode des Dictionary-Objekts bestimmt, wie <var class="replaceable">key</var> mit den Mitgliedsschl&uuml;sseln verglichen wird.
+</p>
+</li><li>
+<p>Die Tatsache, dass die Eigenschaft Item des Dictionary-Objekts sowohl gelesen als auch geschrieben werden kann, hat Nachteile und Vorteile. Ein Vorteil liegt darin, dass ein vorhandenes Datenelement sich einfach &uuml;berschreiben oder ersetzen l&auml;sst, da die Eigenschaft Item gelesen und geschrieben werden kann: Sie weisen einfach einen neuen Wert zu, wie bei jeder anderen Eigenschaft.
+</p>
+</li><li>
+<p>Das Dictionary-Objekt sollte grunds&auml;tzlich nicht verwendet werden, um Formular- oder Abfragedaten im HTML-Format auf Sitzungsebene in einer ASP-Anwendung zu speichern. Da es sich beim Dictionary-Objekt um ein COM-Objekt mit Apartment-Threaded-Struktur handelt, bewirkt dies, dass die Anwendung auf einen einzelnen Ausf&uuml;hrungs-Thread reduziert wird.
+</p>
+</li></ul>
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="DESCRIPTIONTITLE">Beispiel</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>In diesem Beispiel dient das Dictionary-Objekt als Tabelle, aus der der Name des Bundesstaates abgerufen wird, dessen Abk&uuml;rzung der Benutzer eingegeben hat. Im Folgenden wird die HTML-Seite gezeigt, die die Benutzerinformationen an den Server &uuml;bermittelt:
+</p>
+
+<span class="PROGRAMLISTING"><pre>&lt;HTML&gt;
+&lt;HEAD&gt;&lt;TITLE&gt;Dictionary Object Example&lt;/TITLE&gt;&lt;/HEAD&gt;
+&lt;BODY&gt;
+Enter your name and location: &lt;P&gt;
+&lt;FORM METHOD=POST ACTION=dictobj.asp&gt;
+Your name:
+&lt;INPUT TYPE=&quot;Text&quot; NAME=&quot;VisitorName&quot; /&gt;&lt;P&gt;
+Your location:
+&lt;INPUT TYPE=&quot;Text&quot; NAME=&quot;City&quot; /&gt;,
+&lt;INPUT TYPE=&quot;Text&quot; NAME=&quot;State&quot; SIZE=2 /&gt; &lt;P&gt;
+&lt;INPUT TYPE=&quot;Submit&quot; VALUE=&quot;Submit&quot; /&gt;
+&lt;/FORM&gt;
+&lt;BODY&gt;
+&lt;/HTML&gt;</pre></span>
+
+
+<p>Im Folgenden wird die ASP-Seite gezeigt, die die vom Benutzer gesendeten Informationen abruft, kodiert und aus dem Dictionary-Objekt den vollst&auml;ndigen Namen des Bundesstaates abruft:
+</p>
+
+<span class="PROGRAMLISTING"><pre>&lt;HTML&gt;
+&lt;HEAD&gt;
+&lt;TITLE&gt;ASP Page for the Dictionary Object Example&lt;/TITLE&gt;
+&lt;/HEAD&gt;
+&lt;BODY&gt;
+
+            &lt;% Show Greeting %&gt;
+
+&lt;SCRIPT LANGUAGE=&quot;VBScript&quot; RUNAT=&quot;Server&quot;&gt;
+
+Sub ShowGreeting(  )
+   Dim StateDict
+   Dim ClientName, ClientState
+
+   ' Initialize dictionary
+Set StateDict = Server.CreateObject(&quot;Scripting.Dictionary&quot;)
+StateDict.Add &quot;NY&quot;, &quot;New York&quot;
+StateDict.Add &quot;CA&quot;, &quot;California&quot;
+StateDict.Add &quot;FL&quot;, &quot;Florida&quot;
+StateDict.Add &quot;WA&quot;, &quot;Washington&quot;
+StateDict.Add &quot;MI&quot;, &quot;Michigan&quot;
+StateDict.Add &quot;MA&quot;, &quot;Massachusetts&quot;
+StateDict.Add &quot;MN&quot;, &quot;Minnesota&quot;
+' add other states
+
+ClientName = Server.HTMLEncode(Request.Form(&quot;VisitorName&quot;))
+ClientState = Server.HTMLEncode(Request.Form(&quot;State&quot;))
+
+Response.Write(&quot;Hello, &quot; &amp; ClientName &amp; &quot;. &lt;P&gt;&quot;)
+Response.Write(&quot;We are pleased to have a visitor from &quot;)
+   Response.Write(StateDict.Item(ClientState) &amp; &quot;!&quot;)
+End Sub
+&lt;/SCRIPT&gt;
+&lt;/BODY&gt;
+&lt;/HTML&gt;</pre></span>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+<div id="DictionaryItemsMethod">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+Methode Dictionary.Items</td>
+<td class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2">&nbsp;</td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="DESCRIPTIONTITLE">Syntax</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+<span class="PROGRAMLISTING"><pre><var class="replaceable">dictionaryobject</var>.Items</pre></span>
+
+<dl>
+<dt><var class="replaceable">dictionaryobject</var></dt>
+<dd>
+<p>Verwendung: Erforderlich</p>
+<p>Datentyp: Dictionary-Objekt</p>
+
+<p>Ein Verweis auf ein Dictionary-Objekt.</p>
+</dd>
+
+</dl>
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="DESCRIPTIONTITLE">R&uuml;ckgabewert</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+<p>Ein Varianten-Array.</p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="DESCRIPTIONTITLE">Beschreibung</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+<p>Gibt ein Array zur&uuml;ck, das alle Elemente im angegebenen Dictionary-Objekt enth&auml;lt.
+</p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="DESCRIPTIONTITLE">Wichtige Regeln</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Das zur&uuml;ckgegebene Varianten-Array basiert grunds&auml;tzlich auf Null, und der Datentyp entspricht dem der Elemente im Dictionary-Objekt.
+</p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="DESCRIPTIONTITLE">Tipps zur Programmierung</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+<ul><li>
+<p>Der direkte Zugriff auf die Mitglieder des Dictionary-Objekts ist nur &uuml;ber ihre Schl&uuml;sselwerte m&ouml;glich. Mit der Methode Items k&ouml;nnen Sie jedoch die Daten aus dem Dictionary in einem Varianten-Array ablegen, das auf Null basiert. Anschlie&szlig;end ist der Zugriff auf die Datenelemente wie bei einem Array mit dem normalen Verfahren m&ouml;glich, wie der folgende Code zeigt:
+</p>
+
+<span class="PROGRAMLISTING"><pre>Dim vArray
+vArray = DictObj.Items
+For i = 0 to DictObj.Count -1
+    Response.Write vArray(i) &amp; &quot;&lt;P&gt;&quot;
+Next I</pre></span>
+</li><li>
+<p>Die Methode Item ruft nur die in einem Dictionary-Objekt gespeicherten Elemente ab. Zum Abrufen aller Schl&uuml;ssel des Dictionary-Objekts k&ouml;nnen Sie die Methode Keys aufrufen.
+</p>
+</li></ul>
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="DESCRIPTIONTITLE">Siehe auch</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+<p><link linkend="ch10-11583">Methode Dictionary.Keys</link></p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+<div id="DictionaryKeyProperty">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+Eigenschaft Dictionary.Key</td>
+<td class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2">&nbsp;</td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="DESCRIPTIONTITLE">Syntax</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+<span class="PROGRAMLISTING"><pre><var class="replaceable">dictionaryobject</var>.Key(<var class="replaceable">key</var>) = <var class="replaceable">newkey</var></pre></span>
+
+<dl>
+<dt><var class="replaceable">dictionaryobject</var></dt>
+<dd>
+<p>Verwendung: Erforderlich</p>
+<p>Datentyp: Dictionary-Objekt</p>
+
+<p>Ein Verweis auf ein Dictionary-Objekt.</p>
+
+</dd>
+<dt><var class="replaceable">key</var></dt>
+<dd>
+<p>Verwendung: Erforderlich</p>
+<p>Datentyp: String</p>
+
+<p>Der Schl&uuml;ssel eines vorhandenen Dictionary-Elements.</p>
+
+</dd>
+<dt><var class="replaceable">newkey</var></dt>
+<dd>
+<p>Verwendung: Erforderlich</p>
+<p>Datentyp: String</p>
+
+<p>Ein neuer, eindeutiger Schl&uuml;ssel f&uuml;r dieses Dictionary-Element.</p>
+</dd>
+
+</dl>
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="DESCRIPTIONTITLE">Datentyp</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>String.</p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="DESCRIPTIONTITLE">Beschreibung</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+<p>Ersetzt einen vorhandenen Schl&uuml;ssel durch einen neuen Schl&uuml;ssel.</p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="DESCRIPTIONTITLE">Wichtige Regeln</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+<ul><li>
+<p>Die Eigenschaft Key kann nur geschrieben werden.</p>
+</li><li>
+<p><var class="replaceable">key</var>, der vorhandene Schl&uuml;sselwert, muss im Dictionary vorhanden sein. Andernfalls wird ein Fehler verursacht.
+</p>
+</li><li>
+<p><var class="replaceable">newkey</var> muss eindeutig sein und darf noch nicht im Dictionary vorhanden sein. Andernfalls wird ein Fehler verursacht.
+</p>
+</li><li>
+<p>Die Eigenschaft CompareMode des Dictionary-Objekts bestimmt, wie <var class="replaceable">key</var> und <var class="replaceable">newkey</var> mit vorhandenen Schl&uuml;sselwerten verglichen werden.
+</p>
+</li></ul>
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="DESCRIPTIONTITLE">Beispiel</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+<span class="PROGRAMLISTING"><pre>Private Function ChangeKeyValue(sOldKey, sNewKey)
+'Assumes oDictionary is a public object
+    If oDictionary.Exists(sOldKey) Then
+        oDictionary.Key(sOldKey) = sNewKey
+        ChangeKeyValue = True
+    Else
+        ChangeKeyValue = False
+    End If
+End Function</pre></span>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="DESCRIPTIONTITLE">Tipps zur Programmierung</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+<ul><li>
+<p>Mit der Eigenschaft Key kann der Name eines vorhandenen Schl&uuml;ssels ge&auml;ndert werden. Verwenden Sie die Methode Add, um dem Dictionary-Objekt einen neuen Schl&uuml;ssel und den zugeh&ouml;rigen Wert hinzuzuf&uuml;gen. Mit der Methode Keys k&ouml;nnen Sie die Namen aller Schl&uuml;ssel abrufen. Dies ist besonders dann n&uuml;tzlich, wenn Sie die Schl&uuml;sselnamen oder den Inhalt des Dictionary-Objekts nicht kennen.
+</p>
+</li><li>
+<p>Der Versuch, den Schl&uuml;sselnamen abzurufen, verursacht einen Fehler. Ein solcher Vorgang w&auml;re unlogisch, da Sie im Prinzip den Schl&uuml;sselnamen angeben w&uuml;rden, um den Schl&uuml;sselnamen abzurufen. Auch der Versuch, einen Schl&uuml;sselnamen zu &auml;ndern, der dem Dictionary noch nicht hinzugef&uuml;gt wurde, l&ouml;st einen Fehler aus.
+</p>
+</li><li>
+<p>Die Verwendung einer Schleife <span class="LITERAL">For Each...Next</span> zur Iteration der Mitglieder eines Dictionary-Objekts bewirkt einen impliziten Aufruf der Eigenschaft Key. Das hei&szlig;t, dass jede Iteration der Schleife statt eines Datenelements einen Schl&uuml;ssel zur&uuml;ckgibt. Zum Abrufen der Daten eines Mitglieds m&uuml;ssen Sie dann den Schl&uuml;sselwert verwenden, um &uuml;ber die Eigenschaft Item auf die Daten zuzugreifen. Dies wird im Beispiel f&uuml;r die Eigenschaft Dictionary.Item veranschaulicht.
+</p>
+</li></ul>
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+<div id="DictionaryKeysMethod">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+Methode Dictionary.Keys</td>
+<td class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2">&nbsp;</td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="DESCRIPTIONTITLE">Syntax</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+<span class="PROGRAMLISTING"><pre><var class="replaceable">dictionaryobject</var>.Keys</pre></span>
+
+<dl>
+<dt><var class="replaceable">dictionaryobject</var></dt>
+<dd>
+<p>Verwendung: Erforderlich</p>
+<p>Datentyp: Dictionary-Objekt</p>
+
+<p>Ein Verweis auf ein Dictionary-Objekt.</p>
+</dd>
+
+</dl>
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="DESCRIPTIONTITLE">R&uuml;ckgabewert</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+<p>Ein String-Array.</p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="DESCRIPTIONTITLE">Beschreibung</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+<p>Gibt ein Array zur&uuml;ck, das alle Schl&uuml;sselwerte im angegebenen Dictionary-Objekt enth&auml;lt.
+</p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="DESCRIPTIONTITLE">Wichtige Regeln</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Das zur&uuml;ckgegebene Array ist immer ein Varianten-Array, das auf Null basiert und einen String-Datentyp hat.
+</p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="DESCRIPTIONTITLE">Tipps zur Programmierung</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Mit der Methode Keys werden nur die Schl&uuml;ssel abgerufen, die in einem Dictionary-Objekt gespeichert sind. Mit der Methode Items k&ouml;nnen Sie alle Elemente des Dictionary-Objekts abrufen. Um ein bestimmtes Datenelement erneut aufzurufen, verwenden Sie die Eigenschaft Item des Dictionary-Objekts.
+</p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="DESCRIPTIONTITLE">Beispiel</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+<span class="PROGRAMLISTING"><pre>Dim vArray
+vArray = DictObj.Keys
+For i = 0 to DictObj.Count -1
+    Response.Write vArray(i) &amp; &quot;&lt;BR&gt;&quot;
+Next</pre></span>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+<div id="DictionaryRemoveMethod">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+Methode Dictionary.Remove</td>
+<td class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2">&nbsp;</td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="DESCRIPTIONTITLE">Syntax</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+<span class="PROGRAMLISTING"><pre><var class="replaceable">dictionaryobject</var>.Remove <var class="replaceable">key</var></pre></span>
+
+<dl>
+<dt><var class="replaceable">dictionaryobject</var></dt>
+<dd>
+<p>Verwendung: Erforderlich</p>
+<p>Datentyp: Dictionary-Objekt</p>
+
+<p>Ein Verweis auf ein Dictionary-Objekt.</p>
+
+</dd>
+<dt><var class="replaceable">key</var></dt>
+<dd>
+<p>Verwendung: Erforderlich</p>
+<p>Datentyp: String</p>
+
+<p>Der Schl&uuml;ssel, der zu dem Element geh&ouml;rt, das entfernt werden soll.</p>
+</dd>
+
+</dl>
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="DESCRIPTIONTITLE">Beschreibung</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+<p>Entfernt sowohl den angegebenen Schl&uuml;ssel als auch die zugeh&ouml;rigen Daten (das hei&szlig;t das Element) aus dem Dictionary.
+</p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="DESCRIPTIONTITLE">Wichtige Regeln</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Wenn <var class="replaceable">key</var> nicht vorhanden ist, wird der Laufzeitfehler 32811 ausgegeben. In dieser Fehlermeldung werden Sie darauf hingewiesen, dass das Element nicht gefunden wurde.
+</p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+<div id="DictionaryRemoveAllMethod">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+Methode Dictionary.RemoveAll</td>
+<td class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2">&nbsp;</td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="DESCRIPTIONTITLE">Syntax</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+<span class="PROGRAMLISTING"><pre><var class="replaceable">dictionaryobject</var>.RemoveAll</pre></span>
+
+<dl>
+<dt><var class="replaceable">dictionaryobject</var></dt>
+<dd>
+<p>Verwendung: Erforderlich</p>
+<p>Datentyp: Dictionary-Objekt</p>
+
+<p>Ein Verweis auf ein Dictionary-Objekt.</p>
+</dd>
+
+</dl>
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="DESCRIPTIONTITLE">Beschreibung</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+<p>Leert das Dictionary. Dabei werden alle Schl&uuml;ssel und die zugeh&ouml;rigen Daten aus dem Dictionary entfernt.
+</p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="DESCRIPTIONTITLE">Tipps zur Programmierung</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Wenn Sie nicht den ganzen Inhalt des Dictionary-Objekts, sondern nur bestimmte Mitglieder entfernen m&ouml;chten, verwenden Sie stattdessen die Methode Remove.
+</p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+</body>
+</html>

@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding = "utf-8"?>
+
+<snippet xmlns:MMString="http://www.macromedia.com/schemes/dat/string/" MMString:name = "Snippets/JavaScript/string_manipulations/removeExtraCharacters_csn/snippet/name/Remove" MMString:description = "Snippets/JavaScript/string_manipulations/removeExtraCharacters_csn/snippet/description/Reduces" preview="code" type="block">
+
+
+<insertText location="beforeSelection">
+
+<![CDATA[function removeExtraSpaces(string)
+{
+  var returnString = "";
+  var stringArray = string.split(" ");
+
+  for(var i = 0; i < stringArray.length; i++)
+  {
+    if (stringArray[i]!="")
+		{
+			if (i == stringArray.length-1)
+        returnString += stringArray[i];
+    	else
+      	returnString += stringArray[i] + " ";
+		}
+  }
+  return returnString;
+}
+]]>
+
+</insertText>
+
+<insertText location="afterSelection"><![CDATA[]]>
+
+</insertText>
+
+</snippet>

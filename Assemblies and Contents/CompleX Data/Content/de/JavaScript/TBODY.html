@@ -1,0 +1,500 @@
+<html>
+<link rel="stylesheet" href="josh.css">
+<body bgcolor="#FFFFFF">
+
+		<div id="Beschreibung">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">tbody, tfoot, thead</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">4</span> DOM <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Die Objekte <span class="literal">tbody</span>, <span class="literal">tfoot</span> und <span class="literal">thead</span> spiegeln das <span class="literal">tbody</span>-, das <span class="literal">tfoot</span>- bzw. das <span class="literal">thead</span>-Element wider. Bei der Skripterstellung k&ouml;nnen Sie jedes dieser Objekte als Container f&uuml;r Zeilengruppen innerhalb einer Tabelle behandeln. Da sie alle dieselben Eigenschaften und Methoden aufweisen, m&uuml;ssen Sie die HTML-Funktionalit&auml;t dieser Elemente bei der Skripterstellung genauestens auseinander halten. Eine Tabelle kann nur ein <span class="literal">tfoot</span>- und ein <span class="literal">thead</span>-Element, aber beliebig viele <span class="literal">tbody</span>-Elemente enthalten. Au&szlig;erdem erstellen Internet Explorer ab Version 4 und Netscape 6 f&uuml;r jede Tabelle ein <span class="literal">tbody</span>-Objekt, auch wenn der Quellcode Ihrer Tabelle kein solches Objekt enth&auml;lt. Dieses <span class="literal">tbody</span>-Standardelement umfasst alle Zeilen der Tabelle, mit Ausnahme derjenigen Zeilen, die Sie in ein <span class="literal">thead</span>- oder ein <span class="literal">tfoot</span>-Element verpackt haben. Diese Objekte sind in IE 4 f&uuml;r den Macintosh zwar implementiert, jedoch nicht vollst&auml;ndig. Au&szlig;erdem verhalten sich die in der Abhandlung des <span class="literal">table</span>-Elements beschriebenen Zeileneinf&uuml;geoperationen bei IE 4 f&uuml;r den Mac in Verbindung mit diesen Objekten ebenso seltsam.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="htmlequivalent"><span class="title">HTML-&Auml;quivalent</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>&lt;tbody&gt;
+&lt;tfoot&gt;
+&lt;thead&gt;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectmodelreference"><span class="title">Objektmodellreferenz</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>[window.]document.getElementById("<span class="replaceable">elementID</span>")
+[window.]document.getElementById("<span class="replaceable">tableID</span>").tBodies[i]
+[window.]document.getElementById("<span class="replaceable">tableID</span>").tfoot
+[window.]document.getElementById("<span class="replaceable">tableID</span>").thead</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectspecificproperties"><span class="title">Objektspezifische Eigenschaften</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<table border="1"><tbody><tr><td><span class="literal">align</span></td><td><span class="literal">bgColor</span></td><td><span class="literal">ch</span></td><td><span class="literal">chOff</span></td><td><span class="literal">rows</span></td><td><span class="literal">vAlign</span></td>
+								</tr>
+							</tbody></table>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectspecificmethods"><span class="title">Objektspezifische Methoden</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<table border="1"><tbody><tr><td><span class="literal">deleteRow( )</span></td><td><span class="literal">insertRow( )</span></td><td><span class="literal">moveRow( )</span></td>
+								</tr>
+							</tbody></table>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectspecificeventhandlerproperties"><span class="title">Objektspezifische Ereignisbehandlungsroutineneigenschaften</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Keine. </p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="align">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">align</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">4</span> DOM <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Lesen/Schreiben</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Definiert die horizontale Ausrichtung der Inhalte aller Zellen, die im <span class="literal">tbody</span>-Element enthalten sind.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>document.getElementById("myTbody").align = "center";</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Eine der drei horizontalen Ausrichtungskonstanten in Form einer Zeichenfolge: <span class="literal">center</span> | <span class="literal">left</span> | <span class="literal">right</span>.
+</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Standardwert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p><span class="literal">left</span></p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="bgColor">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">bgColor</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6  </span>IE <span class="emphasis">4  </span>DOM <span class="emphasis">nicht zutreffend</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Lesen/Schreiben</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Legt die Hintergrundfarbe der im <span class="literal">tbody</span>-, <span class="literal">tfoot</span>- oder <span class="literal">thead</span>-Element enthaltenen Zellen fest. Diese Farbeinstellung wird nicht von der <span class="literal">backgroundColor</span>-Eigenschaft des Stylesheets widergespiegelt. Auch wenn f&uuml;r das <span class="literal">bgcolor</span>-Attribut oder die <span class="literal">bgColor</span>-Eigenschaft ein unverschl&uuml;sselter Farbname angegeben wurde, ist der zur&uuml;ckgegebene Wert immer ein hexadezimales Triplett.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>document.getElementById("myTable").tHead.bgColor = "yellow";</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Ein hexadezimales Triplett oder ein unverschl&uuml;sselter Farbname. Einzelheiten zu den g&uuml;ltigen unverschl&uuml;sselten Farbnamen finden Sie in Anhang A.
+</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Standardwert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>H&auml;ngt vom Browser und dem Betriebssystem ab. </p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="ch">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">ch</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">5(Mac)</span>/<span class="emphasis">6(Win)</span> DOM <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Lesen/Schreiben</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Definiert das als Ausrichtungspunkt f&uuml;r Text innerhalb einer Spalte oder Spaltengruppe verwendete Textzeichen (spiegelt das <span class="literal">char</span>-Attribut wider). Diese Eigenschaft ist normalerweise nur sinnvoll, wenn das <span class="literal">align</span>-Attribut auf <span class="literal">"char"</span> gesetzt ist. In der Praxis haben diese Eigenschaften weder in IE noch in Navigator irgendwelche Auswirkungen.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>document.getElementById("myTBody").ch = ".";</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Aus einem einzelnen Zeichen bestehende Zeichenfolge.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Standardwert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Keiner. </p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="chOff">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">chOff</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">5(Mac)/6(Win)</span> DOM <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Lesen/Schreiben</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Definiert den Offset-Punkt, an dem das durch das <span class="literal">char</span>-Attribut angegebene Zeichen in einer Zelle erscheinen soll. In der Praxis haben diese Eigenschaften weder in IE noch in Navigator irgendwelche Auswirkungen.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>document.getElementById("myTBody").chOff = "80%";</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Anzahl der Pixel oder in Prozent angegebene relative Position (innerhalb der Zelle) in Form einer Zeichenfolge.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Standardwert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Keiner.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="rows">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">rows</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">4</span> DOM <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Schreibgesch&uuml;tzt</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Gibt eine Sammlung aller <span class="literal">tr</span>-Elemente innerhalb des Tabellenabschnitts zur&uuml;ck. In IE f&uuml;r Windows k&ouml;nnen Sie auch eine Gruppe von Zeilen f&uuml;r eine ganze Tabelle abrufen.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>var allTableRows = document.getElementById("myTFoot").rows;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Referenz auf ein <span class="literal">rows</span>-Sammlungsobjekt.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Standardwert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Array mit der L&auml;nge Null.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="vAlign">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">vAlign</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">4</span> DOM <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Lesen/Schreiben</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Legt die Art der vertikalen Ausrichtung von Text in den im <span class="literal">tbody</span>-, <span class="literal">tfoot</span>- oder <span class="literal">thead</span>-Element enthaltenen Zellen fest.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>document.getElementById("myTbody").vAlign = "baseline";</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Von der Gro&szlig;-/Kleinschreibung unabh&auml;ngige Konstante (als Zeichenfolge): <span class="literal">baseline</span> | <span class="literal">bottom</span> | <span class="literal">middle</span> | <span class="literal">top</span>.
+</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Standardwert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p><span class="literal">middle</span></p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="deleteRow( )">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">deleteRow( )</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">4</span> DOM <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">deleteRow(<span class="replaceable">index</span>)</p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Entfernt ein im aktuellen <span class="literal">tbody</span>-, <span class="literal">tfoot</span>- oder <span class="literal">thead</span>-Element verschachteltes <span class="literal">tr</span>-Element. Der ganzzahlige Parameter weist auf den auf Null basierenden Eintrag in der <span class="literal">rows</span>-Sammlung des Tabellenabschnitts. Wenn Sie einen Tabellenabschnitt mit neuen oder sortierten Inhalten neu auff&uuml;llen m&ouml;chten, entleeren Sie den Abschnitt mithilfe wiederholter Aufrufe der <span class="literal">deleteRow( )</span>-Methode:
+</p>
+<span class="PROGRAMLISTING"><pre>while (<var class="replaceable">tBodyReference</var>.rows.length&gt; 0) &#123;
+     <var class="replaceable">tBodyReference</var>.deleteRow(0);
+}</pre></span>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Parameter</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<ul><li><span class="literal"></span>Auf Null basierende ganze Zahl, die dem <span class="literal">tr</span>-Element mit der angegebenen Nummer in der Quellcodereihenfolge (verschachtelt im aktuellen Element) entspricht.
+</li></ul>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Zur&uuml;ckgegebener Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Keiner.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="insertRow( )">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">insertRow( )</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">4(Win)</span> DOM <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">insertRow(<span class="replaceable">index</span>)</p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>F&uuml;gt ein im aktuellen <span class="literal">tbody</span>-, <span class="literal">tfoot</span>- oder <span class="literal">thead</span>-Element verschachteltes <span class="literal">tr</span>-Element ein. Der ganzzahlige Parameter weist auf die auf Null basierende Indexposition in der <span class="literal">rows</span>-Sammlung, an der die neue Zeile eingef&uuml;gt werden soll, in IE k&ouml;nnen Sie jedoch auch den Kurzschrift-Wert <span class="literal">-1</span> verwenden, um die Zeile an das Ende der Sammlung anzuh&auml;ngen. Beim Einf&uuml;gen der Zeile wird ein leeres Element erzeugt, dem Sie mithilfe der Methode <span class="literal">insertCell( )</span> Zellen hinzuf&uuml;gen. Leider funktioniert das skriptgesteuerte Hinzuf&uuml;gen von Tabellenzeilen und -zellen in IE f&uuml;r den Macintosh (einschlie&szlig;lich Version 5.1) nur sehr fehlerhaft und erzeugt &uuml;berm&auml;&szlig;ig gro&szlig;e Zeilen und Zellen. Bei nicht verschachtelten Tabellen k&ouml;nnen Sie anstelle der an sich praktischeren Tabellenabschnitts-Objektmethoden unter Umst&auml;nden auf die regul&auml;ren Verfahren zum Erstellen und Einf&uuml;gen von Nodes in den Dokumentbaum zur&uuml;ckgreifen.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Parameter</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<ul><li><span class="literal"></span>Auf Null basierende ganze Zahl, die der Zeile in der <span class="literal">rows</span>-Sammlung entspricht, vor der die neue Zeile eingef&uuml;gt werden soll.
+</li></ul>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Zur&uuml;ckgegebener Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Referenz auf die neu eingef&uuml;gte Zeile.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="moveRow( )">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">moveRow( )</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">nicht zutreffend</span> IE <span class="emphasis">5(Win)</span> DOM <span class="emphasis">nicht zutreffend</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">moveRow(<span class="replaceable">indexToMove</span>, <span class="replaceable">destinationIndex</span>)</p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Verschiebt eine Zeile im <span class="literal">tbody</span>-, <span class="literal">tfoot</span>- oder <span class="literal">thead</span>-Element von ihrer urspr&uuml;nglichen Position an eine andere Position innerhalb desselben Abschnitts. Der erste Parameter ist ein auf Null basierender Index der Zeile innerhalb der <span class="literal">rows</span>-Sammlung, die Sie verschieben m&ouml;chten. Der zweite Parameter ist der Index der Zeile, vor der Sie die verschobene Zeile platzieren m&ouml;chten.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Parameter</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<ul><li><span class="literal"></span>Eine auf Null basierende ganze Zahl, die die zu verschiebende Zeile angibt.</li><li><span class="literal"></span>Eine auf Null basierende ganze Zahl, die die Zeile angibt, vor der Sie die zu verschiebende Zeile einf&uuml;gen m&ouml;chten.
+</li></ul>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Zur&uuml;ckgegebener Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Referenz auf die verschobene Zeile.</p>
+					</td>
+				</tr>
+			</table>
+		</div>
+
+</body>
+</html>

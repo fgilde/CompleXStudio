@@ -1,0 +1,207 @@
+<html>
+<head>
+<title>&lt;xsl:import&gt;</title>
+</head>
+<body bgcolor="#FFFFFF" text="#000000">
+<div id="Beschreibung">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">&lt;xsl:import&gt;</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description">
+Diese Anweisung gestattet den Import der Vorlagen aus einem anderen XSLT-Stylesheet. Im Gegensatz zu <span class="LITERAL">&lt;xsl:include&gt;</span> haben alle Vorlagen, die mit <span class="LITERAL">&lt;xsl:import&gt;</span> importiert werden, eine niedrigere Priorit&auml;t als die Vorlagen in dem Stylesheet, in das importiert wird. Ein weiterer Unterschied ist, dass <span class="LITERAL">&lt;xsl:include&gt;</span> an beliebiger Stelle in einem Stylesheet vorkommen kann, w&auml;hrend <span class="LITERAL">&lt;xsl:import&gt;</span> gleich am Anfang erscheinen muss.</td></tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Kategorie</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<p>Element der obersten Ebene</p>
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Obligatorische Attribute</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<dl>
+<dt>
+href
+</dt>
+<dd>
+Dieses Attribut definiert den URI des zu importierenden Stylesheets.
+<P></p>
+</dl>
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Optionale Attribute</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<p>Keine</p>
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Inhalt</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<p>Keiner. <span class="LITERAL">&lt;xsl:import&gt;</span> ist ein leeres Element.</p>
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">&Uuml;bergeordnetes Element</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<p>
+<span class="LITERAL">&lt;xsl:import&gt;</span> ist ein Element der obersten Ebene und kann nur dem Element <span class="LITERAL">&lt;xsl:stylesheet&gt;</span> untergeordnet werden. </p>
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Definition</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<p>XSLT-Abschnitt 2.6.2, Stylesheet-Import </p>
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Beispiel</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<p>Hier ein simples Stylesheet, das importiert werden soll:</p>
+<span class="PROGRAMLISTING"><pre>
+&lt;?xml version="1.0"?&gt;
+&lt;xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform"&gt;
+
+  &lt;xsl:output method="text"/&gt;
+
+  &lt;xsl:variable name="newline"&gt;
+&lt;xsl:text&gt;
+&lt;/xsl:text&gt;
+  &lt;/xsl:variable&gt;
+
+<!--<?troff .Nd 10?>-->
+  &lt;xsl:template match="/"&gt;
+    &lt;xsl:value-of select="$newline"/&gt;
+    &lt;xsl:apply-templates select="list/title"/&gt;
+    &lt;xsl:apply-templates select="list/listitem"/&gt;
+  &lt;/xsl:template&gt;
+
+  &lt;xsl:template match="title"&gt;
+    &lt;xsl:value-of select="."/&gt;
+    &lt;xsl:text&gt;: &lt;/xsl:text&gt;
+    &lt;xsl:value-of select="$newline"/&gt;
+    &lt;xsl:value-of select="$newline"/&gt;
+  &lt;/xsl:template&gt;
+
+  &lt;xsl:template match="listitem"&gt;
+    &lt;xsl:text&gt;HERE IS LISTITEM NUMBER &lt;/xsl:text&gt;
+    &lt;xsl:value-of select="position()"/&gt;
+    &lt;xsl:text&gt;:  &lt;/xsl:text&gt;
+    &lt;xsl:value-of select="."/&gt;
+    &lt;xsl:value-of select="$newline"/&gt;
+  &lt;/xsl:template&gt;
+
+&lt;/xsl:stylesheet&gt;</pre></span>
+<p>Sowohl dieses Stylesheet als auch das importierende werden mit dem folgenden XML-Dokument getestet:</p>
+<span class="PROGRAMLISTING"><pre>
+&lt;?xml version="1.0"?&gt;
+&lt;list&gt;
+  &lt;title&gt;A few of my favorite albums&lt;/title&gt;
+  &lt;listitem&gt;A Love Supreme&lt;/listitem&gt;
+  &lt;listitem&gt;Beat Crazy&lt;/listitem&gt;
+  &lt;listitem&gt;Here Come the Warm Jets&lt;/listitem&gt;
+  &lt;listitem&gt;Kind of Blue&lt;/listitem&gt;
+  &lt;listitem&gt;London Calling&lt;/listitem&gt;
+  &lt;listitem&gt;Remain in Light&lt;/listitem&gt;
+  &lt;listitem&gt;The Joshua Tree&lt;/listitem&gt;
+  &lt;listitem&gt;The Indestructible Beat of Soweto&lt;/listitem&gt;
+&lt;/list&gt;</pre></span>
+<p>Hier das Ergebnis, wenn Sie das XML-Ausgangsdokument mit diesem Stylesheet verarbeiten:</p>
+<span class="PROGRAMLISTING"><pre>
+A few of my favorite albums:
+
+HERE IS LISTITEM NUMBER 1:  A Love Supreme
+HERE IS LISTITEM NUMBER 2:  Beat Crazy
+HERE IS LISTITEM NUMBER 3:  Here Come the Warm Jets
+HERE IS LISTITEM NUMBER 4:  Kind of Blue
+HERE IS LISTITEM NUMBER 5:  London Calling
+HERE IS LISTITEM NUMBER 6:  Remain in Light
+HERE IS LISTITEM NUMBER 7:  The Joshua Tree
+HERE IS LISTITEM NUMBER 8:  The Indestructible Beat of Soweto</pre></span>
+<p>Jetzt wird die Anweisung <span class="LITERAL">&lt;xsl:import&gt;</span> in einem anderen Stylesheet verwendet:</p>
+<span class="PROGRAMLISTING"><pre>
+&lt;?xml version="1.0"?&gt;
+&lt;xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform"&gt;
+
+  &lt;xsl:import href="listitem.xsl"/&gt;
+
+  &lt;xsl:output method="text"/&gt;
+
+  &lt;xsl:variable name="newline"&gt;
+&lt;xsl:text&gt;
+&lt;/xsl:text&gt;
+  &lt;/xsl:variable&gt;
+
+  &lt;xsl:template match="/"&gt;
+    &lt;xsl:value-of select="$newline"/&gt;
+    &lt;xsl:apply-templates select="list/title"/&gt;
+    &lt;xsl:apply-templates select="list/listitem"/&gt;
+  &lt;/xsl:template&gt;
+
+  &lt;xsl:template match="listitem"&gt;
+    &lt;xsl:value-of select="position()"/&gt;
+    &lt;xsl:text&gt;.  &lt;/xsl:text&gt;
+    &lt;xsl:value-of select="."/&gt;
+    &lt;xsl:value-of select="$newline"/&gt;
+  &lt;/xsl:template&gt;
+
+&lt;/xsl:stylesheet&gt;</pre></span>
+<p>Hier die vom zweiten Stylesheet erzeugten Ergebnisse:</p>
+<span class="PROGRAMLISTING"><pre>
+A few of my favorite albums:
+
+1.  A Love Supreme
+2.  Beat Crazy
+3.  Here Come the Warm Jets
+4.  Kind of Blue
+5.  London Calling
+6.  Remain in Light
+7.  The Joshua Tree
+8.  The Indestructible Beat of Soweto</pre></span>
+<p>Beachten Sie, dass beide Stylesheets eine Vorlage mit <span class="LITERAL">match="listitem"</span> hatten. Die Vorlage im importierten Stylesheet hat eine niedrigere Priorit&auml;t und wird daher nicht verwendet. Nur das importierte Stylesheet hat eine Vorlage mit <span class="LITERAL">match="title"</span>, daher wird die importierte Vorlage auf das Element <span class="LITERAL">&lt;title&gt;</span> angewendet. </p>
+</td>
+</tr>
+</table>
+</div>
+</body>
+</html>

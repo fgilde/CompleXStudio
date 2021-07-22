@@ -1,0 +1,175 @@
+<html>
+<head>
+<title>translate()-Funktion</title>
+</head>
+<body bgcolor="#FFFFFF" text="#000000">
+<div id="Beschreibung">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">translate()-Funktion</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description">
+Diese Funktion gestattet Ihnen, einzelne Zeichen in einem String von einem Wert in einen anderen zu &uuml;bersetzen. In vielen Sprachen ist diese Funktion leistungsf&auml;hig genug, Zeichen von der Kleinschreibung in die Gro&szlig;schreibung umzuwandeln, und umgekehrt. </td></tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Eingaben</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<p>Drei Strings. Der erste urspr&uuml;ngliche, nicht &uuml;bersetzte String und der zweite und dritte String definieren die zu konvertierenden Zeichen. </p>
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Ausgabe</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<p>Der urspr&uuml;ngliche String, der wie folgt &uuml;bersetzt wurde:</p>
+<ul>
+        <dd>Kommt ein Zeichen aus dem urspr&uuml;nglichen String im zweiten Argument-String vor, wird es durch das entsprechende Zeichen im dritten Argument-String ersetzt. Anders ausgedr&uuml;ckt: wenn das Zeichen <span class="LITERAL">J</span> im urspr&uuml;nglichen String vorkommt und <span class="LITERAL">J</span> erscheint als das vierte Zeichen im zweiten Argument-String, so wird das <span class="LITERAL">J</span> durch das vierte Zeichen im dritten Argument-String ersetzt. (Keine Bange, durch einige Beispiele wird das Ganze gleich klarer.)</p>
+        </li>
+        <dd>Wenn ein Zeichen im urspr&uuml;nglichen String im zweiten Argument-String erscheint und es gibt kein entsprechendes Zeichen im dritten Argument-String (der String des zweiten Arguments als l&auml;nger ist als der des dritten), so wird das Zeichen gel&ouml;scht. Anders ausgedr&uuml;ckt: erscheint das Zeichen <span class="LITERAL">J</span> im Original-String und als viertes Zeichen im zweiten Argument-String und der dritte Argument-String ist nur drei Zeichen lang, so wird das <span class="LITERAL">J</span> gel&ouml;scht. </p>
+        </li>
+        <dd>Kommt ein Zeichen im zweiten Argument-String mehrmals vor, so bestimmt das erste Auftreten das Ersetzungszeichen.</p>
+        </li>
+        <dd>Ist der dritte Argument-String l&auml;nger als der zweite, so werden die zus&auml;tzlichen Zeichen einfach ignoriert. </p>
+        </li>
+      </ul>
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Definition</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<p>XPath-Abschnitt 4.2, Zeichenkettenfunktionen. </p>
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Beispiel</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<p>Hier ein Stylesheet mit mehreren Beispielen f&uuml;r die Funktion <span class="LITERAL">translate()</span>:</p>
+<span class="PROGRAMLISTING"><pre>
+&lt;?xml version="1.0"?&gt;
+&lt;xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform"&gt;
+
+  &lt;xsl:output method="text"/&gt;
+
+  &lt;xsl:variable name="newline"&gt;
+&lt;xsl:text&gt;
+&lt;/xsl:text&gt;
+  &lt;/xsl:variable&gt;
+
+  &lt;xsl:template match="/"&gt;
+    &lt;xsl:value-of select="$newline"/&gt;
+    &lt;xsl:text&gt;Tests of the translate() function:&lt;/xsl:text&gt;
+
+    &lt;xsl:value-of select="$newline"/&gt;
+    &lt;xsl:value-of select="$newline"/&gt;
+    &lt;xsl:text&gt;Convert a string to uppercase:&lt;/xsl:text&gt;
+    &lt;xsl:value-of select="$newline"/&gt;
+    &lt;xsl:text&gt;   translate('Doug', 'abcdefghijklmnopqrstuvwxyz', &lt;/xsl:text&gt;
+    &lt;xsl:value-of select="$newline"/&gt;
+    &lt;xsl:text&gt;             'ABCDEFGHIJKLMNOPQRSTUVWXYZ')=&lt;/xsl:text&gt;
+    &lt;xsl:value-of select="translate('Doug', 
+      'abcdefghijklmnopqrstuvwxyz', 'ABCDEFGHIJKLMNOPQRSTUVWXYZ')"/&gt;
+    &lt;xsl:value-of select="$newline"/&gt;
+    &lt;xsl:value-of select="$newline"/&gt;
+    &lt;xsl:text&gt;Convert a string to lowercase:&lt;/xsl:text&gt;
+    &lt;xsl:value-of select="$newline"/&gt;
+    &lt;xsl:text&gt;   translate('Doug', 'ABCDEFGHIJKLMNOPQRSTUVWXYZ', &lt;/xsl:text&gt;
+    &lt;xsl:value-of select="$newline"/&gt;
+    &lt;xsl:text&gt;             'abcdefghijklmnopqrstuvwxyz')=&lt;/xsl:text&gt;
+    &lt;xsl:value-of 
+      select="translate('Doug', 'ABCDEFGHIJKLMNOPQRSTUVWXYZ', 
+                        'abcdefghijklmnopqrstuvwxyz')"/&gt;
+    &lt;xsl:value-of select="$newline"/&gt;
+    &lt;xsl:value-of select="$newline"/&gt;
+    &lt;xsl:text&gt;Remove parentheses, spaces, and dashes&lt;/xsl:text&gt;
+    &lt;xsl:text&gt; from a U.S. phone number:&lt;/xsl:text&gt;
+    &lt;xsl:value-of select="$newline"/&gt;
+    &lt;xsl:text&gt;   translate('(555) 555-1212', '() -', '')=&lt;/xsl:text&gt;
+    &lt;xsl:value-of select="translate('(555) 555-1212', '() -', '')"/&gt;
+    &lt;xsl:value-of select="$newline"/&gt;
+    &lt;xsl:value-of select="$newline"/&gt;
+    &lt;xsl:text&gt;Replace all but the last four digits of a &lt;/xsl:text&gt;
+    &lt;xsl:text&gt;credit card number with Xs:&lt;/xsl:text&gt;
+    &lt;xsl:value-of select="$newline"/&gt;
+    &lt;xsl:variable name="credit" select="'4918 3829 9920 1810'"/&gt;
+    &lt;xsl:text&gt;   $credit='&lt;/xsl:text&gt;
+    &lt;xsl:value-of select="$credit"/&gt;
+    &lt;xsl:text&gt;'&lt;/xsl:text&gt;
+    &lt;xsl:value-of select="$newline"/&gt;
+    &lt;xsl:text&gt;   translate(substring($credit, 1, 15), &lt;/xsl:text&gt;
+    &lt;xsl:text&gt;'1234567890 ', 'XXXXXXXXXX-')&lt;/xsl:text&gt;
+    &lt;xsl:value-of select="$newline"/&gt;
+    &lt;xsl:text&gt;   substring($credit, 16)&lt;/xsl:text&gt;
+    &lt;xsl:value-of select="$newline"/&gt;
+    &lt;xsl:value-of select="$newline"/&gt;
+    &lt;xsl:text&gt;   The first part is &lt;/xsl:text&gt;
+    &lt;xsl:value-of 
+      select="translate(substring($credit, 1, 15), '123457890 ', 
+        'XXXXXXXXX-')"/&gt;
+    &lt;xsl:value-of select="$newline"/&gt;
+    &lt;xsl:text&gt;   The second part is &lt;/xsl:text&gt;
+    &lt;xsl:value-of select="substring($credit, 16)"/&gt;
+    &lt;xsl:value-of select="$newline"/&gt;
+    &lt;xsl:value-of select="$newline"/&gt;
+    &lt;xsl:text&gt;   Here's how they look together: &lt;/xsl:text&gt;
+    &lt;xsl:value-of 
+      select="translate(substring($credit, 1, 15), '123457890 ', 
+        'XXXXXXXXX-')"/&gt;
+    &lt;xsl:value-of select="substring($credit, 16)"/&gt;
+  &lt;/xsl:template&gt;
+
+&lt;/xsl:stylesheet&gt;</pre></span>
+<p>Hier das Ergebnis, wenn Sie das Stylesheet auf ein beliebiges XML-Dokument anwenden:</p>
+<span class="PROGRAMLISTING"><pre>
+
+Tests of the translate() function:
+
+Convert a string to uppercase:
+   translate('Doug', 'abcdefghijklmnopqrstuvwxyz',
+             'ABCDEFGHIJKLMNOPQRSTUVWXYZ')=DOUG
+
+Convert a string to lowercase:
+   translate('Doug', 'ABCDEFGHIJKLMNOPQRSTUVWXYZ',
+             'abcdefghijklmnopqrstuvwxyz')=doug
+
+Remove parentheses, spaces, and dashes from a U.S. phone number:
+   translate('(555) 555-1212', '() -', '')=5555551212
+
+Replace all but the last four digits of a credit card number with Xs:
+   $credit='4918 3829 9920 1810'
+   translate(substring($credit, 1, 15), '1234567890 ', 'XXXXXXXXXX-')
+   substring($credit, 16)
+
+   The first part is XXXX-XXXX-XXXX-
+   The second part is 1810
+
+   Here's how they look together: XXXX-XXXX-XXXX-1810
+</pre></span>
+</td>
+</tr>
+</table>
+</div>
+</body>
+</html>

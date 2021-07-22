@@ -1,0 +1,510 @@
+<html>
+<link rel="stylesheet" href="../HTML/josh.css">
+<head>
+
+
+<title>application</title>
+</head>
+<body bgcolor="#FFFFFF" text="#000000">
+<div id="Beschreibung">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">application</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Variablenname:</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+<p><span class="LITERAL">application</span></p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Schnittstellenname:</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+<p><span class="LITERAL">javax.servlet.ServletContext</span></p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Erweitert:</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+<p>Keine</p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Implementiert von:</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+<p>Interne containerabh&auml;ngige Klasse</p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">JSP-Seitentyp:</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+<p>Verf&uuml;gbar in regul&auml;ren JSP-Seiten und Fehlerseiten</p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Beschreibung</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+<p><span class="LITERAL">ServletContext</span> bietet Ressourcen, die in einer Webanwendung gemeinsam genutzt werden. Enthalten sind Attributwerte, die die JSP-Anwendungsebene darstellen. Ein Attributwert kann eine Instanz jeder g&uuml;ltigen Java-Klasse sein. <span class="LITERAL">ServletContext</span> definiert auch den Methodensatz, den eine JSP-Seite oder ein Servlet f&uuml;r die Kommunikation mit dem Container verwendet, beispielsweise um den MIME-Typ einer Datei abzurufen, Anforderungen zu senden oder Daten in eine Protokolldatei zu schreiben. Der Webcontainer ist f&uuml;r die Bereitstellung einer Implementierung der Schnittstelle <span class="LITERAL">ServletContext</span> zust&auml;ndig.
+</p>
+
+<p>Jedem Objekt <span class="LITERAL">ServletContext</span> wird ein bestimmtes URI-Pfadpr&auml;fix innerhalb eines Webservers zugewiesen. Beispielsweise k&ouml;nnte ein Kontext f&uuml;r alle Ressourcen unter <em>http://www.mycorp.com/catalog</em> verantwortlich sein. Alle Anforderungen, die mit dem Anforderungspfad <em>/catalog</em> beginnen (dem so genannten <em>Kontextpfad</em>) werden an diesen Servlet-Kontext geleitet.
+</p>
+
+<p>Nur eine Instanz von <span class="LITERAL">ServletContext</span> darf den Servlets und JSP-Seiten in einer Webanwendung zur Verf&uuml;gung stehen. Wenn die Webanwendung darauf hinweist, dass sie verteilbar ist, darf pro Anwendung in jeder Java Virtual Machine nur eine Instanz des Objekts <span class="LITERAL">ServletContext</span> verwendet werden.
+</p>
+</td>
+</tr>
+</table>
+</div>
+<div id="getAttribute">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">getAttribute()</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="usage"><span class="LITERAL">public Object getAttribute(String name)</span></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description">
+<p>Gibt das Servlet-Kontextattribut mit dem angegebenen Namen zur&uuml;ck. Wenn kein Attribut mit diesem Namen vorhanden ist, wird <span class="LITERAL">null</span> zur&uuml;ckgegeben. Kontextattribute k&ouml;nnen von einem Servlet oder einer JSP-Seite zur Darstellung der JSP-Anwendungsebene festgelegt werden. Ein Container kann auch Attribute verwenden, um Informationen bereitzustellen, die nicht bereits &uuml;ber Methoden in dieser Schnittstelle zur Verf&uuml;gung stehen.
+</p>
+</td>
+</tr>
+</table>
+</div>
+<div id="getAttributeNames">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">getAttributeNames()</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="usage"><span class="LITERAL">public java.util.Enumeration getAttributeNames()</span></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description">
+<p>Gibt eine <span class="LITERAL">Enumeration</span> mit <span class="LITERAL">String</span>-Objekten zur&uuml;ck, die die Attributnamen enthalten, die in diesem Servlet-Kontext verf&uuml;gbar sind.
+</p>
+</td>
+</tr>
+</table>
+</div>
+<div id="getContext">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">getContext()</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="usage"><span class="LITERAL">public ServletContext getContext(String uripath)</span></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description">
+<p>Gibt ein Objekt <span class="LITERAL">ServletContext</span> zur&uuml;ck, das einer angegebenen URI im Webcontainer entspricht. &Uuml;ber diese Methode k&ouml;nnen Servlets und JSP-Seiten Zugriff auf einen anderen Kontext als ihren eigenen erhalten. Es muss sich um einen absoluten URI-Pfad handeln, der mit &quot;/&quot; beginnt. Der URI-Pfad wird auf Grundlage des Dokumentstamms des Containers interpretiert. In Umgebungen mit hohen Sicherheitsanforderungen gibt der Container m&ouml;glicherweise <span class="LITERAL">null</span> f&uuml;r eine bestimmte URI zur&uuml;ck.
+</p>
+</td>
+</tr>
+</table>
+</div>
+<div id="getInitParameter">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">getInitParameter()</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="usage"><span class="LITERAL">public String getInitParameter(String name)</span></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description">
+<p>Gibt einen <span class="LITERAL">String</span> mit dem Wert des benannten, kontextweiten Initialisierungsparameters zur&uuml;ck. Wenn der Parameter nicht vorhanden ist, wird <span class="LITERAL">null</span> zur&uuml;ckgegeben. Kontextinitialisierungsparameter k&ouml;nnen im Bereitstellungsdeskriptor der Webanwendung definiert werden. 
+</p>
+</td>
+</tr>
+</table>
+</div>
+<div id="getInitParameterNames">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">getInitParameterNames()</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="usage"><span class="LITERAL">public java.util.Enumeration getInitParameterNames()</span></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description">
+<p>Gibt die Namen der Initialisierungsparameter des Kontexts als <span class="LITERAL">Enumeration</span> von <span class="LITERAL">String</span>-Objekten zur&uuml;ck. Wenn der Kontext keine Initialisierungsparameter enth&auml;lt, wird eine leere <span class="LITERAL">Enumeration</span> zur&uuml;ckgegeben.
+</p>
+</td>
+</tr>
+</table>
+</div>
+<div id="getMajorVersion">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">getMajorVersion()</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="usage"><span class="LITERAL">public int getMajorVersion()</span></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description">
+<p>Gibt die Hauptversion der Java Servlet-API zur&uuml;ck, die der Webcontainer unterst&uuml;tzt. Ein Container, der mit der Servlet 2.3-API kompatibel ist, gibt 2 zur&uuml;ck.
+</p>
+</td>
+</tr>
+</table>
+</div>
+<div id="getMimeType">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">getMimeType()</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="usage"><span class="LITERAL">public String getMimeType(String filename)</span></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description">
+<p>Gibt den MIME-Typ der angegebenen Datei zur&uuml;ck. Wenn der MIME-Typ nicht bekannt ist, wird <span class="LITERAL">null</span> zur&uuml;ckgegeben. Der MIME-Typ wird von der Konfiguration des Webcontainers bestimmt und kann im Bereitstellungsdeskriptor einer Webanwendung angegeben werden.
+</p>
+</td>
+</tr>
+</table>
+</div>
+<div id="getMinorVersion">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">getMinorVersion()</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="usage"><span class="LITERAL">public int getMinorVersion()</span></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description">
+<p>Gibt die Nebenversion der Java Servlet-API zur&uuml;ck, die der Webcontainer unterst&uuml;tzt. Ein Container, der mit der Servlet 2.3-API kompatibel ist, gibt 3 zur&uuml;ck.
+</p>
+</td>
+</tr>
+</table>
+</div>
+<div id="getNamedDispatcher">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">getNamedDispatcher()</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="usage"><span class="LITERAL">public RequestDispatcher getNamedDispatcher(String name)</span></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description">
+<p>Gibt ein Objekt <span class="LITERAL">RequestDispatcher</span> zur&uuml;ck, das als Wrapper f&uuml;r das benannte Servlet oder die benannte JSP-Seite dient. Namen f&uuml;r Servlets und JSP-Seiten k&ouml;nnen im Bereitstellungsdeskriptor einer Webanwendung definiert werden.
+</p>
+</td>
+</tr>
+</table>
+</div>
+<div id="getRealPath">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">getRealPath()</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="usage"><span class="LITERAL">public String getRealPath(String path)</span></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description">
+<p>Gibt einen <span class="LITERAL">String</span> mit dem Dateisystempfad f&uuml;r den angegebenen kontextbezogenen Pfad zur&uuml;ck. Diese Methode gibt <span class="LITERAL">null</span> zur&uuml;ck, wenn der Webcontainer den Pfad nicht in einen Dateisystempfad &uuml;bersetzen kann (wenn der Inhalt beispielsweise &uuml;ber ein WAR-Archiv zur Verf&uuml;gung steht).
+</p>
+</td>
+</tr>
+</table>
+</div>
+<div id="getRequestDispatcher">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">getRequestDispatcher()</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="usage"><span class="LITERAL">public RequestDispatcher getRequestDispatcher(String path)</span></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description">
+<p>Gibt ein Objekt <span class="LITERAL">RequestDispatcher</span> zur&uuml;ck, das als Wrapper f&uuml;r die Ressource dient, die sich am angegebenen kontextbezogenen Pfad befindet. Die Ressource kann dynamisch sein (Servlet oder JSP) oder statisch (beispielsweise eine regul&auml;re HTML-Datei).
+</p>
+</td>
+</tr>
+</table>
+</div>
+<div id="getResource">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">getResource()</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="usage"><span class="LITERAL">public java.net.URL getResource(String path) throws MalformedURLException</span></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description">
+<p>Gibt die <span class="LITERAL">URL</span> der Ressource zur&uuml;ck, die dem angegebenen kontextbezogenen Pfad zugeordnet ist. Mit dieser Methode kann der Webcontainer den Servlets und JSP-Seiten auch Ressourcen zur Verf&uuml;gung stellen, die nicht vom lokalen Dateisystem stammen, sondern beispielsweise aus einer Datenbank oder WAR-Datei.
+</p>
+
+<p>Die <span class="LITERAL">URL</span> erm&ouml;glicht den direkten Zugriff auf den Inhalt der Ressource. Bei Anforderung einer JSP-Seite wird deshalb die <span class="LITERAL">URL</span> f&uuml;r den JSP-Quellcode zur&uuml;ckgegeben, nicht f&uuml;r das verarbeitete Ergebnis. Verwenden Sie stattdessen das Objekt <span class="LITERAL">RequestDispatcher</span>, um die Ergebnisse der Ausf&uuml;hrung einzuschlie&szlig;en.
+</p>
+
+<p>Diese Methode gibt <span class="LITERAL">null</span> zur&uuml;ck, wenn dem Pfadnamen keine Ressource zugeordnet ist.
+</p>
+</td>
+</tr>
+</table>
+</div>
+<div id="getResourceAsStream">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">getResourceAsStream()</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="usage"><span class="LITERAL">public java.io.InputStream getResourceAsStream(String path)</span></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description">
+<p>Gibt die Ressource, die dem angegebenen kontextbezogenen Pfad zugeordnet ist, als <span class="LITERAL">InputStream</span>-Objekt zur&uuml;ck. Einzelheiten finden Sie unter der Methode <span class="LITERAL">getResource()</span>.
+</p>
+</td>
+</tr>
+</table>
+</div>
+<div id="getServerInfo">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">getServerInfo()</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="usage"><span class="LITERAL">public String getServerInfo()</span></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description">
+<p>Gibt den Namen und die Version des Servlet-Containers zur&uuml;ck, in dem das Servlet oder die JSP-Seite ausgef&uuml;hrt wird, und zwar als <span class="LITERAL">String</span> im Format <em>servername/versionsnummer</em> (beispielsweise <span class="LITERAL">Tomcat/3.2</span>). Ein Container kann in Klammern weitere optionale Informationen enthalten, wie die Java-Version und Informationen zum Betriebssystem.
+</p>
+</td>
+</tr>
+</table>
+</div>
+<div id="log">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">log()</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="usage"><span class="LITERAL">public void log(String message)</span><br> <span class="LITERAL">public void log(String message, Throwable cause)</span></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description">
+<p>Schreibt die angegebene Meldung in eine Protokolldatei des Webcontainers oder schreibt die angegebene Meldung und ein Stack-Trace f&uuml;r das angegebene Objekt <span class="LITERAL">Throwable</span> in die Protokolldatei des Servlets. Name und Typ der Protokolldatei sind containerabh&auml;ngig.
+</p>
+</td>
+</tr>
+</table>
+</div>
+<div id="setAttribute">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">setAttribute()</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="usage"><span class="LITERAL">public void setAttribute(String name, Object attribute)</span></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description">
+<p>Bindet ein Objekt in diesem Servlet-Kontext an den angegebenen Attributnamen. Wenn der angegebene Name bereits f&uuml;r ein Attribut verwendet wird, entfernt diese Methode das alte Attribut und bindet den Namen an das neue Attribut.
+</p>
+</td>
+</tr>
+</table>
+</div>
+<div id="getServlet">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">getServlet()</td>
+<td valign="top" class="COMPATIBILITY">Veraltet</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="usage"><span class="LITERAL">public Servlet getServlet(String name)  throws ServletException</span></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description">
+<p>Mit dieser Methode wurde urspr&uuml;nglich ein Servlet von einem <span class="LITERAL">ServletContext</span> abgerufen. Ab der Servlet 2.1-API gibt diese Methode immer <span class="LITERAL">null</span> zur&uuml;ck. Sie wird nur beibehalten, um die bin&auml;re Kompatibilit&auml;t zu gew&auml;hrleisten. In einer zuk&uuml;nftigen Version der Java Servlet-API wird diese Methode endg&uuml;ltig entfernt.
+</p>
+</td>
+</tr>
+</table>
+</div>
+<div id="getServlets">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">getServlets()</td>
+<td valign="top" class="COMPATIBILITY">Veraltet</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="usage"><span class="LITERAL">public Enumeration getServlets()</span></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description">
+<p>Mit dieser Methode wurde urspr&uuml;nglich eine <span class="LITERAL">Enumeration</span> aller Servlets zur&uuml;ckgegeben, die diesem Servlet-Kontext bekannt waren. Ab der Servlet 2.1-API gibt diese Methode immer eine leere <span class="LITERAL">Enumeration</span> zur&uuml;ck. Sie wird nur beibehalten, um die bin&auml;re Kompatibilit&auml;t zu gew&auml;hrleisten. In einer zuk&uuml;nftigen Version der Java Servlet-API wird diese Methode endg&uuml;ltig entfernt.
+</p>
+</td>
+</tr>
+</table>
+</div>
+<div id="getServletNames">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">getServletNames()</td>
+<td valign="top" class="COMPATIBILITY">Veraltet</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="usage"><span class="LITERAL">public Enumeration getServletNames()</span></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description">
+<p>Mit dieser Methode wurde urspr&uuml;nglich eine <span class="LITERAL">Enumeration</span> aller Servlet-Namen zur&uuml;ckgegeben, die diesem Kontext bekannt waren. Ab Servlet 2.1 gibt diese Methode immer eine leere <span class="LITERAL">Enumeration</span> zur&uuml;ck. Sie wird nur beibehalten, um die bin&auml;re Kompatibilit&auml;t zu gew&auml;hrleisten. In einer zuk&uuml;nftigen Version der Java Servlet-API wird diese Methode endg&uuml;ltig entfernt.
+</td>
+</tr>
+</table>
+</div>
+<div id="logDeprecated">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">log()</td>
+<td valign="top" class="COMPATIBILITY">Veraltet</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="usage"><span class="LITERAL">public void log(Exception exception, String message)</span></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description">
+<p>Mit dieser Methode wurde urspr&uuml;nglich der Stack-Trace einer Ausnahme und eine Fehlermeldung mit einer Erkl&auml;rung in die Protokolldatei des Webcontainers geschrieben. Ab der Servlet 2.1-API wird empfohlen, stattdessen <span class="LITERAL">log(String, Throwable)</span> zu verwenden.
+</p>
+</td>
+</tr>
+</table>
+</div>
+</body>
+</html>

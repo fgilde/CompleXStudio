@@ -1,0 +1,2183 @@
+﻿<html><head>
+
+<link rel="stylesheet" href="josh.css"></head><body bgcolor="#FFFFFF">
+<div id="Buffer">
+			<table width="100%" cellspacing="0" cellpadding="0" border="0" class="main"><tr>							<td valign="top" class="name">Buffer</td><td valign="top" nowrap class="compatibility">&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><pre>Boolean = Response.Buffer
+Response.Buffer = Boolean</pre>
+					</td><td valign="top" nowrap class="requirements"> &#160;</td>
+				</tr>
+				<tr><td colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Gibt einen Booleschen Wert zur&uuml;ck oder legt ihn fest. Dieser Wert steuert, ob Ausgabedaten auf dem Server gepuffert und erst nach vollst&auml;ndiger Verarbeitung der Anforderung oder nach dem Aufruf der Methode <span class="literal">Response.Flush</span> oder <span class="literal">Reponse.End</span> gesendet werden. Der Standardwert ist <span class="literal">True</span>.
+</p>
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Parameter</span><ul><li><i><span class="replaceable">Boolean</span></i><br>&#160;
+			  Ein Boolescher Wert, der den Wert der Eigenschaft aufnimmt oder festlegt.</li></ul>
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="notes"><span class="title">Hinweise</span></td>
+				</tr>
+				<tr>
+					<td><p>Diese Eigenschaft dient der R&uuml;ckw&auml;rtskompatibilit&auml;t mit ASP. In ASP.NET hat die Eigenschaft <span class="literal">BufferOutput</span> Vorrang. Neuer ASP.NET-Code sollte anstelle von <span class="literal">Buffer</span> <span class="literal">BufferOutput</span> verwenden.
+</p><p>Ein wichtiger Unterschied zwischen der Eigenschaft <span class="literal">Response.Buffer</span> in ASP und den Eigenschaften <span class="literal">Buffer</span> und <span class="literal">BufferOutput</span> in ASP.NET besteht darin, dass in ASP die Eigenschaft <span class="literal">Buffer</span> nur bis zum Senden von Ausgaben an den Browser ver&auml;ndert werden konnte. Sonst trat ein Fehler auf. In ASP.NET k&ouml;nnen Sie <span class="literal">Buffer</span> oder <span class="literal">BufferOutput</span> zu jedem Zeitpunkt ver&auml;ndern, da diese Eigenschaften in ASP.NET kompiliert und nicht interpretiert werden. &Auml;nderungen wirken sich nur auf die Art der Pufferung aus. So k&ouml;nnen Entwickler viel flexibler festlegen, wie und wann Ausgaben gepuffert werden. Dies wird im Beispiel zu <span class="literal">BufferOutput</span> veranschaulicht.
+</p>
+					</td>
+				</tr>
+			</table>
+		</div>
+<div id="BufferOutput">
+			<table width="100%" cellspacing="0" cellpadding="0" border="0" class="main"><tr>							<td valign="top" class="name">BufferOutput</td><td valign="top" nowrap class="compatibility">&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><pre>Boolean = Response.BufferOutput
+Response.BufferOutput = Boolean </pre>
+					</td><td valign="top" nowrap class="requirements"> &#160;</td>
+				</tr>
+				<tr><td colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Gibt einen Booleschen Wert zur&uuml;ck oder legt ihn fest. Dieser Wert steuert, ob Ausgabedaten auf dem Server gepuffert und erst nach vollst&auml;ndiger Verarbeitung der Anforderung oder nach dem Aufruf der Methode <span class="literal">Response.Flush</span> oder <span class="literal">Reponse.End</span> gesendet werden. Der Standardwert ist <span class="literal">True</span>.
+</p>
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Parameter</span><ul><li><i><span class="replaceable">Boolean</span></i><br>&#160;
+			  Ein Boolescher Wert, der den Wert der Eigenschaft aufnimmt oder festlegt.</li></ul>
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td><p>In diesem Beispiel wird die Eigenschaft <span class="literal">BufferOutput</span> auf <span class="literal">False</span> gesetzt und 50 mal eine Schleife durchlaufen. Bei jedem Durchlauf wird ein Punkt in die HTTP-Ausgabe gesetzt. Dieselbe Ausgabe wird auch in die <span class="literal">Text</span>-Eigenschaft des Beschriftungssteuerelements <span class="literal">Message</span> geschrieben. F&uuml;r die ersten 10 und die letzten 21 Durchl&auml;ufe ist <span class="literal">BufferOutput</span> <span class="literal">False</span>, f&uuml;r die Durchl&auml;ufe 11 bis 29 <span class="literal">True</span>.
+</p></td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting">
+					  <pre>Sub Page_Load(  )
+   Response.BufferOutput = False
+   Dim i As Integer
+   For i = 1 To 50
+      If (i &gt; 10 And i &lt; 30) Then
+         Response.BufferOutput = True
+      Else
+         Response.BufferOutput = False
+      End If
+      System.Threading.Thread.Sleep(500)
+      Response.Write(".")
+      Message.Text &amp;= "."
+      'Response.Flush
+   Next
+   Response.Write("&lt;br/&gt;Done!&lt;br/&gt;")
+   Message.Text &amp;= "&lt;br/&gt;Done!&lt;br/&gt;"
+End Sub</pre></span><span class="programlisting"></span></td>
+				</tr>
+				<tr><td >
+				  <p>Die Codeausgabe sieht in etwa folgenderma&szlig;en aus:</p>
+				  <p><span class="literal">.................................................. Done! .................................................. Done!</span> </p>
+				  <p>In der ersten Zeile werden die Punkte nacheinander ausgegeben, bis zehn Punkte angezeigt werden. Danach werden nach einer Pause 20 weitere Punkte angezeigt. Anschlie&szlig;end werden nacheinander die restlichen Punkte und zum Schluss die Meldung "Done!" angezeigt. Die identische Ausgabe des Beschriftungssteuerelements von ASP.NET (als HTML-<span class="literal">&lt;span&gt;</span>) wird komplett auf einmal ausgegeben, da die Ausgabe von Steuerelementen auf dem Server erst an den Client gesendet wird, wenn das Steuerelement dargestellt ist. Bei jeder Schleife im vorigen Beispiel f&uuml;gt der Code also einfach einer Eigenschaft des Steuerelements, das zu einem sp&auml;teren Zeitpunkt dargestellt wird, Daten hinzu. Der Text, der durch den Aufruf von <span class="literal">Response.Write</span> gesendet wird, wird sofort an den Browser &uuml;bertragen, wenn die Pufferung ausgeschaltet wird. </p>
+				  <p>Ein &auml;hnlicher Verlauf ergibt sich, wenn Sie die <span class="literal">Response.BufferOutput</span>-Zeilen im Beispiel auf Kommentar setzen (indem Sie der Zeile ein Hochkomma (<span class="literal">'</span>) voranstellen) und den Kommentarstatus der <span class="literal">Response.Flush</span>-Zeile aufheben. Durch diese Kommentareinstellungen verl&auml;uft die Ausgabe ohne die oben beschriebene Pause. </p>
+				  <p>Durch den Aufruf der gemeinsamen (statischen) Methode <span class="literal">Thread.Sleep</span> k&ouml;nnen Sie die Verarbeitung einer ASP.NET-Anforderung f&uuml;r eine bestimmte Anzahl Millisekunden unterbrechen. So k&ouml;nnen Sie bei Bedarf Verarbeitungspausen einf&uuml;gen. Das kann sich jedoch auf die f&uuml;r einzelne Anforderungen erforderliche Gesamtzeit auswirken. In Anwendungen, die hohe Skalierbarkeit erfordern, kann dies die Gesamtleistung der Anwendung in nicht akzeptablem Ma&szlig;e beeintr&auml;chtigen, da nur eine begrenzte Anzahl Threads f&uuml;r die Verarbeitung von Anforderungen zur Verf&uuml;gung steht. </p>
+				  <p>Wenn Sie auf der Seite direkt hinter der Deklaration <span class="literal">@ Page</span> folgende Zeile hinzuf&uuml;gen, braucht der Namespace-Name beim Aufruf von <span class="literal">Thread.Sleep</span> nicht explizit angegeben zu werden: </p>
+				  </td>
+				</tr>
+				<tr>
+					<td><span class="programlisting">
+					<pre>
+
+&lt;%@ Import Namespace="System.Threading" %&gt;</pre>
+						</span><span class="programlisting"> </span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="notes"><span class="title">Hinweise</span></td>
+				</tr>
+				<tr>
+					<td><p>Diese ASP.NET-Eigenschaft entspricht der ASP-Eigenschaft <span class="literal">Buffer</span> und sollte bei neuen Projekten bevorzugt verwendet werden.
+</p>
+					</td>
+				</tr>
+			</table>
+		</div>
+<div id="Cache">
+			<table width="100%" cellspacing="0" cellpadding="0" border="0" class="main"><tr>							<td valign="top" class="name">Cache</td><td valign="top" nowrap class="compatibility">&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><pre>HttpCachePolicy = Response.Cache</pre>
+					</td><td valign="top" nowrap class="requirements"> &#160;</td>
+				</tr>
+				<tr><td colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Gibt eine Instanz der Klasse <span class="literal">HttpCachePolicy</span> zur&uuml;ck, die das Cache-Verhalten der Seite enth&auml;lt. Sie k&ouml;nnen mit den von der Klasse <span class="literal">HttpCachePolicy</span> offen gelegten Methoden untersuchen, welche Header oder Parameter festgelegt wurden, um den Ausgabe-Cache zu variieren, oder die aktuellen Cache-Einstellungen &auml;ndern. Zur Klasse <span class="literal">HttpCachePolicy</span> geh&ouml;ren folgende Mitglieder:
+</p>
+						<table border="1"><tbody><tr><th>HttpCachePolicy-Mitglied
+</th><th>Beschreibung</th></tr>
+								<tr><td>SetCacheability (Methode)
+</td><td>Steuert die Zwischenspeicherung durch Festlegen des HTTP-<span class="literal">Cache-Control</span>-Headers.</td>
+								</tr>
+								<tr><td>SetExpires (Methode)</td><td>Legt den HTTP-<span class="literal">Expires</span>-Header fest. Diese Methode akzeptiert ein DateTime-Argument, das die absolute G&uuml;ltigkeitsdauer f&uuml;r den Header angibt.
+</td>
+								</tr>
+								<tr><td>SetLastModified (Methode)
+</td><td>Legt den HTTP-<span class="literal">Last-Modified</span>-Header fest. Diese Methode akzeptiert ein DateTime-Argument, das die absolute G&uuml;ltigkeitsdauer f&uuml;r den Header angibt.
+</td>
+								</tr>
+								<tr><td>Insert (Methode)</td><td>F&uuml;gt dem Cache ein Element hinzu und weist diesem einen Schl&uuml;ssel zu.</td>
+								</tr>
+								<tr><td>Item (Eigenschaft)</td><td>Gibt ein Objekt zur&uuml;ck, das abh&auml;ngig vom Schl&uuml;sselwert ein Element des Cache darstellt, oder legt ein Datenelement im Cache fest und weist diesem einen Schl&uuml;sselwert zu.
+</td>
+								</tr>
+								<tr><td>Remove (Methode)</td><td>Entfernt ein Element mit einem bestimmten Schl&uuml;sselwert aus dem Cache.</td>
+								</tr>
+							</tbody></table>
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Parameter</span><ul><li><i><span class="replaceable">HttpCachePolicy</span></i><br>&#160;
+			  Eine Objektvariable des Typs <span class="literal">HttpCachepolicy</span>.</li></ul>
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td><p>Das folgende Beispiel ruft eine Instanz der Klasse <span class="literal">HttpCachePolicy</span> in eine lokale Variable ab, stellt als G&uuml;ltigkeitsdauer 2 Minuten ab Verarbeitung der Seite ein und setzt das Cache-Verhalten der Seite dann auf <span class="literal">Public</span>. Zum Schluss wird die Eigenschaft <span class="literal">Text</span> des Beschriftungssteuerelements <span class="literal">Message</span> auf die aktuelle Zeit gesetzt.
+</p></td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>Sub Page_Load(  )
+   Dim myCachePol As HttpCachePolicy
+   myCachePol = Response.Cache
+   myCachePol.SetExpires(DateTime.Now.AddSeconds(120))
+   myCachePol.SetCacheability(HttpCacheability.Public)
+   Message.Text = Now.ToString(  )
+End Sub</pre>
+						</span></td>
+				</tr>
+				<tr>
+				  <td >Die Seite sollte dann das aktuelle Datum und die aktuelle Uhrzeit ausgeben. Beim Aktualisieren sollte sich die Ausgabe erst nach Ablauf von 2 Minuten &auml;ndern. <br></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="notes"><span class="title">Hinweise</span></td>
+				</tr>
+				<tr>
+					<td><p>Das durch diese Eigenschaft zur&uuml;ckgegebene <span class="literal">HttpCachePolicy</span>-Objekt ist die in ASP.NET bevorzugte Methode, um das Cache-Verhalten einer Seite zu &auml;ndern. <span class="literal">HttpCachePolicy</span> enth&auml;lt die Funktionalit&auml;t, die in ASP durch die Eigenschaften <span class="literal">CacheControl</span>, <span class="literal">Expires</span> und <span class="literal">ExpiresAbsolute</span> erf&uuml;llt wurden. Mit der Klasse <span class="literal">HttpCachePolicy</span> k&ouml;nnen Sie z.&#160; B. explizit verhindern, dass der Server die jeweilige Antwort zwischenspeichert. Downstream-Caching der Antwort ist jedoch weiterhin m&ouml;glich.
+</p><p>Durch die Direktive <span class="literal">@ OutputCache</span> und die dazu geh&ouml;renden Attribute k&ouml;nnen Sie auch das Ausgabe-Cache-Verhalten einer Seite festlegen. Dabei haben Sie jedoch weniger Kontrolle als bei den Methoden der Klasse <span class="literal">HttpCachePolicy</span>. Caching mit der Direktive <span class="literal">@</span> <span class="literal">OutputCache</span> wird in Kapitel 3 beschrieben.
+</p>
+					</td>
+				</tr>
+			</table>
+		</div>
+<div id="CacheControl">
+			<table width="100%" cellspacing="0" cellpadding="0" border="0" class="main"><tr>							<td valign="top" class="name">CacheControl</td><td valign="top" nowrap class="compatibility">&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><pre>Response.CacheControl = String</pre>
+					</td><td valign="top" nowrap class="requirements"> &#160;</td>
+				</tr>
+				<tr><td colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Legt das Cache-Verhalten der aktuellen Seite fest.
+</p>
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Parameter</span><ul><li><i><span class="replaceable">String</span></i><br>&#160;
+			  Diese Stringvariable enth&auml;lt den f&uuml;r die Eigenschaft <span class="literal">CacheControl</span> festgelegten Wert. G&uuml;ltige Werte sind <span class="literal">Public</span> und <span class="literal">Private</span>.
+</li></ul>
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td><p>&nbsp;</p>
+					</td>
+				</tr>
+
+				<tr>
+					<td><span class="programlisting"><pre>Sub Page_Load(  )
+   Response.CacheControl = "Public"
+   Response.Expires = 2
+   Message.Text = Now.ToString(  )
+End Sub</pre>
+						</span></td>
+				</tr>
+				<tr>
+				  <td valign="top" colspan="2" class="clearseparation">Die Ausgabe dieses Codes sollte mit der des vorherigen Beispiels identisch sein.
+                    <p>&nbsp;</p></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="notes"><span class="title">Hinweise</span></td>
+				</tr>
+				<tr>
+					<td><p>Anstelle dieser Eigenschaft werden jetzt die <span class="literal">HttpCacheability</span>-Klassenmethoden bevorzugt.
+</p>
+					</td>
+				</tr>
+			</table>
+		</div>
+<div id="Charset">
+			<table width="100%" cellspacing="0" cellpadding="0" border="0" class="main"><tr>							<td valign="top" class="name">Charset</td><td valign="top" nowrap class="compatibility">&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><pre>String = Response.Charset
+Response.Charset = String</pre>
+					</td><td valign="top" nowrap class="requirements"> &#160;</td>
+				</tr>
+				<tr><td colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Gibt einen String zur&uuml;ck, der den Zeichensatz f&uuml;r die aktuelle Antwort angibt, oder legt diesen fest. Wird der String explizit festgelegt, wird der der Eigenschaft <span class="literal">Charset</span> zugewiesene Wert dem HTTP-Antwort-Header <span class="literal">Content-Type</span> hinzugef&uuml;gt.
+</p>
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Parameter</span><ul><li><i><span class="replaceable">String</span></i><br>&#160;
+			  Eine Stringvariable, die den Wert der Eigenschaft aufnimmt oder festlegt. Der Standardwert ist "utf-8".
+</li></ul>
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td><p>Das folgende Beispiel legt als Zeichensatz f&uuml;r die HTTP-Antwort Windows-1255 fest. Wie der Name schon sagt, ist dieser Zeichensatz nur unter Internet Explorer auf Windows-Clients verf&uuml;gbar. In anderen Browsern oder Browsern auf anderen Betriebssystemen wird die Seite m&ouml;glicherweise nicht richtig angezeigt. Der Wert f&uuml;r den Zeichensatz wird dann in die <span class="literal">Text</span>-Eigenschaft des Beschriftungssteuerelements <span class="literal">Message</span> geschrieben. Den Unterschied zwischen diesem Zeichensatz und dem Standardzeichensatz "utf-8" sehen Sie, wenn Sie die Seite im Internet Explorer laden, die Zeile zur Festlegung der Eigenschaft <span class="literal">Charset</span> auf Kommentar setzen, die Seite speichern und dann erneut im Browser laden.
+</p>
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>Sub Page_Load(  )
+   Response.Charset = "Windows-1255"
+   Message.Text = "Current character set is " &amp; Response.Charset
+End Sub</pre>
+						</span></td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="notes"><span class="title">Hinweise</span></td>
+				</tr>
+				<tr>
+					<td><p>Wenn Sie versuchen, diese Eigenschaft zu &auml;ndern, nachdem die HTTP-Header an den Browser gesendet wurden, wird eine <span class="literal">HttpException</span> ausgel&ouml;st. Dies tritt sehr wahrscheinlich auf, wenn Sie das Puffern der Ausgabe &uuml;ber die Eigenschaft <span class="literal">BufferOutput</span> deaktivieren und anschlie&szlig;end den Inhalt mit <span class="literal">Response.Write</span> in den Browser schreiben.
+</p><p>Ist der durch die Eigenschaft <span class="literal">Charset</span> festgelegte Zeichensatz f&uuml;r den vom Client verwendeten Browser nicht g&uuml;ltig, wird die Festlegung ignoriert und stattdessen der Standardzeichensatz des jeweiligen Browsers verwendet. Wie bereits erw&auml;hnt, wird mit dem Standardzeichensatz die Seite m&ouml;glicherweise nicht in der gew&uuml;nschten Weise angezeigt.
+</p>
+					</td>
+				</tr>
+			</table>
+		</div>
+<div id="ContentEncoding">
+			<table width="100%" cellspacing="0" cellpadding="0" border="0" class="main"><tr>							<td valign="top" class="name">ContentEncoding</td><td valign="top" nowrap class="compatibility">&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><pre>Encoding = Response.ContentEncoding
+Response.ContentEncoding = Encoding</pre>
+					</td><td valign="top" nowrap class="requirements"> &#160;</td>
+				</tr>
+				<tr><td colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Gibt eine Instanz der Klasse <span class="literal">Encoding</span> zur&uuml;ck, die die Kodierung der aktuellen Antwort angibt. Die Klasse <span class="literal">Encoding</span> legt Eigenschaften und Methoden offen, mit denen Sie die Zeichenkodierung des Systems, also die Art der internen Speicherung von Zeichen im System, &uuml;berpr&uuml;fen und &auml;ndern k&ouml;nnen. Sie k&ouml;nnen z.&#160; B. eine Unicode-Zeichenfolge in ASCII, UTF-7 oder UTF-8 konvertieren.
+</p>
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Parameter</span><ul><li><i><span class="replaceable">Encoding</span></i><br>&#160;
+			  Eine Objektvariable des Typs <span class="literal">Encoding</span>. Die Eigenschaft <span class="literal">EncodingName</span> gibt den Kodierungstyp im Klartext an.
+</li></ul>
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td><p>Das folgende Beispiel verwendet die Eigenschaften der Klasseninstanz <span class="literal">Encoding</span>, die durch die Eigenschaft <span class="literal">ContentEncoding</span> zur&uuml;ckgegeben werden, um den Namen der aktuellen Kodierung in Klartext und als registrierten Namen (IANA) anzuzeigen.
+</p>
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>Sub Page_Load(  )
+   Message.Text = "Current encoding is " &amp; _
+      Response.ContentEncoding.EncodingName &amp; "&lt;br/&gt;"
+   Message.Text &amp;= "Current encoding IANA name is " &amp; _
+      Response.ContentEncoding.WebName &amp; "&lt;br/&gt;"
+End Sub</pre>
+						</span></td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="notes"><span class="title">Hinweise</span></td>
+				</tr>
+				<tr>
+					<td><p>Die Eigenschaft <span class="literal">ContentEncoding</span> ist neu in ASP.NET und bietet eine umfangreichere Oberfl&auml;che zum &Uuml;berpr&uuml;fen und &Auml;ndern des Zeichensatzes und der Codepage-Informationen f&uuml;r die aktuelle Antwort. Sie bietet auch die einzige M&ouml;glichkeit, die Kodierung eines Strings zu &auml;ndern, z.&#160; B. von Unicode in ANSI.
+</p>
+					</td>
+				</tr>
+			</table>
+		</div>
+<div id="ContentType">
+			<table width="100%" cellspacing="0" cellpadding="0" border="0" class="main"><tr>							<td valign="top" class="name">ContentType</td><td valign="top" nowrap class="compatibility">&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><pre>String = Response.ContentType
+Response.ContentType = String</pre>
+					</td><td valign="top" nowrap class="requirements"> &#160;</td>
+				</tr>
+				<tr><td colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Gibt einen String zur&uuml;ck, der den MIME-Typ der aktuellen Antwort angibt, oder legt diesen fest. Damit k&ouml;nnen Sie den Wert des HTTP-Antwort-Headers <span class="literal">Content-Type</span> abrufen oder festlegen.
+</p>
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Parameter</span><ul><li><i><span class="replaceable">String</span></i><br>&#160;
+			  Eine Stringvariable, die den Inhaltstyp aufnimmt oder festlegt. Der Standardwert ist "text/html".
+</li></ul>
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td><p>Das folgende Beispiel zeigt den aktuellen MIME-Inhaltstyp im Clientbrowser an.
+</p>
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>Sub Page_Load(  )
+   Message.Text = "Current content type is " &amp; _
+      Response.ContentType &amp; "&lt;br/&gt;"
+End Sub</pre>
+						</span></td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="notes"><span class="title">Hinweise</span></td>
+				</tr>
+				<tr>
+					<td><p>Die Eigenschaft <span class="literal">ContentType</span> ist sehr wichtig, da Sie dadurch Inhalte an den Clientbrowser senden k&ouml;nnen, die nicht als Standard-HTML vorliegen. Wenn Sie z.&#160; B. mit der Methode <span class="literal">Response.BinaryWrite</span> bin&auml;re Bilddaten an den Clientbrowser senden m&ouml;chten, m&uuml;ssen Sie auch f&uuml;r die Eigenschaft <span class="literal">ContentType</span> den entsprechenden MIME-Typ w&auml;hlen (z.&#160; B. "image/jpg" oder "image/gif"). Im Beispiel f&uuml;r <span class="literal">BinaryWrite</span> sehen Sie, wie Sie dazu vorgehen.
+</p>
+					</td>
+				</tr>
+			</table>
+		</div>
+<div id="Expires">
+			<table width="100%" cellspacing="0" cellpadding="0" border="0" class="main"><tr>							<td valign="top" class="name">Expires</td><td valign="top" nowrap class="compatibility">&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><pre>Integer = Response.Expires
+Response.Expires = Integer</pre>
+					</td><td valign="top" nowrap class="requirements"> &#160;</td>
+				</tr>
+				<tr><td colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Gibt einen Integerwert zur&uuml;ck, der angibt, wie vielen Minuten eine zwischengespeicherte Seite g&uuml;ltig ist, oder legt diese ganze Zahl fest. Diese Eigenschaft wird gemeinsam mit der Eigenschaft <span class="literal">CacheControl</span> verwendet, um das Zwischenspeichern von Antworten zu steuern.
+</p>
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Parameter</span><ul><li><i><span class="replaceable">Integer</span></i><br>&#160;
+			  Eine Integervariable, die die G&uuml;ltigkeitsdauer in Minuten aufnimmt oder festlegt.</li></ul>
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="notes"><span class="title">Hinweise</span></td>
+				</tr>
+				<tr>
+					<td><p>Diese Eigenschaft gew&auml;hrleistet die R&uuml;ckw&auml;rtskompatibilit&auml;t mit ASP. In ASP.NET werden stattdessen die Methoden der <span class="literal">HttpCachePolicy</span>-Instanz bevorzugt, die von der Eigenschaft <span class="literal">Cache</span> zur&uuml;ckgegeben wird.
+</p>
+					</td>
+				</tr>
+			</table>
+		</div>
+<div id="ExpiresAbsolute">
+			<table width="100%" cellspacing="0" cellpadding="0" border="0" class="main"><tr>							<td valign="top" class="name">ExpiresAbsolute</td><td valign="top" nowrap class="compatibility">&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><pre>DateTime = Response.Expires
+Response.Expires = DateTime</pre>
+					</td><td valign="top" nowrap class="requirements"> &#160;</td>
+				</tr>
+				<tr><td colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Gibt einen <span class="literal">DateTime</span>-Wert f&uuml;r den Zeitpunkt (Datum und Uhrzeit) zur&uuml;ck, bis zu dem eine zwischengespeicherte Antwort g&uuml;ltig sein soll, oder legt diesen Wert fest.
+</p>
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Parameter</span><ul><li><i><span class="replaceable">DateTime</span></i><br>&#160;
+			  Eine <span class="literal">DateTime</span>-Variable, die die absolute G&uuml;ltigkeitsdauer aufnimmt oder festlegt.</li></ul>
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td><p>Das folgende Beispiel erm&ouml;glicht durch die Eigenschaft <span class="literal">CacheControl</span> das Zwischenspeichern der aktuellen Antwort und legt als absolute G&uuml;ltigkeit 30 Sekunden ab der aktuellen Uhrzeit fest.
+</p>
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>Sub Page_Load(  )
+   Response.CacheControl = "Public"
+   Response.ExpiresAbsolute = DateTime.Now.AddSeconds(30)
+   Message.Text = Now.ToString(  )
+End Sub</pre>
+						</span></td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="notes"><span class="title">Hinweise</span></td>
+				</tr>
+				<tr>
+					<td><p>Diese Eigenschaft gew&auml;hrleistet die R&uuml;ckw&auml;rtskompatibilit&auml;t mit ASP. In ASP.NET werden stattdessen die Methoden der <span class="literal">HttpCachePolicy</span>-Instanz bevorzugt, die von der Eigenschaft <span class="literal">Cache</span> zur&uuml;ckgegeben wird.
+</p>
+					</td>
+				</tr>
+			</table>
+		</div>
+<div id="IsClientConnected">
+			<table width="100%" cellspacing="0" cellpadding="0" border="0" class="main"><tr>							<td valign="top" class="name">IsClientConnected</td><td valign="top" nowrap class="compatibility">&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><pre>Boolean = Response.IsClientConnected</pre>
+					</td><td valign="top" nowrap class="requirements"> &#160;</td>
+				</tr>
+				<tr><td colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Gibt einen Booleschen Wert zur&uuml;ck, der angibt, ob der Client noch verbunden ist. <span class="literal">False</span> bedeutet, dass der Client nicht mehr verbunden ist.
+</p>
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Parameter</span><ul><li><i><span class="replaceable">Boolean</span></i><br>&#160;
+			  Eine Boolesche Variable, die den Wert der Eigenschaft aufnimmt.</li></ul>
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td><p>Dieses Beispiel &uuml;berpr&uuml;ft die Eigenschaft <span class="literal">IsClientConnected</span>, bevor eine l&auml;ngere Task gestartet wird, um zu vermeiden, dass die Task ausgef&uuml;hrt wird, ohne dass eine Verbindung zum Client besteht. Wenn die Eigenschaft <span class="literal">False</span> zur&uuml;ckgibt, ruft der Code die Methode <span class="literal">Response.End</span> auf. Obwohl der Client nicht mehr verbunden ist und keine gepufferten Ausgabedaten mehr empfangen kann (die beim Aufrufen der Methode <span class="literal">End</span> gesendet werden), empfiehlt es sich trotzdem, die Methode <span class="literal">End</span> aufzurufen, da so die weitere Verarbeitung der Seite angehalten und das Ereignis <span class="literal">Application_EndRequest</span> ausgel&ouml;st wird. Wenn Sie Cleanup-Code f&uuml;r die Seite geschrieben haben, der von der Ereignisbehandlungsroutine f&uuml;r <span class="literal">Application_EndRequest</span> ausgef&uuml;hrt wird, l&auml;sst sich durch Aufruf von <span class="literal">Response.End</span> sicherstellen, dass der Cleanup-Code ausgef&uuml;hrt wird, selbst wenn keine Verbindung zum Client mehr besteht.
+</p>
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>Sub Page_Load(  )
+   'Check client connection status
+   If Response.IsClientConnected = False Then
+      Response.End
+   Else
+      'Start long-running processing task
+   End If
+End Sub</pre>
+						</span></td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="notes"><span class="title">Hinweise</span></td>
+				</tr>
+				<tr>
+					<td><p>Die Eigenschaft <span class="literal">IsClientConnected</span> eignet sich besonders f&uuml;r lang andauernde Prozesse, die in gro&szlig;em Umfang Verarbeitungsressourcen auf dem Server belegen. Wenn Sie die Eigenschaft <span class="literal">IsClientConnected</span> vor oder regelm&auml;&szlig;ig w&auml;hrend der Ausf&uuml;hrung umfangreicher Verarbeitungsaufgaben abfragen, k&ouml;nnen Sie eine unn&ouml;tige Fortf&uuml;hrung der Verarbeitung vermeiden, wenn der Client aus irgendeinem Grund die Verbindung getrennt hat.
+</p>
+					</td>
+				</tr>
+			</table>
+		</div>
+<div id="Output">
+			<table width="100%" cellspacing="0" cellpadding="0" border="0" class="main"><tr>							<td valign="top" class="name">Output</td><td valign="top" nowrap class="compatibility">&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><pre>TextWriter = Response.Output</pre>
+					</td><td valign="top" nowrap class="requirements"> &#160;</td>
+				</tr>
+				<tr><td colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Gibt ein <span class="literal">TextWriter</span>-Objekt zur&uuml;ck, das nur geschrieben, aber nicht gelesen werden kann. Dieses Objekt schreibt Text direkt in den Ausgabestream der aktuellen Antwort.
+</p>
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Parameter</span><ul><li><i><span class="replaceable">TextWriter</span></i><br>&#160;
+										Eine Objektvariable des Typs <span class="literal">TextWriter</span>.
+										<tr><td colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+
+</li></ul>
+										<p>Zur Klasse <span class="literal">TextWriter</span> geh&ouml;ren folgende Mitglieder:	</p>
+										<table border="1"><tbody><tr><th>Mitglied</th><th>Beschreibung</th></tr>
+
+
+								<tr><td>Close (Methode)</td><td>Schlie&szlig;t das <span class="literal">TextWriter</span>-Objekt und gibt seine Ressourcen frei.</td>
+								</tr>
+								<tr><td>Flush (Methode)</td><td>L&ouml;scht den Pufferinhalt des <span class="literal">TextWriter</span>-Objekts und schreibt die Ausgabe auf das dazu geh&ouml;rende Ger&auml;t.
+</td>
+								</tr>
+								<tr><td>NewLine (Eigenschaft)
+</td><td>Ruft das oder die vom <span class="literal">TextWriter</span>-Objekt verwendeten Zeilenvorschubzeichen ab oder legt es/sie fest.</td>
+								</tr>
+								<tr><td>Write (Methode)</td><td>Schreibt Daten in den Textstream.</td>
+								</tr>
+								<tr><td>WriteLine (Methode)
+</td><td>Schreibt Daten in den Textstream. An die Daten wird ein Zeilenvorschubzeichen angeh&auml;ngt. Das Zeilenvorschubzeichen wird durch die Eigenschaft <span class="literal">Newline</span> definiert.
+</td>
+								</tr>
+							</tbody></table>
+
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td><p>Das folgende Beispiel deklariert eine lokale Variable des Typs <span class="literal">TextWriter</span>, ruft eine <span class="literal">TextWriter</span>-Instanz aus der Eigenschaft <span class="literal">Output</span> ab und verwendet danach die Methode <span class="literal">WriteLine</span>, um den Text "Hello, World!" in den Ausgabestream schreiben. Die Methode <span class="literal">WriteLine</span> schreibt den angegebenen Text (bzw. bei Datentypen, die kein Stringformat haben, die Textdarstellung) zusammen mit dem durch die <span class="literal">TextWriter</span>-Eigenschaft <span class="literal">NewLine</span> festgelegten Zeilenendezeichen. Wird die Eigenschaft <span class="literal">NewLine</span> nicht gesetzt, beeinflusst das Zeilenendezeichen die Formatierung des an den Browser gesendeten Texts. Die Formatierung des im Browser angezeigten Texts w&uuml;rde jedoch nicht beeinflusst, da Browser normalerweise Leerr&auml;ume, wie z.&#160; B. HTML-fremde Zeilenendezeichen, bei der Darstellung von HTML ignorieren.
+</p>
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>Sub Page_Load(  )
+   Dim myWriter As System.IO.TextWriter
+   myWriter = Response.Output
+   myWriter.NewLine = "&lt;br/&gt;"
+   myWriter.WriteLine("Hello, World!")
+   myWriter.WriteLine("Hello, World, once again!")
+End Sub</pre>
+						</span></td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="notes"><span class="title">Hinweise</span></td>
+				</tr>
+				<tr>
+					<td><p>Die Eigenschaft <span class="literal">Output</span> ist eine Alternative zur Methode <span class="literal">Response.Write</span> beim Ausgeben von Text an den Ausgabestream. Sie k&ouml;nnen auch die aus der Eigenschaft <span class="literal">Output</span> abgerufene <span class="literal">TextWriter</span>-Instanz an eine Methode einer benutzerdefinierten Komponente weitergeben, damit diese Komponente Text direkt in den Ausgabestream der aktuellen Antwort schreiben kann.
+</p><p>Wie bei der Methode <span class="literal">Response.Write</span> wird beim Schreiben von Text in den Ausgabestream mit dem von der Eigenschaft <span class="literal">Output</span> zur&uuml;ckgegebenen <span class="literal">TextWriter</span>-Objekt die Textausgabe durch die Position des Codes beeinflusst, der den Text schreibt. Im Codebeispiel weiter oben wird der Text "Hello, World!" vor allen statischen HTML-Daten in der Seitenausgabe angezeigt. Der Grund daf&uuml;r ist, dass in diesem Fall die Ausgabe von <span class="literal">TextWriter</span> und der Methode <span class="literal">Response.Write</span> verarbeitet wird, bevor die Steuerelemente auf der Seite dargestellt werden. Wenn die Ausgabe der <span class="literal">TextWriter</span>-Instanz und von <span class="literal">Response.Write</span> inline erscheinen soll, k&ouml;nnen Sie den oben angegebenen Code dort, wo die Ausgabe angezeigt werden soll, in einen <span class="literal">&lt;% %&gt;</span>-Ausgabeblock setzen. Eine bessere Alternative zur genauen Positionierung von Ausgabedaten in ASP.NET w&auml;re es, ein ASP.NET-Literal-Serversteuerelement an der Stelle in die Datei einzuf&uuml;gen, an der die Ausgabe erscheinen soll, und den gew&uuml;nschten Ausgabetext an die <span class="literal">Text</span>-Eigenschaft des Literal-Steuerelements weiterzugeben.
+</p><p>Wenn Sie die Klasse <span class="literal">TextWriter</span> verwenden m&ouml;chten, ohne explizit den Namespace <span class="literal">System.IO</span> der Variablendeklaration hinzuzuf&uuml;gen, k&ouml;nnen Sie die Direktive <span class="literal">@</span> <span class="literal">Import</span> direkt unter der Direktive <span class="literal">@</span> <span class="literal">Page</span> hinzuf&uuml;gen und dabei wie im folgenden Beispiel das Attribut <span class="literal">Namespace</span> auf <span class="literal">System.IO</span> setzen:
+</p><span class="programlisting"><pre>&lt;% @ Import Namespace="System.IO" %&gt;</pre>
+						</span></td>
+				</tr>
+			</table>
+		</div>
+<div id="OutputStream">
+			<table width="100%" cellspacing="0" cellpadding="0" border="0" class="main"><tr>							<td valign="top" class="name">OutputStream</td><td valign="top" nowrap class="compatibility">&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><pre>Stream = Response.OutputStream</pre>
+					</td><td valign="top" nowrap class="requirements"> &#160;</td>
+				</tr>
+				<tr><td colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Gibt ein <span class="literal">Stream</span>-Objekt zur&uuml;ck, das nur geschrieben, aber nicht gelesen werden kann. Dieses Objekt schreibt bin&auml;re Inhalte direkt in den Ausgabestream der aktuellen Anforderung.
+</p>
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Parameter</span>
+					<ul><li><i><span class="replaceable">Stream</span></i><br>
+					&#160;
+								  Eine Objektvariable des Typs <span class="literal">Stream</span>.<tr><td colspan="2" class="clearseparation">&#160;</td>
+
+</li></ul>
+								  <p>Zur Klasse <span class="literal">Stream</span> geh&ouml;ren folgende Mitglieder</p>
+								  <table border="1"><tbody><tr><th>Mitglied</th><th>Beschreibung</th></tr>
+								<tr><td>BeginWrite (Methode)
+</td><td>Startet einen asynchronen Schreibvorgang.</td>
+								</tr>
+								<tr><td>Close (Methode)</td><td>Schlie&szlig;t den Stream und gibt seine Ressourcen frei.</td>
+								</tr>
+								<tr><td>EndWrite (Methode)
+</td><td>Beendet einen asynchronen Schreibvorgang.</td>
+								</tr>
+								<tr><td>Write (Methode)</td><td>Schreibt Daten in den Stream.</td>
+								</tr>
+								<tr><td>WriteByte (Methode)
+</td><td>Schreibt ein einzelnes Byte in den Stream und verschiebt die Position innerhalb des Streams um ein Byte nach vorne.
+</td>
+								</tr>
+							</tbody></table>
+
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="notes"><span class="title">Hinweise</span></td>
+				</tr>
+				<tr>
+					<td><p>Die Eigenschaft <span class="literal">OutputStream</span> ist eine Alternative zur Methode <span class="literal">Response.BinaryWrite</span>, wenn Bin&auml;rdaten an den Ausgabestream ausgegeben werden sollen. Sie k&ouml;nnen auch die aus der Eigenschaft <span class="literal">OutputStream</span> abgerufene <span class="literal">Stream</span>-Instanz an eine Methode einer benutzerdefinierten Komponente weitergeben, damit diese Komponente Bin&auml;rdaten direkt in den Ausgabestream der aktuellen Antwort schreiben kann.
+</p>
+					</td>
+				</tr>
+			</table>
+		</div>
+<div id="Status">
+			<table width="100%" cellspacing="0" cellpadding="0" border="0" class="main"><tr>							<td valign="top" class="name">Status</td><td valign="top" nowrap class="compatibility">&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><pre>String = Response.Status
+Response.Status = String</pre>
+					</td><td valign="top" nowrap class="requirements"> &#160;</td>
+				</tr>
+				<tr><td colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Gibt einen String zur&uuml;ck (oder legt diesen fest), der die HTTP-Statuszeile enth&auml;lt, die an den Clientbrowser gesendet wird.
+</p>
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Parameter</span><ul><li><i><span class="replaceable">String</span></i><br>&#160;
+			  Eine Stringvariable, die den Statuscode der aktuellen Anforderung aufnimmt oder festlegt. Der Standardwert ist "200 OK".
+</li></ul>
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="notes"><span class="title">Hinweise</span></td>
+				</tr>
+				<tr>
+					<td><p>Diese Eigenschaft dient der R&uuml;ckw&auml;rtskompatibilit&auml;t mit ASP. In ASP.NET hat die Eigenschaft <span class="literal">StatusDescription</span> Vorrang. Mit den Eigenschaften <span class="literal">StatusCode</span> und <span class="literal">StatusDescription</span> k&ouml;nnen Sie, anders als bei der Eigenschaft <span class="literal">Status</span>, den numerischen Statuscode der Statuszeile und die Textbeschreibung separat festlegen.
+</p>
+					</td>
+				</tr>
+			</table>
+		</div>
+<div id="StatusCode">
+			<table width="100%" cellspacing="0" cellpadding="0" border="0" class="main"><tr>							<td valign="top" class="name">StatusCode</td><td valign="top" nowrap class="compatibility">&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><pre>Integer = Response.StatusCode
+Response.StatusCode = Integer</pre>
+					</td><td valign="top" nowrap class="requirements"> &#160;</td>
+				</tr>
+				<tr><td colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Gibt eine Ganzzahl zur&uuml;ck (oder legt diese fest), die den HTTP-Statuscode angibt, der an den Browser zur&uuml;ckgegeben wird.
+</p>
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Parameter</span>
+					<ul><li><i><span class="replaceable">Integer</span></i><br>&#160;
+			  Eine Integervariable, die den Statuscode aufnimmt oder festlegt. Der Standardwert ist 200. Die m&ouml;glichen Statuscodes liegen in folgenden Bereichen:
+</li>
+				      1xx <br>
+&nbsp; Codes zwischen 100 und 199 sind f&uuml;r Informationsmeldungen vorgesehen.<br>
+2xx <br>
+&nbsp; Codes zwischen 200 und 299 sind f&uuml;r Meldungen &uuml;ber erfolgreiche Vorg&auml;nge vorgesehen.<br>
+3xx <br>
+&nbsp; Codes zwischen 300 und 399 sind f&uuml;r Meldungen &uuml;ber Umleitungsvorg&auml;nge vorgesehen. Der jeweilige Statuscode gibt an, ob eine Seite vor&uuml;bergehend oder dauerhaft verschoben wurde.<br>
+      4xx <br>
+&nbsp; Codes zwischen 400 und 499 sind f&uuml;r Clientfehlermeldungen vorgesehen. Die bekannteste Meldung ist &quot;404 Nicht gefunden&quot;, die angibt, dass der Client eine Ressource angefordert hat, die auf dem Server nicht vorhanden ist. In diesem Bereich finden sich auch Statusfehlermeldungen in Verbindung mit der Clientauthentifizierung.<br>
+      5xx <br>
+&nbsp; Codes von 500 bis 599 sind f&uuml;r Serverfehlermeldungen vorgesehen. Wenn z.&#160; B. mehr Anforderungen von IIS empfangen werden, als verarbeitet oder zur sp&auml;teren Verarbeitung in eine Warteschlange gestellt werden k&ouml;nnen, erhalten Clients einen Statuscode aus dem 500er-Bereich mit einer Meldung, dass der Server &uuml;berlastet ist.</p>
+			      </ul>				  </td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td><p>In diesem Beispiel wird mit den Eigenschaften <span class="literal">StatusCode</span> und <span class="literal">StatusDescription</span> eine HTTP-Statusmeldung an den Client gesendet. Die Methode <span class="literal">Response.End</span> stoppt die Verarbeitung und sendet die momentan gepufferte Ausgabe an den Client.
+</p>
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>Sub Page_Load(  )
+   Response.StatusCode = 542
+   Response.StatusDescription = "Server Error - The code is the answer."
+   Response.End(  )
+End Sub</pre>
+						</span></td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="notes"><span class="title">Hinweise</span></td>
+				</tr>
+				<tr>
+					<td><p>Diese Eigenschaft kann wie andere Eigenschaften, die HTTP-Antwort-Header festlegen, nicht mehr gesetzt werden, wenn bei ausgeschalteter Pufferfunktion bereits &uuml;ber <span class="literal">Response.Write</span> oder eine &auml;hnliche Methode HTTP-Body-Ausgabedaten an den Client gesendet wurden.
+</p>
+					</td>
+				</tr>
+			</table>
+		</div>
+<div id="StatusDescription">
+			<table width="100%" cellspacing="0" cellpadding="0" border="0" class="main"><tr>							<td valign="top" class="name">StatusDescription</td><td valign="top" nowrap class="compatibility">&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><pre>String = Response.StatusDescription
+Response.StatusDescription = String</pre>
+					</td><td valign="top" nowrap class="requirements"> &#160;</td>
+				</tr>
+				<tr><td colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Gibt einen String mit dem Text der HTTP-Statusmeldung zur&uuml;ck (oder legt ihn fest), die zusammen mit dem in der Eigenschaft <span class="literal">StatusCode</span> enthaltenen Statuscode an den Browser gesendet wird.
+</p>
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Parameter</span><ul><li><i><span class="replaceable">String</span></i><br>&#160;
+			  Eine Stringvariable, die zus&auml;tzliche Pfadangaben aufnimmt oder festlegt. Der Standard ist "OK".
+</li></ul>
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td><p>Siehe das Beispiel f&uuml;r die Eigenschaft <span class="literal">StatusCode</span>.</p>
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td />
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="notes"><span class="title">Hinweise</span></td>
+				</tr>
+				<tr>
+					<td><p>Diese Eigenschaft kann wie andere Eigenschaften, die HTTP-Antwort-Header festlegen, nicht mehr eingestellt werden, wenn bei ausgeschalteter Pufferfunktion bereits &uuml;ber <span class="literal">Response.Write</span> oder eine &auml;hnliche Methode HTTP-Body-Ausgabedaten an den Client gesendet wurden.
+</p>
+					</td>
+				</tr>
+			</table>
+		</div>
+<div id="SuppressContent">
+			<table width="100%" cellspacing="0" cellpadding="0" border="0" class="main"><tr>							<td valign="top" class="name">SuppressContent</td><td valign="top" nowrap class="compatibility">&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><pre>Boolean = Response.SuppressContent
+Response.SuppressContent = Boolean</pre>
+					</td><td valign="top" nowrap class="requirements"> &#160;</td>
+				</tr>
+				<tr><td colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Gibt einen Booleschen Wert zur&uuml;ck (oder legt ihn fest), der angibt, ob HTTP-Ausgabedaten an den Client gesendet werden sollen.
+</p>
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Parameter</span><ul><li><i><span class="replaceable">Boolean</span></i><br>&#160;
+			  Eine Boolesche Variable, die den Wert der Eigenschaft aufnimmt oder festlegt. Der Standardwert ist <span class="literal">False</span>; der Inhalt wird an den Client gesendet.
+</li></ul>
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td><p>Das folgende Beispiel schreibt "Hello, World!" in die Ausgabe (die standardm&auml;&szlig;ig gepuffert wird) und setzt <span class="literal">SuppressContent</span> auf <span class="literal">True</span>, sodass keine Ausgabedaten an den Client gesendet werden.
+</p>
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>Sub Page_Load(  )
+   Response.Write("Hello, World!")
+   Response.SuppressContent = True
+   If Response.SuppressContent Then Response.Close(  )
+End Sub</pre>
+						</span></td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="notes"><span class="title">Hinweise</span></td>
+				</tr>
+				<tr>
+					<td><p>Da durch <span class="literal">SuppressContent</span> keine Ausgabedaten (also auch keine Fehlermeldungen) an den Client zur&uuml;ckgegeben werden, muss die Methode <span class="literal">Response.Close</span> (die die Netzwerkverbindung zum Client schlie&szlig;t) aufgerufen werden, damit der Clientbrowser nicht unbegrenzt lange h&auml;ngen bleibt.
+</p>
+					</td>
+				</tr>
+			</table>
+		</div>
+<div id="Cookies">
+			<table width="100%" cellspacing="0" cellpadding="0" border="0" class="main"><tr>							<td valign="top" class="name">Cookies</td><td valign="top" nowrap class="compatibility">&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><pre>HttpCookieCollection = Response.Cookies</pre>
+					</td><td valign="top" nowrap class="requirements"> &#160;</td>
+				</tr>
+				<tr><td colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Die Sammlung <span class="literal">Cookies</span> gibt eine Instanz der Klasse <span class="literal">HttpCookieCollection</span> mit allen Cookies zur&uuml;ck, die als Teil der aktuellen Anforderung gesendet wurden. Die Klasse <span class="literal">HttpCookieCollection</span> enth&auml;lt eine Instanz der Klasse <span class="literal">HttpCookie</span> f&uuml;r jedes Cookie, das als Teil der Clientanforderung gesendet wurde. Mit den Eigenschaften dieser <span class="literal">HttpCookie</span>-Instanzen k&ouml;nnen Informationen zu dem oder den Cookie(s) abgerufen werden. Die Sammlung <span class="literal">Cookies</span> der Klasse <span class="literal">Response</span> unterst&uuml;tzt folgende Eigenschaften:
+</p>
+					  <ul>
+					    <li><i>AllKeys</i><br>
+					  &#160; Gibt ein Stringarray aller Schl&uuml;ssel in der Sammlung zur&uuml;ck.</li>
+					    <li><i>Count</i><br>
+					  &#160; Diese Eigenschaft gibt eine Ganzzahl zur&uuml;ck, die angibt, wie viele Namens-/Wertpaare in der Sammlung enthalten sind. </li>
+					    <li><i>Item(<span class="replaceable">Index|Key</span>)</span></i><br>
+					  &#160; Gibt basierend auf dem Index oder dem &uuml;bergebenen Schl&uuml;ssel eine Instanz der Sammlungsklasse zur&uuml;ck. Dies ist die Standardeigenschaft. Daher gibt der Aufruf von </li>
+					    <li><i>Keys</i><br>
+					  &#160; Gibt eine Sammlung der Schl&uuml;ssel f&uuml;r diese Sammlung zur&uuml;ck.</li>
+				      </ul>
+					  Au&szlig;erdem legt die Klasse <span class="literal">HttpCookieCollection</span> folgende Methoden offen:					  <ul>
+					    <li><i><span class="emphasis">CopyTo</span>(<span class="replaceable">Array</span>, <span class="replaceable">Index</span>)</i><br>
+					  &#160; Kopiert den Inhalt des Sammlungsobjekts in das daf&uuml;r vorgesehene <span class="replaceable">Array</span> -Argument, beginnend mit dem daf&uuml;r vorgesehenen <span class="replaceable">Index</span> -Argument. Vor dem Aufruf von <span class="literal">CopyTo</span> muss das Array ausreichend gro&szlig; bemessen werden, damit gen&uuml;gend Platz f&uuml;r die Sammlung vorhanden ist. </li>
+					    <li><i><span class="emphasis">GetKey</span>(<span class="replaceable">Index</span>)</i><br>
+					  &#160; Gibt einen String mit dem Schl&uuml;ssel zur&uuml;ck, der dem angegebenen <span class="replaceable">Index</span> entspricht. </li>
+				      </ul>					  <p>Wie bei ASP ist die Sammlung <span class="literal">Cookies</span> weiterhin als Sammlung implementiert (die Klasse <span class="literal">HttpCookieCollection</span> erbt von der .NET-Klasse <span class="literal">NameObjectCollectionBase</span>). Die ASP.NET-Implementierung ist aber eine Sammlung von Stringschl&uuml;sseln und -objekten (Instanzen der Klasse <span class="literal">HttpCookie</span>) und keine Sammlung von Stringschl&uuml;sseln und -werten. Einzelne Cookies werden in Variablen des Typs <span class="literal">HttpCookie</span> abgerufen. So besteht &uuml;ber Klasseneigenschaften Zugriff auf Cookie-Werte.
+</p>
+					  <p>Auf Dictionary-Cookies, d.&#160; h. Cookies mit mehr als einem Wert, kann &uuml;ber die Eigenschaft <span class="literal">Values</span> der Klasse <span class="literal">HttpCookie</span> zugegriffen werden. Diese Eigenschaft gibt eine <span class="literal">NameValueCollection</span> mit den Unterschl&uuml;sseln und Werten der Cookies zur&uuml;ck. Mit folgender Syntax k&ouml;nnen Sie auch einzelne Werte anhand ihres Schl&uuml;ssels festlegen:
+</p>
+				  </td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>HttpCookie.Values("<replaceable>keyname</replaceable>") = "<replaceable>value</replaceable>"</pre>
+						</span></td>
+				</tr>
+
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Parameter</span><ul><li><i><span class="replaceable">HttpCookieCollection</span></i><br>&#160;
+			  Eine Objektvariable des Typs <span class="literal">HttpCookieCollection</span>.</li></ul>
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td><p>Das folgende Beispiel erstellt ein Login-Cookie, legt als G&uuml;ltigkeitsdauer 30 Minuten ab der aktuellen Uhrzeit fest und f&uuml;gt dann das Cookie der Sammlung <span class="literal">Cookies</span> hinzu.
+</p>
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>Sub Page_Load(  )
+   Dim myCookie As New HttpCookie("LoggedIn")
+   myCookie.Value = "True"
+   myCookie.Expires = DateTime.Now.AddMinutes(30)
+   Response.Cookies.Add(myCookie)
+End Sub</pre>
+						</span></td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="notes"><span class="title">Hinweise</span></td>
+				</tr>
+				<tr>
+					<td><p>Anders als bei ASP basieren die Sammlungen in ASP.NET auf null. Das erste Element in einer Sammlung oder einem Array ist als 0 und nicht 1. Das ist vor allem wichtig, wenn Werte anhand ihres Index abgerufen werden.
+</p>
+					</td>
+				</tr>
+			</table>
+		</div>
+<div id="AddCacheItemDependencies">
+			<table width="100%" cellspacing="0" cellpadding="0" border="0" class="main"><tr>							<td valign="top" class="name">AddCacheItemDependencies</td><td valign="top" nowrap class="compatibility">&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><pre>Response.AddCacheItemDependencies(ByVal cacheKeys As ArrayList) </pre>
+					</td><td valign="top" nowrap class="requirements"> &#160;</td>
+				</tr>
+				<tr><td colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>F&uuml;gt der Liste von Cache-Elementschl&uuml;sseln eine Liste von in einer ArrayList enthaltenen Schl&uuml;sseln hinzu, von der der Ausgabe-Cache der aktuellen Antwort abh&auml;ngt. Wenn eines der von den Schl&uuml;sseln identifizierten Cache-Elementen ge&auml;ndert wird, wird der Ausgabe-Cache der aktuellen Antwort ung&uuml;ltig und eine neue Antwort erstellt.
+</p>
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Parameter</span><ul><li><i><span class="replaceable">cacheKeys</span></i><br>&#160;
+			  Eine ArrayList, die einen oder mehrere Schl&uuml;sselnamen f&uuml;r Cache-Elemente enth&auml;lt.</li></ul>
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td><p>Dieses Beispiel zeigt, wie Sie mit der Methode <span class="literal">AddCacheItemDependencies</span> eine Reihe von Cache-Schl&uuml;sseln als Abh&auml;ngigkeiten f&uuml;r den Ausgabe-Cache der aktuellen Antwort festlegen k&ouml;nnen. Wird eines der durch diese Schl&uuml;ssel vertretenen Cache-Elemente ge&auml;ndert, wird der Ausgabe-Cache ung&uuml;ltig und die Seite mit <span class="literal">Response.Redirect</span> aktualisiert.
+</p>
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>&lt;%@ Page Language="vb" %&gt;
+&lt;%@ OutputCache Duration="300" VaryByParam="None" %&gt;
+&lt;html&gt;
+   &lt;head&gt;
+      &lt;title&gt;Adding cache dependencies in ASP.NET&lt;/title&gt;
+      &lt;script runat="server"&gt;
+         Sub Page_Load(  )
+            Dim myArrayList As New ArrayList
+            myArrayList.Add("Key1")
+            myArrayList.Add("Key2")
+            Response.AddCacheItemDependencies(myArrayList)
+            Message.Text = DateTime.Now.ToString(  )
+         End Sub
+         Sub Button1_Click(sender As Object, e As EventArgs)
+            Cache("Key1") = "foo" &amp; DateTime.Now.ToString(  )
+            Response.Redirect("AddCacheItemDependencies.aspx")
+         End Sub
+         Sub Button2_Click(sender As Object, e As EventArgs)
+            Cache("Key2") = "bar" &amp; DateTime.Now.ToString(  )
+            Response.Redirect("AddCacheItemDependencies.aspx")
+         End Sub
+      &lt;/script&gt;
+   &lt;/head&gt;
+&lt;body&gt;
+   &lt;form runat="server"&gt;
+      &lt;asp:label id="Message" runat="server"/&gt;
+      &lt;asp:button id="Button1" text="Change Key 1"
+         onClick="Button1_Click" runat="server"/&gt;
+      &lt;asp:button id="Button2" text="Change Key 2"
+         onClick="Button2_Click" runat="server"/&gt;
+   &lt;/form&gt;
+&lt;/body&gt;
+&lt;/html&gt;</pre>
+						</span></td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="notes"><span class="title">Hinweise</span></td>
+				</tr>
+				<tr>
+					<td><p>Die Methode <span class="literal">AddCacheItemDependencies</span> ist hilfreich, wenn Sie eine Seite im Ausgabe-Cache ablegen m&ouml;chten, diese Seite aber vom Wert mehrerer im ASP.NET-Cache gespeicherter Elemente abh&auml;ngt. Anstatt eine Seite auf sehr kurze Zeit zwischenzuspeichern, um das Veraltern von Daten zu vermeiden, k&ouml;nnen Sie mit <span class="literal">AddCacheItemDependencies</span> automatisch den Ausgabe-Cache ung&uuml;ltig machen, wenn sich die Abh&auml;ngigkeiten &auml;ndern.
+</p>
+					</td>
+				</tr>
+			</table>
+		</div>
+<div id="AddCacheItemDependency">
+			<table width="100%" cellspacing="0" cellpadding="0" border="0" class="main"><tr>							<td valign="top" class="name">AddCacheItemDependency</td><td valign="top" nowrap class="compatibility">&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><pre>Response.AddCacheItemDependency(ByVal cacheKey As String) </pre>
+					</td><td valign="top" nowrap class="requirements"> &#160;</td>
+				</tr>
+				<tr><td colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>F&uuml;gt einen Cache-Elementschl&uuml;ssel der Liste der Cache-Schl&uuml;ssel hinzu, von der der Ausgabe-Cache der aktuellen Antwort abh&auml;ngt. Wenn das vom Schl&uuml;ssel identifizierte Cache-Element ge&auml;ndert wird, wird der Ausgabe-Cache der aktuellen Antwort ung&uuml;ltig und eine neue Antwort erstellt.
+</p>
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Parameter</span><ul><li><i><span class="replaceable">cacheKey</span></i><br>&#160;
+			  Ein String mit dem hinzuzuf&uuml;genden Cache-Elementschl&uuml;ssel.</li></ul>
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td><p>Dieses Beispiel zeigt, wie Sie mit der Methode <span class="literal">AddCacheItemDependency</span> einen Cache-Schl&uuml;ssel als Abh&auml;ngigkeit f&uuml;r den Ausgabe-Cache der aktuellen Antwort festlegen k&ouml;nnen. Wird das durch diesen Schl&uuml;ssel vertretene Cache-Element ge&auml;ndert, wird der Ausgabe-Cache ung&uuml;ltig und die Seite mit <span class="literal">Response.Redirect</span> aktualisiert.
+</p>
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>&lt;%@ Page Language="vb" %&gt;
+&lt;%@ OutputCache Duration="300" VaryByParam="None" %&gt;
+&lt;html&gt;
+   &lt;head&gt;
+      &lt;title&gt;Adding a cache dependency in ASP.NET&lt;/title&gt;
+      &lt;script runat="server"&gt;
+         Sub Page_Load(  )
+            Response.AddCacheItemDependency("Key1")
+            Message.Text = DateTime.Now.ToString(  )
+         End Sub
+         Sub Button1_Click(sender As Object, e As EventArgs)
+            Cache("Key1") = "foo" &amp; DateTime.Now.ToString(  )
+            Response.Redirect("AddCacheItemDependency.aspx")
+         End Sub
+      &lt;/script&gt;
+   &lt;/head&gt;
+&lt;body&gt;
+   &lt;form runat="server"&gt;
+      &lt;asp:label id="Message" runat="server"/&gt;
+      &lt;asp:button id="Button1" text="Change Key 1" onClick="Button1_
+Click"          runat="server"/&gt;
+   &lt;/form&gt;
+&lt;/body&gt;
+&lt;/html&gt;</pre>
+						</span></td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="notes"><span class="title">Hinweise</span></td>
+				</tr>
+				<tr>
+					<td><p>Die Methode <span class="literal">AddCacheItemDependency</span> bietet f&uuml;r ein einzelnes Cache-Element dieselbe Funktionalit&auml;t wie die Methode <span class="literal">AddCacheItemDependencies</span> f&uuml;r mehrere Elemente.
+</p>
+					</td>
+				</tr>
+			</table>
+		</div>
+<div id="AddFileDependencies">
+			<table width="100%" cellspacing="0" cellpadding="0" border="0" class="main"><tr>							<td valign="top" class="name">AddFileDependencies</td><td valign="top" nowrap class="compatibility">&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><pre>Response.AddFileDependencies(ByVal filenames As ArrayList) </pre>
+					</td><td valign="top" nowrap class="requirements"> &#160;</td>
+				</tr>
+				<tr><td colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>F&uuml;gt eine Liste von in einer ArrayList enthaltenen Dateien der Liste von Dateien hinzu, von der der Ausgabe-Cache der aktuellen Anforderung abh&auml;ngt. &Auml;ndert sich eine dieser Dateien, wird der Ausgabe-Cache ung&uuml;ltig.
+</p>
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Parameter</span><ul><li><i><span class="replaceable">filenames</span></i><br>&#160;
+			  Eine ArrayList mit einem oder mehreren Pfad- und Dateinamen.</li></ul>
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td><p>Dieses Beispiel zeigt, wie Sie mit der Methode <span class="literal">AddFileDependencies</span> eine Reihe von Dateien als Abh&auml;ngigkeiten f&uuml;r den Ausgabe-Cache der aktuellen Antwort festlegen k&ouml;nnen. &Auml;ndert sich eine dieser Dateien, wird der Ausgabe-Cache ung&uuml;ltig.
+</p>
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>&lt;%@ Page Language="vb" %&gt;
+&lt;%@ OutputCache Duration="300" VaryByParam="None" %&gt;
+&lt;html&gt;
+   &lt;head&gt;
+      &lt;title&gt;Adding file dependencies in ASP.NET&lt;/title&gt;
+      &lt;script runat="server"&gt;
+         Sub Page_Load(  )
+            Dim myArrayList As New ArrayList
+            myArrayList.Add(Server.MapPath("dep.txt"))
+            myArrayList.Add(Server.MapPath("dep1.txt"))
+            Response.AddFileDependencies(myArrayList)
+            Message.Text = DateTime.Now.ToString(  )
+         End Sub
+      &lt;/script&gt;
+   &lt;/head&gt;
+&lt;body&gt;
+   &lt;asp:label id="Message" runat="server"/&gt;
+&lt;/body&gt;
+&lt;/html&gt;</pre>
+						</span></td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="notes"><span class="title">Hinweise</span></td>
+				</tr>
+				<tr>
+					<td><p>Die Methode <span class="literal">AddFileDependencies</span> ist n&uuml;tzlich, wenn Sie eine Seite im Ausgabe-Cache ablegen m&ouml;chten, die Seite aber vom Wert mehrerer Dateien auf dem Webserver abh&auml;ngt (auf den &uuml;ber einen Dateipfad des Servers zugegriffen werden kann). Anstatt eine Seite auf sehr kurze Zeit zwischenzuspeichern, um das Veraltern von Daten zu vermeiden, k&ouml;nnen Sie mit <span class="literal">AddFileDependencies</span> automatisch den Ausgabe-Cache ung&uuml;ltig machen, wenn sich die Abh&auml;ngigkeiten &auml;ndern.
+</p>
+					</td>
+				</tr>
+			</table>
+		</div>
+<div id="AddFileDependency">
+			<table width="100%" cellspacing="0" cellpadding="0" border="0" class="main"><tr>							<td valign="top" class="name">AddFileDependency</td><td valign="top" nowrap class="compatibility">&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><pre>Response.AddFileDependency(ByVal filename As String) </pre>
+					</td><td valign="top" nowrap class="requirements"> &#160;</td>
+				</tr>
+				<tr><td colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>F&uuml;gt eine Datei der Dateiliste hinzu, von der der Ausgabe-Cache der aktuellen Anforderung abh&auml;ngt. Wenn die im Argument <span class="literal">Dateiname</span> angegebenene Datei ge&auml;ndert wird, wird der Ausgabe-Cache ung&uuml;ltig.
+</p>
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Parameter</span><ul><li><i><span class="replaceable">filename</span></i><br>&#160;
+			  Ein String mit dem hinzuzuf&uuml;genden Pfad und Dateinamen.</li></ul>
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td><p>Dieses Beispiel zeigt, wie Sie mit der Methode <span class="literal">AddFileDependency</span> eine Datei als Abh&auml;ngigkeit f&uuml;r den Ausgabe-Cache der aktuellen Antwort festlegen k&ouml;nnen. Wird die Datei ge&auml;ndert, wird der Ausgabe-Cache ung&uuml;ltig.
+</p></td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting">
+					<pre>
+
+&lt;%@ Page Language="vb" %&gt;
+&lt;%@ OutputCache Duration="300" VaryByParam="None" %&gt;
+&lt;html&gt;
+   &lt;head&gt;
+      &lt;title&gt;Adding a file dependency in ASP.NET&lt;/title&gt;
+      &lt;script runat="server"&gt;
+         Sub Page_Load(  )
+            Response.AddFileDependency(Server.MapPath("dep.txt"))
+            Message.Text = DateTime.Now.ToString(  )
+         End Sub
+      &lt;/script&gt;
+   &lt;/head&gt;
+&lt;body&gt;
+   &lt;asp:label id="Message" runat="server"/&gt;
+&lt;/body&gt;
+&lt;/html&gt;</pre>
+						</span></td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<td><p>Die im obigen Code angegebene Datei <span class="emphasis">dep.txt</span> sollte sich im selben Verzeichnis befinden wie die Seite. Die Seite kann einen beliebigen Inhalt aufweisen. &Auml;ndert sich der Inhalt der Datei, wird der Cache ung&uuml;ltig.</p>
+				  <p>&nbsp;</p></td>
+				<tr>
+					<td valign="top" colspan="2" class="notes"><span class="title">Hinweise</span></td>
+				</tr>
+				<tr>
+					<td><p>Die Methode <span class="literal">AddFileDependency</span> bietet f&uuml;r eine einzelne Datei dieselbe Funktionalit&auml;t wie die Methode <span class="literal">AddFileDependencies</span> f&uuml;r mehrere Dateien.
+</p>
+					</td>
+				</tr>
+			</table>
+		</div>
+<div id="AddHeader">
+			<table width="100%" cellspacing="0" cellpadding="0" border="0" class="main"><tr>							<td valign="top" class="name">AddHeader</td><td valign="top" nowrap class="compatibility">&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><pre>Response.AddHeader(ByVal name As String, ByVal value As String) </pre>
+					</td><td valign="top" nowrap class="requirements"> &#160;</td>
+				</tr>
+				<tr><td colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>F&uuml;gt einen HTTP-Header mit dem angegebenen Namen und Wert dem Ausgabestream hinzu.
+</p>
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Parameter</span><ul><li><i><span class="replaceable">name</span></i><br>&#160;
+			  Ein String-Argument mit dem Namen des Headers.</li><li><i><span class="replaceable">value</span></i><br>&#160;
+			  Ein String-Argument mit dem Wert f&uuml;r den Header.</li></ul>
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="notes"><span class="title">Hinweise</span></td>
+				</tr>
+				<tr>
+					<td><p>Die Eigenschaft <span class="literal">AddHeader</span> sorgt f&uuml;r R&uuml;ckw&auml;rtskompatibilit&auml;t mit ASP. Anstelle dieser Eigenschaft wird jetzt die Methode <span class="literal">AppendHeader</span> bevorzugt.
+</p>
+					</td>
+				</tr>
+			</table>
+		</div>
+<div id="AppendHeader">
+			<table width="100%" cellspacing="0" cellpadding="0" border="0" class="main"><tr>							<td valign="top" class="name">AppendHeader</td><td valign="top" nowrap class="compatibility">&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><pre>Response.AppendHeader(ByVal name As String, ByVal value As String)</pre>
+					</td><td valign="top" nowrap class="requirements"> &#160;</td>
+				</tr>
+				<tr><td colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>F&uuml;gt einen HTTP-Header mit dem angegebenen Namen und Wert dem Ausgabestream hinzu. Mit dieser Methode k&ouml;nnen benutzerdefinierte HTTP-Header hinzugef&uuml;gt und der Wert von Standard-HTTP-Headern ge&auml;ndert werden.
+</p>
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Parameter</span><ul><li><i><span class="replaceable">name</span></i><br>&#160;
+			  Ein String-Argument mit dem Namen des Headers.</li><li><i><span class="replaceable">value</span></i><br>&#160;
+			  Ein String-Argument mit dem Wert f&uuml;r den Header.</li></ul>
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td><p>In diesem Beispiel wird der HTTP-Header <span class="literal">Content-Type</span> auf <span class="literal">"text/xml"</span> gesetzt und der neue Wert dann angezeigt, indem die Eigenschaft <span class="literal">Text</span> des Beschriftungssteuerelements <span class="literal">Message</span> auf den Wert der Eigenschaft <span class="literal">ContentType</span> gesetzt wird. Dadurch wird die Seitenausgabe als XML behandelt.
+</p>
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>Sub Page_Load(  )
+   Response.AppendHeader("Content-Type", "text/xml")
+   Message.Text = Response.ContentType
+End Sub</pre>
+						</span></td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="notes"><span class="title">Hinweise</span></td>
+				</tr>
+				<tr>
+					<td><p>Wenn diese Methode bei HTTP-Headern verwendet wird, die sich auf das Cache-Verhalten beziehen, und restriktivere Einstellungen durch die Verwendung der Cache-APIs von ASP.NET definiert werden, erhalten die restriktiveren Einstellungen Vorrang vor den durch <span class="literal">AppendHeader</span> definierten Einstellungen.
+</p>
+					</td>
+				</tr>
+			</table>
+		</div>
+<div id="AppendToLog">
+			<table width="100%" cellspacing="0" cellpadding="0" border="0" class="main"><tr>							<td valign="top" class="name">AppendToLog</td><td valign="top" nowrap class="compatibility">&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><pre>Response.AppendToLog(ByVal param As String)</pre>
+					</td><td valign="top" nowrap class="requirements"> &#160;</td>
+				</tr>
+				<tr><td colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>F&uuml;gt den Text, der durch das Argument <span class="replaceable">param</span> definiert ist, der IIS-Protokolldatei f&uuml;r die aktuelle IIS-Anwendung hinzu.
+</p>
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Parameter</span><ul><li><i><span class="replaceable">param</span></i><br>&#160;
+			  Ein String-Argument mit dem Text, der dem IIS-Protokoll hinzugef&uuml;gt werden soll.</li></ul>
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td><p>Das folgende Beispiel schreibt eine Meldung in das IIS-Protokoll f&uuml;r die Anwendung, zu der die Seite geh&ouml;rt. Anschlie&szlig;end wird eine Meldung in das ASP.NET-Beschriftungssteuerelement <span class="literal">Message</span> geschrieben, aus dem hervorgeht, dass eine Meldung geschrieben wurde:
+</p></td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting">
+					  <pre>Sub Page_Load(  )
+   Response.AppendToLog("Hello from Page_Load!")
+   Message.Text = "Message written to IIS Log!"
+End Sub</pre></span><span class="programlisting"></span></td>
+				</tr>
+				<tr>
+				  <td>Der durch dieses Beispiel erzeugte IIS-Protokolleintrag sieht in etwa folgenderma&szlig;en aus:
+  <p>&nbsp;</p></td>
+				</tr>
+				<tr>
+					<td><span class="programlisting">
+					  <pre>2001-10-14 00:13:14 127.0.0.1 - 127.0.0.1 80 GET<br>/ASPdotNET_iaN/Chapter_17/AppendToLog.aspx<br>Hello+from+Page_Load! 200 BrowserString</pre></span><span class="programlisting"></span></td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>&nbsp;</pre>
+					</span><span class="programlisting"> </span></td>
+				</tr>
+
+				<tr>
+					<td valign="top" colspan="2" class="notes"><span class="title">Hinweise</span></td>
+				</tr>
+				<tr>
+					<td><p>Im Gegensatz zur ASP-Methode <span class="literal">AppendToLog</span>, bei der eine Beschr&auml;nkung von 80 Zeichen pro Aufruf bestand, k&ouml;nnen Sie mit der Methode <span class="literal">AppendToLog</span> in ASP.NET beliebig viel Text zum Protokoll hinzuf&uuml;gen. Die IIS-Protokolldateien befinden sich standardm&auml;&szlig;ig in <span class="emphasis">%winverz%\System32\LogFiles\W3SVCx\exdatum.log</span>. Dabei ist <span class="replaceable">%winverz%</span> der Name des Windows-Verzeichnisses, <span class="replaceable">x</span> die Nummer der Website f&uuml;r das Protokoll (der IIS-Metabase-Name f&uuml;r die gew&uuml;nschte Anwendung) und <span class="replaceable">datum</span> das Erstellungsdatum der Protokolldatei.
+</p>
+					</td>
+				</tr>
+			</table>
+		</div>
+<div id="ApplyAppPathModifier">
+			<table width="100%" cellspacing="0" cellpadding="0" border="0" class="main"><tr>							<td valign="top" class="name">ApplyAppPathModifier</td><td valign="top" nowrap class="compatibility">&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><pre>String = Response.ApplyAppPathModifier(ByVal virtualPath_
+                                       As String)</pre>
+					</td><td valign="top" nowrap class="requirements"> &#160;</td>
+				</tr>
+				<tr><td colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Ist ein virtueller Pfad zu einer Ressource festgelegt, wird ein String mit einem neuen virtuellen Pfad zur&uuml;ckgegeben, der die SessionID enth&auml;lt. Mit diesem neuen virtuellen Pfad k&ouml;nnen Sie absolute URLs f&uuml;r Anwendungen erstellen, die Sitzungen ohne Cookies verwenden.
+</p>
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Parameter</span><ul><li><i><span class="replaceable">String</span></i><br>&#160;
+			  Ein String-Argument, das den ge&auml;nderten virtuellen Pfad aufnimmt.</li><li><i><span class="replaceable">virtualPath</span></i><br>&#160;
+			  Ein String-Argument mit dem zu &auml;ndernden virtuellen Pfad.</li></ul>
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td><p>Das folgende Beispiel ruft einen virtuellen Pfad mit der SessionID ab und zeigt den Pfad &uuml;ber die Eigenschaft <span class="literal">Text</span> des Beschriftungssteuerelements <span class="literal">Message</span> an:
+</p></td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting">
+					  <pre>Sub Page_Load(  )
+   Dim NewPath As String
+   NewPath = Response.ApplyAppPathModifier(Request.Path)
+   Message.Text = "Modified virtual path = " &amp; NewPath
+End Sub</pre></span><span class="programlisting"></span></td>
+				</tr>
+				<tr>
+				  <td>Die Datei <span class="emphasis">web.config</span> die festlegt, dass der Sitzungsstatus-Handler Sitzungen ohne Cookies verwendet, sieht wie folgt aus: </td>
+				</tr>
+				<tr>
+					<td><span class="programlisting">
+					  <pre>
+
+&lt;configuration&gt;<br>   &lt;system.web&gt;<br>      &lt;sessionState mode=&quot;InProc&quot; cookieless=&quot;true&quot;/&gt;<br>   &lt;/system.web&gt;<br>&lt;/configuration&gt;</pre></span>
+					  <p></p>					  </td>
+				</tr>
+				<tr>
+				<tr>
+					<td valign="top" colspan="2" class="notes"><span class="title">Hinweise</span></td>
+				</tr>
+				<tr>
+					<td><p>Diese Methode ist gut geeignet, um die in ASP.NET eingef&uuml;hrte Funktion f&uuml;r Sitzungen ohne Cookies zu nutzen. Ist das Attribut <span class="literal">cookieless</span> im Abschnitt <span class="literal">configuration</span> der Datei <span class="emphasis">web.config</span> nicht auf <span class="literal">true</span> gesetzt, gibt diese Methode den &uuml;bergebenen virtuellen Pfad einfach unver&auml;ndert zur&uuml;ck.
+</p>
+					</td>
+				</tr>
+			</table>
+		</div>
+<div id="BinaryWrite">
+			<table width="100%" cellspacing="0" cellpadding="0" border="0" class="main"><tr>							<td valign="top" class="name">BinaryWrite</td><td valign="top" nowrap class="compatibility">&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><pre>Response.BinaryWrite(ByVal buffer( ) As Byte) </pre>
+					</td><td valign="top" nowrap class="requirements"> &#160;</td>
+				</tr>
+				<tr><td colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Erm&ouml;glicht das Schreiben von Bin&auml;rinhalten in den Ausgabestream. An der Ausgabe werden vor dem Senden des Bin&auml;rinhalts an den Client keine &Auml;nderungen vorgenommen.
+</p>
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Parameter</span><ul><li><i><span class="replaceable">buffer(  )</span></i><br>&#160;
+			  Ein Byte-Array mit Bin&auml;rdaten, die in den Ausgabestream geschrieben werden sollen.
+</li></ul>
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td><p>Nachfolgend ein Beispiel f&uuml;r <span class="literal">BinaryWrite</span>:</p>
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>Sub Page_Load(  )
+   Dim ImageStream As New FileStream(MapPath("aspnetian.jpg"), _
+      FileMode.Open, FileAccess.Read)
+   Dim ImageBytes(ImageStream.Length) As Byte
+   ImageStream.Read(ImageBytes, 0, ImageStream.Length)
+   ImageStream.Close(  )
+   Response.ContentType = "image/bmp"
+   Response.BinaryWrite(ImageBytes)
+   Response.End(  )
+End Sub</pre>
+						</span></td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="notes"><span class="title">Hinweise</span></td>
+				</tr>
+				<tr>
+					<td><p>Diese Methode eignet sich vor allem dazu, aus einer Datenbank abgerufene Bin&auml;rinhalte in den Browser zu schreiben. Legen Sie zum Schreiben von Bildern und anderen Nicht-Textdaten mit der Eigenschaft <span class="literal">Response.ContentType</span> den passenden MIME-Typ f&uuml;r das gesendete Bildformat fest (z.&#160; B. <span class="literal">image/jpg</span>).
+</p>
+					</td>
+				</tr>
+			</table>
+		</div>
+<div id="Clear">
+			<table width="100%" cellspacing="0" cellpadding="0" border="0" class="main"><tr>							<td valign="top" class="name">Clear</td><td valign="top" nowrap class="compatibility">&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><pre>Response.Clear(  )</pre>
+					</td><td valign="top" nowrap class="requirements"> &#160;</td>
+				</tr>
+				<tr><td colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>L&ouml;scht den Inhalt des aktuellen Ausgabestreams. </p>
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Parameter</span></td></tr><tr><td>Keine
+
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="notes"><span class="title">Hinweise</span></td>
+				</tr>
+				<tr>
+					<td><p>Die Methode <span class="literal">Clear</span> l&ouml;scht die gesamte momentan gepufferten Ausgabe, ohne die HTTP-Antwort-Header zu l&ouml;schen. Ist das Puffern von Ausgabedaten deaktiviert, da die Eigenschaft <span class="literal">BufferOutput</span> auf <span class="literal">False</span> gesetzt ist, bleibt diese Methode wirkungslos, da nur gepufferte Inhalte gel&ouml;scht werden. Dieses Verhalten unterscheidet sich von dem in ASP, wo der Aufruf von <span class="literal">Clear</span> bei deaktivierter Pufferfunktion einen Fehler ausl&ouml;st.
+</p>
+					</td>
+				</tr>
+			</table>
+		</div>
+<div id="ClearContent">
+			<table width="100%" cellspacing="0" cellpadding="0" border="0" class="main"><tr>							<td valign="top" class="name">ClearContent</td><td valign="top" nowrap class="compatibility">&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><pre>Response.ClearContent(  )</pre>
+					</td><td valign="top" nowrap class="requirements"> &#160;</td>
+				</tr>
+				<tr><td colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>L&ouml;scht den Inhalt des aktuellen Ausgabestreams. </p>
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Parameter</span></td></tr><tr><td>Keine
+
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td><p>Dieses Beispiel schreibt mit <span class="literal">Response.Write</span> eine Meldung und ruft anschlie&szlig;end <span class="literal">Response.Clear</span> auf, um die gepufferte Ausgabe zu l&ouml;schen. Bei aktivierter Pufferfunktion wird diese Meldung nie an den Browser gesendet.
+</p>
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>Sub Page_Load(  )
+   Response.Write("This content will not be seen.")
+   Response.Clear(  )
+   Message.Text = _
+      "Content written with &lt;i&gt;Response.Write&lt;/i&gt; was cleared."
+End Sub</pre>
+						</span></td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="notes"><span class="title">Hinweise</span></td>
+				</tr>
+				<tr>
+					<td><p>Die Methode <span class="literal">ClearContent</span> l&ouml;scht die gesamte momentan gepufferte Ausgabe, ohne den HTTP-Antwort-Header zu l&ouml;schen. HTTP-Header k&ouml;nnen &uuml;ber die Methode <span class="literal">ClearHeaders</span> gel&ouml;scht werden. Ist das Puffern von Ausgabedaten deaktiviert, da die Eigenschaft <span class="literal">BufferOutput</span> auf <span class="literal">False</span> gesetzt ist, bleibt die Methode <span class="literal">ClearContent</span> wirkungslos, da nur gepufferte Inhalte gel&ouml;scht werden.
+</p>
+					</td>
+				</tr>
+			</table>
+		</div>
+<div id="ClearHeaders">
+			<table width="100%" cellspacing="0" cellpadding="0" border="0" class="main"><tr>							<td valign="top" class="name">ClearHeaders</td><td valign="top" nowrap class="compatibility">&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><pre>Response.ClearHeaders(  )</pre>
+					</td><td valign="top" nowrap class="requirements"> &#160;</td>
+				</tr>
+				<tr><td colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>L&ouml;scht die HTTP-Header aus dem aktuellen Ausgabestream.</p>
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Parameter</span></td></tr><tr><td>Keine
+
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td><p>Dieses Beispiel setzt den HTTP-Header <span class="literal">Content-Type</span> auf <span class="literal">"text/xml"</span>, l&ouml;scht anschlie&szlig;end die HTTP-Header durch Aufruf der Methode <span class="literal">ClearHeaders</span> und schreibt dann den Wert der Eigenschaft <span class="literal">Response.ContentType</span> in die Eigenschaft <span class="literal">Text</span> des ASP.NET-Beschriftungssteuerelements <span class="literal">Message</span>. Der angezeigte <span class="literal">Content-Type</span> ist der Standardwert, d.&#160; h. <span class="literal">"text/html"</span>.
+</p>
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>Sub Page_Load(  )
+   Response.AppendHeader("Content-Type", "text/xml")
+   Response.ClearHeaders(  )
+   Message.Text = Response.ContentType
+End Sub</pre>
+						</span></td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="notes"><span class="title">Hinweise</span></td>
+				</tr>
+				<tr>
+					<td><p>Die Methode <span class="literal">ClearHeaders</span> l&ouml;scht nur die HTTP-Antwort-Header, nicht den gepufferten Inhalt.
+</p>
+					</td>
+				</tr>
+			</table>
+		</div>
+<div id="Close">
+			<table width="100%" cellspacing="0" cellpadding="0" border="0" class="main"><tr>							<td valign="top" class="name">Close</td><td valign="top" nowrap class="compatibility">&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><pre>Response.Close(  )</pre>
+					</td><td valign="top" nowrap class="requirements"> &#160;</td>
+				</tr>
+				<tr><td colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Schlie&szlig;t den Netzwerk-Socket f&uuml;r die aktuelle Antwort. </p>
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Parameter</span></td></tr><tr><td>Keine
+
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td><p>Siehe das Beispiel f&uuml;r die Eigenschaft <span class="literal">SuppressContent</span>.</p>
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td />
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="notes"><span class="title">Hinweise</span></td>
+				</tr>
+				<tr>
+					<td><p>Mit der Methode <span class="literal">Close</span> k&ouml;nnen Sie den Netzwerk-Socket f&uuml;r die aktuelle Antwort sofort schlie&szlig;en. Das Schlie&szlig;en f&uuml;hrt in der Regel dazu, dass der Client eine Browserfehlermeldung erh&auml;lt (wie z.&#160; B. "Server nicht gefunden").
+</p>
+					</td>
+				</tr>
+			</table>
+		</div>
+<div id="End">
+			<table width="100%" cellspacing="0" cellpadding="0" border="0" class="main"><tr>							<td valign="top" class="name">End</td><td valign="top" nowrap class="compatibility">&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><pre>Response.End(  )</pre>
+					</td><td valign="top" nowrap class="requirements"> &#160;</td>
+				</tr>
+				<tr><td colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Stoppt die Verarbeitung der aktuellen Anforderung und sendet den gesamten Pufferinhalt sofort an den Client.
+</p>
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Parameter</span></td></tr><tr><td>Keine
+
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td><p>Das folgende Beispiel schreibt den Text "Hello, World!" in den Browser, ruft dann <span class="literal">Response.End</span> auf und versucht anschlie&szlig;end, die Eigenschaft <span class="literal">Text</span> des ASP.NET-Beschriftungssteuerelements <span class="literal">Message</span> auf "Hello, World!" zu setzen. Der Code wird jedoch nicht ausgef&uuml;hrt, da die Methode <span class="literal">End</span> die Verarbeitung der Seite sofort stoppt.
+</p></td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>Sub Page_Load(  )
+   Response.Write("Hello, World!")
+   Response.End(  )
+   Message.Text = "Hello, World!"
+End Sub</pre>
+						</span></td>
+				</tr>
+				<tr>
+				  <td >Der Code f&uuml;hrt dazu, dass nur der Text "Hello, World!" an den Browser ausgegeben wird, da statisches HTML und Steuerelemente nicht in der Seite angezeigt werden.
+                    <p>&nbsp;</p></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="notes"><span class="title">Hinweise</span></td>
+				</tr>
+				<tr>
+					<td><p>Wird die Methode <span class="literal">End</span> aufgerufen, werden die gepufferten Ausgabedaten an den Client gesendet, die Verarbeitung wird beendet und das Ereignis <span class="literal">Apllication_EndRequest</span> wird ausgel&ouml;st.
+</p>
+					</td>
+				</tr>
+			</table>
+		</div>
+<div id="Flush">
+			<table width="100%" cellspacing="0" cellpadding="0" border="0" class="main"><tr>							<td valign="top" class="name">Flush</td><td valign="top" nowrap class="compatibility">&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><pre>Response.Flush(  )</pre>
+					</td><td valign="top" nowrap class="requirements"> &#160;</td>
+				</tr>
+				<tr><td colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Sendet alle gepufferten Ausgabedaten sofort an den Client. </p>
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Parameter</span></td></tr><tr><td>Keine
+
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td><p>Siehe das Beispiel f&uuml;r die Eigenschaft <span class="literal">BufferOutput</span>. Wenn Sie die Zeilen, in denen <span class="literal">BufferOutput</span> auf <span class="literal">False</span> gesetzt wird, auf Kommentar setzen und den Kommentarstatus f&uuml;r die Zeile, die <span class="literal">Response.Flush</span> aufruft, aufheben, sehen Sie, dass Sie mit der Methode <span class="literal">Flush</span> gepufferte Inhalte explizit an den Browser senden k&ouml;nnen.
+</p>
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td />
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="notes"><span class="title">Hinweise</span></td>
+				</tr>
+				<tr>
+					<td><p>Die Methode <span class="literal">Flush</span> ist sehr n&uuml;tzlich, da die Pufferfunktion in ASP.NET standardm&auml;&szlig;ig aktiviert ist. Anstatt die Pufferfunktion zu deaktivieren, was dazu f&uuml;hrt, dass jeglicher durch Aufruf von <span class="literal">Response.Write</span> gesendeter Inhalt sofort an den Browser gesendet wird, k&ouml;nnen Sie mit <span class="literal">Response.Flush</span> Inhalte abschnittsweise senden oder sicherstellen, dass ein Vorgang vor dem Senden des bis zu diesem Zeitpunkt gepufferten Inhalts vollst&auml;ndig abgeschlossen ist.
+</p><p>Sie k&ouml;nnen auch alle <span class="literal">Response.Flush</span>-Aufrufe mit <span class="literal">Response.Clear</span>-Aufrufen kombinieren, um Inhalte vor der &Uuml;bertragung an den Browser zu &uuml;berpr&uuml;fen. Tritt bei einer Reihe von Berechnungen oder Ausgaben ein Fehler auf, k&ouml;nnen Sie mit <span class="literal">Response.Clear</span> die problematische Ausgabe l&ouml;schen und durch eine Fehlermeldung oder anderen Inhalt ersetzen. Liegen keine Probleme mit der Ausgabe vor, k&ouml;nnen Sie mit <span class="literal">Response.Flush</span> den gepufferten Inhalt an den Browser senden und dann die Verarbeitung fortsetzen.
+</p>
+					</td>
+				</tr>
+			</table>
+		</div>
+<div id="Pics">
+			<table width="100%" cellspacing="0" cellpadding="0" border="0" class="main"><tr>							<td valign="top" class="name">Pics</td><td valign="top" nowrap class="compatibility">&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><pre>Response.Pics(ByVal value As String)</pre>
+					</td><td valign="top" nowrap class="requirements"> &#160;</td>
+				</tr>
+				<tr><td colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>F&uuml;gt dem Ausgabestream f&uuml;r die aktuelle Antwort einen PICS-Label-Header hinzu. PICS (Platform for Internet Content Selection) dient zum Bewerten von Gewalt darstellenden und pornographischen Inhalten, Nacktaufnahmen sowie Inhalten mit nicht jugendfreier Sprache im Internet.
+</p>
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Parameter</span><ul><li><i><span class="replaceable">value</span></i><br>&#160;
+			  Ein String-Argument mit dem Text des PICS-Label-Headers.</li></ul>
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td><p>Das folgende Beispiel definiert einen PICS-Header, der "RSAC" als bewertende Organisation angibt, als Bewertungszeitraum den 01.08.2001 bis 28.02.2002 bestimmt und folgende Bewertungsstufen definiert:
+</p>
+					  <ul>
+					    <li>Gewalt - 1</li>
+					    <li>Pornographischer Inhalt - 2</li>
+					    <li>Nicht jugendfreie Sprache - 3</li>
+					    <li>Nacktaufnahmen - 4</li>
+				      </ul>
+				  </td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="CLEARSEPARATION"><p>&nbsp;</p>
+				  </td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>Sub Page_Load(  )
+   Dim PICSLabel As String
+   PICSLabel &amp;= "(PICS-1.1 &lt;http://www.rsac.org/ratingsv01.html&gt; "
+   PICSLabel &amp;= "labels on " &amp; Chr(34)
+   PICSLabel &amp;= "2001.08.01T06:00-0000" &amp; Chr(34)
+   PICSLabel &amp;= " until " &amp; Chr(34)
+   PICSLabel &amp;= "2002.02.28T23:59-0000" &amp; Chr(34)
+   PICSLabel &amp;= " ratings (V 1 S 2 L 3 N 4))"
+   Response.PICS(PICSLabel)
+   Message.Text = PICSLabel
+End Sub</pre>
+						</span></td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="notes"><span class="title">Hinweise</span></td>
+				</tr>
+				<tr>
+					<td><p>Der PICS-Label-Header dient der Bewertung des Inhalts einer Website. Benutzer k&ouml;nnen ihren Browser so konfigurieren, dass Sites nicht angezeigt werden, wenn sie PICS-Label-Headers senden und ihr Inhalt in einer der bewerteten Kategorien die f&uuml;r den Browser konfigurierte Stufe &uuml;bersteigt. Weitere Informationen zum PICS-Standard zur Bewertung von Inhalten finden Sie auf der Website des World Wide Web Consortium unter http://www.w3c.org.
+</p>
+					</td>
+				</tr>
+			</table>
+		</div>
+<div id="Redirect">
+			<table width="100%" cellspacing="0" cellpadding="0" border="0" class="main"><tr>							<td valign="top" class="name">Redirect</td><td valign="top" nowrap class="compatibility">&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><pre>Response.Redirect(ByVal url As String)
+Response.Redirect(ByVal url As String, ByVal endResponse As Boolean) </pre>
+					</td><td valign="top" nowrap class="requirements"> &#160;</td>
+				</tr>
+				<tr><td colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Leitet die momentan ausgef&uuml;hrte Seite an eine andere im Argument <span class="replaceable">url</span> angegebene Seite um und beendet optional die Verarbeitung der aktuellen Seite.
+</p>
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Parameter</span><ul><li><i><span class="replaceable">url</span></i><br>&#160;
+			  Ein String-Argument mit der URL der Seite, zu der die Weiterleitung erfolgen soll.</li><li><i><span class="replaceable">endResponse</span></i><br>&#160;
+			  Ein Boolesches Argument, das angibt, ob die Verarbeitung der aktuellen Seite beendet werden soll. Wird dieses Argument weggelassen, f&uuml;hrt der Aufruf dieser Methode dazu, dass die Verarbeitung der aktuellen Seite unterbrochen wird.
+</li></ul>
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td><p>Dieses Beispiel leitet die aktuelle Anforderung an <span class="emphasis">BufferOutput.aspx</span> um und weist ASP.NET an, die Verarbeitung der aktuellen Seite abzubrechen:
+</p>
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>Sub Page_Load(  )
+   Response.Redirect("BufferOutput.aspx", True)
+End Sub</pre>
+						</span></td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="notes"><span class="title">Hinweise</span></td>
+				</tr>
+				<tr>
+					<td><p>Sofern auf der Seite, von der aus <span class="literal">Response.Redirect</span> aufgerufen wird, keine weitere Verarbeitung erforderlich ist, sollten Sie an <span class="literal">Response.Redirect</span> als zweites Argument immer <span class="literal">True</span> &uuml;bergeben. So wird verhindert, dass unn&ouml;tig Serverressourcen durch weiteres Verarbeiten der aktuellen Seite beansprucht werden. Diese Funktion ist neu in ASP.NET. Wird <span class="literal">Response.Redirect</span> nur mit dem Argument <span class="replaceable">url</span> aufgerufen, wird die Verarbeitung der aktuellen Seite automatisch unterbrochen.
+</p><p>Erfolgt die Weiterleitung an eine Seite wie <span class="emphasis">BufferOutput.aspx</span>, in der das Puffern deaktiviert ist, oder an eine Seite, die <span class="literal">Response.Flush</span> aufruft, wird die Weiterleitung erst abgeschlossen, wenn die Verarbeitung der Zielseite abgeschlossen ist. So wird der gesamte Inhalt der Zielseite auf einmal angezeigt und nicht nach und nach aufgebaut oder aus dem Puffer ausgegeben.
+</p>
+					</td>
+				</tr>
+			</table>
+		</div>
+<div id="Write">
+			<table width="100%" cellspacing="0" cellpadding="0" border="0" class="main"><tr>							<td valign="top" class="name">Write</td><td valign="top" nowrap class="compatibility">&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><pre>Response.Write(ByVal ch As Char)
+Response.Write(ByVal obj As Object)
+Response.Write(ByVal s As String)
+Response.Write(ByVal buffer( ) As Char, ByVal index As Integer, ByVal count As Integer)</pre>
+					</td><td valign="top" nowrap class="requirements"> &#160;</td>
+				</tr>
+				<tr><td colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Erm&ouml;glicht das Schreiben von beliebigen Inhalten in den Ausgabestream. Bei den Inhalten kann es sich um Zeichendaten, Objekte (mit der Methode <span class="literal">ToString( )</span> des Objekts) oder Stringdaten handeln.
+</p>
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Parameter</span><ul><li><i><span class="replaceable">ch</span></i><br>&#160;
+			  Ein Char-Argument, das ein Zeichen enth&auml;lt, das in den Ausgabestream geschrieben werden soll.</li><li><i><span class="replaceable">obj</span></i><br>&#160;
+			  Ein Object-Argument, das ein Objekt enth&auml;lt, dessen Stringdarstellung in den Ausgabestream geschrieben wird.
+</li><li><i><span class="replaceable">s</span></i><br>&#160;
+			  Ein String-Argument, das Text enth&auml;lt, der in den Ausgabestream geschrieben werden soll.</li><li><i><span class="replaceable">buffer(  )</span></i><br>&#160;
+			  Ein Char-Array-Argument, das die Zeichen enth&auml;lt, die in den Ausgabestream geschrieben werden sollen.
+</li><li><i><span class="replaceable">index</span></i><br>&#160;
+			  Ein Integer-Argument, das den Anfangspunkt des Char-Arrays enth&auml;lt, bei dem das Schreiben beginnen soll.
+</li><li><i><span class="replaceable">count</span></i><br>&#160;
+			  Ein Integer-Argument, das die Anzahl der Zeichen angibt, die geschrieben werden sollen.</li></ul>
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td><p>Das Beispiel erstellt ein Array von Zeichen, legt Werte f&uuml;r die Zeichen fest, durchl&auml;uft das Array und zeigt durch Aufruf von <span class="literal">Response.Write</span> den Inhalt an:
+</p>
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>Sub Page_Load(  )
+   Dim MyChars(2) As Char
+   Dim MyChar As Char
+   MyChars(0) = CChar("A")
+   MyChars(1) = CChar("B")
+   MyChars(2) = CChar("C")
+   For Each MyChar in MyChars
+      Response.Write(MyChar)
+   Next
+End Sub</pre>
+						</span></td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="notes"><span class="title">Hinweise</span></td>
+				</tr>
+				<tr>
+					<td><p>Wie oben beschrieben, verf&uuml;gt die Methode <span class="literal">Write</span> in ASP.NET &uuml;ber eine Reihe &uuml;berladener Implementierungen. Der oben angegebene Code k&ouml;nnte auch mit einer anderen &uuml;berladenen Implementierung geschrieben werden, die wie folgt ein Zeichenarray, einen Startindex und die Anzahl der zu schreibenden Zeichen akzeptiert:
+</p>
+<span class="programlisting"><pre>Response.Write(MyChars, 0, 3)</pre></span>
+<p>Die Implementierung der Methode <span class="literal">Write</span>, die ein Objekt als Argument akzeptiert, nutzt die eingebaute Methode <span class="literal">ToString</span> der Objektklasse, um die Stringdarstellung des Objekts anzuzeigen. <span class="literal">ToString</span> wird von jeder .NET-Klasse geerbt und gibt standardm&auml;&szlig;ig den Namespace- und Klassennamen der Klasse des Objekts zur&uuml;ck. Klassen, die andere Informationen &uuml;ber sich selbst senden m&ouml;chten, k&ouml;nnen die geerbte Implementierung von <span class="literal">ToString</span> &uuml;bergehen, um diese Informationen zu senden.
+</p></td>
+				</tr>
+			</table>
+		</div>
+<div id="WriteFile">
+			<table width="100%" cellspacing="0" cellpadding="0" border="0" class="main"><tr>							<td valign="top" class="name">WriteFile</td><td valign="top" nowrap class="compatibility">&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage">
+					  <pre>Response.WriteFile(ByVal fileName As String)
+Response.WriteFile(ByVal fileName As String, ByVal includeHeaders As Boolean)
+Response.WriteFile(ByVal fileHandle As IntPtr, ByVal offset As Long, ByVal size As Long)
+Response.WriteFile(ByVal fileName As String, ByVal offset As Long, ByVal size As Long) </pre>
+					</td><td valign="top" nowrap class="requirements"> &#160;</td>
+				</tr>
+				<tr><td colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Schreibteine in den &uuml;berladenen Argumenten angegebene Datei in den Ausgabestream.
+</p>
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Parameter</span><ul><li><i><span class="replaceable">fileName</span></i><br>&#160;
+			  Ein String-Argument mit dem Pfad und Dateinamen der Datei, deren Inhalt in den Ausgabestream geschrieben werden soll.
+</li><li><i><span class="replaceable">includeHeaders</span></i><br>&#160;
+			  Ein Boolesches Argument, das angibt, ob Inhalte der Datei in einen Speicherblock geschrieben werden sollen.
+</li><li><i><span class="replaceable">fileHandle</span></i><br>&#160;
+			  Ein <span class="literal">IntPtr</span>-Argument mit dem auf eine Datei verweisenden Handle. Sie erhalten den Handle, indem Sie ein neues <span class="literal">FileStream</span>-Objekt aus der Datei erstellen und dann die <span class="literal">Handle</span>-Eigenschaft des <span class="literal">FileStream</span>-Objekts abfragen.
+</li><li><i><span class="replaceable">offset</span></i><br>&#160;
+			  Ein Argument des Typs <span class="literal">Long</span>, das die Byte-Position enth&auml;lt, von der aus in der Datei der Schreibvorgang beginnen soll.
+</li><li><i><span class="replaceable">size</span></i><br>&#160;
+			  Ein Argument des Typs <span class="literal">Long</span>, das die Anzahl Bytes angibt, die in den Ausgabestream geschrieben werden sollen.
+</li></ul>
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td><p>Das folgende Beispiel schreibt den Inhalt der Datei <span class="emphasis">dep.txt</span> in den Ausgabestream der aktuellen Antwort.
+</p>
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>Sub Page_Load(  )
+   Response.WriteFile("dep.txt")
+End Sub</pre>
+						</span></td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="notes"><span class="title">Hinweise</span></td>
+				</tr>
+				<tr>
+					<td><p>Die Methode <span class="literal">WriteFile</span> bietet mehrere (zum Beispiel Bilddaten), schlagen fehl.
+</p>
+					</td>
+				</tr>
+			</table>
+		</div>
+	</body></html>

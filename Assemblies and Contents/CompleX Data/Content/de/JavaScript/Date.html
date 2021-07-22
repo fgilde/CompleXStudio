@@ -1,0 +1,1933 @@
+<html>
+<link rel="stylesheet" href="josh.css">
+<body bgcolor="#FFFFFF">
+
+<div id="Beschreibung">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">Date</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">2</span> IE <span class="emphasis">3</span> ECMA <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Das <span class="literal">Date</span>-Objekt ist ein statisches Objekt, das mit Hilfe verschiedener Konstruktorfunktionen Instanzen erstellt. Jede Instanz eines <span class="literal">Date</span>-Objekts ist eine Momentaufnahme von Datum und Uhrzeit, gemessen in Millisekunden in Bezug auf 0:00 Uhr am 1. Januar 1970. Negative Millisekundenwerte stellen einen Zeitpunkt vor diesem Datum dar, positive Werte einen Zeitpunkt nach diesem Datum.
+</p>
+							</td>
+						</tr>
+						<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>In der Regel arbeiten Sie mit Datumsangaben, indem Sie eine neue Instanz des <span class="literal">Date</span>-Objekts erstellen, und zwar entweder f&uuml;r den aktuellen Zeitpunkt oder f&uuml;r ein bestimmtes Datum und eine Uhrzeit (in der Vergangenheit oder Zukunft, mit Hilfe der lokalen Zeit des Client). Dann verwenden Sie die verschiedenen Datumsmethoden, um Komponenten dieser Zeit (z. B. Minuten, Stunden, Tage, Monate) abzurufen oder festzulegen. Browser speichern ein Datum intern als Millisekundenwert in Coordinated Universal Time (UTC, die im wesentlichen der Greenwich Mean Time, oder GMT, entspricht). Wenn Sie einen Browser nach einer Komponente dieser Zeit fragen, konvertiert er den Wert automatisch in die lokale Zeitzone des Systems basierend auf der Festlegung in den L&auml;ndereinstellungen des Client. Sind diese Werte in der Systemsteuerung falsch eingestellt, liefern auch die Datums- und Zeitberechnungen falsche Werte.
+</p>
+							</td>
+						</tr>
+						<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Fr&uuml;here Versionen von skriptf&auml;higen Browsern wiesen zahlreiche Fehler, wenn mit dem <span class="literal">Date</span>-Objekt gearbeitet wurde. Eine Ressource, in der die grundlegenden Operationen im <span class="literal">Date</span>-Objekt (und die entsprechenden Fehler) beschrieben werden, finden Sie unter http://developer.netscape.com/viewsource/goodman_dateobject.html.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="properties"><span class="title">Eigenschaften</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<table border="1"><tbody><tr><td><span class="literal">constructor</span></td><td> <span class="literal">prototype</span></td>
+								</tr>
+							</tbody></table>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="methods"><span class="title">Methoden</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<table border="1"><tbody><tr><td><span class="literal">getDate( )</span></td><td><span class="literal">getDay( )</span></td><td><span class="literal">getFullYear( )</span></td>
+								</tr>
+								<tr><td><span class="literal">getHours( )</span></td><td><span class="literal">getMilliseconds( )</span></td><td><span class="literal">getMinutes( )</span></td>
+								</tr>
+								<tr><td><span class="literal">getMonth( )</span></td><td><span class="literal">getSeconds( )</span></td><td><span class="literal">getTime( )</span></td>
+								</tr>
+								<tr><td><span class="literal">getTimezoneOffset( )</span></td><td><span class="literal">getUTCDate( )</span></td><td><span class="literal">getUTCDay( )</span></td>
+								</tr>
+								<tr><td><span class="literal">getUTCFullYear( )</span></td><td><span class="literal">getUTCHours( )</span></td><td><span class="literal">getUTCMilliseconds( )</span></td>
+								</tr>
+								<tr><td><span class="literal">getUTCMinutes( )</span></td><td><span class="literal">getUTCMonth( )</span></td><td><span class="literal">getUTCSeconds( )</span></td>
+								</tr>
+								<tr><td><span class="literal">getVarDate( )</span></td><td><span class="literal">getYear( )</span></td><td><span class="literal">parse( )</span></td>
+								</tr>
+								<tr><td><span class="literal">setDate( )</span></td><td><span class="literal">setFullYear( )</span></td><td><span class="literal">setHours( )</span></td>
+								</tr>
+								<tr><td><span class="literal">setMilliseconds( )</span></td><td><span class="literal">setMinutes( )</span></td><td><span class="literal">setMonth( )</span></td>
+								</tr>
+								<tr><td><span class="literal">setSeconds( )</span></td><td><span class="literal">setTime( )</span></td><td><span class="literal">setUTCDate( )</span></td>
+								</tr>
+								<tr><td><span class="literal">setUTCFullYear( )</span></td><td><span class="literal">setUTCHours( )</span></td><td><span class="literal">setUTCMilliseconds( )</span></td>
+								</tr>
+								<tr><td><span class="literal">setUTCMinutes( )</span></td><td><span class="literal">setUTCMonth( )</span></td><td><span class="literal">setUTCSeconds( )</span></td>
+								</tr>
+								<tr><td><span class="literal">setYear( )</span></td><td><span class="literal">toDateString( )</span></td><td><span class="literal">toGMTString( )</span></td>
+								</tr>
+								<tr><td><span class="literal">toLocaleDateString( )</span></td><td><span class="literal">toLocaleString( )</span></td><td><span class="literal">toLocaleTimeString( )</span></td>
+								</tr>
+								<tr><td><span class="literal">toString( )</span></td><td><span class="literal">toTimeString( )</span></td><td><span class="literal">toUTCString( )</span></td>
+								</tr>
+								<tr><td><span class="literal">UTC( )</span></td><td><span class="literal">valueOf( )</span></td><td></td>
+								</tr>
+							</tbody></table>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="creatingadateobject"><span class="title">Erstellen eines Date-Objekts</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>var now = new Date( );
+var myDate = new Date("<span class="replaceable">month</span> <span class="replaceable">dd</span>, <span class="replaceable">yyyy</span> <span class="replaceable">hh</span>:<span class="replaceable">mm</span>:<span class="replaceable">ss</span>");
+var myDate = new Date("<span class="replaceable">month dd</span>, <span class="replaceable">yyyy</span>");
+var myDate = new Date(<span class="replaceable">yy</span>, <span class="replaceable">mm</span>, <span class="replaceable">dd</span>, <span class="replaceable">hh</span>, <span class="replaceable">mm</span>, <span class="replaceable">ss</span>);
+var myDate = new Date(<span class="replaceable">yy</span>, <span class="replaceable">mm</span>, <span class="replaceable">dd</span>);
+var myDate = new Date(<span class="replaceable">milliseconds</span>);</pre>
+						</span></td>
+				</tr>
+			</table>
+		</div><div id="constructor">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">constructor</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">4</span> IE <span class="emphasis">4</span> ECMA <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Lesen/Schreiben</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Dies ist eine Referenz auf die Funktion, die die Instanz eines <span class="literal">Date</span>-Objekts erstellt hat – die native <span class="literal">Date( )</span>-Konstruktorfunktion in einem Browser.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>if (myVar.constructor == Date) {
+    // process native string
+}</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Funktionsobjektreferenz.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="prototype">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">prototype</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">3</span> IE <span class="emphasis">4</span> ECMA <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Lesen/Schreiben</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Dies ist eine Eigenschaft des statischen <span class="literal">Date</span>-Objekts. Mit der Eigenschaft <span class="literal">prototype</span> k&ouml;nnen Sie sp&auml;teren Instanzen eines <span class="literal">Date</span>-Werts im aktuellen Dokument neue Eigenschaften und Methoden zuweisen. Beispiele hierzu finden Sie in der Beschreibung der Eigenschaft <span class="literal">Array.prototype</span>.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>Date.prototype.author = "DG";</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Beliebige Daten, einschlie&szlig;lich Funktionsreferenzen.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="getDate( )">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">getDate( )</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">2</span> IE <span class="emphasis">3</span> ECMA <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Gibt das Kalenderdatum innerhalb des Monats zur&uuml;ck, der durch eine Instanz des <span class="literal">Date</span>-Objekts angegeben wird.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Parameter</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Keine.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Zur&uuml;ckgegebener Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Integerwert zwischen 1 und 31.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="getDay( )">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">getDay( )</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">2</span> IE <span class="emphasis">3</span> ECMA <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Gibt einen Integer, der dem Wochentag des Datums entspricht, das durch eine Instanz des <span class="literal">Date</span>-Objekts angegeben wird.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Parameter</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Keine.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Zur&uuml;ckgegebener Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Integerwert zwischen 0 und 6. Sonntag ist 0, Montag ist 1 und Samstag ist 6.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="getFullYear( )">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">getFullYear( )</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">4</span> IE <span class="emphasis">4</span> ECMA <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Gibt die vierstellige Jahreszahl des Datums zur&uuml;ck, das durch eine Instanz des <span class="literal">Date</span>-Objekts angegeben wird.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Parameter</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Keine.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Zur&uuml;ckgegebener Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Integer. Navigator 4 gibt keine Zahl kleiner als Null zur&uuml;ck. Internet Explorer und Netscape 6 geben auch negative Jahreszahlen zur&uuml;ck.
+</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="getHours( )">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">getHours( )</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">2</span> IE <span class="emphasis">3</span> ECMA <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Gibt einen auf Null basierenden Integer zur&uuml;ck, der dem Stundenwert des Datums entspricht, das durch eine Instanz des <span class="literal">Date</span>-Objekts angegeben wird. Dabei wird das 24-Stunden-Format verwendet.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Parameter</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Keine.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Zur&uuml;ckgegebener Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Integerwert zwischen 0 und 23.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="getMilliseconds( )">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">getMilliseconds( )</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">4</span> IE <span class="emphasis">4</span> ECMA <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Gibt einen auf Null basierenden Integer zur&uuml;ck, der dem Millisekundenwert des Datums entspricht, das durch eine Instanz des <span class="literal">Date</span>-Objekts angegeben wird.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Parameter</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Keine.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Zur&uuml;ckgegebener Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Integerwert zwischen 0 und 999.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="getMinutes( )">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">getMinutes( )</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">2</span> IE <span class="emphasis">3</span> ECMA <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Gibt einen auf Null basierenden Integer zur&uuml;ck, der dem Minutenwert des Datums entspricht, das durch eine Instanz des <span class="literal">Date</span>-Objekts angegeben wird.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Parameter</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Keine.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Zur&uuml;ckgegebener Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Integerwert zwischen 0 und 59.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="getMonth( )">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">getMonth( )</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">2</span> IE <span class="emphasis">3</span> ECMA <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Gibt einen auf Null basierenden Integer zur&uuml;ck, der dem Monatswert des Datums entspricht, das durch eine Instanz des <span class="literal">Date</span>-Objekts angegeben wird. Dass die Werte dieser Methode auf Null basieren, verwirrt Skriptersteller zun&auml;chst.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Parameter</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Keine.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Zur&uuml;ckgegebener Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Integerwert zwischen 0 und 11. Januar ist 0, Februar ist 1 und Dezember ist 11.
+</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="getSeconds( )">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">getSeconds( )</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">2</span> IE <span class="emphasis">3</span> ECMA <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Gibt einen auf Null basierenden Integer zur&uuml;ck, der dem Sekundenwert des Datums entspricht, das durch eine Instanz des <span class="literal">Date</span>-Objekts angegeben wird.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Parameter</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Keine.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Zur&uuml;ckgegebener Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Integerwert zwischen 0 und 59.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="getTime( )">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">getTime( )</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">2</span> IE <span class="emphasis">3</span> ECMA <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Gibt einen auf Null basierenden Integer zur&uuml;ck, der der Anzahl an Millisekunden zwischen dem 1. Januar 1970, 0:00 Uhr und dem Datum entspricht, das durch eine Instanz des <span class="literal">Date</span>-Objekts angegeben wird.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Parameter</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Keine.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Zur&uuml;ckgegebener Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Integer.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="getTimezoneOffset( )">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">getTimezoneOffset( )</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">2</span> IE <span class="emphasis">3</span> ECMA <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Gibt einen auf Null basierenden Integer zur&uuml;ck, der dem Zeitunterschied in Minuten zwischen der GMT und der Systemzeit des Clientcomputers f&uuml;r eine Instanz des <span class="literal">Date</span>-Objekts entspricht. Zeitzonen westlich von der GMT erhalten positive Werte, Zeitzonen &ouml;stlich von der GMT erhalten negative Werte. Diese Methode war in &auml;lteren Browsern mit zahlreichen Fehlern belastet, insbesondere bei Macintosh-Versionen.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Parameter</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Keine.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Zur&uuml;ckgegebener Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Integerwert zwischen -720 und 720.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="getUTCDate( )">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">getUTCDate( )</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">4</span> IE <span class="emphasis">4</span> ECMA <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Gibt das Kalenderdatum innerhalb des Monats zur&uuml;ck, der durch eine Instanz des <span class="literal">Date</span>-Objekts angegeben wird, aber in der intern vom Browser gespeicherten UTC-Zeit.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Parameter</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Keine.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Zur&uuml;ckgegebener Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Integerwert zwischen 1 und 31.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="getUTCDay( )">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">getUTCDay( )</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">4</span> IE <span class="emphasis">4</span> ECMA <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Gibt einen Integer, der dem Wochentag des Datums entspricht, das durch eine Instanz des <span class="literal">Date</span>-Objekts angegeben wird, aber in der intern vom Browser gespeicherten UTC-Zeit.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Parameter</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Keine.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Zur&uuml;ckgegebener Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Integerwert zwischen 0 und 6. Sonntag ist 0, Montag ist 1 und Samstag ist 6.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="getUTCFullYear( )">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">getUTCFullYear( )</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">4</span> IE <span class="emphasis">4</span> ECMA <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Gibt die vierstellige Jahreszahl des Datums zur&uuml;ck, das durch eine Instanz des <span class="literal">Date</span>-Objekts angegeben wird, aber in der intern vom Browser gespeicherten UTC-Zeit.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Parameter</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Keine.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Zur&uuml;ckgegebener Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Integer. Navigator 4 gibt keine Zahl kleiner als Null zur&uuml;ck. Internet Explorer und Netscape 6 geben auch negative Jahreszahlen zur&uuml;ck.
+</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="getUTCHours( )">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">getUTCHours( )</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">4</span> IE <span class="emphasis">4</span> ECMA <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Gibt einen auf Null basierenden Integer zur&uuml;ck, der dem Stundenwert des Datums entspricht, das durch eine Instanz des <span class="literal">Date</span>-Objekts angegeben wird, aber in der intern vom Browser gespeicherten UTC-Zeit. Dabei wird das 24-Stunden-Format verwendet.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Parameter</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Keine.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Zur&uuml;ckgegebener Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Integerwert zwischen 0 und 23.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="getUTCMilliseconds( )">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">getUTCMilliseconds( )</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">4</span> IE <span class="emphasis">4</span> ECMA <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Gibt einen auf Null basierenden Integer zur&uuml;ck, der dem Millisekundenwert des Datums entspricht, das durch eine Instanz des <span class="literal">Date</span>-Objekts angegeben wird, aber in der intern vom Browser gespeicherten UTC-Zeit.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Parameter</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Keine.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Zur&uuml;ckgegebener Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Integerwert zwischen 0 und 999.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="getUTCMinutes( )">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">getUTCMinutes( )</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">4</span> IE <span class="emphasis">4</span> ECMA <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Gibt einen auf Null basierenden Integer zur&uuml;ck, der dem Minutenwert des Datums entspricht, das durch eine Instanz des <span class="literal">Date</span>-Objekts angegeben wird, aber in der intern vom Browser gespeicherten UTC-Zeit.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Parameter</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Keine.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Zur&uuml;ckgegebener Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Integerwert zwischen 0 und 59.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="getUTCMonth( )">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">getUTCMonth( )</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">4</span> IE <span class="emphasis">4</span> ECMA <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Gibt einen auf Null basierenden Integer zur&uuml;ck, der dem Monatswert des Datums entspricht, das durch eine Instanz des <span class="literal">Date</span>-Objekts angegeben wird, aber in der intern vom Browser gespeicherten UTC-Zeit. Dass die Werte dieser Methode auf Null basieren, verwirrt Skriptersteller zun&auml;chst.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Parameter</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Keine.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Zur&uuml;ckgegebener Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Integerwert zwischen 0 und 11. Januar ist 0, Februar ist 1 und Dezember ist 11.
+</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="getUTCSeconds( )">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">getUTCSeconds( )</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">4</span> IE <span class="emphasis">4</span> ECMA <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Gibt einen auf Null basierenden Integer zur&uuml;ck, der dem Sekundenwert des Datums entspricht, das durch eine Instanz des <span class="literal">Date</span>-Objekts angegeben wird, aber in der intern vom Browser gespeicherten UTC-Zeit.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Parameter</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Keine.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Zur&uuml;ckgegebener Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Integerwert zwischen 0 und 59.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="getVarDate( )">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">getVarDate( )</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">nicht zutreffend</span> IE <span class="emphasis">4</span> ECMA <span class="emphasis">nicht zutreffend</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Gibt einen Datumswert in einem Format (namens <span class="literal">VT_DATE</span>) zur&uuml;ck, das f&uuml;r eine Reihe verschiedener Windows-orientierter Anwendungen wie ActiveX-Steuerungelemente und VBScript geeignet ist. Kann nicht in JavaScript-Datumsberechnungen eingesetzt werden.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Parameter</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Keine.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Zur&uuml;ckgegebener Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p><span class="literal">VT_DATE</span>-Datumswert (nicht f&uuml;r den Einsatz in JavaScript).</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="getYear( )">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">getYear( )</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">2</span> IE <span class="emphasis">3</span> ECMA <span class="emphasis">nicht zutreffend</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Gibt eine Zahl zur&uuml;ck, die dem Jahreswert einer Instanz des <span class="literal">Date</span>-Objekts entspricht, zeigt aber ein falsches Verhalten. Theoretisch sollte diese Methode die Anzahl von Jahren nach 1900 liefern, die durch das <span class="literal">Date</span>-Objekt angegeben wird. Dies w&uuml;rde einen ein- oder zweistelligen Wert f&uuml;r alle Jahre zwischen 1900 und 1999 erzeugen. Wenn Sie das Jahr 2000 erreichen, erzeugt dieses Muster jedoch einen Fehler. Statt Werte von 100 aufw&auml;rts zu erzeugen, gibt die Methode <span class="literal">getYear( )</span> in manchen Browsern denselben vierstelligen Wert zur&uuml;ck wie die Methode <span class="literal">getFullYear( )</span>. Aus diesem Grund verwenden Sie am besten die Methode <span class="literal">getFullYear( )</span> (achten Sie aber auf Kompatibilit&auml;t des Browsers mit dieser Methode). Beachten Sie, dass diese Methode im Gegensatz zu der Methode <span class="literal">getFullYear( )</span> von der ECMA nicht unterst&uuml;tzt wird.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Parameter</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Keine.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Zur&uuml;ckgegebener Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Integer zwischen 0 und 99 f&uuml;r die Jahre 1900 bis 1999; ab 2000 wird in manchen Browsern die Reihe mit 100 fortgesetzt, in anderen Browsern hingegen eine vierstellige ganze Zahl zur&uuml;ckgegeben.
+</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="parse( )">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">parse( )</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">2</span> IE <span class="emphasis">3</span> ECMA <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">parse("<span class="replaceable">dateString</span>")</p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Eine statische <span class="literal">Date</span>-Objektmethode, die das Millisekunden-&Auml;quivalent des Datums zur&uuml;ckgibt, das als String im Parameter angegeben ist.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Parameter</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<ul><li><span class="literal"></span>Eines g&uuml;ltiges &Auml;quivalent eines Strings, der von einem <span class="literal">Date</span>-Objekt abgeleitet wurde. Beispielformate finden Sie unter den Methoden <span class="literal">toString( )</span>, <span class="literal">toGMTString( )</span> und <span class="literal">toLocaleString( )</span>.
+</li></ul>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Zur&uuml;ckgegebener Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Das Datum in Millisekunden.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="setDate( )">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">setDate( )</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">2</span> IE <span class="emphasis">3</span> ECMA <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">setDate(<span class="replaceable">dateInt</span>)</p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Legt das Datum innerhalb des Monats fest, der durch eine Instanz des <span class="literal">Date</span>-Objekts angegeben wird. Wenn Sie ein Datum angeben, das nach dem Ende des aktuellen Monats des Objekts liegt, berechnet das Objekt das Datum im darauf folgenden Monat neu. Ist ein <span class="literal">Date</span>-Objekt beispielsweise auf den 25. Dezember 2002 gesetzt, so k&ouml;nnen Sie das Datum des zehnten Tages nach diesem Tag mit der folgenden Konstruktion feststellen:
+</p>
+							</td>
+						</tr>
+						<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Nach dieser Berechnung entspricht der Wert von <span class="literal">myDate</span> dem 4. Januar 2003.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Parameter</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<ul><li><span class="literal"></span>Ganzzahliger Datumswert.</li></ul>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Zur&uuml;ckgegebener Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Das neue Datum in Millisekunden.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="setFullYear( )">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">setFullYear( )</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">4</span> IE <span class="emphasis">4</span> ECMA <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">setFullYear(<span class="replaceable">yearInt</span>)</p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Weist das Jahr f&uuml;r eine Instanz des <span class="literal">Date</span>-Objekts zu.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Parameter</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<ul><li><span class="literal"></span>Integer. Navigator 4 erlaubt keine Zahlen kleiner als Null. Internet Explorer und NN 6 erlauben auch negative Jahreszahlen.
+</li></ul>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Zur&uuml;ckgegebener Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Das neue Datum in Millisekunden.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="setHours( )">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">setHours( )</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">2</span> IE <span class="emphasis">3</span> ECMA <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">setHours(<span class="replaceable">hourInt</span>)</p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Legt den Stundenwert f&uuml;r eine Instanz des <span class="literal">Date</span>-Objekts fest. Dabei wird das 24-Stunden-Format verwendet. Wenn Sie ein Stunde angeben, das nach dem Ende des aktuellen Tages des Objekts liegt, berechnet das Objekt die Uhrzeit f&uuml;r den darauf folgenden Tag neu.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Parameter</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<ul><li><span class="literal"></span>Ein auf Null basierender Integer.</li></ul>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Zur&uuml;ckgegebener Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Das neue Datum in Millisekunden.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="setMilliseconds( )">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">setMilliseconds( )</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">4</span> IE <span class="emphasis">4</span> ECMA <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">setMilliseconds(<span class="replaceable">msInt</span>)</p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Legt den Millisekundenwert f&uuml;r eine Instanz des <span class="literal">Date</span>-Objekts fest.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Parameter</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<ul><li><span class="literal"></span>Ein auf Null basierender Integerwert f&uuml;r die Millisekunden.</li></ul>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Zur&uuml;ckgegebener Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Das neue Datum in Millisekunden.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="setMinutes( )">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">setMinutes( )</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">2</span> IE <span class="emphasis">3</span> ECMA <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">setMinutes(<span class="replaceable">minuteInt</span>)</p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Legt den Minutenwert f&uuml;r eine Instanz des <span class="literal">Date</span>-Objekts fest.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Parameter</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<ul><li><span class="literal"></span>Ein auf Null basierender Integer.</li></ul>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Zur&uuml;ckgegebener Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Das neue Datum in Millisekunden.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="setMonth( )">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">setMonth( )</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">2</span> IE <span class="emphasis">3</span> ECMA <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">setMonth(<span class="replaceable">monthInt</span>)</p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Legt den Monatswert f&uuml;r eine Instanz des <span class="literal">Date</span>-Objekts fest. Dass die Werte dieser Methode auf Null basieren, verwirrt Skriptersteller zun&auml;chst.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Parameter</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<ul><li><span class="literal"></span>Ein auf Null basierender Integer. Januar ist 0, Februar ist 1 und Dezember ist 11. Wenn Sie einen h&ouml;heren Wert zuweisen, wird der Wert f&uuml;r das darauf folgende Jahr neu berechnet.
+</li></ul>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Zur&uuml;ckgegebener Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Das neue Datum in Millisekunden.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="setSeconds( )">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">setSeconds( )</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">2</span> IE <span class="emphasis">3</span> ECMA <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">setSeconds(<span class="replaceable">secInt</span>)</p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Legt den Sekundenwert f&uuml;r eine Instanz des <span class="literal">Date</span>-Objekts fest.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Parameter</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<ul><li><span class="literal"></span>Ein auf Null basierender Integer.</li></ul>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Zur&uuml;ckgegebener Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Das neue Datum in Millisekunden.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="setTime( )">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">setTime( )</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">2</span> IE <span class="emphasis">3</span> ECMA <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">setTime(<span class="replaceable">msInt</span>)</p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Stellt eine Instanz des <span class="literal">Date</span>-Objekts auf die Anzahl der Millisekunden seit dem 1. Januar 1970 ein.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Parameter</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<ul><li><span class="literal"></span>Ein Integerwert f&uuml;r die Millisekunden.</li></ul>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Zur&uuml;ckgegebener Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Das neue Datum in Millisekunden.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="setUTCDate( )">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">setUTCDate( )</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">4</span> IE <span class="emphasis">4</span> ECMA <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">setUTCDate(<span class="replaceable">dateInt</span>)</p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Legt das Datum f&uuml;r eine Instanz des <span class="literal">Date</span>-Objekts fest, aber in der intern vom Browser gespeicherten UTC-Zeit. Wenn Sie ein Datum angeben, das nach dem Ende des aktuellen Monats des Objekts liegt, berechnet das Objekt das Datum im darauf folgenden Monat neu.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Parameter</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<ul><li><span class="literal"></span>Integer.</li></ul>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Zur&uuml;ckgegebener Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Das neue UTC-Datum in Millisekunden.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="setUTCFullYear( )">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">setUTCFullYear( )</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">4</span> IE <span class="emphasis">4</span> ECMA <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">setUTCFullYear(<span class="replaceable">yearInt</span>)</p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Legt die vierstellige Jahreszahl f&uuml;r eine Instanz des <span class="literal">Date</span>-Objekts fest, aber in der intern vom Browser gespeicherten UTC-Zeit.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Parameter</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<ul><li><span class="literal"></span>Integer. Navigator 4 erlaubt keine Werte kleiner als Null. Internet Explorer und NN 6 erlauben auch negative Jahreszahlen.
+</li></ul>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Zur&uuml;ckgegebener Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Das neue UTC-Datum in Millisekunden.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="setUTCHours( )">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">setUTCHours( )</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">4</span> IE <span class="emphasis">4</span> ECMA <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">setUTCHours(<span class="replaceable">hourInt</span>)</p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Legt den Stundenwert f&uuml;r eine Instanz des <span class="literal">Date</span>-Objekts fest, aber in der intern vom Browser gespeicherten UTC-Zeit. Dabei wird das 24-Stunden-Format verwendet.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Parameter</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<ul><li><span class="literal"></span>Ein auf Null basierender Integer.</li></ul>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Zur&uuml;ckgegebener Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Das neue UTC-Datum in Millisekunden.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="setUTCMilliseconds( )">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">setUTCMilliseconds( )</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">4</span> IE <span class="emphasis">4</span> ECMA <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">setUTCMilliseconds(<span class="replaceable">msInt</span>)</p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Legt den Millisekundenwert f&uuml;r eine Instanz des <span class="literal">Date</span>-Objekts fest, aber in der intern vom Browser gespeicherten UTC-Zeit.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Parameter</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<ul><li><span class="literal"></span>Ein auf Null basierender Integer.</li></ul>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Zur&uuml;ckgegebener Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Das neue UTC-Datum in Millisekunden.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="setUTCMinutes( )">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">setUTCMinutes( )</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">4</span> IE <span class="emphasis">4</span> ECMA <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">setUTCMinutes(<span class="replaceable">minuteInt</span>)</p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Legt den Minutenwert f&uuml;r eine Instanz des <span class="literal">Date</span>-Objekts fest, aber in der intern vom Browser gespeicherten UTC-Zeit.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Parameter</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<ul><li><span class="literal"></span>Ein auf Null basierender Integer.</li></ul>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Zur&uuml;ckgegebener Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Das neue UTC-Datum in Millisekunden.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="setUTCMonth( )">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">setUTCMonth( )</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">4</span> IE <span class="emphasis">4</span> ECMA <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">setUTCMonth(<span class="replaceable">monthInt</span>)</p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Legt den Monatswert f&uuml;r eine Instanz des <span class="literal">Date</span>-Objekts fest, aber in der intern vom Browser gespeicherten UTC-Zeit. Dass die Werte dieser Methode auf Null basieren, verwirrt Skriptersteller zun&auml;chst.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Parameter</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<ul><li><span class="literal"></span>Ein auf Null basierender Integer. Januar ist 0, Februar ist 1 und Dezember ist 11. Wenn Sie einen h&ouml;heren Wert zuweisen, wird der Wert f&uuml;r das darauf folgende Jahr neu berechnet.
+</li></ul>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Zur&uuml;ckgegebener Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Das neue UTC-Datum in Millisekunden.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="setUTCSeconds( )">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">setUTCSeconds( )</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">4</span> IE <span class="emphasis">4</span> ECMA <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">setUTCSeconds(<span class="replaceable">secInt</span>)</p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Legt den Sekundenwert f&uuml;r eine Instanz des <span class="literal">Date</span>-Objekts fest, aber in der intern vom Browser gespeicherten UTC-Zeit.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Parameter</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<ul><li><span class="literal"></span>Ein auf Null basierender Integer.</li></ul>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Zur&uuml;ckgegebener Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Das neue UTC-Datum in Millisekunden.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="setYear( )">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">setYear( )</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">2</span> IE <span class="emphasis">3</span> ECMA <span class="emphasis">nicht zutreffend</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">setYear(<span class="replaceable">yearInt</span>)</p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Legt das Jahr f&uuml;r eine Instanz des <span class="literal">Date</span>-Objekts fest. Verwenden Sie <span class="literal">setFullYear( )</span>, falls die Browserversionen dies unterst&uuml;tzen. Beachten Sie, dass diese Methode im Gegensatz zu der Methode <span class="literal">setFullYear( )</span> von der ECMA nicht unterst&uuml;tzt wird.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Parameter</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<ul><li><span class="literal"></span>Vierstellige (und manchmal zweistellige) ganzzahlige Jahreszahl.</li></ul>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Zur&uuml;ckgegebener Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Das neue Datum in Millisekunden.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="toDateString( )">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">toDateString( )</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">5.5(Win)</span> ECMA <span class="emphasis">3</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Gibt einen String zur&uuml;ck, der nur das Datum einer Instanz des <span class="literal">Date</span>-Objekts enth&auml;lt. Das genaue Format h&auml;ngt vom Browser und der jeweiligen Sprache ab. Die US-amerikanischen Versionen von IE 6 f&uuml;r Windows und Netscape 6 verwenden beide das Format <span class="replaceable">Ddd Mmm dd yyyy</span>.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Parameter</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Keine.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Zur&uuml;ckgegebener Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>String.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="toGMTString( )">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">toGMTString( )</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">2</span> IE <span class="emphasis">3</span> ECMA <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Gibt eine Stringversion des GMT-Wertes einer <span class="literal">Date</span>-Objektinstanz in einem standardisierten Format zur&uuml;ck. Diese Methode &auml;ndert das urspr&uuml;ngliche <span class="literal">Date</span>-Objekt nicht. Bei neueren Browsern sollte die Methode <span class="literal">toUTCString( )</span> anstelle von <span class="literal">toGMTString( )</span> verwendet werden.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Parameter</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Keine.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Zur&uuml;ckgegebener Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Ein String im folgenden Format: <span class="replaceable">dayAbbrev</span>, <span class="replaceable">dd mmm yyyy hh</span>:<span class="replaceable">mm</span>:<span class="replaceable">ss </span>GMT. Beispiel:
+</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>Mon 05 Aug 2002 02:33:22 GMT</pre>
+						</span></td>
+				</tr>
+			</table>
+		</div><div id="toLocaleDateString( )">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">toLocaleDateString( )</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">5.5(Win)</span> ECMA <span class="emphasis">3</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Gibt einen String zur&uuml;ck, der nur das Datum einer Instanz des <span class="literal">Date</span>-Objekts enth&auml;lt. Das genaue Format h&auml;ngt vom Browser und der jeweiligen Sprache ab. IE 6 f&uuml;r Windows gibt einen Wert im Format <span class="replaceable">fullDay,</span>
+<span class="replaceable">fullMonth dd,</span>
+<span class="replaceable">yyyy</span>, Netscape 6 einen Wert im Format <span class="replaceable">fullDay</span>
+<span class="replaceable">fullMonth</span> <span class="replaceable">dd yyyy</span> zur&uuml;ck.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Parameter</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Keine.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Zur&uuml;ckgegebener Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>String.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="toLocaleString( )">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">toLocaleString( )</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">2</span> IE <span class="emphasis">3</span> ECMA <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Gibt den lokalen Zeitzonenwert von Datum und Uhrzeit einer Instanz des <span class="literal">Date</span>-Objekts in Form eines Strings zur&uuml;ck. Das Format kann entsprechend den Konventionen eines bestimmten Landes oder Betriebssystems lokalisiert werden.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Parameter</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Keine.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Zur&uuml;ckgegebener Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Ein String in verschiedenen m&ouml;glichen Formaten. Beispiele f&uuml;r m&ouml;gliche R&uuml;ckgabewerte in US-amerikanischen Browsern:
+</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<table border="1"><tbody><th>Plattform</th><th>Stringwert</th><tr><td>Internet Explorer 6/Win32</td><td> Tuesday, April 01, 2003 7:30:00 AM</td>
+								</tr>
+								<tr><td>Internet Explorer 5.1/Mac</td><td> Tuesday, 01 April, 2003  07:30:00 AM</td>
+								</tr>
+								<tr><td>Navigator 6/Win32</td><td> Tuesday, April 01, 2003 07:30:00</td>
+								</tr>
+								<tr><td>Navigator 6/Mac</td><td> Tuesday April 01 07:30:00 2003</td>
+								</tr>
+							</tbody></table>
+					</td>
+				</tr>
+			</table>
+		</div><div id="toLocaleTimeString( )">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">toLocaleTimeString( )</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">5.5(Win)</span> ECMA <span class="emphasis">3</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Gibt einen String zur&uuml;ck, der nur die Uhrzeit einer Instanz des <span class="literal">Date</span>-Objekts enth&auml;lt. Das genaue Format h&auml;ngt vom Browser und der jeweiligen Sprache ab. IE 6 f&uuml;r Windows gibt einen Wert im Format <span class="replaceable">[h]h:mm:ss xM</span>, Netscape 6 einen Wert im Format <span class="replaceable">hh:mm:ss</span> zur&uuml;ck.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Parameter</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Keine.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Zur&uuml;ckgegebener Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>String.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="toString( )">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">toString( )</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">2</span> IE <span class="emphasis">4</span> ECMA <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Diese Methode wird zumeist vom Browser selbst verwendet, um die Stringversion einer Instanz des <span class="literal">Date</span>-Objekts abzurufen, wenn diese f&uuml;r die Anzeige in Dialogfeldern oder auf dem Bildschirm ben&ouml;tigt wird.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Parameter</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Keine.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Zur&uuml;ckgegebener Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Ein String in verschiedenen m&ouml;glichen Formaten. Beispiele f&uuml;r m&ouml;gliche R&uuml;ckgabewerte in US-amerikanischen Browsern:
+</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<table border="1"><tbody><th>Plattform</th><th>Stringwert</th><tr><td>Internet Explorer 6/Win32</td><td> Tue Apr 1 07:30:00 PST 2003</td>
+								</tr>
+								<tr><td>Internet Explorer 5.1/Mac</td><td> Tue Apr 1 07:30:00 PST 2003</td>
+								</tr>
+								<tr><td>Navigator 6/Win32</td><td> Tue Apr 01 07:30:00 GMT-0800 (Pacific Standard Time) 2003</td>
+								</tr>
+								<tr><td>Navigator 6/Mac</td><td> Tue Apr 01 2003 07:30:00 GMT-0800</td>
+								</tr>
+							</tbody></table>
+					</td>
+				</tr>
+			</table>
+		</div><div id="toTimeString( )">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">toTimeString( )</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">5.5(Win)</span> ECMA <span class="emphasis">3</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Gibt einen String zur&uuml;ck, der nur die Uhrzeit einer Instanz des <span class="literal">Zeit</span>-Objekts enth&auml;lt. Das genaue Format h&auml;ngt vom Browser und der jeweiligen Sprache ab.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Parameter</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Keine.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Zur&uuml;ckgegebener Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>String.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="toUTCString( )">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">toUTCString( )</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">4</span> IE <span class="emphasis">4</span> ECMA <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Gibt eine Stringversion des UTC-Wertes einer <span class="literal">Date</span>-Objektinstanz in einem standardisierten Format zur&uuml;ck. Diese Methode &auml;ndert das urspr&uuml;ngliche <span class="literal">Date</span>-Objekt nicht. Bei neueren Browsern sollte die Methode <span class="literal">toUTCString( )</span> anstelle von <span class="literal">toGMTString( )</span> verwendet werden.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Parameter</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Keine.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Zur&uuml;ckgegebener Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Ein String im folgenden Format: <span class="replaceable">dayAbbrev</span>
+<span class="replaceable">dd mmm yyyy hh</span>:<span class="replaceable">mm</span>:<span class="replaceable">ss</span> GMT. Beispiel:
+</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>Mon 05 Aug 2002 02:33:22 GMT</pre>
+						</span></td>
+				</tr>
+			</table>
+		</div><div id="UTC( )">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">UTC( )</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">2</span> IE <span class="emphasis">3</span> ECMA <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">UTC(<span class="replaceable">yyyy</span>, <span class="replaceable">mm</span>, <span class="replaceable">dd</span>[, <span class="replaceable">hh</span>[, <span class="replaceable">mm</span>[, <span class="replaceable">ss</span>[, <span class="replaceable">msecs</span>]]]]) </p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Eine statische Methode des <span class="literal">Date</span>-Objekts, die eine numerische Version des Datums zur&uuml;ckgibt, das der Browser intern f&uuml;r ein <span class="literal">Date</span>-Objekt gespeichert hat. Im Gegensatz zu den Parametern des <span class="literal">Date</span>-Objektkonstruktors m&uuml;ssen die Parameter f&uuml;r die Methode <span class="literal">UTC( )</span> in der UTC-Zeit vorliegen, damit der zur&uuml;ckgegebene Wert korrekt ist. Diese Methode erstellt kein <span class="literal">Date</span>-Objekt wie der <span class="literal">Date</span>-Objekt-Konstruktor.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Parameter</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<ul><li><span class="literal"></span>Vierstelliger Wert f&uuml;r das Jahr.</li><li><span class="literal"></span>Zweistelliger Wert f&uuml;r den Monat (0-11).</li><li><span class="literal"></span>Zweistelliger Wert f&uuml;r den Tag (1-31).</li><li><span class="literal"></span>Optionaler zweistelliger Wert f&uuml;r die Stunde (0-23).</li><li><span class="literal"></span>Optionaler zweistelliger Wert f&uuml;r die Minute (0-59).</li><li><span class="literal"></span>Optionaler zweistelliger Wert f&uuml;r die Sekunde (0-59).</li><li><span class="literal"></span>Optionaler Wert f&uuml;r die Millisekunden nach der letzten vollst&auml;ndigen Sekunde (0-999).</li></ul>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Zur&uuml;ckgegebener Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Ganzzahliger UTC-Millisekundenwerts f&uuml;r das in den Parametern angegebene Datum.
+</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="valueOf( )">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">valueOf( )</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">4</span> IE <span class="emphasis">4</span> ECMA <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Gibt den Objektwert zur&uuml;ck.</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Parameter</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Keine. </p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Zur&uuml;ckgegebener Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Ganzzahliger Millisekundenwert.</p>
+					</td>
+				</tr>
+			</table>
+		</div>
+
+</body>
+</html>

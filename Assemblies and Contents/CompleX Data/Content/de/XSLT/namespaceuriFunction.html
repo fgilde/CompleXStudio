@@ -1,0 +1,136 @@
+<html>
+<head>
+<title>namespace-uri()-Funktion</title>
+</head>
+<body bgcolor="#FFFFFF" text="#000000">
+<div id="Beschreibung">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">namespace-uri()-Funktion</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description">
+Diese Funktion liefert den Namensraum-URI des ersten Knotens der Knotenmenge im Argument. </td></tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Eingaben</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<p>Eine Knotenmenge. Wird keine Knotenmenge angegeben, verwendet die Funktion <span class="LITERAL">namespace-uri()</span>eine Knotenmenge, deren einziger Inhalt der Kontextknoten ist.</p>
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Ausgabe</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<p>Der Namensraum-URI des ersten Knotens der Knotenmenge im Argument.  Wenn die Knotenmenge im Argument leer ist, der erste Knoten keinen Namensraum-URI besitzt oder der erste Knoten einen Namensraum-URI mit dem Wert Null besitzt, wird ein leerer String zur&uuml;ckgegeben. Beachten Sie, dass die Funktion <span class="LITERAL">namespace-uri()</span> f&uuml;r alle Knoten, die keine Element- oder Attributknoten sind, ebenfalls einen leeren String zur&uuml;ckgibt. </p>
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Definition</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<p>XPath-Abschnitt 4.1, Funktionen auf Knotenmengen </p>
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Beispiel</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<p>Hier ein Stylesheet, das die Funktion <span class="LITERAL">document()</span> verwendet, um seine eigenen Knoten zu untersuchen, und dann f&uuml;r jeden dieser Knoten die Funktion <span class="LITERAL">namespace-uri()</span> aufruft.</p>
+<span class="PROGRAMLISTING"><pre>
+&lt;?xml version="1.0"?&gt;
+&lt;xsl:stylesheet version="1.0" 
+  xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+  xmlns:months="Lookup table for month names"&gt;
+
+  &lt;months:name sequence="01"&gt;January&lt;/months:name&gt;
+  &lt;months:name sequence="02"&gt;February&lt;/months:name&gt;
+  &lt;months:name sequence="03"&gt;March&lt;/months:name&gt;
+  &lt;months:name sequence="04"&gt;April&lt;/months:name&gt;
+  &lt;months:name sequence="05"&gt;May&lt;/months:name&gt;
+  &lt;months:name sequence="06"&gt;June&lt;/months:name&gt;
+  &lt;months:name sequence="07"&gt;July&lt;/months:name&gt;
+  &lt;months:name sequence="08"&gt;August&lt;/months:name&gt;
+  &lt;months:name sequence="09"&gt;September&lt;/months:name&gt;
+  &lt;months:name sequence="10"&gt;October&lt;/months:name&gt;
+  &lt;months:name sequence="11"&gt;November&lt;/months:name&gt;
+  &lt;months:name sequence="12"&gt;December&lt;/months:name&gt;
+
+  &lt;xsl:output method="text"/&gt;
+
+  &lt;xsl:variable name="newline"&gt;
+&lt;xsl:text&gt;
+&lt;/xsl:text&gt;
+  &lt;/xsl:variable&gt;
+
+  &lt;xsl:template match="/"&gt;
+    &lt;xsl:value-of select="$newline"/&gt;
+    &lt;xsl:text&gt;A test of the namespace-uri() function:&lt;/xsl:text&gt;
+
+    &lt;xsl:value-of select="$newline"/&gt;
+    &lt;xsl:value-of select="$newline"/&gt;
+    &lt;xsl:for-each select="document('')//*"&gt;
+      &lt;xsl:text&gt;namespace URI: &lt;/xsl:text&gt;
+      &lt;xsl:value-of select="namespace-uri()"/&gt;
+      &lt;xsl:value-of select="$newline"/&gt;
+    &lt;/xsl:for-each&gt;
+  &lt;/xsl:template&gt;
+
+&lt;/xsl:stylesheet&gt;</pre></span>
+<p>Hier die Ergebnisse der Transformation:</p>
+<span class="PROGRAMLISTING"><pre>
+
+A test of the namespace-uri() function:
+
+namespace URI: http://www.w3.org/1999/XSL/Transform
+namespace URI: Lookup table for month names
+namespace URI: Lookup table for month names
+namespace URI: Lookup table for month names
+namespace URI: Lookup table for month names
+namespace URI: Lookup table for month names
+namespace URI: Lookup table for month names
+namespace URI: Lookup table for month names
+namespace URI: Lookup table for month names
+namespace URI: Lookup table for month names
+namespace URI: Lookup table for month names
+namespace URI: Lookup table for month names
+namespace URI: Lookup table for month names
+namespace URI: http://www.w3.org/1999/XSL/Transform
+namespace URI: http://www.w3.org/1999/XSL/Transform
+namespace URI: http://www.w3.org/1999/XSL/Transform
+namespace URI: http://www.w3.org/1999/XSL/Transform
+namespace URI: http://www.w3.org/1999/XSL/Transform
+namespace URI: http://www.w3.org/1999/XSL/Transform
+namespace URI: http://www.w3.org/1999/XSL/Transform
+namespace URI: http://www.w3.org/1999/XSL/Transform
+namespace URI: http://www.w3.org/1999/XSL/Transform
+namespace URI: http://www.w3.org/1999/XSL/Transform
+namespace URI: http://www.w3.org/1999/XSL/Transform
+namespace URI: http://www.w3.org/1999/XSL/Transform
+</pre></span>
+</td>
+</tr>
+</table>
+</div>
+</body>
+</html>

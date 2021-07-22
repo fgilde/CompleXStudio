@@ -1,0 +1,159 @@
+<html xmlns:un="http://usablenet.com/namespaces/508_rules">
+   <link rel="stylesheet" href="josh.css">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   
+      <title>Detailanzeige f&uuml;r Regel: Hierarchische &Uuml;berschriften sollten in Datentabellen markiert sein.</title>
+      <!--
+  508/W3C Accessibility Suite OEM V2 for Macromedia Dreamweaver
+  (C) Copyright 2001-2005 UsableNet Inc. All rights reserved.
+  -->
+   </head>
+   <body bgcolor="#ffffff">
+      <div id="Beschreibung">
+         <table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+            <tr>
+               <td valign="top" nowrap="true" class="name">Hierarchische &Uuml;berschriften sollten in Datentabellen markiert sein.</td>
+               <td valign="top" nowrap="true" class="compatibility">&nbsp;</td>
+            </tr>
+            <tr>
+               <td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+            </tr>
+            <tr>
+               <td valign="top" align="right" nowrap="true" colspan="2" class="requirements">
+                        Section 508 1194.22(h); 
+                        
+                          WAI
+                        
+                         / 
+                        
+                          WCAG
+                        
+                         1.0 checkpoint 5.2
+                      
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2" class="clearseparation">&nbsp;</td>
+            </tr>
+            <tr>
+               <td colspan="2" class="clearseparation">&nbsp;</td>
+            </tr>
+            <tr>
+               <td valign="top" colspan="2" class="description"><b>Problembeschreibung</b><br>
+                        
+                  <p>
+                             Die Seite enth&auml;lt ein TABLE-Tag mit einem TH-Tag aber
+                             ohne THEAD-, TFOOT- oder TBODY-Elemente. Wenn in der Tabelle
+                             Daten angezeigt werden und sie mehrere Ebenen von Zeilen- und
+                             Spalten&uuml;berschriften enth&auml;lt, sollten Sie mit
+                             THEAD-, TFOOT und TBODY-Tags die entsprechenden Ebenen
+                             markieren.
+                           
+                  </p>
+                      
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2" class="clearseparation">&nbsp;</td>
+            </tr>
+            <tr>
+               <td colspan="2" class="clearseparation">&nbsp;</td>
+            </tr>
+            <tr>
+               <td valign="top" colspan="2" class="description"><b>&Uuml;berpr&uuml;fung</b>
+                        
+                  <p>
+                             Wenn in der Tabelle Daten angezeigt werden sollen, die in
+                             unterschiedlichen Abschnitten mit unterschiedlichen
+                             &Uuml;berschriften angeordnet sind, verwenden Sie die Tags
+                             THEAD, TFOOT und TBODY (evtl. in Kombination mit COLGROUP und
+                             COL), um die verschiedenen Abschnitte zu markieren.
+                           
+                  </p>
+                      
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2" class="clearseparation">&nbsp;</td>
+            </tr>
+            <tr>
+               <td colspan="2" class="clearseparation">&nbsp;</td>
+            </tr>
+            <tr>
+               <td valign="top" colspan="2" class="description"><b>Problemerkl&auml;rung</b><br>
+                        
+                  <p>
+                             Datentabellen pr&auml;sentieren Daten &uuml;ber ein
+                             zweidimensionales Medium, das bestimmten Benutzern aber oft
+                             nicht zur Verf&uuml;gung steht. Betrachten Sie folgende
+                             Beispiele:
+                           
+                  </p>
+                        
+                  <ul>
+                             
+                     <li>
+                                  Ein textbasierter Browser kann m&ouml;glicherweise Zeilen
+                                  und Spalten nicht korrekt ausrichten, z.&nbsp;B. weil der
+                                  Text einer Zelle umgebrochen wird.
+                                
+                     </li>
+                             
+                     <li>
+                                  Ein Lesebrowser liest die Zelleninhalte nacheinander.
+                                
+                     </li>
+                             
+                     <li>
+                                  Auch ein Braille-Leser durchl&auml;uft die Zelleninhalte
+                                  nacheinander.
+                                
+                     </li>
+                             
+                     <li>
+                                  Ein Browser mit sehr kleiner Anzeige (PDA oder
+                                  Mobiltelefon) zeigt nur einen begrenzten Teil der Tabelle
+                                  an.
+                                
+                     </li>
+                           
+                  </ul>
+                        
+                  <p>
+                             In all diesen F&auml;llen muss sich der Benutzer den
+                             Zelleninhalt merken. (Auf welche Spalte und Zeile bezieht
+                             sich die Zelle?) Dies kann den Benutzer &uuml;berfordern,
+                             z.&nbsp;B. wenn die Tabelle sehr gro&szlig; ist, wenn der
+                             Benutzer unter Stress steht oder wenn er zu ungeduldig ist,
+                             nach den ben&ouml;tigten Informationen zu suchen.
+                           
+                  </p>
+                        
+                  <p>
+                             Bedenken Sie auch, dass die Benutzer in solchen F&auml;llen
+                             m&ouml;glicherweise nicht direkt von einer Tabellenzelle in
+                             eine andere wechseln k&ouml;nnen. Sie m&uuml;ssen sich
+                             eventuell nacheinander von einer Zelle zur jeweils
+                             benachbarten Zelle bewegen (innerhalb derselben Zeile zum
+                             Beispiel).
+                           
+                  </p>
+                        
+                  <p>
+                             Wenn die Tabelle in unterschiedliche Abschnitte mit jeweils
+                             eigener &Uuml;berschrift aufgeteilt ist, sollte diese
+                             Struktur eindeutig markiert werden, damit spezialisierte
+                             Browser diese Informationen ausnutzen und ausgeben
+                             k&ouml;nnen (evtl. durch Wiederholung der entsprechenden
+                             &Uuml;berschriften, wenn der Benutzer in eine bestimmte Zelle
+                             wechselt).
+                           
+                  </p>
+                      
+               </td>
+            </tr>
+         </table>
+      </div>
+   </body>
+</html>

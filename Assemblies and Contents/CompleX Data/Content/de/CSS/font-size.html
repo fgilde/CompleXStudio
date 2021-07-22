@@ -1,0 +1,92 @@
+<html>
+<link rel="stylesheet" href="josh.css">
+<body bgcolor="#FFFFFF">
+
+		<div id="Beschreibung">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">font-size</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">4</span> IE <span class="emphasis">4</span> CSS <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Vererbt: Ja</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Legt die Schriftgr&ouml;&szlig;e des Elements fest. Die Schriftgr&ouml;&szlig;e kann auf verschiedene Arten eingestellt werden. Eine Sammlung von Konstanten (<span class="literal">xx-small</span>, <span class="literal">x-small</span>, <span class="literal">small</span>,<span class="literal">medium</span>, <span class="literal">large</span>, <span class="literal">x-large</span>, <span class="literal">xx-large</span>) legt die so genannten absoluten Gr&ouml;&szlig;en fest. Tats&auml;chlich sind diese nur f&uuml;r jeweils eine Browser-/Betriebssystemkombination absolut, denn der Bezugspunkt f&uuml;r diese Gr&ouml;&szlig;en h&auml;ngt vom Browser und vom Betriebsystem ab (wie bei den alten HTML-Schriftgr&ouml;&szlig;en 1 bis 7). Als Autor k&ouml;nnen Sie sich allerdings darauf verlassen, dass ein auf <span class="literal">large</span> gesetztes Element gr&ouml;&szlig;er wiedergegeben wird als eines, das auf <span class="literal">medium</span> gesetzt ist.</p><p>Eine weitere Sammlung von Konstanten (<span class="literal">larger</span>, <span class="literal">smaller</span>) wird als "relative Gr&ouml;&szlig;en" bezeichnet. Da das <span class="literal">font-size</span>-Attribut vom &uuml;bergeordneten Element geerbt wird, werden diese relativen Gr&ouml;&szlig;en f&uuml;r das &uuml;bergeordnete Element angewendet, um die Schriftgr&ouml;&szlig;e des aktuellen Elements festzulegen. Der Browser stellt fest, wie viel gr&ouml;&szlig;er oder kleiner die Schriftgr&ouml;&szlig;e ist; wichtig ist au&szlig;erdem, wie die Schriftgr&ouml;&szlig;e des &uuml;bergeordneten Elements definiert ist. Falls dieser Wert durch einen absoluten Gr&ouml;&szlig;enwert definiert ist (z.&#160;B. <span class="literal">large</span>), wird bei einem untergeordneten Element die Schriftgr&ouml;&szlig;e <span class="literal">larger</span> im Browser in der Gr&ouml;&szlig;e <span class="literal">x-large</span> dargestellt. Zuwachs bzw. Abnahme der Gr&ouml;&szlig;e sind jedoch nicht so eindeutig, wenn die &uuml;bergeordnete Schriftgr&ouml;&szlig;e mit einem L&auml;ngen- oder Prozentwert festgelegt wird.</p><p>Wenn Sie f&uuml;r das Attribut <span class="literal">font-size</span> einen L&auml;ngenwert verwenden, sollten Sie eine Einheit w&auml;hlen, die f&uuml;r die auf dem Ausgabemedium dargestellten Schriften am sinnvollsten ist, wie z.&#160;B. Pixel (<span class="literal">px</span>) f&uuml;r Bildschirmausgabe und Punkte (<span class="literal">pt</span>) oder Ems (<span class="literal">em</span>) f&uuml;r gedruckte Ausgabe. Em-Werte werden relativ zur Schriftgr&ouml;&szlig;e des &uuml;bergeordneten Elements berechnet. Schlie&szlig;lich k&ouml;nnen Sie das Attribut <span class="literal">font-size</span> auf einen Prozentwert setzen; der Berechnung liegt dabei die Schriftgr&ouml;&szlig;e des &uuml;bergeordneten Elements zugrunde.</p><p>Manche Browser verwenden zur Definition der Gr&ouml;&szlig;e "medium" eigene (oder benutzerdefinierte) Einstellungen und machen so Ihre Bem&uuml;hungen um Festlegung einer exakten Schriftgr&ouml;&szlig;e nichtig. Aus diesem Grund verlassen sich viele Designer zur Spezifizierung der Schriftgr&ouml;&szlig;e viel lieber auf relative Gr&ouml;&szlig;enkonstanten. Sie geben dabei zwar ein gewisses Ma&szlig; an Kontrolle &uuml;ber die Darstellung auf den unterschiedlichen Browsern und Betriebssystemen auf, doch Versuche, eine einheitliche Darstellung zu erzwingen, f&uuml;hren in der Regel ohnehin nur zu Frustrationen.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="csssyntax"><span class="title">CSS-Syntax</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>font-size: <span class="replaceable">absoluteSize</span> | <span class="replaceable">relativeSize</span> | <span class="replaceable">length</span> | <span class="replaceable">percentage</span></pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+				</tr>
+				<tr>
+					<td><p>Bei absoluten Gr&ouml;&szlig;en eine der folgenden Konstanten: <span class="literal">xx-small</span> | <span class="literal">x-small</span> | <span class="literal">small</span> | <span class="literal">medium</span> | <span class="literal">large</span> | <span class="literal">x-large</span> | <span class="literal">xx-large</span>. Bei relativen Gr&ouml;&szlig;en eine der folgenden Konstanten: <span class="literal">larger</span> | <span class="literal">smaller</span>. Bei L&auml;ngenwerten sollten Sie die Ausf&uuml;hrungen am Anfang dieses Kapitels lesen. Bei Prozentwerten der Prozentwert und das Symbol <span class="literal">%</span>.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="initvalue"><span class="title">Anfangswert</span></td>
+				</tr>
+				<tr>
+					<td><p><span class="literal">medium</span> (f&uuml;r das Element <span class="literal">BODY</span>); der <span class="literal">font-size</span>-Wert des &uuml;bergeordneten Elements (f&uuml;r alle anderen).</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>body {font-size: 14pt}p.teeny {font-size: x-small}em {font-size: larger}span.larger {font-size: 150%}</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="appliesto"><span class="title">Gilt f&uuml;r</span></td>
+				</tr>
+				<tr>
+					<td><p>Alle Elemente.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectmodelreference"><span class="title">Objektmodellreferenz</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>[window.]document.getElementById("<span class="replaceable">elementID</span>").style.fontSize</pre>
+						</span></td>
+				</tr>
+			</table>
+		</div>
+</body>
+</html>

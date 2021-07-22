@@ -1,0 +1,263 @@
+<html>
+<head>
+<title>element-available()-Funktion</title>
+</head>
+<body bgcolor="#FFFFFF" text="#000000">
+<div id="Beschreibung">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">element-available()-Funktion</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description">
+Diese Funktion legt fest, ob ein bestimmtes Element f&uuml;r den XSLT-Prozessor verf&uuml;gbar sein soll. Diese Funktion erlaubt Ihnen, Stylesheets zu entwerfen, die auch funktionsf&auml;hig sind, wenn zum Verarbeiten eines XML-Dokuments ein bestimmtes Element nicht verf&uuml;gbar ist. </td></tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Eingaben</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<p>Der Name des Elements. Es sollte ein qualifizierter Name mit Namensraum sein. Stimmt der Namensraum-URI mit dem XSLT-Namensraum-URI &uuml;berein, dann verweist der Elementname auf ein durch XSLT definiertes Element. Andernfalls verweist der Name auf ein Erweiterungselement. Besitzt der Elementname einen Null-Namensraum-URI, gibt die Funktion <span class="LITERAL">element-available</span> den Wert <span class="LITERAL">false</span> zur&uuml;ck. </p>
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Ausgabe</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<p>Der Boolesche Wert <span class="LITERAL">true</span>, wenn das Element verf&uuml;gbar ist, andernfalls <span class="LITERAL">false</span>. </p>
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Definition</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<p>XSLT-Abschnitt 15, R&uuml;ckgriff</p>
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Beispiel</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<p>Das nachfolgende Beispiel dient dazu, die Funktion <span class="LITERAL">element-available()</span> zu erproben:</p>
+<span class="PROGRAMLISTING"><pre>
+&lt;?xml version="1.0"?&gt;
+&lt;book&gt;
+  &lt;title&gt;XSLT&lt;/title&gt;
+  &lt;chapter&gt;
+    &lt;title&gt;Getting Started&lt;/title&gt;
+    &lt;para&gt;If this chapter had any text, it would appear here.&lt;/para&gt;
+  &lt;/chapter&gt;
+  &lt;chapter&gt;
+    &lt;title&gt;The Hello World Example&lt;/title&gt;
+    &lt;para&gt;If this chapter had any text, it would appear here.&lt;/para&gt;
+  &lt;/chapter&gt;
+  &lt;chapter&gt;
+    &lt;title&gt;XPath&lt;/title&gt;
+    &lt;para&gt;If this chapter had any text, it would appear here.&lt;/para&gt;
+  &lt;/chapter&gt;
+  &lt;chapter&gt;
+    &lt;title&gt;Stylesheet Basics&lt;/title&gt;
+    &lt;para&gt;If this chapter had any text, it would appear here.&lt;/para&gt;
+  &lt;/chapter&gt;
+  &lt;chapter&gt;
+    &lt;title&gt;Branching and Control Elements&lt;/title&gt;
+    &lt;para&gt;If this chapter had any text, it would appear here.&lt;/para&gt;
+  &lt;/chapter&gt;
+  &lt;chapter&gt;
+    &lt;title&gt;Functions&lt;/title&gt;
+    &lt;para&gt;If this chapter had any text, it would appear here.&lt;/para&gt;
+  &lt;/chapter&gt;
+  &lt;chapter&gt;
+    &lt;title&gt;Creating Links and Cross-References&lt;/title&gt;
+    &lt;para&gt;If this chapter had any text, it would appear here.&lt;/para&gt;
+  &lt;/chapter&gt;
+  &lt;chapter&gt;
+    &lt;title&gt;Sorting and Grouping Elements&lt;/title&gt;
+    &lt;para&gt;If this chapter had any text, it would appear here.&lt;/para&gt;
+  &lt;/chapter&gt;
+  &lt;chapter&gt;
+    &lt;title&gt;Combining XML Documents&lt;/title&gt;
+    &lt;para&gt;If this chapter had any text, it would appear here.&lt;/para&gt;
+  &lt;/chapter&gt;
+&lt;/book&gt;</pre></span>
+<p>Hier das Stylesheet:</p>
+<span class="PROGRAMLISTING"><pre>
+&lt;?xml version="1.0"?&gt;
+&lt;xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+  xmlns:redirect="org.apache.xalan.xslt.extensions.Redirect"
+<!--<?troff .Nd 10?>-->
+  xmlns:saxon="http://icl.com/saxon"
+  extension-element-prefixes="redirect saxon"&gt;
+
+  &lt;xsl:output method="html"/&gt;
+
+  &lt;xsl:template match="/"&gt;
+    &lt;xsl:choose&gt;
+      &lt;xsl:when test="element-available('redirect:write')"&gt;
+        &lt;xsl:for-each select="/book/chapter"&gt;
+          &lt;redirect:write select="concat('chapter', position(), '.html')"&gt;
+            &lt;html&gt;
+              &lt;head&gt;
+                &lt;title&gt;&lt;xsl:value-of select="title"/&gt;&lt;/title&gt;
+              &lt;/head&gt;
+              &lt;body&gt;
+                &lt;h1&gt;&lt;xsl:value-of select="title"/&gt;&lt;/h1&gt;
+                &lt;xsl:apply-templates select="para"/&gt;
+                &lt;xsl:if test="not(position()=1)"&gt;
+                  &lt;p&gt;
+                    &lt;a href="chapter{position()-1}.html"&gt;Previous&lt;/a&gt;
+                  &lt;/p&gt;
+                &lt;/xsl:if&gt;
+                &lt;xsl:if test="not(position()=last())"&gt;
+                  &lt;p&gt;
+                    &lt;a href="chapter{position()+1}.html"&gt;Next&lt;/a&gt;
+                  &lt;/p&gt;
+                &lt;/xsl:if&gt;
+              &lt;/body&gt;
+            &lt;/html&gt;
+          &lt;/redirect:write&gt;
+        &lt;/xsl:for-each&gt;
+      &lt;/xsl:when&gt;
+      &lt;xsl:when test="element-available('saxon:output')"&gt;
+        &lt;xsl:for-each select="/book/chapter"&gt;
+          &lt;saxon:output file="chapter{position()}.html"&gt;
+            &lt;html&gt;
+              &lt;head&gt;
+                &lt;title&gt;&lt;xsl:value-of select="title"/&gt;&lt;/title&gt;
+              &lt;/head&gt;
+              &lt;body&gt;
+                &lt;h1&gt;&lt;xsl:value-of select="title"/&gt;&lt;/h1&gt;
+                &lt;xsl:apply-templates select="para"/&gt;
+                &lt;xsl:if test="not(position()=1)"&gt;
+                  &lt;p&gt;
+                    &lt;a href="chapter{position()-1}.html"&gt;Previous&lt;/a&gt;
+                  &lt;/p&gt;
+                &lt;/xsl:if&gt;
+                &lt;xsl:if test="not(position()=last())"&gt;
+<!--<?troff .Nd 10?>-->
+                  &lt;p&gt;
+                    &lt;a href="chapter{position()+1}.html"&gt;Next&lt;/a&gt;
+                  &lt;/p&gt;
+                &lt;/xsl:if&gt;
+              &lt;/body&gt;
+            &lt;/html&gt;
+          &lt;/saxon:output&gt;
+        &lt;/xsl:for-each&gt;
+      &lt;/xsl:when&gt;
+      &lt;xsl:otherwise&gt;
+        &lt;html&gt;
+          &lt;head&gt;
+            &lt;title&gt;&lt;xsl:value-of select="/book/title"/&gt;&lt;/title&gt;
+          &lt;/head&gt;
+          &lt;xsl:for-each select="/book/chapter"&gt;
+            &lt;h1&gt;&lt;xsl:value-of select="title"/&gt;&lt;/h1&gt;
+            &lt;xsl:apply-templates select="para"/&gt;
+          &lt;/xsl:for-each&gt;
+        &lt;/html&gt;
+      &lt;/xsl:otherwise&gt;
+    &lt;/xsl:choose&gt;
+    &lt;xsl:if test="not(element-available('write'))"&gt;
+      &lt;xsl:message terminate="no"&gt;
+        The &lt;write&gt; element is not available!
+      &lt;/xsl:message&gt;
+    &lt;/xsl:if&gt;
+  &lt;/xsl:template&gt;
+
+  &lt;xsl:template match="para"&gt;
+    &lt;p&gt;&lt;xsl:apply-templates select="*|text()"/&gt;&lt;/p&gt;
+  &lt;/xsl:template&gt;
+
+&lt;/xsl:stylesheet&gt;</pre></span>
+<p>Dieses Stylesheet versucht, Teile des Inhalts der XML-Datei in verschiedene HTML-Dateien zu schreiben. Das erste <span class="LITERAL">&lt;chapter&gt;</span>-Element wird in die Datei <filename>chapter1.html</filename> geschrieben, das zweite in die Datei <filename>chapter2.html</filename>, usw. Das Stylesheet versucht, zuerst das Xalan-Element <span class="LITERAL">&lt;redirect:write&gt;</span> zu verwenden, wenn das Element nicht verf&uuml;gbar ist, probiert es das Saxon-Element <span class="LITERAL">&lt;saxon:output&gt;</span> aus. Ist keins der beiden Elemente verf&uuml;gbar, schreibt es den Inhalt aller <span class="LITERAL">&lt;chapter&gt;</span>-Elemente in denselben Ausgabestrom. Das Stylesheet ruft auch die Funktion <span class="LITERAL">element-available()</span> mit dem nicht qualifizierten Elementnamen <span class="LITERAL">write</span> auf. Dieser Aufruf gibt immer den Wert <span class="LITERAL">false</span> zur&uuml;ck, da das Element nicht durch einen Namensraum qualifiziert ist. </p>
+<p>Wenn Sie Xalan daf&uuml;r verwenden, die XML-Datei ohne dieses Stylesheet zu verarbeiten, erhalten Sie die folgenden Ergebnisse auf der Konsole:</p>
+<span class="PROGRAMLISTING"><pre>
+file:///D:/O'Reilly/XSLT/bookSamples/AppendixC/elementavailable.xsl; Line 66; 
+Column 35; The &lt;write&gt; element is not available!</pre></span> <!--<?troff .Nd 10?>-->
+<p>Das Stylesheet erzeugt die Dateien <filename>chapter1.html</filename> bis <filename>chapter9.html</filename>, wobei jede Datei Daten aus den <span class="LITERAL">&lt;chapter&gt;</span>-Elementen der Originaldatei enth&auml;lt. Das Stylesheet generiert auch Hyperlinks zwischen den chapter-Dateien. <filename>chapter3.html</filename> etwa hat folgenden Inhalt:</p>
+<span class="PROGRAMLISTING"><pre>
+&lt;html&gt;
+   &lt;head&gt;
+      &lt;meta http-equiv="Content-Type" content="text/html; charset=utf-8"&gt;
+   
+      &lt;title&gt;XPath&lt;/title&gt;
+   &lt;/head&gt;
+   &lt;body&gt;
+      &lt;h1&gt;XPath&lt;/h1&gt;
+      &lt;p&gt;If this chapter had any text, it would appear here.&lt;/p&gt;
+      &lt;p&gt;&lt;a href="chapter2.html"&gt;Previous&lt;/a&gt;&lt;/p&gt;
+      &lt;p&gt;&lt;a href="chapter4.html"&gt;Next&lt;/a&gt;&lt;/p&gt;
+   &lt;/body&gt;
+&lt;/html&gt;</pre></span>
+<p>Wie das HTML-Dokument in einem Browser angezeigt wird, sehen Sie in <link linkend="xslt-appc-c1">Abbildung C-1</link>.</p>
+<figure id="xslt-appc-c1" label="C-1">
+        <p class="TITLE">Beispiel-HTML-Ausgabedatei</p>
+        <graphic depth="205" width="386" fileref="figs/xslt.ac01.gif"/></figure>
+<p>Wenn der Anwender auf den Link <B>Previous </B>klickt, wird die Datei <filename>chapter2.html</filename> ge&ouml;ffnet, w&auml;hrend ein Klick auf den Link <B>Next </B>das <filename>chapter4.html</filename> aufschl&auml;gt.</p>
+<p>Wird das Stylesheet mit Saxon verwendet (mit Hilfe des Befehls <span class="LITERAL">java com.icl.saxon.StyleSheet chapterlist.xml elementavailable.xsl</span>), werden auf der Konsole &auml;hnliche Ergebnisse erzeugt:</p>
+<span class="PROGRAMLISTING"><pre>
+The &lt;write&gt; element is not available!</pre></span>
+<p>Obwohl das Format der Nachricht sich etwas unterscheidet, ist die Ausgabe in den mehrfachen HTML-Dateien dieselbe. </p>
+<!--<?troff .Nd 10?>-->
+<p>Schlie&szlig;lich wird der Oracle-XML-Parser verwendet. Keins der abgefragten Elemente wird verf&uuml;gbar sein, die gesamte Ausgabe wird daher in eine einzige Datei geschrieben. Der Prozessor wird mit dem nachfolgenden Befehl aufgerufen.  (Der Befehl sollte in einer einzigen Zeile stehen.)</p>
+<span class="PROGRAMLISTING"><pre>
+java oracle.xml.parser.v2.oraxsl chapterlist.xml 
+  elementavailable.xsl chapters.html</pre></span>
+<p>Hier die Ausgabe auf der Konsole:</p>
+<span class="PROGRAMLISTING"><pre>
+Message: The &lt;write&gt; element is not available!</pre></span>
+<p>Die Ausgabedatei, <filename>chapters.html</filename>, hat den folgenden Inhalt:</p>
+<span class="PROGRAMLISTING"><pre>
+&lt;html xmlns:redirect="org.apache.xalan.xslt.extensions.Redirect" 
+  xmlns:saxon="http://icl.com/saxon"&gt;
+   &lt;head&gt;
+      &lt;META http-equiv="Content-Type" content="text/html"&gt;
+      &lt;title&gt;XSLT&lt;/title&gt;
+   &lt;/head&gt;
+   &lt;h1&gt;Getting Started&lt;/h1&gt;
+   &lt;p&gt;If this chapter had any text, it would appear here.&lt;/p&gt;
+   &lt;h1&gt;The Hello World Example&lt;/h1&gt;
+   &lt;p&gt;If this chapter had any text, it would appear here.&lt;/p&gt;
+   &lt;h1&gt;XPath&lt;/h1&gt;
+   &lt;p&gt;If this chapter had any text, it would appear here.&lt;/p&gt;
+   &lt;h1&gt;Stylesheet Basics&lt;/h1&gt;
+   &lt;p&gt;If this chapter had any text, it would appear here.&lt;/p&gt;
+   &lt;h1&gt;Branching and Control Elements&lt;/h1&gt;
+   &lt;p&gt;If this chapter had any text, it would appear here.&lt;/p&gt;
+   &lt;h1&gt;Functions&lt;/h1&gt;
+   &lt;p&gt;If this chapter had any text, it would appear here.&lt;/p&gt;
+   &lt;h1&gt;Creating Links and Cross-References&lt;/h1&gt;
+   &lt;p&gt;If this chapter had any text, it would appear here.&lt;/p&gt;
+   &lt;h1&gt;Sorting and Grouping Elements&lt;/h1&gt;
+   &lt;p&gt;If this chapter had any text, it would appear here.&lt;/p&gt;
+   &lt;h1&gt;Combining XML Documents&lt;/h1&gt;
+   &lt;p&gt;If this chapter had any text, it would appear here.&lt;/p&gt;
+&lt;/html&gt;</pre></span>
+<p>Wie die Ausgabe dargestellt wird, sehen Sie in <link linkend="xslt-appc-c2">Abbildung C-2</link>.</p>
+<figure id="xslt-appc-c2" label="C-2">
+        <p class="TITLE">HTML-Dokument, das alle Kapitel (chapters) auflistet</p>
+        <graphic depth="361" width="386" fileref="figs/xslt.ac02.gif"/></figure>
+<p>In diesem Beispiel k&ouml;nnen Sie mit der Funktion <span class="LITERAL">element-available()</span> zum einen bestimmen, welche Verarbeitungsf&auml;higkeiten verf&uuml;gbar sind, und zum andern mit dem Vorgefundenen eine funktionsf&auml;hige Ausf&uuml;hrung gew&auml;hrleisten. </p>
+</td>
+</tr>
+</table>
+</div>
+</body>
+</html>

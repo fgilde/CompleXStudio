@@ -1,0 +1,92 @@
+<html>
+<link rel="stylesheet" href="josh.css">
+<body bgcolor="#FFFFFF">
+
+		<div id="Beschreibung">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">line-height</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">4</span> IE <span class="emphasis">4</span> CSS <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Vererbt: Ja</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Legt die H&ouml;he der Inline-Box fest (Box, die eine physische Zeile des Inhalts enth&auml;lt). Normalerweise bestimmt der <span class="literal">line-height</span>-Wert der gr&ouml;&szlig;ten Schrift einer Textzeile oder das gr&ouml;&szlig;te Objekt die H&ouml;he dieser Inhaltszeile. In Version 4 kam es bei den meisten Browsern oft zu Problemen, wenn in einem Blockebenen-Element unterschiedliche Schriftgr&ouml;&szlig;en und Zeilenh&ouml;hen nebeneinander verwendet wurden. Diese Situation hat sich gl&uuml;cklicherweise ge&auml;ndert.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="csssyntax"><span class="title">CSS-Syntax</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>line-height: normal | <span class="replaceable">number</span> | <span class="replaceable">length</span> | <span class="replaceable">percentage</span></pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+				</tr>
+				<tr>
+					<td><p>Bei der Einstellung <span class="literal">normal</span> kann der Browser den Zeilenabstand f&uuml;r das gesamte Element berechnen. Dabei entsteht ein berechneter Wert, der von verschachtelten Elementen geerbt werden kann. Wenn ein <span class="replaceable">number</span>-Wert angegeben wird (gr&ouml;&szlig;er als Null), dient dieser als Multiplikator f&uuml;r die Schriftgr&ouml;&szlig;e des aktuellen Elements. Wenn also ein verschachteltes Element den Zeilenh&ouml;henmultiplikator von dem &uuml;bergeordneten Elemet erbt, wird dieser Multiplikator auf die <span class="literal">font-size</span>-Einstellung des aktuellen Elements angewendet (vererbt wird der Multiplikator, nicht der berechnete Wert des &uuml;bergeordneten Elements). Bei Angabe eines <span class="replaceable">length</span>-Werts wird eine tats&auml;chliche H&ouml;he f&uuml;r die Inline-Box zugewiesen. Der Wert <span class="replaceable">percentage</span> ist ein Multiplikator, der auf die Schriftgr&ouml;&szlig;e des aktuellen Elements angewendet wird. In diesem Fall kann der berechnete Wert von verschachtelten Elementen geerbt werden.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="initvalue"><span class="title">Anfangswert</span></td>
+				</tr>
+				<tr>
+					<td><p><span class="literal">normal</span></p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>p {line-height: normal}    /* Browser default; actual value is  inheritable */p {line-height: 1.1}       /* Number value; the number value is inheritable */p {line-height: 1.1em}     /* Length value; the actual value is inheritable */p {line-height: 110%}      /* Percentage value; percentage times font size */                           /* is inheritable /*</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="appliesto"><span class="title">Gilt f&uuml;r</span></td>
+				</tr>
+				<tr>
+					<td><p>Alle Elemente.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectmodelreference"><span class="title">Objektmodellreferenz</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>[window.]document.getElementById("<span class="replaceable">elementID</span>").style.lineHeight</pre>
+						</span></td>
+				</tr>
+			</table>
+		</div>
+</body>
+</html>

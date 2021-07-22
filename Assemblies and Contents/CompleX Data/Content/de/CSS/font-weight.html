@@ -1,0 +1,92 @@
+<html>
+<link rel="stylesheet" href="josh.css">
+<body bgcolor="#FFFFFF">
+
+		<div id="Beschreibung">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">font-weight</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">4</span> IE <span class="emphasis">4</span> CSS <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Vererbt: Ja</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Legt das Gewicht (Grad des Fettdrucks) der Elementschrift fest. Die Einteilung der Schriftgewichte in CSS ist feiner, als die meisten Browser am Bildschirm darstellen k&ouml;nnen, beim Ausdrucken k&ouml;nnen jedoch feine Unterschiede eine Rolle spielen. Die numerische Skala verl&auml;uft von 100 bis 900 in Schritten von 100 Einheiten. Der <span class="literal">font-weight</span>-Wert 100 ist demnach das kleinste darstellbare Gewicht, 900 das gr&ouml;&szlig;te. Die Einstellung <span class="literal">normal</span> (Standardst&auml;rke f&uuml;r jede Schrift) entspricht dem <span class="literal">font-weight</span>-Wert <span class="literal">400</span>, die Standardeinstellung f&uuml;r Fett <span class="literal">700</span>. Mit den anderen Einstellungen (<span class="literal">bolder</span> und <span class="literal">lighter</span>) k&ouml;nnen Sie eine St&auml;rke relativ zur St&auml;rke des &uuml;bergeordneten Elements angeben.</p><p>Die CSS2-Spezifikation enth&auml;lt Richtlinien dar&uuml;ber, wie Gewichtswerte Schriftfamilien entsprechen sollen, und beschreibt interne Charakteristiken einiger Schriftdefinitionsformate. Das Definitionsformat OpenType bietet beispielsweise Platz f&uuml;r neun Schriftgewichte. In diesem Fall entsprechen den numerischen <span class="literal">font-weight</span>-Attributwerten direkt die Gewichtsdefinitionen in dieser Schrift. Wenn die Schriftfamilie eine Schrift mit der Bezeichnung "Medium" und eine mit der Bezeichnung "Book", "Regular", "Roman" oder "Normal" enth&auml;lt, wird f&uuml;r "Medium" der Gewichtswert <span class="literal">500</span> verwendet und f&uuml;r die andere Schrift <span class="literal">400</span>. Alle Schriftnamen, die das Wort "Bold" enthalten, erhalten das Gewicht <span class="literal">700</span>. Bei Schriftfamilien, in denen nicht alle neun Gewichte zugewiesen sind, muss der Browser so gut wie m&ouml;glich interpolieren, doch aller Wahrscheinlichkeit nach erzeugen manche Gewichtswerte Schriften des gleichen Gewichts wie andere Werte.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="csssyntax"><span class="title">CSS-Syntax</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>font-weight: <span class="replaceable">fontWeight</span></pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+				</tr>
+				<tr>
+					<td><p>Eine der folgenden Konstanten: <span class="literal">bold</span> | <span class="literal">bolder</span> | <span class="literal">lighter</span> | <span class="literal">normal</span> | <span class="literal">100</span> | <span class="literal">200</span> | <span class="literal">300</span> | <span class="literal">400</span> | <span class="literal">500</span> | <span class="literal">600</span> | <span class="literal">700</span> | <span class="literal">800</span> | <span class="literal">900</span>.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="initvalue"><span class="title">Anfangswert</span></td>
+				</tr>
+				<tr>
+					<td><p><span class="literal">normal</span></p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>p em {font-weight: bolder}</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="appliesto"><span class="title">Gilt f&uuml;r</span></td>
+				</tr>
+				<tr>
+					<td><p>Alle Elemente.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectmodelreference"><span class="title">Objektmodellreferenz</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>[window.]document.getElementById("<span class="replaceable">elementID</span>").style.fontWeight</pre>
+						</span></td>
+				</tr>
+			</table>
+		</div>
+</body>
+</html>

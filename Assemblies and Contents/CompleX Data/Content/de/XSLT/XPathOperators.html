@@ -1,0 +1,359 @@
+<html>
+<head>
+<title>XPath-Operatoren</title>
+</head>
+<body bgcolor="#FFFFFF" text="#000000">
+<div id="Beschreibung">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME" colspan="2">XPath-Operatoren</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description">
+
+    <p>
+<!--<primary>operators (XPath)</primary>-->
+
+Alle von XPath definierten Operatoren sind hier aufgelistet. </p>
+</td></tr>
+</table>
+</div>
+<div id="MathematicalOperators">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+Mathematische Operatoren</td>
+<td class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+      <dl>
+<dt>
+<span class="LITERAL">
++
+</span> (plus)
+</dt>
+<dd>
+<!--<primary>mathematics</primary>
+  <secondary>XPath operators for</secondary>--> Addiert zwei Zahlen.
+<P></p>
+<dt>
+<span class="LITERAL">
+-
+</span> (minus)
+</dt>
+<dd>
+Subtrahiert eine Zahl von einer andern.
+<P></p>
+<dt>
+<span class="LITERAL">
+*
+</span> (Multiplikation)
+</dt>
+<dd>
+Multipliziert eine Zahl mit einer andern.
+<P></p>
+<dt>
+<span class="LITERAL">
+div
+</span>
+</dt>
+<dd>
+F&uuml;hrt eine Gleitkommadivision zwischen zwei Zahlen durch.
+<P></p>
+<dt>
+<span class="LITERAL">
+mod
+</span>
+</dt>
+<dd>
+Gibt den Gleitkommarest einer Division zur&uuml;ck.
+<P></p>
+</dl>
+    </td>
+</tr>
+</table>
+</div>
+<div id="BooleanOperators">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+Boolesche Operatoren</td>
+<td class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+      <dl>
+<dt>
+<span class="LITERAL">
+=
+</span>
+</dt>
+<dd>
+<!--<primary>boolean operators (XPath)</primary>--> Pr&uuml;ft, ob zwei Ausdr&uuml;cke gleich sind.
+<P></p>
+<dt>
+<span class="LITERAL">
+&lt;
+</span>
+</dt>
+<dd>
+Pr&uuml;ft, ob der erste Ausdruck kleiner ist als der zweite. Innerhalb eines Attributs muss dieser Operator mit <span class="LITERAL">
+&amp;
+lt;
+</span> kodiert werden.
+<P></p>
+<dt>
+<span class="LITERAL">
+&lt;
+=
+</span>
+</dt>
+<dd>
+Pr&uuml;ft, ob der erste Ausdruck kleiner oder gleich dem zweiten ist. Innerhalb eines Attributs muss dieser Operator mit <span class="LITERAL"> &amp; lt;= </span> kodiert werden.
+<P></p>
+<dt>
+<span class="LITERAL">
+&gt;
+</span>
+</dt>
+<dd>
+Pr&uuml;ft, ob der erste Ausdruck gr&ouml;&szlig;er ist als der zweite. Innerhalb eines Attributs kann dieser Operator mit <span class="LITERAL"> &amp; gt; </span> kodiert werden.
+<P></p>
+<dt>
+<span class="LITERAL">
+&gt;
+=
+</span>
+</dt>
+<dd>
+Pr&uuml;ft, ob der erste Ausdruck gr&ouml;&szlig;er oder gleich dem zweiten ist. Innerhalb eines Attributs kann dieser Operator mit <span class="LITERAL"> &amp; gt;= </span> kodiert werden.
+<P></p>
+<dt>
+<span class="LITERAL">
+!=
+</span>
+</dt>
+<dd>
+Pr&uuml;ft, ob zwei Ausdr&uuml;cke ungleich sind.
+<P></p>
+<dt>
+<span class="LITERAL">
+and
+</span>
+</dt>
+<dd>
+Pr&uuml;ft, ob sowohl der erste als auch der zweite Ausdruck <span class="LITERAL">
+true
+</span> sind. Ist der erste Ausdruck <span class="LITERAL">
+false
+</span>, wird der zweite erst gar nicht ausgewertet.
+<P></p>
+<dt>
+<span class="LITERAL">
+or
+</span>
+</dt>
+<dd>
+Pr&uuml;ft, ob entweder der erste oder der zweite Ausdruck <span class="LITERAL"> true </span> sind. Ist der erste Ausdruck <span class="LITERAL"> true </span>, wird der zweite erst gar nicht ausgewertet.
+<P></p>
+</dl>
+      <sect3 role="" label="B.4.2.1" id="xslt-ID-B.4.2.1"><refentrytitle>Werte verschiedener Datentypen vergleichen</refentrytitle>
+        <p>F&uuml;r die ersten sechs Booleschen Operatoren ist der Vergleich von Werten verschiedener Datentypen kompliziert. Die verschiedenen M&ouml;glichkeiten sollen an dieser Stelle erl&auml;utert werden:</p>
+        
+
+
+<dl>
+<dt>
+Wenn beide Objekte Boolesche Werte sind,
+</dt>
+<dd>
+sind sie gleich, wenn sie denselben Wert haben. Bei Kleiner-als- und Gr&ouml;&szlig;er-als-Vergleichen wird <span class="LITERAL">
+false
+</span> als der kleinere Wert gegen&uuml;ber <span class="LITERAL">
+true
+</span> betrachtet (der Funktionsaufruf <span class="LITERAL">
+number(false())
+</span> liefert den Wert <span class="LITERAL">
+0
+</span>, w&auml;hrend <span class="LITERAL">
+number(true())
+</span> den Wert <span class="LITERAL">
+1
+</span> liefert).
+<P></p>
+<dt>
+Wenn beide Objekte Zahlen sind,
+</dt>
+<dd>
+funktionieren die Operatoren wie erwartet.
+<P></p>
+<dt>
+Wenn beide Objekte Strings sind,
+</dt>
+<dd>
+sind sie gleich, wenn ihre Unicode-Zeichen identisch sind. Bei Kleiner-als- und Gr&ouml;&szlig;er-als-Vergleichen werden die Zeichencodes verglichen.
+<P></p>
+<dt>
+Wenn kein Objekt eine Knotenmenge ist und der Operator = oder != ist,
+</dt>
+<dd>
+dann werden die beiden Objekte in den gleichen Objekttyp konvertiert und der Vergleich funktioniert wie oben beschrieben. Ist eins der Objekte ein Boolescher Wert, werden die Objekte in Boolesche Werte konvertiert (wie beim Aufruf der Funktion <span class="LITERAL">
+boolean()
+</span>). Handelt es sich bei keinem der Objekte um einen Booleschen Wert, wird als N&auml;chstes eine Konvertierung in eine Zahl versucht. Ist eins der Objekte eine Zahl, werden die Objekte in numerische Werte konvertiert (wie beim Aufruf der Funktion <span class="LITERAL"> number() </span>). Andernfalls werden alle Objekte in Strings konvertiert (wie beim Aufruf der Funktion <span class="LITERAL">
+string()
+</span>).
+<P></p>
+<dt>
+Wenn kein Objekt eine Knotenmenge ist und der Operator &lt; , &gt; oder &gt; = ist,
+</dt>
+<dd>
+werden die Objekte in Zahlen konvertiert und dann verglichen.
+<P></p>
+<dt>
+Wenn eines oder beide Objekte Knotenmengen sind,
+</dt>
+<dd>
+dann wird's kompliziert. Wenn beide Objekte Knotenmengen sind, ist ein Vergleich dann <B>true</B>, wenn der String-Wert von mindestens einem Knoten in der ersten Knotenmenge gleich dem String-Wert von mindestens einem Knoten in der zweiten Knotenmenge ist. Ist ein Objekt eine Knotenmenge und das andere eine Zahl, ein String oder ein Boolescher Wert, so ist der Vergleich <B>true</B>, wenn es mindestens einen Knoten in der Knotenmenge gibt, dessen numerischer, String- oder Boolescher Wert gleich dieser Zahl, diesem String oder diesem Booleschen Wert ist.
+<P></p>
+</dl>
+      </sect3>
+    </td>
+</tr>
+</table>
+</div>
+<div id="ExpressionOperators">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+Audrucksoperatoren</td>
+<td class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+      <dl>
+<dt>
+<span class="LITERAL">
+/
+</span>
+</dt>
+<dd>
+<!--<primary>expression operators</primary>--> Der Schritt-Operator, der dazu dient, die Schritte in einem Lokationspfad voneinander zu trennen. Beginnt ein XPath-Ausdruck mit <span class="LITERAL">
+/
+</span>, repr&auml;sentiert er die Wurzel des Dokuments.
+<P></p>
+<dt>
+<span class="LITERAL">
+//
+</span>
+</dt>
+<dd>
+Die Kurzform f&uuml;r die Achse <span class="LITERAL">
+descendant-or-self
+</span>.
+<P></p>
+<dt>
+<span class="LITERAL">
+.
+</span>
+</dt>
+<dd>
+Die Kurzform f&uuml;r die Achse <span class="LITERAL"> self </span>.
+<P></p>
+<dt>
+<span class="LITERAL">
+..
+</span>
+</dt>
+<dd>
+Die Kurzform f&uuml;r die Achse <span class="LITERAL"> parent </span>.
+<P></p>
+<dt>
+<span class="LITERAL">
+@
+</span>
+</dt>
+<dd>
+Die Kurzform f&uuml;r die Achse <span class="LITERAL"> attribute </span>.
+<P></p>
+<dt>
+<span class="LITERAL">
+|
+</span>
+</dt>
+<dd>
+Der Vereinigungsoperator. Das Attribut <span class="LITERAL">
+match
+</span> im Element <span class="LITERAL">
+&lt;
+xsl:template match=
+"
+a|b
+"
+&gt;
+</span> beispielsweise entspricht allen <span class="LITERAL">
+&lt;
+a
+&gt;
+</span>- und <span class="LITERAL">
+&lt;
+b
+&gt;
+</span>-Elementen.
+<P></p>
+<dt>
+<span class="LITERAL">
+*
+</span>
+</dt>
+<dd>
+Ein Platzhalter, der jeden Knoten des Hauptknotentyps repr&auml;sentiert. <span class="LITERAL">
+child::*
+</span> w&auml;hlt alle Elemente aus, die den Kontextknoten untergeordnet sind, <span class="LITERAL">
+attribute::*
+</span> w&auml;hlt alle Attribute des Kontextknoten aus, usw. Die Kurzform <span class="LITERAL">
+*
+</span> w&auml;hlt alle Elemente aus, die dem Kontextknoten untergeordnet sind, und <span class="LITERAL">
+@*
+</span> w&auml;hlt alle Attribute des Kontextknoten aus. Beachten Sie den Unterschied zwischen dem Platzhalteroperator und dem Knotentest <span class="LITERAL">
+node()
+</span>, der jeden Knoten, unabh&auml;ngig von seinem Typ, beschreibt.
+<P></p>
+<dt>
+<span class="LITERAL">
+[]
+</span>
+</dt>
+<dd>
+Der Pr&auml;dikatoperator, der einen Pr&auml;dikatausdruck umschlie&szlig;t, der eine Gruppe von Knoten filtert.
+<P></p>
+<dt>
+<span class="LITERAL">
+$
+</span>
+</dt>
+<dd>
+Der Variablenoperator, der ein bestimmtes Symbol als Variablennamen kennzeichnet.
+<P></p>
+</dl>
+</td>
+</tr>
+</table>
+</div>
+</body>
+</html>

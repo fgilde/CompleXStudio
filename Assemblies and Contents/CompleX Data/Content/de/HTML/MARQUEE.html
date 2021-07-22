@@ -1,0 +1,964 @@
+<html>
+<link rel="stylesheet" href="josh.css">
+<body bgcolor="#FFFFFF">
+
+
+		<div id="Beschreibung">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">&lt;MARQUEE&gt;</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">nicht zutreffend</span> IE <span class="emphasis">3</span> HTML <span class="emphasis">nicht zutreffend</span>&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">&lt;MARQUEE&gt;...&lt;/MARQUEE&gt;</p>
+					</td><td valign="top" nowrap class="requirements">HTML-End-Tag: Optional&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Das <span class="literal">marquee</span>-Element gibt es nur im Internet Explorer. Es bewirkt, dass HTML-Inhalt in einem Laufschriftbereich auf der Seite angezeigt wird. Der in Laufschrift darzustellende Inhalt wird zwischen den Start- und Schluss-Tags eingef&uuml;gt. Es gibt keine Entsprechung f&uuml;r dieses Element in Navigator. Der gleiche Effekt kann aber mit einem Java-Applet oder &uuml;ber Dynamic HTML plattform&uuml;bergreifend f&uuml;r verschiedene Browser erzielt werden, wobei der DHTML-Ansatz jedoch relativ arbeitsaufw&auml;ndig ist.
+</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>&lt;MARQUEE behavior="slide" direction="left" width="250" bgcolor="white"&gt;
+Check out our monthly specials.
+&lt;/MARQUEE&gt;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectmodelreference"><span class="title">Objektmodellreferenz</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>[window.]document.getElementById(<span class="replaceable">elementID</span>)</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectmodelreference"><span class="title">Elementspezifische Attribute</span></td>
+</tr><tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+</tr><tr><td>
+        <table border="1">
+<tbody><tr><td><span class="literal">behavior</span></td><td><span class="literal">bgcolor</span></td><td><span class="literal">datafld</span></td><td><span class="literal">dataformatas</span></td><td><span class="literal">datasrc</span></td>
+								</tr>
+								<tr><td><span class="literal">direction</span></td><td><span class="literal">height</span></td><td><span class="literal">hspace</span></td><td><span class="literal">loop</span></td><td><span class="literal">scrollamount</span></td>
+								</tr>
+								<tr><td><span class="literal">scrolldelay</span></td><td><span class="literal">truespeed</span></td><td><span class="literal">vspace</span></td><td><span class="literal">width</span></td><td></td>
+								</tr>
+							</tbody></table>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectmodelreference"><span class="title">Elementspezifische EreignisbehandlungsroutinenAttribute</span></td>
+</tr><tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+</tr><tr><td>
+        <table border="1">
+<tbody><th>Routine</th><th>NN</th><th>IE</th><th>HTML</th><tr><td>onafterupdate</td><td>--</td><td>4</td><td>--</td>
+								</tr>
+								<tr><td>onbounce</td><td>--</td><td>4</td><td>--</td>
+								</tr>
+								<tr><td>onfinish</td><td>--</td><td>4</td><td>--</td>
+								</tr>
+								<tr><td>onstart</td><td>--</td><td>4</td><td>--</td>
+								</tr>
+							</tbody></table>
+					</td>
+				</tr>
+			</table>
+		</div><div id="behavior">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">behavior</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">nicht zutreffend</span> IE <span class="emphasis">3</span> HTML <span class="emphasis">nicht zutreffend</span>&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">behavior="<span class="replaceable">motionType</span>"</p>
+					</td><td valign="top" nowrap class="requirements">Optional&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Definiert die Bewegung des Inhalts innerhalb des f&uuml;r das <span class="literal">marquee</span>-Element reservierten rechteckigen Bereichs. Drei verschiedene Bewegungsarten stehen zur Auswahl.
+</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>&lt;MARQUEE behavior="slide" direction="left" width="250" bgcolor="white"&gt;
+...&lt;/MARQUEE&gt;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+				</tr>
+				<tr>
+					<td><p>Eine der Bewegungsarten f&uuml;r <span class="literal">marquee</span>-Elemente (Gro&szlig;- und Kleinschreibung unwichtig):</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Standardwert</span></td>
+				</tr>
+				<tr>
+					<td><p><span class="literal">scroll</span></p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectmodelreference"><span class="title">Objektmodellreferenz</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>[window.]document.getElementById(<span class="replaceable">elementID</span>).behavior</pre>
+						</span></td>
+				</tr>
+			</table>
+		</div><div id="bgcolor">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">bgcolor</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">nicht zutreffend</span> IE <span class="emphasis">3</span> HTML <span class="emphasis">nicht zutreffend</span>&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">bgcolor="<span class="replaceable">colorTripletOrName</span>"</p>
+					</td><td valign="top" nowrap class="requirements">Optional&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Definiert eine F&uuml;llfarbe f&uuml;r den rechteckigen Bereich, der f&uuml;r das Element <span class="literal">marquee</span> reserviert ist. Diese Farbe erscheint hinter dem Text und anderem Inhalt.
+</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>&lt;MARQUEE behavior="slide" direction="left" width="250" bgcolor="white"&gt;
+...&lt;/MARQUEE&gt;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+				</tr>
+				<tr>
+					<td><p>Ein hexadezimales Triplett oder ein unverschl&uuml;sselter Farbname. Eine Einstellung ohne Wert wird als <span class="literal">"#000000"</span> (Schwarz) interpretiert. Einzelheiten zu den g&uuml;ltigen unverschl&uuml;sselten Farbnamen finden Sie in Anhang A.
+</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Standardwert</span></td>
+				</tr>
+				<tr>
+					<td><p>Richtet sich nach dem Browser, der Browserversion und dem Betriebssystem.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectmodelreference"><span class="title">Objektmodellreferenz</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>[window.]document.getElementById(<span class="replaceable">elementID</span>).bgColor</pre>
+						</span></td>
+				</tr>
+			</table>
+		</div><div id="datafld">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">datafld</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">nicht zutreffend</span> IE <span class="emphasis">4</span> HTML <span class="emphasis">nicht zutreffend</span>&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">datafld="<span class="replaceable">columnName</span>"</p>
+					</td><td valign="top" nowrap class="requirements">Optional&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Wird in IE f&uuml;r die Datenbindung verwendet, um den Spaltennamen einer Remote-Datenquelle mit dem Inhalt zu verkn&uuml;pfen, der im Laufschriftbereich des Elements <span class="literal">marquee</span> angezeigt wird. Bei der Datenquellenspalte muss es sich entweder um einfachen Text oder um HTML handeln (siehe <span class="literal">dataformatas</span>). F&uuml;r das <span class="literal">marquee</span>-Element muss au&szlig;erdem das Attribut <span class="literal">datasrc</span> gesetzt sein. Funktioniert in IE 5/Mac nur mit Textdateien als Datenquellen.
+</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>&lt;MARQUEE behavior="slide" direction="left" width="200" 
+datasrc="DBSRC3" datafld="news" dataformatas="HTML"&gt;&lt;/MARQUEE&gt;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+				</tr>
+				<tr>
+					<td><p>Bezeichner (Gro&szlig;-/Kleinschreibung beachten).</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Standardwert</span></td>
+				</tr>
+				<tr>
+					<td><p>Keiner.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectmodelreference"><span class="title">Objektmodellreferenz</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>IE</pre>
+						</span></td>
+				</tr>
+			</table>
+		</div><div id="dataformatas">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">dataformatas</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">nicht zutreffend</span> IE <span class="emphasis">4</span> HTML <span class="emphasis">nicht zutreffend</span>&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">dataformatas="<span class="replaceable">dataType</span>"</p>
+					</td><td valign="top" nowrap class="requirements">Optional&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Dieses Attribut wird in IE f&uuml;r die Datenbindung verwendet und teilt dem Browser mit, ob das aus der Datenquelle stammende Quellmaterial als einfacher Text oder als HTML-Code mit Tags gehandhabt werden soll. Die Einstellung des Attributs richtet sich ausschlie&szlig;lich nach der Struktur der Datenquelle. Funktioniert in IE 5/Mac nur mit Textdateien als Datenquellen.
+</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>&lt;MARQUEE behavior="slide" direction="left" width=200 
+datasrc="DBSRC3" datafld="news" dataformatas="HTML"&gt;&lt;/MARQUEE&gt;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+				</tr>
+				<tr>
+					<td><p>Konstanten: <span class="literal">text</span> | <span class="literal">html</span>.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Standardwert</span></td>
+				</tr>
+				<tr>
+					<td><p><span class="literal">text</span></p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectmodelreference"><span class="title">Objektmodellreferenz</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>[window.]document.getElementById(<span class="replaceable">elementID</span>).dataFormatAs</pre>
+						</span></td>
+				</tr>
+			</table>
+		</div><div id="datasrc">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">datasrc</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">nicht zutreffend</span> IE <span class="emphasis">4</span> HTML <span class="emphasis">nicht zutreffend</span>&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">datasrc="<span class="replaceable">dataSourceName</span>"</p>
+					</td><td valign="top" nowrap class="requirements">Optional&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Dieses Attribut wird in IE f&uuml;r die Datenbindung verwendet und teilt dem Browser mit, ob das aus der Datenquelle stammende Quellmaterial als einfacher Text oder als HTML-Code mit Tags gehandhabt werden soll. Funktioniert in IE 5/Mac nur mit Textdateien als Datenquellen.
+</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>&lt;MARQUEE behavior="slide" direction="left" width="200" 
+datasrc="DBSRC3" datafld="news" dataformatas="HTML"&gt;&lt;/MARQUEE&gt;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+				</tr>
+				<tr>
+					<td><p>Bezeichner (Gro&szlig;-/Kleinschreibung beachten).</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Standardwert</span></td>
+				</tr>
+				<tr>
+					<td><p>Keiner.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectmodelreference"><span class="title">Objektmodellreferenz</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>[window.]document.getElementById(<span class="replaceable">elementID</span>).dataSrc</pre>
+						</span></td>
+				</tr>
+			</table>
+		</div><div id="direction">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">direction</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">nicht zutreffend</span> IE <span class="emphasis">3</span> HTML <span class="emphasis">nicht zutreffend</span>&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">direction="<span class="replaceable">scrollDirection</span>"</p>
+					</td><td valign="top" nowrap class="requirements">Optional&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Bei einem <span class="literal">marquee</span>-Element gibt es vier Richtungen f&uuml;r die Laufschrift. Bei Sprachen, die von links nach rechts gelesen werden, erzielen Sie ein H&ouml;chstma&szlig; an Lesbarkeit und &Uuml;bersichtlichkeit, wenn die Laufschrift entweder nach links oder nach unten l&auml;uft.
+</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>&lt;MARQUEE behavior="slide" direction="left" width="200"&gt;...&lt;/MARQUEE&gt;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+				</tr>
+				<tr>
+					<td><p>Vier m&ouml;gliche Richtungen: <span class="literal">down</span> | <span class="literal">left</span> | <span class="literal">right</span> | <span class="literal">up</span>.
+</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Standardwert</span></td>
+				</tr>
+				<tr>
+					<td><p><span class="literal">left</span></p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectmodelreference"><span class="title">Objektmodellreferenz</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>[window.]document.getElementById(<span class="replaceable">elementID</span>).direction</pre>
+						</span></td>
+				</tr>
+			</table>
+		</div><div id="height, width">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">height, width</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">nicht zutreffend</span> IE <span class="emphasis">3</span> HTML <span class="emphasis">nicht zutreffend</span>&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">height="<span class="replaceable">length</span>" width="<span class="replaceable">length</span>"</p>
+					</td><td valign="top" nowrap class="requirements">Optional&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Ein <span class="literal">marquee</span>-Element wird auf der Seite als rechteckiger Bereich dargestellt. Sie k&ouml;nnen die Standardgr&ouml;&szlig;e dieses Rechtecks au&szlig;er Kraft setzen, indem Sie den Attributen <span class="literal">height</span> und <span class="literal">width</span> die gew&uuml;nschten Werte zuweisen. Der Standardwert f&uuml;r <span class="literal">height</span> richtet sich nach der Schriftgr&ouml;&szlig;e der gr&ouml;&szlig;ten Schrift, die dem Inhalt im <span class="literal">marquee</span>-Element zugewiesen ist. Die Standardbreite betr&auml;gt 1000&#160;% der Breite des n&auml;chst&auml;u&szlig;eren Containers (in der Regel das <span class="literal">body</span>-Element des Dokuments). Der Wert f&uuml;r <span class="literal">width</span> bestimmt, wie viel Platz f&uuml;r die horizontale Laufschrift jeweils ben&ouml;tigt wird. Wenn das <span class="literal">marquee</span>-Element in einem <span class="literal">td</span>-Element eingebettet ist, das es dem Browser gestattet, die berechnete Breite der Tabellenzelle zu ermitteln, m&uuml;ssen Sie das Attribut <span class="literal">width</span> f&uuml;r das <span class="literal">marquee</span>-Element unbedingt einstellen. Andernfalls wird es eventuell automatisch vom Browser auf 1 gesetzt, wodurch der Inhalt unleserlich wird.
+</p><p>Wenn Sie den Leerraum um den Laufschriftbereich zus&auml;tzlich auff&uuml;llen m&ouml;chten, lesen Sie die Beschreibung der Attribute <span class="literal">hspace</span> und <span class="literal">vspace</span>.
+</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>&lt;MARQUEE behavior="slide" direction="left" height="20" width="200"&gt;
+...
+&lt;/MARQUEE&gt;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+				</tr>
+				<tr>
+					<td><p>Ein beliebiger Wert in Pixeln oder ein Prozentsatz des verf&uuml;gbaren Platzes.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Standardwert</span></td>
+				</tr>
+				<tr>
+					<td><p>Breite <span class="literal">100 %</span>; H&ouml;he <span class="literal">12</span> Pixel.
+</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectmodelreference"><span class="title">Objektmodellreferenz</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>[window.]document.getElementById(<span class="replaceable">elementID</span>).height
+[window.]document.getElementById(<span class="replaceable">elementID</span>).width</pre>
+						</span></td>
+				</tr>
+			</table>
+		</div><div id="hspace, vspace">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">hspace, vspace</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">nicht zutreffend</span> IE <span class="emphasis">3</span> HTML <span class="emphasis">nicht zutreffend</span>&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">hspace="<span class="replaceable">pixelCount</span>"  vspace="<span class="replaceable">pixelCount</span>"</p>
+					</td><td valign="top" nowrap class="requirements">Optional&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Internet Explorer bietet Attribute, mit denen Sie die Auff&uuml;llung um das <span class="literal">marquee</span>-Element herum definieren k&ouml;nnen. Das Attribut <span class="literal">hspace</span> steuert die Auff&uuml;llung entlang der linken und rechten Kanten (horizontale Auff&uuml;llung) und das Attribut <span class="literal">vspace</span> die Auff&uuml;llung entlang der oberen und unteren Kanten (vertikale Auff&uuml;llung). Wenn Sie die Auff&uuml;llung hinzuf&uuml;gen, entsteht ein Leerraum um das Rechteck f&uuml;r das <span class="literal">marquee</span>-Element. Eine andere M&ouml;glichkeit besteht darin, die verschiedenen Randeinstellungen &uuml;ber Stylesheets anzugeben. Dies bietet sich insbesondere dann an, wenn Sie den Leerraum nur an einer Kante hinzuf&uuml;gen m&ouml;chten.
+</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>&lt;MARQUEE behavior="slide" direction="left" height="20" width="200" 
+hspace="10" vspace="15"&gt;...&lt;/MARQUEE&gt;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+				</tr>
+				<tr>
+					<td><p>Beliebiger positiver Integerwert.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Standardwert</span></td>
+				</tr>
+				<tr>
+					<td><p><span class="literal">0</span></p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectmodelreference"><span class="title">Objektmodellreferenz</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>[window.]document.getElementById(<span class="replaceable">elementID</span>).hspace
+[window.]document.getElementById(<span class="replaceable">elementID</span>).vspace</pre>
+						</span></td>
+				</tr>
+			</table>
+			</div>
+					<div id="lang">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">lang</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">3</span> IE <span class="emphasis">4</span> HTML <span class="emphasis">4</span>&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">lang="<span class="replaceable">languageCode</span>"</p>
+					</td><td valign="top" nowrap class="requirements">Optional&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Die f&uuml;r die Attributwerte und Inhalte des Elements verwendete Sprache. Mithilfe dieser Informationen ist der Browser besser in der Lage, bestimmte Details wie Ligaturen (sofern von der betreffenden Schrift unterst&uuml;tzt oder in der geschriebenen Sprache erforderlich), Anf&uuml;hrungszeichen und Worttrennungen korrekt darzustellen. Andere Anwendungen und Suchmaschinen k&ouml;nnen anhand dieser Informationen W&ouml;rterb&uuml;cher f&uuml;r die Rechtschreibpr&uuml;fung ausw&auml;hlen und Indizes erstellen.
+</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>&lt;SPAN lang="de"&gt;Deutsche Bundesbahn&lt;/SPAN&gt;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+				</tr>
+				<tr>
+					<td><p>Sprachcode, bei dem nicht zwischen Gro&szlig;- und Kleinschreibung unterschieden wird.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Standardwert</span></td>
+				</tr>
+				<tr>
+					<td><p>Vorgabe des Browsers.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectmodelreference"><span class="title">Objektmodellreferenz</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>[window.]document.getElementById(<span class="replaceable">elementID).</span>lang</pre>
+						</span></td>
+				</tr>
+			</table>
+		</div>
+
+		<div id="loop">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">loop</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">nicht zutreffend</span> IE <span class="emphasis">3</span> HTML <span class="emphasis">nicht zutreffend</span>&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">loop="<span class="replaceable">count</span>"</p>
+					</td><td valign="top" nowrap class="requirements">Optional&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Legt fest, wie oft der Inhalt des <span class="literal">marquee</span>-Elements in Laufschrift erscheint. Nach dem letzten Durchlauf bleibt der Inhalt an einer festen Position auf dem Bildschirm. Kontinuierliche Animationen k&ouml;nnen vom Inhalt der Seite ablenken und werden von vielen Benutzern als st&ouml;rend empfunden. Es kann daher durchaus vorteilhaft sein, wenn das <span class="literal">marquee</span>-Element nach einigen Durchl&auml;ufen automatisch deaktiviert wird.
+</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>&lt;MARQUEE behavior="slide" direction="left" height="20" width="200" loop="3"&gt;
+...&lt;/MARQUEE&gt;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+				</tr>
+				<tr>
+					<td><p>Ein positiver Integerwert, wenn die Laufschrift nach einer bestimmten Anzahl von Durchl&auml;ufen deaktiviert werden soll. Andernfalls w&auml;hlen Sie den Wert <span class="literal">-1</span> oder <span class="literal">infinite</span>.
+</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Standardwert</span></td>
+				</tr>
+				<tr>
+					<td><p><span class="literal">-1</span></p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectmodelreference"><span class="title">Objektmodellreferenz</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>[window.]document.getElementById(<span class="replaceable">elementID</span>).loop</pre>
+						</span></td>
+				</tr>
+			</table>
+		</div><div id="scrollamount">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">scrollamount</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">nicht zutreffend</span> IE <span class="emphasis">3</span> HTML <span class="emphasis">nicht zutreffend</span>&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">scrollamount="<span class="replaceable">pixelCount</span>"</p>
+					</td><td valign="top" nowrap class="requirements">Optional&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Die animierte Darstellung des Inhalts im <span class="literal">marquee</span>-Element wird erzielt, indem der Browser den Inhalt an seiner urspr&uuml;nglichen Position l&ouml;scht und dann an einer anderen Stelle neu zeichnet (die Richtung wird durch das Attribut <span class="literal">direction</span> bestimmt). Um den Eindruck zu vermitteln, dass sich die Laufschrift schneller bewegt, k&ouml;nnen Sie den Abstand zwischen der urspr&uuml;nglichen und der jeweils neuen Inhaltsposition erh&ouml;hen. Um die Bewegung zu verlangsamen, verringern Sie den Abstand. Siehe auch <span class="literal">scrolldelay</span>.
+</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>&lt;MARQUEE behavior="slide" direction="left" height="20" width="200" scrollamount="2"&gt;
+...&lt;/MARQUEE&gt;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+				</tr>
+				<tr>
+					<td><p>Beliebiger positiver Integerwert.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Standardwert</span></td>
+				</tr>
+				<tr>
+					<td><p><span class="literal">6</span></p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectmodelreference"><span class="title">Objektmodellreferenz</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>[window.]document.getElementById(<span class="replaceable">elementID</span>).scrollAmount</pre>
+						</span></td>
+				</tr>
+			</table>
+		</div><div id="scrolldelay">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">scrolldelay</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">nicht zutreffend</span> IE <span class="emphasis">3</span> HTML <span class="emphasis">nicht zutreffend</span>&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">scrolldelay="<span class="replaceable">milliseconds</span>"</p>
+					</td><td valign="top" nowrap class="requirements">Optional&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Sie k&ouml;nnen die scheinbare Laufschriftgeschwindigkeit beeinflussen, indem Sie festlegen, wie oft der Inhalt an den ge&auml;nderten Positionen neu gezeichnet wird (siehe <span class="literal">scrollamount</span>). Ein h&ouml;herer Wert f&uuml;r <span class="literal">scrolldelay</span> f&uuml;hrt zu einer langsameren Geschwindigkeit, wogegen ein niedrigerer Wert die Laufschrift beschleunigt. Bei Computern mit einer niedrigen Verarbeitungsgeschwindigkeit kann ein Wert erreicht werden, der nicht mehr zu einer wahrnehmbaren Geschwindigkeitserh&ouml;hung f&uuml;hrt, unabh&auml;ngig davon, wie niedrig Sie den Wert f&uuml;r <span class="literal">scrolldelay</span> einstellen (siehe <span class="literal">truespeed</span>).
+</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>&lt;MARQUEE behavior="slide" direction="left" height="20" width="200" scrolldelay="100"&gt;
+...&lt;/MARQUEE&gt;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+				</tr>
+				<tr>
+					<td><p>Ein positiver Integerwert, der bestimmt, nach wie vielen Millisekunden der Inhalt neu gezeichnet wird.
+</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Standardwert</span></td>
+				</tr>
+				<tr>
+					<td><p><span class="literal">85</span> (Windows 95); <span class="literal">90</span> (Macintosh).</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectmodelreference"><span class="title">Objektmodellreferenz</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>[window.]document.getElementById(<span class="replaceable">elementID</span>).scrollDelay</pre>
+						</span></td>
+				</tr>
+			</table>
+		</div><div id="truespeed">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">truespeed</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">nicht zutreffend</span> IE <span class="emphasis">4</span> HTML <span class="emphasis">nicht zutreffend</span>&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">truespeed</p>
+					</td><td valign="top" nowrap class="requirements">Optional&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Das <span class="literal">marquee</span>-Element enth&auml;lt eine integrierte Geschwindigkeitsbegrenzung, die verhindern soll, dass die Bewegung versehentlich zu schnell erfolgt und der Inhalt daher nicht mehr lesbar ist. Wenn Sie sicher sind, dass die Laufschrift &auml;u&szlig;erst schnell dargestellt werden soll, k&ouml;nnen Sie den Browser mit dem Attribut <span class="literal">truespeed</span> anweisen, Einstellungen f&uuml;r <span class="literal">scrolldelay</span> zu ber&uuml;cksichtigen, die unter 60 Millisekunden liegen.
+</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>&lt;MARQUEE behavior="slide" direction="left" height="20" width="200" 
+scrolldelay="45" truespeed&gt;...&lt;/MARQUEE&gt;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+				</tr>
+				<tr>
+					<td><p>Ist dieses Attribut vorhanden, wird sein Wert auf <span class="literal">true</span> eingestellt.
+</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Standardwert</span></td>
+				</tr>
+				<tr>
+					<td><p><span class="literal">false</span></p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectmodelreference"><span class="title">Objektmodellreferenz</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>[window.]document.getElementById(<span class="replaceable">elementID</span>).trueSpeed</pre>
+						</span></td>
+				</tr>
+			</table>
+		</div><div id="vspace">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">vspace</td><td valign="top" nowrap class="compatibility">&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Siehe hspace.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="width">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">width</td><td valign="top" nowrap class="compatibility">&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Siehe height. </p>
+					</td>
+				</tr>
+			</table>
+		</div>
+</body>
+</html>

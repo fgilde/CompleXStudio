@@ -1,0 +1,182 @@
+<html>
+
+<link rel="stylesheet" href="../HTML/josh.css"><head>
+
+
+<title>TagExtraInfo-Klasse</title>
+</head>
+<body bgcolor="#FFFFFF" text="#000000">
+<div id="Beschreibung">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">TagExtraInfo-Klasse</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Klassenname:</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+<p><span class="LITERAL">javax.servlet.jsp.tagext.TagExtraInfo</span></p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Erweitert:</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+<p>Keine</p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Implementiert:</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+<p>Keine</p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Implementiert von:</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+<p>Interne containerabh&auml;ngige Klasse. Die meisten Container verwenden die Verweisimplementierung der Klasse (im Apache Jakarta-Projekt entwickelt).
+</p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Beschreibung</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+<p>F&uuml;r benutzerdefinierte Aktionen, die Skriptvariablen erstellen oder zus&auml;tzliche Zeit f&uuml;r die Validierung der Tag-Attribute ben&ouml;tigen, muss eine Unterklasse der Klasse <span class="LITERAL">TagExtraInfo</span> entwickelt und in der TLD-Datei deklariert werden. Der Webcontainer erstellt w&auml;hrend der &Uuml;bersetzung eine Instanz der Unterklasse <span class="LITERAL">TagExtraInfo</span>.
+</p>
+</td>
+</tr>
+</table>
+</div>
+<div id="getTagInfo">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">getTagInfo()</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"> </td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="usage"><span class="LITERAL">public TagInfo getTagInfo()</span></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+Gibt die Instanz <span class="LITERAL">TagInfo</span> f&uuml;r die benutzerdefinierte Aktion zur&uuml;ck, die mit dieser Instanz <span class="LITERAL">TagExtraInfo</span> assoziiert ist. Die Instanz <span class="LITERAL">TagInfo</span> wird von der Methode <span class="LITERAL">setTagInfo()</span> eingestellt, die vom Webcontainer aufgerufen wird.
+</p></td>
+</tr>
+</table>
+</div>
+<div id="getVariableInfo">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">getVariableInfo()</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"> </td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="usage"><span class="LITERAL">public VariableInfo[] getVariableInfo(TagData data)</span></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+Gibt ein <span class="LITERAL">VariableInfo[]</span>-Array mit Informationen &uuml;ber die Skriptvariablen zur&uuml;ck, die von der Tag-Prozedurklasse erstellt wurden, die mit dieser Instanz von <span class="LITERAL">TagExtraInfo</span> assoziiert ist. Die Standardimplementierung gibt ein leeres Array zur&uuml;ck. Eine Unterklasse muss diese Methode au&szlig;er Kraft setzen, wenn die entsprechende Tag-Prozedur Skriptvariablen erstellt.
+</p></td>
+</tr>
+</table>
+</div>
+<div id="isValid">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">isValid()</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"> </td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="usage"><span class="LITERAL">public boolean isValid(TagData data)</span></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+Gibt <span class="LITERAL">true</span> zur&uuml;ck, wenn die Attributwerte g&uuml;ltig sind, die f&uuml;r die benutzerdefinierte Aktion angegeben wurden, die mit dieser Instanz von <span class="LITERAL">TagExtraInfo</span> assoziiert ist. Andernfalls lautet die R&uuml;ckgabe <span class="LITERAL">false</span>. Die Standardimplementierung gibt <span class="LITERAL">true</span> zur&uuml;ck. Eine Unterklasse kann diese Methode au&szlig;er Kraft setzen, wenn die Validierung, die der Webcontainer anhand der TLD-Informationen vornimmt, nicht ausreichend ist.
+</p></td>
+</tr>
+</table>
+</div>
+<div id="setTagInfo">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">setTagInfo()</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"> </td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="usage"><span class="LITERAL">public void setTagInfo(TagInfo tagInfo)</span></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+Stellt das Objekt <span class="LITERAL">TagInfo</span> f&uuml;r diese Instanz ein. Diese Methode wird vom Webcontainer vor allen anderen Methoden aufgerufen.
+</p></td>
+</tr>
+</table>
+</div>
+<div id="TagExtraInfo">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">TagExtraInfo()</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"> </td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="usage"><span class="LITERAL">public TagExtraInfo()</span></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+Erstellt eine neue Instanz von <span class="LITERAL">TagExtraInfo</span>.
+</p></td>
+</tr>
+</table>
+</div>
+</body>
+</html>

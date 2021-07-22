@@ -1,0 +1,520 @@
+<html>
+<link rel="stylesheet" href="josh.css">
+<body bgcolor="#FFFFFF">
+
+		<div id="Beschreibung">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">input (type="file")</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">3  </span>IE <span class="emphasis">4  </span>DOM <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Das <span class="literal">fileUpload</span>-Objekt ist ein Formularsteuerelement, das mit einem <span class="literal">input</span>-Element erstellt wird, dessen <span class="literal">type</span>-Attribut auf <span class="literal">"file"</span> gesetzt ist. Der Begriff "fileUpload" selbst erscheint im Skript nicht, aber dies ist die Art und Weise, in der Netscape in den ersten skriptf&auml;higen Versionen &uuml;blicherweise auf dieses Objekt verwiesen hat.
+</p>
+							</td>
+						</tr>
+						<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Zum &Uuml;bertragen einer Datei sollte das <span class="literal">method</span>-Attribut des Formularelements auf <span class="literal">POST</span> und sein <span class="literal">enctype</span>-Attribut auf <span class="literal">multipart/form-data</span> gesetzt werden. Au&szlig;erdem muss jedoch der Server so programmiert werden, dass er die eingehenden Daten in der richtigen Weise verarbeitet.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="htmlequivalent"><span class="title">HTML-&Auml;quivalent</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>&lt;input type="file"&gt;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectmodelreference"><span class="title">Objektmodellreferenz</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>[window.]document.<span class="replaceable">formName</span>.<span class="replaceable">elementName</span>
+[window.]document.forms[<span class="replaceable">i</span>].elements[<span class="replaceable">i</span>]
+[window.]document.getElementById("<span class="replaceable">elementID</span>")</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectspecificproperties"><span class="title">Objektspezifische Eigenschaften</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<table border="1"><tbody><tr><td><span class="literal">accept</span></td><td><span class="literal">defaultValue</span></td><td><span class="literal">form</span></td><td><span class="literal">name</span></td><td><span class="literal">size</span></td><td><span class="literal">type</span></td><td><span class="literal">value</span></td>
+								</tr>
+							</tbody></table>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectspecificmethods"><span class="title">Objektspezifische Methoden</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<table border="1"><tbody><tr><td><span class="literal">handleEvent( )</span></td><td><span class="literal">select( )</span></td>
+								</tr>
+							</tbody></table>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectspecificeventhandlerproperties"><span class="title">Objektspezifische Ereignisbehandlungsroutineneigenschaften</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<table border="1"><tbody><th>Behandlungsroutine</th><th>NN</th><th>IE</th><th>DOM</th><tr><td>onblur</td><td>3</td><td>4</td><td>2</td>
+								</tr>
+								<tr><td>onchange</td><td>3</td><td>4</td><td>2</td>
+								</tr>
+								<tr><td>onclick</td><td>6</td><td>4</td><td>2</td>
+								</tr>
+								<tr><td>onfocus</td><td>3</td><td>4</td><td>2</td>
+								</tr>
+								<tr><td>onkeydown</td><td>6</td><td>4</td><td>--</td>
+								</tr>
+								<tr><td>onkeypress</td><td>6</td><td>4</td><td>--</td>
+								</tr>
+								<tr><td>onkeyup</td><td>6</td><td>4</td><td>--</td>
+								</tr>
+								<tr><td>onmousedown</td><td>6</td><td>4</td><td>2</td>
+								</tr>
+								<tr><td>onmousemove</td><td>6</td><td>4</td><td>2</td>
+								</tr>
+								<tr><td>onmouseout</td><td>6</td><td>4</td><td>2</td>
+								</tr>
+								<tr><td>onmouseover</td><td>6</td><td>4</td><td>2</td>
+								</tr>
+								<tr><td>onmouseup</td><td>6</td><td>4</td><td>2</td>
+								</tr>
+								<tr><td>onselect</td><td>3</td><td>4</td><td>2</td>
+								</tr>
+							</tbody></table>
+					</td>
+				</tr>
+			</table>
+		</div><div id="accept">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">accept</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">4</span>  DOM <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Lesen/Schreiben</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Stellt eine optionale Hilfseigenschaft bereit, die aus einer Zeichenfolge mit einem oder mehreren durch Kommas voneinander getrennten MIME-Typen der hochzuladenden Dateien besteht. Die Werte haben in aktuellen Browsern keinen Einfluss auf dieses Element.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>document.entryForm.myFileUpload.accept = "image/gif";</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Zeichenfolge.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Standardwert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Keiner.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="defaultValue">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">defaultValue</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">4</span>  IE <span class="emphasis">4</span>  DOM <span class="emphasis">nicht zutreffend</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Lesen/Schreiben</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Gibt die dem <span class="literal">value</span>-Attribut des Elements im Quellcode zugewiesene Zeichenfolge zur&uuml;ck (au&szlig;er in IE f&uuml;r Windows, der eine leere Zeichenfolge zur&uuml;ckgibt). Da der Benutzer die hochzuladende Datei von Hand ausw&auml;hlen muss, ist es nicht notwendig, eine Voreinstellung festzulegen oder diesen Wert zu &auml;ndern.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>var initVal = document.entryForm.myFileUpload.defaultValue;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Zeichenfolge.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Standardwert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Keiner.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="form">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">form</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">3  </span>IE <span class="emphasis">4  </span>DOM <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Schreibgesch&uuml;tzt</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Gibt eine Referenz auf das <span class="literal">form</span>-Element zur&uuml;ck, in dem das aktuelle Element (sofern vorhanden) enthalten ist. W&auml;hrend der Verarbeitung eines von diesem Element stammenden Ereignisses hat die Ereignisbehandlungsroutinenfunktion automatisch Zugriff auf das <span class="literal">input</span>-Element (als <span class="literal">target</span>- oder <span class="literal">srcElement</span>-Eigenschaft des Ereignisobjekts). Durch Lesen der <span class="literal">form</span>-Eigenschaft kann das Skript problemlos auf andere Steuerelemente innerhalb desselben Formulars zugreifen.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>var theForm = evt.srcElement.form;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p><span class="literal">form</span>-Elementobjektreferenz</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Standardwert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Keiner. </p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="name">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">name</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">2</span>  IE <span class="emphasis">3</span>  DOM <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Lesen/Schreiben</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Dies ist der dem Formularsteuerelement zugeordnete Bezeichner. Der Wert dieser Eigenschaft wird beim Senden des Formulars an den Server als eine H&auml;lfte des Namens-/Wertpaars &uuml;bertragen. Namen werden dem Benutzer nicht angezeigt, da die Beschriftungen f&uuml;r Steuerelemente, abh&auml;ngig von der Art des Steuerelements, &uuml;ber andere Wege zugewiesen werden. Namen von Formularsteuerelementen k&ouml;nnen auch durch Referenzen in Skripts mit den Objekten verkn&uuml;pft werden. Obwohl in modernen Standards das <span class="literal">id</span>-Attribut bevorzugt wird, setzen viele Browser beim &Uuml;bertragen des Wertes eines Steuerelements noch immer voraus, dass dem Formularsteuerelement ein <span class="literal">name</span>-Attribut zugeordnet ist.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>document.orderForm.myFileChoice.name = "Win32File";</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Ein von der Gro&szlig;-/Kleinschreibung abh&auml;ngiger Bezeichner, der den Regeln der Bezeichnerbenennung folgt: Er darf keine Leerzeichen enthalten, nicht mit einer Ziffer beginnen und sollte keine Satzzeichen enthalten (mit Ausnahme des Unterstrichs).
+</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Standardwert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Keiner. </p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="size">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">size</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">4</span>  DOM <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Lesen/Schreiben</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Gibt grob gesagt die Textbreite in Zeichen an, f&uuml;r die das Eingabefeld ausgelegt werden muss. In der Praxis geben die Browser nicht immer die genaue Breite an, wenn eine Proportionalschrift verwendet wird. Ausf&uuml;hrliche Informationen finden Sie in der Abhandlung des <span class="literal">size</span>-Attributs f&uuml;r das <span class="literal">input</span>-Element in Kapitel 8. Diese Eigenschaft ist in IE 4 f&uuml;r den Macintosh nicht verf&uuml;gbar.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>document.forms[0].myFileUpload.size = 60;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Eine ganze Zahl.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Standardwert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p><span class="literal">20</span></p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="type">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">type</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">3  </span>IE <span class="emphasis">4  </span>DOM <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Schreibgesch&uuml;tzt</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Gibt den Typ des Formularsteuerelements zur&uuml;ck. Der Wert wird ausschlie&szlig;lich in Kleinbuchstaben zur&uuml;ckgegeben. Es kann notwendig sein, alle Formularsteuerelemente bei einer Suche nach bestimmten Typen zu durchlaufen, um eine Verarbeitung auszuf&uuml;hren (z. B. das Entfernen von Inhalten aus allen Formularsteuerelementen des Typs <span class="literal">"text"</span>, w&auml;hrend alle anderen Steuerelemente unber&uuml;hrt bleiben).
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>if (document.forms[0].elements[3].type == "file") {
+    // process file input type here
+}</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Eine der folgenden Konstanten als Zeichenfolge: <span class="literal">button</span> | <span class="literal">checkbox</span> | <span class="literal">file</span> | <span class="literal">hidden</span> | <span class="literal">image</span> | <span class="literal">password</span> | <span class="literal">radio</span> | <span class="literal">reset</span> | <span class="literal">select-multiple</span> | <span class="literal">select-one</span> | <span class="literal">submit</span> | <span class="literal">text</span> | <span class="literal">textarea</span>.
+</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Standardwert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p><span class="literal">file</span></p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="value">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">value</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">2</span>  IE <span class="emphasis">3</span>  DOM <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Schreibgesch&uuml;tzt</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Gibt den aktuellen Wert an, der mit dem Formularsteuerelement verkn&uuml;pft ist, das mit dem Namens-/Wertpaar des Elements gesendet wird. Bei einem <span class="literal">fileUpload</span>-Objekt ist dieser Wert der URL-kodierte vollst&auml;ndige Pfadname zu einer lokalen Datei. Dies gilt auch f&uuml;r die Macintosh-Browserversionen, die dazu tendieren, nur den Dateinamen in der Formularelementanzeige anzuzeigen. W&auml;hrend dieser Eigenschaft in manchen Browsern neue Werte zugewiesen werden k&ouml;nnen, werden nur die durch eine explizite Auswahl des Benutzers im Dateimen&uuml; zugewiesenen Werte &uuml;bertragen.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Zeichenfolge.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Standardwert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Keiner. </p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="handleEvent( )">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">handleEvent( )</td><td valign="top" nowrap class="compatibility">NN |<span class="emphasis">4|</span>  IE <span class="emphasis">nicht zutreffend</span> DOM <span class="emphasis">nicht zutreffend</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">handleEvent(<span class="replaceable">event</span>)</p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Weist das Objekt an, ein Ereignis, dessen Spezifikationen als Parameter an die Methode &uuml;bergeben werden, zu akzeptieren und zu verarbeiten. Das Objekt muss eine Ereignisbehandlungsroutine f&uuml;r den Ereignistyp besitzen, um das Ereignis verarbeiten zu k&ouml;nnen. Nur Navigator 4.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Parameter</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<ul><li><span class="literal"></span>Ein <span class="literal">event</span>-Objekt von Navigator 4. </li></ul>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Zur&uuml;ckgegebener Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Keiner.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="select( )">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">select( )</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">3  </span>IE <span class="emphasis">4  </span>DOM <span class="emphasis">nicht zutreffend</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>W&auml;hlt den gesamten Text aus, der im Formularelement angezeigt wird.</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Parameter</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Keine. </p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Zur&uuml;ckgegebener Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Keiner.</p>
+					</td>
+				</tr>
+			</table>
+		</div>
+
+</body>
+</html>

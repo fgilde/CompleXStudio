@@ -1,0 +1,231 @@
+<html>
+<head>
+<title>&lt;xsl:template&gt;</title>
+</head>
+<body bgcolor="#FFFFFF" text="#000000">
+<div id="Beschreibung">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">&lt;xsl:template&gt;</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description">
+Diese Anweisung definiert eine Ausgabevorlage (Template). Bei Vorlagen, die mit <span class="LITERAL">&lt;xsl:template match="x"</span> beginnen, definiert die Vorlage die Transformation eines bestimmten Elements. Bei Vorlagen, die mit <span class="LITERAL">&lt;xsl:template name="x"</span> beginnen, wird ein Satz an Ausgabeelementen definiert, die immer dann verarbeitet werden, wenn die Vorlage aufgerufen wird. F&uuml;r jedes <span class="LITERAL">&lt;xsl:template&gt;</span>-Element muss entweder das Attribut <span class="LITERAL">match</span> oder das Attribut <span class="LITERAL">name</span> definiert sein. Zwar wird das nicht h&auml;ufig gemacht, es ist aber durchaus m&ouml;glich, <span class="LITERAL">&lt;xsl:template&gt;</span>-Elemente zu erstellen, die sowohl ein <span class="LITERAL">match</span>- als auch ein <span class="LITERAL">name</span>-Attribut besitzen.</td></tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Kategorie</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<p>Element der obersten Ebene</p>
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Obligatorische Attribute</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<p>Keine</p>
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Optionale Attribute</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<dl>
+<dt>
+match
+</dt>
+<!--<?troff .hw elements?>-->
+<dd>
+Ein Muster, das die Elemente definiert, f&uuml;r die diese Vorlage aufgerufen werden soll. <span class="LITERAL">
+&lt;
+xsl:template match=
+"
+xyz
+"
+&gt;
+</span> beispielsweise definiert eine Vorlage f&uuml;r das Verarbeiten von <span class="LITERAL">
+&lt;
+xyz
+&gt;
+</span>-Elementen.
+<P></p>
+<dt>
+name
+</dt>
+<dd>
+Ein Attribut, das den Namen f&uuml;r diese Vorlage angibt. Benannte Vorlagen werden mit dem Element <span class="LITERAL">
+&lt;
+xsl:call-template
+&gt;
+</span> aufgerufen.
+<P></p>
+<dt>
+mode
+</dt>
+<dd>
+Ein Attribut, das den Modus dieser Vorlage definiert. Ein Modus ist eine praktische Syntax, die das Erstellen spezifischer Vorlagen f&uuml;r spezifische Zwecke erlaubt. Sie k&ouml;nnten etwa eine <span class="LITERAL">
+&lt;
+xsl:template
+&gt;
+</span>-Vorlage mit <span class="LITERAL">
+mode=
+"
+toc
+"
+</span> erstellen, um einen Knoten f&uuml;r das Inhaltsverzeichnis eines Dokuments zu verarbeiten sowie weitere <span class="LITERAL">
+&lt;
+xsl:template
+&gt;
+</span>-Vorlagen mit <span class="LITERAL">
+mode=
+"
+print
+"
+</span> , <span class="LITERAL">
+mode=
+"
+online
+"
+</span> , <span class="LITERAL">
+mode=
+"
+index
+"
+</span> usw., um dieselbe Information f&uuml;r verschiedene Zwecke zu verarbeiten.
+<P></p>
+<dt>
+priority
+</dt>
+<dd>
+Ein Attribut, das der Vorlage eine numerische Priorit&auml;t zuweist. Als Wert ist jeder numerische Wert au&szlig;er <span class="LITERAL">
+Infinity
+</span> zul&auml;ssig. Kann der XSLT-Prozessor nicht feststellen, welche Vorlage er zu verwenden hat (anders ausgedr&uuml;ckt: wenn mehrere Vorlagen dieselbe Standardpriorit&auml;t haben), gestattet Ihnen das Attribut <span class="LITERAL">
+priority
+</span>, die entscheidende Eigenschaft zu definieren.
+<P></p>
+</dl>
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Inhalt</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<p>Eine XSLT-Vorlage.</p>
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">&Uuml;bergeordnetes Element</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<p>
+<span class="LITERAL">&lt;xsl:stylesheet&gt;</span>. <span class="LITERAL">&lt;xsl:template&gt;</span> ist ein Element der obersten Ebene und kann nur dem Element <span class="LITERAL">&lt;xsl:stylesheet&gt;</span> untergeordnet werden.</p>
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Definition</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<p>XSLT-Abschnitt 5.3, Definition von Template-Regeln </p>
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Beispiel</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<p>Im Beispiel wird eine Vorlage verwendet, die alle Knoten vom Eingabedokument in das Ausgabedokument kopiert, mit einem wichtigen Unterschied: alle Attribute im Originaldokument werden in Elemente im Ausgabedokument kopiert. Die erzeugten Elemente tragen die Namen der urspr&uuml;nglichen Attribute und der Textinhalt der einzelnen Elemente entspricht dem Wert des entsprechenden Attributs. Hier das Stylesheet:</p>
+<span class="PROGRAMLISTING"><pre>
+&lt;?xml version="1.0"?&gt;
+&lt;xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0"&gt;
+  &lt;xsl:output method="xml"/&gt;
+  &lt;xsl:template match="*"&gt;
+    &lt;xsl:element name="{name()}"&gt;
+      &lt;xsl:for-each select="@*"&gt;
+        &lt;xsl:element name="{name()}"&gt;
+          &lt;xsl:value-of select="."/&gt;
+        &lt;/xsl:element&gt;
+      &lt;/xsl:for-each&gt;
+      &lt;xsl:apply-templates select="*|text()"/&gt;
+    &lt;/xsl:element&gt;
+  &lt;/xsl:template&gt;
+&lt;/xsl:stylesheet&gt;</pre></span> <!--<?troff .Nd 10?>-->
+<p>Das Stylesheet enth&auml;lt nur eine <span class="LITERAL">&lt;xsl:template&gt;</span>-Vorlage, die jeden Knoten im Originaldokument transformiert. Zur Umwandlung des nachfolgenden XML-Dokuments wird das Beispiel-Stylesheet verwendet:</p>
+<span class="PROGRAMLISTING"><pre>
+&lt;?xml version="1.0"?&gt;
+&lt;report&gt;
+  &lt;title&gt;Miles Flown in 2001&lt;/title&gt;
+  &lt;month sequence="01"&gt;
+    &lt;miles-flown&gt;12379&lt;/miles-flown&gt;
+    &lt;miles-earned&gt;35215&lt;/miles-earned&gt;
+  &lt;/month&gt;
+  &lt;month sequence="02"&gt;
+    &lt;miles-flown&gt;32857&lt;/miles-flown&gt;
+    &lt;miles-earned&gt;92731&lt;/miles-earned&gt;
+  &lt;/month&gt;
+  &lt;month sequence="03"&gt;
+    &lt;miles-flown&gt;19920&lt;/miles-flown&gt;
+    &lt;miles-earned&gt;76725&lt;/miles-earned&gt;
+  &lt;/month&gt;
+  &lt;month sequence="04"&gt;
+    &lt;miles-flown&gt;18903&lt;/miles-flown&gt;
+    &lt;miles-earned&gt;31781&lt;/miles-earned&gt;
+  &lt;/month&gt;
+&lt;/report&gt;</pre></span>
+<p>Hier die Ergebnisse der Transformation:</p>
+<span class="PROGRAMLISTING"><pre>
+&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;report&gt;
+  &lt;title&gt;Miles Flown in 2001&lt;/title&gt;
+  &lt;month&gt;&lt;sequence&gt;01&lt;/sequence&gt;
+    &lt;miles-flown&gt;12379&lt;/miles-flown&gt;
+    &lt;miles-earned&gt;35215&lt;/miles-earned&gt;
+  &lt;/month&gt;
+  &lt;month&gt;&lt;sequence&gt;02&lt;/sequence&gt;
+    &lt;miles-flown&gt;32857&lt;/miles-flown&gt;
+    &lt;miles-earned&gt;92731&lt;/miles-earned&gt;
+  &lt;/month&gt;
+  &lt;month&gt;&lt;sequence&gt;03&lt;/sequence&gt;
+    &lt;miles-flown&gt;19920&lt;/miles-flown&gt;
+    &lt;miles-earned&gt;76725&lt;/miles-earned&gt;
+  &lt;/month&gt;
+  &lt;month&gt;&lt;sequence&gt;04&lt;/sequence&gt;
+    &lt;miles-flown&gt;18903&lt;/miles-flown&gt;
+    &lt;miles-earned&gt;31781&lt;/miles-earned&gt;
+  &lt;/month&gt;
+&lt;/report&gt;</pre></span>
+</td>
+</tr>
+</table>
+</div>
+</body>
+</html>

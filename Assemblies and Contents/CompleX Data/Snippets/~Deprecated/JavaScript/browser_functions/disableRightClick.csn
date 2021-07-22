@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding = "utf-8"?>
+<snippet xmlns:MMString="http://www.macromedia.com/schemes/dat/string/" MMString:name = "Snippets/~Deprecated/JavaScript/browser_functions/disableRightClick_csn/snippet/name/Disable" MMString:description = "Snippets/~Deprecated/JavaScript/browser_functions/disableRightClick_csn/snippet/description/Code" preview="code" type="block">
+
+<insertText location="beforeSelection">
+<![CDATA[function disableRightClick(e)
+{
+  var message = "Right click disabled";
+  
+  if(!document.rightClickDisabled) // initialize
+  {
+    if(document.layers) 
+    {
+      document.captureEvents(Event.MOUSEDOWN);
+      document.onmousedown = disableRightClick;
+    }
+    else document.oncontextmenu = disableRightClick;
+    return document.rightClickDisabled = true;
+  }
+  if(document.layers || (document.getElementById && !document.all))
+  {
+    if (e.which==2||e.which==3)
+    {
+      alert(message);
+      return false;
+    }
+  }
+  else
+  {
+    alert(message);
+    return false;
+  }
+}
+disableRightClick();
+]]>
+</insertText>
+<insertText location="afterSelection"><![CDATA[]]>
+</insertText>
+</snippet>

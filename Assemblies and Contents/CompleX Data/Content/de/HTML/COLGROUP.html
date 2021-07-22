@@ -1,0 +1,482 @@
+<html>
+<link rel="stylesheet" href="josh.css">
+<body bgcolor="#FFFFFF">
+
+		<div id="Beschreibung">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">&lt;COLGROUP&gt;</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">3</span> HTML <span class="emphasis">4</span>&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">&lt;COLGROUP&gt;...&lt;/COLGROUP&gt;</p>
+					</td><td valign="top" nowrap class="requirements">HTML-End-Tag: Optional&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Mit dem <span class="literal">colgroup</span>-Element lassen sich Breiten und andere Merkmale (Stile) f&uuml;r eine oder mehrere Untergruppen von Spalten in einer Tabelle definieren. Wenn diese Informationen vorne im Quellcode des <span class="literal">table</span>-Elements erscheinen, beginnt ein entsprechend ausger&uuml;steter Browser sofort mit der Darstellung der Tabelle, noch bevor der gesamte Quellcode der Tabelle geladen ist (andernfalls w&auml;re er mit den Positionsberechnungen besch&auml;ftigt).</p><p>Sie k&ouml;nnen das <span class="literal">colgroup</span>-Element mit oder ohne <span class="literal">col</span>-Element verwenden. Es lassen sich auch <span class="literal">colgroup</span>-Elemente mit verschachtelten <span class="literal">col</span>-Elementen definieren, um Spaltengruppen mit gemeinsamen Attribut- oder Stileinstellungen leichter einrichten zu k&ouml;nnen. Ob das End-Tag f&uuml;r das Element erforderlich ist, h&auml;ngt vom Vorhandensein von allein stehenden <span class="literal">col</span>-Elementen ab, die sich an das <span class="literal">colgroup</span>-Element anschlie&szlig;en. Wenn Sie beispielsweise Spaltengruppierungen vollst&auml;ndig mit <span class="literal">colgroup</span>-Elementen festlegen, sind End-Tags nicht notwendig:</p><p>Wenn jedoch ein allein stehendes <span class="literal">col</span>-Element auf das <span class="literal">colgroup</span>-Element folgt, m&uuml;ssen Sie das <span class="literal">colgroup</span>-Element vor dem einzelnen <span class="literal">col</span>-Element klar abgrenzen:</p><p>Die Struktur h&auml;ngt davon ab, wie einzelnen oder aneinander angrenzenden Spalten Breiten und Stile zugewiesen werden sollen. F&uuml;r Gruppierungen, die aus mehreren aneinander angrenzenden Spalten bestehen, muss das Attribut <span class="literal">span</span> verwendet werden. Dies ist nicht mit dem Attribut <span class="literal">colspan</span> eines <span class="literal">td</span>-Elements zu verwechseln, das benachbarte Zellen zusammenf&uuml;hrt. Mit dem Attribut <span class="literal">span</span> l&auml;sst sich die Zahl der Spalten festlegen, die strukturell als Gruppe behandelt werden sollen (f&uuml;r Attribut- und Stylesheet-Zuweisungen &uuml;ber mehrere Spalten hinweg, unabh&auml;ngig von deren Inhalt).</p><p>Unabh&auml;ngig von der Spaltenstruktur der Tabelle sollte die Gesamtzahl aller mit <span class="literal">col</span> und <span class="literal">colgroup</span> definierten Spalten mit der Anzahl der vorgesehenen physischen Spalten &uuml;bereinstimmen. In den folgenden drei einfachen Beispielen sind HTML 4-Tabellen mit sechs Spalten definiert:</p><p>Die HTML 4-Spezifikationen f&uuml;r das <span class="literal">colgroup</span>-Element gehen &uuml;ber die Implementierung in IE und Navigator bis Version 6 hinaus. Beispielsweise sieht HTML 4 innerhalb einer Spalte eine Ausrichtung an einem beliebigen Zeichen vor, wie beispielsweise dem Dezimalzeichen in einem Geldbetrag. Dieses Merkmal tr&auml;gt zur Unterst&uuml;tzung des <span class="literal">colgroup</span>-Elements bei (ein Beispiel finden Sie unter dem Element <span class="literal">col</span>).</p><p>Syntaktisch gesehen gibt es fast keinen Unterschied zwischen <span class="literal">colgroup</span> und <span class="literal">col</span>. <span class="literal">colgroup</span>-Spaltengruppen werden jedoch anders dargestellt, wenn das &uuml;bergeordnete <span class="literal">table</span>-Element die Anweisung <span class="literal">rules="groups"</span> enth&auml;lt; der Browser zeichnet dann Rahmenlinien (Standardtabellenrahmen in IE) nur zwischen <span class="literal">colgroup</span>- und nicht zwischen <span class="literal">col</span>-Elementen.</p><p>Die oben angegebene Unterst&uuml;tzung in Netscape 6 basiert auf der DOM-Implementierung des Browers. Das DOM meldet Skripts, dass das <span class="literal">colgroup</span>-Element und seine Attribute (in Form von Eigenschaften) vorhanden sind. Ab Netscape 7 f&uuml;hrt dieses Element aber nicht die beabsichtigten Aufgaben aus. In einer sp&auml;teren Version wird die interne Funktionalit&auml;t des Elements wahrscheinlich wiederhergestellt.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>&lt;COLGROUP class="dateCols" width="15" align="right"&gt;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectmodelreference"><span class="title">Objektmodellreferenz</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>[window.]document.getElementById(<span class="replaceable">elementID</span>)</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectmodelreference"><span class="title">Elementspezifische Attribute</span></td>
+</tr><tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+</tr><tr><td>
+        <table border="1">
+<tbody><tr><td><span class="literal">align</span></td><td><span class="literal">char</span></td><td><span class="literal">charoff</span></td><td><span class="literal">span</span></td><td><span class="literal">valign</span></td>
+								</tr>
+								<tr><td><span class="literal">width</span></td><td></td><td></td><td></td><td></td>
+								</tr>
+							</tbody></table>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectmodelreference"><span class="title">Elementspezifische Ereignisbehandlungsroutinenattribute</span></td>
+				</tr>
+				<tr>
+					<td><p>Keine.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="align">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">align</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">nicht zutreffend</span> IE <span class="emphasis">3</span>   HTML <span class="emphasis">4</span>&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">align="<span class="replaceable">alignConstant</span>"</p>
+					</td><td valign="top" nowrap class="requirements">Optional&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Bestimmt die horizontale Ausrichtung von Inhalt in durch das <span class="literal">colgroup</span>-Element definierten Spalte(n). In der HTML 4-Spezifikation sind Einstellungen f&uuml;r das Attribut <span class="literal">align</span> definiert, die in der CSS-Spezifikation noch nicht vorgesehen sind. Beispielsweise gibt es keine CSS-Entsprechung f&uuml;r die Ausrichtung nach Zeichen. Weitere Informationen zur Netscape 6-Kompatibilit&auml;t enth&auml;lt die Beschreibung des Elements <span class="literal">col</span>.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>&lt;COLGROUP class="dateCols" width="15" align="right" span="3"&gt;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+				</tr>
+				<tr>
+					<td><p>In HTML 4 und IE gibt es zwei S&auml;tze von Attributwerten.</p><p>Was die Werte <span class="literal">center</span>, <span class="literal">left</span> und <span class="literal">right</span> bewirken, ist offensichtlich. Mit der Einstellung <span class="literal">justify</span> wird der Inhalt so dargestellt, dass er sowohl mit der linken als auch der rechten Kante abschlie&szlig;t (Blocksatz). Beim Wert <span class="literal">char</span> muss au&szlig;erdem mit dem Attribut <span class="literal">char</span> das Zeichen festgelegt werden, an dem die Ausrichtung erfolgen soll. Im Beispiel f&uuml;r die HTML 4-Spezifikation erscheint Inhalt, der das betreffende Zeichen nicht enth&auml;lt, rechtsb&uuml;ndig zu dem Ausrichtungszeichen in anderen Zeilen derselben Spalte.</p><p>Sie sollten unbedingt beachten, dass sich das Attribut <span class="literal">align</span> auf alle Zeilen einer Spalte auswirkt, einschlie&szlig;lich von Ihnen definierter <span class="literal">th</span>-Elemente. Um f&uuml;r die Spalten&uuml;berschrift eine andere Ausrichtung zu erreichen, k&ouml;nnen Sie die Einstellung mit einem separaten <span class="literal">align</span>-Attribut oder dem Stylesheet-Attribut <span class="literal">text-align</span> f&uuml;r das <span class="literal">thead</span>- oder individuelle <span class="literal">th</span>-Elemente au&szlig;er Kraft setzen.</p>
+						<table border="1"><tbody><th>Wert</th><th>IE</th><th>HTML 4</th><tr><td>center</td><td>&radic;</td><td>&radic;</td>
+								</tr>
+								<tr><td>char</td><td>-</td><td>&radic;</td>
+								</tr>
+								<tr><td>justify</td><td>-</td><td>&radic;</td>
+								</tr>
+								<tr><td>left</td><td>&radic;</td><td>&radic;</td>
+								</tr>
+								<tr><td>right</td><td>&radic;</td><td>&radic;</td>
+								</tr>
+							</tbody></table>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Standardwert</span></td>
+				</tr>
+				<tr>
+					<td><p><span class="literal">left</span></p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectmodelreference"><span class="title">Objektmodellreferenz</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>[window.]document.getElementById(<span class="replaceable">elementID</span>).align</pre>
+						</span></td>
+				</tr>
+			</table>
+		</div><div id="char">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">char</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">nicht zutreffend</span> HTML <span class="emphasis">4</span>&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">char="<span class="replaceable">character</span>"</p>
+					</td><td valign="top" nowrap class="requirements">Optional&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Mit dem Attribut <span class="literal">char</span> wird das Textzeichen festgelegt, das als Ausrichtungspunkt f&uuml;r Text innerhalb einer Spalte dient. Dieses Attribut ist nur dann sinnvoll, wenn das Attribut <span class="literal">align</span> auf <span class="literal">"char"</span> gesetzt ist. Microsoft dokumentiert ein Attribut namens <span class="literal">ch</span>, das dem standardbasierten Attribut <span class="literal">char</span> entspricht. Der Browser spricht aber auf keines dieser Attribute an. Netscape 7 bietet noch keine Unterst&uuml;tzung f&uuml;r das Attribut <span class="literal">char</span>.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>&lt;COLGROUP class="priceCols" align="char" char="." span="2"&gt;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+				</tr>
+				<tr>
+					<td><p>Ein beliebiges Textzeichen.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Standardwert</span></td>
+				</tr>
+				<tr>
+					<td><p>Keiner. </p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="charoff">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">charoff</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">nicht zutreffend</span> HTML <span class="emphasis">4</span>&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">charoff="<span class="replaceable">length</span>"</p>
+					</td><td valign="top" nowrap class="requirements">Optional&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Mit dem Attribut <span class="literal">charoff</span> k&ouml;nnen Sie einen spezifischen Versatz definieren, an dem das mit dem Attribut <span class="literal">char</span> festgelegte Zeichen in einer Zelle erscheinen soll. Dieses Attribut kommt dann zum Einsatz, wenn die Standardpositionierung des Browsers f&uuml;r die Designziele der Tabelle nicht geeignet ist. Microsoft dokumentiert ein Attribut namens <span class="literal">choff</span>, das dem standardbasierten Attribut <span class="literal">charoff</span> entspricht. Der Browser spricht aber auf keines dieser Attribute an. Netscape 7 bietet noch keine Unterst&uuml;tzung f&uuml;r das Attribut <span class="literal">charoff</span>.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>&lt;COLGROUP class="priceColumn" align="char" char="." charoff="80%" span="2"&gt;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+				</tr>
+				<tr>
+					<td><p>Ein beliebiger Wert in Pixeln oder ein Prozentsatz des Zellenraums.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Standardwert</span></td>
+				</tr>
+				<tr>
+					<td><p>Keiner. </p>
+					</td>
+				</tr>
+			</table>
+		</div>
+		<div id="lang">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">lang</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">3</span> IE <span class="emphasis">4</span> HTML <span class="emphasis">4</span>&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">lang="<span class="replaceable">languageCode</span>"</p>
+					</td><td valign="top" nowrap class="requirements">Optional&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Die f&uuml;r die Attributwerte und Inhalte des Elements verwendete Sprache. Mithilfe dieser Informationen ist der Browser besser in der Lage, bestimmte Details wie Ligaturen (sofern von der betreffenden Schrift unterst&uuml;tzt oder in der geschriebenen Sprache erforderlich), Anf&uuml;hrungszeichen und Worttrennungen korrekt darzustellen. Andere Anwendungen und Suchmaschinen k&ouml;nnen anhand dieser Informationen W&ouml;rterb&uuml;cher f&uuml;r die Rechtschreibpr&uuml;fung ausw&auml;hlen und Indizes erstellen.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>&lt;SPAN lang="de"&gt;Deutsche Bundesbahn&lt;/SPAN&gt;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+				</tr>
+				<tr>
+					<td><p>Sprachcode, bei dem nicht zwischen Gro&szlig;- und Kleinschreibung unterschieden wird.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Standardwert</span></td>
+				</tr>
+				<tr>
+					<td><p>Vorgabe des Browsers.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectmodelreference"><span class="title">Objektmodellreferenz</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>[window.]document.getElementById(<span class="replaceable">elementID).</span>lang</pre>
+						</span></td>
+				</tr>
+			</table>
+		</div>
+		<div id="span">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">span</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">nicht zutreffend</span> IE <span class="emphasis">3</span> HTML <span class="emphasis">4</span>&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">span="<span class="replaceable">columnCount"</span></p>
+					</td><td valign="top" nowrap class="requirements">Optional&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Definiert die Anzahl benachbarter Spalten, f&uuml;r die die Attribut- und Stileinstellungen des <span class="literal">colgroup</span>-Elements gelten sollen. Wird dieses Attribut weggelassen, wirkt sich das <span class="literal">colgroup</span>-Element nur auf eine einzelne Spalte aus. Sie k&ouml;nnen mehrere <span class="literal">colgroup</span>-Elemente mit verschiedenen <span class="literal">span</span>-Werten kombinieren, je nach den Erfordernissen bei der Spaltengruppierung. Weitere Informationen zur Netscape 6-Kompatibilit&auml;t enth&auml;lt die Beschreibung des Elements <span class="literal">col</span>.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>&lt;COLGROUP span="3"&gt;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+				</tr>
+				<tr>
+					<td><p>Integerwert gr&ouml;&szlig;er Null.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Standardwert</span></td>
+				</tr>
+				<tr>
+					<td><p><span class="literal">1</span></p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectmodelreference"><span class="title">Objektmodellreferenz</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>[window.]document.getElementById(<span class="replaceable">elementID</span>).span</pre>
+						</span></td>
+				</tr>
+			</table>
+		</div><div id="valign">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">valign</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">3</span> HTML <span class="emphasis">4</span>&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">valign="<span class="replaceable">alignmentConstant</span>"</p>
+					</td><td valign="top" nowrap class="requirements">Optional&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Bestimmt die vertikale Ausrichtung von Inhalt in den Zellen der Spalten, die vom <span class="literal">colgroup</span>-Element umschlossen sind. Sie k&ouml;nnen die vertikale Ausrichtung von beliebigen Einzelzellen in der Spalte au&szlig;er Kraft setzen. Weitere Informationen zur Netscape 6-Kompatibilit&auml;t enth&auml;lt die Beschreibung des Elements <span class="literal">col</span>.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>&lt;COLGROUP valign="middle"&gt;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+				</tr>
+				<tr>
+					<td><p>Vier Konstanten werden vom IE 4 und HTML 4 erkannt: <span class="literal">top</span> | <span class="literal">middle</span> | <span class="literal">bottom</span> | <span class="literal">baseline</span>. Bei den Werten <span class="literal">top</span> und <span class="literal">bottom</span> schlie&szlig;t der Inhalt mit dem oberen bzw. unteren Rand der Tabellenzelle ab (oder kommt diesem sehr nah). Bei der Einstellung <span class="literal">middle</span> (Standard) wird der Inhalt vertikal zentriert. Wenn die M&ouml;glichkeit besteht, dass sich Zelleninhalte bei &uuml;blichen Fensterbreiten auf mehrere Zeilen verteilen (variable Tabellenbreite vorausgesetzt), sollten die <span class="literal">valign</span>-Attribute aller Zellen derselben Zeile (oder alle <span class="literal">colgroup</span>-Elemente) auf <span class="literal">baseline</span> gesetzt werden. Dadurch wird sichergestellt, dass die Textgrundlinie der ersten (oder einzigen) Zeile einer Zelle mit den anderen Zellen auf einer Linie liegt; dies ist normalerweise die &auml;sthetisch ansprechendste L&ouml;sung.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Standardwert</span></td>
+				</tr>
+				<tr>
+					<td><p><span class="literal">middle</span></p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectmodelreference"><span class="title">Objektmodellreferenz</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>[window.]document.getElementById(<span class="replaceable">elementID</span>).vAlign</pre>
+						</span></td>
+				</tr>
+			</table>
+		</div><div id="width">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">width</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">3</span> HTML <span class="emphasis">4</span>&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">width="<span class="replaceable">multiLength</span>"</p>
+					</td><td valign="top" nowrap class="requirements">Optional&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Definiert die maximale Breite f&uuml;r die vom <span class="literal">colgroup</span>-Element umschlossenen Spalten. In der Praxis (bei der Windows-Version von IE 4 und sp&auml;ter ohnehin) wird keine Spalte schmaler als die breiteste zusammenh&auml;ngende Zeichenfolge ohne Leerraum dargestellt (z.&#160;B. das l&auml;ngste Wort). Die genaue Breite einer solchen Spalte h&auml;ngt selbstverst&auml;ndlich auch von den Schriftmerkmalen des Inhalts ab. Weitere Informationen zur Netscape 6-Kompatibilit&auml;t enth&auml;lt die Beschreibung des Elements <span class="literal">col</span>.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>&lt;COLGROUP width="100"&gt;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+				</tr>
+				<tr>
+					<td><p>Internet Explorer akzeptiert f&uuml;r das Attribut <span class="literal">width</span> L&auml;ngenwerte in Pixel (ohne die Einheit "px") oder eine Prozentangabe relativ zum horizontalen Platz, der f&uuml;r die gesamte Tabelle verf&uuml;gbar ist (<span class="literal">width="25%"</span>).</p><p>Eine weitere Art von Proportionall&auml;ngen ist in der HTML 4.0-Spezifikation beschrieben. Bei einem <span class="literal">colgroup</span>-Element k&ouml;nnen Sie <span class="literal">width="*0"</span> angeben, um alle Spalten nur so breit darzustellen, wie es der Inhalt der Zellen erfordert. F&uuml;r diese Berechnung m&uuml;ssen Browser den gesamten Tabelleninhalt laden, weshalb in diesem Fall die schrittweise Darstellung von langen Tabellen nicht m&ouml;glich ist. Weitere Informationen zu Proportionall&auml;ngen enth&auml;lt die Beschreibung des Attributs <span class="literal">width</span> unter dem Element <span class="literal">col</span>.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Standardwert</span></td>
+				</tr>
+				<tr>
+					<td><p>Abh&auml;ngig von der Berechnung des Browsers. </p>
+					</td>
+				</tr>
+			</table>
+		</div>
+</body>
+</html>

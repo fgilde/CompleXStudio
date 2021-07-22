@@ -1,0 +1,285 @@
+<html>
+<head>
+<title>key()-Funktion</title>
+</head>
+<body bgcolor="#FFFFFF" text="#000000">
+<div id="Beschreibung">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">key()-Funktion</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description">
+Diese Funktion verweist auf eine durch eine <span class="LITERAL">&lt;xsl:key&gt;</span>-Anweisung definierte Relation. Konzeptionell gesehen, funktioniert die Funktion <span class="LITERAL">key()</span> &auml;hnlich wie die Funktion <span class="LITERAL">id()</span>, obwohl Schl&uuml;ssel flexibler sind als IDs.</td></tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Eingaben</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<p>Der Name des (durch ein <span class="LITERAL">&lt;xsl:key&gt;</span>-Element definierten ) Schl&uuml;ssels und ein Objekt. Ist das Objekt eine Knotenmenge, wird die Funktion <span class="LITERAL">key()</span> auf den String-Wert jedes Knotens in der Knotenmenge angewendet und gibt die Knotenmenge der Ergebnisse aller dieser <span class="LITERAL">key()</span>-Funktionsaufrufe zur&uuml;ck. Hat das Objekt einen anderen Typ, wird es in einen String konvertiert, so als w&auml;re die Funktion <span class="LITERAL">string()</span> ausgef&uuml;hrt worden. </p>
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Ausgabe</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<p>Eine Knotenmenge mit den Knoten aus demselben Dokument wie der Kontextknoten, dessen Werte f&uuml;r den angeforderten Schl&uuml;ssel dem bzw. den Suchargument(en) entsprechen. Anders ausgedr&uuml;ckt: enth&auml;lt das Stylesheet ein <span class="LITERAL">&lt;xsl:key&gt;</span>-Element, das einen Schl&uuml;ssel mit dem Namen <span class="LITERAL">postalcodes</span> definiert, der auf dem <span class="LITERAL">&lt;postalcode&gt;</span>-Child aller <span class="LITERAL">&lt;address&gt;</span>-Elemente im aktuellen Dokument basiert, so gibt der Funktionsaufruf <span class="LITERAL">key(postalcodes, '34829')</span> eine Knotenmenge mit allen <span class="LITERAL">&lt;address&gt;</span>-Elementen zur&uuml;ck, die ein <span class="LITERAL">&lt;postalcode&gt;</span>-Element enthalten, dessen Wert <span class="LITERAL">34829</span> ist.</p>
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Definition</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<p>XSLT-Abschnitt 12.2, Schl&uuml;ssel</p>
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Beispiel</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<p>Zur Veranschaulichung der Leistungsf&auml;higkeit der Funktion <span class="LITERAL">key()</span> wird das folgende Dokument mit der verk&uuml;rzten Version eines Glossars verwendet:</p>
+<span class="PROGRAMLISTING"><pre>
+&lt;?xml version="1.0" ?&gt;
+&lt;glossary&gt;
+  &lt;glentry&gt;
+    &lt;term id="applet"&gt;applet&lt;/term&gt;
+    &lt;defn topic="Java" language="en"&gt;
+      An application program,
+      written in the Java programming language, that can be 
+      retrieved from a web server and executed by a web browser. 
+      A reference to an applet appears in the markup for a web 
+      page, in the same way that a reference to a graphics
+      file appears; a browser retrieves an applet in the same 
+      way that it retrieves a graphics file. 
+      For security reasons, an applet's access rights are limited
+      in two ways: the applet cannot access the filesystem of the 
+      client upon which it is executing, and the applet's 
+      communication across the network is limited to the server 
+      from which it was downloaded. 
+      Contrast with &lt;xref refid="servlet"/&gt;.
+    &lt;/defn&gt;
+<!--<?troff .Nd 10?>-->
+    &lt;defn topic="Java" language="it"&gt;
+      [Pretend this is an Italian definition of applet.]
+    &lt;/defn&gt;
+    &lt;defn topic="Java" language="es"&gt;
+      [Pretend this is a Spanish definition of applet.]
+    &lt;/defn&gt;
+  &lt;/glentry&gt;
+
+  &lt;glentry&gt;
+    &lt;term id="DMZlong" xreftext="demilitarized zone"&gt;demilitarized 
+      zone (DMZ)&lt;/term&gt;
+    &lt;defn topic="security" language="en"&gt;
+      In network security, a network that is isolated from, and 
+      serves as a neutral zone between, a trusted network (for example, 
+      a private intranet) and an untrusted network (for example, the
+      Internet). One or more secure gateways usually control access 
+      to the DMZ from the trusted or the untrusted network.
+    &lt;/defn&gt;
+    &lt;defn topic="security" language="it"&gt;
+      [Pretend this is an Italian definition of DMZ.]
+    &lt;/defn&gt;
+    &lt;defn topic="security" language="es"&gt;
+      [Pretend this is a Spanish definition of DMZ.]
+    &lt;/defn&gt;
+    &lt;defn topic="security" language="jp"&gt;
+      [Pretend this is a Japanese definition of DMZ.]
+    &lt;/defn&gt;
+    &lt;defn topic="security" language="de"&gt;
+      [Pretend this is a German definition of DMZ.]
+    &lt;/defn&gt;
+  &lt;/glentry&gt;
+
+  &lt;glentry&gt;
+    &lt;term id="servlet"&gt;servlet&lt;/term&gt;
+    &lt;defn topic="Java" language="en"&gt;
+      An application program, written in the Java programming language, 
+      that is executed on a web server. A reference to a servlet 
+      appears in the markup for a web page, in the same way that a 
+      reference to a graphics file appears. The web server executes
+      the servlet and sends the results of the execution (if there are
+      any) to the web browser. Contrast with &lt;xref refid="applet" /&gt;.
+    &lt;/defn&gt;
+    &lt;defn topic="Java" language="es"&gt;
+      [Pretend this is a Spanish definition of servlet.]
+    &lt;/defn&gt;
+    &lt;defn topic="Java" language="it"&gt;
+      [Pretend this is an Italian definition of servlet.]
+    &lt;/defn&gt;
+<!--<?troff .Nd 10?>-->
+    &lt;defn topic="Java" language="de"&gt;
+      [Pretend this is a German definition of servlet.]
+    &lt;/defn&gt;
+    &lt;defn topic="Java" language="jp"&gt;
+      [Pretend this is a Japanese definition of servlet.]
+    &lt;/defn&gt;
+  &lt;/glentry&gt;
+&lt;/glossary&gt;</pre></span>
+<p>Hier das Stylesheet, das zur Verarbeitung dieses Dokuments verwendet wird: Beachten Sie, dass zwei <span class="LITERAL">&lt;xsl:key&gt;</span>-Elemente definiert werden, um das XML-Dokument auf zwei Arten zu indizieren:</p>
+<span class="PROGRAMLISTING"><pre>
+&lt;?xml version="1.0"?&gt;
+&lt;xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform"&gt;
+&lt;xsl:output method="html" indent="yes"/&gt;
+&lt;xsl:strip-space elements="*"/&gt;
+
+  &lt;xsl:key name="language-index" match="defn" use="@language"/&gt;
+  &lt;xsl:key name="term-ids"       match="term" use="@id"/&gt;
+
+  &lt;xsl:param name="targetLanguage"/&gt;
+
+  &lt;xsl:template match="/"&gt;
+    &lt;xsl:apply-templates select="glossary"/&gt;
+  &lt;/xsl:template&gt;
+
+  &lt;xsl:template match="glossary"&gt;
+    &lt;html&gt;
+      &lt;head&gt;
+        &lt;title&gt;
+          &lt;xsl:text&gt;Glossary Listing: &lt;/xsl:text&gt;
+        &lt;/title&gt;
+      &lt;/head&gt;
+      &lt;body&gt;
+        &lt;h1&gt;
+          &lt;xsl:text&gt;Glossary Listing: &lt;/xsl:text&gt;
+        &lt;/h1&gt;
+        &lt;xsl:for-each select="key('language-index', $targetLanguage)"&gt;
+          &lt;xsl:apply-templates select="ancestor::glentry"/&gt;
+        &lt;/xsl:for-each&gt;
+      &lt;/body&gt;
+    &lt;/html&gt;
+  &lt;/xsl:template&gt;
+
+  &lt;xsl:template match="glentry"&gt;
+    &lt;p&gt;
+      &lt;b&gt;
+        &lt;a&gt;
+          &lt;xsl:attribute name="name"&gt;
+            &lt;xsl:value-of select="term/@id" /&gt;
+          &lt;/xsl:attribute&gt;
+        &lt;/a&gt;
+        &lt;xsl:value-of select="term"/&gt;
+        &lt;xsl:text&gt;: &lt;/xsl:text&gt;
+      &lt;/b&gt;
+      &lt;xsl:apply-templates select="defn[@language=$targetLanguage]"/&gt;
+    &lt;/p&gt;
+  &lt;/xsl:template&gt;
+
+  &lt;xsl:template match="defn"&gt;
+    &lt;xsl:apply-templates 
+     select="*|comment()|processing-instruction()|text()"/&gt;
+  &lt;/xsl:template&gt;
+
+  &lt;xsl:template match="xref"&gt;
+    &lt;a&gt;
+      &lt;xsl:attribute name="href"&gt;
+        &lt;xsl:text&gt;#&lt;/xsl:text&gt;&lt;xsl:value-of select="@refid"/&gt;
+      &lt;/xsl:attribute&gt;
+      &lt;xsl:choose&gt;
+        &lt;xsl:when test="key('term-ids', @refid)[1]/@xreftext"&gt;
+          &lt;xsl:value-of select="key('term-ids', @refid)[1]/@xreftext"/&gt;
+        &lt;/xsl:when&gt;
+        &lt;xsl:otherwise&gt;
+          &lt;xsl:value-of select="key('term-ids', @refid)[1]"/&gt;
+        &lt;/xsl:otherwise&gt;
+      &lt;/xsl:choose&gt;
+    &lt;/a&gt;
+  &lt;/xsl:template&gt;
+
+&lt;/xsl:stylesheet&gt;</pre></span>
+<p>Eine Transformation des Glossars mit der Zielsprache (<span class="LITERAL">targetLanguage</span>) Englisch (<span class="LITERAL">en</span>) liefert die folgenden Ergebnisse:</p>
+<span class="PROGRAMLISTING"><pre>
+&lt;html&gt;
+&lt;head&gt;
+&lt;META http-equiv="Content-Type" content="text/html; charset=UTF-8"&gt;
+&lt;title&gt;Glossary Listing: &lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;h1&gt;Glossary Listing: &lt;/h1&gt;
+&lt;p&gt;
+&lt;b&gt;&lt;a name="applet"&gt;&lt;/a&gt;applet: &lt;/b&gt;
+      An application program,
+      written in the Java programming language, that can be 
+      retrieved from a web server and executed by a web browser. 
+      A reference to an applet appears in the markup for a web 
+      page, in the same way that a reference to a graphics
+      file appears; a browser retrieves an applet in the same 
+      way that it retrieves a graphics file. 
+      For security reasons, an applet's access rights are limited
+      in two ways: the applet cannot access the filesystem of the 
+      client upon which it is executing, and the applet's 
+      communication across the network is limited to the server 
+      from which it was downloaded. 
+      Contrast with &lt;a href="#servlet"&gt;servlet&lt;/a&gt;.
+    &lt;/p&gt;
+&lt;p&gt;
+&lt;b&gt;&lt;a name="DMZlong"&gt;&lt;/a&gt;demilitarized 
+      zone (DMZ): &lt;/b&gt;
+      In network security, a network that is isolated from, and 
+      serves as a neutral zone between, a trusted network (for example, 
+      a private intranet) and an untrusted network (for example, the
+      Internet). One or more secure gateways usually control access 
+      to the DMZ from the trusted or the untrusted network.
+    &lt;/p&gt;
+&lt;p&gt;
+&lt;b&gt;&lt;a name="servlet"&gt;&lt;/a&gt;servlet: &lt;/b&gt;
+      An application program, written in the Java programming language, 
+      that is executed on a web server. A reference to a servlet 
+      appears in the markup for a web page, in the same way that a 
+      reference to a graphics file appears. The web server executes
+      the servlet and sends the results of the execution (if there are
+      any) to the web browser. Contrast with &lt;a href="#applet"&gt;applet&lt;/a&gt;.
+    &lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;</pre></span>
+<p><link linkend="xslt-appc-c5">Abbildung C-5</link> zeigt, wie dieses Dokument in einem Browser dargestellt wird. Mit der <span class="LITERAL">targetLanguage</span> Japanisch (<span class="LITERAL">jp</span>) werden die folgenden Ergebnisse erzielt:</p><figure id="xslt-appc-c5" label="C-5">
+        <p class="TITLE">Generiertes HTML-Glossar</p>
+        <graphic depth="432" width="420" fileref="figs/xslt.ac05.gif"/></figure> <span class="PROGRAMLISTING"><pre>
+&lt;html&gt;
+&lt;head&gt;
+&lt;META http-equiv="Content-Type" content="text/html; charset=UTF-8"&gt;
+&lt;title&gt;Glossary Listing: &lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;h1&gt;Glossary Listing: &lt;/h1&gt;
+&lt;p&gt;
+&lt;b&gt;&lt;a name="DMZlong"&gt;&lt;/a&gt;demilitarized 
+      zone (DMZ): &lt;/b&gt;
+      [Pretend this is a Japanese definition of DMZ.]
+    &lt;/p&gt;
+&lt;p&gt;
+&lt;b&gt;&lt;a name="servlet"&gt;&lt;/a&gt;servlet: &lt;/b&gt;
+      [Pretend this is a Japanese definition of servlet.]
+    &lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+      &lt;/programlisting&gt;</pre></span>
+<p>Wie das HTML-Dokument in einem Browser angezeigt wird, sehen Sie in <link linkend="xslt-appc-c6">Abbildung C-6</link>. Beachten Sie, dass Sie durch das &Auml;ndern der <span class="LITERAL">targetLanguage</span> v&ouml;llig unterschiedliche Ergebnisse erhalten.</p>
+<figure id="xslt-appc-c6" label="C-6">
+        <p class="TITLE">Generiertes HTML-Glossar</p>
+        <graphic depth="150" width="420" fileref="figs/xslt.ac06.gif"/></figure>
+</td>
+</tr>
+</table>
+</div>
+</body>
+</html>

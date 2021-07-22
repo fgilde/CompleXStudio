@@ -1,0 +1,1364 @@
+<html>
+<link rel="stylesheet" href="josh.css">
+<body bgcolor="#FFFFFF">
+
+		<div id="Beschreibung">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">String</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">2</span> IE <span class="emphasis">3</span> ECMA <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Ein <span class="literal">String</span>-Objekt stellt eine beliebige Sequenz von null oder mehr Zeichen dar, die streng als Text behandelt werden (d. h. es k&ouml;nnen keine mathematischen Vorg&auml;nge ausgef&uuml;hrt werden). Die zahlreichen Methoden sind in zwei Kategorien unterteilt. In einer Kategorie wird ein String durch zwei HTML-Tags umgeben, um verschiedene HTML-Zeichenformatierungen durchf&uuml;hren. Diese Methoden werden im Wesentlichen zur Unterst&uuml;tzung von Anweisungen eingesetzt, die mithilfe von <span class="literal">document.write( )</span> Inhalte dynamisch erstellen, inzwischen jedoch mehr und mehr durch Stylesheet-Funktionen ersetzt. Die zweite und entscheidende Methodenkategorie ist die eher traditionelle Gruppe von Methoden zum Parsen und Manipulieren von Strings, die das Auffinden und Kopieren von Zeichen und Teilstrings, &Auml;ndern der Gro&szlig;-/Kleinschreibung und Konvertieren von Stringlisten in JavaScript-Arrays vereinfachen.
+</p>
+							</td>
+						</tr>
+						<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Im Gro&szlig;en und Ganzen brauchen Sie zur Erstellung eines Strings nur einen in Anf&uuml;hrungszeichen stehenden Stringwert zuzuweisen:
+</p>
+<span class="PROGRAMLISTING"><pre>var myString = &quot;howdy&quot;;</pre></span>
+							</td>
+						</tr>
+						<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Gelegentlich hilft es jedoch, ein String-Objekt mit dem Konstruktor des statischen <span class="literal">String</span>-Objekts zu erstellen. Gerade die Vorbereitung von Strings, die an Java-Applets &uuml;bergeben werden sollen, erfordert oftmals diese Art der Stringerstellung:
+</p>
+<span class="PROGRAMLISTING"><pre>var myString = new String(&quot;howdy&quot;);</pre></span>
+							</td>
+						</tr>
+						<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Im Gegensatz zum Konstruktor, der Eigenschaft <span class="literal">prototype</span> und der Methode <span class="literal">fromCharCode( )</span> sind alle Eigenschaften und Methoden zur Verwendung mit <span class="literal">String</span>-Objektinstanzen anstelle des statischen <span class="literal">String</span>-Objekts gedacht.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="properties"><span class="title">Eigenschaften</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<table border="1"><tbody><tr><td><span class="literal">constructor</span></td><td><span class="literal">length</span></td><td><span class="literal">prototype</span></td>
+								</tr>
+							</tbody></table>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="methods"><span class="title">Methoden</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<table border="1"><tbody><tr><td><span class="literal">anchor( )</span></td><td><span class="literal">big( )</span></td><td><span class="literal">blink( )</span></td><td><span class="literal">bold( )</span></td>
+								</tr>
+								<tr><td><span class="literal">charAt( )</span></td><td><span class="literal">charCodeAt( )</span></td><td><span class="literal">concat( )</span></td><td><span class="literal">fixed( )</span></td>
+								</tr>
+								<tr><td><span class="literal">fontcolor( )</span></td><td><span class="literal">fontsize( )</span></td><td><span class="literal">fromCharCode( )</span></td><td><span class="literal">indexOf( )</span></td>
+								</tr>
+								<tr><td><span class="literal">italics( )</span></td><td><span class="literal">lastIndexOf( )</span></td><td><span class="literal">link( )</span></td><td><span class="literal">localeCompare( )</span></td>
+								</tr>
+								<tr><td><span class="literal">match( )</span></td><td><span class="literal">replace( )</span></td><td><span class="literal">search( )</span></td><td><span class="literal">slice( )</span></td>
+								</tr>
+								<tr><td><span class="literal">small( )</span></td><td><span class="literal">split( )</span></td><td><span class="literal">strike( )</span></td><td><span class="literal">sub( )</span></td>
+								</tr>
+								<tr><td><span class="literal">substr( )</span></td><td><span class="literal">substring( )</span></td><td><span class="literal">sup( )</span></td><td><span class="literal">toLocaleLowerCase( )</span></td>
+								</tr>
+								<tr><td><span class="literal">toLocaleUpperCase( )</span></td><td><span class="literal">toLowerCase( )</span></td><td><span class="literal">toString( )</span></td><td><span class="literal">toUpperCase( )</span></td>
+								</tr>
+								<tr><td><span class="literal">valueOf( )</span></td><td></td><td></td><td></td>
+								</tr>
+							</tbody></table>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="creatingastringobject"><span class="title">Erstellen eines String-Objekts</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>var myValue = "<span class="replaceable">someString</span>";
+var myValue = new String("<span class="replaceable">someString</span>");</pre>
+						</span></td>
+				</tr>
+			</table>
+		</div><div id="constructor">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">constructor</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">4</span> IE <span class="emphasis">4</span> ECMA <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Lesen/Schreiben</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Dies ist eine Referenz auf die Funktion, die die Instanz eines <span class="literal">String</span>-Objekts erstellt hat – die native <span class="literal">String( )</span>-Konstruktorfunktion in einem Browser.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>if (myVar.constructor == String) &#123;
+    // process native string
+}</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Funktionsobjektreferenz.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="length">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">length</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">2</span> IE <span class="emphasis">3</span> ECMA <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Schreibgesch&uuml;tzt</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Gibt die Anzahl der in einem String enthaltenen Zeichen zur&uuml;ck. Stringwerte &auml;ndern ihre L&auml;nge dynamisch, wenn neue Werte zugewiesen werden oder wenn sie mit anderen Strings verkettet werden.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>for (var i = 0; i &lt; myString.length; i++) &#123;
+    ...
+}</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Integer.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="prototype">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">prototype</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">3</span> IE <span class="emphasis">4</span> ECMA <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Lesen/Schreiben</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Dies ist eine Eigenschaft des statischen <span class="literal">String</span>-Objekts. Mit der Eigenschaft <span class="literal">prototype</span> k&ouml;nnen Sie sp&auml;teren Instanzen eines <span class="literal">String</span>-Werts im aktuellen Dokument neue Eigenschaften und Methoden zuweisen. Beispiele hierzu finden Sie in der Beschreibung der Eigenschaft <span class="literal">Array.prototype</span>.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>String.prototype.author = "DG";</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Beliebige Daten, einschlie&szlig;lich Funktionsreferenzen.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="anchor( )">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">anchor( )</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">2</span> IE <span class="emphasis">3</span> ECMA <span class="emphasis">nicht zutreffend</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">anchor("<span class="replaceable">anchorName</span>")</p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Gibt eine Kopie des Strings zur&uuml;ck, bei der der String in einem Anker-Tag-Satz (<span class="literal">&lt;a&gt;</span>) eingebettet ist. Der als Parameter &uuml;bergebene Wert wird dem <span class="literal">name</span>-Attribut des Tags zugewiesen.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Parameter</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<ul><li><span class="literal"></span>Ein String, der als Wert f&uuml;r das <span class="literal">name</span>-Attribut verwendet wird.</li></ul>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Zur&uuml;ckgegebener Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Ein String in einem <span class="literal">a</span>-Element.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="big( )">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">big( )</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">2</span> IE <span class="emphasis">3</span> ECMA <span class="emphasis">nicht zutreffend</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Gibt eine Kopie des Strings zur&uuml;ck, bei der der String in einem <span class="literal">&lt;big&gt;</span>-Tag-Satz eingebettet ist.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Parameter</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Keine.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Zur&uuml;ckgegebener Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Ein String in einem <span class="literal">big</span>-Element.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="blink( )">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">blink( )</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">2</span> IE <span class="emphasis">3</span> ECMA <span class="emphasis">nicht zutreffend</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Gibt eine Kopie des Strings zur&uuml;ck, bei der der String in einem <span class="literal">&lt;blink&gt;</span>-Tag-Satz eingebettet ist.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Parameter</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Keine.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Zur&uuml;ckgegebener Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Ein String in einem <span class="literal">blink</span>-Element.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="bold( )">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">bold( )</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">2</span> IE <span class="emphasis">3</span> ECMA <span class="emphasis">nicht zutreffend</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Gibt eine Kopie des Strings zur&uuml;ck, bei der der String in einem <span class="literal">&lt;b&gt;</span>-Tag-Satz eingebettet ist.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Parameter</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Keine.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Zur&uuml;ckgegebener Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Ein String in einem <span class="literal">b</span>-Element.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="charAt( )">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">charAt( )</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">2</span> IE <span class="emphasis">3</span> ECMA <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">charAt(<span class="replaceable">positionIndex</span>)</p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Gibt einen String zur&uuml;ck, der aus dem Zeichen besteht, das sich an der auf Null basierenden Indexposition befindet, die als Parameter &uuml;bergeben wird. Verwenden Sie diese Methode anstelle von <span class="literal">substring( )</span>, wenn in einem String nur ein Zeichen an einer bekannten Position ben&ouml;tigt wird.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Parameter</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<ul><li><span class="literal"></span>Ein auf Null basierender Integer.</li></ul>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Zur&uuml;ckgegebener Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Ein String mit nur einem Zeichen. Bei neueren Browserversionen wird ein leerer String zur&uuml;ckgegeben, wenn der Parameterwert auf ein Zeichen verweist, das au&szlig;erhalb der L&auml;nge des Strings liegt.
+</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="charCodeAt( )">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">charCodeAt( )</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">4</span> IE <span class="emphasis">4</span> ECMA <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">charCodeAt(<span class="replaceable">positionIndex</span>)</p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Gibt eine Zahl f&uuml;r den dezimalen Unicode-Wert eines Zeichens zur&uuml;ck, das sich an der auf Null basierenden Indexposition befindet, die als Parameter &uuml;bergeben wird. Bei allgemeinen alphanumerischen Zeichen entsprechen die Unicode-Werte den ASCII-Werten.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Parameter</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<ul><li><span class="literal"></span>Ein auf Null basierender Integer.</li></ul>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Zur&uuml;ckgegebener Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Ein positiver Integerwert. Gibt <span class="literal">NaN</span> zur&uuml;ck, wenn der Parameterwert auf ein Zeichen verweist, das sich au&szlig;erhalb der L&auml;nge des Strings befindet.
+</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="concat( )">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">concat( )</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">4</span> IE <span class="emphasis">4</span> ECMA <span class="emphasis">nicht zutreffend</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">concat(<span class="replaceable">string2</span>)</p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Gibt einen String zur&uuml;ck, mit dem der Parameterstring an das aktuelle String-Objekt angeh&auml;ngt wird. Diese Methode liefert die gleichen Ergebnisse wie die Verkettung von Strings mit den Operatoren <span class="literal">+</span> und <span class="literal">+=</span>. Weder die Methode noch die Operatoren f&uuml;gen Leerzeichen zwischen den beiden Stringkomponenten ein.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Parameter</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<ul><li><span class="literal"></span>Ein beliebiger String.</li></ul>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Zur&uuml;ckgegebener Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>String.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="fixed( )">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">fixed( )</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">2</span> IE <span class="emphasis">3</span> ECMA <span class="emphasis">nicht zutreffend</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Gibt eine Kopie des Strings zur&uuml;ck, bei der der String in einem <span class="literal">&lt;tt&gt;</span>-Tag-Satz eingebettet ist.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Parameter</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Keine.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Zur&uuml;ckgegebener Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Ein String in einem <span class="literal">tt</span>-Element.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="fontcolor( )">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">fontcolor( )</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">2</span> IE <span class="emphasis">3</span> ECMA <span class="emphasis">nicht zutreffend</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">fontColor(<span class="replaceable">color</span>)</p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Gibt eine Kopie des Strings zur&uuml;ck, bei der der String in einem Schrift-Tag-Satz (<span class="literal">&lt;font&gt;</span>) eingebettet ist. Der als Parameter &uuml;bergebene Wert wird dem <span class="literal">color</span>-Attribut des Tags zugewiesen.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Parameter</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<ul><li><span class="literal"></span>Ein String, der als Wert f&uuml;r das <span class="literal">color</span>-Attribut verwendet wird.
+</li></ul>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Zur&uuml;ckgegebener Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Ein String in einem <span class="literal">font</span>-Element.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="fontsize( )">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">fontsize( )</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">2</span> IE <span class="emphasis">3</span> ECMA <span class="emphasis">nicht zutreffend</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">fontSize(<span class="replaceable">size</span>)</p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Gibt eine Kopie des Strings zur&uuml;ck, bei der der String in einem Schrift-Tag-Satz (<span class="literal">&lt;font&gt;</span>) eingebettet ist. Der als Parameter &uuml;bergebene Wert wird dem <span class="literal">size</span>-Attribut des Tags zugewiesen.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Parameter</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<ul><li><span class="literal"></span>Ein Integer, der als Wert f&uuml;r das <span class="literal">size</span>-Attribut verwendet wird.
+</li></ul>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Zur&uuml;ckgegebener Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Ein String in einem <span class="literal">font</span>-Element.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="fromCharCode( )">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">fromCharCode( )</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">4</span> IE <span class="emphasis">4</span> ECMA <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">fromCharCode(<span class="replaceable">num1,</span> [, <span class="replaceable">num2,</span>[...<span class="replaceable">numN</span>]]) </p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Dies ist eine statische Methode, die einen String aus einem oder mehreren Zeichen zur&uuml;ckgibt, bei denen es sich um Unicode-Werte handelt, die als Liste mit durch Kommas getrennten Parametern &uuml;bergeben werden. Beispielsweise gibt der Ausdruck:
+</p>
+<span class="PROGRAMLISTING"><pre>String.fromCharCode(120, 121, 122)</pre></span>
+							</td>
+						</tr>
+						<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>"xyz" zur&uuml;ck.</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Parameter</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<ul><li><span class="literal"></span>Eine oder mehrere Integerwerte in einer durch Kommas getrennten Liste ohne Anf&uuml;hrungszeichen.</li></ul>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Zur&uuml;ckgegebener Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>String.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="indexOf( )">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">indexOf( )</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">2</span> IE <span class="emphasis">3</span> ECMA <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">indexOf(<span class="replaceable">searchString</span>[, <span class="replaceable">startPositionIndex]</span>) </p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Gibt einen auf Null basierenden Integerwert zur&uuml;ck, der die Position innerhalb des aktuellen Strings angibt, an der der Parameter <span class="replaceable">searchString</span> beginnt. Im Allgemeinen beginnt die Suche beim ersten Zeichen (Index Null), aber durch die Angabe eines optionalen zweiten Parameters k&ouml;nnen Sie die Suche auch an einer sp&auml;teren Stelle im String beginnen. Dabei setzen Sie den zweiten Parameter auf den Indexwert, an dem die Suche beginnen soll. Wird keine &Uuml;bereinstimmung gefunden, wird <span class="literal">-1</span> zur&uuml;ckgegeben. Dies ist eine r&uuml;ckw&auml;rtskompatible Alternative, um schnell herauszufinden, ob ein String eine bestimmten anderen String enth&auml;lt: Wenn der Wert <span class="literal">-1</span> zur&uuml;ckgegeben wird, wissen Sie, dass der <span class="replaceable">searchString</span> nicht im gr&ouml;&szlig;eren String enthalten ist. Handelt es sich bei dem zur&uuml;ckgegebenen Wert um eine andere Zahl (der genaue Wert spielt keine Rolle), befindet sich der <span class="replaceable">searchString</span> im gr&ouml;&szlig;eren String. Bei Browsern, die regul&auml;re Ausdr&uuml;cke unterst&uuml;tzen, erf&uuml;llt die Methode <span class="literal">search( )</span> des <span class="literal">String</span>-Objekts eine &auml;hnliche Funktion.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Parameter</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<ul><li><span class="literal"></span>Ein String, nach dem im aktuellen String-Objekt gesucht werden soll.</li><li><span class="literal"></span>Ein auf Null basierender Integerwert, der die Position innerhalb des aktuellen String-Objekts angibt, an der die Suche nach dem ersten Parameter beginnen soll.
+</li></ul>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Zur&uuml;ckgegebener Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Integer.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="italics( )">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">italics( )</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">2</span> IE <span class="emphasis">3</span> ECMA <span class="emphasis">nicht zutreffend</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Gibt eine Kopie des Strings zur&uuml;ck, bei der der String in einem <span class="literal">&lt;i&gt;</span>-Tag-Satz eingebettet ist.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Parameter</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Keine.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Zur&uuml;ckgegebener Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Ein String in einem <span class="literal">i</span>-Element.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="lastIndexOf( )">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">lastIndexOf( )</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">2</span> IE <span class="emphasis">3</span> ECMA <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">lastIndexOf(<span class="replaceable">searchString</span>[, <span class="replaceable">startPositionIndex]</span>) </p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Gibt einen auf Null basierenden Integerwert zur&uuml;ck, der die Position innerhalb des aktuellen String-Objekts angibt, an der der Parameter <span class="replaceable">searchString</span> beginnt. Diese Methode funktioniert wie die Methode <span class="literal">indexOf( )</span>, doch alle Suchvorg&auml;nge beginnen am Ende des Strings oder einer anderen Indexposition. Obwohl die Suche am Ende des Strings beginnt, basiert der Parameter <span class="replaceable">startPositionIndex</span> genau wie der R&uuml;ckgabewert auf dem Anfang des Strings. Wird keine &Uuml;bereinstimmung gefunden, wird <span class="literal">-1</span> zur&uuml;ckgegeben.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Parameter</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<ul><li><span class="literal"></span>Ein String, nach dem im aktuellen String-Objekt gesucht werden soll.</li><li><span class="literal"></span>Ein auf Null basierender Integerwert, der die Position innerhalb des aktuellen String-Objekts angibt, an der die Suche nach dem ersten Parameter beginnen soll. Obwohl die Suche am Ende des Strings beginnt, ist dieser Parameterwert relativ zum Anfang des Strings.
+</li></ul>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Zur&uuml;ckgegebener Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Integer.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="link( )">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">link( )</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">2</span> IE <span class="emphasis">3</span> ECMA <span class="emphasis">nicht zutreffend</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">link(<span class="replaceable">URL</span>)</p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Gibt eine Kopie des Strings zur&uuml;ck, bei der der String in einem Anker-Tag-Satz (<span class="literal">&lt;a&gt;</span>) eingebettet ist. Der als Parameter &uuml;bergebene Wert wird dem <span class="literal">href</span>-Attribut des Tags zugewiesen.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Parameter</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<ul><li><span class="literal"></span>Ein String, der als Wert f&uuml;r das <span class="literal">href</span>-Attribut verwendet wird.</li></ul>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Zur&uuml;ckgegebener Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Ein String in einem <span class="literal">a</span>-Element.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="localeCompare( )">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">localeCompare( )</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">5.5(Win)</span> ECMA <span class="emphasis">3</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">localeCompare(<span class="replaceable">string2</span>)</p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Gibt eine Zahl zur&uuml;ck, die angibt, ob der aktuelle String (entsprechend der browser- und systemabh&auml;ngigen Stringlokalisierung) in der Sortierfolge vor oder nach dem Parameterstring bzw. an derselben Stelle wie der Parameterstring steht. Wenn der aktuelle String vor dem Parameterstring einsortiert wird, ist der R&uuml;ckgabewert eine negative Zahl, wenn er nach dem Parameterstring einsortiert wird, eine positive Zahl. Stehen beide Strings an derselben Stelle (d. h. sie sind identisch), so wird der Wert 0 zur&uuml;ckgegeben.
+</p>
+							</td>
+						</tr>
+						<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Beachten Sie, dass Zeichen, die nicht im Latin-Zeichensatz enthalten sind, von den verschiedenen Browsern nach eigenen Vorgaben lokalisiert und bei Vergleichen unterschiedlich bewertet werden k&ouml;nnen, was unter Umst&auml;nden zu Abweichungen bei der Berechnung der R&uuml;ckgabewerte f&uuml;hrt.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Parameter</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<ul><li><span class="literal"></span>Ein beliebiger String.</li></ul>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Zur&uuml;ckgegebener Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Integer</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="match( )">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">match( )</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">4</span> IE <span class="emphasis">4</span> ECMA <span class="emphasis">3</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">match(<span class="replaceable">regexpression</span>)</p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Gibt ein Array mit Strings innerhalb des aktuellen Strings zur&uuml;ck, die einem als Parameter &uuml;bergebenen regul&auml;ren Ausdruck entsprechen. Beispiel: Wenn Sie einen regul&auml;ren Ausdruck &uuml;bergeben, der eine beliebige Zahl mit f&uuml;nf Ziffern angibt, ist der zur&uuml;ckgegebene Wert der Methode <span class="literal">match( )</span> ein Array aller Zahlen mit f&uuml;nf Ziffern (als Strings) im Hauptstring. Diese Methode wirkt sich auf die Eigenschaften des statischen <span class="literal">RegExp</span>-Objekts aus.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Parameter</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<ul><li><span class="literal"></span>Ein <span class="literal">regular expression</span>-Objekt. Die Syntax zum Erstellen eines <span class="literal">regular expression</span>-Objekts finden Sie in der Beschreibung des <span class="literal">regular expression</span>-Objekts.
+</li></ul>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Zur&uuml;ckgegebener Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Ein Array mit Strings.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="replace( )">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">replace( )</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">4</span> IE <span class="emphasis">4</span> ECMA <span class="emphasis">3</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">replace(<span class="replaceable">regexpression</span>, <span class="replaceable">replaceString</span>) </p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Gibt einen neuen String zur&uuml;ck, in dem alle &Uuml;bereinstimmungen mit dem Wert des Parameters <span class="replaceable">regexpression</span> durch den Wert des Parameters <span class="replaceable">replaceString</span> ersetzt wurden. Da der urspr&uuml;ngliche String hierbei nicht ver&auml;ndert wird, m&uuml;ssen Sie den R&uuml;ckgabewert in einer Variablen speichern, wenn Sie den ge&auml;nderten String verwenden m&ouml;chten.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Parameter</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<ul><li><span class="literal"></span>Ein <span class="literal">regular expression</span>-Objekt. Wenn Sie die Methode <span class="literal">replace( )</span> global auf den String anwenden m&ouml;chten, m&uuml;ssen Sie den globalen Schalter <span class="literal">g</span> in den regul&auml;ren Ausdruck aufnehmen. Die Syntax zum Erstellen eines <span class="literal">regular expression</span>-Objekts finden Sie in der Beschreibung des <span class="literal">regular expression</span>-Objekts.
+</li><li><span class="literal"></span>Ein String, der den Platz aller &Uuml;bereinstimmungen von <span class="replaceable">regexpression</span> im aktuellen String einnimmt.
+</li></ul>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Zur&uuml;ckgegebener Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>String.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="search( )">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">search( )</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">4</span> IE <span class="emphasis">4</span> ECMA <span class="emphasis">3</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">search(<span class="replaceable">regexpression</span>)</p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Gibt einen auf Null basierenden Indexwert des ersten Zeichens im aktuellen String zur&uuml;ck, das dem Muster des Parameters <span class="replaceable">regexpression</span> entspricht. Diese Methode &auml;hnelt der Methode <span class="literal">indexOf( )</span>, aber die Suche wird mit einem regul&auml;ren Ausdruck anstelle eines Strings durchgef&uuml;hrt.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Parameter</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<ul><li><span class="literal"></span>Ein <span class="literal">regular expression</span>-Objekt. Die Syntax zum Erstellen eines <span class="literal">regular expression</span>-Objekts finden Sie in der Beschreibung des <span class="literal">regular expression</span>-Objekts.
+</li></ul>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Zur&uuml;ckgegebener Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Integer.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="slice( )">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">slice( )</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">4</span> IE <span class="emphasis">4</span> ECMA <span class="emphasis">3</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">slice(<span class="replaceable">startPositionIndex</span>, <span class="replaceable">endPositionIndex</span>]) </p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Gibt einen Teilstring des aktuellen Strings zur&uuml;ck. Dieser Teilstring wird aus dem Hauptstring kopiert, und zwar beginnend am auf Null basierenden Indexwert des Zeichens im Hauptstring. Wird kein zweiter Parameter angegeben, erstreckt sich der Teilstring bis zum Ende des Hauptstrings. Der optionale zweite Parameter kann ein anderer auf Null basierender Indexwert sein, an dem der Teilstring enden soll. Dieser Wert kann auch ein negativer Wert sein; in diesem Fall wird vom Ende des Strings zum Anfang hin gez&auml;hlt.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Parameter</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<ul><li><span class="literal"></span>Ein auf Null basierender Integerwert, der angibt, an welcher Position im aktuellen String-Objekt das Kopieren von Zeichen beginnen soll.
+</li><li><span class="literal"></span>Ein auf Null basierender Integerwert, der angibt, an welcher Position im aktuellen String-Objekt das Kopieren von Zeichen enden soll. Bei negativen Werten wird vom Ende des Strings an gez&auml;hlt.
+</li></ul>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Zur&uuml;ckgegebener Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>String.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="small( )">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">small( )</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">2</span> IE <span class="emphasis">3</span> ECMA <span class="emphasis">nicht zutreffend</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Gibt eine Kopie des Strings zur&uuml;ck, bei der der String in einem <span class="literal">&lt;small&gt;</span>-Tag-Satz eingebettet ist.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Parameter</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Keine.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Zur&uuml;ckgegebener Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Ein String in einem <span class="literal">small</span>-Element.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="split( )">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">split( )</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">3</span> IE <span class="emphasis">4</span> ECMA <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">split(<span class="replaceable">delimiter</span> [, <span class="replaceable">limitInteger</span>]) </p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Gibt ein neues Array-Objekt zur&uuml;ck, dessen Elemente die Segmente des aktuellen Strings sind. Der aktuelle String wird bei jedem Auftreten eines Begrenzers, der als erster Parameter der Methode angegeben ist, in Array-Eintr&auml;ge aufgeteilt. Der Begrenzer wird kein Teil des Arrays. Sie m&uuml;ssen das Array nicht deklarieren, bevor die Ergebnisse der Methode <span class="literal">split( )</span> aufgenommen werden. Beispiel: Wenn ein String aus einer durch Komma getrennten Namensliste besteht, k&ouml;nnen Sie die Liste wie folgt in ein Array konvertieren:
+</p>
+<span class="PROGRAMLISTING"><pre>var listArray = stringList.split(&quot;,&quot;);</pre></span>
+							</td>
+						</tr>
+						<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Sie k&ouml;nnen auch einen regul&auml;ren Ausdruck als Parameter verwenden, um den String durch ein Muster anstelle eines festen Zeichens zu trennen.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Parameter</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<ul><li><span class="literal"></span>Ein String oder regul&auml;rer Ausdruck, mit dem definiert wird, wo der Hauptstring in die Elemente des resultierenden Arrays aufgeteilt werden soll.
+</li><li><span class="literal"></span>Ein optionaler Integerwert, mit dem die Anzahl der Elemente eingeschr&auml;nkt wird, die in Array-Elemente umgewandelt werden.
+</li></ul>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Zur&uuml;ckgegebener Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Array</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="trike( )">s
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">strike( )</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">2</span> IE <span class="emphasis">3</span> ECMA <span class="emphasis">nicht zutreffend</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Gibt eine Kopie des Strings zur&uuml;ck, bei der der String in einem <span class="literal">&lt;strike&gt;</span>-Tag-Satz eingebettet ist.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Parameter</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Keine.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Zur&uuml;ckgegebener Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Ein String in einem <span class="literal">strike</span>-Element.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="sub( )">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">sub( )</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">2</span> IE <span class="emphasis">3</span> ECMA <span class="emphasis">nicht zutreffend</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Gibt eine Kopie des Strings zur&uuml;ck, bei der der String in einem <span class="literal">&lt;sub&gt;</span>-Tag-Satz eingebettet ist.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Parameter</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Keine.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Zur&uuml;ckgegebener Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Ein String in einem <span class="literal">sub</span>-Element.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="substr( )">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">substr( )</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">4</span> IE <span class="emphasis">4</span> ECMA <span class="emphasis">nicht zutreffend</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">substr(<span class="replaceable">startPositionIndex</span> [, <span class="replaceable">length</span>]) </p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Gibt eine Kopie des aus dem aktuellen String extrahierten Inhalts zur&uuml;ck. Die Extraktion beginnt an der auf Null basierenden Indexposition des aktuellen Strings, die durch den ersten Parameter der Methode angegeben wird. Wurde kein weiterer Parameter angegeben, erstreckt sich die Extraktion bis zum Ende des Hauptstrings. Mit dem zweiten Parameter (Integerwert) kann angegeben werden, wie viele Zeichen aus dem Hauptstring extrahiert werden sollen. Im Gegensatz dazu verweisen die Parameter der Methode <span class="literal">substring( )</span> auf die Indexwerte der Start- und Endposition des Hauptstrings.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Parameter</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<ul><li><span class="literal"></span>Ein auf Null basierender Integerwert, der die Position innerhalb des aktuellen String-Objekts angibt, an der das Kopieren von Zeichen beginnen soll.
+</li><li><span class="literal"></span>Ein optionaler Integerwert, der angibt, wie viele Zeichen extrahiert werden sollen, beginnend mit dem durch den Parameter <span class="replaceable">startPositionIndex</span> angegebenen Zeichen.
+</li></ul>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Zur&uuml;ckgegebener Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>String.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="substring( )">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">substring( )</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">2</span> IE <span class="emphasis">3</span> ECMA <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">substring(<span class="replaceable">startPositionIndex</span>, <span class="replaceable">endPositionIndex</span>) </p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Gibt eine Kopie des aus dem aktuellen String extrahierten Inhalts zur&uuml;ck. Die Extraktion beginnt an der auf Null basierenden Indexposition des aktuellen Strings, die durch den ersten Parameter der Methode angegeben wird, und endet unmittelbar vor dem Zeichen, das durch den zweiten Parameter angegeben wird. Der Ausdruck <span class="literal">"Frobnitz".substring(0,4)</span> gibt beispielsweise den Teilstring mit den Zeichen an den Positionen 0 bis einschlie&szlig;lich 3 zur&uuml;ck: <span class="literal">Frob</span>. Im Gegensatz dazu verweisen die Parameter der Methode <span class="literal">substr( )</span> auf die Startposition des Hauptstrings und auf die Anzahl der zu extrahierenden Zeichen (L&auml;nge).
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Parameter</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<ul><li><span class="literal"></span>Ein auf Null basierender Integerwert, der angibt, an welcher Position im aktuellen String-Objekt das Kopieren von Zeichen beginnen soll.
+</li><li><span class="literal"></span>Ein auf Null basierender Integerwert, der angibt, an welcher Position im aktuellen String-Objekt das Kopieren von Zeichen enden soll. Es werden also alle Zeichen von der Position <span class="replaceable">startPositionIndex</span> bis zu dem Zeichen unmittelbar vor der Position <span class="replaceable">endPositionIndex</span> kopiert.
+</li></ul>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Zur&uuml;ckgegebener Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>String.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="sup( )">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">sup( )</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">2</span> IE <span class="emphasis">3</span> ECMA <span class="emphasis">nicht zutreffend</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Gibt eine Kopie des Strings zur&uuml;ck, bei der der String in einem <span class="literal">&lt;sup&gt;</span>-Tag-Satz eingebettet ist.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Parameter</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Keine.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Zur&uuml;ckgegebener Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Ein String in einem <span class="literal">sup</span>-Element.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="toLocaleLowerCase( ), toLocaleUpperCase( )">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">toLocaleLowerCase( ), toLocaleUpperCase( )</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">5.5</span> ECMA <span class="emphasis">3</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Geben eine Kopie des aktuellen Strings in Klein- bzw. Gro&szlig;buchstaben zur&uuml;ck. Diese Methode funktioniert wie die regul&auml;ren Version, au&szlig;er bei einigen Nicht-Latin-Alphabeten mit Zeichenzuordnungen, die unter Umst&auml;nden eine spezielle interne Verarbeitung erfordern.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Parameter</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Keine. </p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Zur&uuml;ckgegebener Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>String.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="toLowerCase( ), toUpperCase( )">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">toLowerCase( ), toUpperCase( )</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">2</span> IE <span class="emphasis">3</span> ECMA <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Geben eine Kopie des aktuellen Strings in Klein- bzw. Gro&szlig;buchstaben zur&uuml;ck. Falls der aktuelle String durch eine Version mit einer anderen Gro&szlig;-/Kleinschreibung ersetzt werden soll, weisen Sie das Ergebnis der Methode dem gleichen String zu:
+</p>
+<span class="PROGRAMLISTING"><pre>myString = myString.toUpperCase( );</pre></span>
+							</td>
+						</tr>
+						<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Allgemein wird eine dieser Methoden verwendet, um einen von der Gro&szlig;-/Kleinschreibung unabh&auml;ngigen Vergleich von zwei Strings durchzuf&uuml;hren. Dies eignet sich besonders dann, wenn einer der zu vergleichenden Strings vom Benutzer eingegeben wird, da die Gro&szlig;-/Kleinschreibung hierbei oft variiert:
+</p>
+<span class="PROGRAMLISTING"><pre>if (document.forms[0].entry.value.toLowerCase( ) == compareValue) &#123;
+    ...
+}</pre></span>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Parameter</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Keine. </p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Zur&uuml;ckgegebener Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>String.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="toString( ), valueOf( )">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">toString( ), valueOf( )</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">4</span> IE <span class="emphasis">4</span> ECMA <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Geben einen Stringwert des Objekts zur&uuml;ck.</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Parameter</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Keine. </p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Zur&uuml;ckgegebener Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Stringwert.</p>
+					</td>
+				</tr>
+			</table>
+		</div>
+
+</body>
+</html>

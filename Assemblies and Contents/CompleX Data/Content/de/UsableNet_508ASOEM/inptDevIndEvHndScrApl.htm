@@ -1,0 +1,183 @@
+<html xmlns:un="http://usablenet.com/namespaces/508_rules">
+   <link rel="stylesheet" href="josh.css">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   
+      <title>Detailanzeige f&uuml;r Regel: Ger&auml;teunabh&auml;ngige Eingabebehandlung verwenden</title>
+      <!--
+  508/W3C Accessibility Suite OEM V2 for Macromedia Dreamweaver
+  (C) Copyright 2001-2005 UsableNet Inc. All rights reserved.
+  -->
+   </head>
+   <body bgcolor="#ffffff">
+      <div id="Beschreibung">
+         <table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+            <tr>
+               <td valign="top" nowrap="true" class="name">Ger&auml;teunabh&auml;ngige Eingabebehandlung verwenden</td>
+               <td valign="top" nowrap="true" class="compatibility">&nbsp;</td>
+            </tr>
+            <tr>
+               <td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+            </tr>
+            <tr>
+               <td valign="top" align="right" nowrap="true" colspan="2" class="requirements">WAI / WCAG 1.0 Priorit&auml;t 2 Checkpunkt 6.4</td>
+            </tr>
+            <tr>
+               <td colspan="2" class="clearseparation">&nbsp;</td>
+            </tr>
+            <tr>
+               <td colspan="2" class="clearseparation">&nbsp;</td>
+            </tr>
+            <tr>
+               <td valign="top" colspan="2" class="description"><b>Problembeschreibung</b><br>
+                  
+                           
+                  <p>
+                     Die Seite enth&auml;lt Behandler f&uuml;r Mausereignisse, f&uuml;r die keine entsprechenden Tastaturereignisse vorhanden sind.
+                     	 
+                  </p>
+                  
+                  <p>
+                     Im Einzelnen:
+                     
+                  </p>
+                  
+                  <ul>
+                        
+                     <li> Der Ereignisbehandler <strong>ondblclick</strong> hat in HTML 4.01 keinen entsprechenden Tastaturbehandler, sollte also nicht verwendet werden.   
+                           
+                     </li>
+                        
+                     <li> Der Ereignisbehandler <strong>onmousedown</strong> muss immer mit <strong>onkeydown</strong> kombiniert werden.
+                           
+                     </li>
+                        
+                     <li> Der Ereignisbehandler <strong>onmouseup</strong> muss immer mit <strong>onkeyup</strong> kombiniert werden.
+                           
+                     </li>
+                        
+                     <li> Der Ereignisbehandler <strong>onclick</strong> muss immer mit <strong>onkeypress</strong> kombiniert werden.
+                           
+                     </li>
+                        
+                     <li> Der Ereignisbehandler <strong>onmouseover</strong> muss bei Links und Formular-Steuerelementen (dient her in erster Linie zum Implementieren von Rollovern) immer mit <strong>onfocus</strong> kombiniert werden. Bei Textfeldern in Formularen sollte <strong>onclick</strong> durch <strong>onfocus</strong> ersetzt werden, da onfocus den Fokus sowohl bei einem Mausklick des Benutzers als auch beim Springen mit Strg-Tab auf diesem
+                        Feld aktiviert.
+                           
+                     </li>
+                        
+                     <li> Der Ereignisbehandler <strong>onmouseout</strong> muss immer mit <strong>onblur</strong> kombiniert werden.
+                           
+                     </li>
+                     
+                  </ul>
+                        
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2" class="clearseparation">&nbsp;</td>
+            </tr>
+            <tr>
+               <td colspan="2" class="clearseparation">&nbsp;</td>
+            </tr>
+            <tr>
+               <td valign="top" colspan="2" class="description"><b>Probleml&ouml;sung</b>
+                  
+                        
+                  <p>
+                     &uuml;berpr&uuml;fen Sie s&auml;mtliche auf einer Seite definierten Ereignisbehandler. Wichtig sind dabei aber nur die Behandler, die entweder
+                     den Inhalt einer Seite &auml;ndern (durch Hinzuf&uuml;gen oder Entfernen von Text, Grafik, Layern bzw. anderen Objekten) oder die Navigationsoptionen
+                     beeinflussen (also Men&uuml;s, neue Fenster, Navigationsleisten und Links).      
+                           
+                  </p>
+                  
+                  <p>
+                     Wenn solche Behandler ger&auml;teabh&auml;ngige Ereignisse verwenden (also ONDBLCLICK, ONCLICK, ONKEYPRESS, ONKEYDOWN, ONMOUSEDOWN,
+                     ONKEYUP, ONMOUSEUP, ONMOUSEOVER, ONMOUSEOUT, ONFOCUS, ONBLUR), dann sollten sie in Kombination mit Ereignisbehandlern verwendet
+                     werden, die auch das andere Ger&auml;t unterst&uuml;tzen.
+                     
+                  </p>
+                  
+                  <p>
+                     Im Einzelnen:
+                     
+                  </p>
+                  
+                  <ul>
+                       
+                     <li> In Links und in den meisten Formular-Steuerelementen kombinieren Sie ONCLICK mit ONKEYPRESS und umgekehrt.  Diese Kombination
+                        kann durch die Definition des fehlenden Objekts mithilfe des Skripts f&uuml;r das bestehende Objekt erreicht werden.
+                          
+                     </li>
+                        
+                     <li>  Bei Textfeldern in Formularen ersetzen Sie ONCLICK durch ONFOCUS.</li>
+                       
+                     <li> ONDBLCLICK sollten Sie nicht verwenden, da es f&uuml;r dieses Ereignis keinen entsprechenden Tastaturbehandler gibt.</li>
+                       
+                     <li> Kombinieren Sie immer ONKEYDOWN mit ONMOUSEDOWN.</li>
+                       
+                     <li> Kombinieren Sie immer ONKEYUP mit ONMOUSEUP.</li>
+                        
+                     <li> Kombinieren Sie immer ONMOUSEOVER mit ONFOCUS.</li>
+                        
+                     <li> Kombinieren Sie immer ONMOUSEOUT mit ONBLUR.   </li>
+                     
+                  </ul>
+                        
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2" class="clearseparation">&nbsp;</td>
+            </tr>
+            <tr>
+               <td colspan="2" class="clearseparation">&nbsp;</td>
+            </tr>
+            <tr>
+               <td valign="top" colspan="2" class="description"><b>Problemerkl&auml;rung</b><br>
+                  
+                  
+                  <p>
+                     Ein Ereignisbehandler ist ein Skript, das aufgerufen wird, sobald ein bestimmtes Ereignis eintritt (z. B. das Bewegen der
+                     Maus, das Dr&uuml;cken einer Taste, das Laden eines Dokuments usw.). Ereignisbehandler werden mithilfe von Ereignisbehandlungsattributen
+                     an HTML-Elemente gekoppelt (wie "ONMOUSEDOWN", "ONCLICK", "ONKEYUP" usw.). 
+                     
+                  </p>
+                  
+                  
+                  <p>
+                     H&auml;ufig ist der Effekt eines Ereignisbehandlers aber rein dekorativer Natur: Hervorheben von Text oder Grafiken bzw. &auml;ndern
+                     der Farbe in einem Teil der Seite. Aber ein Ereignisbehandler kann auch absolut wichtige Aktivit&auml;ten ausl&ouml;sen: &uuml;berpr&uuml;fen
+                     der Eingabe in ein Feld, Anzeigen eines Rollover-Men&uuml;s, &ouml;ffnen eines neuen Fensters usw. <br> In solchen F&auml;llen, in denen der dem Benutzer angezeigte Inhalt bzw. die Navigationsoptionen ge&auml;ndert werden, muss der Ereignisbehandler
+                     vollst&auml;ndig zug&auml;nglich sein, damit auch Benutzer assistiver Technologie bzw. eingeschr&auml;nkter Browser-Funktionen die gleichen
+                     M&ouml;glichkeiten erhalten.
+                     
+                  </p>
+                  
+                  <p>
+                     Sofern sich ein Ereignisbehandler nur auf ein bestimmtes Ger&auml;t bezieht (wie z. B. die Maus, beispielsweise bei einem "ONMOUSEOVER"),
+                     k&ouml;nnen Benutzer ohne Maus (beispielsweise Benutzer mit eingeschr&auml;nkter Motorik oder Kraftfahrer, die eine Website &uuml;ber einen
+                     im Fahrzeug installierten PC anzeigen) den Effekt des Behandlers nicht wahrnehmen.
+                     
+                  </p>
+                  
+                  <p>
+                     Dem W3C zufolge bedeutet <strong>Ger&auml;teunabh&auml;ngigkeit</strong> (<strong>Web Content Accessibility Guidelines 1.0</strong>
+                     [http://www.w3.org/TR/WCAG10/#device-independent]
+                     ): 
+                     
+                  </p>
+                  
+                  <blockquote>
+                      Benutzer m&uuml;ssen in der Lage sein, unter Verwendung der unterst&uuml;tzten Ein- und Ausgabeger&auml;te ihrer Wahl und entsprechend ihren
+                     Bed&uuml;rfnissen mit einem Benutzeragenten umzugehen. Eingabeger&auml;te k&ouml;nnen Zeigeger&auml;te, Tastaturen, Blindenschrift-Ger&auml;te, Kopfst&auml;be,
+                     Mikrophone o. &auml;. sein. Bei Ausgabeger&auml;ten kann es sich um Monitore, Sprachgeneratoren, Blindenschrift-Ger&auml;te o. &auml;. hendeln.
+                     
+                     
+                  </blockquote>
+                  
+                        
+               </td>
+            </tr>
+         </table>
+      </div>
+   </body>
+</html>

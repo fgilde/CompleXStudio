@@ -1,0 +1,37 @@
+<html>
+<head>
+<title>Leerraum</title>
+</head>
+<body bgcolor="#FFFFFF" text="#000000">
+<div id="Beschreibung">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">Leerraum</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description">
+
+<p>XML 1.0 definiert Leerraum (Whitespace) als Leerzeichen (spaces), Tabulatoren, Wagenr&uuml;cklauf (Carriage-return) oder Zeilenvorschub (Line-feed). In XML 1.1 sind das Zeichen f&uuml;r eine neue Zeile, NEL (<span class="LITERAL">#x85</span>), und das Unicode-Zeilentrennzeichen (<span class="LITERAL">#x2028</span>) hinzugekommen. Leerraum dient in XML demselben Zweck wie in den meisten Programmier- und nat&uuml;rlichen Sprachen, n&auml;mlich der Trennung von Token und Sprachelementen. F&uuml;r einen XML-Parser ist der gesamte Leerraum im Elementinhalt signifikant und er wird daher an die Client-Anwendung weitergereicht. Leerraum innerhalb von Tags &ndash; etwa zwischen Attributen &ndash; ist nicht signifikant. Das l&auml;sst sich durch das folgende Beispiel veranschaulichen:</p>
+
+<span class="PROGRAMLISTING"><pre>&lt;p&gt;  This sentence has extraneous 
+  line breaks.&lt;/p&gt;</pre></span>
+
+
+<p>Nach der Analyse durch den Parser werden die Zeichendaten aus diesem Beispielelement wie folgt an die zugrunde liegende Anwendung &uuml;bergeben:</p>
+
+<span class="PROGRAMLISTING"><pre>   This sentence has extraneous
+line breaks.</pre></span>
+
+
+<p>Wenngleich nach den XML-Richtlinien der gesamte Leerraum im Elementinhalt f&uuml;r die Verwendung in der Client-Anwendung erhalten bleiben soll, steht XML-Autoren ein weiteres Merkmal zur Verf&uuml;gung, um noch einmal zu betonen, dass Leerzeichen und Zeilenformatierungen in den Zeichendaten eines Elements erhalten bleiben sollen. Weitere Informationen finden Sie in der Beschreibung des Attributs <span class="LITERAL">xml:space</span> im Abschnitt <link linkend="ch21-77057-SpAtt">Spezielle Attribute</link> weiter hinten in diesem Kapitel.</p>
+
+<p>Um das Leben der Software-Entwicklerinnen zu erleichtern, sollen XML-Parser alle Wagenr&uuml;cklaufzeichen (<span class="LITERAL">#xD</span>) auf einzelne Zeilenvorschubzeichen (<span class="LITERAL">#xA</span>) normalisieren. Erscheint das Wagenr&uuml;cklaufzeichen direkt hinter einem Zeilenvorschub, wird es einfach entfernt. Das Ergebnis ist ein Dokument, das f&uuml;r die Kennzeichnung von Zeilenenden nur einzelne Zeilenvorschubzeichen enth&auml;lt. In XML 1.1 geschieht diese Normalisierung auf ein Zeilenvorschubzeichen auch f&uuml;r die Unicode-Zeichen <span class="LITERAL">#x85</span> (NEXT LINE, NEL) und <span class="LITERAL">#x2028</span> (LINE SEPARATOR).</p>
+</td></tr>
+</table>
+</div>
+</body>
+</html>

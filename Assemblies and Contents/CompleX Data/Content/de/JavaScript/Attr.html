@@ -1,0 +1,343 @@
+<html>
+<link rel="stylesheet" href="josh.css">
+<body bgcolor="#FFFFFF">
+
+		<div id="Beschreibung">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">Attr, attribute</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span>  IE <span class="emphasis">5</span>  DOM <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Eine abstrakte Darstellung des Namens-/Wertpaars eines Elementattributs wird im W3C-DOM als <span class="literal">Attr</span>-Objekt, in der IE-Terminologie hingegen als <span class="literal">attribute</span>-Objekt bezeichnet. Beide Bezeichnungen beziehen sich auf dasselbe Objekt. Attributobjekte werden in beiden Umgebungen mithilfe der <span class="literal">document.createAttribute( )</span>-Methode erstellt. Um das Attributobjekt in ein Element einzuf&uuml;gen, wird die Referenz auf das Attributobjekt als Parameter an die <span class="literal">setAttributeNode( )</span>-Methode des gew&uuml;nschten Elements &uuml;bergeben. Beispiel:
+</p>
+<span class="PROGRAMLISTING"><pre>var newAttr = document.createAttribute(&quot;author&quot;);
+newAttr.value = &quot;William Shakespeare&quot;;
+document.getElementById(&quot;hamlet&quot;).setAttributeNode(newAttr);</pre></span>
+							</td>
+						</tr>
+						<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Manche W3C-DOM-Elementmethoden (insbesondere die Methode <span class="literal">getAttributeNode( )</span> geben Attributobjekte zur&uuml;ck, auf deren Eigenschaften wie auf jedes beliebige andere Skriptobjekt zugegriffen werden kann.
+</p>
+							</td>
+						</tr>
+						<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Im W3C-DOM-Abstraktmodell erbt das <span class="literal">Attr</span>-Objekt alle Eigenschaften und Methoden des <span class="literal">Node</span>-Objekts. In IE/Windows vor Version 6 werden einige <span class="literal">Node</span>-Objekteigenschaften jedoch nicht an das <span class="literal">attribute</span>-Objekt weitergegeben, obwohl sie in Version 5 bereits f&uuml;r Element- und Textnodes implementiert sind.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="htmlequivalent"><span class="title">HTML-&Auml;quivalent</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Ein beliebiges Namens-/Wertpaar innerhalb eines Start-Tags.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectmodelreference"><span class="title">Objektmodellreferenz</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>[window.]document.getElementById("<span class="replaceable">elementID</span>").attributes[<span class="replaceable">i</span>]
+[window.]document.getElementById("<span class="replaceable">elementID</span>").attributes.item(<span class="replaceable">i</span>)
+[window.]document.getElementById("<span class="replaceable">elementID</span>").attributes.getNamedItem[<span class="replaceable">attrName</span>]</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectspecificproperties"><span class="title">Objektspezifische Eigenschaften</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<table border="1"><tbody><tr><td><span class="literal">expando</span></td><td><span class="literal">name</span></td><td><span class="literal">ownerElement</span></td><td><span class="literal">specified</span></td><td><span class="literal">value</span></td>
+								</tr>
+							</tbody></table>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectspecificmethods"><span class="title">Objektspezifische Methoden</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Keine.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectspecificeventhandlerproperties"><span class="title">Objektspezifische Ereignisbehandlungsroutineneigenschaften</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Keine.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="expando">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">expando</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">nicht zutreffend</span> IE <span class="emphasis">6</span>  DOM <span class="emphasis">nicht zutreffend</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Schreibgesch&uuml;tzt</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Gibt den Booleschen Wert <span class="literal">true</span> zur&uuml;ck, wenn das Attribut nach dem Einf&uuml;gen in ein Element nicht zu dessen nativen Attributen geh&ouml;rt. Bei einem Attribut, dass mit <span class="literal">document.createAttribute( )</span> erstellt wurde, ist der Wert dieser Eigenschaft <span class="literal">false</span>, bis das Attribut dem Element (mit der <span class="literal">setAttributeNode( )</span>-Methode) hinzugef&uuml;gt und damit die Eigenschaft im Kontext der nativen Elementattribute neu ausgewertet wird.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>var isCustomAttr =
+  document.getElementById("book3928").getAttributeNode("author").expando;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Boolescher Wert: <span class="literal">true</span> | <span class="literal">false</span>.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Standardwert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p><span class="literal">false</span></p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="name">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">name</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">5</span>  DOM <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Schreibgesch&uuml;tzt</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Der Namensteil des Namens-/Wertpaars des Attributs. Diese Eigenschaft ist identisch mit der <span class="literal">nodeName</span>-Eigenschaft der <span class="literal">Attr</span>-Node. Sie k&ouml;nnen den Namen eines Attributs nicht in einem Skript &auml;ndern, da andere Abh&auml;ngigkeiten zu Bezugsfehlern im Dokumentbaum f&uuml;hren k&ouml;nnten. Stattdessen m&uuml;ssen Sie das alte Attribut durch ein neu erstelltes Attribut ersetzen, dessen Name als erforderlicher Parameter der <span class="literal">document.createAttribute( )</span>-Methode &uuml;bergeben wird.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>if (myAttr.name == "author") {
+    // process author attribute
+}</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Zeichenfolgenwert.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Standardwert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Leere Zeichenfolge, wenngleich beim Erstellen eines neuen Attributs ein Name angegeben werden muss.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="ownerElement">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">ownerElement</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">nicht zutreffend</span>  DOM <span class="emphasis">2</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Schreibgesch&uuml;tzt</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Verweist auf das Element, das das aktuelle Attributobjekt enth&auml;lt. Solange einem Element noch kein neu erstelltes Attribut zugewiesen wurde, ist diese Eigenschaft <span class="literal">null</span>.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>if (myAttr.ownerElement.tagName == "fred") {
+    // process attribute of &lt;fred&gt; element
+}</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Elementnodereferenz.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Standardwert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p><span class="literal">null</span></p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="specified">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">specified</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">5</span>  DOM <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Schreibgesch&uuml;tzt</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Gibt den Booleschen Wert <span class="literal">true</span> zur&uuml;ck, wenn der Wert des Attributs im Quellcode explizit zugewiesen oder in einem Skript eingestellt wurde. Wenn der Browser ein Attribut widerspiegelt, das nicht explizit festgelegt wurde (was bei IE der Fall sein kann), lautet die <span class="literal">specified</span>-Eigenschaft dieses Werts <span class="literal">false</span>, obwohl das Attribut m&ouml;glicherweise einen per Dokument-DTD festgelegten Standardwert aufweist. Laut W3C-DOM, Level 2, sollte die <span class="literal">specified</span>-Eigenschaft eines neu erstellten <span class="literal">Attr</span>-Objekts den Wert <span class="literal">true</span> aufweisen, IE ab Version 6 und Netscape ab Version 6.2 behalten jedoch den Wert <span class="literal">false</span> bei, bis das Attribut in ein Element eingef&uuml;gt wird.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>if (myAttr.specified) {
+    // process attribute whose value is something other than DTD default
+}</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Boolescher Wert: <span class="literal">true</span> | <span class="literal">false</span>.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Standardwert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p><span class="literal">false</span></p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="value">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">value</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">6</span>  DOM <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Lesen/Schreiben</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Stellt den Wertteil des Namens-/Wertpaars des Attributs bereit. Entspricht der Eigenschaft <span class="literal">nodeValue</span> der <span class="literal">Attr</span>-Node sowie Daten, auf die &uuml;ber die Methoden <span class="literal">getAttribute( )</span> und <span class="literal">setAttribute( )</span> eines Elements in direkterer Weise zugegriffen wird. Wenn Sie ein neues Attributobjekt erstellen, k&ouml;nnen Sie seine Werte &uuml;ber die <span class="literal">value</span>-Eigenschaft zuweisen, bevor Sie es in das Element einf&uuml;gen. Attributnodewerte sind immer Zeichenfolgen. Dies gilt auch beim IE, der ansonsten die Verwendung von Zahlenwerten und Booleschen Werten in den entsprechenden Eigenschaften zul&auml;sst.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>document.getElementById("hamlet").getAttributeNode("author").value = "Shakespeare";</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Zeichenfolgenwert.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Standardwert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Leere Zeichenfolge, au&szlig;er bei IE/Windows, der die Zeichenfolge <span class="literal">undefined</span> zur&uuml;ckgibt (also nicht etwa einen Wert, dessen Typ den Wert <span class="literal">undefined</span> ergibt).
+</p>
+					</td>
+				</tr>
+			</table>
+		</div>
+
+</body>
+</html>

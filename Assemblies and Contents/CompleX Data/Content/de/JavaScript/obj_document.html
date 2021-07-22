@@ -1,0 +1,292 @@
+<html>
+<link rel="stylesheet" href="josh.css">
+<body bgcolor="#FFFFFF">
+
+		<div id="Beschreibung">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">Document</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">nicht zutreffend</span>  DOM <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Das weiter vorne bereits beschriebene <span class="literal">document</span>-Objekt ist in der W3C-DOM-Struktur eigentlich eine <span class="literal">HTMLDocument</span>-Node und geh&ouml;rt somit zum HTML-Modul des Standards. Die <span class="literal">HTMLDocument</span>-Node erbt die Eigenschaften und Methoden von der <span class="literal">Document</span>-Node (hier mit gro&szlig;em "D" beschrieben und im Core-Modul des W3C-DOM definiert). Es handelt sich bei ihr um die reine, abstrakte <span class="literal">Document</span>-Node, die alle Voraussetzungen bietet, um ein nicht dargestelltes XML-Dokument aufzunehmen.
+</p>
+							</td>
+						</tr>
+						<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Netscape 6 erweitert diese Node um eine <span class="literal">load( )</span>-Methode, die es einem Skript erm&ouml;glicht, XML-Dokumente in eine reine (und unsichtbare) <span class="literal">Document</span>-Node zu laden. Eine solche Node wird mithilfe der Methode <span class="literal">document.implementation.createDocument( )</span> erstellt. Dadurch k&ouml;nnen Skripts auf die XML-Daten in diesem Dokument &uuml;ber regul&auml;re W3C-DOM-Dokumentbaumeigenschaften und -methoden zugreifen.
+</p>
+							</td>
+						</tr>
+						<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Um die Vererbung des <span class="literal">document</span>-Objekts zu verdeutlichen, das Sie in Ihren Skripts normalerweise verwenden (d. h. der in den Dokumenten der einzelnen Fenster dargestellten Instanz der <span class="literal">HTMLDocument</span>-Node), sind in der folgenden Liste die Eigenschaften und Methoden des Core-<span class="literal">Document</span>-Objekts aufgef&uuml;hrt. Die Beschreibungen dieser Eigenschaften und Methoden – mit Ausnahme der nicht vererbten, Netscape 6-spezifischen <span class="literal">load( )</span>-Methode – finden Sie in der Abhandlung des <span class="literal">document</span>-Objekts weiter vorne in diesem Kapitel.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectmodelreference"><span class="title">Objektmodellreferenz</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre><span class="replaceable">documentNodeReference</span></pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectspecificproperties"><span class="title">Objektspezifische Eigenschaften</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<table border="1"><tbody><tr><td><span class="literal">doctype</span></td><td><span class="literal">documentElement</span></td><td><span class="literal">implementation</span></td>
+								</tr>
+							</tbody></table>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectspecificmethods"><span class="title">Objektspezifische Methoden</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<table border="1"><tbody><tr><td><span class="literal">createAttribute( )</span></td><td><span class="literal">createAttributeNS( )</span></td><td><span class="literal">createCDATASection( )</span></td>
+								</tr>
+								<tr><td><span class="literal">createComment( )</span></td><td><span class="literal">createDocumentFragment( )</span></td><td><span class="literal">createElement( )</span></td>
+								</tr>
+								<tr><td><span class="literal">createElementNS( )</span></td><td><span class="literal">createEntityReference( )</span></td><td><span class="literal">createProcessingInstruction( )</span></td>
+								</tr>
+								<tr><td><span class="literal">createTextNode( )</span></td><td><span class="literal">getElementById( )</span></td><td><span class="literal">getElementsByTagName( )</span></td>
+								</tr>
+								<tr><td><span class="literal">getElementsByTagNameNS( )</span></td><td><span class="literal">importNode( )</span></td><td><span class="literal">load( )</span></td>
+								</tr>
+							</tbody></table>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectspecificeventhandlerproperties"><span class="title">Objektspezifische Ereignisbehandlungsroutineneigenschaften</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Keine. </p>
+					</td>
+				</tr>
+			</table>
+		</div>
+		<div id="document">
+					<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+						<tr><td valign="top" class="name">document</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">nicht zutreffend</span> IE <span class="emphasis">4</span> DOM <span class="emphasis">nicht zutreffend</span></td>
+						</tr>
+						<tr>
+							<td valign="top" nowrap class="usage"><p class="literal"></p>
+							</td><td valign="top" nowrap class="requirements"><span class="emphasis">Schreibgesch&uuml;tzt</span></td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="description"><p>Gibt eine Referenz auf das <span class="literal">document</span>-Objekt zur&uuml;ck, das das aktuelle Element enth&auml;lt. Potenziell hilfreich in Funktionen zur Verarbeitung von Objektreferenzen, die aus Ereigniseigenschaften abgerufen oder als ID-Zeichenfolgen &uuml;bergeben wurden. Die entsprechende W3C-DOM-Eigenschaft ist <span class="literal">ownerDocument</span>.
+		</p>
+									</td>
+								</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td><span class="programlisting"><pre>var currDoc = document.getElementById("<span class="replaceable">elementID</span>").document;</pre>
+								</span></td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+						</tr>
+						<tr>
+							<td colspan="2"><p><span class="literal">document</span>-Objektreferenz.</p>
+							</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td valign="top" nowrap colspan="2" class="default"><span class="title">Standardwert</span></td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Das aktuelle <span class="literal">document</span>-Objekt.</p>
+							</td>
+						</tr>
+					</table>
+		</div>
+		<div id="load( )">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">load( )</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6  </span>IE <span class="emphasis">nicht zutreffend</span>  DOM <span class="emphasis">nicht zutreffend</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">load("<span class="replaceable">URI</span>")</p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>L&auml;dt eine XML-Datei in das aktuelle <span class="literal">Document</span>-Objekt. Beim Versuch, andere Dateitypen (z. B. eine HTML-Datei) zu laden, wird eine Ausnahme zur&uuml;ckgegeben. Der Server muss so konfiguriert sein, dass er Dateien als <span class="literal">text/html</span>-Inhaltstyp sendet.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Parameter</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<ul><li><span class="literal"></span>Eine Zeichenfolge mit der URI einer externen XML-Datei.</li></ul>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Zur&uuml;ckgegebener Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Keiner.</p>
+					</td>
+				</tr>
+			</table>
+		</div>
+		<div id="readyState">
+					<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+						<tr><td valign="top" class="name">readyState</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">nicht zutreffend</span> IE <span class="emphasis">4</span> DOM <span class="emphasis">nicht zutreffend</span></td>
+						</tr>
+						<tr>
+							<td valign="top" nowrap class="usage"><p class="literal"></p>
+							</td><td valign="top" nowrap class="requirements"><span class="emphasis">Schreibgesch&uuml;tzt</span></td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="description"><p>Gibt den aktuellen Downloadstatus des Objektinhalts zur&uuml;ck. Falls ein Skript (insbesondere eines, das durch ein Benutzerereignis ausgel&ouml;st wurde) bestimmte Aktionen ausf&uuml;hren kann, w&auml;hrend das Dokument noch geladen wird, aber andere Aktionen vermeiden muss, bis die gesamte Seite geladen ist, bietet diese Eigenschaft sofortige Informationen zum Ladeprozess. Sie sollten diesen Wert bei der Auswertung von Bedingungen verwenden. Der Wert dieser Eigenschaft &auml;ndert sich w&auml;hrend des Ladens, wenn sich der Ladezustand &auml;ndert. Jede &Auml;nderung des Eigenschaftswerts l&ouml;st ein <span class="literal">onReadyStateChange</span>-Ereignis aus, das nicht nach oben verbreitet wird.
+		</p>
+									</td>
+								</tr>
+								<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+								</tr>
+								<tr>
+									<td colspan="2"><p>Als diese Eigenschaft in IE 4 eingef&uuml;hrt wurde, war sie nur f&uuml;r <span class="literal">document</span>-, <span class="literal">embed</span>-, <span class="literal">img</span>-, <span class="literal">link</span>-, <span class="literal">object</span>-, <span class="literal">script</span>- und <span class="literal">style</span>-Objekte verf&uuml;gbar. In IE 5 wurde die Unterst&uuml;tzung f&uuml;r diese Eigenschaft auf alle HTML-Elementobjekte ausgeweitet.
+		</p>
+									</td>
+								</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td><span class="programlisting"><pre>if (document.readyState == "loading") {
+		    //statements for alternate handling while loading
+		}</pre>
+								</span></td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Bei allen Elementen mit Ausnahme des <span class="literal">object</span>-Elements einer der folgenden Werte (als Zeichenfolge): <span class="literal">uninitialized</span> | <span class="literal">loading</span> | <span class="literal">loaded</span> | <span class="literal">interactive</span> | <span class="literal">complete</span>. Einige Elemente erlauben es dem Benutzer, mit einem Teil des Inhalts zu interagieren. In diesem Fall kann die Eigenschaft <span class="literal">interactive</span> zur&uuml;ckgegeben werden, bis der Ladevorgang abgeschlossen ist. Nicht alle Elementtypen geben w&auml;hrend des Ladevorgangs alle Werte nacheinander zur&uuml;ck. Das <span class="literal">object</span>-Element gibt diese f&uuml;nf Zust&auml;nde in Form numerischer Werte zwischen <span class="literal">0</span> (<span class="literal">uninitialized</span>) und <span class="literal">4</span> (<span class="literal">complete</span>) an.
+		</p>
+							</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td valign="top" nowrap colspan="2" class="default"><span class="title">Standardwert</span></td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Keine.</p>
+							</td>
+						</tr>
+					</table>
+		</div>
+		<div id="title">
+					<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+						<tr><td valign="top" class="name">title</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">4</span> DOM <span class="emphasis">1</span></td>
+						</tr>
+						<tr>
+							<td valign="top" nowrap class="usage"><p class="literal"></p>
+							</td><td valign="top" nowrap class="requirements"><span class="emphasis">Lesen/Schreiben</span></td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="description"><p>Stellt eine informative Beschreibung des Elements bereit. Ist das Element physisch in der Seite pr&auml;sent, so blendet der Browser den Wert dieser Eigenschaft als schwebende Textbeschriftung ein, wenn der Mauszeiger einige Augenblicke lang auf das Element zeigt. Die Gr&ouml;&szlig;e, Schriftmerkmale und Farbe dieser Beschriftung k&ouml;nnen nicht in einem Skript gesteuert werden.
+		</p>
+									</td>
+								</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td><span class="programlisting"><pre>document.getElementById("<span class="replaceable">elementID</span>").title = "Hot stuff!";</pre>
+								</span></td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Zeichenfolge.</p>
+							</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td valign="top" nowrap colspan="2" class="default"><span class="title">Standardwert</span></td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Leere Zeichenfolge. </p>
+							</td>
+						</tr>
+					</table>
+		</div>
+
+</body>
+</html>

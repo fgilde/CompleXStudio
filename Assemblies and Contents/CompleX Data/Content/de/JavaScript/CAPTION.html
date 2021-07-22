@@ -1,0 +1,388 @@
+<html>
+<link rel="stylesheet" href="josh.css">
+<body bgcolor="#FFFFFF">
+
+		<div id="Beschreibung">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">caption</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">4</span> DOM <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Das <span class="literal">caption</span>-Objekt spiegelt das <span class="literal">caption</span>-Element wider, das immer in einem <span class="literal">table</span>-Element verschachtelt sein muss. IE/Mac implementiert die Client- und Bildlaufeigenschaften f&uuml;r dieses Objekt.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="htmlequivalent"><span class="title">HTML-&Auml;quivalent</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>&lt;caption&gt;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectmodelreference"><span class="title">Objektmodellreferenz</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>[window.]document.getElementById("<span class="replaceable">elementID</span>")</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectspecificproperties"><span class="title">Objektspezifische Eigenschaften</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<table border="1"><tbody><tr><td><span class="literal">align</span></td><td><span class="literal">vAlign</span></td>
+								</tr>
+							</tbody></table>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectspecificmethods"><span class="title">Objektspezifische Methoden</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Keine. </p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectspecificeventhandlerproperties"><span class="title">Objektspezifische Ereignisbehandlungsroutineneigenschaften</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Keine. </p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="align">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">align</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">4</span> DOM <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Lesen/Schreiben</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Legt die Position der &Uuml;berschrift in der Tabelle fest. Informationen zu den Wechselwirkungen zwischen den <span class="literal">align</span>- und <span class="literal">vAlign</span>-Attributen und -Eigenschaften in IE f&uuml;r Windows finden Sie in der Abhandlung des <span class="literal">align</span>-Attributs eines <span class="literal">caption</span>-Elements in Kapitel 8. Im W3C-DOM wird die <span class="literal">align</span>-Eigenschaft haupts&auml;chlich verwendet, um die Beschriftung oberhalb oder unterhalb der Tabelle zu platzieren.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>document.getElementById("myCaption").align = "bottom";</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Eine der folgenden Konstanten als Zeichenfolge: <span class="literal">bottom</span> | <span class="literal">left</span> | <span class="literal">right</span> | <span class="literal">top</span>.
+</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Standardwert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p><span class="literal">top</span></p>
+					</td>
+				</tr>
+			</table>
+		</div>
+		<div id="blur( )">
+					<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+						<tr><td valign="top" class="name">blur( )</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">2</span> IE <span class="emphasis">3</span> DOM <span class="emphasis">1</span></td>
+						</tr>
+						<tr>
+							<td valign="top" nowrap class="usage"><p class="literal"></p>
+							</td><td valign="top" nowrap class="requirements"></td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="description"><p>Entfernt den Fokus vom aktuellen Objekt und l&ouml;st damit das <span class="literal">onblur</span>-Ereignis des Objekts aus. Beachten Sie, dass die Palette der Elemente, die Fokus und Blur (Ereignisse und Methoden) unterst&uuml;tzen, in allen Browsern mit Ausnahme der neuesten Versionen von IE eingeschr&auml;nkt ist (weitere Informationen finden Sie in der Abhandlung des Attributs <span class="literal">tabindex</span> in Kapitel 8). Am zuverl&auml;ssigsten im Hinblick auf die R&uuml;ckw&auml;rtskompatibilit&auml;t funktioniert die Methode <span class="literal">blur( )</span> in Verbindung mit eindeutig fokusf&auml;higen Elementen wie Text-<span class="literal">input</span>- und <span class="literal">textarea</span>-Elementen. Die Zuweisung des Attributs <span class="literal">onfocus="this.blur( );"</span> zu einem Text-<span class="literal">input</span>-Element ist beispielsweise eine simple, aber effektive und r&uuml;ckw&auml;rtskompatible M&ouml;glichkeit, ein Feld f&uuml;r Browser zu deaktivieren, die keine eigene Funktion zum Deaktivieren von Elementen aufweisen.
+		</p>
+									</td>
+								</tr>
+								<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+								</tr>
+								<tr>
+									<td colspan="2"><p>Verwenden Sie die Methoden <span class="literal">blur( )</span> und <span class="literal">focus( )</span> vorsichtig in ein- und derselben Seite, da hierbei durch eingeblendete Warndialogfelder versehentlich Blur- und Fokus-Endlosschleifen ausgel&ouml;st werden k&ouml;nnen. Denken Sie au&szlig;erdem daran, dass der Aufruf der Methode <span class="literal">blur( )</span> eines Objekts bewirkt, dass ein anderes Objekt (m&ouml;glicherweise das <span class="literal">window</span>-Objekt) ein <span class="literal">onfocus</span>-Ereignis empf&auml;ngt.
+		</p>
+									</td>
+								</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="parameters"><span class="title">Parameter</span></td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Keine.</p>
+							</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="returnedvalue"><span class="title">Zur&uuml;ckgegebener Wert</span></td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Keiner.</p>
+							</td>
+						</tr>
+					</table>
+		</div>
+		<div id="clientLeft, clientTop">
+					<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+						<tr><td valign="top" class="name">clientLeft, clientTop</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">nicht zutreffend</span> IE <span class="emphasis">4</span> DOM <span class="emphasis">nicht zutreffend</span></td>
+						</tr>
+						<tr>
+							<td valign="top" nowrap class="usage"><p class="literal"></p>
+							</td><td valign="top" nowrap class="requirements"><span class="emphasis">Schreibgesch&uuml;tzt</span></td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="description"><p>Geben die linke und obere Koordinate des Elementinhalts innerhalb des Rechtecks bereit, das die Elementauff&uuml;llung enth&auml;lt, jedoch mit geringf&uuml;gigen Abweichungen bei den verschiedenen Betriebssystemversionen von IE. In IE f&uuml;r Macintosh nicht f&uuml;r alle Elementtypen verf&uuml;gbar. Weitere Informationen finden Sie in Abschnitt 9.2 am Anfang dieses Kapitels. Hilfreichere Informationen zur Positionierung von Inline-Elementen lassen sich im Allgemeinen &uuml;ber die Eigenschaften <span class="literal">offsetLeft</span> und <span class="literal">offsetTop</span> ermitteln (einschlie&szlig;lich Netscape 6). Bei CSS-positionierten Elementen verwenden Sie <span class="literal">style</span>-Objekteigenschaften wie <span class="literal">left</span> und <span class="literal">top</span> sowie (nur in IE) <span class="literal">pixelLeft</span> und <span class="literal">pixelTop</span> (auch zum &Auml;ndern der Position eines Elements).
+		</p>
+									</td>
+								</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Ein Pixelwert als ganze Zahl.</p>
+							</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td valign="top" nowrap colspan="2" class="default"><span class="title">Standardwert</span></td>
+						</tr>
+						<tr>
+							<td colspan="2"><p><span class="literal">0</span> </p>
+							</td>
+						</tr>
+					</table>
+		</div>
+		<div id="clientHeight, clientWidth">
+					<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+						<tr><td valign="top" class="name">clientHeight, clientWidth</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">7</span> IE <span class="emphasis">4</span> DOM <span class="emphasis">nicht zutreffend</span></td>
+						</tr>
+						<tr>
+							<td valign="top" nowrap class="usage"><p class="literal"></p>
+							</td><td valign="top" nowrap class="requirements"><span class="emphasis">Schreibgesch&uuml;tzt</span></td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="description"><p>Geben die H&ouml;he und Breite des Elementinhalts zur&uuml;ck, jedoch mit geringf&uuml;gigen Abweichungen hinsichtlich der Elementauff&uuml;llung bei den verschiedenen Betriebssystemversionen von IE und den verschiedenen von der <span class="literal">DOCTYPE</span>-Deklaration gesteuerten Kompatibilit&auml;tsmodi. In IE f&uuml;r Macintosh nicht f&uuml;r alle Elementtypen verf&uuml;gbar. Bei Netscape 7 sind die Werte Null, es sei denn, der Inhalt eines Elements ragt &uuml;ber den sichtbaren Bereich hinaus, in welchem Fall die Werte die Abmessungen des sichtbaren Bereichs (beim Element <span class="literal">document.body</span> beispielsweise den Inhaltsbereich des Browserfensters) angeben. Weitere Informationen finden Sie in Abschnitt 9.2 am Anfang dieses Kapitels.
+		</p>
+									</td>
+								</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td><span class="programlisting"><pre>var midHeight = document.body.clientHeight/2;</pre>
+								</span></td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Ein Pixelwert als ganze Zahl.</p>
+							</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td valign="top" nowrap colspan="2" class="default"><span class="title">Standardwert</span></td>
+						</tr>
+						<tr>
+							<td colspan="2"><p><span class="literal">0</span> </p>
+							</td>
+						</tr>
+					</table>
+		</div>
+		<div id="focus( )">
+					<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+						<tr><td valign="top" class="name">focus( )</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">2</span> IE <span class="emphasis">3</span> DOM <span class="emphasis">1</span></td>
+						</tr>
+						<tr>
+							<td valign="top" nowrap class="usage"><p class="literal"></p>
+							</td><td valign="top" nowrap class="requirements"></td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="description"><p>&Uuml;bergibt den Fokus an das aktuelle Objekt und l&ouml;st damit das <span class="literal">onfocus</span>-Ereignis des Objekts aus. Beachten Sie, dass die Palette der Elemente, die Fokus und Blur (Ereignisse und Methoden) unterst&uuml;tzen, in allen Browsern mit Ausnahme der neuesten Versionen von IE eingeschr&auml;nkt ist (weitere Informationen finden Sie in der Abhandlung des Attributs <span class="literal">tabindex</span> in Kapitel 8). Am zuverl&auml;ssigsten im Hinblick auf die R&uuml;ckw&auml;rtskompatibilit&auml;t funktioniert die Methode <span class="literal">focus( )</span> in Verbindung mit eindeutig fokusf&auml;higen Elementen wie Text-<span class="literal">input</span>- und <span class="literal">textarea</span>-Elementen.
+		</p>
+									</td>
+								</tr>
+								<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+								</tr>
+								<tr>
+									<td colspan="2"><p>Um einem Textfeld den Fokus zuzuweisen und zugleich den in diesem Feld enthaltenen Text zu markieren, wenden Sie die Methoden <span class="literal">focus( )</span> und <span class="literal">select( )</span> nacheinander auf das Element an. Wenn dies unmittelbar nach einer Ver&auml;nderung im Fenster geschehen soll (z. B. nachdem ein Wardialogfeld geschlossen wurde), stellen Sie die beiden Methoden in eine separate Funktion und rufen Sie diese im Anschluss an die <span class="literal">alert( )</span>-Methode des Dialogfelds &uuml;ber die Methode <span class="literal">setTimeout( )</span> auf. Auf diese Weise k&ouml;nnen Sie gew&auml;hrleisten, dass IE/Windows die Anweisungen in der richtigen Reihenfolge ausf&uuml;hrt.
+		</p>
+									</td>
+								</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="parameters"><span class="title">Parameter</span></td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Keine. </p>
+							</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="returnedvalue"><span class="title">Zur&uuml;ckgegebener Wert</span></td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Keiner.</p>
+							</td>
+						</tr>
+					</table>
+		</div>
+		<div id="vAlign">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">vAlign</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">nicht zutreffend</span> IE <span class="emphasis">4</span>  DOM <span class="emphasis">nicht zutreffend</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Lesen/Schreiben</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Legt fest, ob die Beschriftung einer Tabelle oberhalb oder unterhalb der Tabelle erscheint.</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>document.getElementById("tabCaption").vAlign = "bottom"</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Von der Gro&szlig;-/Kleinschreibung unabh&auml;ngige Konstante (als Zeichenfolge): <span class="literal">bottom</span> | <span class="literal">top</span>.
+</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Standardwert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p><span class="literal">top</span></p>
+					</td>
+				</tr>
+			</table>
+		</div>
+
+<div id="focus( )">
+
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">focus( )</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">2</span> IE <span class="emphasis">3</span> DOM <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>&Uuml;bergibt den Fokus an das aktuelle Objekt und l&ouml;st damit das <span class="literal">onfocus</span>-Ereignis des Objekts aus. Beachten Sie, dass die Palette der Elemente, die Fokus und Blur (Ereignisse und Methoden) unterst&uuml;tzen, in allen Browsern mit Ausnahme der neuesten Versionen von IE eingeschr&auml;nkt ist (weitere Informationen finden Sie in der Abhandlung des Attributs <span class="literal">tabindex</span> in Kapitel 8). Am zuverl&auml;ssigsten im Hinblick auf die R&uuml;ckw&auml;rtskompatibilit&auml;t funktioniert die Methode <span class="literal">focus( )</span> in Verbindung mit eindeutig fokusf&auml;higen Elementen wie Text-<span class="literal">input</span>- und <span class="literal">textarea</span>-Elementen.</p>
+							</td>
+						</tr>
+						<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Um einem Textfeld den Fokus zuzuweisen und zugleich den in diesem Feld enthaltenen Text zu markieren, wenden Sie die Methoden <span class="literal">focus( )</span> und <span class="literal">select( )</span> nacheinander auf das Element an. Wenn dies unmittelbar nach einer Ver&auml;nderung im Fenster geschehen soll (z.&#160;B. nachdem ein Wardialogfeld geschlossen wurde), stellen Sie die beiden Methoden in eine separate Funktion und rufen Sie diese im Anschluss an die <span class="literal">alert( )</span>-Methode des Dialogfelds &uuml;ber die Methode <span class="literal">setTimeout( )</span> auf. Auf diese Weise k&ouml;nnen Sie gew&auml;hrleisten, dass IE/Windows die Anweisungen in der richtigen Reihenfolge ausf&uuml;hrt.</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Parameter</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Keine. </p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Zur&uuml;ckgegebener Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Keiner.</p>
+					</td>
+				</tr>
+			</table>
+		</div>
+</body>
+</html>

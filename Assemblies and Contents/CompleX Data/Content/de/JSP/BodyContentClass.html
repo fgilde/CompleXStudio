@@ -1,0 +1,328 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<link rel="stylesheet" href="../HTML/josh.css">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>BodyContent-Klasse</title>
+</head>
+
+<body>
+<div id="Beschreibung">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME"> BodyContent-Klasse</td>
+<td class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="DESCRIPTIONTITLE">Klassenname:</td>
+</tr>
+<tr>
+<td colspan="2" class="description"><p>
+<span class="LITERAL">javax.servlet.jsp.tagext.BodyContent</span>
+</p></td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="DESCRIPTIONTITLE">Erweitert:</td>
+</tr>
+<tr>
+<td colspan="2" class="description"><p>
+<span class="LITERAL">javax.servlet.jsp.JspWriter</span>
+</p></td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="DESCRIPTIONTITLE">Implementiert:</td>
+</tr>
+<tr>
+<td colspan="2" class="description"><p>
+Keine
+</p></td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="DESCRIPTIONTITLE">Implementiert von:</td>
+</tr>
+<tr>
+<td colspan="2" class="description"><p>
+Interne containerabh&auml;ngige Klasse
+</p></td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="DESCRIPTIONTITLE">Beschreibung</td>
+</tr>
+<tr>
+<td colspan="2" class="description"><p>
+Der Container erstellt eine Instanz der Klasse <span class="LITERAL">BodyContent</span> zum Speichern der Ergebnisse, die beim Auswerten des Body-Inhalts des Elements entstehen, wenn die entsprechende Tag-Prozedur die Schnittstelle <span class="LITERAL">BodyTag</span> implementiert. Der Container stellt der Tag-Prozedur die Instanz <span class="LITERAL">BodyContent</span> durch einen Aufruf der Methode <span class="LITERAL">setBodyContent()</span> zur Verf&uuml;gung, damit die Tag-Prozedur den Body-Inhalt verarbeiten kann.
+</p>
+<p>
+Im Folgenden wird die Tag-Prozedurklasse, die die Klasse <span class="LITERAL">BodyTagSupport</span> erweitert, genauer beschrieben. Die Klasse <span class="LITERAL">EncodeHTMLTag</span> ist die Tag-Prozedurklasse f&uuml;r eine benutzerdefinierte Aktion namens <span class="LITERAL">&lt;ora:encodeHTML&gt;</span>. Diese Aktion liest den Body, ersetzt alle Zeichen mit einer besonderen HTML-Bedeutung (wie einfache und doppelte Anf&uuml;hrungszeichen, Symbole &quot;Kleiner als&quot; und &quot;Gr&ouml;&szlig;er als&quot; sowie das &amp;-Zeichen) durch die entsprechenden HTML-Zeichenentit&auml;ten (wie <span class="LITERAL">&#39;</span>, <span class="LITERAL">&#34;</span>, <span class="LITERAL">&lt;</span>, <span class="LITERAL">&gt;</span> und <span class="LITERAL">&amp;</span>) und f&uuml;gt das Ergebnis in den Body der Antwort ein. Das folgende Beispiel zeigt, wie die Aktion in einer JSP-Seite verwendet werden kann:
+</p>
+<span class="PROGRAMLISTING"><pre>&lt;%@ page language=&quot;java&quot; %&gt;
+&lt;%@ taglib uri=&quot;/orataglib&quot; prefix=&quot;ora&quot; %&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;title&gt;Encoded HTML Example&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;h1&gt;Encoded HTML Example&lt;/h1&gt;
+    The following text is encoded by the 
+    &lt;ora:encodeHTML&gt; custom action:
+    &lt;pre&gt;
+      &lt;ora:encodeHTML&gt;
+        HTML 3.2 Documents start with a &lt;!DOCTYPE&gt; 
+        declaration followed by an HTML element containing 
+        a HEAD and then a BODY element: 
+
+        &lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 3.2 Final//EN&quot;&gt;
+        &lt;HTML&gt;
+        &lt;HEAD&gt;
+        &lt;TITLE&gt;A study of population dynamics&lt;/TITLE&gt;
+        ... other head elements
+        &lt;/HEAD&gt;
+        &lt;BODY&gt;
+        ... document body
+        &lt;/BODY&gt;
+        &lt;/HTML&gt;      
+      &lt;/ora:encodeHTML&gt;
+    &lt;/pre&gt;
+  &lt;/body&gt;
+&lt;/html&gt;</pre></span>
+<p>
+Sie sehen, dass der Body der Aktion <span class="LITERAL">&lt;ora:encodeHTML&gt;</span> im Beispiel der JSP-Seite HTML-Elemente enth&auml;lt. Wenn die Sonderzeichen nicht in HTML-Zeichenentit&auml;ten konvertiert werden, interpretiert der Browser den HTML-Code und zeigt statt den Elementen selbst das Ergebnis dieser Interpretation an. Mit der Konvertierung durch die benutzerdefinierte Aktion wird gew&auml;hrleistet, dass die Seite korrekt verarbeitet wird.
+</p>
+<!--
+<footitle>HTML processed by the &lt;ora:encodeHTML&gt; action </footitle>
+<graphic fileref="figs/JspPR_07.gif"/>-->
+<p>
+Au&szlig;er statischem Text kann der Body der Aktion jedes JSP-Element enthalten. Ein realistischeres Beispiel f&uuml;r die Verwendung dieser Aktion ist das Einf&uuml;gen von Text aus einer Datenbank in eine JSP-Seite, wobei Sie sich nicht darum k&uuml;mmern m&uuml;ssen, wie Sonderzeichen im Text vom Browser interpretiert werden. Die Tag-Prozedurklasse ist sehr einfach, wie hier gezeigt:
+</p>
+<span class="PROGRAMLISTING"><pre>package com.ora.jsp.tags.generic;
+
+import java.io.*;
+import javax.servlet.jsp.*;
+import javax.servlet.jsp.tagext.*;
+import com.ora.jsp.util.*;
+
+public class EncodeHTMLTag extends BodyTagSupport {
+    
+    public int doAfterBody() throws JspException {
+        BodyContent bc = getBodyContent();
+        JspWriter out = getPreviousOut();
+        try {
+            out.write(toHTMLString(bc.getString()));
+        }
+        catch (IOException e) {} // Ignore
+        return SKIP_BODY;
+    }
+
+    private String toHTMLString(String in) {
+        StringBuffer out = new StringBuffer();
+        for (int i = 0; in != null &amp; i &lt; in.length(); 
+          i++) {
+            char c = in.charAt(i);
+            if (c == '\'') {
+                out.append(&quot;&#39;&quot;);
+            }
+            else if (c == '\&quot;') {
+                out.append(&quot;&#34;&quot;);
+            }
+            else if (c == '&lt;') {
+                out.append(&quot;&lt;&quot;);
+            }
+            else if (c == '&gt;') {
+                out.append(&quot;&gt;&quot;);
+            }
+            else if (c == '&amp;') {
+                out.append(&quot;&amp;&quot;);
+            }
+            else {
+                out.append(c);
+            }
+        }
+        return out.toString();
+    }
+}</pre></span>
+<p>
+Da die Aktion keine Attribute hat, ben&ouml;tigt die Tag-Prozedur keine Instanzenvariablen oder Methoden f&uuml;r den Zugriff auf Eigenschaften. Die Tag-Prozedur kann alle <span class="LITERAL">BodyTag</span>-Methoden wieder verwenden, die von der Klasse <span class="LITERAL">BodyTagSupport</span> implementiert werden, mit Ausnahme der Methode <span class="LITERAL">doAfterBody()</span>.
+</p>
+<p>
+Zwei Dienstprogramm-Methoden der Klasse <span class="LITERAL">BodyTagSupport</span> werden in der Methode <span class="LITERAL">doAfterBody()</span> verwendet. Die Methode <span class="LITERAL">getBodyContent()</span> gibt einen Verweis auf das Objekt <span class="LITERAL">BodyContent</span> zur&uuml;ck, das die Ergebnisse enth&auml;lt, die bei der Verarbeitung des Bodys der Aktion entstanden sind. Die Methode <span class="LITERAL">getPreviousOut()</span> gibt das Objekt <span class="LITERAL">BodyContent</span> der umschlie&szlig;enden Aktion zur&uuml;ck, falls vorhanden, oder das Hauptobjekt <span class="LITERAL">JspWriter</span> f&uuml;r die Seite, wenn die Aktion sich auf der obersten Ebene befindet.
+</p>
+<p>
+Warum hei&szlig;t die Methode <span class="LITERAL">getPreviousOut()</span> und nicht <span class="LITERAL">getOut()</span>? Mit dem Namen soll verdeutlicht werden, dass das zugewiesene Objekt als Ausgabe f&uuml;r das <em>umschlie&szlig;ende</em> Element in einer Hierarchie verschachtelter Aktionselemente verwendet werden soll. Angenommen, Ihre Seite enth&auml;lt die folgenden Aktionselemente:
+</p>
+<span class="PROGRAMLISTING"><pre>  &lt;xmp:foo&gt;
+    &lt;xmp:bar&gt;
+      Some template text
+    &lt;/xmp:bar&gt;
+&lt;/xmp:foo&gt;</pre></span>
+<p>
+Der Webcontainer erstellt zun&auml;chst das Objekt <span class="LITERAL">JspWriter</span> und weist es der Variablen <span class="LITERAL">out</span> f&uuml;r die Seite zu. Beim Auftreten der Aktion <span class="LITERAL">&lt;xmp:foo&gt;</span> wird ein Objekt <span class="LITERAL">BodyContent</span> erstellt und vor&uuml;bergehend der Variablen <span class="LITERAL">out</span> zugewiesen. Dann wird ein weiteres Objekt <span class="LITERAL">BodyContent</span> f&uuml;r die Aktion <span class="LITERAL">&lt;xmp:bar&gt;</span> erstellt und wiederum der Variablen <span class="LITERAL">out</span> zugewiesen. Der Webcontainer verwaltet diese Hierarchie aus Ausgabeobjekten. Vorlagentexte und von den JSP-Standardelementen erzeugte Ausgaben werden im aktuellen Ausgabeobjekt abgelegt. Jedes Element kann auf sein eigenes Objekt <span class="LITERAL">BodyContent</span> zugreifen, indem es die Methode <span class="LITERAL">getBodyContent()</span> aufruft und dann den Inhalt liest. Beim Element <span class="LITERAL">&lt;xmp:bar&gt;</span> besteht der Inhalt aus dem Vorlagentext. Nach der Verarbeitung des Inhalts kann er in den Body von <span class="LITERAL">&lt;xmp:foo&gt;</span> geschrieben werden, indem das Objekt <span class="LITERAL">BodyContent</span> f&uuml;r dieses Element &uuml;ber die Methode <span class="LITERAL">getPreviousOut()</span> abgerufen wird. Schlie&szlig;lich kann das Element <span class="LITERAL">&lt;xmp:foo&gt;</span> den Inhalt verarbeiten, der vom Element <span class="LITERAL">&lt;xmp:bar&gt;</span> bereitgestellt wird, und den Inhalt dem Ausgabeobjekt oberster Ebene hinzuf&uuml;gen: dem Objekt <span class="LITERAL">JspWriter</span>, das durch Aufrufen der Methode <span class="LITERAL">getPreviousOut()</span> abgerufen wird.
+</p>
+<p>
+Die Tag-Prozedur in diesem Beispiel konvertiert alle Sonderzeichen, die sie in ihrem Objekt <span class="LITERAL">BodyContent</span> findet, mit der Methode <span class="LITERAL">toHTMLString()</span>. Unter Verwendung der Methode <span class="LITERAL">getString()</span> wird der Inhalt des Objekts <span class="LITERAL">BodyContent</span> abgerufen und als Argument f&uuml;r die Methode <span class="LITERAL">toHTMLString()</span> eingesetzt. Das Ergebnis wird in das Objekt <span class="LITERAL">JspWriter</span> geschrieben, das durch einen Aufruf von <span class="LITERAL">getPreviousOut()</span> empfangen wird.
+</p>
+<p>
+Die Methode <span class="LITERAL">doAfterBody()</span> in diesem Beispiel gibt <span class="LITERAL">SKIP_BODY</span> zur&uuml;ck. Dadurch wird der Container angewiesen, mit einem Aufruf von <span class="LITERAL">doEndTag()</span> fortzufahren. Bei einer Tag-Prozedur, die eine benutzerdefinierte Iterationsaktion implementiert, kann <span class="LITERAL">doAfterBody()</span> stattdessen <span class="LITERAL">EVAL_BODY_TAG</span> zur&uuml;ckgeben. Der Container wertet dann den Body des Elements noch einmal aus, schreibt die Ergebnisse in das Objekt <span class="LITERAL">BodyContent</span> des Elements und ruft <span class="LITERAL">doAfterBody()</span> auf. Der Vorgang wird so lange wiederholt, bis <span class="LITERAL">doAfterBody()</span> den Wert <span class="LITERAL">SKIP_BODY</span> zur&uuml;ckgibt.
+</p></td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+<div id="clearBody">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">clearBody()</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"> </td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="usage"><span class="LITERAL">public void clearBody()</span></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+Entfernt den gesamten gepufferten Inhalt f&uuml;r diese Instanz.
+</p></td>
+</tr>
+</table>
+</div>
+<div id="flush">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">flush()</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"> </td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="usage"><span class="LITERAL">public void flush() throws java.io.IOException</span></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+&Uuml;berschreibt das von <span class="LITERAL">JspWriter</span> &uuml;bernommene Verhalten, so dass immer eine Ausnahme <span class="LITERAL">IOException</span> ausgel&ouml;st wird, da das Leeren einer Instanz von <span class="LITERAL">BodyContent</span> nicht zul&auml;ssig ist.
+</p></td>
+</tr>
+</table>
+</div>
+<div id="getEnclosingWriter">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">getEnclosingWriter()</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"> </td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="usage"><span class="LITERAL">public JspWriter getEnclosingWriter()</span></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+Gibt das umschlie&szlig;ende Objekt <span class="LITERAL">JspWriter</span> zur&uuml;ck, das hei&szlig;t entweder <span class="LITERAL">JspWriter</span> der obersten Ebene oder <span class="LITERAL">JspWriter</span> (Unterklasse <span class="LITERAL">BodyContent</span>) der &uuml;bergeordneten Tag-Prozedur.
+</p></td>
+</tr>
+</table>
+</div>
+<div id="getReader">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">getReader()</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"> </td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="usage"><span class="LITERAL">public abstract java.io.Reader getReader()</span></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+Gibt den Wert dieses Objekts <span class="LITERAL">BodyContent</span> als <span class="LITERAL">Reader</span> zur&uuml;ck, und zwar mit dem Inhalt, der beim Auswerten vom Body dieses Elements entstanden ist.
+</p></td>
+</tr>
+</table>
+</div>
+<div id="getString">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">getString()</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"> </td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="usage"><span class="LITERAL">public abstract String getString()</span></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+Gibt den Wert dieses Objekts <span class="LITERAL">BodyContent</span> als <span class="LITERAL">String</span> zur&uuml;ck, und zwar mit dem Inhalt, der beim Auswerten vom Body dieses Elements entstanden ist.
+</p></td>
+</tr>
+</table>
+</div>
+<div id="writeOut">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">writeOut()</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"> </td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="usage"><span class="LITERAL">public abstract void writeOut(java.io.Writer out)<br> &nbsp;&nbsp;throws java.io.IOException</span></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+Schreibt den Inhalt dieses Objekts <span class="LITERAL">BodyContent</span> in ein <span class="LITERAL">Writer</span>-Objekt.
+</p></td>
+</tr>
+</table>
+</div>
+<div id="BodyContent">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">BodyContent()</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"> </td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="usage"><span class="LITERAL">protected BodyContent(JspWriter e)</span></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+Erstellt eine neue Instanz, die vom angegebenen Objekt <span class="LITERAL">JspWriter</span> umschlossen wird.
+</p></td>
+</tr>
+</table>
+</div>
+</body>
+</html>

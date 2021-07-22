@@ -1,0 +1,151 @@
+<html>
+<head>
+<title>number()-Funktion</title>
+</head>
+<body bgcolor="#FFFFFF" text="#000000">
+<div id="Beschreibung">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">number()-Funktion</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description">
+Diese Funktion konvertiert ihr Argument in eine Zahl. </td></tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Eingaben</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<p>Ein Objekt. Das Objekt wird wie unten beschrieben in eine Zahl konvertiert. </p>
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Ausgabe</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<p>Eine Zahl. Das Objekt wird wie folgt in eine Zahl konvertiert:</p>
+<ul>
+        <dd>Ist das Argument ein Boolescher Wert, wird der Wert <span class="LITERAL">true</span> in die Zahl <span class="LITERAL">1</span> konvertiert und der Wert <span class="LITERAL">false</span> in die Zahl <span class="LITERAL">0</span>.</p>
+        </li> 
+<dd>Ist das Argument eine Knotenmenge, wird diese in einen String konvertiert, so als ob sie an die Funktion <span class="LITERAL">string()</span> &uuml;bergeben worden w&auml;re, und anschlie&szlig;end wird der String wie jeder andere String in eine Zahl konvertiert. (Denken Sie daran, dass die Funktion <span class="LITERAL">string()</span> den Stringwert des ersten Knotens in der Knotenmenge zur&uuml;ckgibt.)</p>
+        </li>
+        <dd>Ist das Argument ein String, so wird dieser folgenderma&szlig;en konvertiert:</p>
+          <ul>
+            <dd>Besteht der String aus optionalem Leerraum, gefolgt von einem optionalen Minuszeichen (<span class="LITERAL">-</span>), gefolgt von einer Zahl, gefolgt von Leerraum, so wird er in den Gleitkommawert konvertiert, der dem durch den String repr&auml;sentierten mathematischen Wert am n&auml;chsten liegt. (Der IEEE-754-Standard definiert eine <span class="LITERAL">round-to-nearest</span>-Regel, weitere Informationen sollten Sie im IEEE-754-Standard nachschlagen.)</p>
+            </li>
+            <dd>Jeder weitere String wird in den Wert <span class="LITERAL">NaN</span> (Not a Number &ndash; keine Zahl) konvertiert.</p>
+            </li>
+          </ul>
+
+        </li>
+        <dd>Hat das Argument einen anderen Datentyp, wird es seinem Typ entsprechend in eine Zahl konvertiert. Lesen Sie in der Dokumentation Ihres XSLT-Prozessors nach, welche weiteren Datentypen unterst&uuml;tzt werden, und wie sie in Zahlen konvertiert werden. </p>
+        </li>
+      </ul>
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Definition</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<p>XPath-Abschnitt 4.4, Zahlenfunktionen</p>
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Beispiel</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<p>Hier das XML-Dokument, mit dem die Funktion <span class="LITERAL">number()</span> erprobt werden soll:</p>
+<span class="PROGRAMLISTING"><pre>
+&lt;?xml version="1.0"?&gt;
+&lt;report&gt;
+  &lt;title&gt;Miles Flown in 2001&lt;/title&gt;
+  &lt;month sequence="01"&gt;
+    &lt;miles-flown&gt;12379&lt;/miles-flown&gt;
+    &lt;miles-earned&gt;35215&lt;/miles-earned&gt;
+  &lt;/month&gt;
+  &lt;month sequence="02"&gt;
+    &lt;miles-flown&gt;32857&lt;/miles-flown&gt;
+    &lt;miles-earned&gt;92731&lt;/miles-earned&gt;
+  &lt;/month&gt;
+  &lt;month sequence="03"&gt;
+    &lt;miles-flown&gt;19920&lt;/miles-flown&gt;
+    &lt;miles-earned&gt;76725&lt;/miles-earned&gt;
+  &lt;/month&gt;
+  &lt;month sequence="04"&gt;
+    &lt;miles-flown&gt;18903&lt;/miles-flown&gt;
+    &lt;miles-earned&gt;31781&lt;/miles-earned&gt;
+  &lt;/month&gt;
+&lt;/report&gt;</pre></span>
+<p>Die Funktion <span class="LITERAL">number()</span> wird mit einer Vielzahl von Argumenten getestet:</p>
+<span class="PROGRAMLISTING"><pre>
+&lt;?xml version="1.0"?&gt;
+&lt;xsl:stylesheet version="1.0" 
+  xmlns:xsl="http://www.w3.org/1999/XSL/Transform"&gt;
+
+  &lt;xsl:output method="text"/&gt;
+
+<!--<?troff .Nd 10?>-->
+  &lt;xsl:variable name="newline"&gt;
+&lt;xsl:text&gt;
+&lt;/xsl:text&gt;
+  &lt;/xsl:variable&gt;
+
+  &lt;xsl:template match="/"&gt;
+    &lt;xsl:value-of select="$newline"/&gt;
+    &lt;xsl:text&gt;Tests of the number() function:&lt;/xsl:text&gt;
+
+    &lt;xsl:value-of select="$newline"/&gt;
+    &lt;xsl:value-of select="$newline"/&gt;
+    &lt;xsl:text&gt;   number(true())=&lt;/xsl:text&gt;
+    &lt;xsl:value-of select="number(true())"/&gt;
+    &lt;xsl:value-of select="$newline"/&gt;
+    &lt;xsl:text&gt;   number(false())=&lt;/xsl:text&gt;
+    &lt;xsl:value-of select="number(false())"/&gt;
+    &lt;xsl:value-of select="$newline"/&gt;
+    &lt;xsl:text&gt;   number(/report/month[2]/miles-flown)=&lt;/xsl:text&gt;
+    &lt;xsl:value-of select="number(/report/month[2]/miles-flown)"/&gt;
+    &lt;xsl:value-of select="$newline"/&gt;
+    &lt;xsl:text&gt;   number(//miles-flown)=&lt;/xsl:text&gt;
+    &lt;xsl:value-of select="number(//miles-flown)"/&gt;
+    &lt;xsl:value-of select="$newline"/&gt;
+    &lt;xsl:text&gt;   number(/report/title)=&lt;/xsl:text&gt;
+    &lt;xsl:value-of select="number(/report/title)"/&gt;
+  &lt;/xsl:template&gt;
+
+&lt;/xsl:stylesheet&gt;</pre></span>
+<p>Hier die Ausgabe des Stylesheets:</p>
+<span class="PROGRAMLISTING"><pre>
+
+Tests of the number() function:
+
+   number(true())=1
+   number(false())=0
+   number(/report/month[2]/miles-flown)=32857
+   number(//miles-flown)=12379
+   number(/report/title)=NaN
+</pre></span>
+</td>
+</tr>
+</table>
+</div>
+</body>
+</html>

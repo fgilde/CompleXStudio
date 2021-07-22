@@ -1,0 +1,1085 @@
+<html><head>
+
+<link rel="stylesheet" href="josh.css"></head><body bgcolor="#FFFFFF">
+<div id="Count">
+			<table width="100%" cellspacing="0" cellpadding="0" border="0" class="main"><tr>							<td valign="top" class="name">Count</td><td valign="top" nowrap class="compatibility">&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><pre>Integer = Application.Count</pre>
+					</td><td valign="top" nowrap class="requirements"> &#160;</td>
+				</tr>
+				<tr><td colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Gibt einen Integer zur&uuml;ck, der die Anzahl von Elementen angibt, die momentan in der Sammlung <span class="literal">Application</span> enthalten sind. Die Eigenschaft <span class="literal">Count</span> wird aus der durch die Klasse <span class="literal">HttpApplicationState</span> implementierten ICollection-Schnittstelle abgeleitet.
+</p>
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Parameter</span><ul><li><i><span class="replaceable">Integer</span></i><br>&#160;
+			  Eine Integervariable, die den Wert der Eigenschaft <span class="literal">Count</span> empf&auml;ngt.</li></ul>
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td><p>Dieses Beispiel f&uuml;gt der Sammlung <span class="literal">Application</span> zwei Werte hinzu, zeigt die Anzahl von Elementen in der Sammlung <span class="literal">Application</span> an und verwendet dann die Eigenschaft <span class="literal">Count</span> als Schleifenkontrollwert, um jedes Element anzuzeigen:
+</p>
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>Sub Page_Load(  )
+   Application.Clear(  )
+   Application("foo") = "Hello, "
+   Application("bar") = "World!"
+   Message.Text = "The Application collection contains " &amp; _
+      Application.Count &amp; " items: "
+      Dim I as Integer
+      For I = 0 To Application.Count - 1
+         Message.Text &amp;= Application(I)
+      Next
+End Sub</pre>
+						</span></td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="notes"><span class="title">Hinweise</span></td>
+				</tr>
+				<tr>
+					<td><p>Die Eigenschaft <span class="literal">Count</span> wurde in ASP.NET neu eingef&uuml;hrt. Sie k&ouml;nnen diese Eigenschaft nicht nur zum Durchlaufen der Sammlung <span class="literal">Application</span> verwenden, sondern damit auch protokollieren, wie viele Elemente eine Anwendung zu einem bestimmten Zeitpunkt enth&auml;lt. Diese Informationen k&ouml;nnten dann f&uuml;r sp&auml;tere Kontrollzwecke in ein Protokoll geschrieben werden.
+</p>
+					</td>
+				</tr>
+			</table>
+		</div>
+<div id="Item">
+			<table width="100%" cellspacing="0" cellpadding="0" border="0" class="main"><tr>							<td valign="top" class="name">Item</td><td valign="top" nowrap class="compatibility">&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><pre>Object = Application.Item(ByVal name As String)
+Application.Item(ByVal name As String) = Object
+Object = Application.Item(ByVal index As Integer)
+Application.Item(ByVal index As Integer) = Object </pre>
+					</td><td valign="top" nowrap class="requirements"> &#160;</td>
+				</tr>
+				<tr><td colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Gibt ein mit einem bestimmten Namen oder Index verkn&uuml;pftes Objekt zur&uuml;ck oder legt es fest.
+</p>
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Parameter</span><ul><li><i><span class="replaceable">Object</span></i><br>&#160;
+			  Eine Variable eines beliebigen Typs (da letztlich alle .NET-Typen von <span class="literal">Object</span> abgeleitet werden), die den Wert des Elements empf&auml;ngt oder festlegt.
+</li><li><i><span class="replaceable">name</span></i><br>&#160;
+			  Ein Stringargument, das den Textschl&uuml;ssel enth&auml;lt, der auf das Element angewandt werden soll (oder anhand dessen das Element abgerufen werden soll).
+</li><li><i><span class="replaceable">index</span></i><br>&#160;
+			  Ein Integerargument, das den Index des Elements enth&auml;lt, dessen Wert abgerufen oder ge&auml;ndert wird.
+</li></ul>
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td><p>Im folgenden Beispiel wird der Wert von zwei Elementen in der Sammlung <span class="literal">Application</span> festgelegt. Sind diese Elemente noch nicht in der Sammlung enthalten, werden sie hinzugef&uuml;gt. Das Beispiel zeigt dann die beiden Werte an.
+</p>
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>Sub Page_Load(  )
+   Application.Clear(  )
+   Application.Item("foo") = "foo"
+   Application.Item("foo2") = "foo2"
+   Message.Text = Application.Item("foo") &amp; "&lt;br/&gt;"
+   Message.Text &amp;= Application.Item(1)
+End Sub</pre>
+						</span></td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="notes"><span class="title">Hinweise</span></td>
+				</tr>
+				<tr>
+					<td><p>Auf die Eigenschaft <span class="literal">Item</span> kann mit folgender Syntax implizit zugegriffen werden:</p>
+					  <p><span class="programlisting">Application("foo") = "foo"</span></p>
+					  <p>Diese Syntax taucht in ASP-Code h&auml;ufig auf. Explizites Referenzieren der Eigenschaft <span class="literal">Item</span> ist nicht erforderlich. Der Code wird u.&#160; U. aber leichter les- und nachvollziehbar, wenn Sie diese Eigenschaft auflisten und nicht nur implizit darauf zugreifen.
+</p><p>Ein Index kann nur als Argument verwendet werden, wenn ein Wert ge&auml;ndert wird, nicht wenn ein neues Element erstellt wird. Au&szlig;erdem muss der Indexwert kleiner als die Anzahl von Elementen in der Sammlung <span class="literal">Application</span> sein, da sonst ein Ausnahmefehler ausgel&ouml;st wird.
+</p><span class="programlisting"><pre>&nbsp;</pre>
+						</span></td>
+				</tr>
+			</table>
+		</div>
+<div id="AllKeys">
+			<table width="100%" cellspacing="0" cellpadding="0" border="0" class="main"><tr>							<td valign="top" class="name">AllKeys</td><td valign="top" nowrap class="compatibility">&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><pre>Dim StateVars(Application.Count) As String
+StateVars = Application.AllKeys</pre>
+					</td><td valign="top" nowrap class="requirements"> &#160;</td>
+				</tr>
+				<tr><td colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Gibt ein Stringarray mit Schl&uuml;sselnamen zur&uuml;ck, die im <span class="literal">HttpApplicationState</span>-Objekt gespeichert sind.
+</p>
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Parameter</span><ul><li><i><span class="replaceable">StateVars</span></i><br>&#160;
+			  Eine Stringarray-Variable, die das Array mit Schl&uuml;sselnamen empf&auml;ngt.
+</li></ul>
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td><p>Dieses Beispiel zeigt alle Schl&uuml;ssel der im Objekt <span class="literal">Application</span> gespeicherten Daten an:
+</p>
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>Sub Page_Load(  )
+   Dim I as Integer
+   Dim StateVars(Application.Count - 1) As String
+   StateVars = Application.AllKeys
+   For I = 0 to StateVars.Length - 1
+      Message.Text = Message.Text + StateVars(I) + "&lt;br/&gt;"
+   Next I
+End Sub </pre>
+						</span></td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="notes"><span class="title">Hinweise</span></td>
+				</tr>
+				<tr>
+					<td><p>Diese Eigenschaft liefert eine Liste von Schl&uuml;sselnamen, die allen aktuellen Anwendungsvariablen zugewiesen sind.
+</p>
+					</td>
+				</tr>
+			</table>
+		</div>
+<div id="Contents">
+			<table width="100%" cellspacing="0" cellpadding="0" border="0" class="main"><tr>							<td valign="top" class="name">Contents</td><td valign="top" nowrap class="compatibility">&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><pre>HttpApplicationState = Application.Contents</pre>
+					</td><td valign="top" nowrap class="requirements"> &#160;</td>
+				</tr>
+				<tr><td colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Gibt eine Referenz zur aktuellen Instanz von <span class="literal">HttpApplicationState</span> zur&uuml;ck.
+</p>
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Parameter</span><ul><li><i><span class="replaceable">HttpApplicationState</span></i><br>&#160;
+			  Eine Variable des Typs <span class="literal">HttpApplicationState</span>, die die <span class="literal">Contents</span>-Referenz empf&auml;ngt.
+</li></ul>
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td><p>Dieses Beispiel ruft die Methode <span class="literal">RemoveAll</span> durch Referenz auf die Sammlung <span class="literal">Contents</span> auf und schreibt dann eine Meldung:
+</p>
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>Sub Page_Load(  )
+Application.Contents.RemoveAll(  )
+Message.Text = "Removed all items from current Application."
+End Sub</pre>
+						</span></td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="notes"><span class="title">Hinweise</span></td>
+				</tr>
+				<tr>
+					<td><p>Diese Eigenschaft gew&auml;hrleistet die R&uuml;ckw&auml;rtskompatibilit&auml;t mit ASP. Auf Eigenschaften wie <span class="literal">Item</span> und Methoden wie <span class="literal">Remove</span> und <span class="literal">RemoveAll</span> wird in ASP &uuml;ber die Eigenschaft <span class="literal">Contents</span> zugegriffen. In neuen ASP.NET-Entwicklungen sollten Sie auf diese Elemente direkt zugreifen. Anstatt z.&#160; B. die Methode <span class="literal">RemoveAll</span> &uuml;ber die Eigenschaft <span class="literal">Contents</span> aufzurufen, k&ouml;nnen Sie die Methode <span class="literal">RemoveAll</span> direkt aufrufen:
+</p><span class="programlisting"><pre>Application.RemoveAll(  )</pre>
+						</span></td>
+				</tr>
+			</table>
+		</div>
+<div id="Keys">
+			<table width="100%" cellspacing="0" cellpadding="0" border="0" class="main"><tr>							<td valign="top" class="name">Keys</td><td valign="top" nowrap class="compatibility">&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><pre>KeysCollection = Application.Keys</pre>
+					</td><td valign="top" nowrap class="requirements"> &#160;</td>
+				</tr>
+				<tr><td colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Gibt eine <span class="literal">NameObjectCollectionBase.KeysCollection</span> mit den Stringschl&uuml;sseln zur&uuml;ck, die allen in der Sammlung <span class="literal">Application</span> enthaltenen Werten zugeordnet sind.
+</p>
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Parameter</span><ul><li><i><span class="replaceable">KeysCollection</span> </i><br>&#160;
+			  Eine Variable des Typs <span class="literal">NameObjectCollectionBase.KeysCollection</span>, die den Wert der Eigenschaft <span class="literal">Keys</span> empf&auml;ngt.
+</li></ul>
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td><p>Mit diesem Beispiel wird die Sammlung der Schl&uuml;ssel in der Sammlung <span class="literal">Application</span> durchlaufen und anschlie&szlig;end werden durch die Eigenschaft <span class="literal">Text</span> des Steuerelements <span class="literal">Message</span> der Name und der zugeh&ouml;rige Wert des Schl&uuml;ssels angezeigt:
+</p>
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>Sub Page_Load(  )
+   Dim Key As String
+   Message.Text = "Application Keys:"
+   For Each Key in Application.Keys
+      Message.Text &amp;= "&lt;br/&gt;Key:&amp;;&amp;;&amp;;" &amp; Key
+      Message.Text &amp;= "&lt;br/&gt;Value:&amp;;&amp;;&amp;;" &amp; Application(Key)
+   Next
+End Sub</pre>
+						</span></td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="notes"><span class="title">Hinweise</span></td>
+				</tr>
+				<tr>
+					<td><p>Die Eigenschaft <span class="literal">Keys</span> stellt eine der vielen M&ouml;glichkeiten dar, den Inhalt der Sammlung <span class="literal">Application</span> zu durchlaufen.
+</p>
+					</td>
+				</tr>
+			</table>
+		</div>
+<div id="StaticObjects">
+			<table width="100%" cellspacing="0" cellpadding="0" border="0" class="main"><tr>							<td valign="top" class="name">StaticObjects</td><td valign="top" nowrap class="compatibility">&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><pre>HttpStaticObjectsCollection = Application.StaticObjects </pre>
+					</td><td valign="top" nowrap class="requirements"> &#160;</td>
+				</tr>
+				<tr><td colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Gibt eine <span class="literal">HttpStaticObjectsCollection</span> zur&uuml;ck, die alle in <span class="emphasis">global.asax</span> instanziierten Objekte enth&auml;lt. Dazu wird die Syntax <span class="literal">&lt;object runat="server"&gt;</span> verwendet, wobei das Attribut <span class="literal">scope</span> auf <span class="literal">Application</span> gesetzt ist.
+</p>
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Parameter</span><ul><li><i><span class="replaceable">HttpStaticObjectsCollection</span> </i><br>&#160;
+			  Eine Variable des Typs <span class="literal">HttpStaticObjectsCollection</span>, die den Wert der Eigenschaft <span class="literal">StaticObjects</span> empf&auml;ngt.
+</li></ul>
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td><p>Dieses Beispiel zeigt mithilfe der Eigenschaft <span class="literal">Count</span> der Klasse <span class="literal">HttpStaticObjectsCollection</span> die Anzahl von Objekten in der aktuellen Anwendung an, die mit der Syntax <span class="literal">&lt;object scope="Application" runat="server"/&gt;</span> in <span class="emphasis">global.asax</span> deklariert werden. Anschlie&szlig;end wird der Typ jedes Objekts ermittelt. Handelt es sich um ein Websteuerelement vom Typ <span class="literal">TextBox</span>, wird es zur Sammlung <span class="literal">Controls</span> der aktuellen Seite hinzugef&uuml;gt.
+</p>
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>Sub Page_Load(  )
+   Message.Text = "There are " &amp; Application.StaticObjects.Count &amp; _
+      " objects declared with the " &amp; _
+      "&amp;lt;object runat=&amp;quot;server&amp;quot;&amp;gt; syntax " &amp; _
+      "in Application scope."
+   Dim myobj As Object
+   For Each myObj in Application.StaticObjects
+      If myObj.Value.GetType.ToString(  ) = _
+         "System.Web.UI.WebControls.TextBox" Then
+         Page.Controls.Add(myObj.Value)
+      End If
+   Next
+End Sub</pre>
+						</span></td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="notes"><span class="title">Hinweise</span></td>
+				</tr>
+				<tr>
+					<td><p>Diese Eigenschaft gew&auml;hrleistet die R&uuml;ckw&auml;rtskompatibilit&auml;t mit ASP. Bedenken Sie vor der Instanziierung von Objekten auf Sitzungs- oder Anwendungsebene die Auswirkungen, die solche Objekte auf Ressourcen und die Skalierbarkeit von Anwendungen haben. In den meisten F&auml;llen ist es ratsam, die G&uuml;ltigkeit von Objekten auf einzelne Seiten zu beschr&auml;nken.
+Jedes Objekt in der Sammlung wird durch die <span class="literal">DictionaryEntry</span>-Struktur repr&auml;sentiert. Auf den Schl&uuml;ssel und den Wert kann nicht direkt zugegriffen werden. Verwenden Sie zum Zugriff auf den Schl&uuml;ssel und/oder den Wert die Schl&uuml;ssel- und/oder Wertelemente der <span class="literal">DictionaryEntry</span>-Struktur.
+</p>
+					</td>
+				</tr>
+			</table>
+		</div>
+<div id="Add">
+			<table width="100%" cellspacing="0" cellpadding="0" border="0" class="main"><tr>							<td valign="top" class="name">Add</td><td valign="top" nowrap class="compatibility">&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><pre>Application.Add(ByVal name As String, ByVal value As Object) </pre>
+					</td><td valign="top" nowrap class="requirements"> &#160;</td>
+				</tr>
+				<tr><td colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>F&uuml;gt der Sammlung <span class="literal">Application</span> einen Wert hinzu.</p>
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Parameter</span><ul><li><i><span class="replaceable">Name</span></i><br>&#160;
+			  Eine Variable des Typs <span class="literal">String</span>, die den Namen des Elements festlegt, das der Sammlung <span class="literal">Application</span> hinzugef&uuml;gt werden soll.
+</li><li><i><span class="replaceable">Value</span></i><br>&#160;
+			  Eine Variable des Typs <span class="literal">Object</span>, die den Namen des Elements enth&auml;lt, das der Sammlung <span class="literal">Application</span> hinzugef&uuml;gt werden soll.
+</li></ul>
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td><p>Das folgende Beispiel f&uuml;gt der Sammlung <span class="literal">Application</span> ein Element hinzu und zeigt es an:
+</p>
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>Sub Page_Load(  )
+   Application.Add("Added", "AddedValue")
+   Message.Text = Application("Added")
+End Sub</pre>
+						</span></td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="notes"><span class="title">Hinweise</span></td>
+				</tr>
+				<tr>
+					<td><p>Die in ASP.NET neu hinzugekommene Methode <span class="literal">Add</span> bietet ein Verfahren, um Elemente der Sammlung <span class="literal">Application</span> hinzuzuf&uuml;gen, das mit dem Verfahren zum Hinzuf&uuml;gen von Elementen zu anderen .NET-Sammlungen konsistent ist. Nat&uuml;rlich k&ouml;nnen Sie weiterhin die herk&ouml;mmliche ASP-Syntax zum direkten Indizieren des <span class="literal">Application</span>-Objekts &uuml;ber den Schl&uuml;sselnamen oder -index verwenden.
+</p>
+					</td>
+				</tr>
+			</table>
+		</div>
+<div id="Clear">
+			<table width="100%" cellspacing="0" cellpadding="0" border="0" class="main"><tr>							<td valign="top" class="name">Clear</td><td valign="top" nowrap class="compatibility">&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><pre>Application.Clear(  )</pre>
+					</td><td valign="top" nowrap class="requirements"> &#160;</td>
+				</tr>
+				<tr><td colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>L&ouml;scht den Inhalt der Sammlung <span class="literal">Application</span>.
+</p>
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Parameter</span></td></tr><tr><td>Keine
+
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td><p>Dieses Beispiel l&ouml;scht den Inhalt der Sammlung <span class="literal">Application</span> und schreibt eine Meldung mit der aktuellen Anzahl der in der Sammlung enthaltenen Elemente an die Eigenschaft <span class="literal">Text</span> des Steuerelements <span class="literal">Message</span>. Die Anzahl sollte 0 sein.
+</p>
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>Sub Page_Load(  )
+   Application.Clear(  )
+   Message.Text = "There are " &amp; Application.Count &amp; _
+      " items in the Application collection."
+End Sub</pre>
+						</span></td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="notes"><span class="title">Hinweise</span></td>
+				</tr>
+				<tr>
+					<td><p>Die in ASP.NET neu hinzugekommene Methode <span class="literal">Clear</span> l&ouml;scht nur den Inhalt der Sammlung <span class="literal">Application</span> selbst. Der Inhalt der Sammlung <span class="literal">StaticObjects</span> wird nicht gel&ouml;scht.
+</p>
+					</td>
+				</tr>
+			</table>
+		</div>
+<div id="Get">
+			<table width="100%" cellspacing="0" cellpadding="0" border="0" class="main"><tr>							<td valign="top" class="name">Get</td><td valign="top" nowrap class="compatibility">&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><pre>Application.Get(ByVal name As String)
+Application.Get(ByVal Index As Integer)</pre>
+					</td><td valign="top" nowrap class="requirements"> &#160;</td>
+				</tr>
+				<tr><td colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Ruft ein Element der Sammlung <span class="literal">Application</span> nach seinem Namen oder nach seiner Positionsnummer (Index) in der Sammlung <span class="literal">Application</span> ab. Normalerweise wird der Name f&uuml;r <span class="literal">Get</span>-Aufrufe verwendet, es sei denn, Sie m&uuml;ssen Elemente der Sammlung in einer Schleife abrufen.
+</p>
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Parameter</span><ul><li><i><span class="replaceable">name</span></i><br>&#160;
+			  Eine Variable des Typs <span class="literal">String</span>, die den Namen des Elements angibt, das aus der Sammlung <span class="literal">Application</span> abgerufen werden soll.
+</li><li><i><span class="replaceable">Index</span></i><br>&#160;
+			  Eine Variable des Typs <span class="literal">Integer</span>, die den Index des Elements angibt, das aus der Sammlung <span class="literal">Application</span> abgerufen werden soll.
+</li></ul>
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td><p>Dieses Beispiel legt einen Wert fest und ruft ihn aus der Sammlung <span class="literal">Application</span> ab. Au&szlig;erdem wird mit der Methode <span class="literal">Get</span> eine Meldung an die Eigenschaft <span class="literal">Text</span> des Steuerelements <span class="literal">Message</span> geschrieben, die den aktuellen Wert des der Sammlung <span class="literal">Application</span> neu hinzugef&uuml;gten Werts enth&auml;lt.
+</p>
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>Sub Page_Load(  )
+   Application("GetTest") = "Got it!"
+   Message.Text = "GetTest = " &amp; Application.Get("GetTest")
+End Sub</pre>
+						</span></td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="notes"><span class="title">Hinweise</span></td>
+				</tr>
+				<tr>
+					<td><p>Um zu ermitteln, ob ein Namenswert in der Sammlung <span class="literal">Application</span> gespeichert wird, m&uuml;ssen Sie sicherstellen, dass sein Wert nicht null ist, wie in folgendem Codebeispiel gezeigt:
+</p><span class="programlisting"><pre>If Not Application("Foo") is Nothing then
+   Message.Text = "Foo is set to " &amp; Application.Get("Foo")
+End If</pre>
+						</span></td>
+				</tr>
+			</table>
+		</div>
+<div id="GetKey">
+			<table width="100%" cellspacing="0" cellpadding="0" border="0" class="main"><tr>							<td valign="top" class="name">GetKey</td><td valign="top" nowrap class="compatibility">&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><pre>Application.GetKey(ByVal Index As Integer)</pre>
+					</td><td valign="top" nowrap class="requirements"> &#160;</td>
+				</tr>
+				<tr><td colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Ruft den Schl&uuml;sselnamen ab, der dem Index eines im Objekt <span class="literal">Application</span> gespeicherten Datenelements entspricht.
+</p>
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Parameter</span><ul><li><i><span class="replaceable">Index</span></i><br>&#160;
+			  Eine Variable des Typs <span class="literal">Integer</span>, die den Index des Schl&uuml;ssels angibt, der aus der Sammlung <span class="literal">Application</span> abgerufen werden soll.
+</li></ul>
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td><p>Dieses Beispiel entfernt alle Werte aus der Sammlung <span class="literal">Application</span>, um von einem bekannten Zustand aus zu beginnen. Anschlie&szlig;end wird ein einzelner Wert in die Sammlung <span class="literal">Application</span> geschrieben. Zum Schluss wird der Schl&uuml;ssel des ersten Elements (Index 0) durch Aufruf von <span class="literal">GetKey</span> in das Steuerelement <span class="literal">Message</span> geschrieben.
+</p>
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>Sub Page_Load(  )
+   Application.RemoveAll(  )
+   Application("GetKeyTest") = "Got it!"
+   Message.Text = "Key of Application(0) = " &amp; _
+                   Application.GetKey(0) &amp; _
+                   "&lt;br/&gt;(Should be GetKeyTest)"
+End Sub</pre>
+						</span></td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="notes"><span class="title">Hinweise</span></td>
+				</tr>
+				<tr>
+					<td><p>Wenn <span class="replaceable">Index</span> kleiner als 0 oder gr&ouml;&szlig;er als <span class="literal">Application.Count - 1</span> ist, wird eine <span class="literal">ArgumentOutOfRangeException</span> ausgel&ouml;st.
+</p>
+					</td>
+				</tr>
+			</table>
+		</div>
+<div id="Lock">
+			<table width="100%" cellspacing="0" cellpadding="0" border="0" class="main"><tr>							<td valign="top" class="name">Lock</td><td valign="top" nowrap class="compatibility">&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><pre>Application.Lock</pre>
+					</td><td valign="top" nowrap class="requirements"> &#160;</td>
+				</tr>
+				<tr><td colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Sperrt den Zugriff auf eine <span class="literal">Application</span>-Sammlung, um die Zugriffssynchronisation zu erleichtern. </p>
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Parameter</span></td></tr><tr><td>Keine
+
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td><p>Dieses Beispiel sperrt die Anwendung, setzt eine Variable zum Z&auml;hlen der Ladevorg&auml;nge der Anwendungsseite, entsperrt die Anwendung und zeigt dann den Wert an:
+</p>
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>Sub Page_Load(  )
+   Application.Lock(  )
+   Application("Counter") = Application("Counter") + 1
+   Application.UnLock(  )
+   Message.Text = "Counter = " &amp; Application("Counter")
+End Sub</pre>
+						</span></td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="notes"><span class="title">Hinweise</span></td>
+				</tr>
+				<tr>
+					<td><p>In diesem Beispiel wird die Anwendung gesperrt; danach werden alle Vorg&auml;nge, die innerhalb der Sammlung <span class="literal">Application</span> Werte &auml;ndern, durchgef&uuml;hrt und die Anwendung wird dann so schnell wie m&ouml;glich wieder entsperrt. Alle Schreibzugriffe auf die Sammlung <span class="literal">Application</span> k&ouml;nnen au&szlig;erhalb der Aufrufe der Methoden <span class="literal">Lock</span> und <span class="literal">Unlock</span> problemlos stattfinden.
+</p>
+					</td>
+				</tr>
+			</table>
+		</div>
+<div id="Remove">
+			<table width="100%" cellspacing="0" cellpadding="0" border="0" class="main"><tr>							<td valign="top" class="name">Remove</td><td valign="top" nowrap class="compatibility">&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><pre>Application.Remove(ByVal name As String)</pre>
+					</td><td valign="top" nowrap class="requirements"> &#160;</td>
+				</tr>
+				<tr><td colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Entfernt ein Element nach Namen aus der Sammlung <span class="literal">Application</span>.
+</p>
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Parameter</span><ul><li><i><span class="replaceable">Name</span></i><br>&#160;
+			  Ein Stringargument, das den Namen (Schl&uuml;ssel) des zu entfernenden Elements enth&auml;lt.</li></ul>
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td><p>Dieses Beispiel ermittelt, ob die Sammlung <span class="literal">Application</span> ein Element mit dem Schl&uuml;ssel "foo" enth&auml;lt. Wenn ja, wird dieses Element entfernt und eine entsprechende Meldung angezeigt:
+</p>
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>Sub Page_Load(  )
+   If Not Application("foo") Is Nothing Then
+      Application.Remove("foo")
+      Message.Text = "Item 'foo' was removed."
+   Else
+      Message.Text = "Item 'foo' does not exist."
+   End If
+End Sub</pre>
+						</span></td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="notes"><span class="title">Hinweise</span></td>
+				</tr>
+				<tr>
+					<td><p>Die Eigenschaft <span class="literal">Remove</span> gew&auml;hrleistet die R&uuml;ckw&auml;rtskompatibilit&auml;t mit ASP. In ASP wird auf diese Methode &uuml;ber die Sammlung <span class="literal">Contents</span> zugegriffen. In ASP.NET kann auf diese Methode entweder, wie oben beschrieben, direkt oder &uuml;ber die Sammlung <span class="literal">Contents</span> zugegriffen werden.
+</p>
+					</td>
+				</tr>
+			</table>
+		</div>
+<div id="RemoveAll">
+			<table width="100%" cellspacing="0" cellpadding="0" border="0" class="main"><tr>							<td valign="top" class="name">RemoveAll</td><td valign="top" nowrap class="compatibility">&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><pre>Application.RemoveAll(  )</pre>
+					</td><td valign="top" nowrap class="requirements"> &#160;</td>
+				</tr>
+				<tr><td colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Entfernt alle Elemente aus der Sammlung <span class="literal">Application</span>.
+</p>
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Parameter</span></td></tr><tr><td>Keine
+
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td><p>Dieses Beispiel pr&uuml;ft, ob mindestens ein Element in der Sammlung <span class="literal">Application</span> enthalten ist. Wenn ja, wird die Sammlung &uuml;ber die Methode <span class="literal">RemoveAll</span> gel&ouml;scht.
+</p>
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>Sub Page_Load(  )
+   If Application.Count &gt; 0 Then
+      Application.RemoveAll(  )
+      Message.Text = "Application collection cleared."
+   Else
+      Message.Text = "Application collection is already empty."
+   End If
+End Sub</pre>
+						</span></td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="notes"><span class="title">Hinweise</span></td>
+				</tr>
+				<tr>
+					<td><p>Die Eigenschaft <span class="literal">RemoveAll</span> gew&auml;hrleistet die R&uuml;ckw&auml;rtskompatibilit&auml;t mit ASP. In ASP wird auf diese Methode &uuml;ber die Sammlung <span class="literal">Contents</span> zugegriffen. In ASP.NET kann auf diese Methode entweder, wie oben beschrieben, direkt oder &uuml;ber die Sammlung <span class="literal">Contents</span> zugegriffen werden.
+</p>
+					</td>
+				</tr>
+			</table>
+		</div>
+<div id="RemoveAt">
+			<table width="100%" cellspacing="0" cellpadding="0" border="0" class="main"><tr>							<td valign="top" class="name">RemoveAt</td><td valign="top" nowrap class="compatibility">&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><pre>Application.RemoveAt(ByVal index As Integer) </pre>
+					</td><td valign="top" nowrap class="requirements"> &#160;</td>
+				</tr>
+				<tr><td colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Entfernt ein Element anhand seines Index aus der Sammlung <span class="literal">Application</span>. Diese Methode erg&auml;nzt die Methode <span class="literal">Remove</span>, die Element anhand seines Schl&uuml;ssels entfernt.
+</p>
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Parameter</span><ul><li><i><span class="replaceable">Index</span></i><br>&#160;
+			  Ein Integerargument mit der Indexposition des Elements, das aus der Sammlung <span class="literal">Application</span> entfernt werden soll.
+</li></ul>
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td />
+				</tr>
+				<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>Sub Page_Load(  )
+   If Application.Count &gt; 0 Then
+      Application.RemoveAt(0)
+      Message.Text = "The item at index 0 was removed."
+   Else
+      Message.Text = "The item at index 0 does not exist."
+   End If
+End Sub</pre>
+						</span></td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="notes"><span class="title">Hinweise</span></td>
+				</tr>
+				<tr>
+					<td><p>Mit der Methode <span class="literal">RemoveAt</span> k&ouml;nnen Elemente anhand ihres Index (anstatt anhand ihres Schl&uuml;ssels) aus der Sammlung <span class="literal">Application</span> entfernt werden. Wie im Beispiel oben werden alle auf das entfernte Element folgenden Elemente in der Sammlung um eine Position verschoben. Wenn Sie ein Element anhand seines Index entfernen und anschlie&szlig;end <span class="literal">RemoveAt</span> erneut mit demselben Index aufrufen, wird das direkt auf das zuvor entfernte Element folgende Element entfernt. Wenn die Sammlung <span class="literal">Application</span> nur ein einziges Element enth&auml;lt und Sie <span class="literal">RemoveAt</span> zweimal aufrufen, wird eine <span class="literal">ArgumentOutOfRangeException</span> ausgel&ouml;st.
+</p>
+					</td>
+				</tr>
+			</table>
+		</div>
+<div id="Set">
+			<table width="100%" cellspacing="0" cellpadding="0" border="0" class="main"><tr>							<td valign="top" class="name">Set</td><td valign="top" nowrap class="compatibility">&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><pre>Application.Set(ByVal name As String, ByVal value As Object) </pre>
+					</td><td valign="top" nowrap class="requirements"> &#160;</td>
+				</tr>
+				<tr><td colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Aktualisiert den Wert eines Objekts in der Sammlung <span class="literal">Application</span>. Mit dieser Methode k&ouml;nnen Sie Objekte in der Sammlung <span class="literal">Application</span> festlegen.
+</p>
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Parameter</span><ul><li><i><span class="replaceable">Name</span></i><br>&#160;
+			  Ein Stringargument mit dem Namen des Objekts, das in der Sammlung <span class="literal">Application</span> aktualisiert werden soll.
+</li><li><i><span class="replaceable">Value</span></i><br>&#160;
+			  Ein Objektargument mit dem neuen Wert des zu aktualisierenden Objekts aus der Sammlung <span class="literal">Application</span>.
+</li></ul>
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td><p>In diesem Beispiel wird <span class="literal">Set</span> zweimal verwendet: einmal, um ein neues Element in der Sammlung <span class="literal">Application</span> festzulegen und ein weiteres Mal, um seinen Wert zu &auml;ndern.
+</p>
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>Sub Page_Load(  )
+   Application.RemoveAll(  )
+   Application.Set("TotallyNewVariable","Test!")
+   Message.Text = "First: " + Application("TotallyNewVariable") + "&lt;br/&gt;"
+   Application.Set("TotallyNewVariable","Test again!")
+   Message.Text = Message.Text &amp; "First after Set: " +
+   Application("TotallyNewVariable") + "&lt;br/&gt;"
+End Sub</pre>
+						</span></td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="notes"><span class="title">Hinweise</span></td>
+				</tr>
+				<tr>
+					<td><p>Sie k&ouml;nnen mit <span class="literal">Set</span> der Sammlung <span class="literal">Application</span> Werte hinzuf&uuml;gen. In der Regel werden Sie daf&uuml;r aber sicherlich die einfache Syntax verwenden, die Sie aus ASP kennen:
+</p><span class="programlisting">
+<pre>Application("TotallyNewVariable") = "Test!"</pre>
+						</span></td>
+				</tr>
+			</table>
+		</div>
+<div id="UnLock">
+			<table width="100%" cellspacing="0" cellpadding="0" border="0" class="main"><tr>							<td valign="top" class="name">UnLock</td><td valign="top" nowrap class="compatibility">&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><pre>Application.UnLock</pre>
+					</td><td valign="top" nowrap class="requirements"> &#160;</td>
+				</tr>
+				<tr><td colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Hebt die Zugriffssperre f&uuml;r eine <span class="literal">Application</span>-Sammlung auf, um die Zugriffssynchronisation zu erleichtern.
+</p>
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Parameter</span></td></tr><tr><td>Keine
+
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td><p>Dieses Beispiel sperrt die Anwendung, setzt eine Variable zum Z&auml;hlen der Ladevorg&auml;nge der Anwendungsseite, entsperrt die Anwendung und zeigt dann den Wert an:
+</p>
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>Sub Page_Load(  )
+   Application.Lock(  )
+   Application("Counter") = Application("Counter") + 1
+   Application.UnLock(  )
+   Message.Text = "Counter = " &amp; Application("Counter")
+End Sub</pre>
+						</span></td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="notes"><span class="title">Hinweise</span></td>
+				</tr>
+				<tr>
+					<td><p>In diesem Beispiel wird die Anwendung gesperrt; danach werden alle Vorg&auml;nge, die innerhalb der Sammlung <span class="literal">Application</span> Werte &auml;ndern, durchgef&uuml;hrt und die Anwendung wird dann so schnell wie m&ouml;glich wieder entsperrt. Alle Schreibzugriffe auf die Sammlung <span class="literal">Application</span> k&ouml;nnen au&szlig;erhalb der Aufrufe der Methoden <span class="literal">Lock</span> und <span class="literal">Unlock</span> problemlos stattfinden.
+</p>
+					</td>
+				</tr>
+			</table>
+		</div>
+<div id="Start">
+			<table width="100%" cellspacing="0" cellpadding="0" border="0" class="main"><tr>							<td valign="top" class="name">Start</td><td valign="top" nowrap class="compatibility">&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><pre>Sub Application_OnStart( )    'Event handler logic
+End Sub</pre>
+					</td><td valign="top" nowrap class="requirements"> &#160;</td>
+				</tr>
+				<tr><td colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Wird ausgel&ouml;st, wenn die Anwendung erstellt wird. Die Ereignisbehandlungsroutine f&uuml;r dieses Ereignis sollte in der Anwendungsdatei <span class="emphasis">global.asax</span> definiert werden.
+</p>
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Parameter</span></td></tr><tr><td>Keine
+
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td><p>Dieses Beispiel schreibt einen Eintrag in das Ereignisprotokoll und das IIS-Protokoll der Anwendung, um anzuzeigen, dass das Ereignis <span class="literal">Application_OnStart</span> ausgel&ouml;st wurde:
+</p>
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>&lt;Script language="VB" runat="server"&gt;
+   Sub Application_OnStart(  )
+      Dim EventLog1 As New System.Diagnostics.EventLog ("Application", _
+         ".", "mySource")
+      EventLog1.WriteEntry("Application_OnStart fired!")
+      Context.Response.AppendToLog("Application_OnStart fired!")
+   End Sub
+&lt;/script&gt;</pre></span>
+
+<p>In diesem Codebeispiel verbirgt sich ein Problem. Da die Sicherheitsvorkehrungen in der Release-Version des .NET-Frameworks versch&auml;rft wurden, funktioniert das Schreiben in das Ereignisprotokoll in ASP.NET-Anwendungen standardm&auml;&szlig;ig nicht.
+</p>
+						</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="notes"><span class="title">Hinweise</span></td>
+				</tr>
+				<tr>
+					<td><p>Das Ereignis <span class="literal">Application_OnStart</span> ist f&uuml;r Initialisierungsaufgaben beim Initialisieren der Anwendung n&uuml;tzlich. Sie k&ouml;nnen Anwendungsvariablen initialisieren, die haupts&auml;chlich statisch sind.
+</p>
+					</td>
+				</tr>
+			</table>
+		</div>
+<div id="End">
+			<table width="100%" cellspacing="0" cellpadding="0" border="0" class="main"><tr>							<td valign="top" class="name">End</td><td valign="top" nowrap class="compatibility">&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><pre>Sub Application_OnEnd(  )'Event handler logic
+End Sub</pre>
+					</td><td valign="top" nowrap class="requirements"> &#160;</td>
+				</tr>
+				<tr><td colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Wird ausgel&ouml;st, wenn die Anwendung nicht mehr besteht, weil der Webserver angehalten oder die Datei <span class="emphasis">global.asax</span> ge&auml;ndert wurde. Die Ereignisbehandlungsroutine f&uuml;r dieses Ereignis sollte in der Anwendungsdatei <span class="emphasis">global.asax</span> definiert werden.
+</p>
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Parameter</span></td></tr><tr><td>Keine
+
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td><p>Dieses Beispiel schreibt einen Eintag in das Ereignisprotokoll der Anwendung, um anzuzeigen, dass das Ereignis <span class="literal">Application_OnEnd</span> ausgel&ouml;st wurde.
+</p>
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>&lt;Script language="VB" runat="server"&gt;
+   Sub Application_OnEnd(  )
+      Dim EventLog1 As New System.Diagnostics.EventLog ("Application", _
+         ".", "mySource")
+      EventLog1.WriteEntry("Application_OnEnd fired!")
+   End Sub
+&lt;/script&gt;</pre>
+						</span></td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="notes"><span class="title">Hinweise</span></td>
+				</tr>
+				<tr>
+					<td><p>Das Ereignis <span class="literal">End</span> eignet sich f&uuml;r L&ouml;schvorg&auml;nge, wenn eine Anwendung beendet wird, weil der Webservice angehalten oder die Datei <span class="emphasis">global.asax</span> ge&auml;ndert wird.
+</p>
+					</td>
+				</tr>
+			</table>
+		</div>
+	</body></html>

@@ -1,0 +1,157 @@
+<html>
+<link rel="stylesheet" href="josh.css">
+<body bgcolor="#FFFFFF">
+
+		<div id="Beschreibung">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">arguments</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">3</span> IE <span class="emphasis">4</span> ECMA <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Jede Funktion verf&uuml;gt w&auml;hrend ihrer Ausf&uuml;hrung &uuml;ber ein <span class="literal">arguments</span>-Objekt, auf das als Eigenschaft der Funktion zugegriffen werden kann. Das Objekt wird automatisch erzeugt und kann nicht au&szlig;erhalb des Kontexts seiner Funktion erstellt werden. Nehmen wir als Beispiel eine typische Funktionsdefinition:
+</p>
+<span class="PROGRAMLISTING"><pre>function myFunc( ) &#123;
+     // function statements
+&#125;</pre></span>
+							</td>
+						</tr>
+						<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Eine Anweisung innerhalb der Funktion kann mithilfe der folgenden Referenz auf das <span class="literal">arguments</span>-Objekt zugreifen:
+</p>
+<span class="PROGRAMLISTING"><pre>arguments</pre></span>
+							</td>
+						</tr>
+						<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Dieses Objekt weist immer die Eigenschaft <span class="literal">callee</span> auf, die eine Referenz auf eben diese Funktion darstellt (siehe hierzu die Beschreibung der Eigenschaft <span class="literal">callee</span>). Sie k&ouml;nnen das <span class="literal">arguments</span>-Objekt jedoch auch verwenden, um in Array-Schreibweise auf die einzelnen Parametervariablenwerte zuzugreifen. Im oben stehenden Beispiel kann eine Anweisung innerhalb der Funktion <span class="literal">myFunc( )</span> mithilfe der folgenden Referenz auf den &uuml;bergebenen Parameterwert zugreifen:
+</p>
+<span class="PROGRAMLISTING"><pre>arguments[0]</pre></span>
+							</td>
+						</tr>
+						<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Praktische Anwendungsbeispiele finden Sie in der Abhandlung der Eigenschaft <span class="literal">arguments</span> des <span class="literal">Function</span>-Objekts weiter hinten in diesem Kapitel.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="properties"><span class="title">Eigenschaften</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<table border="1"><tbody><tr><td><span class="literal">callee</span></td><td> <span class="literal">length</span></td>
+								</tr>
+							</tbody></table>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="methods"><span class="title">Methoden</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Keine.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="callee">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">callee</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">5(Mac)/5.5(Win)</span> ECMA <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Schreibgesch&uuml;tzt</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Stellt eine Referenz auf die Funktion bereit, die das <span class="literal">arguments</span>-Objekt erstellt hat. Hierbei handelt es sich um die grundlegende Referenz auf die aktuelle Funktion, die eine anonyme Funktion ben&ouml;tigt, damit sie in einer rekursiven Konstruktion aufgerufen werden kann.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>myObj.doThis = function(input) {
+      // function statements that act on parameter value
+      if (!someCondition) {
+           arguments.callee(input);
+      }
+}</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Funktionsobjektreferenz.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="length">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">length</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">3</span> IE <span class="emphasis">4</span> ECMA <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Schreibgesch&uuml;tzt</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Gibt die Anzahl der in ihrem aktuellen Aufruf an die Funktion &uuml;bergebenen Argumente zur&uuml;ck. Die Anzahl der Argumente ist nicht von der Anzahl der f&uuml;r die Funktion definierten Parametervariablen abh&auml;ngig.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>function myFunc( )
+    for (var i = 0; i &lt; arguments.length; i++) {
+        ...
+    }
+}</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Integer.</p>
+					</td>
+				</tr>
+			</table>
+		</div>
+
+</body>
+</html>

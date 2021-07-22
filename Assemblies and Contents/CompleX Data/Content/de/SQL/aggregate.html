@@ -1,0 +1,178 @@
+<html><head>
+<link rel="stylesheet" href="josh.css"></head><body bgcolor="#FFFFFF">
+<div id="Beschreibung">
+			<table width="100%" cellspacing="0" cellpadding="0" border="0">
+				<tr><td valign="top" class="name">Aggregatfunktionen</td><td valign="top" nowrap class="compatibility">&#160; </td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="Description"><p> Aggregatfunktionen geben auf der Basis anderer Werte einen einzelnen Wert zur&uuml;ck. Wenn solche Funktionen unter vielen anderen Ausdr&uuml;cken in der Elementliste einer <span class="emphasis">SELECT</span>-Anweisung verwendet werden, muss in dieser Anweisung eine <span class="emphasis">GROUP BY</span>-Klausel stehen. Es ist keine <span class="emphasis">GROUP BY</span>-Klausel erforderlich, wenn die Aggregatfunktion der einzige Wert ist, der von der <span class="emphasis">SELECT</span>-Anweisung abgerufen wird. Die unterst&uuml;tzten Aggregatfunktionen und deren Syntax finden Sie in Tabelle 4.1.</p>
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="Description"><span class="title">Aggregatfunktionen in SQL99 </span></td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2">
+						<table border="1"><thead><tr><th>Funktion</th><th>Verwendung</th></tr>
+							</thead><tbody><tr><td>AVG(expression)</td><td>Berechnet den Durchschnittswert der durch den Ausdruck angegebenen Spalte.</td>
+								</tr>
+								<tr><td>COUNT(expression)</td><td>Z&auml;hlt die durch den Ausdruck definierten Zeilen.</td>
+								</tr>
+								<tr><td>COUNT(*)</td><td>Z&auml;hlt alle Zeilen in der angegebenen Tabelle bzw. im angegebenen View.</td>
+								</tr>
+								<tr><td>MIN(expression)</td><td>Ermittelt den kleinsten Wert in der durch den Ausdruck angegebenen Spalte.</td>
+								</tr>
+								<tr><td>MAX(expression)</td><td>Ermittelt den gr&ouml;&szlig;ten Wert in der durch den Ausdruck angegebenen Spalte.</td>
+								</tr>
+								<tr><td>SUM(expression)</td><td>Berechnet die Summe der durch den Ausdruck angegebenen Spaltenwerte.</td>
+								</tr>
+							</tbody></table>
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" class="Description"><p> Aggregatfunktionen geben auf der Basis anderer Werte einen einzelnen Wert zur&uuml;ck. Wenn solche Funktionen unter vielen anderen Ausdr&uuml;cken in der Elementliste einer <span class="emphasis">SELECT</span>-Anweisung verwendet werden, muss in dieser Anweisung eine <span class="emphasis">GROUP BY</span>-Klausel stehen. Es ist keine <span class="emphasis">GROUP BY</span>-Klausel erforderlich, wenn die Aggregatfunktion der einzige Wert ist, der von der <span class="emphasis">SELECT</span>-Anweisung abgerufen wird. Die unterst&uuml;tzten Aggregatfunktionen und deren Syntax finden Sie in Tabelle 4.1.</p><p>Technisch betrachtet sind auch ANY, EVERY und SOME Aggregatfunktionen. Sie werden hier aber als Bereichssuchkriterien besprochen, weil sie meistens so verwendet werden. N&auml;here Informationen zu diesen Funktionen finden Sie unter SELECT . . . WHERE im vorhergehenden Kapitel.</p><p>Wie viele Werte eine Aggregatfunktion verarbeitet, h&auml;ngt von der Anzahl der Zeilen ab, die von der Tabelle abgefragt werden. Dieses Verhalten unterscheidet Aggregatfunktionen von skalaren Funktionen, bei denen eine feste Anzahl von Parametern mit vorgegebenen Typen erforderlich ist.</p><p>Die allgemeine Syntax einer Aggregatfunktion sieht so aus:</p><span class="programlisting"><pre>aggregate_function_name ( [ALL | DISTINCT] expression )</pre>
+						</span><p>Der Name der Aggregatfunktion kann AVG, COUNT, MAX, MIN oder SUM lauten. Die
+ALL-Klausel, die das Standardverhalten darstellt und nicht angegeben werden muss, wertet alle Zeilen aus, wenn der Wert der Funktion aggregiert werden soll. Mit der DISTINCT-Klausel werden bei der Auswertung nur unterschiedliche Werte verwendet.</p>
+					</td>
+				</tr>
+			</table>
+		</div>
+<div id="AVG und SUM">
+			<table width="100%" cellspacing="0" cellpadding="0" border="0" class="main">
+				<tr><td valign="top" class="name">AVG und SUM</td><td valign="top" nowrap class="compatibility">&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Die Funktion AVG
+ berechnet den Durchschnitt der Werte in einer Spalte oder einem Ausdruck. SUM
+ berechnet die Summe. Beide Funktionen arbeiten mit numerischen Werten und ignorieren NULL-Werte. Sie k&ouml;nnen auch verwendet werden, um den Durchschnitt oder die Summe aller <span class="emphasis">unterschiedlichen </span>Werte einer Spalte oder eines Ausdrucks zu berechnen.</p><p><span class="emphasis">AVG</span> und <span class="emphasis">SUM</span> werden von Microsoft SQL Server, MySQL, Oracle und PostgreSQL unterst&uuml;tzt.</p>
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td><p>In der folgenden Abfrage werden die durchschnittlichen Verkaufszahlen f&uuml;r das laufende Jahr f&uuml;r jeden Buchtyp berechnet:</p>
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>SELECT   type, AVG( ytd_sales ) AS "average_ytd_sales"
+FROM     titles
+GROUP BY type;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td><p>Die folgende Abfrage gibt die Summe der durchschnittlichen Verkaufszahlen f&uuml;r das laufende Jahr f&uuml;r jeden Buchtyp zur&uuml;ck:</p>
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>SELECT   type, SUM( ytd_sales )
+FROM     titles
+GROUP BY type;</pre>
+						</span></td>
+				</tr>
+			</table>
+		</div>
+<div id="COUNT">
+			<table width="100%" cellspacing="0" cellpadding="0" border="0" class="main">
+				<tr><td valign="top" class="name">COUNT</td><td valign="top" nowrap class="compatibility">&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Die Funktion COUNT
+
+  gibt es in drei Varianten. COUNT(*) z&auml;hlt alle Zeilen in der Zieltabelle, unabh&auml;ngig davon, ob darin Nullwerte enthalten sind oder nicht. COUNT(expression) z&auml;hlt die Anzahl der Zeilen mit Nicht-NULL-Werten in einer bestimmten Spalte oder einem Ausdruck. COUNT(DISTINCT expression) z&auml;hlt die Anzahl der verschiedenen Nicht-NULL-Werte in einer bestimmten Spalte oder einem Ausdruck.</p>
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2"><span class="title">Beispiele</span></td>
+				</tr>
+				<tr>
+					<td><p>Die folgende Abfrage z&auml;hlt alle Zeilen in einer Tabelle:</p>
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>SELECT COUNT(*) FROM publishers;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td><p>Die folgende Abfrage ermittelt die Anzahl der verschiedenen L&auml;nder, in denen es Verlage gibt:</p>
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>SELECT COUNT(DISTINCT country) "Count of Countries"
+FROM   publishers</pre>
+						</span></td>
+				</tr>
+			</table>
+		</div>
+<div id="MIN und MAX">
+			<table width="100%" cellspacing="0" cellpadding="0" border="0" class="main">
+				<tr><td valign="top" class="name">MIN und MAX</td><td valign="top" nowrap class="compatibility">&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>MIN(expression)
+ und MAX(expression) ermitteln jeweils den kleinsten bzw. den gr&ouml;&szlig;ten Wert (String, Datum/Uhrzeit oder numerisch) in einer Menge von Zeilen. DISTINCT oder ALL k&ouml;nnen diese Funktionen erg&auml;nzen, haben aber keinerlei Auswirkung auf das Ergebnis.</p><p><span class="emphasis">MIN</span> und <span class="emphasis">MAX</span> werden von Microsoft SQL Server, MySQL, Oracle und PostgreSQL unterst&uuml;tzt.</p><p>MySQL unterst&uuml;tzt auch die Funktionen LEAST( ) und GREATEST( ), die dieselbe Funktionalit&auml;t haben.</p>
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2"><span class="title">Beispiele</span></td>
+				</tr>
+				<tr>
+					<td><p>Mit der folgenden Abfrage werden die besten und die schlechtesten Verkaufszahlen aller gespeicherten Titel ermittelt:</p>
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>SELECT  'MIN' = MIN(ytd_sales), 'MAX' = MAX(ytd_sales)
+FROM    titles;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td><p>Aggregatfunktionen werden oft in der HAVING-Klausel von Abfragen mit GROUP BY verwendet. Die folgende Abfrage w&auml;hlt alle Kategorien (Typen) von B&uuml;chern aus, bei denen der Durchschnittspreis aller B&uuml;cher in der Kategorie &uuml;ber 15 EUR liegt:</p>
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>SELECT  type 'Category', AVG( price ) 'Average Price'
+FROM    titles
+GROUP BY type
+HAVING AVG(price) &gt; 15
+</pre>
+						</span></td>
+				</tr>
+							</table>
+						</div>
+	</body></html>

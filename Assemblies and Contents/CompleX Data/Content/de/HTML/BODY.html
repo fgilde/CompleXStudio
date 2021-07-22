@@ -1,0 +1,1010 @@
+<html>
+<link rel="stylesheet" href="josh.css">
+<body bgcolor="#FFFFFF">
+
+		<div id="Beschreibung">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">&lt;BODY&gt;</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">alle</span> IE <span class="emphasis">alle</span> HTML <span class="emphasis">alle</span>&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">&lt;BODY&gt;...&lt;/BODY&gt;</p>
+					</td><td valign="top" nowrap class="requirements">HTML-End-Tag: Optional&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Nach dem einleitenden Material im <span class="literal">head</span>-Teil einer HTML-Datei stellt das <span class="literal">body</span>-Element den eigentlichen Inhalt dar, den der Benutzer im Browser sieht (oder h&ouml;rt, falls es sich um einen sprachf&auml;higen Browser handelt). Vor der Verwendung von Stylesheets war das <span class="literal">body</span>-Element die Stelle, an der Seitenautoren f&uuml;r das gesamte Dokument Farben und Hintergr&uuml;nde festlegen konnten. Viele derartige Attribute werden in HTML 4 durch Stylesheet-Regeln ersetzt, die auf das <span class="literal">body</span>-Element angewendet werden k&ouml;nnen. Unterst&uuml;tzung f&uuml;r alle diese Attribute wird jedoch in Mainstream-Browsern noch auf Jahre bestehen.</p><p>Im <span class="literal">body</span>-Element werden au&szlig;erdem Ereignisbehandlungsroutinenattribute f&uuml;r das <span class="literal">window</span>-Objekt angegeben. So wie es in den meisten Dokumentobjektmodellen definiert ist, besitzt ein <span class="literal">window</span>-Objekt eine <span class="literal">onload</span>-Ereignisbehandlungsroutine, die ausgel&ouml;st wird, sobald ein Dokument in das aktuelle Fenster bzw. den aktuellen Frame geladen ist. Die Zuweisung dieser Routine als Elementattribut erfolgt im <span class="literal">body</span>-Element.</p><p>Auch wenn es aus verschiedenen Gr&uuml;nden so erscheinen mag, dass das <span class="literal">body</span>-Element und das <span class="literal">document</span>-Objekt identisch sind, ist dies nicht ganz richtig. Das <span class="literal">document</span>-Objekt verf&uuml;gt &uuml;ber zus&auml;tzliche Eigenschaften (wie etwa <span class="literal">document.title</span>), die in HTML-Dokumenten au&szlig;erhalb des <span class="literal">body</span>-Elements definiert werden. In einem Browser, der das W3C-DOM versteht, wird durch den Dokumentenbaum mehr Abstand zwischen dem Stamm-<span class="literal">document</span>-Knoten und dem <span class="literal">body</span>-Element geschaffen: Der <span class="literal">document</span>-Knoten ist dem <span class="literal">html</span>-Element &uuml;bergeordnet, und das <span class="literal">html</span>-Element ist den <span class="literal">head</span>- und <span class="literal">body</span>-Elementen &uuml;bergeordnet.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>&lt;BODY background="watermark.jpg" onLoad="init( );"&gt;...&lt;/BODY&gt;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectmodelreference"><span class="title">Objektmodellreferenz</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>[window.]document.body</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectmodelreference"><span class="title">Elementspezifische Attribute</span></td>
+</tr><tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+</tr><tr><td>
+        <table border="1">
+<tbody><tr><td><span class="literal">alink</span></td><td><span class="literal">background</span></td><td><span class="literal">bgcolor</span></td><td><span class="literal">bgproperties</span></td><td><span class="literal">bottommargin</span></td>
+								</tr>
+								<tr><td><span class="literal">leftmargin</span></td><td><span class="literal">link</span></td><td><span class="literal">marginheight</span></td><td><span class="literal">marginwidth</span></td><td><span class="literal">nowrap</span></td>
+								</tr>
+								<tr><td><span class="literal">rightmargin</span></td><td><span class="literal">scroll</span></td><td><span class="literal">text</span></td><td><span class="literal">topmargin</span></td><td><span class="literal">vlink</span></td>
+								</tr>
+							</tbody></table>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectmodelreference"><span class="title">Elementspezifische EreignisbehandlungsroutinenAttribute</span></td>
+</tr><tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+</tr><tr><td>
+        <table border="1">
+<tbody><th>Routine</th><th>NN</th><th>IE</th><th>HTML</th><tr><td>onafterprint</td><td>--</td><td>5</td><td>--</td>
+								</tr>
+								<tr><td>onbeforeprint</td><td>--</td><td>5</td><td>--</td>
+								</tr>
+								<tr><td>onload</td><td>2</td><td>3</td><td>4</td>
+								</tr>
+								<tr><td>onresize</td><td>4</td><td>4</td><td>--</td>
+								</tr>
+								<tr><td>onscroll</td><td>--</td><td>4</td><td>--</td>
+								</tr>
+								<tr><td>onselect</td><td>--</td><td>4</td><td>--</td>
+								</tr>
+								<tr><td>onunload</td><td>2</td><td>3</td><td>4</td>
+								</tr>
+							</tbody></table>
+					</td>
+				</tr>
+			</table>
+		</div><div id="alink">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">alink</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">alle</span> IE <span class="emphasis">alle</span> HTML <span class="emphasis">3.2</span>&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">alink="<span class="replaceable">colorTripletOrName</span>"</p>
+					</td><td valign="top" nowrap class="requirements">Optional&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Bestimmt die Farbe eines Hypertext-Links, wenn dieser vom Benutzer durch Klicken aktiviert wird. F&uuml;r einen Link sind drei Zust&auml;nde m&ouml;glich: nicht besucht, aktiv und besucht. Die Farbe wird auf den Hyperlink-Text oder auf den Rahmen um ein Bild oder Objekt angewendet, welches in einem <span class="literal">a</span>-Element eingebettet ist. Wie in Kapitel 11 beschrieben, sollte anstatt dieses Attributs die CSS-Pseudoklassen-Stylesheet-Regel <span class="literal">:active</span> f&uuml;r ein <span class="literal">a</span>-Element verwendet werden.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>&lt;BODY alink="#FF0000"&gt;...&lt;/BODY&gt;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+				</tr>
+				<tr>
+					<td><p>Ein hexadezimales Triplett oder ein unverschl&uuml;sselter Farbname. Einzelheiten zu den g&uuml;ltigen unverschl&uuml;sselten Farbnamen finden Sie in Anhang A.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Standardwert</span></td>
+				</tr>
+				<tr>
+					<td><p><span class="literal">#FF0000</span> (normalerweise).</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectmodelreference"><span class="title">Objektmodellreferenz</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>[window.]document.alinkColor[window.]document.body.aLink</pre>
+						</span></td>
+				</tr>
+			</table>
+		</div><div id="background">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">background</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">alle</span> IE <span class="emphasis">alle</span> HTML <span class="emphasis">3.2</span>&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">background="<span class="replaceable">URL</span>"</p>
+					</td><td valign="top" nowrap class="requirements">Optional&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Definiert eine Bilddatei, die als Hintergrund f&uuml;r den Text und andere Inhalte auf der Seite dient. Im Gegensatz zu normalen Bildern wird ein Hintergrundbild in der Originalgr&ouml;&szlig;e geladen (ohne Skalierung) und f&uuml;llt das Browserfenster bzw. den Frame in Kachelanordnung vollst&auml;ndig aus. Kleinere Bilder werden normalerweise schneller geladen, wiederholen sich aber im Hintergrund sehr h&auml;ufig. Animierte GIFs sind auch zul&auml;ssig, k&ouml;nnen jedoch sehr st&ouml;rend auf den Leser wirken. Wenn Sie ein Hintergrundbild ausw&auml;hlen, sollten Sie sicherstellen, dass es im Vergleich zum Hauptinhalt nicht zu auff&auml;llig ist, damit der Inhalt deutlich zu erkennen ist. Hintergrundbilder sollten, wenn &uuml;berhaupt verwendet, extrem dezent sein bzw. nur Platz belegen, an dem kein anderer Inhalt zu sehen ist.</p><p>In HTML 4 wird dem Stylesheet-Attribut <span class="literal">background</span> Vorrang vor diesem Attribut einger&auml;umt.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>&lt;BODY background="watermark.jpg"&gt;...&lt;/BODY&gt;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+				</tr>
+				<tr>
+					<td><p>Beliebige URL einer Bilddatei, einschlie&szlig;lich vollst&auml;ndige und relative URLs.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Standardwert</span></td>
+				</tr>
+				<tr>
+					<td><p>Keiner.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectmodelreference"><span class="title">Objektmodellreferenz</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>[window.]document.body.background</pre>
+						</span></td>
+				</tr>
+			</table>
+		</div><div id="bgcolor">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">bgcolor</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">alle</span> IE <span class="emphasis">alle</span> HTML <span class="emphasis">3.2</span>&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">bgcolor="<span class="replaceable">colorTripletOrName</span>"</p>
+					</td><td valign="top" nowrap class="requirements">Optional&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Definiert eine F&uuml;llfarbe (hinter Text und anderen Inhalten) f&uuml;r das gesamte Dokument. Wenn Sie <span class="literal">bgcolor</span> und <span class="literal">background</span> kombinieren, scheint bei allen transparenten Bereichen des Hintergrundbilds die Hintergrundfarbe durch. In HTML 4 wird dem Stylesheet-Attribut <span class="literal">background-color</span> Vorrang vor diesem Attribut einger&auml;umt.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>&lt;BODY bgcolor="tan"&gt;...&lt;/BODY&gt;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+				</tr>
+				<tr>
+					<td><p>Ein hexadezimales Triplett oder ein unverschl&uuml;sselter Farbname. Eine Einstellung ohne Wert wird als <span class="literal">"#000000"</span> (Schwarz) interpretiert. Einzelheiten zu den g&uuml;ltigen unverschl&uuml;sselten Farbnamen finden Sie in Anhang A.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Standardwert</span></td>
+				</tr>
+				<tr>
+					<td><p>Richtet sich nach dem Browser, der Browserversion und dem Betriebssystem.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectmodelreference"><span class="title">Objektmodellreferenz</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>[window.]document.bgColor[window.]document.body.bgColor</pre>
+						</span></td>
+				</tr>
+			</table>
+		</div><div id="bgproperties">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">bgproperties</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">nicht zutreffend</span> IE <span class="emphasis">3</span> HTML <span class="emphasis">nicht zutreffend</span>&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">bgproperties="<span class="replaceable">property</span>"</p>
+					</td><td valign="top" nowrap class="requirements">Optional&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Im Internet Explorer verwendetes Attribut, das bestimmt, ob das Hintergrundbild (mit <span class="literal">background</span> oder Stylesheet definiert) an einer festen Position bleibt oder sich beim Bildlauf mitbewegt. Die Effekte k&ouml;nnen f&uuml;r den Benutzer verbl&uuml;ffend sein. Wurde das Hintergrundbild so definiert, dass es an einer festen Position verbleibt, rollt der Inhalt etwa so &uuml;ber das Hintergrundbild wie in einem Film, bei dem der Abspann &uuml;ber das Hintergrundbild l&auml;uft.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>&lt;BODY background="watermark.jpg" bgproperties="fixed"&gt;...&lt;/BODY&gt;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+				</tr>
+				<tr>
+					<td><p>Bei der Einstellung <span class="literal">"fixed"</span> bewegt sich das Bild nicht. Wird das Attribut weggelassen oder als leere Zeichenfolge definiert (<span class="literal">""</span>), bewegt sich das Bild zusammen mit dem Inhalt.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Standardwert</span></td>
+				</tr>
+				<tr>
+					<td><p>Keiner.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectmodelreference"><span class="title">Objektmodellreferenz</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>[window.]document.body.bgProperties</pre>
+						</span></td>
+				</tr>
+			</table>
+		</div><div id="bottommargin">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">bottommargin</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">nicht zutreffend</span> IE <span class="emphasis">4</span> HTML <span class="emphasis">nicht zutreffend</span>&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">bottommargin="<span class="replaceable">integer</span>"</p>
+					</td><td valign="top" nowrap class="requirements">Optional&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Definiert den Leerraum zwischen der Unterkante des Inhalts und dem unteren Rand einer rollbaren Seite. Diese Einstellung hat keine sichtbaren Auswirkungen, wenn die L&auml;nge des Inhalts oder die Gr&ouml;&szlig;e des Fensters nicht zu einem Bildlauf im Fenster f&uuml;hrt. Standardm&auml;&szlig;ig schlie&szlig;t der Inhalt mit dem Ende des Dokuments ab; in der Macintosh-Version von Internet Explorer 4 gibt es allerdings selbst beim Wert Null noch einen ca. 10 Pixel breiten Rand. Gr&ouml;&szlig;ere Werte werden korrekt wiedergegeben. Dieses Attribut entspricht der Definition des Stylesheet-Attributs <span class="literal">margin-bottom</span> f&uuml;r das <span class="literal">body</span>-Element.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>&lt;BODY bottommargin="20"&gt;...&lt;/BODY&gt;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+				</tr>
+				<tr>
+					<td><p>Ein String mit der Anzahl von Pixel f&uuml;r den Leerraum am unteren Rand des Dokuments. Eine leere Zeichenfolge hat den gleichen Effekt wie der Wert Null.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Standardwert</span></td>
+				</tr>
+				<tr>
+					<td><p><span class="literal">0</span></p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectmodelreference"><span class="title">Objektmodellreferenz</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>[window.]document.body.bottomMargin</pre>
+						</span></td>
+				</tr>
+			</table>
+		</div>
+		<div id="lang">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">lang</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">3</span> IE <span class="emphasis">4</span> HTML <span class="emphasis">4</span>&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">lang="<span class="replaceable">languageCode</span>"</p>
+					</td><td valign="top" nowrap class="requirements">Optional&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Die f&uuml;r die Attributwerte und Inhalte des Elements verwendete Sprache. Mithilfe dieser Informationen ist der Browser besser in der Lage, bestimmte Details wie Ligaturen (sofern von der betreffenden Schrift unterst&uuml;tzt oder in der geschriebenen Sprache erforderlich), Anf&uuml;hrungszeichen und Worttrennungen korrekt darzustellen. Andere Anwendungen und Suchmaschinen k&ouml;nnen anhand dieser Informationen W&ouml;rterb&uuml;cher f&uuml;r die Rechtschreibpr&uuml;fung ausw&auml;hlen und Indizes erstellen.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>&lt;SPAN lang="de"&gt;Deutsche Bundesbahn&lt;/SPAN&gt;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+				</tr>
+				<tr>
+					<td><p>Sprachcode, bei dem nicht zwischen Gro&szlig;- und Kleinschreibung unterschieden wird.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Standardwert</span></td>
+				</tr>
+				<tr>
+					<td><p>Vorgabe des Browsers.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectmodelreference"><span class="title">Objektmodellreferenz</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>[window.]document.getElementById(<span class="replaceable">elementID).</span>lang</pre>
+						</span></td>
+				</tr>
+			</table>
+		</div>
+		<div id="leftmargin">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">leftmargin</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">3</span> HTML <span class="emphasis">nicht zutreffend</span>&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">leftmargin="<span class="replaceable">integer</span>"</p>
+					</td><td valign="top" nowrap class="requirements">Optional&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Definiert den Leerraum zwischen der linken Kante des Inhaltsbereichs eines Fensters und dem linken Rand des Inhalts. Dieses Attribut entspricht der Definition des Stylesheet-Attributs <span class="literal">margin-left</span> f&uuml;r das <span class="literal">body</span>-Element. Als &auml;u&szlig;erster &uuml;bergeordneter Container in der Hierarchie bestimmt dieses Attribut den linken Randkontext f&uuml;r alle im Dokument verschachtelten Elemente.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>&lt;BODY leftmargin="25"&gt;...&lt;/BODY&gt;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+				</tr>
+				<tr>
+					<td><p>Ein String mit der Anzahl von Pixel f&uuml;r den Leerraum am linken Rand des Dokuments. Eine leere Zeichenfolge hat den gleichen Effekt wie der Wert Null.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Standardwert</span></td>
+				</tr>
+				<tr>
+					<td><p><span class="literal">10</span> (IE/Windows); <span class="literal">8</span> (IE/Macintosh).</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectmodelreference"><span class="title">Objektmodellreferenz</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>[window.]document.body.leftMargin</pre>
+						</span></td>
+				</tr>
+			</table>
+		</div><div id="link">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">link</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">alle</span> IE <span class="emphasis">alle</span> HTML <span class="emphasis">3.2</span>&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">link="<span class="replaceable">colorTripletOrName</span>"</p>
+					</td><td valign="top" nowrap class="requirements">Optional&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Bestimmt die Farbe eines Hypertext-Links, der noch nicht besucht wurde (d.&#160;h. die URL des Hyperlinks befindet sich nicht im Cache). F&uuml;r einen Link sind drei Zust&auml;nde m&ouml;glich: nicht besucht, aktiv und besucht. Die Farbe wird auf den Hyperlink-Text oder auf den Rahmen um ein Bild oder Objekt angewendet, welches in einem <span class="literal">a</span>-Element eingebettet ist. Wie in Kapitel 11 beschrieben, sollte anstatt dieses Attributs die Pseudoklassen-Stylesheet-Regel <span class="literal">:link</span> f&uuml;r ein <span class="literal">a</span>-Element verwendet werden.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>&lt;BODY link="#00FF00"&gt;...&lt;/BODY&gt;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+				</tr>
+				<tr>
+					<td><p>Ein hexadezimales Triplett oder ein unverschl&uuml;sselter Farbname. Einzelheiten zu den g&uuml;ltigen unverschl&uuml;sselten Farbnamen finden Sie in Anhang A.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Standardwert</span></td>
+				</tr>
+				<tr>
+					<td><p><span class="literal">#0000FF</span></p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectmodelreference"><span class="title">Objektmodellreferenz</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>[window.]document.linkColor[window.]document.body.link</pre>
+						</span></td>
+				</tr>
+			</table>
+		</div><div id="marginheight, marginwidth">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">marginheight, marginwidth</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">4</span> IE <span class="emphasis">nicht zutreffend</span> HTML <span class="emphasis">nicht zutreffend</span>&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">marginheight="<span class="replaceable">integer</span>"marginwidth="<span class="replaceable">integer</span>"</p>
+					</td><td valign="top" nowrap class="requirements">Optional&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Kurzattribut zum Festlegen der R&auml;nder des Body-Abschnitts als Alternative zu CSS-Stylesheets. Bei Angabe eines Pixelwerts f&uuml;r <span class="literal">marginheight</span> entsteht ein Rand &uuml;ber und unter dem Body-Inhalt, bei Angabe eines Pixelwerts f&uuml;r <span class="literal">marginwidth</span> ein Rand links und rechts vom Body-Inhalt.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>&lt;BODY marginheight="20" marginwidth="10"&gt;...&lt;/BODY&gt;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+				</tr>
+				<tr>
+					<td><p>Ein String mit der Anzahl von Pixel f&uuml;r den Leerraum auf den beiden vom Attribut betroffenen Seiten. Eine leere Zeichenfolge hat den gleichen Effekt wie der Wert Null.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Standardwert</span></td>
+				</tr>
+				<tr>
+					<td><p><span class="literal">0</span></p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="nowrap">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">nowrap</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">nicht zutreffend</span> IE <span class="emphasis">4</span> HTML <span class="emphasis">nicht zutreffend</span>&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">nowrap</p>
+					</td><td valign="top" nowrap class="requirements">Optional&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Bestimmt, ob bei breitem Inhalt ein Umbruch erfolgen soll, damit die Body-Breite nicht &uuml;berschritten wird.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>&lt;BODY nowrap&gt;...&lt;/BODY&gt;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+				</tr>
+				<tr>
+					<td><p>Ist dieses Attribut vorhanden, wird sein Wert auf <span class="literal">true</span> gesetzt.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Standardwert</span></td>
+				</tr>
+				<tr>
+					<td><p><span class="literal">false</span></p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectmodelreference"><span class="title">Objektmodellreferenz</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>[window.]document.body.noWrap</pre>
+						</span></td>
+				</tr>
+			</table>
+		</div><div id="rightmargin">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">rightmargin</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">nicht zutreffend</span> IE <span class="emphasis">4</span> HTML <span class="emphasis">nicht zutreffend</span>&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">rightmargin="<span class="replaceable">integer</span>"</p>
+					</td><td valign="top" nowrap class="requirements">Optional&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Definiert den Leerraum zwischen der rechten Kante des Inhaltsbereichs eines Fensters und dem rechten Rand des Inhalts. Dieses Attribut entspricht der Definition des Stylesheet-Attributs <span class="literal">margin-right</span> f&uuml;r das <span class="literal">body</span>-Element. Als &auml;u&szlig;erster &uuml;bergeordneter Container in der Hierarchie bestimmt dieses Attribut den rechten Randkontext f&uuml;r alle im Dokument verschachtelten Elemente. In IE f&uuml;r Macintosh kommt der Inhalt dem rechten Festerrand nicht so nah wie in der Windows-Version.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>&lt;BODY rightmargin="25"&gt;... &lt;/BODY&gt;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+				</tr>
+				<tr>
+					<td><p>Ein String mit der Anzahl von Pixel f&uuml;r den Leerraum am rechten Rand des Dokuments. Eine leere Zeichenfolge hat den gleichen Effekt wie der Wert Null.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Standardwert</span></td>
+				</tr>
+				<tr>
+					<td><p><span class="literal">10</span> (Windows); <span class="literal">0</span> (Macintosh).</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectmodelreference"><span class="title">Objektmodellreferenz</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>[window.]document.body.rightMargin</pre>
+						</span></td>
+				</tr>
+			</table>
+		</div><div id="scroll">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">scroll</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">nicht zutreffend</span> IE <span class="emphasis">4</span> HTML <span class="emphasis">nicht zutreffend</span>&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">scroll="<span class="emphasis">featureSwitch</span>"</p>
+					</td><td valign="top" nowrap class="requirements">Optional&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Definiert das Vorhandensein von Bildlaufleisten (Rollbalken), wenn der Inhalt gr&ouml;&szlig;er als das aktuelle Fenster ist. Ohne Bildlaufleisten wird f&uuml;r den Bildlauf eine Skriptmethode ben&ouml;tigt. Wenn das Dokument f&uuml;r das Fenster zu gro&szlig; ist, werden bei Internet Explorer f&uuml;r Macintosh in jedem Fall Bildlaufleisten angezeigt, selbst wenn das Attribut <span class="literal">scroll</span> auf <span class="literal">no</span> gesetzt ist. Eine modernere Alternative zur Steuerung von Bildlaufleisten ist das CSS-Attribut <span class="literal">overflow</span> (sowie die IE-spezifischen Attribute <span class="literal">overflowX</span> und <span class="literal">overflowY</span>).</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>&lt;BODY scroll="no"&gt;...&lt;/BODY&gt;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+				</tr>
+				<tr>
+					<td><p>Konstante <span class="literal">yes</span> oder <span class="literal">no</span> (Gro&szlig;-/Kleinschreibung unwichtig).</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Standardwert</span></td>
+				</tr>
+				<tr>
+					<td><p><span class="literal">yes</span></p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectmodelreference"><span class="title">Objektmodellreferenz</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>[window.]document.body.scroll</pre>
+						</span></td>
+				</tr>
+			</table>
+		</div><div id="text">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">text</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">alle</span> IE <span class="emphasis">alle</span> HTML <span class="emphasis">3.2</span>&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">text="<span class="replaceable">colorTripletOrName</span>"</p>
+					</td><td valign="top" nowrap class="requirements">Optional&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Bestimmt die Farbe des Body-Inhalts des Dokuments. Die dokumentweite Einstellung der Farbe kann von individuellen Elementen au&szlig;er Kraft gesetzt werden. Da die Standard-Hintergrundfarbe vom Browser, dessen Version und vom Betriebssystem abh&auml;ngt, sollte das Attribut <span class="literal">bgcolor</span> (oder die entsprechende Stylesheet-Regel) auf die Textfarbe abgestimmt werden. Mittlerweile wird dem Stylesheet-Attribut <span class="literal">color</span> Vorrang vor diesem Attribut einger&auml;umt.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>&lt;BODY bgcolor="#FFFFFF" text="#c0c0c0"&gt;...&lt;/BODY&gt;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+				</tr>
+				<tr>
+					<td><p>Ein hexadezimales Triplett oder ein unverschl&uuml;sselter Farbname. Einzelheiten zu den g&uuml;ltigen unverschl&uuml;sselten Farbnamen finden Sie in Anhang A.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Standardwert</span></td>
+				</tr>
+				<tr>
+					<td><p><span class="literal">#000000</span> (schwarz).</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectmodelreference"><span class="title">Objektmodellreferenz</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>[window.]document.fgColor[window.]document.body.text</pre>
+						</span></td>
+				</tr>
+			</table>
+		</div><div id="topmargin">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">topmargin</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">3</span> HTML <span class="emphasis">nicht zutreffend</span>&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">topmargin="<span class="replaceable">integer</span>"</p>
+					</td><td valign="top" nowrap class="requirements">Optional&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Definiert den Leerraum zwischen der oberen Kante des Inhaltsbereichs eines Fensters und dem oberen Rand des Inhalts. Dieses Attribut entspricht der Definition des Stylesheet-Attributs <span class="literal">margin-top</span> f&uuml;r das <span class="literal">body</span>-Element. Als &auml;u&szlig;erster &uuml;bergeordneter Container in der Hierarchie bestimmt dieses Attribut den oberen Randkontext f&uuml;r alle im Dokument verschachtelten Elemente. Wenn Sie das Attribut <span class="literal">topmargin</span> auf Null oder einen leeren String (<span class="literal">""</span>) setzen, wird der Inhalt direkt an der oberen Kante des Inhaltsbereichs dargestellt.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>&lt;BODY topmargin="0"&gt;... &lt;/BODY&gt;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+				</tr>
+				<tr>
+					<td><p>Ein String mit der Anzahl von Pixel f&uuml;r den Leerraum am oberen Rand des Dokuments. Eine leere Zeichenfolge hat den gleichen Effekt wie der Wert Null.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Standardwert</span></td>
+				</tr>
+				<tr>
+					<td><p><span class="literal">15</span> (IE/Windows); <span class="literal">8</span> (IE/Macintosh).</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectmodelreference"><span class="title">Objektmodellreferenz</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>[window.]document.body.topMargin</pre>
+						</span></td>
+				</tr>
+			</table>
+		</div><div id="vlink">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">vlink</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">alle</span> IE <span class="emphasis">alle</span> HTML <span class="emphasis">3.2</span>&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">vlink="<span class="replaceable">colorTripletOrName</span>"</p>
+					</td><td valign="top" nowrap class="requirements">Optional&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Bestimmt die Farbe eines Hypertext-Links, nachdem dieser vom Benutzer besucht wurde (und dessen Zielseite sich noch im Browser-Cache befindet). F&uuml;r einen Link sind drei Zust&auml;nde m&ouml;glich: nicht besucht, aktiv und besucht. Die Farbe wird auf den Hyperlink-Text oder auf den Rahmen um ein Bild oder Objekt angewendet, welches in einem <span class="literal">a</span>-Element eingebettet ist. Wie in Kapitel 11 beschrieben, sollte anstatt dieses Attributs die Pseudoklassen-Stylesheet-Regel <span class="literal">:visited</span> f&uuml;r ein <span class="literal">a</span>-Element verwendet werden. </p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>&lt;BODY vlink="teal"&gt;...&lt;/BODY&gt;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+				</tr>
+				<tr>
+					<td><p>Ein hexadezimales Triplett oder ein unverschl&uuml;sselter Farbname. Einzelheiten zu den g&uuml;ltigen unverschl&uuml;sselten Farbnamen finden Sie in Anhang A.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Standardwert</span></td>
+				</tr>
+				<tr>
+					<td><p><span class="literal">#551a8b</span> (NN); <span class="literal">#800080</span> (IE/Windows); <span class="literal">#006010</span> (IE/Macintosh).</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectmodelreference"><span class="title">Objektmodellreferenz</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>[window.]document.vlinkColor[window.]document.body.vLink</pre>
+						</span></td>
+				</tr>
+			</table>
+		</div>
+</body>
+</html>

@@ -1,0 +1,178 @@
+<html xmlns:un="http://usablenet.com/namespaces/508_rules">
+   <link rel="stylesheet" href="josh.css">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   
+      <title>Detailanzeige f&uuml;r Regel: HTML-Code anstelle von Bildern verwenden</title>
+      <!--
+  508/W3C Accessibility Suite OEM V2 for Macromedia Dreamweaver
+  (C) Copyright 2001-2005 UsableNet Inc. All rights reserved.
+  -->
+   </head>
+   <body bgcolor="#ffffff">
+      <div id="Beschreibung">
+         <table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+            <tr>
+               <td valign="top" nowrap="true" class="name">HTML-Code anstelle von Bildern verwenden</td>
+               <td valign="top" nowrap="true" class="compatibility">&nbsp;</td>
+            </tr>
+            <tr>
+               <td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+            </tr>
+            <tr>
+               <td valign="top" align="right" nowrap="true" colspan="2" class="requirements">WAI / WCAG 1.0 Priorit&auml;t 2 Checkpunkt 3.1</td>
+            </tr>
+            <tr>
+               <td colspan="2" class="clearseparation">&nbsp;</td>
+            </tr>
+            <tr>
+               <td colspan="2" class="clearseparation">&nbsp;</td>
+            </tr>
+            <tr>
+               <td valign="top" colspan="2" class="description"><b>Problembeschreibung</b><br>
+                           
+                  <p>Eine Seite enth&auml;lt unter Umst&auml;nden Grafiken mit Informationen, die in HTML nicht entsprechend codiert sind.<br> So k&ouml;nnen mathematische Gleichungen ggf. mit MathML codiert werden, wohingegen die Formatierung von Text und Seiten mithilfe
+                     von Stylesheets vorgenommen wird. <br> Die optimale L&ouml;sung besteht darin, Text nicht durch Grafiken darzustellen.  Die Formatierung mit Stylesheets ist hier die
+                     bessere Wahl.
+                         
+                  </p>
+                        
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2" class="clearseparation">&nbsp;</td>
+            </tr>
+            <tr>
+               <td colspan="2" class="clearseparation">&nbsp;</td>
+            </tr>
+            <tr>
+               <td valign="top" colspan="2" class="description"><b>&Uuml;berpr&uuml;fung</b>
+                  
+                  
+                  <p>
+                     Sofern eine Grafik
+                     
+                  </p>
+                  
+                  <ul>
+                     
+                     <li> Text enth&auml;lt, der grafisch in einer besonderen Schriftart dargestellt wird, sollten Sie mithilfe der CSS-Eigenschaften f&uuml;r
+                        Schriftarten eine &auml;hnliche Darstellung w&auml;hlen;
+                     </li>
+                     
+                     <li>
+                        Bei mathematischen Formeln k&ouml;nnen Sie zum Codieren MathML verwenden, weitere Informationen hierzu finden Sie unter <strong>W3C page on MathML</strong>
+                        [http://www.w3.org/Math/]
+                        .
+                        
+                     </li>
+                     
+                  </ul>
+                  
+                        
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2" class="clearseparation">&nbsp;</td>
+            </tr>
+            <tr>
+               <td colspan="2" class="clearseparation">&nbsp;</td>
+            </tr>
+            <tr>
+               <td valign="top" colspan="2" class="description"><b>Problemerkl&auml;rung</b><br>
+                  
+                           
+                  <p>Das W3C stellt hierzu sinngem&auml;&szlig; folgendes fest (<strong>http://www.w3.org/TR/WCAG10-CORE-TECHS/#structure</strong>
+                     [http://www.w3.org/TR/WCAG10-CORE-TECHS/#structure]
+                     ):
+                  </p>
+                  	 
+                  <blockquote>
+                     	 
+                     
+                     <p>Beim Anlegen eines Dokuments bzw. einer Reihe von Dokumenten sollten die Entwickler in erster Linie darum bem&uuml;ht sein, die
+                        gew&uuml;nschte Struktur f&uuml;r diese Dokumente festzulegen. Erst danach sollten sie sich mit der Darstellung der Dokumente gegen&uuml;ber
+                        dem Benutzer befassen. Die Unterscheidung zwischen der Stuktur eines Dokuments und dessen Pr&auml;sentation bietet eine Reihe von
+                        Vorteilen, wie unter anderem eine bessere Zug&auml;nglichkeit, Verwaltbarkeit und Portierbarkeit.
+                     </p>
+                     
+                     
+                     <p>Es ist unter Umst&auml;nden nicht immer leicht, genau zwischen der Struktur und der Pr&auml;sentation zu unterscheiden. So stellt f&uuml;r
+                        viele Entwickler eine horizontale Linie eine strukturelle Unterteilung dar. Dies mag bei relativ normalsichtigen Benutzern
+                        zwar zutreffend sein, aber Benutzern mit Sehbehinderung bzw. nicht grafischen Browsern sagt eine horizontale Linie nahezu
+                        &uuml;berhaupt nichts. Also sollten beispielsweise HTML-Entwickler zum Einleiten neuer Abschnitte HTML 4.01-&uuml;berschriften verwenden
+                        (H1-H6). Diese k&ouml;nnen dann zwar durch visuelle Hervorhebungen <strong>erg&auml;nzt</strong>, sollten durch diese aber nicht ersetzt werden.
+                     </p>
+                     
+                     
+                     <p>Umgekehrt gilt das Gleiche: Die Entwickler sollten keine Strukturelemente zur Pr&auml;sentation eines Dokuments verwenden. Denn
+                        auch wenn in HTML beispielsweise das Element BLOCKQUOTE bei einigen Browsern einen Text einger&uuml;ckt darstellt, so dient es
+                        doch eigentlich zum Identifizieren eines Zitats und nicht zum Einf&uuml;gen eines Darstellungseffekts. Entwickler, die BLOCKQUOTE-Elemente
+                        zum Einr&uuml;cken von Textstellen verwenden, verwirren damit sowohl die Benutzer als auch die Suchmaschinen-Robots, die erwarten,
+                        dass mithilfe dieses Elements ein Zitatblock codiert wird.
+                     </p>
+                     
+                     
+                     <p>Wenn Sie definieren m&ouml;chten, ob ein bestimmter Content strukturierende oder darstellende Zwecke erf&uuml;llt, erstellen Sie eine
+                        Gliederung des betreffenden Dokuments. Jeder einzelne Punkt in der Hierarchie bezeichnet einen neuen strukturellen Abschnitt.
+                        Diese Abschnitte k&ouml;nnen Sie dann mithilfe struktureller Markups kennzeichnen und ggf. darstellende Markups verwenden, um die
+                        optische und akustische Wahrnehmbarkeit zu erh&ouml;hen. Sie werden feststellen, dass horizontale Linien in dieser Gliederung nicht
+                        sichtbar sind, was diese als strukturierende und nicht als darstellende Elemente ausweist. <strong>Hinweis:</strong> Mit diesem schnell durchf&uuml;hrbaren Test k&ouml;nnen Sie strukturell Kapitel, Abschnitte und Abs&auml;tze erkennen. Innerhalb der einzelnen
+                        Textbl&ouml;cke selbst k&ouml;nnen Sie Strukturen anhand von Abk&uuml;rzungen, sprachlich-stilistischen &auml;nderungen, Definitionen und Aufz&auml;hlungen
+                        identifizieren.
+                     </p>
+                     
+                  </blockquote>
+                  
+                  
+                  <p>
+                     In einem weiteren Dokument (<strong>Web Content Accessibility Guidelines 1.0</strong>
+                     [http://www.w3.org/TR/WCAG10/]
+                     ) hei&szlig;t es:
+                     
+                  </p>
+                  
+                  <blockquote>
+                     
+                     <p>
+                        <strong>Richtlinie 3. Verwenden Sie Markup und Stylesheets und tun Sie dies auf korrekte Weise. <br> Verwenden Sie in Dokumenten die korrekten Struktur-Elemente. Beeinflussen Sie die Pr&auml;sentation mit Stylesheets anstelle von
+                           Pr&auml;sentations-Elementen und -Attributen. </strong> 
+                        
+                     </p>
+                     
+                     <p>
+                        Die inkorrekte Verwendung von Markups - also entgegen der Spezifikation - beeintr&auml;chtigt die Zug&auml;nglichkeit. Der falsche Gebrauch
+                        von Markups f&uuml;r Pr&auml;sentationseffekte (z. B. die Verwendung einer Tabelle f&uuml;r Layouts oder einer &uuml;berschrift, um die Schriftgr&ouml;&szlig;e
+                        zu &auml;ndern) macht es f&uuml;r Benutzer von spezialisierter Software schwer, den Aufbau einer Seite zu verstehen oder in ihr zu navigieren.
+                        Wenn Pr&auml;sentations-Markup anstelle von Struktur-Markup verwendet wird, um Struktur zu vermitteln (z. B. indem etwas, das wie
+                        eine Tabelle aussieht, mit dem PRE-Element von HTML konstruiert wird), erschwert dies die verst&auml;ndliche Darstellung einer
+                        Seite auf anderen Ger&auml;ten (...). 
+                        
+                     </p>
+                     
+                     <p>
+                        Entwickler von Inhalten m&ouml;gen versucht sein, Konstrukte zu verwenden (oder zu missbrauchen), die auf &auml;lteren Browsern einen
+                        von ihnen gew&uuml;nschten Formatierungseffekt erzielen. Eine solche Vorgehensweise verursacht unter Umst&auml;nden Zug&auml;nglichkeitsprobleme.
+                         Also sollten Sie &uuml;berlegen, ob der Formatierungseffekt so entscheidend ist, um daf&uuml;r in Kauf zu nehmen, dass das Dokument
+                        f&uuml;r manche Benutzer unzug&auml;nglich wird.  
+                        
+                     </p>
+                     
+                     <p>
+                        Auf der anderen Seite d&uuml;rfen Entwickler von Inhalten sich von angemessenem Markup nicht dadurch abhalten lassen, dass ein
+                        bestimmter Browser oder eine assistive Technologie ggf. nicht in der Lage ist, ihn korrekt zu verarbeiten. So ist es beispielsweise
+                        durchaus angebracht, das TABLE-Element f&uuml;r tabellarische Information zu verwenden, auch wenn manche &auml;lteren Bildschirmleseger&auml;te
+                        nebeneinander angeordneten Text vielleicht nicht korrekt darstellen k&ouml;nnen (siehe Checkpunkt 10.3). Die korrekte Verwendung
+                        von TABLE und die Erstellung von Tabellen, die sich leicht umgestalten lassen (siehe Richtlinie 5) erm&ouml;glichen es der Software,
+                        Tabellen auf andere Weise darzustellen als durch ein zweidimensionales Gitter.   
+                        
+                     </p>
+                     
+                  </blockquote>
+                        
+               </td>
+            </tr>
+         </table>
+      </div>
+   </body>
+</html>

@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding = "utf-8"?>
+<snippet xmlns:MMString="http://www.macromedia.com/schemes/dat/string/" MMString:name = "Snippets/JavaScript/cookies/writeCookie_csn/snippet/name/Write" MMString:description = "Snippets/JavaScript/cookies/writeCookie_csn/snippet/description/A" preview="code" type="block">
+
+<insertText location="beforeSelection">
+<![CDATA[// Example:
+// writeCookie("myCookie", "my name", 24);
+// Stores the string "my name" in the cookie "myCookie" which expires after 24 hours.
+function writeCookie(name, value, hours)
+{
+  var expire = "";
+  if(hours != null)
+  {
+    expire = new Date((new Date()).getTime() + hours * 3600000);
+    expire = "; expires=" + expire.toGMTString();
+  }
+  document.cookie = name + "=" + escape(value) + expire;
+}
+]]>
+</insertText>
+<insertText location="afterSelection"><![CDATA[]]>
+</insertText>
+</snippet>

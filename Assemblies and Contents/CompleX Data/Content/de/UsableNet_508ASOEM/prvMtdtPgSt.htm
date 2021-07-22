@@ -1,0 +1,184 @@
+<html xmlns:un="http://usablenet.com/namespaces/508_rules">
+   <link rel="stylesheet" href="josh.css">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   
+      <title>Detailanzeige f&uuml;r Regel: Metadaten zu Seiten und Websites bereitstellen</title>
+      <!--
+  508/W3C Accessibility Suite OEM V2 for Macromedia Dreamweaver
+  (C) Copyright 2001-2005 UsableNet Inc. All rights reserved.
+  -->
+   </head>
+   <body bgcolor="#ffffff">
+      <div id="Beschreibung">
+         <table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+            <tr>
+               <td valign="top" nowrap="true" class="name">Metadaten zu Seiten und Websites bereitstellen</td>
+               <td valign="top" nowrap="true" class="compatibility">&nbsp;</td>
+            </tr>
+            <tr>
+               <td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+            </tr>
+            <tr>
+               <td valign="top" align="right" nowrap="true" colspan="2" class="requirements">WAI / WCAG 1.0 Priorit&auml;t 2 Checkpunkt 13.2</td>
+            </tr>
+            <tr>
+               <td colspan="2" class="clearseparation">&nbsp;</td>
+            </tr>
+            <tr>
+               <td colspan="2" class="clearseparation">&nbsp;</td>
+            </tr>
+            <tr>
+               <td valign="top" colspan="2" class="description"><b>Problembeschreibung</b><br>
+                  
+                           
+                  <p>
+                     Die Seite enth&auml;lt im Abschnitt HEAD kein LINK-Element, das die Beziehung zwischen dieser Seite und anderen Dokumenten bzw.
+                     Informationsobjekten angibt.
+                     	 
+                  </p>
+                  
+                  <p> Verwenden Sie beispielsweise RDF (Resource Description Framework), um den Autor und den Typ des Inhalts usw. anzuzeigen.
+                     Manche HTML-Benutzeragenten k&ouml;nnen Navigations-Tools aus den Beziehungen des Dokuments erstellen, die mit dem LINK-Element
+                     von HTML und den Attributen "rel" und "rev" beschrieben sind (z. B. rel="next", rel="previous", rel="index" usw.). 
+                     
+                  </p>    
+                        
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2" class="clearseparation">&nbsp;</td>
+            </tr>
+            <tr>
+               <td colspan="2" class="clearseparation">&nbsp;</td>
+            </tr>
+            <tr>
+               <td valign="top" colspan="2" class="description"><b>Probleml&ouml;sung</b>
+                  
+                           
+                  <p>
+                     Unter Umst&auml;nden k&ouml;nnen Sie zum HEAD-Abschnitt auch LINK-Elemente hinzuf&uuml;gen, um die Beziehungen dieser Seite zu anderen Dokumenten
+                     auszudr&uuml;cken.
+                     	 
+                  </p>
+                      
+                  
+                  <p>
+                     Eine Liste der m&ouml;glichen Beziehungen zwischen Dokumenten, die mithilfe des LINK-Elements dargestellt werden k&ouml;nnen finden
+                     Sie unter <strong>HTML 4.01 Specification</strong>
+                     [http://www.w3.org/TR/html401/types.html#type-links]
+                     .
+                     
+                  </p>
+                        
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2" class="clearseparation">&nbsp;</td>
+            </tr>
+            <tr>
+               <td colspan="2" class="clearseparation">&nbsp;</td>
+            </tr>
+            <tr>
+               <td valign="top" colspan="2" class="description"><b>Problemerkl&auml;rung</b><br>
+                  
+                    
+                  <p>
+                     Das LINK-Element definiert einen Hyperlink, der dem Benutzer nicht angezeigt wird aber dem Browser f&uuml;r spezielle Aufgaben
+                     zur Verf&uuml;gung steht.  Es enth&auml;lt Informationen, die der Browser auf mehrererlei Weise verarbeiten kann (so kann Mozilla beispielsweise
+                     eine spezielle Navigationsleiste anzeigen, w&auml;hrend Lynx diese Hyperlinks in einem besonderen Bereich darstellt).
+                       
+                  </p>
+                  
+                  <p>
+                     Im Allgemeinen stellt LINK eine Beziehung zwischen dem aktuellen Dokument und einem anderen Objekt dar. Eine solche Beziehung
+                     besteht beispielsweise zwischen dem aktuellen HTML-Dokument und einer externen CSS-Datei. Ein weiteres Beispiel ist die Einbindung
+                     eines vorangehenden und eines folgenden Dokuments in einer Dokumentenreihe (z. B. f&uuml;r mehrere Kapitel eines Handbuchs).
+                     
+                  </p>
+                  
+                  <p>
+                     Beachten Sie hierzu das folgende Beispiel vom W3C ( <strong>HTML 4.01 Specification</strong>
+                     [http://www.w3.org/TR/html401struct/links.html#h-12.3]
+                     ):
+                     
+                  </p>
+                  
+                  <pre>
+&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+   "http://www.w3.org/TR/html4/strict.dtd"&gt;
+&lt;HTML&gt;
+&lt;HEAD&gt;
+  &lt;TITLE&gt;Chapter 2&lt;/TITLE&gt;
+
+  &lt;LINK rel="Index" href="../index.html"&gt;
+  &lt;LINK rel="Next"  href="Chapter3.html"&gt;
+  &lt;LINK rel="Prev"  href="Chapter1.html"&gt;
+&lt;/HEAD&gt;
+...the rest of the document...
+</pre>
+                  
+                  <p>Im folgenden Beispiel, das von der gleichen Quelle stammt, dient das Attribut HREFLANG den Suchmaschinen zum Auffinden der
+                     niederl&auml;ndischen, portugiesischen und arabischen Version eines bestimmten Dokuments.  Beachten Sie auch das Attribut CHARSET
+                     f&uuml;r das arabischsprachige Handbuch. Beachten Sie auch die Verwendung des Attributs LANG zur Angabe, dass der Wert des Titelattributs
+                     f&uuml;r das LINK-Elements des franz&ouml;sischen Handbuchs auf franz&ouml;sisch angegeben wurde.
+                     
+                  </p>
+                  
+                  <pre>
+&lt;HEAD&gt;
+&lt;TITLE&gt;The manual in English&lt;/TITLE&gt;
+&lt;LINK title="The manual in Dutch"
+      type="text/html"
+      rel="alternate"
+      hreflang="nl" 
+      href="http://someplace.com/manual/dutch.html"&gt;
+&lt;LINK title="The manual in Portuguese"
+      type="text/html"
+      rel="alternate"
+      hreflang="pt" 
+      href="http://someplace.com/manual/portuguese.html"&gt;
+&lt;LINK title="The manual in Arabic"
+      type="text/html"
+      rel="alternate"
+      charset="ISO-8859-6"
+      hreflang="ar" 
+      href="http://someplace.com/manual/arabic.html"&gt;
+&lt;LINK lang="fr" title="La documentation en Fran&amp;ccedil;ais"
+      type="text/html"
+      rel="alternate"
+      hreflang="fr"
+      href="http://someplace.com/manual/french.html"&gt;
+&lt;/HEAD&gt;
+</pre>
+                  
+                  <p>Im folgenden Beispiel erhalten die Suchmaschinen den Befehl, die gedruckte Version eines Handbuchs zu suchen.</p>
+                  
+                  <pre>
+&lt;HEAD&gt;
+&lt;TITLE&gt;Reference manual&lt;/TITLE&gt;
+&lt;LINK media="print" title="The manual in postscript"
+      type="application/postscript"
+      rel="alternate"
+      href="http://someplace.com/manual/postscript.ps"&gt;
+
+&lt;/HEAD&gt;
+</pre>
+                  
+                  <p>In diesem Beispiel soll die Titelseite einer Reihe von Dokumenten gesucht werden.</p>
+                  
+                  <pre>
+&lt;HEAD&gt;
+&lt;TITLE&gt;Reference manual -- Page 5&lt;/TITLE&gt;
+&lt;LINK rel="Start" title="The first page of the manual"
+      type="text/html"
+      href="http://someplace.com/manual/start.html"&gt;
+
+&lt;/HEAD&gt;
+</pre>    
+                        </td>
+            </tr>
+         </table>
+      </div>
+   </body>
+</html>

@@ -1,0 +1,178 @@
+<html xmlns:un="http://usablenet.com/namespaces/508_rules">
+   <link rel="stylesheet" href="josh.css">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   
+      <title>Detailanzeige f&uuml;r Regel: Sprungmen&uuml;s m&uuml;ssen ger&auml;teunabh&auml;ngig sein</title>
+      <!--
+  508/W3C Accessibility Suite OEM V2 for Macromedia Dreamweaver
+  (C) Copyright 2001-2005 UsableNet Inc. All rights reserved.
+  -->
+   </head>
+   <body bgcolor="#ffffff">
+      <div id="Beschreibung">
+         <table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+            <tr>
+               <td valign="top" nowrap="true" class="name">Sprungmen&uuml;s m&uuml;ssen ger&auml;teunabh&auml;ngig sein</td>
+               <td valign="top" nowrap="true" class="compatibility">&nbsp;</td>
+            </tr>
+            <tr>
+               <td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+            </tr>
+            <tr>
+               <td valign="top" align="right" nowrap="true" colspan="2" class="requirements">WAI / WCAG 1.0 Priorit&auml;t 2 Checkpunkt 9.2</td>
+            </tr>
+            <tr>
+               <td colspan="2" class="clearseparation">&nbsp;</td>
+            </tr>
+            <tr>
+               <td colspan="2" class="clearseparation">&nbsp;</td>
+            </tr>
+            <tr>
+               <td valign="top" colspan="2" class="description"><b>Problembeschreibung</b><br>
+                  
+                           
+                  <p>
+                       Die Seite enth&auml;lt ein <strong>Sprungmen&uuml;</strong> (d. h. ein Men&uuml; mit mehreren Optionen, die jeweils auf eine eigene Seite verweisen), das mithilfe eines <strong>SELECT</strong>-Elements und einem <strong>ONCHANGE</strong>-Ereignisbehandler jeweils eine bestimmte Seite l&auml;dt. Dieses Verhalten verhindert, dass Besucher, die nur &uuml;ber Tastaturen
+                     verf&uuml;gen, aus der Liste der angegebenen Optionen eine Option ausw&auml;hlen k&ouml;nnen.
+                     
+                  </p>
+                      
+                        
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2" class="clearseparation">&nbsp;</td>
+            </tr>
+            <tr>
+               <td colspan="2" class="clearseparation">&nbsp;</td>
+            </tr>
+            <tr>
+               <td valign="top" colspan="2" class="description"><b>Probleml&ouml;sung</b>
+                  
+                           
+                  <p>
+                     Sprungmen&uuml;s k&ouml;nnen mithilfe von zwei Schritten ger&auml;teunabh&auml;ngig gestaltet werden:
+                     
+                  </p>
+                  
+                           
+                  <ol>
+                     
+                                 
+                     <li>Entfernen Sie das Attribut <strong>ONCHANGE</strong> aus dem SELECT-Element.
+                     </li> 
+                     
+                                 
+                     <li>F&uuml;gen Sie hinter dem Men&uuml; eine Schaltfl&auml;che ein (INPUT vom Typ BUTTON).</li>
+                     
+                                 
+                     <li>Weisen Sie dieser Schaltfl&auml;che ein Attribut ONCLICK zu, das den Inhalt des zuvor entfernten ONCHANGE-Attributs enth&auml;lt. </li>
+                     
+                     <li> F&uuml;gen Sie schlie&szlig;lich den gleichen Inhalt in das Attribut ONKEYPRESS ein.</li>
+                     
+                              
+                  </ol>
+                  
+                  
+                  
+                           
+                  <p>
+                     In Dreamweaver haben Sie beim Hinzuf&uuml;gen eines <strong>Sprungmen&uuml;</strong>-Objekts zu einer Seite die M&ouml;glichkeit, automatisch eine Schaltfl&auml;che hinter dem Men&uuml; einf&uuml;gen zu lassen. Aktivieren Sie
+                     hierzu einfach das Kontrollk&auml;stchen '<strong>Schaltfl&auml;che 'Gehe zu' hinter Men&uuml; einf&uuml;gen</strong>'. Denken Sie daran, das Attribut ONCHANGE von SELECT zu entfernen und daf&uuml;r der Schaltfl&auml;che ein ONKEYPRESS hinzuzuf&uuml;gen.
+                      
+                     
+                  </p>
+                   
+                  
+                  
+                           
+                  <p>
+                     Der folgende Code ist beispielsweise <strong>falsch</strong>:
+                     
+                  </p>
+                  
+                           <pre>
+&lt;form name="select_country"&gt;
+Select a country:
+  &lt;select name="country" onChange="MM_jumpMenu('parent',this,0)"&gt;
+   &lt;option value="http://www.this_site.com/be" selected&gt;Belgium&lt;/option&gt;
+   &lt;option value="http://www.this_site.com/us"&gt;United States&lt;/option&gt;
+  &lt;/select&gt;
+&lt;/form&gt;
+</pre>
+                  
+                  
+                           <p>
+                     Eine zug&auml;ngliche Version k&ouml;nnte so aussehen:
+                     
+                  </p>
+                  
+                  
+                           <pre>
+&lt;form name="select_country" action="http://www.this_site.com/jump.cgi"&gt;
+Select a country: 
+  &lt;select name="country"&gt;
+   &lt;option value="http://www.this_site.com/be" selected&gt;Belgium&lt;/option&gt;
+   &lt;option value="http://www.this_site.com/us"&gt;United States&lt;/option&gt;
+  &lt;/select&gt;
+ &lt;input type="submit" value="Go"&gt;
+&lt;/form&gt;
+</pre>
+                  
+                  
+                        </td>
+            </tr>
+            <tr>
+               <td colspan="2" class="clearseparation">&nbsp;</td>
+            </tr>
+            <tr>
+               <td colspan="2" class="clearseparation">&nbsp;</td>
+            </tr>
+            <tr>
+               <td valign="top" colspan="2" class="description"><b>Problemerkl&auml;rung</b><br>
+                  
+                           
+                  <p>
+                       Der JavaScript-Code des SELECT-Elements erm&ouml;glicht aber Benutzern, die nur &uuml;ber eine Tastatur verf&uuml;gen, nicht die Auswahl
+                     einer der m&ouml;glichen Optionen. Damit ist dieses Element nicht <strong>ger&auml;teunabh&auml;ngig</strong>.
+                     
+                  </p>
+                  
+                           
+                  <p>
+                       JavaScript-Code ist nur dann ger&auml;teunabh&auml;ngig, wenn folgende Bedingungen erf&uuml;llt sind: <br> Die Benutzer k&ouml;nnen unter Verwendung von Ein- und Ausgabeger&auml;ten ihrer Wahl die Elemente einer Website bedienen. Eingabeger&auml;te
+                     k&ouml;nnen Zeigeger&auml;te, Tastaturen, Blindenschrift-Ger&auml;te, Mikrophone o. &auml;. sein. Bei Ausgabeger&auml;ten kann es sich um Monitore,
+                     Sprachgeneratoren, Blindenschrift-Ger&auml;te o. &auml;. hendeln.
+                     
+                  </p>
+                           
+                  <p> Allgemein gilt, dass Seiten, die eine Interaktion &uuml;ber eine Tastatureingabe erm&ouml;glichen, auch &uuml;ber sprachgesteuerte Eingabeger&auml;te
+                     oder eine Befehlszeilen-Schnittstelle zug&auml;nglich sind.
+                     
+                  </p>
+                    
+                           
+                  <p>
+                       Beachten Sie hierbei bitte auch, dass <strong>Sprungmen&uuml;s</strong> nur dann funktionieren, wenn JavaScript aktiviert ist und im Browser des Benutzers zur Verf&uuml;gung steht.  Es gibt aber auch
+                     Browser, die JavaScript nicht unterst&uuml;tzen (z. B. Mobiltelefone und PDAs). Au&szlig;erdem wird in manchen Unternehmen die Verwendung
+                     von JavaScript auch bei normalen Browsern aus Sicherheitsgr&uuml;nden deaktiviert. <br> F&uuml;gen Sie ein NOSCRIPT-Tag ein, um entsprechende alternative Inhalte anzuzeigen und Interaktion zu erm&ouml;glichen (z. B. Hyperlinks
+                     und Formulare).
+                     
+                  </p>
+                  
+                  
+                           
+                  <p>
+                     Eine andere M&ouml;glichkeit besteht darin, serverseitige Skripts zu schreiben, welche die vom Men&uuml; &uuml;bergebenen URLs verarbeiten
+                     und die entsprechende Seite anzeigen.
+                     
+                  </p>
+                      
+                        
+               </td>
+            </tr>
+         </table>
+      </div>
+   </body>
+</html>

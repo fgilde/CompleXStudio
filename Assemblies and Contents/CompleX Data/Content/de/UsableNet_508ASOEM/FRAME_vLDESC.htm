@@ -1,0 +1,169 @@
+<html xmlns:un="http://usablenet.com/namespaces/508_rules">
+   <link rel="stylesheet" href="josh.css">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   
+      <title>Detailanzeige f&uuml;r Regel: FRAME brauchen g&uuml;ltige LONGDESC</title>
+      <!--
+  508/W3C Accessibility Suite OEM V2 for Macromedia Dreamweaver
+  (C) Copyright 2001-2005 UsableNet Inc. All rights reserved.
+  -->
+   </head>
+   <body bgcolor="#ffffff">
+      <div id="Beschreibung">
+         <table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+            <tr>
+               <td valign="top" nowrap="true" class="name">FRAME brauchen g&uuml;ltige LONGDESC</td>
+               <td valign="top" nowrap="true" class="compatibility">&nbsp;</td>
+            </tr>
+            <tr>
+               <td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+            </tr>
+            <tr>
+               <td valign="top" align="right" nowrap="true" colspan="2" class="requirements">WAI / WCAG 1.0 Priorit&auml;t 2 Checkpunkt 12.2</td>
+            </tr>
+            <tr>
+               <td colspan="2" class="clearseparation">&nbsp;</td>
+            </tr>
+            <tr>
+               <td colspan="2" class="clearseparation">&nbsp;</td>
+            </tr>
+            <tr>
+               <td valign="top" colspan="2" class="description"><b>Problembeschreibung</b><br>
+                           
+                  <p>
+                     Die Seite enth&auml;lt die Elemente FRAMESET und FRAME mit einem ung&uuml;ltigen LONGDESC-Attribut. 
+                     	 
+                  </p>
+                      
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2" class="clearseparation">&nbsp;</td>
+            </tr>
+            <tr>
+               <td colspan="2" class="clearseparation">&nbsp;</td>
+            </tr>
+            <tr>
+               <td valign="top" colspan="2" class="description"><b>Probleml&ouml;sung</b>
+                  
+                  <p>
+                     Anscheinend wird eine Langbeschreibung eines Frames erwartet, da bereits ein LONGDESC-Attribut definiert wurde. Allerdings
+                     ist der Wert des LONGDESC-Attributs ung&uuml;ltig. <br> Ein g&uuml;ltiges LONGDESC-Attribut erf&uuml;llt die folgenden Bedingungen:
+                     
+                  </p>
+                  
+                  <ol>
+                     
+                     <li>Das Attribut ist nicht leer (d. h. es ist nicht "").</li>
+                     
+                     <li>Das Attribut enth&auml;lt nicht nur Leerzeichen (d. h. es ist nicht " ").</li>
+                     
+                     <li>Die Datei, auf die das Attribut verweist, ist nicht leer bzw. enth&auml;lt nicht nur Leerzeichen.</li>
+                     
+                     <li>Die Datei, auf die das Attribut verweist, ist vorhanden und enth&auml;lt HTML-Code.</li>
+                     
+                     <li>Auf die Datei, auf die das Attribut verweist, kann mithilfe von HTTP oder FTP zugegriffen werden.</li>
+                     
+                  </ol>
+                  
+                  <p>
+                     Im Abschnitt "Erkl&auml;rungen" finden Sie ein detailliertes Beispiel.
+                     
+                  </p>
+                      
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2" class="clearseparation">&nbsp;</td>
+            </tr>
+            <tr>
+               <td colspan="2" class="clearseparation">&nbsp;</td>
+            </tr>
+            <tr>
+               <td valign="top" colspan="2" class="description"><b>Problemerkl&auml;rung</b><br>
+                  
+                  
+                  <p>
+                     In erster Linie werden Frames zum Zusammenfassen von Informationen und Navigationselementen bzw. zur Darstellung dieser Elemente
+                     im Layout der Seite verwendet. Einige assistive Techniken (wie lesende Browser, Bildschirmleseger&auml;te und Text-Browser) k&ouml;nnen
+                     das visuelle Layout aber nicht nachvollziehen. Diese Techniken betrachten daher jeden Frame einzeln und au&szlig;erhalb des Kontextes
+                     und stellen keinen Bezug zu den anderen Frames her. Die Benutzer dieser Techniken k&ouml;nnen die anderen Frames und ihre Inhalte
+                     nicht erkennen. Aus diesem Grund sollte jeder Frame eine Beschreibung enthalten, aus welcher der Benutzer den Kontext nachvollziehen
+                     kann.
+                     
+                  </p>
+                  
+                  <p>
+                     F&uuml;r Frames normalerweise verwendete Bezeichnungen wie "oben" oder "links unten" reichen hier zur Beschreibung nicht aus und
+                     stellen den Kontext f&uuml;r den Benutzer nicht her.
+                     
+                  </p>
+                           
+                  <p>
+                     Beachten Sie das folgende Beispiel (das <strong>HTML Techniques for Web Content Accessibility Guidelines 1.0</strong>
+                     [http://www.w3.org/TR/WCAG10-HTML-TECHS/#frame-text-equivalent]
+                      entnommen und ein wenig ver&auml;ndert wurde):
+                     	 
+                  </p>
+                  <pre>
+&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Frameset//EN"&gt;
+&lt;HTML&gt;
+  &lt;HEAD&gt;
+    &lt;TITLE&gt;Today's news&lt;/TITLE&gt;
+  &lt;/HEAD&gt;
+
+  &lt;FRAMESET cols="10%,*,10%"&gt;
+
+  &lt;FRAMESET rows="20%,*"&gt;
+    &lt;FRAME src="promo.html" name="promo" title="promotions"&gt;
+    &lt;FRAME src="sitenavbar.html" name="navbar" 
+       title="Sitewide navigation bar" longdesc="frameset-desc.html#navbar"&gt;
+  &lt;/FRAMESET&gt;
+
+  &lt;FRAME src="story.html" name="story" title="Selected story - main content" 
+     longdesc="frameset-desc.html#story"&gt;
+
+  &lt;FRAMESET rows="*,20%"&gt;
+    &lt;FRAME src="headlines.html" name="index" title="Index of other 
+      national headlines" longdesc="frameset-desc.html#headlines"&gt;
+    &lt;FRAME src="ad.html" name="adspace" title="Advertising"&gt;
+  &lt;/FRAMESET&gt;
+
+  &lt;NOFRAMES&gt;
+    &lt;p&gt;&lt;a href="noframes.html"&gt;No frames version&lt;/a&gt;&lt;/p&gt;
+    &lt;p&gt;&lt;a href="frameset-desc.html"&gt;Descriptions of frames.&lt;/a&gt;&lt;/p&gt;
+
+  &lt;/NOFRAMES&gt;
+
+  &lt;/FRAMESET&gt;
+&lt;/HTML&gt;
+</pre>
+                  
+                  <p>Die Datei frameset-desc.html k&ouml;nnte wie folgt aussehen:</p>
+                  
+                  <pre>
+#Navbar - this frame provides links to the &lt;a href="sitenavbar.html"&gt;major 
+          sections of the site&lt;/a&gt;:  World News, National News,
+          Local News, Technological News,
+          and Entertainment News.
+
+#Story  - this frame displays the &lt;a href="story.html"&gt;currently selected story&lt;/a&gt;.
+
+#Index  - this frame provides links to the day's 
+          &lt;a href="headlines.html"&gt;headline stories&lt;/a&gt; within this section.  
+</pre>
+                  
+                  <p>
+                     Eine sehr sinnvolle Rolle spielt hierbei das Element NOFRAMES, das die Verwendung spezieller Browser ber&uuml;cksichtigt, die keine
+                     Frames unterst&uuml;tzen (wie z. B. auf PDAs und Mobiltelefonen).
+                     
+                  </p>
+                  
+                      
+               </td>
+            </tr>
+         </table>
+      </div>
+   </body>
+</html>

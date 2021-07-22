@@ -1,0 +1,249 @@
+<html xmlns:un="http://usablenet.com/namespaces/508_rules">
+   <link rel="stylesheet" href="josh.css">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   
+      <title>Detailanzeige f&uuml;r Regel: SCRIPT mit g&uuml;ltigem NOSCRIPT</title>
+      <!--
+  508/W3C Accessibility Suite OEM V2 for Macromedia Dreamweaver
+  (C) Copyright 2001-2005 UsableNet Inc. All rights reserved.
+  -->
+   </head>
+   <body bgcolor="#ffffff">
+      <div id="Beschreibung">
+         <table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+            <tr>
+               <td valign="top" nowrap="true" class="name">SCRIPT mit g&uuml;ltigem NOSCRIPT</td>
+               <td valign="top" nowrap="true" class="compatibility">&nbsp;</td>
+            </tr>
+            <tr>
+               <td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+            </tr>
+            <tr>
+               <td valign="top" align="right" nowrap="true" colspan="2" class="requirements">
+                        Section 508 1194.22(a); 
+                        
+                          WAI
+                        
+                         / 
+                        
+                          WCAG
+                        
+                         1.0 checkpoint 1.1
+                      
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2" class="clearseparation">&nbsp;</td>
+            </tr>
+            <tr>
+               <td colspan="2" class="clearseparation">&nbsp;</td>
+            </tr>
+            <tr>
+               <td valign="top" colspan="2" class="description"><b>Problembeschreibung</b><br>
+                        
+                  <p>
+                             Ein SCRIPT-Element verf&uuml;gt &uuml;ber kein
+                             zugeh&ouml;riges, g&uuml;ltiges NOSCRIPT:
+                           
+                  </p>
+                        
+                  <ul>
+                             
+                     <li>
+                                  NOSCRIPT sollte direkt nach dem SCRIPT-Element stehen.
+                                
+                     </li>
+                             
+                     <li>
+                                  Der Inhalt des NOSCRIPT-Elements sollte nicht leer sein. Es
+                                  kann beliebige HTML-Anweisungen enthalten.
+                                
+                     </li>
+                           
+                  </ul>
+                        
+                  <p>
+                               Gem&auml;&szlig; Regel 508 m&uuml;ssen <strong>nicht
+                                  alle</strong> SCRIPT-Elemente durch entsprechende
+                               NOSCRIPT-Elemente erg&auml;nzt werden (dies wird jedoch
+                               gem&auml;&szlig; WAI WCAG 1.0 empfohlen). Eine Anforderung
+                               von Regel 508 besteht darin, dass Seiten, auf denen Inhalte
+                               oder Schnittstellenelemente mithilfe von Skripts angezeigt
+                               bzw. erstellt werden, eine Funktionsbeschreibung der
+                               Skripts enthalten, die von unterst&uuml;tzenden Anwendungen
+                               gelesen werden k&ouml;nnen.
+                             <br>
+                             Es gibt zwei Arten von Skripts, die besonders dokumentiert
+                             werden sollten, und das NOSCRIPT-Tag ist hierf&uuml;r sehr
+                             gut geeignet:
+                           
+                  </p>
+                        
+                  <ul>
+                             
+                     <li>
+                                  <strong>Rollovers</strong>: Wenn ein Skript eine Grafik auf
+                                  dem Bildschirm austauscht, wenn der Benutzer den Mauszeiger
+                                  &uuml;ber die Grafik bewegt und das Skript nicht (durch
+                                  f&uuml;r ein Bildschirmleseger&auml;t lesbaren Text)
+                                  anzeigt, dass der Seiteninhalt ge&auml;ndert wurde, kann
+                                  das Skript nicht zug&auml;nglich gemacht werden.
+                                
+                     </li>
+                             
+                     <li>
+                                  <strong>Skripts ohne Tastaturaktivierung</strong>: Wenn das
+                                  Ereignis zum Ausl&ouml;sen des Skripts nicht &uuml;ber die
+                                  Tastatur aktiviert werden kann, kann das Skript nicht
+                                  zug&auml;nglich gemacht werden.
+                                
+                     </li>
+                           
+                  </ul>
+                      
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2" class="clearseparation">&nbsp;</td>
+            </tr>
+            <tr>
+               <td colspan="2" class="clearseparation">&nbsp;</td>
+            </tr>
+            <tr>
+               <td valign="top" colspan="2" class="description"><b>&Uuml;berpr&uuml;fung</b>
+                        
+                  <p>
+                             &Uuml;berpr&uuml;fen Sie, ob die vom Skript bereitgestellten
+                             Informationen auch mithilfe von Text bereitgestellt werden
+                             k&ouml;nnen, der durch eine unterst&uuml;tzende Anwendung
+                             lesbar ist.
+                           
+                  </p>
+                        
+                  <p>
+                               Die einfachste M&ouml;glichkeit, um zu pr&uuml;fen, ob ein
+                               Skript zug&auml;nglich ist, besteht darin, die Seite in
+                               einem Browser aufzurufen, in dem Skripts und das Laden von
+                               Grafiken deaktiviert sind (weitere Informationen zum
+                               Deaktivieren von Skripts und Grafiken finden Sie in der
+                               Dokumentation zum jeweiligen Browser).
+                             <br>
+                             Eine andere M&ouml;glichkeit besteht darin, die Seite und
+                             ihre Funktionen ohne Maus zu nutzen (d.&nbsp;h. nur mit der
+                             Tastatur, wobei die Navigation zwischen den Elementen
+                             mithilfe der Tab-Taste geschieht). Dadurch k&ouml;nnen Sie
+                             erkennen, welche Rolle das Skript f&uuml;r die Interaktion
+                             mit dem Benutzer spielt.
+                           
+                  </p>
+                        
+                  <p>
+                             Wenn dies nicht m&ouml;glich ist, sollten Sie dem SCRIPT auch
+                             ein NOSCRIPT-Element hinzuf&uuml;gen. NOSCRIPT kann jedes
+                             beliebige HTML-Tag enthalten. &Uuml;ber den Inhalt des
+                             NOSCRIPT-Elements sollten Benutzer, die das Skript nicht
+                             aktiviert haben, die gleichen Ergebnisse erzielen
+                             k&ouml;nnen, wie Benutzer mit aktiviertem Skript. Vor allem
+                             sollten sie auf die gleichen Inhalte zugreifen und die
+                             gleichen Interaktionsfunktionen (einschlie&szlig;lich
+                             Hyperlinks) nutzen k&ouml;nnen.
+                           
+                  </p>
+                      
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2" class="clearseparation">&nbsp;</td>
+            </tr>
+            <tr>
+               <td colspan="2" class="clearseparation">&nbsp;</td>
+            </tr>
+            <tr>
+               <td valign="top" colspan="2" class="description"><b>Problemerkl&auml;rung</b><br>
+                        
+                  <p>
+                             NOSCRIPT stellte eine M&ouml;glichkeit dar, eine
+                             Textentsprechung f&uuml;r ein SCRIPT-Element einzuf&uuml;gen.
+                             Der Inhalt dieses Elements wird wiedergegeben, wenn Skripts
+                             deaktiviert sind.
+                           
+                  </p>
+                        
+                  <p>
+                             Mit dem NOSCRIPT-Element k&ouml;nnen Autoren alternative
+                             Inhalte anbieten, wenn ein Skript nicht ausgef&uuml;hrt wird.
+                             Der Inhalt von NOSCRIPT-Elementen sollte nur in den folgenden
+                             F&auml;llen von einem skriptkompatiblen Agenten wiedergegeben
+                             werden:
+                           
+                  </p>
+                        
+                  <ul>
+                             
+                     <li>
+                                  Die Skriptausf&uuml;hrung des Browsers ist deaktiviert.
+                                
+                     </li>
+                             
+                     <li>
+                                  Der Browser unterst&uuml;tzt eine durch das Skript
+                                  aufgerufene Skriptsprache nicht.
+                                
+                     </li>
+                           
+                  </ul>
+                        
+                  <p>
+                             Benutzer von Bildschirmleseger&auml;ten und Browsern mit
+                             Sprachausgabe k&ouml;nnen keine Skripts nutzen, die die
+                             grafische Oberfl&auml;che einer Webseite beeinflussen.
+                           
+                  </p>
+                        
+                  <p>
+                             Benutzer, die nicht mit einer Maus oder einem Joystick
+                             arbeiten, k&ouml;nnen keine Skripts nutzen, mit denen
+                             Fenster, Dialogfelder und Men&uuml;s ge&ouml;ffnet werden.
+                           
+                  </p>
+                        
+                  <p>
+                             Daneben gibt es noch eine Reihe anderer F&auml;lle, in denen
+                             Skripts nicht von einem Browser ausgef&uuml;hrt werden
+                             k&ouml;nnen, und die Zahl dieser F&auml;lle wird in Zukunft
+                             weiter zunehmen. Dazu geh&ouml;ren:
+                           
+                  </p>
+                        
+                  <ul>
+                             
+                     <li>
+                                  PDAs und Mobiltelefone, auf denen keine Skripts
+                                  ausgef&uuml;hrt werden k&ouml;nnen
+                                
+                     </li>
+                             
+                     <li>
+                                  Browser in verschiedenen Betriebssystemen (z.&nbsp;B.
+                                  Windows, Mac&nbsp;OS und Linux), die Skripts in einer
+                                  bestimmten Skriptsprache nicht ausf&uuml;hren k&ouml;nnen.
+                                  VBScripts k&ouml;nnen beispielsweise in Netscape unter
+                                  Linux oder auf PDAs nicht ausgef&uuml;hrt werden.
+                                
+                     </li>
+                             
+                     <li>
+                                  Manche Benutzer grafischer Browser deaktivieren Javascript
+                                  aus Sicherheitsgr&uuml;nden.
+                                
+                     </li>
+                           
+                  </ul>
+                      
+               </td>
+            </tr>
+         </table>
+      </div>
+   </body>
+</html>

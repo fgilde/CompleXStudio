@@ -1,0 +1,133 @@
+<html xmlns:un="http://usablenet.com/namespaces/508_rules">
+   <link rel="stylesheet" href="josh.css">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   
+      <title>Detailanzeige f&uuml;r Regel: Sich wiederholende Hyperlinks &uuml;berspringen</title>
+      <!--
+  508/W3C Accessibility Suite OEM V2 for Macromedia Dreamweaver
+  (C) Copyright 2001-2005 UsableNet Inc. All rights reserved.
+  -->
+   </head>
+   <body bgcolor="#ffffff">
+      <div id="Beschreibung">
+         <table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+            <tr>
+               <td valign="top" nowrap="true" class="name">Sich wiederholende Hyperlinks &uuml;berspringen</td>
+               <td valign="top" nowrap="true" class="compatibility">&nbsp;</td>
+            </tr>
+            <tr>
+               <td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+            </tr>
+            <tr>
+               <td valign="top" align="right" nowrap="true" colspan="2" class="requirements">
+                        Section 508 1194.22(o); 
+                        
+                          WAI
+                        
+                         / 
+                        
+                          WCAG
+                        
+                         1.0 checkpoint 13.6
+                      
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2" class="clearseparation">&nbsp;</td>
+            </tr>
+            <tr>
+               <td colspan="2" class="clearseparation">&nbsp;</td>
+            </tr>
+            <tr>
+               <td valign="top" colspan="2" class="description"><b>Problembeschreibung</b><br>
+                        
+                  <p>
+                             Wenn die Seite Navigationslinks an Standardpositionen (meist
+                             am oberen, unteren oder seitlichen Seitenrand) enth&auml;lt,
+                             sollten diese durch Textlinks erg&auml;nzt werden, mit denen
+                             Benutzer von Textbrowsern die Navigationslinks ignorieren und
+                             direkt zum Seiteninhalt wechseln k&ouml;nnen.
+                           
+                  </p>
+                      
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2" class="clearseparation">&nbsp;</td>
+            </tr>
+            <tr>
+               <td colspan="2" class="clearseparation">&nbsp;</td>
+            </tr>
+            <tr>
+               <td valign="top" colspan="2" class="description"><b>&Uuml;berpr&uuml;fung</b>
+                        
+                  <p>
+                             Wenn die Seite einen Standardsatz an Navigationslinks an
+                             einer Standardposition enth&auml;lt, sollten Sie einen
+                             Hyperlink erstellen, mit dem der Benutzer diese
+                             Navigationslinks &uuml;berspringen kann. Die einfachste
+                             L&ouml;sung besteht darin, einen normalen Textlink
+                             (z.&nbsp;B. "Navigation &uuml;berspringen") einzuf&uuml;gen,
+                             der auf einen benannten Anker auf der gleichen Seite
+                             verweist.
+                           
+                  </p>
+                        
+                  <p>
+                             Ein effektiverer Ansatz besteht darin, eine transparente
+                             GIF-Datei mit entsprechendem ALT-Attribut als Hyperlink zu
+                             verwenden. Zum Beispiel:
+                           
+                  </p>
+                  <pre>
+  &lt;A href="#content"&gt; &lt;IMG alt="Zum Seiteninhalt"
+  src="spacer.gif" width="1" height="1"&gt; &lt;/A&gt;
+</pre>
+                        <p>
+                             Benutzern mit Grafikbrowsern wird der Hyperlink nicht
+                             angezeigt, aber Benutzer mit Textbrowsern k&ouml;nnen den
+                             Hyperlink sehen und nutzen.
+                           
+                  </p>
+                      
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2" class="clearseparation">&nbsp;</td>
+            </tr>
+            <tr>
+               <td colspan="2" class="clearseparation">&nbsp;</td>
+            </tr>
+            <tr>
+               <td valign="top" colspan="2" class="description"><b>Problemerkl&auml;rung</b><br>
+                        
+                  <p>
+                             Webdesigner f&uuml;gen h&auml;ufig Navigationslinks an
+                             Standardpositionen wie am oberen, unteren oder seitlichen
+                             Seitenrand ein. Wenn Benutzer ohne physische
+                             Einschr&auml;nkungen zu einer Webseite oder -site
+                             zur&uuml;ckkehren und direkt den Seiteninhalt anzeigen und
+                             keinen Navigationslink ausw&auml;hlen m&ouml;chten,
+                             k&ouml;nnen Sie die Hyperlinks einfach ignorieren und zum
+                             gew&uuml;nschten Text springen. Benutzer, die auf
+                             Bildschirmleseger&auml;te oder andere unterst&uuml;tzende
+                             Anwendungen angewiesen sind, m&uuml;ssten jedoch warten, bis
+                             das Leseger&auml;t die einzelnen Hyperlinks abgearbeitet hat,
+                             bevor sie den Seiteninhalt aufrufen k&ouml;nnen.
+                           
+                  </p>
+                        
+                  <p>
+                             Um dieses Problem zu umgehen, sollten Sie eine Funktion
+                             einf&uuml;gen, mit der die Benutzer repetitive
+                             Navigationslinks &uuml;berspringen k&ouml;nnen.
+                           
+                  </p>
+                      
+               </td>
+            </tr>
+         </table>
+      </div>
+   </body>
+</html>

@@ -1,0 +1,79 @@
+<html>
+<link rel="stylesheet" href="josh.css">
+<body bgcolor="#FFFFFF">
+
+		<div id="Beschreibung">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">max-height, min-height</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">(siehe Text)</span> CSS <span class="emphasis">2</span></td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Vererbt: Nein</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Mit diesen Attributen l&auml;sst sich f&uuml;r ein Element eine Mindest- bzw. Maximalh&ouml;he festlegen. Sie k&ouml;nnen die zul&auml;ssige H&ouml;he eines Elements vorgeben, und zwar unabh&auml;ngig davon, welche H&ouml;he sich aus dem normalen Inhaltsfluss ergibt.</p><p>Wenn Sie das Attribut <span class="literal">max-height</span> f&uuml;r ein Element mit Inhalt setzen, der u.&#160;U. &uuml;ber diesen H&ouml;chstwert hinaus geht, sollten Sie auch das Stilattribut <span class="literal">overflow</span> auf <span class="literal">hidden</span> setzen, damit dieser Teil des Inhalts abgeschnitten wird. Andernfalls flie&szlig;t er in den Inhalt des angrenzenden Elements. Netscape 6 unterst&uuml;tzt beide Attribute f&uuml;r Blockebenen- und positionierte Elemente.</p><p>Internet Explorer 6 f&uuml;r Windows unterst&uuml;tzt nur das Attribut <span class="literal">min-height</span>, das ausschlie&szlig;lich f&uuml;r <span class="literal">td</span>-, <span class="literal">th</span>- und <span class="literal">tr</span>-Elemente in einer Tabelle verwendet werden kann, deren Stilattribut <span class="literal">table-layout</span> auf <span class="literal">fixed</span> gesetzt ist. Dies widerspricht der CSS2-Spezifikation, laut der tabellenbezogene Elemente nicht durch diese Attribute beeinflusst werden d&uuml;rfen. Aus diesem Grund haben f&uuml;r <span class="literal">td</span>-, <span class="literal">th</span>- und <span class="literal">tr</span>-Elemente in IE 6 festgelegte <span class="literal">min-height</span>-Einstellungen keinerlei Auswirkung auf Netscape 6. IE 5 f&uuml;r Macintosh unterst&uuml;tzt keines dieser Attribute.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="csssyntax"><span class="title">CSS-Syntax</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>max-height: <span class="replaceable">length</span> | <span class="replaceable">percentage</span> | nonemin-height: <span class="replaceable">length</span> | <span class="replaceable">percentage</span> | none</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+				</tr>
+				<tr>
+					<td><p>Weitere Informationen hierzu finden Sie in der Diskussion &uuml;ber L&auml;ngenwerte zu Beginn dieses Kapitels. Es kann auch ein Prozentwert relativ zum Container des Elements angegeben werden. Der Wert <span class="literal">none</span> bewirkt, dass alle Beschr&auml;nkungen aufgehoben werden und ein normaler Inhaltsfluss m&ouml;glich ist.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="initvalue"><span class="title">Anfangswert</span></td>
+				</tr>
+				<tr>
+					<td><p><span class="literal">none</span> (max-width); <span class="literal">none</span> (min-width).</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="appliesto"><span class="title">Gilt f&uuml;r</span></td>
+				</tr>
+				<tr>
+					<td><p>Siehe Text. </p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectmodelreference"><span class="title">Objektmodellreferenz</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>[window.]document.getElementById("<span class="replaceable">elementID</span>").style.minHeight[window.]document.getElementById("<span class="replaceable">elementID</span>").style.maxHeight</pre>
+						</span></td>
+				</tr>
+			</table>
+		</div>
+</body>
+</html>

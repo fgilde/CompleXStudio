@@ -1,0 +1,728 @@
+<html>
+<link rel="stylesheet" href="josh.css">
+<body bgcolor="#FFFFFF">
+
+		<div id="Beschreibung">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">&lt;LINK&gt;</td><td valign="top" nowrap class="compatibility">NN<span class="emphasis"> 4</span>  IE<span class="emphasis"> 3</span>  HTML<span class="emphasis"> alle</span>&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">&lt;LINK&gt;</p>
+					</td><td valign="top" nowrap class="requirements">HTML-End-Tag: Unzul&auml;ssig&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Im Gegensatz zum <span class="literal">a</span>-Element (inoffiziell als Hyperlink bezeichnet, wenn es ein <span class="literal">href</span>-Attribut enth&auml;lt) geh&ouml;rt das Element <span class="literal">link</span> in das Element <span class="literal">head</span> und bietet die M&ouml;glichkeit, im Dokument Hyperlinks zu externen Dokumenten, wie z.&#160;B. Stylesheet-Definitionsdateien oder Schriftdefinitionsdateien, einzurichten. Im Gro&szlig;en und Ganzen nutzen Browser jedoch noch nicht die eigentlichen M&ouml;glichkeiten dieses Elements. Eine Vielzahl von Attributen erm&ouml;glicht es dem Autoren, Beziehungen zwischen dem aktuellen Dokument und zugeh&ouml;rigen Dokumenten einzurichten. Theoretisch k&ouml;nnen einige dieser Beziehungen als Teil des Dokuments oder als Browsersteuerelemente dargestellt werden. Implementierungen dieses Elements sowohl in Navigator 6 als auch in Internet Explorer 6 sind eher schwach im Vergleich zur HTML 4-Spezifikation. Gleichzeitig sind viele der in der HTML 4-Spezifikation definierten und im Abschnitt &uuml;ber die gemeinsam genutzten Komponenten am Anfang dieses Kapitels aufgelisteten Attribute (und alle Ereignisbehandlungsroutinen) nicht sehr n&uuml;tzlich, da sie meistens f&uuml;r Elemente gelten, die tats&auml;chlich auf der Seite angezeigt werden. Durch das <span class="literal">link</span>-Element wird kein expliziter Dokumentinhalt wiedergegeben. Einige dieser Attribute k&ouml;nnen versehentlich oder aus Konsistenzgr&uuml;nden mit dem <span class="literal">link</span>-Element verkn&uuml;pft sein.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>&lt;HEAD&gt;&lt;TITLE&gt;Section 3&lt;/TITLE&gt;&lt;LINK rev="Prev" href="sect2.html"&gt;&lt;LINK rel="Next" href="sect4.html"&gt;&lt;LINK rel="stylesheet" type="text/css" href="myStyles.css"&gt;&lt;/HEAD&gt;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectmodelreference"><span class="title">Objektmodellreferenz</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>[window.]document.getElementById(<span class="replaceable">elementID</span>)</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectmodelreference"><span class="title">Elementspezifische Attribute</span></td></tr><tr>
+<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td></tr><tr><td>        
+<table border="1"><tbody><tr><td><span class="literal">charset</span></td><td><span class="literal">href</span></td><td><span class="literal">hreflang</span></td><td><span class="literal">media</span></td><td><span class="literal">rel</span></td>
+								</tr>
+								<tr><td><span class="literal">rev</span></td><td><span class="literal">src</span></td><td><span class="literal">target</span></td><td><span class="literal">type</span></td><td></td>
+								</tr>
+							</tbody></table>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectmodelreference"><span class="title">Elementspezifische Ereignisbehandlungsroutinenattribute</span></td>
+				</tr>
+				<tr>
+					<td><p>Keine. </p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="charset">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">charset</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">nicht zutreffend</span> HTML <span class="emphasis">4</span>&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">charset="<span class="replaceable">characterSet</span>"</p>
+					</td><td valign="top" nowrap class="requirements">Optional&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Zeichenkodierung des Inhalts am anderen Ende des Hyperlinks.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>&lt;LINK charset="csISO5427Cyrillic" href="moscow.html"&gt;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+				</tr>
+				<tr>
+					<td><p>Alias (Gro&szlig;-/Kleinschreibung unwichtig) aus dem Zeichensatzregister (ftp://ftp.isi.edu/in-notes/iana/assignments/character-sets).</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Standardwert</span></td>
+				</tr>
+				<tr>
+					<td><p>Wird vom Browser bestimmt. </p>
+					</td>
+				</tr>
+			</table>
+		</div>
+		<div id="disabled">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">disabled</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">4/5.5</span> HTML <span class="emphasis">4</span>&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">disabled="<span class="replaceable">featureSwitch</span>"</p>
+					</td><td valign="top" nowrap class="requirements">Optional&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Boolescher Schalter, der bestimmt, ob der Benutzer ein Element aktivieren oder in sonst irgendeiner Weise darauf zugreifen kann. Dieses Attribut ist auf interaktive Formularsteuerelemente in Netscape 6 und HTML 4 beschr&auml;nkt. IE ab Version 5.5 (nur Win32) wendet dieses Attribut auch auf die meisten anderen darstellbaren Elemente an. Deaktivierte Elemente werden in der Regel grau hinterlegt dargestellt, um sie von anderen Elementen zu unterscheiden.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>&lt;INPUT type="submit" name="sender" disabled="true"&gt;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+				</tr>
+				<tr>
+					<td><p><span class="literal">true</span> | <span class="literal">false</span></p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Standardwert</span></td>
+				</tr>
+				<tr>
+					<td><p><span class="literal">false</span></p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectmodelreference"><span class="title">Objektmodellreferenz</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>[window.]document.getElementById(<span class="replaceable">elementID).</span>disabled</pre>
+						</span></td>
+				</tr>
+			</table>
+		</div>
+		<div id="href">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">href</td><td valign="top" nowrap class="compatibility">NN<span class="emphasis"> 6</span>  IE<span class="emphasis"> 3</span>  HTML<span class="emphasis"> alle</span>&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">href="<span class="replaceable">URI</span>"</p>
+					</td><td valign="top" nowrap class="requirements">Erforderlich&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Die URI des mit dem Link verkn&uuml;pften Dokuments (im W3C-Jargon auch <span class="emphasis">Ziel</span> genannt, obwohl keine Seitennavigation stattfindet). Navigator 4 verwendet f&uuml;r diesen Zweck das Attribut <span class="literal">src</span>. Verwenden Sie beide Attribute, um f&uuml;r R&uuml;ckw&auml;rtskompatibilit&auml;t zu sorgen.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>&lt;LINK rel="Prev" href="sect2.html" src="sect2.html"&gt;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+				</tr>
+				<tr>
+					<td><p>Eine g&uuml;ltige URI, einschlie&szlig;lich vollst&auml;ndige und relative URLs.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Standardwert</span></td>
+				</tr>
+				<tr>
+					<td><p>Keiner.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectmodelreference"><span class="title">Objektmodellreferenz</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>[window.]document.getElementById(<span class="replaceable">elementID</span>).href</pre>
+						</span></td>
+				</tr>
+			</table>
+		</div><div id="hreflang">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">hreflang</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">6</span> HTML <span class="emphasis">4</span>&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">hreflang="<span class="replaceable">languageCode</span>"</p>
+					</td><td valign="top" nowrap class="requirements">Optional&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Der Sprachcode des Inhalts am Ziel eines Hyperlinks. Hierf&uuml;r muss auch das Attribut <span class="literal">href</span> gesetzt sein. Es handelt sich um ein Hilfsattribut, mit dem sich der Browser gegebenenfalls auf eine neue Sprache vorbereiten kann.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>&lt;LINK hreflang="HI" href="hindi/Chap3.html"&gt;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+				</tr>
+				<tr>
+					<td><p>Sprachcode, bei dem nicht zwischen Gro&szlig;- und Kleinschreibung unterschieden wird.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Standardwert</span></td>
+				</tr>
+				<tr>
+					<td><p>Vorgabe des Browsers. </p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectmodelreference"><span class="title">Objektmodellreferenz</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>[window.]document.getElementById(<span class="replaceable">elementID</span>).hrefLang</pre>
+						</span></td>
+				</tr>
+			</table>
+		</div>
+		<div id="lang">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">lang</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">3</span> IE <span class="emphasis">4</span> HTML <span class="emphasis">4</span>&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">lang="<span class="replaceable">languageCode</span>"</p>
+					</td><td valign="top" nowrap class="requirements">Optional&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Die f&uuml;r die Attributwerte und Inhalte des Elements verwendete Sprache. Mithilfe dieser Informationen ist der Browser besser in der Lage, bestimmte Details wie Ligaturen (sofern von der betreffenden Schrift unterst&uuml;tzt oder in der geschriebenen Sprache erforderlich), Anf&uuml;hrungszeichen und Worttrennungen korrekt darzustellen. Andere Anwendungen und Suchmaschinen k&ouml;nnen anhand dieser Informationen W&ouml;rterb&uuml;cher f&uuml;r die Rechtschreibpr&uuml;fung ausw&auml;hlen und Indizes erstellen.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>&lt;SPAN lang="de"&gt;Deutsche Bundesbahn&lt;/SPAN&gt;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+				</tr>
+				<tr>
+					<td><p>Sprachcode, bei dem nicht zwischen Gro&szlig;- und Kleinschreibung unterschieden wird.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Standardwert</span></td>
+				</tr>
+				<tr>
+					<td><p>Vorgabe des Browsers.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectmodelreference"><span class="title">Objektmodellreferenz</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>[window.]document.getElementById(<span class="replaceable">elementID).</span>lang</pre>
+						</span></td>
+				</tr>
+			</table>
+		</div>
+		<div id="media">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">media</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">4</span> HTML <span class="emphasis">4</span>&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">media="<span class="replaceable">descriptorList</span>"</p>
+					</td><td valign="top" nowrap class="requirements">Optional&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Bestimmt das gew&uuml;nschte Ausgabeger&auml;t f&uuml;r den Inhalt des Zieldokuments, auf das das Attribut <span class="literal">href</span> verweist. Mit dem Attribut <span class="literal">media</span> k&ouml;nnen Browser in Zukunft Inhalte an bestimmte Ger&auml;tetypen, wie z.&#160;B. Handheld-Computer, sprachf&auml;hige Digitalisierger&auml;te oder Fernsehger&auml;te, anpassen. In der HTML 4-Spezifikation sind zahlreiche Konstantenwerte f&uuml;r zuk&uuml;nftige Ger&auml;te definiert, die Liste ist jedoch nach oben offen, damit zuk&uuml;nftige Browser die Ausgabe auch an andere Medien- und Ger&auml;tetypen anpassen k&ouml;nnen.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>&lt;LINK rel="Glossary" href="gloss.html" media="screen, tv, handheld"&gt;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+				</tr>
+				<tr>
+					<td><p>Konstanten: Mehrere Werte k&ouml;nnen in einer durch Kommas getrennten Liste zwischen  Anf&uuml;hrungszeichen gruppiert werden. Die in HTML 4 definierten Werte lauten <span class="literal">all</span> | <span class="literal">aura</span> | <span class="literal">braille</span> | <span class="literal">handheld</span> | <span class="literal">print</span> | <span class="literal">projection</span> | <span class="literal">screen</span> | <span class="literal">tty</span> | <span class="literal">tv</span>. IE 4 und sp&auml;ter unterst&uuml;tzt au&szlig;erdem <span class="literal">all</span> | <span class="literal">print</span> | <span class="literal">screen</span>.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Standardwert</span></td>
+				</tr>
+				<tr>
+					<td><p><span class="literal">screen</span></p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectmodelreference"><span class="title">Objektmodellreferenz</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>[window.]document.getElementById(<span class="replaceable">elementID</span>).media</pre>
+						</span></td>
+				</tr>
+			</table>
+		</div><div id="rel">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">rel</td><td valign="top" nowrap class="compatibility">NN<span class="emphasis"> 4</span>  IE<span class="emphasis"> 3</span>  HTML<span class="emphasis"> 3.2</span>&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">rel="<span class="replaceable">linkTypes</span>"</p>
+					</td><td valign="top" nowrap class="requirements">Optional&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Definiert die Beziehung zwischen dem aktuellen Element und dem Hyperlink-Ziel. In der HTML 4-Empfehlung sind mehrere Hyperlinktypen definiert. Wie der Wert umgesetzt wird, h&auml;ngt vom Browser ab. Das Element muss das Attribut <span class="literal">href</span> enthalten, damit das Attribut <span class="literal">rel</span> in Kraft treten kann.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>&lt;LINK rel="Next" href="sect6.html"&gt;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+				</tr>
+				<tr>
+					<td><p>Eine durch Leerzeichen getrennte Liste der Standard-Hyperlinktypen (Gro&szlig;-/Kleinschreibung unwichtig), die auf das Dokument und den Browser angewendet werden k&ouml;nnen. HTML 4 unterst&uuml;tzt folgende Hyperlinktypen:</p><p>In IE 4 und sp&auml;ter und in Navigator 4 und sp&auml;ter wird zur Verkn&uuml;pfung einer externen CSS-Datei das Attribut <span class="literal">stylesheet</span> verwendet. Navigator 4 erkennt <span class="literal">stylesheet</span> und <span class="literal">fontdef</span>. In der Windows-Implementierung von IE 5 und sp&auml;ter k&ouml;nnen Sie auch den Wert <span class="literal">shortcut icon</span> (mit Leerzeichen) verwenden und die URL einer benutzerdefinierten Symboldatei (<span class="emphasis">.ico</span>) auf dem Server angeben, damit dieses Symbol in der Favoritenlisten erscheint, wenn der Benutzer die Seite in seine Favoriten aufnimmt.</p>
+						<table border="1"><tbody><tr><td><span class="literal">alternate</span></td><td><span class="literal">appendix</span></td><td><span class="literal">bookmark</span></td><td><span class="literal">chapter</span></td>
+								</tr>
+								<tr><td><span class="literal">contents</span></td><td><span class="literal">copyright</span></td><td><span class="literal">glossary</span></td><td><span class="literal">help</span></td>
+								</tr>
+								<tr><td><span class="literal">index</span></td><td><span class="literal">next</span></td><td><span class="literal">prev</span></td><td><span class="literal">section</span></td>
+								</tr>
+								<tr><td><span class="literal">start</span></td><td><span class="literal">stylesheet</span></td><td><span class="literal">subsection</span></td><td></td>
+								</tr>
+							</tbody></table>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Standardwert</span></td>
+				</tr>
+				<tr>
+					<td><p>Keiner.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectmodelreference"><span class="title">Objektmodellreferenz</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>[window.]document.getElementById(<span class="replaceable">elementID</span>).rel</pre>
+						</span></td>
+				</tr>
+			</table>
+		</div><div id="rev">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">rev</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">4</span> HTML <span class="emphasis">4</span>&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">rev="<span class="replaceable">linkTypes</span>"</p>
+					</td><td valign="top" nowrap class="requirements">Optional&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Eine Beziehung mit r&uuml;ckw&auml;rtsgerichteten Hyperlinks. Wie beim Attribut <span class="literal">rel</span> sind die M&ouml;glichkeiten des Attributs <span class="literal">rev</span> vom Browser abh&auml;ngig, insbesondere von der Art und Weise, wie der Browser die verschiedenen in der HTML 4-Spezifikation verf&uuml;gbaren Linktypen interpretiert und darstellt. Angenommen, zwei Dokumente (A und b) enthalten Hyperlinks, die jeweils auf das andere Dokument verweisen. Der Wert <span class="literal">rev</span> von b ist daf&uuml;r vorgesehen, dieselbe Beziehung zwischen den beiden Dokumenten auszudr&uuml;cken wie das Attribut <span class="literal">rel</span> in A. Browser der Version 6 bieten keine weitergehende Funktionalit&auml;t f&uuml;r dieses Attribut.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>&lt;LINK rev="Prev" href="sect4.html"&gt;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+				</tr>
+				<tr>
+					<td><p>Eine durch Leerzeichen getrennte Liste der HTML 4-Standard-Hyperlinktypen (Gro&szlig;-/Kleinschreibung unwichtig), die f&uuml;r das Element zur Verf&uuml;gung stehen Die unterst&uuml;tzten Linktypen sind unter dem Attribut <span class="literal">rel</span> aufgef&uuml;hrt.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Standardwert</span></td>
+				</tr>
+				<tr>
+					<td><p>Keiner. </p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectmodelreference"><span class="title">Objektmodellreferenz</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>[window.]document.getElementById(<span class="replaceable">elementID</span>).rev</pre>
+						</span></td>
+				</tr>
+			</table>
+		</div><div id="src">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">src</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">4</span> IE <span class="emphasis">nicht zutreffend</span> HTML <span class="emphasis">nicht zutreffend</span>&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">src="<span class="replaceable">URL</span>"</p>
+					</td><td valign="top" nowrap class="requirements">Optional&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Die Ziel-URL eines Hyperlinks. Internet Explorer 4 und sp&auml;ter, Netscape 6 und HTML 4 verwenden f&uuml;r diesen Zweck das Attribut <span class="literal">href</span>. Verwenden Sie beide Attribute, um die plattform&uuml;bergreifende Implementierung zu erm&ouml;glichen.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>&lt;LINK rel="fontdef" src="fonts/garamond.pfr" href="fonts/garamond.pfr"&gt;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+				</tr>
+				<tr>
+					<td><p>Jede g&uuml;ltige URL, einschlie&szlig;lich vollst&auml;ndige und relative URLs.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Standardwert</span></td>
+				</tr>
+				<tr>
+					<td><p>Keiner. </p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="target">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">target</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">4</span> HTML <span class="emphasis">4</span>&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">target="<span class="replaceable">windowOrFrameName</span>"</p>
+					</td><td valign="top" nowrap class="requirements">Optional&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Vermutlich ist das Attribut <span class="literal">target</span> in HTML 4 enthalten, um das Ziel f&uuml;r die Anzeige eines Dokuments am anderen Ende des Attributs <span class="literal">href</span> des <span class="literal">link</span>-Elements anzugeben.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+				</tr>
+				<tr>
+					<td><p>Bezeichner, wenn der Frame- oder Fenstername &uuml;ber das Attribut <span class="literal">name</span> des Zielelements zugewiesen wurde. Vier reservierte Zielnamen dienen als Konstanten:</p><p>In IE f&uuml;r Windows sind zwei weitere Werte implementiert: <span class="literal">_search</span> (IE 5 und sp&auml;ter) und <span class="literal">_media</span> (IE 6). Dadurch wird der Browser angewiesen, verkn&uuml;pfte Inhalte in das Suchfenster bzw. in die Medienleiste zu laden. Genaue Implementierungsdetails sind noch nicht bekannt.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Standardwert</span></td>
+				</tr>
+				<tr>
+					<td><p><span class="literal">_self</span></p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectmodelreference"><span class="title">Objektmodellreferenz</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>[window.]document.getElementById(<span class="replaceable">elementID</span>).target</pre>
+						</span></td>
+				</tr>
+			</table>
+		</div><div id="type">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">type</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">4</span> IE <span class="emphasis">4</span> HTML <span class="emphasis">4</span>&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">type="<span class="replaceable">MIMEType</span>"</p>
+					</td><td valign="top" nowrap class="requirements">Optional&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Hilfsattribut mit Angaben &uuml;ber den Inhalt des Zieldokuments bzw. der Zielressource. In der Praxis wird dieses Attribut bis jetzt eingesetzt, um den Browser auf den verkn&uuml;pften Stylesheet-Typ vorzubereiten.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>&lt;LINK rel="stylesheet" type="text/css" href="styles/mainStyle.html"&gt;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+				</tr>
+				<tr>
+					<td><p>MIME-Typ, bei dem es nicht auf die Gro&szlig;-/Kleinschreibung ankommt. Ein Verzeichnis der registrierten MIME-Typen finden Sie unter ftp://ftp.isi.edu/in-notes/iana/assignments/media-types/.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Standardwert</span></td>
+				</tr>
+				<tr>
+					<td><p>Keiner.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectmodelreference"><span class="title">Objektmodellreferenz</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>[window.]document.getElementById(<span class="replaceable">elementID</span>).type </pre>
+						</span></td>
+				</tr>
+			</table>
+		</div>
+</body>
+</html>

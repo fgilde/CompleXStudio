@@ -1,0 +1,79 @@
+<html>
+<link rel="stylesheet" href="josh.css">
+<body bgcolor="#FFFFFF">
+
+		<div id="Beschreibung">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">content</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">nicht zutreffend</span> CSS <span class="emphasis">2</span></td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Vererbt: Nein</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Legt fest, dass der tats&auml;chliche Inhalt oder die Inhaltsquelle vor bzw. hinter dem aktuellen Element angezeigt wird. In der CSS-Terminologie wird diese Art von Inhalt als <span class="emphasis">generierter Inhalt</span> bezeichnet. Dieses Attribut kann nur bei den mit einem realen Element verkn&uuml;pften Pseudoelementen <span class="literal">:before</span> und <span class="literal">:after</span> gesetzt werden. Aufgrund der folgenden Stylesheet-Regel</p><p>wird beispielsweise eine Berechtigungsphrase an jedes <span class="literal">blockquote</span>-Element angeh&auml;ngt, obwohl der Inhalt nicht in den Dokumentenbaum aufgenommen wird. HTML-Tags im Inhaltstext werden nicht interpretiert, aber bei Bedarf kann dem Attribut <span class="literal">content</span> ein externes Dokument zugewiesen werden.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="csssyntax"><span class="title">CSS-Syntax</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>content: <span class="replaceable">string</span> | <span class="replaceable">uri</span> | <span class="replaceable">counter</span> | attr(<span class="replaceable">attrName</span>) | open-quote | close-quote |no-open-quote | no-close-quote</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+				</tr>
+				<tr>
+					<td><p>In Netscape 6 funktionieren nur die folgenden Wertetypen bzw. Werte: <span class="replaceable">string</span>, <span class="literal">open-quote</span>, <span class="literal">close-quote</span>, <span class="literal">no-open-quote</span> und <span class="literal">no-close-quote</span>. Mit <span class="literal">no-open-quote</span> und <span class="literal">no-close-quote</span> k&ouml;nnen Sie den gleichen Effekt wie bei Anf&uuml;hrungszeichen erzielen (was die Verschachtelung betrifft), ohne dass Anf&uuml;hrungszeichen angezeigt werden. Auf den Namen des Attributs <span class="literal">content:</span> k&ouml;nnen mehrere durch Leerzeichen getrennte Strings folgen.</p><p>Ein anderer Wert (<span class="replaceable">counter</span>) wird von Browsern noch nicht unterst&uuml;tzt, doch besonders bei Dokumenten, die von clientseitiger Absatznummerierung profitieren w&uuml;rde, ist sein Potenzial sehr vielversprechend. Mithilfe eines CSS-Z&auml;hlers kann ein Stylesheet die Nummerierung von Elementsequenzen (wie z.&#160;B. Abschnitten, Abbildungen usw.) genau steuern. Hierbei wird davon ausgegangen, dass die Nummerierung nicht Bestandteil des Inhalts ist, sondern ausschlie&szlig;lich durch den Wiedergabekontext des Elements innerhalb des Dokuments bestimmt wird. Wenn Sie beispielsweise in der Redaktionsphase einen nummerierten Absatz aus einem Dokument entfernen, wird die Absatznummerierung des Dokuments bei der Darstellung der Seite automatisch angepasst.</p><p>Einem Z&auml;hler wird immer ein Bezeichner zugeordnet, damit es in einem Dokument mehrere Z&auml;hler geben kann, z.&#160;B. einen f&uuml;r Abs&auml;tze und einen anderen f&uuml;r Unterabs&auml;tze. Andere CSS-Attribute (<span class="literal">counter-increment</span> und <span class="literal">counter-reset</span>) erfordern Werte, die zur Steuerung der Nummerierungsfolge auf einen Z&auml;hler mit Bezeichner verweisen. Durch die folgende Stylesheet-Regel wird vor jedem <span class="literal">h1</span>-Element eine Abschnittsbezeichnung und -nummer eingef&uuml;gt und der Z&auml;hlerwert jedesmal erh&ouml;ht, wenn der Style bei der Darstellung des Dokuments auf ein <span class="literal">h1</span>-Element angewendet wird:</p><p>Wie leistungsf&auml;hig Z&auml;hler vor allem in langen, hoch strukturierten Dokumenten sind, wird sich nach ihrer Implementierung in Mainstream-Browsern zeigen.</p><span class="programlisting"><pre>h1:before {counter-increment:secNum;           content:"Section " counter(secNum) ". "}</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="initvalue"><span class="title">Anfangswert</span></td>
+				</tr>
+				<tr>
+					<td><p><span class="literal">""</span> (leere Zeichenfolge)</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>p.note:before {content:"==&gt;"}</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="appliesto"><span class="title">Gilt f&uuml;r</span></td>
+				</tr>
+				<tr>
+					<td><p>Alle Elemente plus ein Pseudoelement vom Typ <span class="literal">:before</span> bzw. <span class="literal">:after</span>.</p>
+					</td>
+				</tr>
+			</table>
+		</div>
+</body>
+</html>

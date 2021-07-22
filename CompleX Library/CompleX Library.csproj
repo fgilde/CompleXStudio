@@ -1,0 +1,155 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{268EA5A6-4530-4550-B90D-0CB13834266A}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CompleX_Library</RootNamespace>
+    <AssemblyName>CompleX Library</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation />
+    <TargetFrameworkProfile />
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>none</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Design" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\SolutionInfo.cs">
+      <Link>Properties\SolutionInfo.cs</Link>
+    </Compile>
+    <Compile Include="CloneDeep.cs" />
+    <Compile Include="Controls\EnumerableSelectorControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\EnumerableSelectorControl.designer.cs">
+      <DependentUpon>EnumerableSelectorControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\EnumerableStringSelector.cs" />
+    <Compile Include="CustomClass.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="EditorInformation.cs" />
+    <Compile Include="IniFile.cs" />
+    <Compile Include="Resource.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resource.resx</DependentUpon>
+    </Compile>
+    <Compile Include="ValidationResult.cs" />
+    <Compile Include="Helper\AssociationManager.cs" />
+    <Compile Include="Helper\DirectorySorter.cs" />
+    <Compile Include="Helper\Extensions.cs" />
+    <Compile Include="Helper\FileAssociationInfo.cs" />
+    <Compile Include="Helper\FileHelper.cs" />
+    <Compile Include="FileSystemUtils.cs" />
+    <Compile Include="Helper\FileShellExtensions.cs" />
+    <Compile Include="Helper\ProgramAssociationInfo.cs" />
+    <Compile Include="Helper\ProgramIcon.cs" />
+    <Compile Include="Helper\ProgramVerb.cs" />
+    <Compile Include="Helper\RegistryException.cs" />
+    <Compile Include="Helper\RegistryWrapper.cs" />
+    <Compile Include="Helper\SerializationHelper.cs" />
+    <Compile Include="Helper\Shell32.cs" />
+    <Compile Include="Helper\ShellContextMenu.cs" />
+    <Compile Include="Helper\ShellNotification.cs" />
+    <Compile Include="Helper\WindowsSecurityHelper.cs" />
+    <Compile Include="Helper\XMLHelper.cs" />
+    <Compile Include="HostedService.cs" />
+    <Compile Include="IconLoader.cs" />
+    <Compile Include="ImageFunctions.cs" />
+    <Compile Include="InsertParameter.cs" />
+    <Compile Include="Interfaces\IContentEdit.cs" />
+    <Compile Include="Interfaces\IDesignable.cs" />
+    <Compile Include="Interfaces\IEditFeatures.cs" />
+    <Compile Include="Interfaces\IExecutable.cs" />
+    <Compile Include="Interfaces\IInserter.cs" />
+    <Compile Include="Interfaces\IMenuHandler.cs" />
+    <Compile Include="Interfaces\IMessageLog.cs" />
+    <Compile Include="Interfaces\IObjectEdit.cs" />
+    <Compile Include="Interfaces\IServiceInformation.cs" />
+    <Compile Include="Interfaces\ISettingsPage.cs" />
+    <Compile Include="Interfaces\ISourceEdit.cs" />
+    <Compile Include="Interfaces\IHostedService.cs" />
+    <Compile Include="Interfaces\IToolWindow.cs" />
+    <Compile Include="Interfaces\IUpdateableService.cs" />
+    <Compile Include="Interfaces\IWizardPageControl.cs" />
+    <Compile Include="ItemAction.cs" />
+    <Compile Include="MessageLog.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RegisteredFileType.cs" />
+    <Compile Include="SystemMenu.cs" />
+    <Compile Include="ViewUtility.cs" />
+    <Compile Include="ZipStorer.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="CustomClass.resx">
+      <DependentUpon>CustomClass.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resource.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resource.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iphone.ico" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

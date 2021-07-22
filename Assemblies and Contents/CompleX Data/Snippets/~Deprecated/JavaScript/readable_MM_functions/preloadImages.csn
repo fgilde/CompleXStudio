@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding = "utf-8"?>
+
+<snippet xmlns:MMString="http://www.macromedia.com/schemes/dat/string/" MMString:name = "Snippets/~Deprecated/JavaScript/readable_MM_functions/preloadImages_csn/snippet/name/Preload" MMString:description = "Snippets/~Deprecated/JavaScript/readable_MM_functions/preloadImages_csn/snippet/description/Code" preview="code" type="block">
+
+
+<insertText location="beforeSelection">
+
+<![CDATA[Example: preloadImages('file.gif', 'http://www.x.com/y.gif');
+function preloadImages()
+{
+  if(document.images)
+  {
+    if(!document.imageArray) document.imageArray = new Array();
+    var i,j = document.imageArray.length, args = preloadImages.arguments;
+    
+    for(i=0; i<args.length; i++)
+    {
+      if (args[i].indexOf("#")!=0)
+      {
+        document.imageArray[j] = new Image;
+        document.imageArray[j++].src = args[i];
+      }
+    }
+  }
+}
+]]>
+
+</insertText>
+
+<insertText location="afterSelection"><![CDATA[]]>
+
+</insertText>
+
+</snippet>

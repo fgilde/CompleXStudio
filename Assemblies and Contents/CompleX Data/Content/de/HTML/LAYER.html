@@ -1,0 +1,927 @@
+<html>
+<link rel="stylesheet" href="josh.css">
+<body bgcolor="#FFFFFF">
+
+		<div id="Beschreibung">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">&lt;LAYER&gt;</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">|4|</span> IE <span class="emphasis">nicht zutreffend</span> HTML <span class="emphasis">nicht zutreffend</span>&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">&lt;LAYER&gt;...&lt;/LAYER&gt;</p>
+					</td><td valign="top" nowrap class="requirements">HTML-End-Tag: Erforderlich&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Das Element <span class="literal">layer</span> ist ein positionierbares Element im Objektmodell von Navigator 4 (d.&#160;h. es &auml;hnelt einem Blockebenenelement, dessen CSS-Attribut <span class="literal">position</span> auf <span class="literal">absolute</span> gesetzt ist). Daher werden viele der Attribute entsprechend der im Navigator 4 verwendeten Methode zum Positionieren, &Auml;ndern der Gr&ouml;&szlig;e und Stapeln von positionierbaren Elemente benannt. Das Element wurde aus dem Netscape-DOM f&uuml;r Version 6 gestrichen und wird weder in neuen Browsern noch in W3C-Standards implementiert.</p><p>Der Inhalt f&uuml;r ein <span class="literal">layer</span>-Element kann aus einer separaten Datei eingelesen (mit dem Attribut <span class="literal">src</span>) oder in das aktuelle Dokument &uuml;bertragen werden, indem HTML-Code zwischen die Start- und End-Tags gesetzt wird. Beide Inhaltstypen k&ouml;nnen in demselben <span class="literal">layer</span>-Element enthalten sein. Der Inhalt aus dem <span class="literal">src</span>-Dokument wird zuerst wiedergegeben (als eigenes Blockebenenelement), w&auml;hrend zus&auml;tzlicher Inhalt in einer neuen Zeile unter dem Rechteck des externen Inhalts beginnt.</p><p>Ein <span class="literal">layer</span>-Element kann an einer beliebigen Stelle innerhalb eines Dokuments positioniert werden und Inhalt, der zu anderen Ebenen (einschlie&szlig;lich der Basisebene des Dokuments) geh&ouml;rt, &uuml;berlappen. Mithilfe von Hyperlinks oder Skripts kann der Inhalt einer einzelnen Ebene ge&auml;ndert werden, ohne dass der andere Inhalt auf der Seite neu geladen werden muss. Dar&uuml;ber hinaus k&ouml;nnen <span class="literal">layer</span>-Elemente ineinander verschachtelt werden.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>&lt;LAYER bgcolor="yellow" src="instrux.html" width="200" height="300"&gt;&lt;/LAYER&gt;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectmodelreference"><span class="title">Objektmodellreferenz</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>[window.]document.<span class="replaceable">layerName</span></pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectmodelreference"><span class="title">Elementspezifische Attribute</span></td></tr><tr>
+<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td></tr><tr><td>        
+<table border="1"><tbody><tr><td><span class="literal">above</span></td><td><span class="literal">background</span></td><td><span class="literal">below</span></td><td><span class="literal">bgcolor</span></td><td><span class="literal">clip</span></td>
+								</tr>
+								<tr><td><span class="literal">height</span></td><td><span class="literal">id</span></td><td><span class="literal">left</span></td><td><span class="literal">pagex</span></td><td><span class="literal">pagey</span></td>
+								</tr>
+								<tr><td><span class="literal">src</span></td><td><span class="literal">top</span></td><td><span class="literal">visibility</span></td><td><span class="literal">width</span></td><td><span class="literal">z-index</span></td>
+								</tr>
+							</tbody></table>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectmodelreference"><span class="title">Elementspezifische Ereignisbehandlungsroutinenattribute</span></td></tr><tr>
+<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td></tr><tr><td>
+<table border="1"><tbody><th>Routine</th><th>NN</th><th>IE</th><th>HTML</th><tr><td>onblur</td><td>4</td><td>--</td><td>--</td>
+								</tr>
+								<tr><td>onfocus</td><td>4</td><td>--</td><td>--</td>
+								</tr>
+								<tr><td>onload</td><td>4Nur Ereigniserfassungsmodus.</td><td>--</td><td>--</td>
+								</tr>
+								<tr><td>onmousedown</td><td>4a</td><td>--</td><td>--</td>
+								</tr>
+								<tr><td>onmouseout</td><td>4a</td><td>--</td><td>--</td>
+								</tr>
+								<tr><td>onmouseover</td><td>4a</td><td>--</td><td>--</td>
+								</tr>
+								<tr><td>onmouseup</td><td>4a</td><td>--</td><td>--</td>
+								</tr>
+							</tbody></table>
+					</td>
+				</tr>
+			</table>
+		</div><div id="above">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">above</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">|4|</span> IE <span class="emphasis">nicht zutreffend</span> HTML <span class="emphasis">nicht zutreffend</span>&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">above="<span class="replaceable">layerID</span>"</p>
+					</td><td valign="top" nowrap class="requirements">Optional&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Benennt das positionierbare Element, das &uuml;ber (vor) dem aktuellen <span class="literal">layer</span>-Element in der Stapelreihenfolge positioniert werden soll. Hierbei handelt es sich um eine andere Methode, das Attribut <span class="literal">z-index</span> zu setzen, wobei nicht auf ein willk&uuml;rliches Nummerierungssystem zur&uuml;ckgegriffen wird. Bei Verwendung des Attributs <span class="literal">above</span> d&uuml;rfen Sie nicht das Attribut <span class="literal">below</span> oder <span class="literal">z-index</span> f&uuml;r dasselbe <span class="literal">layer</span>-Element setzen.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>&lt;LAYER id="instrux" bgcolor="yellow" src="instrux.html" above="help1"width="200" height="300"&gt;&lt;/LAYER&gt;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+				</tr>
+				<tr>
+					<td><p>Bezeichner (Gro&szlig;-/Kleinschreibung beachten).</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Standardwert</span></td>
+				</tr>
+				<tr>
+					<td><p>Keiner.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectmodelreference"><span class="title">Objektmodellreferenz</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>[window.]document.<span class="replaceable">layerName</span>.above</pre>
+						</span></td>
+				</tr>
+			</table>
+		</div><div id="background">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">background</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">|4|</span> IE <span class="emphasis">nicht zutreffend</span> HTML <span class="emphasis">nicht zutreffend</span>&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">background="<span class="replaceable">URL</span>"</p>
+					</td><td valign="top" nowrap class="requirements">Optional&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Gibt eine Bilddatei an, die als Hintergrund f&uuml;r den Text oder anderen Inhalt des <span class="literal">layer</span>-Elements verwendet werden soll. Anders als bei normalen Bildern, die in den Browserinhalt geladen werden, werden Hintergrundbilder in der urspr&uuml;nglichen Gr&ouml;&szlig;e (ohne Skalierung) geladen und nebeneinander angeordnet, um den verf&uuml;gbaren Ebenenplatz zu f&uuml;llen. Kleinere Bilder k&ouml;nnen schneller heruntergeladen werden, m&uuml;ssen jedoch h&auml;ufiger im Hintergrund wiederholt werden. Animierte GIFs sind auch zul&auml;ssig, k&ouml;nnen jedoch auf den Leser st&ouml;rend wirken. Wenn Sie ein Hintergrundbild ausw&auml;hlen, sollten Sie sicherstellen, dass es im Vergleich zum Hauptinhalt nicht zu auff&auml;llig ist, damit der Inhalt deutlich zu erkennen ist. Hintergrundbilder, falls &uuml;berhaupt verwendet, sollten in keinster Weise aufdringlich sein.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>&lt;LAYER background="blueCrinkle.jpg" src="instrux.html" width="200" height="300"&gt;&lt;/LAYER&gt;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+				</tr>
+				<tr>
+					<td><p>Beliebige URL einer Bilddatei, einschlie&szlig;lich vollst&auml;ndige und relative URLs.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Standardwert</span></td>
+				</tr>
+				<tr>
+					<td><p>Keiner.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectmodelreference"><span class="title">Objektmodellreferenz</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>[window.]document.<span class="replaceable">layerName</span>.background</pre>
+						</span></td>
+				</tr>
+			</table>
+		</div><div id="below">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">below</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">|4|</span> IE <span class="emphasis">nicht zutreffend</span> HTML <span class="emphasis">nicht zutreffend</span>&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">below="<span class="replaceable">layerID</span>"</p>
+					</td><td valign="top" nowrap class="requirements">Optional&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Benennt das positionierbare Element, das unter (hinter) dem aktuellen <span class="literal">layer</span>-Element in der Stapelreihenfolge positioniert werden soll. Hierbei handelt es sich um eine andere Methode, das Attribut <span class="literal">z-index</span> zu setzen, wobei nicht auf ein willk&uuml;rliches Nummerierungssystem zur&uuml;ckgegriffen wird. Bei Verwendung des Attributs <span class="literal">below</span> d&uuml;rfen Sie nicht das Attribut <span class="literal">above</span> oder <span class="literal">z-index</span> f&uuml;r dasselbe <span class="literal">layer</span>-Element setzen.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>&lt;LAYER bgcolor="yellow" src="instrux.html" width="200" height="300" below="thankyou"&gt;&lt;/LAYER&gt;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+				</tr>
+				<tr>
+					<td><p>Bezeichner (Gro&szlig;-/Kleinschreibung beachten).</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Standardwert</span></td>
+				</tr>
+				<tr>
+					<td><p>Keiner.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectmodelreference"><span class="title">Objektmodellreferenz</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>[window.]document.<span class="replaceable">layerName</span>.below</pre>
+						</span></td>
+				</tr>
+			</table>
+		</div><div id="bgcolor">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">bgcolor</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">|4|</span> IE <span class="emphasis">nicht zutreffend</span> HTML <span class="emphasis">nicht zutreffend</span>&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">bgcolor="<span class="replaceable">colorTripletOrName</span>"</p>
+					</td><td valign="top" nowrap class="requirements">Optional&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Definiert eine F&uuml;llfarbe f&uuml;r das gesamte Ebenenrechteck. Diese Farbe erscheint hinter dem Text und anderem Inhalt. Wenn Sie <span class="literal">bgcolor</span> und <span class="literal">background</span> kombinieren, scheint bei allen transparenten Bereichen des Hintergrundbilds die Hintergrundfarbe durch.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>&lt;LAYER bgcolor="yellow" src="instrux.html" width="200" height="300"&gt;&lt;/LAYER&gt;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+				</tr>
+				<tr>
+					<td><p>Ein hexadezimales Triplett oder ein unverschl&uuml;sselter Farbname. Eine Einstellung ohne Wert wird als <span class="literal">"#000000"</span> (Schwarz) interpretiert. Einzelheiten zu den g&uuml;ltigen unverschl&uuml;sselten Farbnamen finden Sie in Anhang A.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Standardwert</span></td>
+				</tr>
+				<tr>
+					<td><p>Variiert je nach Betriebssystem.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectmodelreference"><span class="title">Objektmodellreferenz</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>[window.]document.<span class="replaceable">layerName</span>.bgColor</pre>
+						</span></td>
+				</tr>
+			</table>
+		</div><div id="clip">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">clip</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">|4|</span> IE <span class="emphasis">nicht zutreffend</span> HTML <span class="emphasis">nicht zutreffend</span>&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">clip="[<span class="replaceable">leftPixel</span>, <span class="replaceable">topPixel</span>,] <span class="replaceable">rightPixel</span>, <span class="replaceable">bottomPixel</span>"</p>
+					</td><td valign="top" nowrap class="requirements">Optional&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Ein Ausschneidebereich ist eine rechteckige Ansicht des vollst&auml;ndigen <span class="literal">layer</span>-Inhalts. Nur Inhalt, der innerhalb des rechteckigen Ausschneidebereichs liegt, ist auf der Seite sichtbar. Der Standardwert des Attributs <span class="literal">clip</span> ist entweder die Standardgr&ouml;&szlig;e des Inhalts oder die Breite des <span class="literal">layer</span>-Elements und die L&auml;nge des automatisch flie&szlig;enden Inhalts. Wenn Sie das Attribut <span class="literal">clip</span> setzen, k&ouml;nnen Sie umfangreichen Inhalt steuern, der hinter ein festes Rechteck flie&szlig;en k&ouml;nnte, das f&uuml;r das Seitenlayout wichtig ist.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>&lt;LAYER bgcolor="yellow" src="instrux.html" clip="50,50" width="200" height="300"&gt;&lt;/LAYER&gt;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+				</tr>
+				<tr>
+					<td><p>Die Werte des Attributs <span class="literal">clip</span> sind Pixelma&szlig;e von der oberen und linken Kante des Elements, so wie dieses im Dokument flie&szlig;t. Die Reihenfolge der Werte verl&auml;uft im Uhrzeigersinn ausgehend von der linken Kante um die Seiten des Rechtecks herum: links, oben, rechts, unten. Wenn Sie nur zwei Werte angegeben, geht Navigator 4 davon aus, dass die Werte f&uuml;r die linke und obere Kante auf Null gesetzt sind, was bedeutet, dass nur die rechte und untere Kante angepasst werden. Die Einstellung <span class="literal">"50,50"</span> bedeutet daher, dass der Ausschneidebereich 50 x 50 Pixel gro&szlig; ist und an der oberen linken Ecke des Ebenenrechtecks beginnt. Wenn Sie eine Ansicht mit derselben Gr&ouml;&szlig;e, jedoch 10 Pixel weiter rechts w&uuml;nschen, muss das Attribut <span class="literal">clip</span> auf <span class="literal">"10,0,60,50"</span> gesetzt werden.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Standardwert</span></td>
+				</tr>
+				<tr>
+					<td><p>Normal flie&szlig;ender Anzeigebereich des <span class="literal">layer</span>-Inhalts.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectmodelreference"><span class="title">Objektmodellreferenz</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>[window.]document.<span class="replaceable">layerName</span>.clip.left[window.]document.<span class="replaceable">layerName</span>.clip.top[window.]document.<span class="replaceable">layerName</span>.clip.right[window.]document.<span class="replaceable">layerName</span>.clip.bottom</pre>
+						</span></td>
+				</tr>
+			</table>
+		</div><div id="height, width">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">height, width</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">|4|</span> IE <span class="emphasis">nicht zutreffend</span> HTML <span class="emphasis">nicht zutreffend</span>&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">height="<span class="replaceable">length</span>" width="<span class="replaceable">length</span>"</p>
+					</td><td valign="top" nowrap class="requirements">Optional&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Definiert die Mindestgr&ouml;&szlig;e des <span class="literal">layer</span>-Elements. Wenn Sie beim erstmaligen Laden der Ebene Inhalt hinzuf&uuml;gen, schr&auml;nken die Attributeinstellungen jedoch nicht die Menge des Inhalts ein, der entlang jeder Achse sichtbar ist. Wenn Sie beispielsweise ein Bild in einem <span class="literal">layer</span>-Element anzeigen, das 120 Pixel breit und 90 Pixel hoch ist, wird die tats&auml;chliche sichtbare Gr&ouml;&szlig;e eines <span class="literal">layer</span>-Elements, bei dem die Attribute <span class="literal">height</span> und <span class="literal">width</span> auf eine kleinere Gr&ouml;&szlig;e gesetzt sind, so erweitert, dass das vollst&auml;ndige Bild angezeigt wird. Dasselbe passiert bei Text oder anderem Inhalt. Der sichtbare Bereich wird so erweitert, dass der gesamte Inhalt angezeigt wird. Um den sichtbaren Teil des Inhalts einzuschr&auml;nken, m&uuml;ssen Sie das Attribut <span class="literal">clip</span> setzen.</p><p>Sie sollten die Attribute <span class="literal">height</span> und <span class="literal">width</span> dann auf bestimmte Gr&ouml;&szlig;en setzen, wenn Sie ein farbiges oder gemustertes Rechteck erstellen (mit dem Attribut <span class="literal">bgcolor</span> oder <span class="literal">background</span>), das als Ebene unter anderen positioniertem Inhalt dienen soll. Die Attribute <span class="literal">height</span> und <span class="literal">width</span> setzen den Ausschneidebereich auf die entsprechende Werte, ohne dass der Inhalt gegen die Kanten des <span class="literal">layer</span>-Elements geschoben wird.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>&lt;LAYER bgcolor="yellow" src="instrux.html" width="200" height="300"&gt;&lt;/LAYER&gt;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+				</tr>
+				<tr>
+					<td><p>Positive Integer- oder Prozentwerte. Sie k&ouml;nnen beide Werte auf Null setzen, damit nicht nur das Element ausgeblendet wird (dies ist auch mit dem Attribut <span class="literal">visibility</span> m&ouml;glich), sondern auch verhindert wird, dass das Element einen Seitenbereich verdeckt.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Standardwert</span></td>
+				</tr>
+				<tr>
+					<td><p>Normal flie&szlig;ender Anzeigebereich des <span class="literal">layer</span>-Inhalts.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectmodelreference"><span class="title">Objektmodellreferenz</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>[window.]document.<span class="replaceable">layerName</span>.height[window.]document.<span class="replaceable">layerName</span>.width</pre>
+						</span></td>
+				</tr>
+			</table>
+		</div><div id="id">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">id</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">|4|</span> IE <span class="emphasis">nicht zutreffend</span> HTML <span class="emphasis">nicht zutreffend</span>&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">id="<span class="replaceable">elementIdentifier</span>"</p>
+					</td><td valign="top" nowrap class="requirements">Optional&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Ein eindeutiger Bezeichner, mit dem das Element vom Rest des Dokuments unterschieden wird. Dies ist der Bezeichner, der als Wert f&uuml;r die Attribute <span class="literal">above</span> und <span class="literal">below</span> verwendet wird. Der Wert des Attributs <span class="literal">id</span> wird auch in Skripts als Name des <span class="literal">layer</span>-Elements f&uuml;r Objektreferenzen verwendet.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>&lt;LAYER id="oldYeller" bgcolor="yellow" src="instrux.html" width="200" height="300"&gt;&lt;/LAYER&gt;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+				</tr>
+				<tr>
+					<td><p>Bezeichner (Gro&szlig;-/Kleinschreibung beachten).</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Standardwert</span></td>
+				</tr>
+				<tr>
+					<td><p>Keiner.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectmodelreference"><span class="title">Objektmodellreferenz</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>[window.]document.<span class="replaceable">layerName</span>.name</pre>
+						</span></td>
+				</tr>
+			</table>
+		</div>
+		<div id="lang">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">lang</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">3</span> IE <span class="emphasis">4</span> HTML <span class="emphasis">4</span>&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">lang="<span class="replaceable">languageCode</span>"</p>
+					</td><td valign="top" nowrap class="requirements">Optional&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Die f&uuml;r die Attributwerte und Inhalte des Elements verwendete Sprache. Mithilfe dieser Informationen ist der Browser besser in der Lage, bestimmte Details wie Ligaturen (sofern von der betreffenden Schrift unterst&uuml;tzt oder in der geschriebenen Sprache erforderlich), Anf&uuml;hrungszeichen und Worttrennungen korrekt darzustellen. Andere Anwendungen und Suchmaschinen k&ouml;nnen anhand dieser Informationen W&ouml;rterb&uuml;cher f&uuml;r die Rechtschreibpr&uuml;fung ausw&auml;hlen und Indizes erstellen.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>&lt;SPAN lang="de"&gt;Deutsche Bundesbahn&lt;/SPAN&gt;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+				</tr>
+				<tr>
+					<td><p>Sprachcode, bei dem nicht zwischen Gro&szlig;- und Kleinschreibung unterschieden wird.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Standardwert</span></td>
+				</tr>
+				<tr>
+					<td><p>Vorgabe des Browsers.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectmodelreference"><span class="title">Objektmodellreferenz</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>[window.]document.getElementById(<span class="replaceable">elementID).</span>lang</pre>
+						</span></td>
+				</tr>
+			</table>
+		</div>
+		<div id="left, top">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">left, top</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">|4|</span> IE <span class="emphasis">nicht zutreffend</span> HTML <span class="emphasis">nicht zutreffend</span>&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">left="<span class="replaceable">pixelCount</span>" top="<span class="replaceable">pixelCount</span>"</p>
+					</td><td valign="top" nowrap class="requirements">Optional&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Definiert den positionierten Offset der linken und oberen Kante der Ebene relativ zu dem Punkt im Dokument, an dem das <span class="literal">layer</span>-Element normalerweise in Quellcodereihenfolge erscheint. Die genaue Position relativ zur Seite variiert, wenn Sie nicht auch die Attribute <span class="literal">pagex</span> und <span class="literal">pagey</span> setzen, mit denen eine absolute Position des Elements im Dokumentbereich festgelegt wird. Anders als beim Element <span class="literal">ilayer</span> reserviert Navigator nicht den Bereich im Dokument, in dem ein <span class="literal">layer</span>-Element erscheint. Das Element wird in einer eigenen Ebene positioniert, und der umgebende Quellcodeinhalt wird angepasst. In der Regel wird der <span class="literal">layer</span>-Inhalt &uuml;berlappt, wenn die Ebene nicht an einer anderen Stelle positioniert wird.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>&lt;LAYER bgcolor="yellow" src="instrux.html" width="200" height="300" left="10" top="50"&gt;&lt;/LAYER&gt;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+				</tr>
+				<tr>
+					<td><p>Positive Integerwerte (optional in Anf&uuml;hrungszeichen).</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Standardwert</span></td>
+				</tr>
+				<tr>
+					<td><p><span class="literal">0</span></p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectmodelreference"><span class="title">Objektmodellreferenz</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>[window.]document.<span class="replaceable">layerName</span>.left[window.]document.<span class="replaceable">layerName</span>.top</pre>
+						</span></td>
+				</tr>
+			</table>
+		</div><div id="pagex, pagey">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">pagex, pagey</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">|4|</span> IE <span class="emphasis">nicht zutreffend</span> HTML <span class="emphasis">nicht zutreffend</span>&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">pagex="<span class="replaceable">pixelCount</span>" pagey="<span class="replaceable">pixelCount</span>"</p>
+					</td><td valign="top" nowrap class="requirements">Optional&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Damit ein <span class="literal">layer</span>-Element immer richtig positioniert wird, k&ouml;nnen Sie die obere linke Ecke des Dokuments (Seite) als Referenzpunkt verwenden. Wenn Sie die Attribute <span class="literal">pagex</span> und/oder <span class="literal">pagey</span> setzen, k&ouml;nnen Sie einen Offset f&uuml;r die linke und obere Kante des <span class="literal">layer</span>-Elements relativ zu den entsprechenden Kanten des gesamten Dokuments festlegen. Daher kann sich der Nullpunkt f&uuml;r eine Seite mit vertikalem Bildlauf &uuml;ber dem sichtbaren Bereich des Browserfensters befinden.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>&lt;LAYER bgcolor="yellow" src="instrux.html" width="200" height="300" pagex="50" pagey="350"&gt;&lt;/LAYER&gt;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+				</tr>
+				<tr>
+					<td><p>Positive Integerwerte (optional in Anf&uuml;hrungszeichen).</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Standardwert</span></td>
+				</tr>
+				<tr>
+					<td><p><span class="literal">0</span></p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectmodelreference"><span class="title">Objektmodellreferenz</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>[window.]document.<span class="replaceable">layerName</span>.pageX[window.]document.<span class="replaceable">layerName</span>.pageY</pre>
+						</span></td>
+				</tr>
+			</table>
+		</div><div id="src">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">src</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">|4|</span> IE <span class="emphasis">nicht zutreffend</span> HTML <span class="emphasis">nicht zutreffend</span>&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">src="<span class="replaceable">URL</span>"</p>
+					</td><td valign="top" nowrap class="requirements">Optional&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Um den Inhalt einer externen HTML-Datei in ein <span class="literal">layer</span>-Element zu laden, m&uuml;ssen Sie dem Attribut <span class="literal">src</span> die URL dieser Datei zuweisen. S&auml;mtlicher HTML-Inhalt zwischen den Start- und End-Tags des <span class="literal">layer</span>-Elements wird auf der Seite hinter dem von der URL im Attribut <span class="literal">src</span> geladenen Inhalt wiedergegeben. Wenn Sie das Attribut <span class="literal">src</span> weglassen, wird nur der Inhalt zwischen den Tags wiedergegeben. Mithilfe von Skripts kann nach dem Laden des Dokuments die entsprechende Objekteigenschaft (<span class="literal">src</span>) ge&auml;ndert werden. Auf diese Weise kann der Inhalt des <span class="literal">layer</span>-Elements dynamisch ge&auml;ndert werden, ohne dass das Hauptdokument neu geladen werden muss.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>&lt;LAYER bgcolor="yellow" src="instrux.html" width="200" height="300"&gt;&lt;/LAYER&gt;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+				</tr>
+				<tr>
+					<td><p>Eine vollst&auml;ndige oder relative URL.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Standardwert</span></td>
+				</tr>
+				<tr>
+					<td><p>Keiner.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectmodelreference"><span class="title">Objektmodellreferenz</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>[window.]document.<span class="replaceable">layerName</span>.src</pre>
+						</span></td>
+				</tr>
+			</table>
+		</div><div id="top">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">top</td><td valign="top" nowrap class="compatibility">&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Siehe left. </p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="visibility">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">visibility</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">|4|</span> IE <span class="emphasis">nicht zutreffend</span> HTML <span class="emphasis">nicht zutreffend</span>&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">visibility="<span class="replaceable">visibilityConstant</span>"</p>
+					</td><td valign="top" nowrap class="requirements">Optional&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Bestimmt, ob das <span class="literal">layer</span>-Element in Navigator 4 angezeigt wird. Das Standardverhalten f&uuml;r eine Ebene besteht darin, das Attribut <span class="literal">visibility</span> der n&auml;chst&auml;u&szlig;eren (&uuml;bergeordneten) Ebene zu &uuml;bernehmen. F&uuml;r ein <span class="literal">layer</span>-Element, das Teil des Hauptflie&szlig;textes ist, bedeutet dies, dass die Ebene standardm&auml;&szlig;ig sichtbar ist (die Basisebene ist immer sichtbar). Um eine Ebene beim Laden der Seite auszublenden, m&uuml;ssen Sie das Attribut <span class="literal">visibility</span> auf <span class="literal">"hidden"</span> setzen. Das Attribut sollten Sie nur dann auf <span class="literal">"show"</span> setzen, wenn das <span class="literal">layer</span>-Element innerhalb eines anderen <span class="literal">layer</span>- (oder <span class="literal">ilayer</span>-) Elements verschachtelt ist, dessen <span class="literal">visibility</span>-Wert auf <span class="literal">"hidden"</span> gesetzt (oder vererbt) ist.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>&lt;LAYER bgcolor="yellow" src="instrux.html" width="200" height="300" pagex="50" pagey="350" visibility="hidden"&gt;&lt;/LAYER&gt;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+				</tr>
+				<tr>
+					<td><p>Eine der zul&auml;ssigen Konstanten: <span class="literal">hidden</span> | <span class="literal">inherit</span> | <span class="literal">visible</span>.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Standardwert</span></td>
+				</tr>
+				<tr>
+					<td><p><span class="literal">inherit</span></p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectmodelreference"><span class="title">Objektmodellreferenz</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>[window.]document.<span class="replaceable">layerName</span>.visibility</pre>
+						</span></td>
+				</tr>
+			</table>
+		</div><div id="width">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">width</td><td valign="top" nowrap class="compatibility">&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Siehe height. </p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="z-index">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">z-index</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">|4|</span> IE <span class="emphasis">nicht zutreffend</span> HTML <span class="emphasis">nicht zutreffend</span>&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">z-index="<span class="replaceable">layerNumber</span>"</p>
+					</td><td valign="top" nowrap class="requirements">Optional&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Steuert die Positionierung von Ebenen entlang der Z-Achse (von vorne nach hinten) des Dokuments relativ zum n&auml;chst&auml;u&szlig;eren Ebenencontainer. Wenn die <span class="literal">z-index</span>-Werte von zwei oder mehr positionierbaren Elementen im selben Container (z.&#160;B. in der Hauptdokumentebene) identisch sind, wird die Stapelreihenfolge durch die Reihenfolge bestimmt, in der die Elemente im HTML-Quellcode geladen werden; dabei erscheinen die zuletzt geladenen Elemente vor den zuerst geladenen. Der Standardwert f&uuml;r <span class="literal">z-index</span> betr&auml;gt bei allen positionierbaren Elementen Null. Wenn nur ein positionierbares Element vor allen anderen erscheinen soll, die in der Standardreihenfolge angeordnet werden, brauchen Sie also nur diesem einen Element einen positiven Wert zuzuordnen (beispielsweise <span class="literal">1</span>). Die Stapelreihenfolge positionierbarer Elemente l&auml;sst sich per Skript jederzeit &auml;ndern. Weitere Informationen finden Sie unter den Attributen <span class="literal">above</span> und <span class="literal">below</span>.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>&lt;LAYER bgcolor="yellow" src="instrux.html" width="200" height="300" z-index="1"&gt;&lt;/LAYER&gt;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+				</tr>
+				<tr>
+					<td><p>Beliebiger Integerwert.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Standardwert</span></td>
+				</tr>
+				<tr>
+					<td><p><span class="literal">0</span></p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectmodelreference"><span class="title">Objektmodellreferenz</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>[window.]document.<span class="replaceable">layerName</span>.zIndex  </pre>
+						</span></td>
+				</tr>
+			</table>
+		</div>
+</body>
+</html>

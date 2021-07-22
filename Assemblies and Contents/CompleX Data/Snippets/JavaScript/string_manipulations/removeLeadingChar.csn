@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding = "utf-8"?>
+
+<snippet xmlns:MMString="http://www.macromedia.com/schemes/dat/string/" MMString:name = "Snippets/JavaScript/string_manipulations/removeLeadingChar_csn/snippet/name/Remove" MMString:description = "Snippets/JavaScript/string_manipulations/removeLeadingChar_csn/snippet/description/Removes" preview="code" type="block">
+
+
+<insertText location="beforeSelection">
+
+<![CDATA[function removeLeadingWhitespace(inputString)
+{
+  if (typeof inputString == "string")
+  {
+    var firstNonWhite = inputString.search(/\S/);
+
+    if (firstNonWhite != -1)
+      inputString = inputString.substring(firstNonWhite);
+  }
+  return inputString;
+
+}
+]]>
+
+</insertText>
+
+<insertText location="afterSelection"><![CDATA[]]>
+
+</insertText>
+
+</snippet>

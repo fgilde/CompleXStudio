@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{34D39999-83F1-40EF-9A4B-0DECA74353A3}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DOLHtml</RootNamespace>
+    <AssemblyName>DOLHtml</AssemblyName>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DOL\DHtml\DCssResolver\DCssSimpleSelector.cs" />
+    <Compile Include="DOL\DHtml\DCssResolver\DCssResolver.cs" />
+    <Compile Include="DOL\DHtml\DCssResolver\DCssProperty.cs" />
+    <Compile Include="DOL\DHtml\DCssResolver\DCssPropertyCollection.cs" />
+    <Compile Include="DOL\DHtml\DCssResolver\DCssSelector.cs" />
+    <Compile Include="DOL\DHtml\DCssResolver\DCssSpecificity.cs" />
+    <Compile Include="DOL\DHtml\DHtmlParser\DHtmlAttribute.cs" />
+    <Compile Include="DOL\DHtml\DHtmlParser\DHtmlAttributeCollection.cs" />
+    <Compile Include="DOL\DHtml\DHtmlParser\Node\DHtmlComment.cs" />
+    <Compile Include="DOL\DHtml\DHtmlParser\DHtmlDocument.cs" />
+    <Compile Include="DOL\DHtml\DHtmlParser\Node\DHtmlElement.cs" />
+    <Compile Include="DOL\DHtml\DHtmlParser\DHtmlGeneralParser.cs" />
+    <Compile Include="DOL\DHtml\DHtmlParser\Node\DHtmlNode.cs" />
+    <Compile Include="DOL\DHtml\DHtmlParser\DHtmlNodeCollection.cs" />
+    <Compile Include="DOL\DHtml\DHtmlParser\Node\DHtmlProcessingInstruction.cs" />
+    <Compile Include="DOL\DHtml\DHtmlParser\Node\DHtmlScript.cs" />
+    <Compile Include="DOL\DHtml\DHtmlParser\Node\DHtmlStyle.cs" />
+    <Compile Include="DOL\DHtml\DHtmlParser\Node\DHtmlText.cs" />
+    <Compile Include="DOL\DHtml\DHtmlParser\DIHtmlParser.cs" />
+    <Compile Include="DOL\DHtml\DHtmlParser\DIHtmlNodeHasAttribute.cs" />
+    <Compile Include="DOL\DHtml\DHtmlTextProcessor.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="DOLBase.csproj">
+      <Project>{2D477598-FCF8-41EA-939D-EA2F4A354EC3}</Project>
+      <Name>DOLBase</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Properties\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

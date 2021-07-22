@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DataSetTree" targetNamespace="http://tempuri.org/DataSetTree.xsd" xmlns:mstns="http://tempuri.org/DataSetTree.xsd" xmlns="http://tempuri.org/DataSetTree.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DataSetTree" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DataSetTree" msprop:Generator_UserDSName="DataSetTree">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="DataTableTree" msprop:Generator_UserTableName="DataTableTree" msprop:Generator_RowEvArgName="DataTableTreeRowChangeEvent" msprop:Generator_TableVarName="tableDataTableTree" msprop:Generator_TablePropName="DataTableTree" msprop:Generator_RowDeletingName="DataTableTreeRowDeleting" msprop:Generator_RowChangingName="DataTableTreeRowChanging" msprop:Generator_RowDeletedName="DataTableTreeRowDeleted" msprop:Generator_TableClassName="DataTableTreeDataTable" msprop:Generator_RowChangedName="DataTableTreeRowChanged" msprop:Generator_RowEvHandlerName="DataTableTreeRowChangeEventHandler" msprop:Generator_RowClassName="DataTableTreeRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="id" msdata:DataType="System.Guid, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:string" />
+              <xs:element name="parentid" msdata:DataType="System.Guid, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" msprop:Generator_ColumnVarNameInTable="columnparentid" msprop:Generator_ColumnPropNameInRow="parentid" msprop:Generator_ColumnPropNameInTable="parentidColumn" msprop:Generator_UserColumnName="parentid" type="xs:string" minOccurs="0" />
+              <xs:element name="text" msprop:Generator_ColumnVarNameInTable="columntext" msprop:Generator_ColumnPropNameInRow="text" msprop:Generator_ColumnPropNameInTable="textColumn" msprop:Generator_UserColumnName="text" type="xs:string" minOccurs="0" />
+              <xs:element name="itemType" msprop:Generator_ColumnVarNameInTable="columnitemType" msprop:Generator_ColumnPropNameInRow="itemType" msprop:Generator_ColumnPropNameInTable="itemTypeColumn" msprop:Generator_UserColumnName="itemType" type="xs:string" minOccurs="0" />
+              <xs:element name="ImageIndex" msprop:Generator_ColumnVarNameInTable="columnImageIndex" msprop:Generator_ColumnPropNameInRow="ImageIndex" msprop:Generator_ColumnPropNameInTable="ImageIndexColumn" msprop:Generator_UserColumnName="ImageIndex" type="xs:int" minOccurs="0" />
+              <xs:element name="path" msprop:Generator_ColumnVarNameInTable="columnpath" msprop:Generator_ColumnPropNameInRow="path" msprop:Generator_ColumnPropNameInTable="pathColumn" msprop:Generator_UserColumnName="path" type="xs:string" minOccurs="0" />
+              <xs:element name="isStartUp" msprop:Generator_ColumnVarNameInTable="columnisStartUp" msprop:Generator_ColumnPropNameInRow="isStartUp" msprop:Generator_ColumnPropNameInTable="isStartUpColumn" msprop:Generator_UserColumnName="isStartUp" type="xs:boolean" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="DataTableTreeKey1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:DataTableTree" />
+      <xs:field xpath="mstns:id" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

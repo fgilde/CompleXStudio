@@ -1,0 +1,196 @@
+<html>
+<link rel="stylesheet" href="josh.css">
+<body bgcolor="#FFFFFF">
+
+		<div id="Beschreibung">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">&lt;BASE&gt;</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">alle</span> IE <span class="emphasis">alle</span>  HTML <span class="emphasis">alle</span>&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">&lt;BASE&gt;</p>
+					</td><td valign="top" nowrap class="requirements">HTML-End-Tag: Unzul&auml;ssig&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Das Element <span class="literal">base</span> wird innerhalb des <span class="literal">head</span>-Elements des Dokuments definiert, um dem Browser den URL-Pfad zum aktuellen Dokument mitzuteilen. Dieser Pfad wird dann als Basis f&uuml;r alle relativen URLs verwendet, die zur Definition der verschiedenen <span class="literal">src</span>- und <span class="literal">href</span>-Attribute im Dokument verwendet werden. Die URL des <span class="literal">base</span>-Elements muss eine vollst&auml;ndige URL sein, einschlie&szlig;lich Dokumentname (obwohl Browser auch URLs f&uuml;r Verzeichnisse unterst&uuml;tzen). Der Browser berechnet den URL-Basispfad zum Verzeichnis mit dem Dokument. Bei Angabe von <span class="literal">&lt;BASE</SPAN><SPAN class="literal">href="http://www.megacorp.com/products/index.html"&gt;</span> wird das <span class="literal">href</span>-Attribut eines auf dieser Seite vorhandenen Links zu <span class="emphasis">widgets/framitz801.html</span> zur vollst&auml;ndigen URL <span class="emphasis">http://www.megacorp.com/products/widgets/framitz801.html</span> erweitert. Auf &auml;hnliche Weise wird bei einer relativen URL die n&auml;chsth&ouml;here Verzeichnisebene mit zwei Punkten wiedergegeben. Beispielsweise k&ouml;nnte mit dem fr&uuml;her definierten <span class="literal">base</span>-Element ein <span class="literal">img</span>-Element auf der Seite <span class="emphasis">index.html</span> auf <span class="literal">src="../images/logo.jpg"</span> gesetzt werden. Diese Angabe wird dann zu <span class="emphasis">http://www.megacorp.com/images/logo.jpg</span> erweitert.</p><p>Heutige Browser berechnen die Basis-URL des aktuellen Dokuments mittlerweile automatisch und erm&ouml;glichen so die Verwendung von relativen URLs ohne die Angabe des Elements <span class="literal">base</span>. Dies ist insbesondere dann n&uuml;tzlich, wenn Sie Seiten lokal entwickeln und das <span class="literal">base</span>-Element bei der Ver&ouml;ffentlichung im Internet nicht umstellen m&ouml;chten. In der HTML 4-Spezifikation ist festgelegt, dass ein Dokument ohne <span class="literal">base</span>-Element standardm&auml;&szlig;ig die URL des aktuellen Dokuments als <span class="literal">base</span>-URL verwenden soll. Dies gilt selbstverst&auml;ndlich nur f&uuml;r echte Webseiten und nicht f&uuml;r HTML-formatierte Dokumente wie E-Mails, die keine <span class="literal">base</span>-URL besitzen.</p><p>Sie k&ouml;nnen das Element <span class="literal">base</span> auch dazu verwenden, ein Standardziel f&uuml;r Linkelemente im Dokument zu definieren. Wenn durch alle Links Dokumente in einen anderen Frame geladen werden sollen, k&ouml;nnen Sie diesen einmalig im <span class="literal">base</span>-Tag festlegen und brauchen sich sp&auml;ter nicht mehr um <span class="literal">target</span>-Attribute an anderer Stelle im Dokument zu k&uuml;mmern. Wenn Sie diese Standardvorgabe f&uuml;r einen bestimmten Link aufheben wollen, k&ouml;nnen Sie mit dem <span class="literal">target</span>-Attribut im betreffenden Element ein anderes Ziel festlegen (lesen Sie hierzu den Hinweis in der Beschreibung des Attributs <span class="literal">target</span>).</p><p>Das einzige Attribut, das dieses Element mit anderen Elementen gemeinsam hat, ist <span class="literal">id</span>.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>&lt;HEAD&gt;&lt;BASE href="http://www.megacorp.com/index.html" target="_top"&gt;&lt;/HEAD&gt;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectmodelreference"><span class="title">Objektmodellreferenz</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>[window.]document.getElementById(<span class="replaceable">elementID</span>)</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectmodelreference"><span class="title">Elementspezifische Attribute</span></td>
+</tr><tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+</tr><tr><td>
+        <table border="1">
+<tbody><tr><td><span class="literal">href</span></td><td><span class="literal">target</span></td>
+								</tr>
+							</tbody></table>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectmodelreference"><span class="title">Elementspezifische Ereignisbehandlungsroutinenattribute</span></td>
+				</tr>
+				<tr>
+					<td><p>Keine.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="href">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">href</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">alle</span> IE <span class="emphasis">alle</span>  HTML <span class="emphasis">alle</span>&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">href="<span class="replaceable">URL</span>"</p>
+					</td><td valign="top" nowrap class="requirements">Optional&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Das Attribut <span class="literal">href</span> gibt die URL eines Dokuments an, dessen Serverpfad als Basis-URL f&uuml;r alle relativen Referenzen im Dokument verwendet werden soll. Dies ist in der Regel die URL des aktuellen Dokuments, doch dieses Attribut kann auch auf einen anderen Pfad gesetzt werden, wenn dies f&uuml;r die Dokument- und Verzeichnisstruktur sinnvoll ist.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>&lt;BASE href="http://www.megacorp.com/products/index.html"&gt;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+				</tr>
+				<tr>
+					<td><p>Vollst&auml;ndige und absolute URL eines Dokuments.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Standardwert</span></td>
+				</tr>
+				<tr>
+					<td><p>Aktueller Pfadname des Dokuments.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectmodelreference"><span class="title">Objektmodellreferenz</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>[window.]document.getElementsByTagName("base")[0].href[window.]document.getElementById(<span class="replaceable">elementID</span>).href</pre>
+						</span></td>
+				</tr>
+			</table>
+		</div><div id="target">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">target</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">alle</span> IE <span class="emphasis">alle</span> HTML <span class="emphasis">4</span>&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">target="<span class="replaceable">windowOrFrameName</span>"</p>
+					</td><td valign="top" nowrap class="requirements">Optional&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Wenn durch alle oder die meisten Hyperlinks und Areamaps auf einer Seite Dokumente in ein separates Fenster oder einen bestimmten Frame geladen werden, k&ouml;nnen Sie mit dem Attribut <span class="literal">target</span> des <span class="literal">base</span>-Elements f&uuml;r alle diese Elemente eine Zielvorgabe festlegen. Sie k&ouml;nnen das Attribut <span class="literal">target</span> festlegen, ohne das Attribut <span class="literal">href</span> zu setzen, falls Sie nur das Basisziel definieren wollen.</p><p>Strikte DTDs f&uuml;r HTML 4 und XHTML unterst&uuml;tzen das Attribut <span class="literal">target</span> bei keinem Element, da Frames und Windows nicht mit reinem Document Markup gesteuert werden k&ouml;nnen. Da sich Frameset-Dokumente in der strikten Umgebung nicht validieren lassen, gibt es separate Frameset-DTDs f&uuml;r HTML 4 und XHTML. Wenn Ihre Dokumente mit diesen strikten DTDs validiert werden m&uuml;ssen und Sie Ziele verwenden m&ouml;chten, k&ouml;nnen Sie die <span class="literal">target</span>-Eigenschaften von Links, Imagemaps und Formularen nach dem Laden der Seite mithilfe von Skripts festlegen.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>&lt;BASE target="rightFrame"&gt;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+				</tr>
+				<tr>
+					<td><p>Bezeichner, bei dem zwischen Gro&szlig;- und Kleinschreibung unterschieden wird, wenn der Frame- oder Fenstername &uuml;ber das Attribut <span class="literal">name</span> des Zielelements zugewiesen wurde. Vier reservierte Zielnamen dienen als Konstanten:</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Standardwert</span></td>
+				</tr>
+				<tr>
+					<td><p><span class="literal">_self</span></p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectmodelreference"><span class="title">Objektmodellreferenz</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>[window.]document.getElementsByTagName("base")[0].target[window.]document.getElementById(<span class="replaceable">elementID</span>).target</pre>
+						</span></td>
+				</tr>
+			</table>
+		</div>
+</body>
+</html>

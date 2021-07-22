@@ -1,0 +1,151 @@
+<html xmlns:un="http://usablenet.com/namespaces/508_rules">
+   <link rel="stylesheet" href="josh.css">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   
+      <title>Detailanzeige f&uuml;r Regel: Tabellenlayout muss auch in linearisierter Form einen Sinn ergeben</title>
+      <!--
+  508/W3C Accessibility Suite OEM V2 for Macromedia Dreamweaver
+  (C) Copyright 2001-2005 UsableNet Inc. All rights reserved.
+  -->
+   </head>
+   <body bgcolor="#ffffff">
+      <div id="Beschreibung">
+         <table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+            <tr>
+               <td valign="top" nowrap="true" class="name">Tabellenlayout muss auch in linearisierter Form einen Sinn ergeben</td>
+               <td valign="top" nowrap="true" class="compatibility">&nbsp;</td>
+            </tr>
+            <tr>
+               <td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+            </tr>
+            <tr>
+               <td valign="top" align="right" nowrap="true" colspan="2" class="requirements">WAI / WCAG 1.0 Priorit&auml;t 2 Checkpunkt 5.3</td>
+            </tr>
+            <tr>
+               <td colspan="2" class="clearseparation">&nbsp;</td>
+            </tr>
+            <tr>
+               <td colspan="2" class="clearseparation">&nbsp;</td>
+            </tr>
+            <tr>
+               <td valign="top" colspan="2" class="description"><b>Problembeschreibung</b><br>
+                  
+                           
+                  <p>
+                     Die Seiten enth&auml;lt mindestens eine Tabelle, die offenbar zu Layoutzwecken erstellt wurde (d. h. sie enth&auml;lt nur die Elemente
+                     CAPTION, THEAD, TH und TFOOT).
+                     	 
+                  </p>
+                  
+                  <p>
+                     In linearisierter Form sollte der Inhalt dieser Tabelle in der richtigen Reihenfolge gelesen werden k&ouml;nnen und einen Sinn
+                     ergeben.
+                     
+                  </p>
+                        
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2" class="clearseparation">&nbsp;</td>
+            </tr>
+            <tr>
+               <td colspan="2" class="clearseparation">&nbsp;</td>
+            </tr>
+            <tr>
+               <td valign="top" colspan="2" class="description"><b>&Uuml;berpr&uuml;fung</b>
+                  
+                           
+                  <p>
+                     Stellen Sie sicher, dass f&uuml;r den Fall einer Linearisierung der Inhalt von Layouttabellen einer Seite in der richtigen Reihenfolge
+                     gelesen werden kann. Dies ist im Prinzip ganz einfach: Denken Sie sich einfach alle Tags weg.
+                     	 
+                  </p>
+                  
+                  
+                  <p>
+                     Ggf. hilft es auch, die Seite zeilenweise durch kontinuierliches Aufdecken mit einem Blatt Papier zu lesen, um Hinweise auf
+                     m&ouml;gliche Probleme zu erhalten. 
+                     
+                  </p>
+                  
+                  
+                  <p>
+                     Dagegen sollten Tabellen mit echten tabellarischen Daten wie folgt linearisiert werden. Diese Tabellen m&uuml;ssen entsprechend
+                     mit Markups codiert werden (z. B. mit den Tags und Attributen TH, SCOPE, AXIS, ID und HEADERS), um die Zug&auml;nglichkeit zu erhalten.
+                     Bei anderen Tests innerhalb dieses Programms werden entsprechende Richtlinien gem&auml;&szlig; WCAG oder Paragraph 508 angewendet.
+                     
+                  </p>
+                  
+                        
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2" class="clearseparation">&nbsp;</td>
+            </tr>
+            <tr>
+               <td colspan="2" class="clearseparation">&nbsp;</td>
+            </tr>
+            <tr>
+               <td valign="top" colspan="2" class="description"><b>Problemerkl&auml;rung</b><br>
+                  
+                           
+                  <p>
+                     Wenn Zug&auml;nglichkeitskonzepte f&uuml;r Seiten erst nach der Definition und Implementierung der Seitenvorlagen erstellt werden, funktioniert
+                     die Tabelle zur Organisation des Layouts einer Seite h&auml;ufig bei nicht grafischen Browsern nicht richtig.
+                     	 
+                  </p>
+                  
+                  <p>
+                     Der h&auml;ufigste Fehler ist, zu vergessen, dass HTML-Tabellen die Informationen zeilenweise darstellen. 
+                     
+                  </p>
+                  
+                  
+                  <p>
+                     Und nicht grafische Browser vollziehen diese zeilenweise Darstellung von Tabellen nach. Dies gilt auch dann, wenn optische
+                     Hervorhebungen eine spaltenweise Anordnung der Daten vorgeben.
+                     
+                  </p>
+                  
+                  
+                  <p>
+                     Beachten Sie hierzu das folgende Beispiel (aus <strong>HTML Techniques for Web Content Accessibility Guidelines 1.0</strong>
+                     [http://www.w3.org/TR/WCAG10-HTML-TECHS/#tables-layout]
+                     ): 
+                     
+                  </p>
+                  
+                  
+                  <blockquote>
+                     
+                     <p>... Falls eine Tabelle auf dem Bildschirm folgenderma&szlig;en angezeigt wird:</p>
+                     
+                     <pre>
+There is a 30% chance of               Classes at the University of Wisconsin 
+rain showers this morning, but they    will resume on September 3rd. 
+should stop before the weekend.
+</pre>
+                     
+                     <p>So liest ein Bildschirmleseger&auml;t unter Umst&auml;nden dies:</p>
+                     
+                     <pre>
+There is a 30% chance of Classes at the University of Wisconsin
+rain showers this morning, but they will resume on September 3rd. 
+should stop before the weekend.
+</pre>
+                     </blockquote>
+                      
+                  
+                  <p>
+                     <strong>Linearisierung</strong> ist die Umwandlung einer zweidimensionalen Struktur, wie z. B. einer Tabelle, in eine eindimensionale Struktur. Diesem Umwandlungsvorgang
+                     muss jeder lesende Browser und jedes Bildschirmleseger&auml;t folgen, um den Inhalt der Seite mithilfe einer Audioausgabe darzustellen.
+                     
+                  </p>
+                        
+               </td>
+            </tr>
+         </table>
+      </div>
+   </body>
+</html>

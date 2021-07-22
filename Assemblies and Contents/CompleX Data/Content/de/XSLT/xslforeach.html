@@ -1,0 +1,181 @@
+<html>
+<head>
+<title>&lt;xsl:for-each&gt;</title>
+</head>
+<body bgcolor="#FFFFFF" text="#000000">
+<div id="Beschreibung">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">&lt;xsl:for-each&gt;</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description">
+Diese Anweisung ist der Iterationsoperator von XSLT. Dieses Element besitzt ein <span class="LITERAL">select</span>-Attribut, das einige Knoten aus dem aktuellen Kontext entfernt. </td></tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Kategorie</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<p>Anweisung</p>
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Obligatorische Attribute</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<dl>
+<dt>
+select
+</dt>
+<dd>
+Dieses Attribut enth&auml;lt einen XPath-Ausdruck, der aus dem aktuellen Kontext Knoten ausw&auml;hlt.
+<P></p>
+</dl>
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Optionale Attribute</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<p>Keine</p>
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Inhalt</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<p>
+<span class="LITERAL">&lt;xsl:for-each&gt;</span> enth&auml;lt eine Vorlage, die jeden der ausgew&auml;hlten Knoten bewertet. Das Element <span class="LITERAL">&lt;xsl:for-each&gt;</span> kann eines oder mehrere <span class="LITERAL">&lt;xsl:sort&gt;</span>-Elemente enthalten, um die ausgew&auml;hlten Knoten zu sortieren, bevor sie verarbeitet werden. Alle <span class="LITERAL">&lt;xsl:sort&gt;</span>-Elemente m&uuml;ssen erscheinen, bevor die Vorlage beginnt. </p>
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">&Uuml;bergeordnetes Element</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<p>
+<span class="LITERAL">&lt;xsl:for-each&gt;</span> erscheint innerhalb einer Vorlage.</p>
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Definition</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<p>XSLT-Abschnitt 8, Wiederholung</p>
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Beispiel</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<p>Die Funktionsweise des Elements <span class="LITERAL">&lt;xsl:for-each&gt;</span> wird durch das folgende Stylesheet veranschaulicht:</p>
+<span class="PROGRAMLISTING"><pre>
+&lt;?xml version="1.0"?&gt;
+&lt;xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform"&gt;
+
+  &lt;xsl:output method="text"/&gt;
+
+  &lt;xsl:variable name="newline"&gt;
+&lt;xsl:text&gt;
+&lt;/xsl:text&gt;
+  &lt;/xsl:variable&gt;
+
+  &lt;xsl:variable name="complicatedVariable"&gt;
+    &lt;xsl:choose&gt;
+      &lt;xsl:when test="count(//listitem) &gt; 10"&gt;
+        &lt;xsl:text&gt;really long list&lt;/xsl:text&gt;
+      &lt;/xsl:when&gt;
+      &lt;xsl:when test="count(//listitem) &gt; 5"&gt;
+        &lt;xsl:text&gt;moderately long list&lt;/xsl:text&gt;
+      &lt;/xsl:when&gt;
+      &lt;xsl:otherwise&gt;
+        &lt;xsl:text&gt;fairly short list&lt;/xsl:text&gt;
+      &lt;/xsl:otherwise&gt;
+    &lt;/xsl:choose&gt;
+  &lt;/xsl:variable&gt;
+
+  &lt;xsl:template match="/"&gt;
+    &lt;xsl:value-of select="$newline"/&gt;
+    &lt;xsl:text&gt;Here is a &lt;/xsl:text&gt;
+    &lt;xsl:value-of select="$complicatedVariable"/&gt;
+    &lt;xsl:text&gt;:&lt;/xsl:text&gt;
+    &lt;xsl:value-of select="$newline"/&gt;
+    &lt;xsl:variable name="listitems" select="list/listitem"/&gt;
+    &lt;xsl:call-template name="processListitems"&gt;
+      &lt;xsl:with-param name="items" select="$listitems"/&gt;
+    &lt;/xsl:call-template&gt;
+  &lt;/xsl:template&gt;
+
+  &lt;xsl:template name="processListitems"&gt;
+    &lt;xsl:param name="items"/&gt;
+    &lt;xsl:for-each select="$items"&gt;
+      &lt;xsl:value-of select="position()"/&gt;
+      &lt;xsl:text&gt;.  &lt;/xsl:text&gt;
+      &lt;xsl:value-of select="."/&gt;
+      &lt;xsl:value-of select="$newline"/&gt;
+    &lt;/xsl:for-each&gt;
+  &lt;/xsl:template&gt;
+
+&lt;/xsl:stylesheet&gt;</pre></span>
+<p>In diesem Stylesheet wird ein <span class="LITERAL">&lt;xsl:param&gt;</span>-Parameter namens <span class="LITERAL">items</span> verwendet, um die Funktionsweise des <span class="LITERAL">&lt;xsl:for-each&gt;</span>-Elements zu verdeutlichen. Der Parameter <span class="LITERAL">items</span> enth&auml;lt eine Reihe von <span class="LITERAL">&lt;listitem&gt;</span>-Elementen aus dem XML-Ausgangsdokument. Das Element <span class="LITERAL">&lt;xsl:for-each&gt;</span> durchschreitet jedes einzelne dieser Elemente. Dieses Stylesheet wird auf das folgende Dokument angewendet:</p>
+<span class="PROGRAMLISTING"><pre>
+&lt;?xml version="1.0"?&gt;
+&lt;list&gt;
+  &lt;title&gt;A few of my favorite albums&lt;/title&gt;
+  &lt;listitem&gt;A Love Supreme&lt;/listitem&gt;
+  &lt;listitem&gt;Beat Crazy&lt;/listitem&gt;
+  &lt;listitem&gt;Here Come the Warm Jets&lt;/listitem&gt;
+  &lt;listitem&gt;Kind of Blue&lt;/listitem&gt;
+  &lt;listitem&gt;London Calling&lt;/listitem&gt;
+  &lt;listitem&gt;Remain in Light&lt;/listitem&gt;
+  &lt;listitem&gt;The Joshua Tree&lt;/listitem&gt;
+  &lt;listitem&gt;The Indestructible Beat of Soweto&lt;/listitem&gt;
+&lt;/list&gt;</pre></span>
+<p>Hier die Ergebnisse, die entstehen, wenn die Transformation ausgef&uuml;hrt wird:</p>
+<span class="PROGRAMLISTING"><pre>
+Here is a moderately long list:
+1.  A Love Supreme
+2.  Beat Crazy
+3.  Here Come the Warm Jets
+4.  Kind of Blue
+5.  London Calling
+6.  Remain in Light
+7.  The Joshua Tree
+8.  The Indestructible Beat of Soweto</pre></span>
+<p>Das Element <span class="LITERAL">&lt;xsl:for-each&gt;</span> hat alle <span class="LITERAL">&lt;listitem&gt;</span>-Elemente aus dem XML-Ausgangsdokument durchschritten und jedes davon verarbeitet. </p>
+</td>
+</tr>
+</table>
+</div>
+</body>
+</html>

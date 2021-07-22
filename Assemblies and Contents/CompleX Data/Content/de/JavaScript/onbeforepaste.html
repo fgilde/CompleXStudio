@@ -1,0 +1,46 @@
+<html>
+<link rel="stylesheet" href="josh.css">
+<body bgcolor="#FFFFFF">
+
+		<div id="Beschreibung">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">onbeforepaste</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">nicht zutreffend</span> IE <span class="emphasis">5(Win)</span> DOM <span class="emphasis">nicht zutreffend</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Aufw&auml;rtsverbreitung: Ja; Abbruch m&ouml;glich: Ja</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Wird ausgel&ouml;st, unmittelbar bevor ein vom Benutzer aufgerufener <span class="emphasis">Einf&uuml;gen</span>-Befehl (&uuml;ber das Men&uuml; <span class="emphasis">Bearbeiten</span>, eine Tastenkombination oder ein Kontextmen&uuml;) das Einf&uuml;gen des Inhalts aus der Zwischenablage des Systems in die aktuelle Auswahl abgeschlossen hat. Wenn Sie benutzerdefinierte Informationen einf&uuml;gen m&ouml;chten, die Sie mithilfe einer der Ereignisbehandlungsroutinen <span class="literal">onbeforecopy</span>, <span class="literal">oncopy</span>, <span class="literal">onbeforecut</span> oder <span class="literal">oncut</span> im <span class="literal">clipboardData</span>-Objekt gespeichert haben, m&uuml;ssen Sie die Ereignisbehandlungsroutinenfunktionen <span class="literal">onbeforepaste</span> und <span class="literal">onpaste</span> miteinander kombinieren. Setzen Sie in der Ereignisbehandlungsroutine <span class="literal">onbeforepaste</span> die Eigenschaft <span class="literal">event.returnValue</span> auf <span class="literal">false</span>, sodass der Befehl <span class="emphasis">Einf&uuml;gen</span> im Men&uuml; <span class="emphasis">Bearbeiten</span> (und im Kontextmen&uuml;) auch bei einem nicht bearbeitbaren Einf&uuml;gen-Ziel aktiviert ist. Wenn der Benutzer den Men&uuml;punkt <span class="emphasis">Einf&uuml;gen</span> w&auml;hlt, ruft Ihre <span class="literal">onpaste</span>-Ereignisbehandlungsroutine Informationen aus dem <span class="literal">clipboardData</span>-Objekt ab und modifiziert gegebenenfalls den HTML-Inhalt des ausgew&auml;hlten Elements.
+</p>
+<span class="PROGRAMLISTING"><pre>function handleBeforePaste( ) &#123;
+    event.returnValue = false;
+}
+function handlePaste( ) &#123;
+    if (event.srcElement.className == &quot;OK2Paste&quot;) &#123;
+        event.srcElement.innerText = clipboardData.getData(&quot;Text&quot;);
+    }
+}</pre></span>
+							</td>
+						</tr>
+						<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>An der oben beschriebenen Einf&uuml;gen-Operation ist die Systemzwischenablage zu keinem Zeitpunkt beteiligt, da der gesamte Datenverkehr von Ihren Skripts abgewickelt wird &#8211; ganz ohne einen Wechsel in den Bearbeitungsmodus.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="typicaltargets"><span class="title">Typische Ziele</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Alle dargestellten Elemente sowie das <span class="literal">document</span>-Objekt.</p>
+					</td>
+				</tr>
+			</table>
+		</div>
+</body>
+</html>

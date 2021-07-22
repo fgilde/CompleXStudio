@@ -1,0 +1,214 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<link rel="stylesheet" href="../HTML/josh.css">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>VariableInfo-Klasse</title>
+</head>
+
+<body>
+<div id="Beschreibung">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME"> VariableInfo-Klasse</td>
+<td class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="DESCRIPTIONTITLE">Klassenname:</td>
+</tr>
+<tr>
+<td colspan="2" class="description"><p>
+<span class="LITERAL">javax.servlet.jsp.tagext.VariableInfo</span>
+</p></td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="DESCRIPTIONTITLE">Erweitert:</td>
+</tr>
+<tr>
+<td colspan="2" class="description"><p>
+Keine
+</p></td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="DESCRIPTIONTITLE">Implementiert:</td>
+</tr>
+<tr>
+<td colspan="2" class="description"><p>
+Keine
+</p></td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="DESCRIPTIONTITLE">Implementiert von:</td>
+</tr>
+<tr>
+<td colspan="2" class="description"><p>
+Interne containerabh&auml;ngige Klasse. Die meisten Container verwenden die Verweisimplementierung der Klasse (im Apache Jakarta-Projekt entwickelt).
+</p></td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="DESCRIPTIONTITLE">Beschreibung</td>
+</tr>
+<tr>
+<td colspan="2" class="description"><p>
+Instanzen von <span class="LITERAL">VariableInfo</span> werden von <span class="LITERAL">TagExtraInfo</span>-Unterklassen erstellt, um alle Skriptvariablen zu beschreiben, die von der entsprechenden Tag-Prozedurklasse erstellt werden.
+</p></td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="DESCRIPTIONTITLE">Beispiel</td>
+</tr>
+<tr>
+<td colspan="2" class="description"><p>
+Dieses Beispiel zeigt eine <span class="LITERAL">TagExtraInfo</span>-Unterklasse f&uuml;r eine benutzerdefinierte Aktion, die eine Variable erstellt, deren Name vom Attribut <span class="LITERAL">id</span> und deren Java-Typ vom Attribut <span class="LITERAL">className</span> angegeben wird:
+</p>
+<span class="PROGRAMLISTING"><pre>package com.ora.jsp.tags.generic;
+import javax.servlet.jsp.tagext.*;
+public class UsePropertyTagExtraInfo 
+  extends TagExtraInfo {
+  public VariableInfo[] getVariableInfo(TagData data) {
+    return new VariableInfo[] {
+      new VariableInfo(
+        data.getAttributeString("id"),
+        data.getAttributeString("className"),
+        true,
+        VariableInfo.AT_END)
+    };
+  }
+}</pre></span>
+<p>
+Der Webcontainer ruft <span class="LITERAL">getVariableInfo()</span> w&auml;hrend der &Uuml;bersetzung auf. Die R&uuml;ckgabe besteht aus einem Array aus <span class="LITERAL">VariableInfo</span>-Objekten, und zwar je ein Objekt f&uuml;r jede Variable, die von der Tag-Prozedur bereitgestellt wird.
+</p>
+<p>
+Die Klasse <span class="LITERAL">VariableInfo</span> ist ein einfaches Bean mit vier Eigenschaften, die urspr&uuml;nglich die Werte haben, die als Argumente an den Konstruktor &uuml;bergeben werden: <span class="LITERAL">varName</span>, <span class="LITERAL">className</span>, <span class="LITERAL">declare</span> und <span class="LITERAL">scope</span>. <span class="LITERAL">varName</span> ist der Name der Skriptvariable, und <span class="LITERAL">className</span> ist der Name ihrer Klasse.
+</p>
+<p>
+Die Eigenschaft <span class="LITERAL">declare</span> ist ein <span class="LITERAL">boolean</span>-Wert. <span class="LITERAL">true</span> bedeutet, dass eine v&ouml;llig neue Variable von der Aktion erstellt wird (das hei&szlig;t, eine Deklaration der Variable muss dem generierten Servlet hinzugef&uuml;gt werden). Der Wert <span class="LITERAL">false</span> bedeutet, dass die Variable bereits von einer anderen Aktion oder von einem anderen Vorkommen derselben Aktion erstellt wurde, so dass der generierte Code die Deklaration bereits enth&auml;lt. In diesem Fall muss der Container der Variablen lediglich einen neuen Wert zuweisen.
+</p>
+<p>
+Die Eigenschaft <span class="LITERAL">scope</span> hat nichts mit den JSP-Ebenen zu tun, die Sie bisher kennen gelernt haben (Seite, Anforderung, Sitzung und Anwendung). Stattdessen definiert die Eigenschaft, wo die neue Variable f&uuml;r JSP-Skriptelemente zur Verf&uuml;gung steht. Der Wert <span class="LITERAL">AT_BEGIN</span> bedeutet, dass sie vom Start-Tag der Aktion bis nach dem End-Tag der Aktion verf&uuml;gbar ist. <span class="LITERAL">AT_END</span> bedeutet, dass die Variable erst nach dem End-Tag der Aktion zur Verf&uuml;gung steht. Eine Variable mit der Ebene <span class="LITERAL">NESTED</span> ist nur im Body der Aktion verf&uuml;gbar, also zwischen den Anfangs- und End-Tags. Die Ebene steuert daher, ob der Code f&uuml;r die Variablendeklaration und die Wertzuweisung generiert wird. Die Tag-Prozedurklasse muss sicherstellen, dass die Variable in einer JSP-Ebene zur passenden Zeit verf&uuml;gbar ist, beispielsweise in der Methode <span class="LITERAL">doStartTag()</span> f&uuml;r die Ebenen <span class="LITERAL">AT_BEGIN</span> und <span class="LITERAL">NESTED</span> und in der Methode <span class="LITERAL">doEndTag()</span> f&uuml;r die Ebene <span class="LITERAL">AT_END</span>. F&uuml;r ein <span class="LITERAL">BodyTag</span>, das den Body durchl&auml;uft, kann der Wert auch in der Methode <span class="LITERAL">doAfterBody()</span> aktualisiert werden, um einen neuen Wert f&uuml;r jede Iteration bereitzustellen.
+</p></td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+<div id="VariableInfo">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">VariableInfo()</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"> </td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="usage"><span class="LITERAL">public VariableInfo(String varName, String className,<br>
+&nbsp;&nbsp;boolean declare, int scope)</span></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+Erstellt eine neue Instanz mit den angegebenen Werten.
+</p></td>
+</tr>
+</table>
+</div>
+<div id="getClassName">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">getClassName()</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"> </td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="usage"><span class="LITERAL">public String getClassName()</span></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+Gibt den Java-Typ der Skriptvariable zur&uuml;ck.
+</p></td>
+</tr>
+</table>
+</div>
+<div id="getDeclare">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">getDeclare()</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"> </td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="usage"><span class="LITERAL">public boolean getDeclare()</span></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+Gibt <span class="LITERAL">true</span> zur&uuml;ck, wenn der Webcontainer eine Deklarationsanweisung f&uuml;r die Skriptvariable erstellt. Andernfalls lautet die R&uuml;ckgabe <span class="LITERAL">false</span> (wird verwendet, wenn die Variable bereits von einer anderen Tag-Prozedur deklariert wurde und nur von der Tag-Prozedur aktualisiert wird, die der <span class="LITERAL">TagExtraInfo</span>-Unterklasse entspricht, die diese Instanz von <span class="LITERAL">VariableInfo</span> erstellt).
+</p></td>
+</tr>
+</table>
+</div>
+<div id="getScope">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">getScope()</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"> </td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="usage"><span class="LITERAL">public int getScope()</span></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+Gibt einen der folgenden Werte zur&uuml;ck: <span class="LITERAL">AT_BEGIN</span> (die Skriptvariable ist vom Anfangs-Tag bis zum Ende der JSP-Seite verf&uuml;gbar), <span class="LITERAL">AT_END</span> (die Variable ist nach dem End-Tag bis zum Ende der JSP-Seite verf&uuml;gbar) oder <span class="LITERAL">NESTED</span> (die Variable ist nur zwischen dem Anfangs-Tag und dem End-Tag verf&uuml;gbar).
+</p></td>
+</tr>
+</table>
+</div>
+<div id="getVarName">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">getVarName()</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"> </td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="usage"><span class="LITERAL">public String getVarName()</span></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+Gibt den Variablennamen zur&uuml;ck.
+</p></td>
+</tr>
+</table>
+</div>
+</body>
+</html>

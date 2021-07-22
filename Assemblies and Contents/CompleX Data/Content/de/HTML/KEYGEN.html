@@ -1,0 +1,284 @@
+<html>
+<link rel="stylesheet" href="josh.css">
+<body bgcolor="#FFFFFF">
+
+		<div id="Beschreibung">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">&lt;KEYGEN&gt;</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">alle</span> IE <span class="emphasis">nicht zutreffend</span> HTML <span class="emphasis">nicht zutreffend</span>&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">&lt;KEYGEN&gt;</p>
+					</td><td valign="top" nowrap class="requirements">HTML-End-Tag: Unzul&auml;ssig&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Mit einem <span class="literal">keygen</span>-Element kann ein Formular mit Verschl&uuml;sselung &uuml;bermittelt werden, wenn der Server dies erwartet. Im Clientbrowser muss ein digitales Zertifikat installiert sein. Die Benutzer sehen beide Ergebnisse, wenn das Element <span class="literal">keygen</span> innerhalb eines <span class="literal">form</span>-Element eingef&uuml;gt wird. Zun&auml;chst wird eine Auswahlliste mit den verf&uuml;gbaren Verschl&uuml;sselungsgr&ouml;&szlig;en in dem Formular dargestellt, in dem das <span class="literal">keygen</span>-Element erscheint. Wenn der Benutzer das Formular abschickt, sieht er m&ouml;glicherweise ein oder mehrere sicherheitsrelevante Dialoge zur Best&auml;tigung. Dieses Element st&uuml;tzt sich auf die in Navigator integrierten Verschl&uuml;sselungsystemen mit &ouml;ffentlichem Schl&uuml;ssel und das Certificate Management System (CMS) von Netscape. Die zugeh&ouml;rige Dokumentation ist zu finden unter developer.netscape.com/docs/manuals/cms/41/dep-guide/contents.htm.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>&lt;FORM ...&gt;...&lt;KEYGEN name="encryptedOrder" challenge="39457582201"&gt;&lt;/FORM&gt;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectmodelreference"><span class="title">Elementspezifische Attribute</span></td></tr><tr>
+<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td></tr><tr><td>        
+<table border="1"><tbody><tr><td><span class="literal">challenge</span></td><td><span class="literal">keytype</span></td><td><span class="literal">name</span></td><td><span class="literal">pqg</span></td>
+								</tr>
+							</tbody></table>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectmodelreference"><span class="title">Elementspezifische Ereignisbehandlungsroutinenattribute</span></td>
+				</tr>
+				<tr>
+					<td><p>Keine.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="challenge">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">challenge</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">alle</span> IE <span class="emphasis">nicht zutreffend</span> HTML <span class="emphasis">nicht zutreffend</span>&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">challenge="<span class="replaceable">challengeString</span>"</p>
+					</td><td valign="top" nowrap class="requirements">Erforderlich&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Wenn der Server einen Challenge-String zur &Uuml;berpr&uuml;fung eines verschl&uuml;sselten Pakets interpretieren kann, ist das Attribut <span class="literal">challenge</span> der Challenge-String. Wenn Sie dem Attribut einen leeren String zuweisen, wird der Schl&uuml;ssel als IA5STRING kodiert.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>&lt;KEYGEN name="encryptedOrder" challenge="39457582201"&gt;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+				</tr>
+				<tr>
+					<td><p>Eine beliebige Zeichenfolge.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Standardwert</span></td>
+				</tr>
+				<tr>
+					<td><p>Leere Zeichenfolge. </p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="keytype">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">keytype</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">alle</span> IE <span class="emphasis">nicht zutreffend</span> HTML <span class="emphasis">nicht zutreffend</span>&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">keytype="<span class="replaceable">keyType</span>"</p>
+					</td><td valign="top" nowrap class="requirements">Optional/Erforderlich&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Gibt an, welche Art von Schl&uuml;ssel vom CMS vor &Uuml;bermittlung der Formulardaten erzeugt werden soll. Dieses Attribut ist nur f&uuml;r den sekund&auml;ren Typ, DSA, erforderlich.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>&lt;KEYGEN name="encryptedOrder" challenge="39457582201" keytype="DSA"&gt;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+				</tr>
+				<tr>
+					<td><p>Eine von zwei Konstanten: <span class="literal">RSA</span> | <span class="literal">DSA</span>.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Standardwert</span></td>
+				</tr>
+				<tr>
+					<td><p><span class="literal">RSA</span> </p>
+					</td>
+				</tr>
+			</table>
+		</div>
+		<div id="lang">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">lang</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">3</span> IE <span class="emphasis">4</span> HTML <span class="emphasis">4</span>&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">lang="<span class="replaceable">languageCode</span>"</p>
+					</td><td valign="top" nowrap class="requirements">Optional&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Die f&uuml;r die Attributwerte und Inhalte des Elements verwendete Sprache. Mithilfe dieser Informationen ist der Browser besser in der Lage, bestimmte Details wie Ligaturen (sofern von der betreffenden Schrift unterst&uuml;tzt oder in der geschriebenen Sprache erforderlich), Anf&uuml;hrungszeichen und Worttrennungen korrekt darzustellen. Andere Anwendungen und Suchmaschinen k&ouml;nnen anhand dieser Informationen W&ouml;rterb&uuml;cher f&uuml;r die Rechtschreibpr&uuml;fung ausw&auml;hlen und Indizes erstellen.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>&lt;SPAN lang="de"&gt;Deutsche Bundesbahn&lt;/SPAN&gt;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+				</tr>
+				<tr>
+					<td><p>Sprachcode, bei dem nicht zwischen Gro&szlig;- und Kleinschreibung unterschieden wird.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Standardwert</span></td>
+				</tr>
+				<tr>
+					<td><p>Vorgabe des Browsers.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectmodelreference"><span class="title">Objektmodellreferenz</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>[window.]document.getElementById(<span class="replaceable">elementID).</span>lang</pre>
+						</span></td>
+				</tr>
+			</table>
+		</div>
+		<div id="name">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">name</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">alle</span> IE <span class="emphasis">nicht zutreffend</span> HTML <span class="emphasis">nicht zutreffend</span>&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">name="<span class="replaceable">identifier</span>"</p>
+					</td><td valign="top" nowrap class="requirements">Erforderlich&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Bei der Verschl&uuml;sselung eines Formulars wird das gesamte Formular in einen Wert umgewandelt, der Teil eines Namens-/Wertpaars ist. Im Attribut <span class="literal">name</span> wird der Namensteil des Namens-/Wertpaars zugewiesen. Wenn der Server das Paket entschl&uuml;sseln kann, stehen die einzelnen Namens-/Wertpaare des Formularelements dem Server zur weiteren Verarbeitung zur Verf&uuml;gung.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>&lt;KEYGEN name="encryptedOrder" challenge="39457582201"&gt;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+				</tr>
+				<tr>
+					<td><p>Bezeichner (Gro&szlig;-/Kleinschreibung unwichtig).</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Standardwert</span></td>
+				</tr>
+				<tr>
+					<td><p>Keiner. </p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="pqg">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">pqg</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">alle</span> IE <span class="emphasis">nicht zutreffend</span> HTML <span class="emphasis">nicht zutreffend</span>&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">pqg="<span class="replaceable">dssParams</span>"</p>
+					</td><td valign="top" nowrap class="requirements">Optional/Erforderlich&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Wenn Sie im Attribut <span class="literal">keytype</span> den Schl&uuml;sseltyp DSA angeben, m&uuml;ssen Sie dem Attribut <span class="literal">pqg</span> die zugeh&ouml;rigen Parameterwerte zuweisen. Die zur Ableitung dieser Werte verwendeten Algorithmen sind im folgenden Dokument beschrieben: ftp://ftp.ietf.org/internet-drafts/draft-ietf-pkix-ipki-pkalgs-05.txt.</p>
+					</td>
+				</tr>
+			</table>
+		</div>
+</body>
+</html>

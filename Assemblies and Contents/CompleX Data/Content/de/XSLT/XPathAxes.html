@@ -1,0 +1,139 @@
+<html>
+<head>
+<title>XPath-Achsen</title>
+</head>
+<body bgcolor="#FFFFFF" text="#000000">
+<div id="Beschreibung">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME" colspan="2">XPath-Achsen</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description">
+
+    <p>
+<!--<primary>axes</primary>
+  <secondary>XPath</secondary>--> <!--<primary>XPath</primary>
+  <secondary>axes</secondary>-->
+
+
+Die XPath-Spezifikation definiert dreizehn Achsen, von denen jede verschiedene Knoten enth&auml;lt. Welche Knoten sich in einer bestimmten Achse befinden, h&auml;ngt vom Kontextknoten ab. Alle 13 Achsen sind hier aufgef&uuml;hrt.</p>
+    <dl>
+<dt>
+<span class="LITERAL">
+child
+</span>
+</dt>
+<dd>
+Diese Achse enth&auml;lt alle Elemente, die dem Kontextknoten untergeordnet sind (Kinder). Die XPath-Ausdr&uuml;cke <span class="LITERAL">
+child::lines/child::line
+</span> und <span class="LITERAL">
+lines/line
+</span> sind &auml;quivalent. Besitzt ein XPath-Ausdruck (wie etwa <span class="LITERAL">
+/sonnet
+</span>) keinen Achsenbezeichner, wird als Standard die Achse <span class="LITERAL">
+child
+</span>verwendet.
+<P></p>
+<dt>
+<span class="LITERAL"> parent </span>
+</dt>
+<dd>
+Diese Achse enth&auml;lt den Knoten, der dem Kontextknoten &uuml;bergeordnet ist, falls vorhanden. (Ist der Kontextknoten der Wurzelknoten, gibt die parent-Achse eine leere Knotenmenge zur&uuml;ck.) Die Kurzform f&uuml;r diese Achse sind zwei Punkte (<span class="LITERAL">
+..
+</span>). Die Ausdr&uuml;cke <span class="LITERAL">
+parent::sonnet
+</span> und <span class="LITERAL">
+../sonnet
+</span> sind &auml;quivalent. Wenn in diesem Fall dem Kontextknoten nicht das Element <span class="LITERAL">
+&lt;
+sonnet
+&gt;
+</span> &uuml;bergeordnet ist, geben diese XPath-Ausdr&uuml;cke eine leere Knotenmenge zur&uuml;ck.
+<P></p>
+<dt>
+<span class="LITERAL"> self </span>
+</dt>
+<dd>
+Diese Achse umfasst den Kontextknoten selbst. Die Kurzform f&uuml;r diese Achse ist ein Punkt (.).
+<P></p>
+<dt>
+<span class="LITERAL"> attribute </span>
+</dt>
+<dd>
+Diese Achse enth&auml;lt die Attribute des Kontextknotens. Ist der Kontextknoten kein Element, so ist diese Achse leer. Die Kurzform f&uuml;r diese Achse ist ein Klammeraffe (<span class="LITERAL"> @ </span>). Die Ausdr&uuml;cke <span class="LITERAL"> attribute::type </span> und <span class="LITERAL"> @type </span> sind &auml;quivalent.
+<P></p>
+<dt>
+<span class="LITERAL"> ancestor </span>
+</dt>
+<dd>
+Diese Achse umfasst alle Vorfahren, also den Knoten, der dem Kontextknoten &uuml;bergeordnet ist, den Knoten der diesem &uuml;bergeordnet ist, usw. Die <span class="LITERAL">
+ancestor
+</span>-Achse enth&auml;lt immer den Wurzelknoten, es sei denn der Kontextknoten ist der Wurzelknoten.
+<P></p>
+<dt>
+<span class="LITERAL"> ancestor-or-self </span>
+</dt>
+<dd>
+Diese Achse umfasst alle Vorfahren, also den Knoten, der dem Kontextknoten &uuml;bergeordnet ist, den Knoten der diesem &uuml;bergeordnet ist, usw. sowie den Kontextknoten selbst. Diese Achse enth&auml;lt immer den Wurzelknoten.
+<P></p>
+<dt>
+<span class="LITERAL"> descendant </span>
+</dt>
+<dd>
+Diese Achse umfasst alle Nachfahren, also alle Knoten, die dem Kontextknoten untergeordnet sind, alle Knoten, die diesen Kindern wiederum untergeordnet sind, usw. Beachten Sie, dass die Achse <span class="LITERAL">
+descendant
+</span>keine Attribut- oder Namensraumknoten enth&auml;lt. (Wie bereits erw&auml;hnt, ist der &uuml;bergeordnete Knoten eines Attributknotens ein Elementknoten, obwohl der Attributknoten selbst nicht als Kind dieses Elementknotens betrachtet wird.)
+<P></p>
+<dt>
+<span class="LITERAL"> descendant-or-self </span>
+</dt>
+<dd>
+Diese Achse umfasst alle Nachfahren, also alle Knoten, die dem Kontextknoten untergeordnet sind, alle Knoten, die diesen Kindern wiederum untergeordnet sind, usw. sowie den Kontextknoten selbst.
+<P></p>
+<dt>
+<span class="LITERAL"> preceding-sibling </span>
+</dt>
+<dd>
+Diese Achse enth&auml;lt alle Parallelknoten vor dem Kontextknoten &ndash; anders ausgedr&uuml;ckt: alle Knoten, die denselben &uuml;bergeordneten Knoten wie der Kontextknoten besitzen und im XML-Dokument vor dem Kontextknoten erscheinen. Handelt es sich beim Kontextknoten um einen Attribut- oder Namensraumknoten, ist die Achse <span class="LITERAL">
+preceding-sibling
+</span>leer.
+<P></p>
+<dt>
+<span class="LITERAL"> following-sibling </span>
+</dt>
+<dd>
+Diese Achse enth&auml;lt alle Parallelknoten nach dem Kontextknoten &ndash; anders ausgedr&uuml;ckt: alle Knoten, die denselben &uuml;bergeordneten Knoten wie der Kontextknoten besitzen und im XML-Dokument nach dem Kontextknoten erscheinen. Handelt es sich beim Kontextknoten um einen Attribut- oder Namensraumknoten, ist die Achse <span class="LITERAL"> following-sibling </span>leer.
+<P></p>
+<dt>
+<span class="LITERAL"> preceding </span>
+</dt>
+<dd>
+Diese Achse umfasst alle Knoten, die im XML-Dokument vor dem Kontextknoten kommen und keine Vorfahren, Attributknoten oder Namensraumknoten sind.
+<P></p>
+<dt>
+<span class="LITERAL"> following </span>
+</dt>
+<dd>
+Diese Achse umfasst alle Knoten, die im XML-Dokument nach dem Kontextknoten kommen und keine Nachfahren, Attributknoten oder Namensraumknoten sind.
+<P></p>
+<dt>
+<span class="LITERAL"> namespace </span>
+</dt>
+<dd>
+Diese Achse enth&auml;lt alle Namensraumknoten des Kontextknotens. Ist der Kontextknoten kein Element, so ist diese Achse leer.
+<P></p>
+</dl>
+<!--<?troff .hw name-space?>-->
+    <p>Die f&uuml;nf Achsen <span class="LITERAL">ancestor</span>, <span class="LITERAL">descendant</span>, <span class="LITERAL">following</span>, <span class="LITERAL">preceding</span> und <span class="LITERAL">self</span> unterteilen den gesamten Inhalt des XML-Dokuments (mit Ausnahme von Attribut- oder Namensraumknoten). Jeder Knoten im XPath-Baum erscheint auf einer dieser f&uuml;nf Achsen und die f&uuml;nf Achsen &uuml;berlagern sich nicht.
+
+
+</p>
+</td></tr>
+</table>
+</div>
+</body>
+</html>

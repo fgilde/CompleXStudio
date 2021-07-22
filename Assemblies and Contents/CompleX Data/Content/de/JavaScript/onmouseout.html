@@ -1,0 +1,54 @@
+<html>
+<link rel="stylesheet" href="josh.css">
+<body bgcolor="#FFFFFF">
+
+		<div id="Beschreibung">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">onmouseout, onmouseover</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">2 </span>IE <span class="emphasis">3 </span>DOM <span class="emphasis">2</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Aufw&auml;rtsverbreitung: Ja; Abbruch m&ouml;glich: Ja</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Werden ausgel&ouml;st, wenn der Benutzer den Mauszeiger in den Bereich (<span class="literal">onmouseover</span>) oder aus dem Bereich eines Elements herausbewegt (<span class="literal">onmouseout</span>), wobei der Bereich den Rahmen und die Auff&uuml;llung, nicht jedoch den Rand des Elements umfasst. Diese Ereignisse werden beim Eintritt in den Bereich bzw. beim Austritt aus dem Bereich jeweils nur ein Mal ausgel&ouml;st (au&szlig;er bei Navigator 4 f&uuml;r Windows, wo das Ereignis in &auml;hnlicher Weise wie das <span class="literal">onmousemove</span>-Ereignis wiederholt ausgel&ouml;st wird).</p>
+							</td>
+						</tr>
+						<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Da das <span class="literal">onmouseout</span>-Ereignis erst ausgel&ouml;st wird, nachdem ein anderes Element im Fenster sein <span class="literal">onmouseover</span>-Ereignis ausgel&ouml;st hat (selbst wenn keine entsprechende Behandlungsroutine vorhanden ist), wird das <span class="literal">onmouseout</span>-Ereignis unter Umst&auml;nden nicht ausgel&ouml;st, wenn sich das Zielelement am Rand eines Fensters oder Frames befindet und der Benutzer den Mauszeiger aus dem aktuellen Frame herausbewegt, ohne dass das <span class="literal">body</span>-Element des ersten Frames jemals ein <span class="literal">onmouseover</span>-Ereignis empf&auml;ngt. Wenn Sie das <span class="literal">onmouseout</span>-Ereignis verwenden, um nach einem Bildwechsel wieder das urspr&uuml;ngliche Bild anzuzeigen, kann dies dazu f&uuml;hren, dass das Element scheinbar ausgew&auml;hlt bleibt. Am besten ber&uuml;cksichtigen Sie dieses Verhalten und lassen einfach gen&uuml;gend Platz um Ihre austauschbaren Bilder herum frei.</p>
+							</td>
+						</tr>
+						<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Ein <span class="literal">event</span>-Objekt, das durch ein Mausereignis erstellt wurde, weist zahlreiche Eigenschaften mit Detailinformationen auf, wie zum Beispiel die Koordinaten des Mausklicks, die verwendete Maustaste, die w&auml;hrend des Ereignisses gedr&uuml;ckten Zusatztasten sowie die Herkunfts- und Zielrichtung des Mauszeigers. Die Ereignisbehandlungsroutinenfunktion kann diese Eigenschaften bei Bedarf untersuchen.</p>
+							</td>
+						</tr>
+						<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Beachten Sie, dass Mausereignisse in Netscape 6 in Child-Textnodes von Containerelementen ausgel&ouml;st werden k&ouml;nnen, was bedeutet, dass die <span class="literal">target</span>-Eigenschaft des event-Objekts nicht das Element sondern die Node referenziert. Ausf&uuml;hrliche Informationen zu diesem vom W3C-DOM unterst&uuml;tzten Verhalten und browser&uuml;bergreifenden L&ouml;sungen finden Sie in Kapitel 6.</p>
+							</td>
+						</tr>
+						<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>W&auml;hrend diese Ereignisse in der einen oder anderen Form bereits seit der Anfangszeit der skriptf&auml;higen Browser unterst&uuml;tzt werden, k&ouml;nnen nur moderne Browser diese Ereignisse in praktisch allen dargestellten Elementen ausl&ouml;sen. Bei &auml;lteren Browsern waren die Ereignisse auf <span class="literal">a</span>- und <span class="literal">area</span>-Elemente beschr&auml;nkt (wobei <span class="literal">a</span>-Elemente die austauschbaren Bilder umgaben).</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="typicaltargets"><span class="title">Typische Ziele</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Alle dargestellten Elemente (siehe oben stehender Hinweis).</p>
+					</td>
+				</tr>
+			</table>
+		</div>
+</body>
+</html>

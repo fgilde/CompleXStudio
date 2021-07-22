@@ -1,0 +1,180 @@
+<html>
+<link rel="stylesheet" href="josh.css">
+<body bgcolor="#FFFFFF">
+
+		<div id="Beschreibung">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">HTMLCollection</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">5(Mac)/6(Win)</span> DOM <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Das <span class="literal">HTMLCollection</span>-Objekt ist im W3C-DOM eine abstrakte Darstellung einer Sammlung von HTML-Elementobjekten, die im selben Dokumentbaum existieren und dasselbe Tag aufweisen. Vom Standpunkt des W3C-DOM aus gesehen ist beispielsweise das <span class="literal">document.images</span>-Array ein <span class="literal">HTMLCollection</span>-Objekt. Bei allen Eintr&auml;gen dieses Arrays handelt es sich um <span class="literal">img</span>-Elementobjektreferenzen. JavaScript behandelt solche Sammlungen als Arrays, auf deren Eintr&auml;ge &uuml;ber die Array-Schreibweise mithilfe der <span class="literal">HTMLCollection</span>-Eigenschaft <span class="literal">length</span> zugegriffen werden kann. Alternativ k&ouml;nnen Sie die beiden Methoden <span class="literal">item( )</span> und <span class="literal">namedItem( )</span> verwenden, um einen Eintrag in der Objektsammlung zu referenzieren. Alle Instanzen des <span class="literal">HTMLCollection</span>-Objekts (z. B. <span class="literal">document.images</span>) erben die Eigenschaft und die in der unten stehenden Liste aufgef&uuml;hrten Methoden vom abstrakten <span class="literal">HTMLCollection</span>-Objekt. Weitere Informationen finden Sie in den Abschnitten zu den einzelnen Instanzen in diesem Kapitel (<span class="literal">anchors</span>, <span class="literal">applets</span>, <span class="literal">areas</span>, <span class="literal">cells</span>, <span class="literal">elements</span>, <span class="literal">forms</span>, <span class="literal">images</span>, <span class="literal">links</span>, <span class="literal">options</span>, <span class="literal">rows</span>, <span class="literal">tBodies</span> sowie Nicht-W3C-DOM-Elementsammlungen <span class="literal">all</span>, <span class="literal">children</span>, <span class="literal">embeds</span> und <span class="literal">frames</span>).
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectspecificproperties"><span class="title">Objektspezifische Eigenschaften</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<table border="1"><tbody><tr><td><span class="literal">length</span></td>
+								</tr>
+							</tbody></table>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectspecificmethods"><span class="title">Objektspezifische Methoden</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<table border="1"><tbody><tr><td><span class="literal">item( )</span></td><td><span class="literal">namedItem( )</span></td>
+								</tr>
+							</tbody></table>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectspecificeventhandlerproperties"><span class="title">Objektspezifische Ereignisbehandlungsroutineneigenschaften</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Keine. </p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="length">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">length</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">5(Mac)/6(Win)</span> DOM <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Schreibgesch&uuml;tzt</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Gibt die Anzahl von Elementen in der Sammlung zur&uuml;ck.</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>var howMany = document.myForm.elements.length;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Eine ganze Zahl. </p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="item( )">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">item( )</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">5(Mac)/6(Win)</span> DOM <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">item(<span class="replaceable">index</span>)</p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Gibt ein Objekt aus der Samllung zur&uuml;ck, das dem mit dem Indexwert in der Quellcodereihenfolge &uuml;bereinstimmenden Objekt entspricht. IE implementiert eine andere Variante dieser Methode f&uuml;r einige (aber nicht alle) seine Objektsammlungen mit einem optionalen zweiten Parameter.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Parameter</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<ul><li><span class="literal"></span>Eine auf Null basierende ganze Zahl, die dem angegebenen Element in der Quellcodereihenfolge entspricht.
+</li></ul>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Zur&uuml;ckgegebener Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Referenz auf ein Elementobjekt. Falls keine &Uuml;bereinstimmung mit den Parametern vorliegt, lautet der zur&uuml;ckgegebene Wert <span class="literal">null</span>.
+</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="namedItem( )">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">namedItem( )</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">5(Mac)/6(Win)</span> DOM <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">namedItem(<span class="replaceable">IDOrName</span>)</p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Gibt ein Objekt aus der Sammlung zur&uuml;ck, das dem mit dem Wert der Parameterzeichenfolge &uuml;bereinstimmenden Objekt entspricht.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Parameter</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<ul><li><span class="literal"></span>Die Zeichenfolge, deren Wert mit dem Namen des gew&uuml;nschten Filters &uuml;bereinstimmt.
+</li></ul>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Zur&uuml;ckgegebener Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Referenz auf ein Elementobjekt. Falls keine &Uuml;bereinstimmung mit den Parametern vorliegt, lautet der zur&uuml;ckgegebene Wert <span class="literal">null</span>.
+</p>
+					</td>
+				</tr>
+			</table>
+		</div>
+
+</body>
+</html>

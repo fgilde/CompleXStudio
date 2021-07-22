@@ -1,0 +1,30 @@
+<html>
+<link rel="stylesheet" href="josh.css">
+<body bgcolor="#FFFFFF">
+
+		<div id="Beschreibung">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">DOMNodeInserted</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">&#8211;-</span> DOM <span class="emphasis">2</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Aufw&auml;rtsverbreitung: Ja; Abbruch m&ouml;glich: Nein</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Wird in einer Node ausgel&ouml;st, wenn sie explizit in einen vorhandenen Nodecontainer eingef&uuml;gt wird. Wenn Sie dem Empf&auml;nger einer eingef&uuml;gten (oder angeh&auml;ngten) Node einen Event-Listener f&uuml;r dieses Ereignis zuweisen, wird das <span class="literal">DOMNodeInserted</span>-Ereignis in der eingef&uuml;gten Node (also im <span class="literal">srcElement</span> des <span class="literal">event</span>-Objekts) ausgel&ouml;st. Wenn sich das Ereignis anschlie&szlig;end nach oben (d.&#160;h. von der Einf&uuml;geposition fort) verbreitet, kann die Event-Listener-Funktion immer noch den neuen Container ermitteln, indem sie die Ereigniseigenschaft <span class="literal">relatedNode</span> liest. Beachten Sie, dass beim Entfernen einer Node, die von einer anderen Position im selben Dokument &uuml;bernommen wird, in dieser Node das <span class="literal">DOMNodeRemoved</span>-Ereignis ausgel&ouml;st wird, bevor sie ihren urspr&uuml;nglichen Container verl&auml;sst (sodass sich das Ereignis nach oben an seinen urspr&uuml;nglichen Container verbreiten kann).</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="typicaltargets"><span class="title">Typische Ziele</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Alle dargestellten Nodes.</p>
+					</td>
+				</tr>
+			</table>
+		</div>
+</body>
+</html>

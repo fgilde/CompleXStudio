@@ -1,0 +1,186 @@
+<html>
+<link rel="stylesheet" href="../HTML/josh.css">
+<head>
+
+
+<title>&lt;jsp:setProperty&gt;</title>
+</head>
+<body bgcolor="#FFFFFF" text="#000000">
+<div id="Beschreibung">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">&lt;jsp:setProperty&gt;</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description">
+<p>Die Aktion <span class="LITERAL">&lt;jsp:setProperty&gt;</span> legt den Wert f&uuml;r eine oder mehrere Bean-Eigenschaften fest.
+</p>
+<p>Beispiel:</p>
+
+<span class="PROGRAMLISTING"><pre>&lt;jsp:setProperty name=&quot;user&quot; property=&quot;*&quot; /&gt;
+&lt;jsp:setProperty name=&quot;user&quot; property=&quot;modDate&quot; 
+  value=&quot;&lt;%= new java.util.Date() %&gt;&quot; /&gt;</pre></span>
+
+</td></tr>
+</table>
+</div>
+
+<div id="name">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">name</td>
+<td valign="top" class="COMPATIBILITY"><span class="LITERAL">String</span></td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="usage">Wert zur Anforderungszeit akzeptiert: nein</td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+Obligatorisch. Der Name, der einer Bean in einer JSP-Ebene zugeordnet ist.
+</p></td>
+</tr>
+</table>
+</div>
+<div id="property">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">property</td>
+<td valign="top" class="COMPATIBILITY"><span class="LITERAL">String</span></td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="usage">Wert zur Anforderungszeit akzeptiert: nein</td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+Obligatorisch. Der Name der festzulegenden Bean-Eigenschaft oder ein Sternchen (<span class="LITERAL">*</span>), wenn alle Eigenschaften festgelegt werden sollen, deren Namen mit den Anforderungsparametern &uuml;bereinstimmen.
+</p></td>
+</tr>
+</table>
+</div>
+<div id="param">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">param</td>
+<td valign="top" class="COMPATIBILITY"><span class="LITERAL">String</span></td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="usage">Wert zur Anforderungszeit akzeptiert: nein</td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+Optional. Der Name eines Anforderungsparameters, der den Wert enth&auml;lt, der f&uuml;r die angegebene Eigenschaft verwendet werden soll. Wenn die Angabe fehlt, muss der Parametername mit dem Namen der Eigenschaft identisch sein.
+</p></td>
+</tr>
+</table>
+</div>
+<div id="value">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">value</td>
+<td valign="top" class="COMPATIBILITY">Siehe unten</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="usage">Wert zur Anforderungszeit akzeptiert: ja</td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+Optional. Ein expliziter Wert, der der Eigenschaft zugewiesen werden soll. Dieses Attribut kann nicht mit dem Attribut <span class="LITERAL">param</span> kombiniert werden.
+</p>
+<p>Die Eigenschaft kann jeden g&uuml;ltigen Java-Typ haben, einschlie&szlig;lich einfache Datentypen oder Arrays (d. h. eine indizierte Eigenschaft). Wenn mit dem Attribut <span class="LITERAL">value</span> ein Laufzeit-Attributwert angegeben wird, muss der Typ des Ausdrucks mit dem Typ der Eigenschaft &uuml;bereinstimmen.
+</p>
+
+<p>Wenn der Wert ein String ist, der entweder in Form eines Wertes f&uuml;r Anforderungsparameter vorliegt oder explizit mit dem Attribut <span class="LITERAL">value</span> angegeben wurde, wird er folgenderma&szlig;en in den Typ der Eigenschaft konvertiert:
+</p>
+
+<table id="javaserverpr-CHP-1-TABLE-10" label="1-10">
+<thead>
+<tr valign="top">
+<th>
+<p>Eigenschaftstyp</p>
+</th>
+<th>
+<p>Konvertierungsmethode</p>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr valign="top">
+<td>
+<p><span class="LITERAL">boolean</span> oder <span class="LITERAL">Boolesch</span></p>
+</td>
+<td>
+<p><span class="LITERAL">Boolean.valueOf(String)</span></p>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<p><span class="LITERAL">byte</span> oder <span class="LITERAL">Byte</span></p>
+</td>
+<td>
+<p><span class="LITERAL">Byte.valueOf(String)</span></p>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<p><span class="LITERAL">char</span> oder <span class="LITERAL">Zeichen</span></p>
+</td>
+<td>
+<p><span class="LITERAL">String.charAt(int)</span></p>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<p><span class="LITERAL">double</span> oder <span class="LITERAL">Doppelt</span></p>
+</td>
+<td>
+<p><span class="LITERAL">Double.valueOf(String)</span></p>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<p><span class="LITERAL">float</span> oder <span class="LITERAL">Gleitkomma</span></p>
+</td>
+<td>
+<p><span class="LITERAL">Float.valueOf(String)</span></p>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<p><span class="LITERAL">int</span> oder <span class="LITERAL">Ganzzahl</span></p>
+</td>
+<td>
+<p><span class="LITERAL">Integer.valueOf(String)</span></p>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<p><span class="LITERAL">long</span> oder <span class="LITERAL">Lang</span></p>
+</td>
+<td>
+<p><span class="LITERAL">Long.valueOf(String)</span></p>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</table>
+</div>
+</body>
+</html>

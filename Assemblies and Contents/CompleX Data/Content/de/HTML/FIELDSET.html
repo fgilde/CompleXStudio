@@ -1,0 +1,260 @@
+<html>
+<link rel="stylesheet" href="josh.css">
+<body bgcolor="#FFFFFF">
+
+		<div id="Beschreibung">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">&lt;FIELDSET&gt;</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">4</span> HTML <span class="emphasis">4</span>&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">&lt;FIELDSET&gt;...&lt;/FIELDSET&gt;</p>
+					</td><td valign="top" nowrap class="requirements">HTML-End-Tag: Erforderlich&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p><span class="literal">fieldset</span>-Elemente sind strukturelle Container f&uuml;r Formularelemente (zu unterscheiden von der Containerfunktion des <span class="literal">form</span>-Elements). Sie k&ouml;nnen mehrere <span class="literal">fieldset</span>-Elemente in einem einzigen <span class="literal">form</span>-Element definieren, um den Kontext f&uuml;r logische Gruppierungen von Formularelementen festzulegen. Ein <span class="literal">fieldset</span>-Element k&ouml;nnte beispielsweise Texteingabefelder f&uuml;r Name und Adresse umfassen und ein anderes <span class="literal">fieldset</span> zur Eingabe von Kreditkarteninformationen dienen.</p><p>Bei Browsern, die dieses Element unterst&uuml;tzen, wird um die in einem <span class="literal">fieldset</span>-Container enthaltenen Formularelemente automatisch ein Rahmen gezogen. Au&szlig;erdem k&ouml;nnen Sie innerhalb des Rahmens einen Beschreibungstext platzieren, indem Sie direkt nach dem Start-Tag des <span class="literal">fieldset</span>-Elements ein <span class="literal">legend</span>-Element definieren. Standardm&auml;&szlig;ig belegt das Rechteck die volle Breite des n&auml;chst&auml;u&szlig;eren Containers - normalerweise des <span class="literal">body</span>- oder <span class="literal">html</span>-Elements. Wenn das Rechteck stattdessen direkt um die sichtbaren Formularelemente gezeichnet werden soll, m&uuml;ssen Sie die Stylesheet-Eigenschaft <span class="literal">width</span> f&uuml;r das Element definieren.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>&lt;FORM method="POST" action="..."&gt;&lt;FIELDSET&gt;&lt;LEGEND&gt;Credit Card Information&lt;/LEGEND&gt;...<span class="replaceable">inputElementsHere</span>...&lt;/FIELDSET&gt;&lt;/FORM&gt;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectmodelreference"><span class="title">Objektmodellreferenz</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>[window.]document.getElementById(<span class="replaceable">elementID</span>)</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectmodelreference"><span class="title">Elementspezifische Attribute</span></td>
+</tr><tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+</tr><tr><td>
+        <table border="1">
+<tbody><tr><td><span class="literal">align</span></td>
+								</tr>
+							</tbody></table>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectmodelreference"><span class="title">Elementspezifische Ereignisbehandlungsroutinenattribute</span></td>
+				</tr>
+				<tr>
+					<td><p>Keine.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="align">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">align</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">nicht zutreffend</span> IE <span class="emphasis">4</span> HTML <span class="emphasis">nicht zutreffend</span>&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">align="<span class="replaceable">where</span>"</p>
+					</td><td valign="top" nowrap class="requirements">Optional&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Das Attribut <span class="literal">align</span> ist nur bei Internet Explorer verf&uuml;gbar und seine Implementierung ist vom Betriebssystem abh&auml;ngig. Theoretisch soll das Attribut die Ausrichtung des darin enthaltenen <span class="literal">input</span>-Elements steuern. Bei der Macintosh-Version von IE ist dies der Fall, doch bei der Windows-Version (insbesondere IE 6) wirken sich die Einstellungen nur geringf&uuml;gig auf die <span class="literal">fieldset</span>-Elementregel aus. Es sollte deshalb m&ouml;glichst die Standardeinstellung verwendet und bei Bedarf durch Stylesheets au&szlig;er Kraft gesetzt werden.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>&lt;FIELDSET align="right"&gt;...&lt;/FIELDSET&gt;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+				</tr>
+				<tr>
+					<td><p>Zul&auml;ssige Werte: <span class="literal">left</span> | <span class="literal">center</span> | <span class="literal">right</span>.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Standardwert</span></td>
+				</tr>
+				<tr>
+					<td><p><span class="literal">left</span></p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectmodelreference"><span class="title">Objektmodellreferenz</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>[window.]document.getElementById(<span class="replaceable">elementID</span>).align</pre>
+						</span></td>
+				</tr>
+			</table>
+		</div>
+		<div id="lang">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">lang</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">3</span> IE <span class="emphasis">4</span> HTML <span class="emphasis">4</span>&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">lang="<span class="replaceable">languageCode</span>"</p>
+					</td><td valign="top" nowrap class="requirements">Optional&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Die f&uuml;r die Attributwerte und Inhalte des Elements verwendete Sprache. Mithilfe dieser Informationen ist der Browser besser in der Lage, bestimmte Details wie Ligaturen (sofern von der betreffenden Schrift unterst&uuml;tzt oder in der geschriebenen Sprache erforderlich), Anf&uuml;hrungszeichen und Worttrennungen korrekt darzustellen. Andere Anwendungen und Suchmaschinen k&ouml;nnen anhand dieser Informationen W&ouml;rterb&uuml;cher f&uuml;r die Rechtschreibpr&uuml;fung ausw&auml;hlen und Indizes erstellen.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>&lt;SPAN lang="de"&gt;Deutsche Bundesbahn&lt;/SPAN&gt;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+				</tr>
+				<tr>
+					<td><p>Sprachcode, bei dem nicht zwischen Gro&szlig;- und Kleinschreibung unterschieden wird.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Standardwert</span></td>
+				</tr>
+				<tr>
+					<td><p>Vorgabe des Browsers.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectmodelreference"><span class="title">Objektmodellreferenz</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>[window.]document.getElementById(<span class="replaceable">elementID).</span>lang</pre>
+						</span></td>
+				</tr>
+			</table>
+		</div>
+		<div id="title">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">title</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">3</span> HTML <span class="emphasis">3.2</span>&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">title="<span class="replaceable">advisoryText</span>"</p>
+					</td><td valign="top" nowrap class="requirements">Optional&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Eine informative Beschreibung des Elements. Bei HTML-Elementen, die sichtbare Seiteninhalte erzeugen, wird in IE ab Version 4 und Netscape 6 der Inhalt des <span class="literal">title</span>-Attributs in Form einer QuickInfo angezeigt, wenn sich der Mauszeiger eine gewisse Zeit lang an der entsprechenden Bildschirmposition befindet. Da das Tabellenelement <span class="literal">col</span> zum Beispiel keine Inhalte anzeigt, hat das <span class="literal">title</span>-Attribut in seinem Fall allenfalls f&uuml;r den Skriptersteller eine hinweisende Funktion. Wenn Sie QuickInfos in Tabellen anzeigen m&ouml;chten, weisen Sie das <span class="literal">title</span>-Attribut sichtbaren Elementen wie <span class="literal">table</span>, <span class="literal">tr</span>, <span class="literal">th</span> oder <span class="literal">td</span> zu.</p><p>Die Schrift- und Farbeigenschaften der QuickInfo werden in den Browsereinstellungen festgelegt und k&ouml;nnen nicht in einem Skript ge&auml;ndert werden. In IE/Windows wird eine QuickInfo standardm&auml;&szlig;ig als kleines hellgelbes Rechteck dargestellt, in IE/Mac hingegen nach Art des Mac OS in Form einer Sprechblase angezeigt. Netscape 6 verwendet f&uuml;r QuickInfos unter allen Betriebssystemversionen dasselbe kleine Rechteck. Wird das Attribut ausgelassen, erscheint keine QuickInfo.</p><p>Sie k&ouml;nnen diesem Attribut einen beliebigen Beschreibungstext zuweisen. Da nicht alle Benutzer diesen Text sehen werden, sollten Sie hier jedoch keine wichtigen Informationen eingeben. In Browsern, die unter dem Gesichtspunkt der Barrierefreiheit von Webanwendungen entwickelt wurden, l&auml;sst sich dieses Attribut als Beh&auml;lter f&uuml;r Informationen zu einem Link oder einem Element ohne Text einsetzen, die ein sehbehinderter Benutzer akustisch wiedergeben kann. Aus diesem Grund sollten Sie dieses Hilfsmittel nutzen, um den Zweck eines in der Seite dargestellten Elements zu beschreiben.</p><p>Dieses Attribut wurde laut der Kompatibilit&auml;tsliste in Internet Explorer 3 und HTML 3.2 eingef&uuml;hrt, ist bei vielen Elementen allerdings erst seit IE 4 und HTML 4.0 verf&uuml;gbar.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>&lt;SPAN title="United States of America"&gt;U.S.A.&lt;/SPAN&gt;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+				</tr>
+				<tr>
+					<td><p>Eine beliebige Zeichenfolge. Die Zeichenfolge muss sich innerhalb von einfachen oder doppelten Anf&uuml;hrungszeichen befinden.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Standardwert</span></td>
+				</tr>
+				<tr>
+					<td><p>Keine.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectmodelreference"><span class="title">Objektmodellreferenz</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>[window.]document.getElementById(<span class="replaceable">elementID).</span>title</pre>
+						</span></td>
+				</tr>
+			</table>
+		</div>
+</body>
+</html>

@@ -1,0 +1,192 @@
+<html>
+<link rel="stylesheet" href="../HTML/josh.css">
+<head>
+
+
+<title>Tag-Schnittstelle</title>
+</head>
+<body bgcolor="#FFFFFF" text="#000000">
+<div id="Beschreibung">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">Tag-Schnittstelle</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Schnittstellenname:</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+<p><span class="LITERAL">javax.servlet.jsp.tagext.Tag</span></p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Erweitert:</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+<p>Keine</p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Implementiert von:</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+<p>Tag-Prozedurklassen f&uuml;r benutzerdefinierte Aktionen und <span class="LITERAL">javax.servlet.jsp.tagext.TagSupport</span>
+</p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Beschreibung</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+<p>Die Schnittstelle <span class="LITERAL">Tag</span> sollte von Tag-Prozedurklassen implementiert werden, die keinen Zugriff auf den Body-Inhalt des entsprechenden benutzerdefinierten Aktionselements ben&ouml;tigen und die den Body-Teil eines benutzerdefinierten Aktionselements nicht durchlaufen m&uuml;ssen.
+</p>
+
+</td>
+</tr>
+</table>
+</div>
+<div id="doEndTag">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">doEndTag()</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"> </td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="usage"><span class="LITERAL">public int doEndTag() throws JspException</span></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+F&uuml;hrt Aktionen aus, wenn das Schluss-Tag auftritt. Wenn diese Methode <span class="LITERAL">SKIP_PAGE</span> zur&uuml;ckgibt, wird die Ausf&uuml;hrung der restlichen Seite abgebrochen, und die Methode <span class="LITERAL">_jspService()</span> der JSP-Seitenimplementierungsklasse liefert eine R&uuml;ckgabe. Bei R&uuml;ckgabe von <span class="LITERAL">EVAL_PAGE</span> wird der Code ausgef&uuml;hrt, der in der Methode <span class="LITERAL">_jspService()</span> auf die benutzerdefinierte Aktion folgt.
+</p></td>
+</tr>
+</table>
+</div>
+<div id="doStartTag">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">doStartTag()</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"> </td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="usage"><span class="LITERAL">public int doStartTag() throws JspException</span></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+F&uuml;hrt Aktionen aus, wenn das Anfangs-Tag auftritt. Diese Methode wird vom Webcontainer aufgerufen, nachdem alle Methoden zum Einstellen von Eigenschaften aufgerufen wurden. Der R&uuml;ckgabewert steuert, wie der Body der Aktion, falls vorhanden, verarbeitet wird. Bei R&uuml;ckgabe von <span class="LITERAL">EVAL_BODY_INCLUDE</span> wertet der Webcontainer den Body aus und verarbeitet eventuell vorhandene JSP-Elemente. Das Ergebnis der Auswertung wird der Antwort hinzugef&uuml;gt. Bei R&uuml;ckgabe von <span class="LITERAL">SKIP_BODY</span> wird der Body ignoriert.
+</p>
+<p>
+Eine Tag-Prozedurklasse, die die Schnittstelle <span class="LITERAL">BodyTag</span> implementiert (Erweiterung der Schnittstelle <span class="LITERAL">Tag</span>) kann <span class="LITERAL">EVAL_BODY_TAG</span> anstelle von <span class="LITERAL">EVAL_BODY_INCLUDE</span> zur&uuml;ckgeben. Der Webcontainer erstellt dann eine Instanz von <span class="LITERAL">BodyContent</span> und stellt sie der Tag-Prozedur zur besonderen Verarbeitung zur Verf&uuml;gung.
+</p></td>
+</tr>
+</table>
+</div>
+<div id="getParent">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">getParent()</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"> </td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="usage"><span class="LITERAL">public Tag getParent()</span></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+Gibt das &uuml;bergeordnete Element der Tag-Prozedur zur&uuml;ck (die Instanz <span class="LITERAL">Tag</span> f&uuml;r das umschlie&szlig;ende Aktionselement, falls vorhanden). Wenn die Tag-Prozedur kein &uuml;bergeordnetes Element hat, lautet die R&uuml;ckgabe <span class="LITERAL">null</span>.
+</p></td>
+</tr>
+</table>
+</div>
+<div id="release">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">release()</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"> </td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="usage"><span class="LITERAL">public void release()</span></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+Entfernt die Verweise auf alle Objekte, die in dieser Instanz enthalten sind.
+</p></td>
+</tr>
+</table>
+</div>
+<div id="setPageContext">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">setPageContext()</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"> </td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="usage"><span class="LITERAL">public void setPageContext(PageContext pc)</span></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+Speichert einen Verweis auf das aktuelle Objekt <span class="LITERAL">PageContext</span>.
+</p></td>
+</tr>
+</table>
+</div>
+<div id="setParent">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">setParent()</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"> </td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="usage"><span class="LITERAL">public void setParent(Tag t)</span></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+Speichert einen Verweis auf das &uuml;bergeordnete Element der Tag-Prozedur (die Instanz <span class="LITERAL">Tag</span> f&uuml;r das umschlie&szlig;ende Aktionselement).
+</p></td>
+</tr>
+</table>
+</div>
+</body>
+</html>

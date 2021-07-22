@@ -1,0 +1,226 @@
+<html>
+<head>
+<title>&lt;xsl:stylesheet&gt;</title>
+</head>
+<body bgcolor="#FFFFFF" text="#000000">
+<div id="Beschreibung">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">&lt;xsl:stylesheet&gt;</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description">
+Das Wurzelelement eines XSLT-Stylesheets. Dieses Element ist identisch mit dem Element <span class="LITERAL">&lt;xsl:transform&gt;</span>, das aus historischen Gr&uuml;nden in die XSLT-Spezifikation aufgenommen wurde. </td></tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Kategorie</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<p>Enth&auml;lt das gesamte Stylesheet</p>
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Obligatorische Attribute</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<dl>
+<dt>
+version
+</dt>
+<dd>
+Dieses Attribut bezeichnet die XSLT-Version, die das Stylesheet ben&ouml;tigt. F&uuml;r XSLT Version 1.0 sollte sein Wert immer <span class="LITERAL">
+"
+1.0
+"
+</span> sein. Wenn im Laufe der Jahre weitere Versionen der XSLT-Spezifikation herausgegeben werden, werden auch f&uuml;r das Attribut <span class="LITERAL">
+version
+</span> entsprechend neue Werte definiert.
+<P></p>
+<dt>
+xmlns:xsl
+</dt>
+<dd>
+Dieses Attribut definiert den URI f&uuml;r den XSL-Namensraum. F&uuml;r XSLT Version 1.0 sollte als Wert f&uuml;r dieses Attribut <span class="LITERAL">
+http://www.w3.org/1999/XSL/Transform
+</span> verwendet werden. Beachten Sie, dass die meisten XSLT-Prozessoren eine Warnmeldung ausgeben, wenn die <span class="LITERAL">
+xmlns:xsl
+</span>-Deklaration nicht den richtigen Wert enth&auml;lt.
+<P></p>
+</dl>
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Optionale Attribute</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<dl>
+<dt>
+id
+</dt>
+<dd>
+Definiert eine ID f&uuml;r dieses Stylesheet.
+<P></p>
+<dt>
+extension-element-prefixes
+</dt>
+<li>
+<!--<?troff .hw name-space?>-->
+<p>
+Definiert ein Namensraum-Pr&auml;fix, mit dem sich Erweiterungselemente aufrufen lassen. Mehrere Namensraum-Pr&auml;fixe werden durch Leerzeichen getrennt.
+</p>
+</li>
+<dt>
+exclude-result-prefixes
+</dt>
+<dd>
+Definiert Namensraum-Pr&auml;fixe, die nicht an das Ausgabedokument gesendet werden sollen. Mehrere Namensraum-Pr&auml;fixe werden durch Leerzeichen getrennt.
+<P></p>
+</dl>
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Inhalt</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<p>Dieses Element enth&auml;lt das gesamte Stylesheet. Die folgenden Elemente lassen sich dem Element <span class="LITERAL">&lt;xsl:stylesheet&gt;</span> unterordnen:</p>
+<ul>
+        <dd>
+<span class="LITERAL">&lt;xsl:import&gt;</span>
+</p>
+        </li>
+        <dd>
+<span class="LITERAL">&lt;xsl:include&gt;</span>
+</p>
+        </li>
+        <dd>
+<span class="LITERAL">&lt;xsl:strip-space&gt;</span>
+</p>
+        </li>
+        <dd>
+<span class="LITERAL">&lt;xsl:preserve-space&gt;</span>
+</p>
+        </li>
+        <dd>
+<span class="LITERAL">&lt;xsl:output&gt;</span>
+</p>
+        </li>
+        <dd>
+<span class="LITERAL">&lt;xsl:key&gt;</span>
+</p>
+        </li>
+        <dd>
+<span class="LITERAL">&lt;xsl:decimal-format&gt;</span>
+</p>
+        </li>
+        <dd>
+<span class="LITERAL">&lt;xsl:namespace-alias&gt;</span>
+</p>
+        </li>
+        <dd>
+<span class="LITERAL">&lt;xsl:attribute-set&gt;</span>
+</p>
+        </li>
+        <dd>
+<span class="LITERAL">&lt;xsl:variable&gt;</span>
+</p>
+        </li>
+        <dd>
+<span class="LITERAL">&lt;xsl:param&gt;</span>
+</p>
+        </li>
+        <dd>
+<span class="LITERAL">&lt;xsl:template&gt;</span>
+</p>
+        </li>
+      </ul>
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">&Uuml;bergeordnetes Element</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<p>Keines. <span class="LITERAL">&lt;xsl:stylesheet&gt;</span> ist das Wurzelelement des Stylesheets.</p>
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Definition</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<p>XSLT-Abschnitt 2.2, Stylesheet-Element </p>
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Beispiel</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<p>Aus Vollst&auml;ndigkeitsgr&uuml;nden soll an dieser Stelle ein Beispiel eingef&uuml;gt werden. Dazu wird das Dokument &quot;Hello World&quot; aus der XML-1.0-Spezifikation verwendet werden:</p>
+<span class="PROGRAMLISTING"><pre>
+&lt;?xml version="1.0"?&gt;
+&lt;greeting&gt;
+  Hello, World!
+&lt;/greeting&gt;</pre></span>
+<p>Dieses Dokument wird mit Hilfe des folgenden Stylesheets umgewandelt:</p>
+<span class="PROGRAMLISTING"><pre>
+&lt;xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0"&gt;
+  &lt;xsl:output method="html"/&gt;
+
+  &lt;xsl:template match="/"&gt;
+    &lt;xsl:apply-templates select="greeting"/&gt;
+  &lt;/xsl:template&gt;
+  
+  &lt;xsl:template match="greeting"&gt;
+    &lt;html&gt;
+      &lt;body&gt;
+        &lt;h1&gt;
+          &lt;xsl:value-of select="."/&gt;
+        &lt;/h1&gt;
+      &lt;/body&gt;
+    &lt;/html&gt;
+  &lt;/xsl:template&gt;
+&lt;/xsl:stylesheet&gt;</pre></span>
+<p>Hier das Ergebnis, wenn Sie das XML-Ausgangsdokument mit diesem Stylesheet transformieren:</p>
+<span class="PROGRAMLISTING"><pre>
+&lt;html&gt;
+&lt;body&gt;
+&lt;h1&gt;
+  Hello, World!
+&lt;/h1&gt;
+&lt;/body&gt;
+&lt;/html&gt;</pre></span>
+</td>
+</tr>
+</table>
+</div>
+</body>
+</html>

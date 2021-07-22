@@ -1,0 +1,147 @@
+<html>
+<head>
+<title>function-available()-Funktion</title>
+</head>
+<body bgcolor="#FFFFFF" text="#000000">
+<div id="Beschreibung">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">function-available()-Funktion</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description">
+Diese Funktion legt fest, ob eine bestimmte Funktion f&uuml;r den XSLT-Prozessor verf&uuml;gbar sein soll. Sie erlaubt Ihnen, Stylesheets zu entwerfen, die auch funktionsf&auml;hig sind, wenn zum Verarbeiten eines XML-Dokuments eine bestimmte Funktion nicht verf&uuml;gbar ist. </td></tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Eingaben</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<p>Der Name der Funktion. Dieser Name ist normalerweise durch einen Namensraum qualifiziert. Ist der Namensraum des Funktionsnamens ungleich Null, so handelt es sich um eine Erweiterungsfunktion. Andernfalls ist die Funktion eine in der XSLT- oder der XPath-Spezifikation definierte Funktion. </p>
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Ausgabe</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<p>Der Boolesche Wert <span class="LITERAL">true</span>, wenn die Funktion verf&uuml;gbar ist, andernfalls <span class="LITERAL">false</span>. </p>
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Definition</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<p>XSLT-Abschnitt 15, R&uuml;ckgriff </p>
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Beispiel</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<p>Das nachfolgende XML-Dokument dient dazu, die Funktion <span class="LITERAL">function-available()</span> zu erproben:</p>
+<span class="PROGRAMLISTING"><pre>
+&lt;?xml version="1.0"?&gt;
+&lt;list&gt;
+  &lt;title&gt;A few of my favorite albums&lt;/title&gt;
+  &lt;listitem&gt;A Love Supreme&lt;/listitem&gt;
+  &lt;listitem&gt;Beat Crazy&lt;/listitem&gt;
+  &lt;listitem&gt;Here Come the Warm Jets&lt;/listitem&gt;
+  &lt;listitem&gt;Kind of Blue&lt;/listitem&gt;
+  &lt;listitem&gt;London Calling&lt;/listitem&gt;
+  &lt;listitem&gt;Remain in Light&lt;/listitem&gt;
+<!--<?troff .Nd 10?>-->
+  &lt;listitem&gt;The Joshua Tree&lt;/listitem&gt;
+  &lt;listitem&gt;The Indestructible Beat of Soweto&lt;/listitem&gt;
+&lt;/list&gt;</pre></span>
+<p>Hier das Stylesheet:</p>
+<span class="PROGRAMLISTING"><pre>
+&lt;?xml version="1.0"?&gt;
+&lt;xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+  xmlns:jpeg="class:JPEGWriter"
+  extension-element-prefixes="jpeg"&gt;
+
+  &lt;xsl:output method="text"/&gt;
+
+  &lt;xsl:variable name="newline"&gt;
+&lt;xsl:text&gt;
+&lt;/xsl:text&gt;
+  &lt;/xsl:variable&gt;
+
+  &lt;xsl:template match="/"&gt;
+    &lt;xsl:value-of select="$newline"/&gt;
+    &lt;xsl:for-each select="list/listitem"&gt;
+      &lt;xsl:choose&gt;
+        &lt;xsl:when test="function-available('jpeg:createJPEG')"&gt; 
+          &lt;xsl:value-of 
+            select="jpeg:createJPEG(., 'bg.jpg', 
+            concat('album', position(), '.jpg'), 
+            'Swiss 721 Bold Condensed', 'BOLD', 22, 52, 35)"/&gt;
+          &lt;xsl:text&gt;See the file &lt;/xsl:text&gt;
+          &lt;xsl:value-of select="concat('album', position(), '.jpg')"/&gt;
+          &lt;xsl:text&gt; to see the title of album #&lt;/xsl:text&gt;
+          &lt;xsl:value-of select="position()"/&gt;
+          &lt;xsl:value-of select="$newline"/&gt;
+        &lt;/xsl:when&gt;
+        &lt;xsl:otherwise&gt;
+          &lt;xsl:value-of select="position()"/&gt;
+          &lt;xsl:text&gt;. &lt;/xsl:text&gt;
+          &lt;xsl:value-of select="."/&gt;
+          &lt;xsl:value-of select="$newline"/&gt;
+        &lt;/xsl:otherwise&gt;
+      &lt;/xsl:choose&gt;
+    &lt;/xsl:for-each&gt;
+  &lt;/xsl:template&gt;
+
+&lt;/xsl:stylesheet&gt;</pre></span> <!--<?troff .Nd 10?>-->
+<p>Im Stylesheet wird die Funktion <span class="LITERAL">createJPEG()</span>, wenn sie verf&uuml;gbar ist, aufgerufen, um JPEG-Dateien f&uuml;r die Titel aller Lieblingsalben zu erstellen. Ist die Funktion nicht verf&uuml;gbar, werden einfach die Titel in den Ausgabestrom geschrieben. Hier die erzielten Ergebnisse, wenn die Funktion <span class="LITERAL">createJPEG()</span> verf&uuml;gbar ist:</p>
+<span class="PROGRAMLISTING"><pre>
+
+See the file album1.jpg to see the title of album #1
+See the file album2.jpg to see the title of album #2
+See the file album3.jpg to see the title of album #3
+See the file album4.jpg to see the title of album #4
+See the file album5.jpg to see the title of album #5
+See the file album6.jpg to see the title of album #6
+See the file album7.jpg to see the title of album #7
+See the file album8.jpg to see the title of album #8
+</pre></span>
+<p>Alle Albumtitel (der Text der <span class="LITERAL">&lt;listitem&gt;</span>-Elemente) werden in JPEG-Grafiken konvertiert. In diesem Beispiel sieht die Datei <filename>album8.jpg</filename> wie in <link linkend="xslt-appc-c3">Abbildung C-3</link> aus.</p>
+<figure id="xslt-appc-c3" label="C-3">
+        <p class="TITLE">Generierte Grafik f&uuml;r das achte &lt;listitem&gt;-Element</p>
+        <graphic depth="41" width="403" fileref="figs/xslt.ac03.gif"/></figure>
+<p>Wenn Sie die Datei <filename>JPEGWriter.class</filename> l&ouml;schen (wenn die <filename>.class</filename>-Datei fehlt, ist die Funktion nicht verf&uuml;gbar), erhalten Sie stattdessen folgende Ergebnisse:</p>
+<span class="PROGRAMLISTING"><pre>
+
+1. A Love Supreme
+2. Beat Crazy
+3. Here Come the Warm Jets
+4. Kind of Blue
+5. London Calling
+6. Remain in Light
+7. The Joshua Tree
+8. The Indestructible Beat of Soweto
+</pre></span>
+</td>
+</tr>
+</table>
+</div>
+</body>
+</html>

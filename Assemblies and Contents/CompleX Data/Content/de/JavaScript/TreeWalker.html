@@ -1,0 +1,254 @@
+<html>
+<link rel="stylesheet" href="josh.css">
+<body bgcolor="#FFFFFF">
+
+<div id="Beschreibung">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">TreeWalker</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">7</span> IE <span class="emphasis">nicht zutreffend</span>  DOM <span class="emphasis">2</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Das <span class="literal">TreeWalker</span>-Objekt ist eine dynamische, hierarchische Liste der Nodes, die den durch die Methode <span class="literal">document.createTreeWalker( )</span> definierten Kriterien entsprechen. Die Eintr&auml;ge in dieser Liste weisen dieselbe Parent-Child-Hierarchie auf wie die entsprechenden Nodes im Dokumentbaum. Die <span class="literal">createTreeWalker( )</span>-Methode gibt an, mit welcher Node die Liste beginnt und welche Nodes (oder Nodeklassen) herausgefiltert und daher nicht in die Liste aufgenommen werden.
+</p>
+							</td>
+						</tr>
+						<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Das <span class="literal">TreeWalker</span>-Objekt unterh&auml;lt eine Art Zeiger in dieser Liste (sodass diese Aufgabe Ihren Skripts erspart bleibt). Mithilfe der Methoden dieses Objekts kann ein Skript auf die jeweils n&auml;chste oder vorhergehende Node (bzw. die jeweils &uuml;bergeordnete, gleichgestellte oder untergeordnete Node) in der Liste zugreifen, wobei der Zeiger um eine Position in die durch die jeweils ausgew&auml;hlte Methode bestimmte Richtung verschoben wird. Wenn ein Skript den Dokumentbaum ver&auml;ndert, nachdem das <span class="literal">TreeWalker</span>-Objekt erstellt wurde, wird die Reihenfolge der Nodes in der <span class="literal">TreeWalker</span>-Liste automatisch angepasst.
+</p>
+							</td>
+						</tr>
+						<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Das <span class="literal">TreeWalker</span>-Objekt kann ohne Einschr&auml;nkung auch in einem HTML-Dokument eingesetzt werden, entfaltet seine volle Wirkung jedoch erst in einem XML-Datendokument. Das W3C-DOM bietet beispielsweise keine M&ouml;glichkeit, rasch auf alle Elemente zuzugreifen, die einen bestimmten Attributnamen aufweisen (was f&uuml;r den XPATH-Standard auf dem Server kein Problem darstellt). Sie k&ouml;nnen jedoch ein <span class="literal">TreeWalker</span>-Objekt definieren, das nur auf Nodes mit dem gew&uuml;nschten Attribut verweist, und diese dann nacheinander ansprechen, ohne also in einer Skriptschleife m&uuml;hevoll immer wieder alle Nodes nach den gew&uuml;nschten Elementen durchsuchen zu m&uuml;ssen. Die folgende Filterfunktion nimmt zum Beispiel nur solche Nodes in ein <span class="literal">TreeWalker</span>-Objekt auf, die das Attribut <span class="literal">author</span> enthalten.
+</p>
+<span class="PROGRAMLISTING"><pre>function authorAttrFilter(node) &#123;
+    if (node.hasAttribute(&quot;author&quot;)) &#123;
+        return NodeFilter.FILTER_ACCEPT;		
+    }
+    return NodeFilter.FILTER_SKIP;
+}</pre></span>
+							</td>
+						</tr>
+						<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Diese Funktion wird als Referenz in einem Parameter an eine <span class="literal">createTreeWalker( )</span>-Methode &uuml;bergeben, die die Liste zus&auml;tzlich auf Elementnodes beschr&auml;nkt:
+</p>
+<span class="PROGRAMLISTING"><pre>var authorsOnly = document.createTreeWalker(document, 
+NodeFilter.SHOW_ELEMENT, authorAttrFilter, false);</pre></span>
+							</td>
+						</tr>
+						<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Anschlie&szlig;end k&ouml;nnen Sie mithilfe der <span class="literal">TreeWalker</span>-Objektmethoden eine Referenz auf eine der in der Liste aufgef&uuml;hrten Nodes abrufen. Beim Aufruf der Methode wendet das <span class="literal">TreeWalker</span>-Objekt den Filter auf den Eintrag an der aktuellen Position des internen Zeigers an und f&auml;hrt sodann in der von der Methode angegebenen Richtung fort. Die n&auml;chste Node im Dokumentbaum, die den Methoden- und Filterkriterien entspricht, wird zur&uuml;ckgegeben. Nachdem Sie diese Nodereferenz erhalten haben, k&ouml;nnen Sie die betreffende Node, unabh&auml;ngig von den in der <span class="literal">TreeWalker</span>-Liste enthaltenen Eintr&auml;gen, mit jeder beliebigen DOM-Nodeeigenschaft oder -methode bearbeiten.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectmodelreference"><span class="title">Objektmodellreferenz</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre><span class="replaceable">TreeWalkerReference</span></pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectspecificproperties"><span class="title">Objektspezifische Eigenschaften</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<table border="1"><tbody><tr><td><span class="literal">currentNode</span></td><td><span class="literal">expandEntityReference</span></td><td><span class="literal">filter</span></td><td><span class="literal">root</span></td><td><span class="literal">whatToShow</span></td>
+								</tr>
+							</tbody></table>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectspecificmethods"><span class="title">Objektspezifische Methoden</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<table border="1"><tbody><tr><td><span class="literal">firstChild( )</span></td><td><span class="literal">lastChild( )</span></td><td><span class="literal">nextNode( )</span></td><td><span class="literal">nextSibling( )</span></td>
+								</tr>
+								<tr><td><span class="literal">parentNode( )</span></td><td><span class="literal">previousNode( )</span></td><td><span class="literal">previousSibling( )</span></td><td></td>
+								</tr>
+							</tbody></table>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectspecificeventhandlerproperties"><span class="title">Objektspezifische Ereignisbehandlungsroutineneigenschaften</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Keine. </p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="currentNode">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">currentNode</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">7</span> IE <span class="emphasis">nicht zutreffend</span>  DOM <span class="emphasis">2</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Lesen/Schreiben</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Gibt eine Referenz auf die Node an der Position des <span class="literal">TreeWalker</span>-Zeigers zur&uuml;ck. Doch was noch wichtiger ist, Sie k&ouml;nnen dieser Eigenschaft auch eine Referenz auf eine Node im Dokumentbaum zuweisen und auf diese Weise die Position des Zeigers selbst festlegen. Wenn die zugewiesene Node normalerweise aus der Liste herausgefiltert w&uuml;rde, wird der n&auml;chste Methodenaufruf an ihrer Position gestartet, so als ob die Node nicht aus der Liste herausgefiltert worden sei.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>myTreeWalker.currentNode = document.getElementById("main");</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Referenz auf eine Node im Dokumentbaum.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Standardwert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Erste Node des Dokuments.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="expandEntityReference, filter, root, whatToShow">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">expandEntityReference, filter, root, whatToShow</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">7</span> IE <span class="emphasis">nicht zutreffend</span>  DOM <span class="emphasis">2</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Schreibgesch&uuml;tzt</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Diese vier Eigenschaften spiegeln die beim Erstellen des Objekts an die Methode <span class="literal">document.createTreeWalker( )</span> &uuml;bergebenen Parameterwerte wider.
+</p>
+							</td>
+						</tr>
+			</table>
+		</div><div id="firstChild( ), lastChild( ), nextSibling( ), parentNode( ), previousSibling( )">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">firstChild( ), lastChild( ), nextSibling( ), parentNode( ), previousSibling( )</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">7</span> IE <span class="emphasis">nicht zutreffend</span>  DOM <span class="emphasis">2</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Diese Methoden geben Referenzen auf Nodes in der hierarchischen Liste des <span class="literal">TreeWalker</span>-Objekts zur&uuml;ck. Die Parent-Child-Beziehungen zwischen den Nodes entsprechen denen der Nodes innerhalb des Dokumentbaums. Wenn Sie eine dieser Methoden aufrufen, wird der interne <span class="literal">TreeWalker</span>-Zeiger an eine Stelle neben der Position der Node in der <span class="literal">TreeWalker</span>-Liste gesetzt. Falls keine Node vorhanden ist, die der gew&uuml;nschten Referenz entspricht, gibt die Methode den Wert <span class="literal">null</span> zur&uuml;ck. Dies bedeutet, dass Sie pr&uuml;fen m&uuml;ssen, ob die Node existiert, bevor Sie versuchen, ihre Eigenschaften auszulesen:
+</p>
+<span class="PROGRAMLISTING"><pre>if (myTreeWalker.nextSibling( )) &#123;
+    var theTag = myTreeWalker.currentNode.tagName;
+}</pre></span>
+							</td>
+						</tr>
+						<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Wenn Sie eine Eigenschaft einer Nullreferenz direkt referenzieren (z. B. mit der Methode <span class="literal">myTreeWalker.nextSibling( ).tagName</span>), wird ein Referenzfehler zur&uuml;ckgegeben.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Parameter</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Keiner. </p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Zur&uuml;ckgegebener Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Referenz auf eine Node im Dokumentbaum. </p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="nextNode(   ), previousNode(   )">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">nextNode( ), previousNode( )</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">7</span> IE <span class="emphasis">nicht zutreffend</span>  DOM <span class="emphasis">2</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>R&uuml;cken den internen <span class="literal">NodeIterator</span>-Zeiger um eine Position vor (<span class="literal">nextNode( )</span>) oder zur&uuml;ck (<span class="literal">previousNode( )</span>) und geben eine Referenz auf die Node zur&uuml;ck, die der Zeiger hierbei passiert hat. Diese beiden Methoden arbeiten wie in einer flachen Hierarchie (nach Art des <span class="literal">NodeIterator</span>-Objekts).
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Parameter</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Keiner. </p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Zur&uuml;ckgegebener Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Referenz auf eine Node im Dokumentbaum. </p>
+					</td>
+				</tr>
+			</table>
+		</div>
+
+</body>
+</html>

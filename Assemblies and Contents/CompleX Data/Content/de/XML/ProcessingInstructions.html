@@ -1,0 +1,31 @@
+<html>
+<head>
+<title>Verarbeitungsanweisungen</title>
+</head>
+<body bgcolor="#FFFFFF" text="#000000">
+<div id="Beschreibung">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">Verarbeitungsanweisungen</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description">
+<span class="PROGRAMLISTING"><pre><strong class="userinput">&lt;?</strong><var class="replaceable">target</var> <var class="replaceable">processing-instruction data</var><strong class="userinput">?&gt;</strong></pre></span>
+<p>Verarbeitungsanweisungen sind ein Mechanismus, der es XML-Anwendungen erlaubt, Anweisungen an einen XML-Prozessor zu schicken, die von diesem nicht analysiert und bewertet werden. Das Ziel <I>(target) </I>einer Verarbeitungsanzweisung kann ein zul&auml;ssiger XML-Name sein, nur die Zeichensequenz <span class="LITERAL">xml</span> in verschiedenen Gro&szlig;-/Kleinschreibungsvarianten ist reserviert (siehe auch <link linkend="xmlnut3-CHP-2">Kapitel 2</link>). Eine &uuml;bliche Anwendung dieses Mechanismus ist die Verkn&uuml;pfung eines Stylesheets, das die Formatierungsvorschriften f&uuml;r das XML-Dokument bereitstellt. Gem&auml;&szlig; der XML-Prinzipien sollen Formatierungsvorschriften vom eigentlichen Inhalt eines Dokuments getrennt sein, daher wird ein Mechanismus ben&ouml;tigt, der die beiden verkn&uuml;pft. Verarbeitungsanweisungen sind nur f&uuml;r die Applikationen signifikant, die sie erkennen und interpretieren k&ouml;nnen.</p>
+
+<p>In einer Notationsdeklaration kann genau festgelegt werden, welche Art von Verarbeitungsanweisung eingebunden wird, und jede einzelne XML-Anwendung muss entscheiden, was mit den zus&auml;tzlichen Daten zu machen ist. Vom XML-Parser ist keine Aktion notwendig, wenn er erkennt, dass eine bestimmte Verarbeitungsanweisung einer deklarierten Notation entspricht. Wenn dieser Mechanismus verwendet wird, sollten Anwendungen, die den &ouml;ffentlichen oder Systembezeichner eines bestimmten Verarbeitungsanweisungsziels nicht erkennen, realisieren, dass sie diesen Datenteil nicht korrekt interpretieren k&ouml;nnen.</p>
+
+<sidebar id="xmlnut3-CHP-21-SIDEBAR-1">
+<p class="TITLE">Automatische Erkennung der Zeichenkodierung</p>
+
+<p>Die XML-Deklaration (m&ouml;glicherweise kommt zuerst eine Marke f&uuml;r die Unicode-Byte-Ordnung) muss das Erste sein, was in einem XML-Dokument vorkommt, so dass der XML-Parser feststellen kann, welche Zeichenkodierung zum Speichern des Dokuments verwendet wurde. Allerdings liegt in Zusammenhang mit der Klausel <span class="LITERAL">encoding="...</span>&quot; der XML-Deklaration ein &quot;Henne oder Ei&quot;-Problem vor: der Parser kann die Klausel gar nicht analysieren, wenn er nicht wei&szlig;, welche Zeichenkodierung das Dokument verwendet. Da jedoch die ersten f&uuml;nf Zeichen des Dokuments der String <span class="LITERAL">&lt;?xml</span> sein m&uuml;ssen (wenn es eine XML-Deklaration enth&auml;lt), kann der Parser die ersten paar Bytes eines Dokuments lesen und in den meisten F&auml;llen die Zeichenkodierung bestimmen, bevor er die <span class="LITERAL">encoding</span>-Deklaration gelesen hat.</p>
+</sidebar>
+</td></tr>
+</table>
+</div>
+</body>
+</html>

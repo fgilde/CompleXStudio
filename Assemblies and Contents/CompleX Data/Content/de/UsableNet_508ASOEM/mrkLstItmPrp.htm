@@ -1,0 +1,129 @@
+<html xmlns:un="http://usablenet.com/namespaces/508_rules">
+   <link rel="stylesheet" href="josh.css">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   
+      <title>Detailanzeige f&uuml;r Regel: Korrekten Markup f&uuml;r Listen und Listenelemente verwenden</title>
+      <!--
+  508/W3C Accessibility Suite OEM V2 for Macromedia Dreamweaver
+  (C) Copyright 2001-2005 UsableNet Inc. All rights reserved.
+  -->
+   </head>
+   <body bgcolor="#ffffff">
+      <div id="Beschreibung">
+         <table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+            <tr>
+               <td valign="top" nowrap="true" class="name">Korrekten Markup f&uuml;r Listen und Listenelemente verwenden</td>
+               <td valign="top" nowrap="true" class="compatibility">&nbsp;</td>
+            </tr>
+            <tr>
+               <td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+            </tr>
+            <tr>
+               <td valign="top" align="right" nowrap="true" colspan="2" class="requirements">WAI / WCAG 1.0 Priorit&auml;t 2 Checkpunkt 3.6</td>
+            </tr>
+            <tr>
+               <td colspan="2" class="clearseparation">&nbsp;</td>
+            </tr>
+            <tr>
+               <td colspan="2" class="clearseparation">&nbsp;</td>
+            </tr>
+            <tr>
+               <td valign="top" colspan="2" class="description"><b>Problembeschreibung</b><br>
+                  
+                           
+                  <p>
+                     Die Seite enth&auml;lt mindestens ein Paar identischer Grafiken, die keine Platzhalter sind und unter Umst&auml;nden als Aufz&auml;hlungspunkte
+                     in einer tabellarischen Anordnung von Objekten dienen.
+                     	 
+                  </p>
+                        
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2" class="clearseparation">&nbsp;</td>
+            </tr>
+            <tr>
+               <td colspan="2" class="clearseparation">&nbsp;</td>
+            </tr>
+            <tr>
+               <td valign="top" colspan="2" class="description"><b>&Uuml;berpr&uuml;fung</b>
+                  
+                  
+                  <p>
+                     &uuml;berpr&uuml;fen Sie, ob die auf einer Seite verwendeten Grafiken ggf. als Aufz&auml;hlungspunkte f&uuml;r eine Objektliste verwendet werden.
+                     Wenn dies der Fall ist, ersetzen Sie die Tabelle und die Bilder mit den entsprechenden Markups. Schlie&szlig;en Sie die Punkte in
+                     eine Liste ein und markieren Sie die einzelnen Objekte innerhalb der Listen mit Listenobjekten (LI, DD oder DT). 
+                     
+                  </p>
+                  
+                  
+                  <p>
+                     Dabei k&ouml;nnen Sie nicht numerierte Listen (UL - unordered list), numerierte Listen (OL - ordered list) oder Definitionslisten
+                     (DL) verwenden. Listen k&ouml;nnen auf unterschiedliche Weise verschachtelt werden, z. B. mithilfe von UL innerhalb eines LI-Objekts
+                     einer OL-Liste. Auch das als Aufz&auml;hlungspunkt verwendete Symbol kann mit der geeigneten CSS-Eigenschaft (list-style) ge&auml;ndert
+                     werden.
+                     
+                  </p>
+                  
+                  <p>
+                     Weitere Einzelheiten finden Sie unter <strong>HTML Techniques for Web Content Accessibility Guidelines 1.0</strong>
+                     [http://www.w3.org/TR/WCAG10-HTML-TECHS/#lists]
+                     . 
+                     
+                  </p>
+                        
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2" class="clearseparation">&nbsp;</td>
+            </tr>
+            <tr>
+               <td colspan="2" class="clearseparation">&nbsp;</td>
+            </tr>
+            <tr>
+               <td valign="top" colspan="2" class="description"><b>Problemerkl&auml;rung</b><br>
+                  
+                           
+                  <p>
+                     Sobald eine Unterordnung von Inhalt mithilfe visueller Hervorhebungen durchgef&uuml;hrt wird (beispielsweise durch Einr&uuml;cken),
+                     muss bedacht werden, dass derartige Hervorhebungen f&uuml;r Benutzer, die nicht &uuml;ber eine zweidimensionale grafische Darstellung
+                     verf&uuml;gen bzw. diese nutzen k&ouml;nnen, nicht erkennbar ist. Hierzu z&auml;hlen Benutzer, die nur eingeschr&auml;nkt sehf&auml;hig oder ganz blind
+                     sind oder die einen nicht grafischen Browser benutzen, wie beispielsweise einen lesenden Browser am Telefon oder einen Browser
+                     f&uuml;r kleine PDA-Bildschirme.
+                     	 
+                  </p>
+                  
+                  
+                  <p>
+                     Aus diesem Grund ist es sehr wichtig, diese wichtigen Hervorhebungen mithilfe entsprechender von HTML bereitgestellter struktureller
+                     Markups vorzunehmen. Ein Benutzer eines Bildschirmleseger&auml;ts bzw. eines Browsers mit Sprachausgabe kann nur dann angemessen
+                     durch die einzelnen Ebenen einer verschachtelten Liste navigieren, wenn diese sinnvoll codiert sind. Dann kann der Benutzer
+                     auch direkt zu einem bestimmten Punkt springen.
+                     
+                  </p>
+                  
+                  
+                  <p>
+                     Wenn mehrere Ebenen sortierter (numerierter) Listen verwendet werden, m&uuml;ssen Sie sicherstellen, dass die numerierten &uuml;berschriften
+                     den korrekten Kontext wiedergeben. So sollten die &uuml;berschriften der zweiten Ebene beispielsweise mit 1.1, 1.2 ... usw. bzw.
+                     mit 1.a, 1.b ... usw. numeriert werden. Da sich ein Benutzer auf der Seite frei bewegen kann, besteht der Sinn der Kontextwiedergabe
+                     in &uuml;berschriften darin, dass wenn eine &uuml;berschrift, m&ouml;glicherweise au&szlig;erhalb des Kontextes vorgelesen wird, der Zuh&ouml;rer doch
+                     versteht, in welchem Kontext sich das betreffende Objekt befindet.
+                     
+                  </p>
+                  
+                  
+                  <p>
+                     W&uuml;rden alle Objekte beispielsweise mit  1, 2, 3, ... usw numeriert, k&ouml;nnte ein Zuh&ouml;rer nicht unterscheiden, ob es sich um
+                     Objekte der &uuml;bergeordneten Ebene oder der zweiten Ebene handelt.
+                     
+                  </p>
+                      
+                        
+               </td>
+            </tr>
+         </table>
+      </div>
+   </body>
+</html>

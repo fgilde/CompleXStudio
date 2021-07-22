@@ -1,0 +1,48 @@
+<html>
+<head>
+<title>Analysierbare allgemeine Entities</title>
+</head>
+<body bgcolor="#FFFFFF" text="#000000">
+<div id="Beschreibung">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">Analysierbare allgemeine Entities</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description">
+<span class="PROGRAMLISTING"><pre><strong class="userinput">&lt;!ENTITY</strong> <var class="replaceable">name</var> <strong class="userinput">"</strong><var class="replaceable">Replacement text</var><strong class="userinput">."&gt;</strong>
+<strong class="userinput">&lt;!ENTITY </strong><var class="replaceable">name</var> <strong class="userinput">SYSTEM "</strong><var class="replaceable">system-literal</var><strong class="userinput">"&gt;</strong>
+<strong class="userinput">&lt;!ENTITY </strong><var class="replaceable">name</var> <strong class="userinput">PUBLIC "</strong><var class="replaceable">pubid-literal</var><strong class="userinput">" "</strong><var class="replaceable">system-literal</var><strong class="userinput">"&gt;</strong></pre></span>
+<p>
+Analysierbare allgemeine Entities werden innerhalb der Dokumententypdefinition deklariert, danach kann im Dokumenttext oder im Wert von Attributen darauf verwiesen werden. Wenn das Dokument vom Parser analysiert wird, wird der Ersetzungstext anstelle der Entity-Referenz eingebunden. Dann nimmt der Parser die Analyse wieder auf, und zwar beginnend mit dem Text, der gerade ersetzt worden ist.</p>
+
+<p>Analysierbare allgemeine Entities werden in der DTD deklariert, mit Hilfe einer Obermenge der f&uuml;r die Deklaration von Parameter-Entities verwendeten Syntax.</p>
+
+<p>Interne Entities speichern den Ersetzungstext als Literal-String in der Zeile. Der Ersetzungstext innerhalb einer internen Entity wird vollst&auml;ndig in die Entity-Deklaration eingebunden, so dass f&uuml;r den Ersetzungstext keine externe Datei ben&ouml;tigt wird. Diese Situation ist stark verwandt mit den Makrofunktionen f&uuml;r die String-Ersetzung vieler g&auml;ngiger Programmiersprachen:</p>
+
+<span class="PROGRAMLISTING"><pre><strong class="userinput">&lt;!ENTITY </strong><var class="replaceable">name </var><strong class="userinput">"</strong><var class="replaceable">Replacement text</var><strong class="userinput">"&gt;</strong></pre></span>
+
+
+<p>Wenn auf eine analysierbare allgemeine Entity verwiesen wird, wird der Inhalt der externen Entity ins Dokument eingebunden und der XML-Parser setzt die Analyse fort, beginnend beim neu eingebundenen Text.</p>
+
+<tip id="xmlnut3-CHP-21-NOTE-137" role="ora">
+<p>Gem&auml;&szlig; der XML-Empfehlung sind zwei Arten allgemeiner Entities erlaubt: analysierbare und nicht analysierbare. F&uuml;r die Deklaration einer nicht analysierbare Entity wird dieselbe Syntax verwendet wie f&uuml;r eine allgemeine analysierbare externe Entity, allerdings wird zus&auml;tzlich ein XML-Notationsname in die Deklaration eingef&uuml;gt:</p>
+
+<span class="PROGRAMLISTING"><pre>
+<strong class="userinput">&lt;!ENTITY</strong><strong class="userinput"> </strong><var class="replaceable">name</var> <strong class="userinput">SYSTEM "</strong><var class="replaceable">system-literal</var><strong class="userinput">"</strong> <var class="replaceable">notation-name</var><strong class="userinput">&gt;</strong>
+<strong class="userinput">&lt;!ENTITY</strong><strong class="userinput"> </strong><var class="replaceable">name</var> <strong class="userinput">PUBLIC "</strong><var class="replaceable">pubid-literal</var><strong class="userinput">" "</strong><var class="replaceable">system-literal</var><strong class="userinput">"</strong>
+<var class="replaceable">notation-name</var><strong class="userinput">&gt;</strong></pre></span>
+
+<p>Auf nicht analysierbare allgemeine Entities wird nicht mit Hilfe der Syntax <span class="LITERAL">&amp;</span><var class="replaceable">name</var><span class="LITERAL">;</span> verwiesen. Um auf eine nicht analysierbare externe Entity zu verweisen, muss der Attributtyp <span class="LITERAL">ENTITY</span> oder <span class="LITERAL">ENTITIES</span> verwendet werden. Der Mechanismus nicht analysierbarer
+
+externer allgemeiner Entities ist ein XML-Feature, das schlecht verstanden, ja schlecht unterst&uuml;tzt wird und in der Praxis selten angewandt wird. Es empfiehlt sich, f&uuml;r den Verweis auf externe Nicht-XML-Daten alternative Mechanismen (wie XLinks oder einfache URI-Strings zu verwenden).</p>
+</tip>
+</td></tr>
+</table>
+</div>
+</body>
+</html>

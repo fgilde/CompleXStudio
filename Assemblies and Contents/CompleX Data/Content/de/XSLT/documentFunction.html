@@ -1,0 +1,157 @@
+<html>
+<head>
+<title>document()-Funktion</title>
+</head>
+<body bgcolor="#FFFFFF" text="#000000">
+<div id="Beschreibung">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">document()-Funktion</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description">
+Diese Funktion erlaubt die Verarbeitung mehrerer Ausgangsdokumente in einem einzigen Stylesheet. Diese Funktion ist &auml;u&szlig;erst leistungsf&auml;hig und flexibel, an dieser Stelle sei jedoch nur eine kurze &Uuml;bersicht angef&uuml;hrt.</td></tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Eingaben</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<p>Die Funktion <span class="LITERAL">document()</span> akzeptiert in der Regel einen String als Argument, der als URI behandelt wird. Diesen URI versucht der XSLT-Prozessor zu &ouml;ffnen und zu analysieren. Ist der String leer (der Funktionsaufruf ist <span class="LITERAL">document('')</span>), analysiert die Funktion <span class="LITERAL">document()</span> das Stylesheet selbst.    </p>
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Ausgabe</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<p>Eine Knotenmenge mit den vom Eingabeargument identifizierten Knoten.   </p>
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Definition</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<p>XSLT-Abschnitt 12.1, Mehrere Quelldokumente.</p>
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Beispiel</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<p>Das nachfolgende Beispiel verwendet die Funktion <span class="LITERAL">document()</span> mit einem leeren String, um eine Nachschlagetabelle zu implementieren. Hier das XML-Dokument:</p>
+<span class="PROGRAMLISTING"><pre>
+&lt;?xml version="1.0"?&gt;
+&lt;report&gt;
+  &lt;title&gt;Miles Flown in 2001&lt;/title&gt;
+  &lt;month sequence="01"&gt;
+    &lt;miles-flown&gt;12379&lt;/miles-flown&gt;
+    &lt;miles-earned&gt;35215&lt;/miles-earned&gt;
+  &lt;/month&gt;
+  &lt;month sequence="02"&gt;
+    &lt;miles-flown&gt;32857&lt;/miles-flown&gt;
+    &lt;miles-earned&gt;92731&lt;/miles-earned&gt;
+  &lt;/month&gt;
+  &lt;month sequence="03"&gt;
+    &lt;miles-flown&gt;19920&lt;/miles-flown&gt;
+    &lt;miles-earned&gt;76725&lt;/miles-earned&gt;
+  &lt;/month&gt;
+  &lt;month sequence="04"&gt;
+    &lt;miles-flown&gt;18903&lt;/miles-flown&gt;
+    &lt;miles-earned&gt;31781&lt;/miles-earned&gt;
+  &lt;/month&gt;
+&lt;/report&gt;</pre></span>
+<p>Die Funktion <span class="LITERAL">document()</span> kann verwendet werden, um das <span class="LITERAL">sequence</span>-Attribut des Elements <span class="LITERAL">&lt;month&gt;</span> in den Namen des entsprechenden Monats zu konvertieren. Hier das Stylesheet:</p>
+<span class="PROGRAMLISTING"><pre>
+&lt;?xml version="1.0"?&gt;
+&lt;xsl:stylesheet version="1.0" 
+  xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+  xmlns:months="Lookup table for month names"&gt;
+
+  &lt;months:name sequence="01"&gt;January&lt;/months:name&gt;
+  &lt;months:name sequence="02"&gt;February&lt;/months:name&gt;
+  &lt;months:name sequence="03"&gt;March&lt;/months:name&gt;
+  &lt;months:name sequence="04"&gt;April&lt;/months:name&gt;
+  &lt;months:name sequence="05"&gt;May&lt;/months:name&gt;
+  &lt;months:name sequence="06"&gt;June&lt;/months:name&gt;
+  &lt;months:name sequence="07"&gt;July&lt;/months:name&gt;
+  &lt;months:name sequence="08"&gt;August&lt;/months:name&gt;
+  &lt;months:name sequence="09"&gt;September&lt;/months:name&gt;
+  &lt;months:name sequence="10"&gt;October&lt;/months:name&gt;
+  &lt;months:name sequence="11"&gt;November&lt;/months:name&gt;
+  &lt;months:name sequence="12"&gt;December&lt;/months:name&gt;
+
+  &lt;xsl:output method="text"/&gt;
+
+  &lt;xsl:variable name="newline"&gt;
+&lt;xsl:text&gt;
+&lt;/xsl:text&gt;
+  &lt;/xsl:variable&gt;
+
+  &lt;xsl:template match="/"&gt;
+    &lt;xsl:value-of select="$newline"/&gt;
+    &lt;xsl:text&gt;A test of the document() function:&lt;/xsl:text&gt;
+
+    &lt;xsl:value-of select="$newline"/&gt;
+    &lt;xsl:value-of select="$newline"/&gt;
+    &lt;xsl:for-each select="/report/month"&gt;
+      &lt;xsl:text&gt;   &lt;/xsl:text&gt;
+      &lt;xsl:value-of 
+        select="document('')/*/months:name[@sequence=current()/@sequence]"/&gt;
+      &lt;xsl:text&gt; - &lt;/xsl:text&gt;
+      &lt;xsl:value-of select="format-number(miles-flown, '##,###')"/&gt;
+      &lt;xsl:text&gt; miles flown, &lt;/xsl:text&gt;
+      &lt;xsl:value-of select="format-number(miles-earned, '##,###')"/&gt;
+      &lt;xsl:text&gt; miles earned.&lt;/xsl:text&gt;
+      &lt;xsl:value-of select="$newline"/&gt;
+      &lt;xsl:text&gt;      (Averaged &lt;/xsl:text&gt;
+      &lt;xsl:value-of 
+        select="format-number(miles-earned div miles-flown, '##.#')"/&gt;
+      &lt;xsl:text&gt; miles earned for each mile flown.)&lt;/xsl:text&gt;
+<!--<?troff .Nd 10?>-->
+      &lt;xsl:value-of select="$newline"/&gt;
+      &lt;xsl:value-of select="$newline"/&gt;
+    &lt;/xsl:for-each&gt;
+  &lt;/xsl:template&gt;
+
+&lt;/xsl:stylesheet&gt;</pre></span>
+<p>Hier die Ergebnisse, wobei die korrekten Monatsnamen in die Ausgabe eingef&uuml;gt wurden:</p>
+<span class="PROGRAMLISTING"><pre>
+
+A test of the document() function:
+
+   January - 12,379 miles flown, 35,215 miles earned.
+      (Averaged 2.8 miles earned for each mile flown.)
+
+   February - 32,857 miles flown, 92,731 miles earned.
+      (Averaged 2.8 miles earned for each mile flown.)
+
+   March - 19,920 miles flown, 76,725 miles earned.
+      (Averaged 3.9 miles earned for each mile flown.)
+
+   April - 18,903 miles flown, 31,781 miles earned.
+      (Averaged 1.7 miles earned for each mile flown.)
+</pre></span>
+</td>
+</tr>
+</table>
+</div>
+</body>
+</html>

@@ -1,0 +1,172 @@
+<html>
+<head>
+<title>&lt;xsl:processing-instruction&gt;</title>
+</head>
+<body bgcolor="#FFFFFF" text="#000000">
+<div id="Beschreibung">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">&lt;xsl:processing-instruction&gt;</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description">
+Diese Anweisung erstellt eine Verarbeitungsanweisung f&uuml;r das Ausgabedokument.</td></tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Kategorie</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<p>Anweisung</p>
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Obligatorische Attribute</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<dl>
+<dt>
+name
+</dt>
+<dd>
+Dieses Attribut definiert den Namen der Verarbeitungsanweisung.
+<P></p>
+</dl>
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Optionale Attribute</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<p>Keine</p>
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Inhalt</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<p>Eine XSLT-Vorlage. Der Inhalt der Vorlage wird f&uuml;r die Daten der Verarbeitungsanweisung verwendet.</p>
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">&Uuml;bergeordnetes Element</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<p>
+<span class="LITERAL">&lt;xsl:processing-instruction&gt;</span> erscheint innerhalb einer Template.</p>
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Definition</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<p>XSLT-Abschnitt 7.3, Erzeugung von Verarbeitungsanweisungen</p>
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Beispiel</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<p>Es wird ein Stylesheet gezeigt, das eine Verarbeitungsanweisung in ein XML-Dokument einf&uuml;gt. Die Verarbeitungsanweisung wird das Stylesheet <filename>template.xsl</filename> mit diesem XML-Dokument verkn&uuml;pfen. Hier das Stylesheet:</p>
+<span class="PROGRAMLISTING"><pre>
+&lt;?xml version="1.0"?&gt;
+&lt;xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0"&gt;
+  &lt;xsl:output method="xml"/&gt;
+
+<!--<?troff .Nd 10?>-->
+  &lt;xsl:template match="/"&gt;
+    &lt;xsl:processing-instruction name="xml-stylesheet"&gt;href="docbook/html/docbook.xsl" 
+       type="text/xsl"&lt;/xsl:processing-instruction&gt;
+    &lt;xsl:copy-of select="."/&gt;
+  &lt;/xsl:template&gt;
+
+&lt;/xsl:stylesheet&gt;</pre></span>
+<p>Dieses Stylesheet verwendet einfach das Element <span class="LITERAL">&lt;xsl:copy-of&gt;</span>, um das Eingabedokument in den Ergebnisbaum zu kopieren und dabei auch die Verarbeitungsanweisung hinzuzuf&uuml;gen. Dieses Stylesheet wird auf das folgende Dokument angewendet:</p>
+<span class="PROGRAMLISTING"><pre>
+&lt;?xml version="1.0"?&gt;
+&lt;list&gt;
+  &lt;title&gt;A few of my favorite albums&lt;/title&gt;
+  &lt;listitem&gt;A Love Supreme&lt;/listitem&gt;
+  &lt;listitem&gt;Beat Crazy&lt;/listitem&gt;
+  &lt;listitem&gt;Here Come the Warm Jets&lt;/listitem&gt;
+  &lt;listitem&gt;Kind of Blue&lt;/listitem&gt;
+  &lt;listitem&gt;London Calling&lt;/listitem&gt;
+  &lt;listitem&gt;Remain in Light&lt;/listitem&gt;
+  &lt;listitem&gt;The Joshua Tree&lt;/listitem&gt;
+  &lt;listitem&gt;The Indestructible Beat of Soweto&lt;/listitem&gt;
+&lt;/list&gt;</pre></span>
+<p>Hier die Ergebnisse, die entstehen, wenn diese Transformation ausgef&uuml;hrt wird:</p>
+<span class="PROGRAMLISTING"><pre>
+&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;?xml-stylesheet href="docbook/html/docbook.xsl" type="text/xsl"?&gt;
+&lt;list&gt;
+  &lt;title&gt;A few of my favorite albums&lt;/title&gt;
+  &lt;listitem&gt;A Love Supreme&lt;/listitem&gt;
+  &lt;listitem&gt;Beat Crazy&lt;/listitem&gt;
+  &lt;listitem&gt;Here Come the Warm Jets&lt;/listitem&gt;
+  &lt;listitem&gt;Kind of Blue&lt;/listitem&gt;
+  &lt;listitem&gt;London Calling&lt;/listitem&gt;
+  &lt;listitem&gt;Remain in Light&lt;/listitem&gt;
+  &lt;listitem&gt;The Joshua Tree&lt;/listitem&gt;
+  &lt;listitem&gt;The Indestructible Beat of Soweto&lt;/listitem&gt;
+&lt;/list&gt;</pre></span>
+<p>Beachten Sie, dass der Inhalt einer Verarbeitungsanweisung Text ist. Auch wenn die soeben erzeugte Verarbeitungsanweisung so aussieht als h&auml;tte sie zwei Attribute, k&ouml;nnen Sie die Verarbeitungsanweisung nicht wie folgt erstellen:</p>
+<span class="PROGRAMLISTING"><pre>
+&lt;?xml version="1.0"?&gt;
+&lt;xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0"&gt;
+  &lt;xsl:output method="xml"/&gt;
+
+  &lt;xsl:template match="/"&gt;
+    &lt;xsl:processing-instruction name="xml-stylesheet"&gt;
+
+      &lt;!-- This doesn't work!  You can't put &lt;xsl:attribute&gt;
+           elements inside a &lt;xsl:processing-instruction&gt; element. --&gt;
+
+      &lt;xsl:attribute name="href"&gt;
+        &lt;xsl:text&gt;docbook/html/docbook.xsl&lt;/xsl:text&gt;
+      &lt;/xsl:attribute&gt;
+      &lt;xsl:attribute name="type"&gt;
+        &lt;xsl:text&gt;text/xsl&lt;/xsl:text&gt;
+      &lt;/xsl:attribute&gt;
+    &lt;/xsl:processing-instruction&gt;
+    &lt;xsl:copy-of select="."/&gt;
+  &lt;/xsl:template&gt;
+
+&lt;/xsl:stylesheet&gt;</pre></span>
+<p>Wenn Sie das ausf&uuml;hren, erhalten Sie vom XSLT-Prozessor eine Ausnahme. </p>
+</td>
+</tr>
+</table>
+</div>
+</body>
+</html>

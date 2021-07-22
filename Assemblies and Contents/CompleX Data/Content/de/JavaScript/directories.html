@@ -1,0 +1,120 @@
+<html>
+<link rel="stylesheet" href="josh.css">
+<body bgcolor="#FFFFFF">
+
+		<div id="Beschreibung">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">directories, locationbar, menubar, personalbar, scrollbars, statusbar, toolbar</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">4</span>  IE <span class="emphasis">nicht zutreffend</span> DOM <span class="emphasis">nicht zutreffend</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Diese Objekte geh&ouml;ren zum <span class="literal">window</span>-Objekt und stellen Teile der "Chrom"-Umrandung des Inhaltsbereichs im Browserfenster dar. (Das <span class="literal">directories</span>-Objekt wurde in Netscape 6 neu aufgenommen.) Bei Navigator ab Version 4 k&ouml;nnen Sie diese Elemente mit signierten Skripts (und dem Einverst&auml;ndnis des Benutzers) in einem Browserfenster dynamisch einblenden oder verbergen. Diese Funktionen k&ouml;nnen auch &uuml;ber einen dritten Parameter der Methode <span class="literal">window.open( )</span> deaktiviert werden, aber nur, wenn ein neues Fenster erstellt wird. Zum &Auml;ndern der Sichtbarkeit dieser Objekte in einem vorhandenen Fenster sind signierte Skripts erforderlich. Internet Explorer bietet keine &auml;quivalente Funktionalit&auml;t f&uuml;r ein bereits ge&ouml;ffnetes Fenster.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectmodelreference"><span class="title">Objektmodellreferenz</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>[window.]directories
+[window.]locationbar
+[window.]menubar
+[window.]personalbar
+[window.]scrollbars
+[window.]statusbar
+[window.]toolbar</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectspecificproperties"><span class="title">Objektspezifische Eigenschaften</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p><span class="literal">visible</span></p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectspecificmethods"><span class="title">Objektspezifische Methoden</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Keine.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectspecificeventhandlerproperties"><span class="title">Objektspezifische Ereignisbehandlungsroutineneigenschaften</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Keine.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="visible">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">visible</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">4</span>  IE <span class="emphasis">nicht zutreffend</span> DOM <span class="emphasis">nicht zutreffend</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Lesen/Schreiben</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Ist nur mithilfe von signierten Skriptes in Navigator ab Version 4 zug&auml;nglich und legt fest, ob die "Chrom"-Merkmale des Fensters angezeigt werden.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>netscape.security.PrivilegeManager.enablePrivilege("UniversalBrowserWrite");
+window.statusbar.visible = "false";
+netscape.security.PrivilegeManager.revertrivilege("UniversalBrowserWrite");</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Boolescher Wert: <span class="literal">true</span> | <span class="literal">false</span>.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Standardwert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p><span class="literal">true</span> </p>
+					</td>
+				</tr>
+			</table>
+		</div>
+
+</body>
+</html>

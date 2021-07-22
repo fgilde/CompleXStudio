@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding = "utf-8"?>
+<snippet xmlns:MMString="http://www.macromedia.com/schemes/dat/string/" MMString:name = "Snippets/~Deprecated/JavaScript/browser_functions/browserRedirect_csn/snippet/name/Browser" MMString:description = "Snippets/~Deprecated/JavaScript/browser_functions/browserRedirect_csn/snippet/description/A" preview="code" type="block">
+
+<insertText location="beforeSelection">
+<![CDATA[function browserRedirect()
+{
+  var ns4 = document.layers;
+  var ns6 = document.getElementById && !document.all;
+  var ie4 = document.all;
+  
+  if(ns4) URLStr = "1.html";
+  else if(ns6) URLStr = "2.html";
+  else if(ie4) URLStr = "3.html";
+  else URLStr = "4.html";
+  location = URLStr;
+}
+]]>
+</insertText>
+<insertText location="afterSelection"><![CDATA[]]>
+</insertText>
+</snippet>

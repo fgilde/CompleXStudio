@@ -1,0 +1,3010 @@
+<html><head>
+
+<link rel="stylesheet" href="josh.css"></head><body bgcolor="#FFFFFF">
+<div id="&lt;configuration&gt;">
+			<table width="100%" cellspacing="0" cellpadding="0" border="0" class="main"><tr>							<td valign="top" class="name">&lt;configuration&gt;</td><td valign="top" nowrap class="compatibility">&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><pre>&lt;configuration&gt;
+&lt;/configuration&gt;</pre>
+					</td><td valign="top" nowrap class="requirements">&#160;</td>
+				</tr>
+				<tr><td colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Das Stammelement f&uuml;r alle Konfigurationsdateien. Dieses Element ist erforderlich.</p>
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="scope"><span class="title">Einsatzbereich</span></td>
+				</tr>
+				<tr>
+					<td><p>Alle</p>
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="attributes"><span class="title">Attribute</span></td></tr><tr><td>Keine
+
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td />
+				</tr>
+			</table>
+		</div>
+<div id="&lt;appSettings&gt;">
+			<table width="100%" cellspacing="0" cellpadding="0" border="0" class="main"><tr>							<td valign="top" class="name">&lt;appSettings&gt;</td><td valign="top" nowrap class="compatibility">&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><pre>&lt;appSettings&gt;
+&lt;/appSettings&gt;</pre>
+					</td><td valign="top" nowrap class="requirements">&#160;</td>
+				</tr>
+				<tr><td colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Das Element <span class="literal">&lt;appSettings&gt;</span> kann verwendet werden, um individuelle Anwendungseinstellungen in Form von Schl&uuml;ssel-/Wertpaaren zu konfigurieren. Diese Einstellungen k&ouml;nnen sp&auml;ter zur Laufzeit &uuml;ber die Eigenschaft <span class="literal">AppSettings</span> der Klasse <span class="literal">ConfigurationSettings</span> abgerufen werden (siehe folgendes Beispiel). Diese Eigenschaft ist gemeinsam genutzt (statisch) und erfordert vor dem Zugriff keine Instanziierung der Klasse <span class="literal">ConfigurationSettings</span>.
+</p>
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="scope"><span class="title">Einsatzbereich</span></td>
+				</tr>
+				<tr>
+					<td><p>Beliebig</p>
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="attributes"><span class="title">Attribute</span></td></tr><tr><td>Keine
+
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td />
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="child elements"><span class="title">Untergeordnete Elemente</span><ul><li><i><span class="replaceable">&lt;add&gt;</span></i><br>&#160;
+			  Die gesuchte Zeichenfolge.</li><li><i><span class="replaceable">&lt;remove&gt;</span></i><br>&#160;
+			  Die gesuchte Zeichenfolge.</li><li><i><span class="replaceable">&lt;clear&gt;</span></i><br>&#160;
+			  Die gesuchte Zeichenfolge.</li></ul>
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td><p>Der folgende Ausschnitt aus einer <span class="emphasis">web.config</span>-Datei legt ein Schl&uuml;ssel-/Wertpaar auf Anwendungsebene fest:
+</p><span class="programlisting"><pre>&lt;configuration&gt;
+   &lt;appSettings&gt;
+      &lt;add key="applicationConfigKey" value="bar"/&gt;
+   &lt;/appSettings&gt;
+&lt;/configuration&gt;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td><p>Die folgende ASP.NET-Seite ruft den Wert ab, der im vorangegangenen Code festgelegt wurde, und ruft au&szlig;erdem einen Wert ab, der auf <span class="emphasis">machine.config</span>-Ebene festgelegt wurde:
+						</p><span class="programlisting"><pre>&lt;%@ Page Language="VB" %&gt;
+&lt;html&gt;
+&lt;head&gt;
+   &lt;script runat="server"&gt;
+      Sub Page_Load(  )
+         Message1.Text &amp;= _
+            ConfigurationSettings.AppSettings("machineConfigKey")
+         Message2.Text &amp;= _
+            ConfigurationSettings.AppSettings("applicationConfigKey")
+      End Sub
+   &lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+   &lt;asp:label id="Message1" runat="server"&gt;Machine.Config setting: &lt;/asp:label&gt;
+   &lt;br/&gt;
+   &lt;asp:label id="Message2" runat="server"&gt;Web.Config setting: &lt;/asp:label&gt;
+&lt;/body&gt;
+&lt;/html&gt;</pre>
+						</span>
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="notes"><span class="title">Hinweise</span></td>
+				</tr>
+				<tr>
+					<td><p>Wie im Beispiel gezeigt, kann das Element <span class="literal">&lt;appSettings&gt;</span> getrennt vom Element <span class="literal">&lt;system.web&gt;</span> und den ihm untergeordneten Elementen verwendet werden.
+</p><p>&Uuml;berlegen Sie sich aus Gr&uuml;nden der Sicherheit gut, welche Arten von Daten mit dem Element <span class="literal">&lt;appSettings&gt;</span> gespeichert werden sollen. Zwar ist die Laufzeitumgebung von ASP.NET so eingerichtet, dass die <span class="emphasis">web.config</span>-Datei einer Anwendung weder angefordert noch gelesen werden darf, aber dennoch ist der Zugriff auf diese Datei denkbar, wenn die Sicherheit des Webservers auf andere Weise gef&auml;hrdet ist. Daher sollten Sie prinzipiell keine vertraulichen Informationen wie Benutzernamen und Kennw&ouml;rter oder Verbindungsstrings, in denen Benutzername und Kennwort enthalten sind, in der Datei <span class="emphasis">web.config</span> ablegen. Eine etwas bessere, wenn auch noch immer nicht sichere Alternative ist es, derartige Informationen in <span class="emphasis">machine.config</span> abzulegen, da diese Datei nicht Teil des Webspace der Anwendung ist und somit im Falle eines Angriffs auf IIS besser gesch&uuml;tzt ist. Bedenken Sie aber, dass diese Daten allen Anwendungen auf dem Rechner zur Verf&uuml;gung stehen.
+</p>
+					</td>
+				</tr>
+			</table>
+		</div>
+<div id="&lt;system.web&gt;">
+			<table width="100%" cellspacing="0" cellpadding="0" border="0" class="main"><tr>							<td valign="top" class="name">&lt;system.web&gt;</td><td valign="top" nowrap class="compatibility">&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><pre>&lt;system.web&gt;
+&lt;/system.web&gt;</pre>
+					</td><td valign="top" nowrap class="requirements">&#160;</td>
+				</tr>
+				<tr><td colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Container-Element f&uuml;r alle Elemente, die in <span class="emphasis">web.config</span>-Dateien verwendet werden.
+</p>
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="scope"><span class="title">Einsatzbereich</span></td>
+				</tr>
+				<tr>
+					<td><p>Alle</p>
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="attributes"><span class="title">Attribute</span></td></tr><tr><td>Keine
+
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td />
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="child elements"><span class="title">Untergeordnete Elemente</span>
+					</td>
+					    </tr>
+					    <tr>
+					      <td><p><span class="literal">&lt;authentication&gt;</span>, <span class="literal">&lt;authorization&gt;</span>, <span class="literal">&lt;browserCaps&gt;</span>, <span class="literal">&lt;clientTarget&gt;</span>, <span class="literal">&lt;compilation&gt;</span>, <span class="literal">&lt;customErrors&gt;</span>, <span class="literal">&lt;globalization&gt;</span>, <span class="literal">&lt;httpHandlers&gt;</span>, <span class="literal">&lt;httpModules&gt;</span>, <span class="literal">&lt;httpRuntime&gt;</span>, <span class="literal">&lt;identity&gt;</span>, <span class="literal">&lt;iisFilter&gt;</span>, <span class="literal">&lt;machineKey&gt;</span>, <span class="literal">&lt;pages&gt;</span>,  <span class="literal">&lt;processModel&gt;</span>, <span class="literal">&lt;securityPolicy&gt;</span>, <span class="literal">&lt;sessionState&gt;</span>, <span class="literal">&lt;trace&gt;</span>, <span class="literal">&lt;trust&gt;</span>, <span class="literal">&lt;webServices&gt;</span></p>
+					      </td>
+    </tr>
+
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="notes"><span class="title">Hinweise</span></td>
+				</tr>
+				<tr>
+					<td><p>Dieses Element ist erforderlich, damit ihm untergeordnete Elemente verwendet werden k&ouml;nnen.</p>
+					</td>
+				</tr>
+			</table>
+		</div>
+<div id="&lt;authentication&gt;">
+			<table width="100%" cellspacing="0" cellpadding="0" border="0" class="main"><tr>							<td valign="top" class="name">&lt;authentication&gt;</td><td valign="top" nowrap class="compatibility">&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><pre>&lt;authentication&gt;
+&lt;/authentication&gt;</pre>
+					</td><td valign="top" nowrap class="requirements">&#160;</td>
+				</tr>
+				<tr><td colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Bietet Attribute und enth&auml;lt untergeordnete Elemente, die zur Konfiguration von Authentifizierungsoptionen in ASP.NET verwendet werden.
+</p>
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="scope"><span class="title">Einsatzbereich</span></td>
+				</tr>
+				<tr>
+					<td><p>Rechner, Anwendung</p>
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+
+
+
+
+<tr>
+      <td valign="top" colspan="2" class="attributes"><span class="title">Attribute</span>
+        <ul><li> <span class="literal">Mode</span> <br><br>
+&#160;
+			  Legt die von ASP.NET verwendeten Authentifizierungstypen fest. G&uuml;ltige Werte sind:  </li><br>
+
+
+
+
+
+				       <ul><li><span class="literal">Windows</span>(Standard)<br>
+				&#160;
+				Zur Authentifizierung von Benutzeranforderungen werden die von den IIS-Authentifizierungsverfahren ("Basic", "Digest", "Integrated Windows Authentication" oder "Certificates") ermittelten Daten genutzt. Es ist dann m&ouml;glich, basierend auf den im <span class="literal">&lt;authorization&gt;</span>-Element enthaltenen Einstellungen Anforderungen &uuml;ber den authentifizierten Benutzernamen (oder den dazugeh&ouml;rigen Namen einer Gruppe oder Rolle) zuzulassen oder zur&uuml;ckzuweisen. Dieses Authentifizierungsverfahren ist die in <span class="emphasis">machine.config</span> definierte Standardeinstellung.
+				 </li>
+				          <li><span class="literal">Forms</span> <br>
+				&#160;
+				Stellt eine Infrastruktur zur Durchf&uuml;hrung einer individuellen Authentifizierung bereit, wenn die Authentifizierung &uuml;ber Windows nicht m&ouml;glich ist. Wenn die Authentifizierung &uuml;ber <span class="literal">&lt;forms&gt;</span> aktiviert ist, werden nicht angemeldete Benutzer automatisch zu einer Anmeldeseite umgeleitet, deren URL als Attribut des Elements <literal>&lt;forms&gt;</literal> angegeben wird. Bei angemeldeten Benutzern wird als Beleg f&uuml;r die Authentifizierung ein Cookie gesendet. Zur Authentifizierung von Benutzern kann jede beliebige vom Entwickler gew&auml;hlte Datenbank verwendet werden, von Active Directory bis zu einer selbst erstellten Datenbank mit Anmeldedaten. Bei diesem Modus muss ein untergeordnetes <span class="literal">&lt;forms&gt;</span>-Element angegeben werden.</li>
+				          <li><span class="literal">Passport</span> <br>
+
+				&#160;
+				Nutzt den Microsoft Passport-Authentifizierungsdienst. Bei diesem Modus muss ein untergeordnetes <span class="literal">&lt;passport&gt;</span>-Element angegeben werden.
+
+
+				 </li>
+				          <li><span class="literal">Keine</span> <br>
+				&#160;
+				Gibt an, dass keine Authentifizierung auf ASP.NET-Ebene durchgef&uuml;hrt wird. Anforderungen k&ouml;nnen aber auf IIS-Ebene authentifiziert werden, indem eines der IIS-Authentifizierungsverfahren in Verbindung mit NTFS-Listen zur Zugriffssteuerung (ACL, Access Control List) eingesetzt wird.
+
+				</li>
+				        </ul>
+						</ul>
+				      </td>
+				    </tr>
+
+
+
+
+
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="child elements"><span class="title">Untergeordnete Elemente</span></td>
+    </tr>
+    <tr>
+      <td><p><span class="literal">&lt;forms&gt;</span>, <span class="literal">&lt;passport&gt;</span></p>
+      </td>
+    </tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td><p>Das folgende Beispiel konfiguriert die Seiten im Geltungsbereich der Konfigurationsdatei so, dass die Authentifizierung auf der Grundlage von ASP.NET-Formularen erfolgt:
+</p><span class="programlisting"><pre>&lt;configuration&gt;
+   &lt;system.web&gt;
+      &lt;authentication mode="Forms"&gt;
+         &lt;forms name="myAuthCookie"
+            loginUrl="login.aspx"
+            protection="All"
+            timeout="30"
+            path="/" /&gt;
+      &lt;/authentication&gt;
+   &lt;/system.web&gt;
+&lt;/configuration&gt;</pre>
+						</span></td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="notes"><span class="title">Hinweise</span></td>
+				</tr>
+				<tr>
+					<td><p>Anhand des Elements <span class="literal">&lt;location&gt;</span> kann bei Bedarf die Authentifizierung auf Rechnerebene konfiguriert werden und anhand seines Attributs <span class="literal">allowOverride</span> l&auml;sst sich verhindern, dass diese Einstellungen in einzelnen Anwendungen au&szlig;er Kraft gesetzt werden.
+</p><p>Authentifizierung ist ein &auml;u&szlig;erst komplexes Thema. Weitere Informationen zu den verschiedenen Authentifizierungsverfahren in ASP.NET und ihre Beziehung zur IIS-Authentifizierung finden Sie in Kapitel 9.
+</p>
+					</td>
+				</tr>
+			</table>
+		</div>
+<div id="&lt;forms&gt;">
+			<table width="100%" cellspacing="0" cellpadding="0" border="0" class="main"><tr>							<td valign="top" class="name">&lt;forms&gt;</td><td valign="top" nowrap class="compatibility">&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><pre>&lt;forms
+    loginUrl=String
+    name=String
+    path=String
+    protection="All|None|Encryption|Validation"
+    timeout=Integer&gt;
+&lt;/forms&gt;</pre>
+					</td><td valign="top" nowrap class="requirements">&#160;</td>
+				</tr>
+				<tr><td colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Bietet Attribute und ein untergeordnetes Element (<span class="literal">&lt;credentials&gt;</span>), um ASP.NET f&uuml;r die formularbasierte Authentifizierung zu konfigurieren.
+</p>
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="scope"><span class="title">Einsatzbereich</span></td>
+				</tr>
+				<tr>
+					<td><p>Rechner, Anwendung</p>
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="attributes"><span class="title">Attribute</span></td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<ul><li><i><span class="literal">name</span></i><br>&#160;
+			  Gibt den Namen des Authentifizierungs-Cookies an. Falls dieses Attribut nicht angegeben wird, wird standardm&auml;&szlig;ig der Wert <span class="literal">.ASPXAUTH</span> verwendet. Wenn auf dem gleichen Server mehrere Anwendungen ausgef&uuml;hrt werden, die die formularbasierte Authentifizierung einsetzen, empfiehlt es sich in den meisten F&auml;llen, f&uuml;r jede Anwendung einen eigenen Cookie-Namen festzulegen. So verringert sich das Risiko, dass authentifizierte Benutzer einer Anwendung auch in anderen Anwendungen als authentifiziert behandelt werden.
+</li><li><i><span class="literal">loginUrl</span></i><br>&#160;
+			  Gibt an, zu welcher URL Benutzer umgeleitet werden sollen, die kein g&uuml;ltiges Authentifizierungs-Cookie besitzen. Wenn ein Benutzer ohne Authentifizierungs-Cookie eine Anwendungsseite anfordert, wird dieser Benutzer zu dieser URL umgeleitet, wo er sich anmelden kann. Von der Anmeldeseite aus kann der Benutzer dann zur urspr&uuml;nglich angeforderten Seite gef&uuml;hrt werden. Falls dieses Attribut nicht angegeben wird, wird standardm&auml;&szlig;ig der Wert <span class="literal">login.aspx</span> verwendet.
+</li><li><i><span class="literal">protection</span></i><br>
+  &#160;
+			  Gibt an, auf welche Weise das Authentifizierungs-Cookie vor Ver&auml;nderungen w&auml;hrend der &Uuml;bertragung gesch&uuml;tzt wird. G&uuml;ltige Werte: </li>
+			  <ul><li><span class="literal">All</span> <br>
+&nbsp; Cookies werden verschl&uuml;sselt (soweit m&ouml;glich mit dreifacher DES-Verschl&uuml;sselung) und auch einer Datenvalidierung unterzogen. Die durchgef&uuml;hrte Datenvalidierung basiert auf den Einstellungen des Elements <span class="literal">machineKey</span>. <span class="literal">All</span> ist der Standardwert und au&szlig;erdem die empfohlene Einstellung zum Schutz des Authentifizierungs-Cookies.</li>
+          <li><span class="literal">Encryption</span> <br>
+&nbsp; Cookies werden nur verschl&uuml;sselt. Dies reduziert zwar den beim Schutz der Cookies entstehenden Overhead, l&auml;sst aber unter Umst&auml;nden die M&ouml;glichkeit offen, dass Cookies &uuml;ber Klartextangriffe entschl&uuml;sselt werden k&ouml;nnen.</li>
+          <li><span class="literal">None</span> <br>
+&nbsp; F&uuml;r den Schutz von Cookies sind weder Verschl&uuml;sselung noch Validierung aktiviert. Dies reduziert zwar den bei der formularbasierten Authentifizierung entstehenden Overhead, sch&uuml;tzt das Authentifizierungs-Cookie aber nicht. Die Verwendung dieses Attributs ist nicht empfehlenswert.</li>
+          <li><span class="literal">Validation</span> <br>
+&nbsp; Ein Validierungsschl&uuml;ssel wird mit den Daten des Cookies verkettet. Dieser Schl&uuml;ssel wird &uuml;berpr&uuml;ft, um sicherzustellen, dass das Cookie w&auml;hrend der &Uuml;bertragung nicht ver&auml;ndert wurde.</li></ul>
+<li><i><span class="literal">timeout</span></i><br>&#160;
+			  Gibt die Zeitdauer in Minuten an, bis das Authentifizierungs-Cookie seine G&uuml;ltigkeit verliert. Dies ist ein ver&auml;nderlicher Wert, der zur&uuml;ckgesetzt wird, wenn eine Anforderung empfangen wird, nachdem mehr als die H&auml;lfte dieser Zeitdauer verstrichen ist. Dieses Attribut gilt nicht f&uuml;r persistente Cookies. Der Standardwert ist <span class="literal">30</span>.
+</li><li><i><span class="literal">path</span></i><br>&#160;
+			  Gibt den Pfad des Authentifizierungs-Cookies an. Da viele Browser bei Pfaden nach Gro&szlig;- und Kleinschreibung unterscheiden, ist der Standardwert ein umgekehrter Schr&auml;gstrich (<span class="literal">\</span>).
+</li></ul>				  </td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="child elements"><span class="title">Untergeordnete Elemente</span>
+					</td>
+					    </tr>
+					    <tr>
+					      <td><p><span class="literal">&lt;credentials&gt;</span></p>
+					      </td>
+    </tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td><p>Siehe das Beispiel f&uuml;r das Element <span class="literal">&lt;authentication&gt;</span>.
+</p>
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="notes"><span class="title">Hinweise</span></td>
+				</tr>
+				<tr>
+					<td><p>Die formularbasierte Authentifizierung liefert nur wirksame Ergebnisse, wenn sie in Verbindung mit dem Element <span class="literal">&lt;authorization&gt;</span> eingesetzt wird, um anonymen Benutzern den Zugriff auf Seiten innerhalb der Anwendung zu verwehren.
+</p><p>Es empfiehlt sich, eine SSL-Verschl&uuml;sselung einzusetzen, um die Authentifizierungsdaten aus dem Formular und das Cookie vor unerlaubtem Auslesen zu sch&uuml;tzen. Falls Sie SSL nicht verwenden k&ouml;nnen oder wollen, sollten Sie wenigstens den Standardwert f&uuml;r die Zeit&uuml;berschreitung (Timeout) senken, da so die Wahrscheinlichkeit sinkt, dass jemand das Authentifizierungs-Cookie abf&auml;ngt und die dazugeh&ouml;rige Identit&auml;t annimmt.
+</p>
+					</td>
+				</tr>
+			</table>
+		</div>
+<div id="&lt;credentials&gt;">
+			<table width="100%" cellspacing="0" cellpadding="0" border="0" class="main"><tr>							<td valign="top" class="name">&lt;credentials&gt;</td><td valign="top" nowrap class="compatibility">&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><pre>&lt;credentials
+    passwordFormat="Clear|SHA1|MD5"&gt;
+&lt;/credentials&gt;</pre>
+					</td><td valign="top" nowrap class="requirements">&#160;</td>
+				</tr>
+				<tr><td colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Erm&ouml;glicht die Speicherung eines oder mehrerer S&auml;tze von Anmeldedaten in der Konfigurationsdatei der Anwendung (oder des Rechners). Diese Daten werden sp&auml;ter bei Authentifizierungsanforderungen verwendet. Im untergeordneten Element <span class="literal">&lt;user&gt;</span> werden die eigentlichen Anmeldedaten abgelegt.
+</p>
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="scope"><span class="title">Einsatzbereich</span></td>
+				</tr>
+				<tr>
+					<td><p>Rechner, Anwendung</p>
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="attributes"><span class="title">Attribute</span></td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<ul><li><i><span class="literal">passwordFormat</span></i><br>&#160;
+			  Gibt das Format an, in dem Kennw&ouml;rter gespeichert und verglichen werden. G&uuml;ltige Optionen: <span class="literal">Clear</span>, <span class="literal">SHA1</span> und <span class="literal">MD5</span>.
+</li></ul>
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="child elements"><span class="title">Untergeordnete Elemente</span>
+					</td>
+					    </tr>
+					    <tr>
+					      <td><p><span class="literal">&lt;user&gt;</span></p>
+					      </td>
+    </tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td><p>Das Beispiel demonstriert, wie &uuml;ber das Element <span class="literal">&lt;credentials&gt;</span> zwei Benutzerkonten gespeichert werden, die dann zur Authentifizierung herangezogen werden k&ouml;nnen:
+</p><span class="programlisting"><pre>&lt;credentials passwordFormat = "SHA1"&gt;
+   &lt;user name="foo" password="794ED3D18464BAFF93F8DED1CFD00D9A2D9FE316"/&gt;
+   &lt;user name="bar" password="B7CDD2A2B0F05E6948E5CEED22FA9A38EB28DEC8"/&gt;
+&lt;/credentials&gt;</pre>
+						</span></td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="notes"><span class="title">Hinweise</span></td>
+				</tr>
+				<tr>
+					<td><p>Sobald Sie die Anmeldedaten gespeichert haben, k&ouml;nnen Sie sie zur Authentifizierung verwenden, indem Sie die statische (gemeinsam genutzte) <span class="literal">Authenticate</span>-Methode der Hilfsklasse <span class="literal">FormsAuthentication</span> aufrufen. Mit der statischen (gemeinsam genutzten) Methode <span class="literal">HashPasswordForStoringInConfigFile</span> von <span class="literal">FormsAuthentication</span> k&ouml;nnen Sie einen MD5- oder SHA1-Hash des Kennworts erzeugen, der dann im <span class="literal">&lt;user&gt;</span>-Element abgelegt werden kann. Wenn Sie Anmeldedaten im Element <span class="literal">&lt;credentials&gt;</span> speichern, sollten Sie immer einen Hash der Kennw&ouml;rter erstellen, da das Ablegen der Kennw&ouml;rter im Klartext ein Sicherheitsrisiko darstellt. Zwar d&uuml;rfte es theoretisch niemandem m&ouml;glich sein, die Konfigurationsdatei zu lesen, aber durch eine fehlerhafte Konfiguration des Servers oder eine Sicherheitsl&uuml;cke k&ouml;nnte der Zugriff auf diese Datei m&ouml;glich werden.
+</p>
+					</td>
+				</tr>
+			</table>
+		</div>
+<div id="&lt;user&gt;">
+			<table width="100%" cellspacing="0" cellpadding="0" border="0" class="main"><tr>							<td valign="top" class="name">&lt;user&gt;</td><td valign="top" nowrap class="compatibility">&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+				      <td valign="top" class="usage" nowrap><p class="literal">&lt;user&gt;</p>
+				      </td>
+				      <td valign="top" align="right">&nbsp;</td>
+				    </tr>
+				    <tr>
+				      <td colspan="2" class="clearseparation">&nbsp;</td>
+    </tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Speichert Benutzernamen und Kennwort f&uuml;r jeden Benutzer, der im <span class="literal">&lt;credentials&gt;</span>-Element definiert ist.
+</p>
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="scope"><span class="title">Einsatzbereich</span></td>
+				</tr>
+				<tr>
+					<td><p>Rechner, Anwendung</p>
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="attributes"><span class="title">Attribute</span></td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<ul><li><i><span class="replaceable">name</span></i><br>&#160;
+			  Der Benutzername, der f&uuml;r die Authentifizierung verwendet werden soll.</li><li><i><span class="replaceable">password</span></i><br>&#160;
+			  Das Kennwort, das f&uuml;r die Authentifizierung verwendet werden soll.</li></ul>
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="child elements"><span class="title">Untergeordnete Elemente</span></td></tr><tr><td>Keine
+
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td><p>Siehe das Beispiel f&uuml;r das Element <span class="literal">&lt;credentials&gt;</span>.
+</p>
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="notes"><span class="title">Hinweise</span></td>
+				</tr>
+				<tr>
+					<td><p>Zum Hashen eines Kennworts, dass im <span class="literal">password</span>-Attribut abgelegt ist, sollten Sie immer die Methode <span class="literal">HashPasswordForStoringInConfigFile</span> verwenden. Eine Utility-Seite, die SHA1- oder MD5-Hashes aus Klartext-Kennw&ouml;rtern erzeugt, finden Sie in den Beispielen in Kapitel 9.
+</p>
+					</td>
+				</tr>
+			</table>
+		</div>
+<div id="&lt;passport&gt;">
+			<table width="100%" cellspacing="0" cellpadding="0" border="0" class="main"><tr>							<td valign="top" class="name">&lt;passport&gt;</td><td valign="top" nowrap class="compatibility">&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><pre>&lt;passport redirectUrl=Url /&gt; </pre>
+					</td><td valign="top" nowrap class="requirements">&#160;</td>
+				</tr>
+				<tr><td colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Dieses optionale Element konfiguriert eine interne URL, zu der nicht authentifizierte Anforderungen umgeleitet werden, wenn der Microsoft Passport-Authentifizierungsdienst verwendet wird. Dieses Element sollte nur verwendet werden, wenn das Attribut <span class="literal">mode</span> des Elements <span class="literal">&lt;authentication&gt;</span> auf <span class="literal">Passport</span> gesetzt ist.
+</p>
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="scope"><span class="title">Einsatzbereich</span></td>
+				</tr>
+				<tr>
+					<td><p>Rechner, Anwendung</p>
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="attributes"><span class="title">Attribute</span></td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<ul><li><i><span class="literal">redirectUrl</span></i><br>&#160;
+			  Eine URL in der Anwendung, zu der Anforderungen, die nicht &uuml;ber einen Passport-Authentifizierungsbeleg verf&uuml;gen, umgeleitet werden.
+</li></ul>
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="child elements"><span class="title">Untergeordnete Elemente</span></td></tr><tr><td>Keine
+
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td><p>Dieses Beispiel zeigt eine <span class="emphasis">web.config</span>-Datei, die eine Anwendung f&uuml;r die Passport-Authentifizierung konfiguriert:
+</p><span class="programlisting"><pre>&lt;configuration&gt;
+   &lt;system.web&gt;
+      &lt;authentication mode="Passport"&gt;
+         &lt;passport redirectUrl="Login.aspx"/&gt;
+      &lt;/authentication&gt;
+   &lt;/system.web&gt;
+&lt;/configuration&gt;</pre>
+						</span></td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="notes"><span class="title">Hinweise</span></td>
+				</tr>
+				<tr>
+					<td><p>Weitere Informationen zur Konfiguration der Passport-Authentifizierung finden Sie in der Dokumentation des Passport-SDK unter http://www.passport.com.
+</p>
+					</td>
+				</tr>
+			</table>
+		</div>
+<div id="&lt;authorization&gt;">
+			<table width="100%" cellspacing="0" cellpadding="0" border="0" class="main"><tr>							<td valign="top" class="name">&lt;authorization&gt;</td><td valign="top" nowrap class="compatibility">&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Bietet zwei untergeordnete Elemente, <span class="literal">&lt;allow&gt;</span> und <span class="literal">&lt;deny&gt;</span>, &uuml;ber die Sie die Benutzer, Rollen oder HTTP-Verben konfigurieren k&ouml;nnen, die zum Zugriff auf Anwendungsressourcen verwendet werden k&ouml;nnen.
+</p>
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="scope"><span class="title">Einsatzbereich</span></td>
+				</tr>
+				<tr>
+					<td><p>Beliebig</p>
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="attributes"><span class="title">Attribute</span></td></tr><tr><td>Keine
+
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td />
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="child elements"><span class="title">Untergeordnete Elemente</span>
+					</td>
+					    </tr>
+					    <tr>
+					      <td><p><span class="literal">&lt;forms&gt;</span>, <span class="literal">&lt;passport&gt;</span></p>
+					      </td>
+    </tr>
+
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td><p>Im Beispiel wird den Benutzern Mary und John gestattet, mit jedem beliebigen HTTP-Verb auf Anwendungsressourcen zuzugreifen. Gleichzeitig wird nicht authentifizierten Benutzern der <span class="literal">POST</span>-Zugriff verwehrt.
+</p><span class="programlisting"><pre>&lt;configuration&gt;
+   &lt;system.web&gt;
+      &lt;authorization&gt;
+         &lt;allow users="Mary, John" /&gt;
+         &lt;deny users="?" verbs="POST" /&gt;
+      &lt;/authorization&gt;
+   &lt;/system.web&gt;
+&lt;/configuration&gt;</pre>
+						</span></td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+                  <td valign="top" colspan="2" class="notes"><span class="title">Hinweise</span> </td>
+			  </tr>
+				<tr>
+                  <td><p>Der durch das <span class="literal">&lt;authorization&gt;</span>-Element implementierte Autorisierungstyp wird als <span class="emphasis">URL-Autorisierung</span> bezeichnet. Mehr &uuml;ber die URL-Autorisierung erfahren Sie in Kapitel 9.</p></td>
+			  </tr>
+				<tr>
+                  <td colspan="2" class="clearseparation">&nbsp;</td>
+			  </tr>
+				<tr>
+                  <td><p>Sie k&ouml;nnen f&uuml;r eine bestimmte Datei oder ein bestimmtes Verzeichnis in Ihrer Anwendung Autorisierungseinstellungen festlegen, die sich von den in der <span class="emphasis">web.config</span>-Datei im Stammverzeichnis dieser Anwendung festgelegten Standardeinstellungen auf eine der folgenden beiden Arten unterscheiden:<br>
+                    </p>
+                      <ul>
+                        <li>Sie f&uuml;gen der <span class="emphasis">web.config</span>-Datei im betreffenden Unterverzeichnis ein <span class="literal">&lt;authorization&gt;</span>-Element hinzu, wie im Beispiel gezeigt.</li>
+                        <li>Sie verwenden in der <span class="emphasis">web.config</span>-Datei im Stammverzeichnis das Tag <span class="literal">&lt;location&gt;</span> und setzen sein Attribut <span class="literal">path</span> wie folgt auf den gew&uuml;nschten Pfad:</li>
+                      </ul>
+                      <span class="programlisting">
+                      <pre>
+&lt;configuration&gt;
+	&lt;location path=&quot;files&quot;&gt;
+		&lt;system.web&gt;
+			&lt;authorization&gt;
+				&lt;deny users=&quot;?&quot; /&gt;
+			&lt;/authorization&gt;
+		&lt;/system.web&gt;
+	&lt;/location&gt;
+	&lt;system.web&gt;
+		&lt;!--other configuration settings --&gt;
+	&lt;/system.web&gt;
+&lt;/configuration&gt;</pre>
+                    </span> </td>
+			  </tr>
+				<tr>
+					<td valign="top" colspan="2" class="notes">&nbsp;</td>
+				</tr>
+
+			</table>
+</div>
+<div id="&lt;allow&gt;">
+			<table width="100%" cellspacing="0" cellpadding="0" border="0" class="main">
+<tr>
+<td valign="top" class="name">&lt;allow&gt;</td>
+<td valign="top" nowrap class="compatibility"></td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="description">
+<p>Gibt Benutzer, Rollen und/oder HTTP-Verben an, die f&uuml;r die Anwendung autorisiert werden sollen.
+</p>
+</td>
+			</tr>
+				<tr><td colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+						<td valign="top" colspan="2" class="scope"><span class="title">Einsatzbereich</span></td>
+					</td>
+				</tr>
+				<tr>
+<td><p>Beliebig</p>
+</td>
+</tr>
+<tr>
+<td colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+			<tr>
+					<td valign="top" colspan="2" class="attributes"><span class="title">Attribute</span>
+						<ul>
+<li><span class="literal">users</span></i><br>
+&#160;			  Eine durch Kommas getrennte Liste autorisierter Benutzernamen.</li>
+<li><span class="literal">roles</span><br>
+&#160;	  Eine durch Kommas getrennte Liste autorisierter Rollen (NT-Gruppen).</li>
+<li><span class="literal">verbs</span><br>
+&#160;	  Eine durch Kommas getrennte Liste autorisierter HTTP-Verben (GET, HEAD, POST oder DEBUG).</li>
+</ul>
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="child elements"><span class="title">Untergeordnete Elemente</span></td></tr><tr><td>Keine
+
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td><p>Siehe das Beispiel f&uuml;r das Element <span class="literal">&lt;authorization&gt;</span>.
+</p>
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="notes"><span class="title">Hinweise</span></td>
+				</tr>
+				<tr>
+					<td><p>Sie k&ouml;nnen zwei Stellvertreterzeichen verwenden, um spezielle Benutzergruppen anzugeben:</p>
+						<ul><li><i>*</i><br>&#160;
+			  Als Wert f&uuml;r das <span class="literal">user</span>-Attribut erhalten alle Benutzer Zugriff. Dies ist die in <span class="emphasis">machine.config</span> definierte Standardeinstellung.
+</li><li><i><span class="literal">?</span></i><br>&#160;
+			  Als Wert f&uuml;r das <span class="literal">user</span>-Attribut erhalten anonyme Benutzer Zugriff. Dieses Stellvertreterzeichen wird h&auml;ufiger mit dem Element <span class="literal">&lt;deny&gt;</span> verwendet.
+</li></ul>
+					</td>
+				</tr>
+			</table>
+		</div>
+<div id="&lt;deny&gt;">
+			<table width="100%" cellspacing="0" cellpadding="0" border="0" class="main">
+<tr>
+<td valign="top" class="name">&lt;deny&gt;</td>
+<td valign="top" nowrap class="compatibility"></td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage">
+<p>Gibt Benutzer, Rollen und/oder HTTP-Verben an, denen die Autorisierung f&uuml;r die Anwendung verwehrt werden soll.
+</pre>
+</td>
+</tr>
+<tr><td colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="scope"><span class="title">Einsatzbereich</span>
+</td>
+				</tr>
+				<tr>
+					<td><p>Beliebig</p>
+					</td>
+</tr>
+	<tr>
+<td colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+		<td valign="top" colspan="2" class="attributes"><span class="title">Attribute</span>
+<ul>
+<li><span class="literal">users</span></i><br>
+&#160;			  Eine durch Kommas getrennte Liste autorisierter Benutzernamen.</li>
+<li><span class="literal">roles</span><br>
+&#160;  Eine durch Kommas getrennte Liste autorisierter Rollen (NT-Gruppen).</li>
+<li><span class="literal">verbs</span><br>
+&#160;	  Eine durch Kommas getrennte Liste autorisierter HTTP-Verben (GET, HEAD, POST oder DEBUG).</li>
+</ul>
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="child elements"><span class="title">Untergeordnete Elemente</span></td></tr><tr><td>Keine
+
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td><p>Siehe das Beispiel f&uuml;r das Element <span class="literal">&lt;authorization&gt;</span>.
+</p>
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="notes"><span class="title">Hinweise</span></td>
+				</tr>
+				<tr>
+					<td><p>Die gleichen Stellvertreterzeichen wie beim Element <span class="literal">&lt;allow&gt;</span> k&ouml;nnen auch beim Element <span class="literal">&lt;deny&gt;</span> verwendet werden. Wenn anonymen (nicht authentifizierten) Benutzern der Zugriff verwehrt werden soll, setzen Sie den Wert des <span class="literal">users</span>-Attributs des Elements <span class="literal">&lt;deny&gt;</span> auf <span class="literal">?</span>.
+</p>
+					</td>
+				</tr>
+			</table>
+		</div>
+<div id="&lt;browserCaps&gt;">
+			<table width="100%" cellspacing="0" cellpadding="0" border="0" class="main"><tr>							<td valign="top" class="name">&lt;browserCaps&gt;</td><td valign="top" nowrap class="compatibility">&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><pre>&lt;browserCaps&gt;
+    &lt;result type=className /&gt;
+    &lt;use var=serverVarName /&gt;
+        property1=value
+        property2=value
+        propertyN=value
+    &lt;filter match=string&gt;
+        property1=value
+        property2=value
+        propertyN=value
+    &lt;/filter&gt;
+    &lt;filter match=string&gt;
+       &lt;filter match=string with=expressionToSearch&gt;
+           property1=value
+           property2=value
+           propertyN=value
+       &lt;/filter&gt;
+    &lt;/filter&gt;
+    &lt;filter&gt;
+       &lt;case match=string&gt;
+           property1=value
+           property2=value
+           propertyN=value
+       &lt;/case&gt;
+       &lt;case match=string&gt;
+           property1=value
+           property2=value
+           propertyN=value
+       &lt;/case&gt;
+    &lt;/filter&gt;
+&lt;/browserCaps&gt;</pre>
+					</td><td valign="top" nowrap class="requirements">&#160;</td>
+				</tr>
+				<tr><td colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Steuert die Konfiguration der Komponente "Browser-Merkmale", die von der Eigenschaft <span class="literal">Response.Browser</span> zur&uuml;ckgegeben wird. Die Eigenschafts-/Wertpaare unter dem <span class="literal">&lt;use&gt;</span>-Element konfigurieren die Standardwerte f&uuml;r die Eigenschaften der Komponente "Browser-Merkmale". Die Eigenschafts-/Wertpaare in den <span class="literal">&lt;filter&gt;</span>-Elementen aktualisieren diese Eigenschaften basierend auf einer &Uuml;bereinstimmung zwischen den Stringwerten, die f&uuml;r das Attribut <span class="literal">match</span> des <span class="literal">&lt;case&gt;</span>-Elements angegeben werden, und dem Attribut <span class="literal">var</span> des <span class="literal">&lt;use&gt;</span>-Elements (das in der Regel auf <span class="literal">HTTP_USER_AGENT</span> gesetzt wird).
+</p>
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="scope"><span class="title">Einsatzbereich</span></td>
+				</tr>
+				<tr>
+					<td><p>Beliebig</p>
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="attributes"><span class="title">Attribute</span></td></tr><tr><td>Keine
+
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td />
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="child elements"><span class="title">Untergeordnete Elemente</span>
+					 </td>
+					    </tr>
+					    <tr>
+					      <td><p><span class="literal">&lt;result&gt;</span>, <span class="literal">&lt;use&gt;</span>, <span class="literal">&lt;filter&gt;</span></p>
+					      </td>
+    </tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td><p>Die Konfigurationsdatei <span class="emphasis">machine.config</span> enth&auml;lt die Standardeinstellungen f&uuml;r das <span class="literal">&lt;browserCaps&gt;</span>-Element. Anhand der Standardeinstellungen l&auml;sst sich die &Auml;nderung oder Aktualisierung dieses Elements am besten verdeutlichen.
+</p>
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="notes"><span class="title">Hinweise</span></td>
+				</tr>
+				<tr>
+					<td><p>Im Wesentlichen dienen dieses Konfigurationselement und seine untergeordneten Elemente dazu, neue Browsertypen hinzuzuf&uuml;gen und die Merkmale dieser Browser zu aktualisieren. Eine Seite, die die Komponente "Browser-Merkmale" aufruft, erh&auml;lt somit genaue Informationen &uuml;ber die Leistungsmerkmale des Browsers, &uuml;ber den die aktuelle Anforderung gesendet wurde.
+</p>
+					</td>
+				</tr>
+			</table>
+		</div>
+<div id="&lt;result&gt;">
+			<table width="100%" cellspacing="0" cellpadding="0" border="0" class="main"><tr>							<td valign="top" class="name">&lt;result&gt;</td><td valign="top" nowrap class="compatibility">&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><pre>&lt;result type=className /&gt; </pre>
+					</td><td valign="top" nowrap class="requirements">&#160;</td>
+				</tr>
+				<tr><td colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Gibt die Klasse an.</p>
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="scope"><span class="title">Einsatzbereich</span></td>
+				</tr>
+				<tr>
+					<td><p>Beliebig</p>
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="attributes"><span class="title">Attribute</span></td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<ul><li><i><span class="literal">type</span></i><br>&#160;
+			  Der Name der Klasse sowie optional Versions-, Kultur- und Schl&uuml;sselinformationen zur Spezifizierung der Klasse, die die Ergebnisse der Browser-Merkmalsanalyse enthalten soll. Diese Klasse muss sich aus <span class="literal">HttpCapabilitiesBase</span> ableiten. Der in <span class="emphasis">machine.config</span> festgelegte Standard ist <span class="literal">System.Web.HttpBrowserCapabilities</span>.
+</li></ul>
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="child elements"><span class="title">Untergeordnete Elemente</span></td></tr><tr><td>Keine
+
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="notes"><span class="title">Hinweise</span></td>
+				</tr>
+				<tr>
+					<td><p>In den meisten F&auml;llen kann der Standardtyp von <span class="literal">System.Web.HttpBrowserCapabilities</span> &uuml;bernommen werden. Wenn Sie zus&auml;tzlich zu den durch die Klasse <span class="literal">HttpBrowserCapabilities</span> definierten Eigenschaften weitere Eigenschaften hinzuf&uuml;gen m&ouml;chten, k&ouml;nnen Sie eine eigene Klasse erstellen (abgeleitet von <span class="literal">HttpCapabilitiesBase</span> oder <span class="literal">HttpBrowserCapabilities</span>) und diese &uuml;ber das Element <span class="literal">&lt;result&gt;</span> nutzen.
+</p>
+					</td>
+				</tr>
+			</table>
+		</div>
+<div id="&lt;use&gt;">
+			<table width="100%" cellspacing="0" cellpadding="0" border="0" class="main"><tr>							<td valign="top" class="name">&lt;use&gt;</td><td valign="top" nowrap class="compatibility">&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><pre>&lt;use var=serverVariableName as=aliasName /&gt; </pre>
+					</td><td valign="top" nowrap class="requirements">&#160;</td>
+				</tr>
+				<tr><td colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Legt den Namen der Servervariablen fest, die bei der Auswertung der Browser-Merkmale verwendet werden soll.
+</p>
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="scope"><span class="title">Einsatzbereich</span></td>
+				</tr>
+				<tr>
+					<td><p>Beliebig</p>
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="attributes"><span class="title">Attribute</span></td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<ul><li><i><span class="replaceable">var</span></i><br>&#160;
+			  Der Name der zu verwendenden Servervariablen. Der Standardwert ist <span class="literal">HTTP_USER_AGENT</span>.
+</li><li><i><span class="replaceable">as</span></i><br>&#160;
+			  Die Zeichenfolge, die einen Namen enth&auml;lt, &uuml;ber den in <span class="literal">&lt;case&gt;</span>-Elementen und regul&auml;ren Ausdr&uuml;cken auf die Servervariable verwiesen werden kann.
+</li></ul>
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="child elements"><span class="title">Untergeordnete Elemente</span></td></tr><tr><td>Keine
+
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="notes"><span class="title">Hinweise</span></td>
+				</tr>
+				<tr>
+					<td><p>Das <span class="literal">&lt;use&gt;</span>-Element wird von Eigenschafts-/Wertpaaren gefolgt, die die Standardeigenschaften f&uuml;r die Komponente "Browser-Merkmale" angibt, wenn innerhalb des <span class="literal">match</span>-Attributs eines <span class="literal">&lt;filter&gt;</span>-Elements (oder dem seines untergeordneten &lt;case&gt;-Elements) keine Entsprechung gefunden wird. Diese Verwendung in der Beschreibung des <span class="literal">&lt;browserCaps&gt;</span>-Elements verdeutlicht.
+</p>
+					</td>
+				</tr>
+			</table>
+		</div>
+<div id="&lt;filter&gt;">
+			<table width="100%" cellspacing="0" cellpadding="0" border="0" class="main"><tr>							<td valign="top" class="name">&lt;filter&gt;</td><td valign="top" nowrap class="compatibility">&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><pre>&lt;filter match=string&gt;
+     property1=value
+     property2=value
+     propertyN=value
+&lt;/filter&gt;
+&lt;filter match=string&gt;
+     &lt;filter match=string with=expressionToSearch&gt;
+         property1=value
+         property2=value
+         propertyN=value
+    &lt;/filter&gt;
+&lt;/filter&gt;
+&lt;filter&gt;
+    &lt;case match=string&gt;
+         property1=value
+         property2=value
+         propertyN=value
+    &lt;/case&gt;
+    &lt;case match=string&gt;
+         property1=value
+         property2=value
+         propertyN=value
+    &lt;/case&gt;
+&lt;/filter&gt;</pre>
+					</td><td valign="top" nowrap class="requirements">&#160;</td>
+				</tr>
+				<tr><td colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Gibt ein Muster f&uuml;r einen regul&auml;ren Ausdruck an, nach dem in der im <span class="literal">&lt;use&gt;</span>-Element angegebenen Servervariablen gesucht werden soll (oder optional einen anderen Ausdruck). Im <span class="literal">&lt;browserCaps&gt;</span>-Element k&ouml;nnen mehrere <span class="literal">&lt;filter&gt;</span>-Elemente enthalten sein. Ebenso kann jedes <span class="literal">&lt;filter&gt;</span>-Element <span class="literal">&lt;case&gt;</span>-Elemente oder andere <span class="literal">&lt;filter&gt;</span>-Elemente enthalten. Alle Eigenschaftenzuweisungen zum Suchen &uuml;bereinstimmender <span class="literal">&lt;filter&gt;</span>-Elemente werden unabh&auml;ngig von ihrer Reihenfolge ausgef&uuml;hrt.
+</p>
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="scope"><span class="title">Einsatzbereich</span></td>
+				</tr>
+				<tr>
+					<td><p>Beliebig</p>
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="attributes"><span class="title">Attribute</span></td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<ul><li><i><span class="literal">match</span></i><br>&#160;
+			  Die gesuchte Zeichenfolge. Verwendet die .NET-Framework-Syntax f&uuml;r regul&auml;re Ausdr&uuml;cke. Dieses Attribut ist optional. Wird es weggelassen, wird bei allen Anforderungen von einer &Uuml;bereinstimmung ausgegangen, und alle Eigenschafts-/Wertzuweisungen im <span class="literal">&lt;filter&gt;</span>-Element werden ausgef&uuml;hrt.
+</li><li><i><span class="literal">with</span></i><br>&#160;
+			  Der regul&auml;re Ausdruck oder String, nach dem gesucht werden soll. Dieses Attribut ist optional. Wird es weggelassen, wird nach der im <span class="literal">&lt;use&gt;</span>-Element angegebenen Servervariablen gesucht.
+</li></ul>
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="child elements"><span class="title">Untergeordnete Elemente</span>
+					</td>
+					    </tr>
+					    <tr>
+					      <td><p><span class="literal">&lt;case&gt;</span></p>
+					      </td>
+    </tr>
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="notes"><span class="title">Hinweise</span></td>
+				</tr>
+				<tr>
+					<td><p>Die Tatsache, dass <span class="literal">&lt;filter&gt;</span>-Elemente verschachtelt werden k&ouml;nnen, macht sie sehr flexibel, was die Suche nach Informationsteilmengen anbelangt. So verwendet zum Beispiel das standardm&auml;&szlig;ige <span class="literal">&lt;browserCaps&gt;</span>-Element in der Datei <span class="emphasis">machine.config</span> verschachtelte <span class="literal">&lt;filter&gt;</span>-Elemente, um die Haupt- und Unterversionsnummern aus der Servervariablen <span class="literal">HTTP_USER_AGENT</span> abzurufen. Anhand dieser Informationen kann das Element <span class="literal">&lt;browserCaps&gt;</span> bestimmte Eigenschaften zuweisen, die bei verschiedenen Unterversionen eines Browsers (d.&#160; h. das x in 4.x) unterschiedlich sein k&ouml;nnen.
+</p>
+					</td>
+				</tr>
+			</table>
+		</div>
+<div id="&lt;case&gt;">
+			<table width="100%" cellspacing="0" cellpadding="0" border="0" class="main"><tr>							<td valign="top" class="name">&lt;case&gt;</td><td valign="top" nowrap class="compatibility">&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><pre>&lt;case match=string&gt;
+     property1=value
+     property2=value
+     propertyN=value
+&lt;/case&gt;</pre>
+					</td><td valign="top" nowrap class="requirements">&#160;</td>
+				</tr>
+				<tr><td colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Gibt ein <span class="literal">&lt;case&gt;</span>-Element aus einer Gruppe von exklusiven &Uuml;bereinstimmungen an, f&uuml;r die Eigenschaftenzuweisungen ausgef&uuml;hrt werden. Nur das erste &uuml;bereinstimmende <span class="literal">&lt;case&gt;</span>-Element innerhalb eines bestimmten <span class="literal">&lt;filter&gt;</span>-Elements wird ausgef&uuml;hrt. Der Rest wird ignoriert.
+</p>
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="scope"><span class="title">Einsatzbereich</span></td>
+				</tr>
+				<tr>
+					<td><p>Beliebig</p>
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="attributes"><span class="title">Attribute</span></td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<ul><li><i><span class="literal">match</span></i><br>&#160;
+			  Die gesuchte Zeichenfolge. Verwendet die .NET-Framework-Syntax f&uuml;r regul&auml;re Ausdr&uuml;cke. Dieses Attribut ist optional. Wird es weggelassen, wird bei allen Anforderungen von einer &Uuml;bereinstimmung ausgegangen, und alle Eigenschafts-/Wertzuweisungen im <span class="literal">&lt;filter&gt;</span>-Element werden ausgef&uuml;hrt.
+</li><li><i><span class="literal">with</span></i><br>&#160;
+			  Der regul&auml;re Ausdruck oder String, nach dem gesucht werden soll. Dieses Attribut ist optional. Wird es weggelassen, wird nach der im <span class="literal">&lt;use&gt;</span>-Element angegebenen Servervariablen gesucht.
+</li></ul>
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="child elements"><span class="title">Untergeordnete Elemente</span></td></tr><tr><td>Keine
+
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="notes"><span class="title">Hinweise</span></td>
+				</tr>
+				<tr>
+					<td><p>Dieses Element ist n&uuml;tzlich, wenn Sie nur eine einzige &Uuml;bereinstimmung ben&ouml;tigen. So wird beispielsweise bei der Standardkonfiguration von <span class="literal">&lt;browserCaps&gt;</span> in der Datei <span class="emphasis">machine.config</span> das Element <span class="literal">&lt;case&gt;</span> verwendet, um die Plattformattribute (<span class="literal">win16</span> und <span class="literal">win32</span>) zuzuweisen.
+</p>
+					</td>
+				</tr>
+			</table>
+		</div>
+<div id="&lt;clientTarget&gt;">
+			<table width="100%" cellspacing="0" cellpadding="0" border="0" class="main"><tr>							<td valign="top" class="name">&lt;clientTarget&gt;</td><td valign="top" nowrap class="compatibility">&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><pre>&lt;clientTarget&gt;
+    &lt;add alias=aliasName
+        userAgent=userAgentString /&gt;
+    &lt;remove alias=aliasName /&gt;
+    &lt;clear /&gt;
+&lt;/clientTarget&gt;</pre>
+					</td><td valign="top" nowrap class="requirements">&#160;</td>
+				</tr>
+				<tr><td colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Weist bestimmten <span class="literal">User Agent</span>-Strings von Browsern Aliasnamen zu. Diese sollen von ASP.NET-Serversteuerelementen verwendet werden, um festzustellen, welche Art von Inhalt dargestellt werden soll.
+</p>
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="scope"><span class="title">Einsatzbereich</span></td>
+				</tr>
+				<tr>
+					<td><p>Beliebig</p>
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="attributes"><span class="title">Attribute</span></td></tr><tr><td>Keine
+
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td />
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="child elements"><span class="title">Untergeordnete Elemente</span><ul><li><i><span class="literal">&lt;add&gt;</span></i><br>&#160;
+			  F&uuml;gt einen Alias mit dem Namen hinzu, der im <span class="literal">alias</span>-Attribut des vom <span class="literal">userAgent</span>-Attribut angegebenen <span class="literal">User Agent</span>-Strings festgelegt ist.
+</li><li><i><span class="replaceable">&lt;remove&gt;</span></i><br>&#160;
+			  Entfernt einen zuvor festgelegten Alias mit dem Namen, der im <span class="literal">alias</span>-Attribut angegeben ist.
+</li><li><i><span class="replaceable">&lt;clear&gt;</span></i><br>&#160;
+			  L&ouml;scht alle zuvor konfigurierten Aliasnamen.</li></ul>
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td><p>Dieses Beispiel stammt aus dem Standard-<span class="literal">&lt;clientTarget&gt;</span>-Element:
+</p><span class="programlisting"><pre>&lt;clientTarget&gt;
+   &lt;add alias="ie5"
+      userAgent="Mozilla/4.0 (compatible; MSIE 5.5; Windows NT 4.0)" /&gt;
+   &lt;add alias="ie4"
+      userAgent="Mozilla/4.0 (compatible; MSIE 4.0; Windows NT 4.0)" /&gt;
+   &lt;add alias="uplevel"
+      userAgent="Mozilla/4.0 (compatible; MSIE 4.0; Windows NT 4.0)" /&gt;
+   &lt;add alias="downlevel"
+      userAgent="Unknown" /&gt;
+&lt;/clientTarget&gt;</pre>
+						</span></td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="notes"><span class="title">Hinweise</span></td>
+				</tr>
+				<tr>
+					<td><p>Dieses Element wird im Wesentlichen von den integrierten ASP.NET-Serversteuerelementen verwendet. Daher sollten Sie keine &Auml;nderungen an vorhandenen Aliasnamen vornehmen, damit diese Steuerelemente nicht an der Darstellung von Uplevel-Inhalten gehindert werden.
+</p>
+					</td>
+				</tr>
+			</table>
+		</div>
+<div id="&lt;compilation&gt;">
+			<table width="100%" cellspacing="0" cellpadding="0" border="0" class="main"><tr>							<td valign="top" class="name">&lt;compilation&gt;</td><td valign="top" nowrap class="compatibility">&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><pre>&lt;compilation
+    batch=boolean
+    batchTimeout=numSeconds
+    debug=boolean
+    defaultLanguage=languageAlias
+    explicit=boolean
+    maxBatchSize=maxPages
+    maxBatchGeneratedFileSize=maxSize
+    numRecompilesBeforeAppRestart=numRecompiles
+    strict=boolean
+    tempDirectory=dirName &gt;
+    &lt;compilers&gt;
+       &lt;compiler language=languageAlias
+          extension=fileExt
+          type=typeName
+          warningLevel=number
+          compilerOptions=optionString /&gt;
+    &lt;/compilers&gt;
+    &lt;assemblies&gt;
+       &lt;add assembly=assemblyName /&gt;
+       &lt;remove assembly=assemblyName /&gt;
+       &lt;clear /&gt;
+    &lt;/assemblies&gt;
+&lt;/compilation&gt;</pre>
+					</td><td valign="top" nowrap class="requirements">&#160;</td>
+				</tr>
+				<tr><td colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Stellt Attribute und untergeordnete Elemente zur Konfiguration der Kompilierungsoptionen von ASP.NET-Anwendungen bereit. Alle Attribute sind optional.
+</p>
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="scope"><span class="title">Einsatzbereich</span></td>
+				</tr>
+				<tr>
+					<td><p>Beliebig</p>
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="attributes"><span class="title">Attribute</span></td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<ul><li><i><span class="literal">batch</span></i><br>&#160;
+			  Gibt an, ob ASP.NET eine Stapelkompilierung aller Seiten der Anwendung versuchen soll, wenn die erste Anforderung f&uuml;r eine Seite eingeht. Der Standard ist <span class="literal">True</span>.
+</li><li><i><span class="literal">batchTimeout</span></i><br>&#160;
+			  Gibt an, wie viele Sekunden der Compiler versuchen soll, eine Stapelkompilierung der Seiten in der Anwendung durchzuf&uuml;hren. Wenn das Zeitlimit &uuml;berschritten ist, werden die Seiten kompiliert, sobald sie das erste Mal angefordert werden. Der Standard ist <span class="literal">15</span>.
+</li><li><i><span class="literal">debug</span></i><br>&#160;
+			  Gibt an, ob Seiten mit Debug-Symbolen kompiliert werden. Der Standard ist <span class="literal">False</span>.
+</li><li><i><span class="literal">defaultLanguage</span></i><br>&#160;
+			  Gibt den Sprachcompiler an, der zum Kompilieren von Inline-Code in ASP.NET-Seiten verwendet werden soll, f&uuml;r die keine Sprache angegeben wurde. Der Standard ist <span class="literal">VB</span> (Visual Basic .NET).
+</li><li><i><span class="literal">explicit</span></i><br>&#160;
+			  Gibt an, ob die Compiler-Option <span class="literal">Option</span> <span class="literal">Explicit</span> aus Visual Basic .NET aktiviert ist. Der Standard ist <span class="literal">True</span>.
+</li><li><i><span class="literal">maxBatchSize</span></i><br>&#160;
+			  Gibt an, wie viele Klassen bei der Stapelkompilierung maximal erstellt werden sollen. Der Standard ist <span class="literal">1000</span>.
+</li><li><i><span class="literal">maxBatchGeneratedFileSize</span></i><br>&#160;
+			  Gibt an, welche Gr&ouml;&szlig;e in KB die w&auml;hrend der Stapelkompilierung erzeugten Quelldateien zusammengenommen maximal haben d&uuml;rfen. Der Standard ist <span class="literal">3000</span>.
+</li><li><i><span class="literal">numRecompilesBeforeAppRestart</span></i><br>&#160;
+			  Gibt die Anzahl der Neukompilierungen an, bevor die <span class="literal">appDomain</span> mit der Anwendung gel&ouml;scht und eine neue <span class="literal">appDomain</span> erstellt wird. Der Standard ist <span class="literal">15</span>.
+</li><li><i><span class="literal">strict</span></i><br>&#160;
+			  Gibt an, ob die Compiler-Option <span class="literal">Option</span> <span class="literal">Strict</span> (die keine impliziten verengenden Konvertierungen zul&auml;sst) aus Visual Basic .NET aktiviert ist. Der Standard ist <span class="literal">False</span>.
+</li><li><i><span class="literal">tempDirectory</span></i><br>&#160;
+			  Gibt das Verzeichnis an, in dem tempor&auml;re Dateien aus dynamisch kompilierten Code f&uuml;r die Anwendung gespeichert werden. Der Standard ist <span class="emphasis">%windir%\Microsoft.NET\Framework\%version%\Temporary ASP.NET</span> Files.
+</li></ul>
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="child elements"><span class="title">Untergeordnete Elemente</span>
+					</td>
+					    </tr>
+					    <tr>
+					      <td><p><span class="literal">&lt;assemblies&gt;</span>, <span class="literal">&lt;compilers&gt;</span></p>
+					      </td>
+    </tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td><p>Das Beispiel aktiviert die Compiler-Option <span class="literal">Option</span> <span class="literal">Strict</span> aus Visual Basic .NET und deaktiviert die Stapelkompilierung:
+</p><span class="programlisting"><pre>&lt;configuration&gt;
+   &lt;system.web&gt;
+      &lt;compilation
+         batch="false"
+         strict="true"&gt;
+      &lt;/compilation&gt;
+   &lt;/system.web&gt;
+&lt;/configuration&gt;</pre>
+						</span></td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="notes"><span class="title">Hinweise</span></td>
+				</tr>
+				<tr>
+					<td><p>Sie sollten sich &uuml;ber die Auswirkungen von &Auml;nderungen, die Sie an diesem Element vornehmen m&ouml;chten, in allen Einzelheiten im Klaren sein. Wenn Sie beispielsweise das Attribut <span class="literal">debug</span> auf <span class="literal">True</span> setzen, hat dies deutlich negative Auswirkungen auf die Leistung. Wenn Sie das Attribut <span class="literal">strict</span> auf <span class="literal">True</span> setzen, reduziert sich dadurch zwar die Wahrscheinlichkeit von Bugs aufgrund impliziter Konvertierung von Datentypen, gleichzeitig k&ouml;nnen dadurch aber auch mehr Compiler-Fehler w&auml;hrend der Entwicklung des Codes auftreten.
+</p>
+					</td>
+				</tr>
+			</table>
+		</div>
+<div id="&lt;assemblies&gt;">
+			<table width="100%" cellspacing="0" cellpadding="0" border="0" class="main"><tr>							<td valign="top" class="name">&lt;assemblies&gt;</td><td valign="top" nowrap class="compatibility">&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><pre>&lt;assemblies&gt;
+    &lt;add assembly=assemblyInfo /&gt;
+    &lt;remove assembly=assemblyInfo /&gt;
+    &lt;clear /&gt;
+&lt;/assemblies&gt;</pre>
+					</td><td valign="top" nowrap class="requirements">&#160;</td>
+				</tr>
+				<tr><td colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Zum Hinzuf&uuml;gen oder Entfernen von Assemblies, die w&auml;hrend der dynamischen Kompilierung von ASP.NET-Seiten referenziert und verkn&uuml;pft werden sollen. Standardm&auml;&szlig;ig wird w&auml;hrend der dynamischen Kompilierung auf die Assemblies <span class="literal">mscorlib</span>, <span class="literal">System</span>, <span class="literal">System.Drawing</span>, <span class="literal">System.EnterpriseServices</span>, <span class="literal">System.Web</span>, <span class="literal">System.Data</span>, <span class="literal">System.Web.Services</span> und <span class="literal">System.Xml</span> verwiesen, ebenso auf alle Assemblies, die sich im Unterverzeichnis <span class="emphasis">bin</span> des Anwendungsverzeichnisses befinden.
+</p>
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="scope"><span class="title">Einsatzbereich</span></td>
+				</tr>
+				<tr>
+					<td><p>Beliebig</p>
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="attributes"><span class="title">Attribute</span></td></tr><tr><td>Keine
+
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td />
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="child elements"><span class="title">Untergeordnete Elemente</span>
+					<ul><li><i><span class="literal">&lt;add&gt;</span></i><br>&#160;
+								  F&uuml;gt einen Alias mit dem Namen hinzu, der im <span class="literal">alias</span>-Attribut des vom <span class="literal">userAgent</span>-Attribut angegebenen <span class="literal">User Agent</span>-Strings festgelegt ist.
+					</li><li><i><span class="replaceable">&lt;remove&gt;</span></i><br>&#160;
+								  Entfernt einen zuvor festgelegten Alias mit dem Namen, der im <span class="literal">alias</span>-Attribut angegeben ist.
+					</li><li><i><span class="replaceable">&lt;clear&gt;</span></i><br>&#160;
+								  L&ouml;scht alle zuvor konfigurierten Aliasnamen.</li></ul>
+										</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td><p>Dieses Beispiel zeigt, wie das Element <span class="literal">&lt;add&gt;</span> vom Mobile Internet Toolkit verwendet wird, um der Liste von Assemblies zur dynamischen Kompilierung die Assembly <span class="literal">System.Web.Mobile</span> hinzuzuf&uuml;gen.
+</p><span class="programlisting"><pre>&lt;assemblies&gt;
+   &lt;add assembly="System.Web.Mobile,
+      Version=1.0.3300.0,
+      Culture=neutral,
+      PublicKeyToken=b03f5f7f11d50a3a" /&gt;
+&lt;/assemblies&gt;</pre>
+						</span></td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="notes"><span class="title">Hinweise</span></td>
+				</tr>
+				<tr>
+					<td><p>Mit dem Element <span class="literal">&lt;add&gt;</span> wird ein Sternchen (<span class="literal">*</span>) als Stellvertreterzeichen verwendet, um anzugeben, dass alle Assemblies im privaten Assembly-Cache der Anwendung (standardm&auml;&szlig;ig das Unterverzeichnis <span class="emphasis">bin</span> der Anwendung) der Liste der Assemblies hinzugef&uuml;gt werden sollen, die w&auml;hrend der dynamischen Kompilierung verkn&uuml;pft werden. Dadurch ist sichergestellt, dass alle Mitglieder dieser Assemblies automatisch allen Seiten in der Anwendung zur Verf&uuml;gung stehen.
+</p>
+					</td>
+				</tr>
+			</table>
+		</div>
+<div id="&lt;compilers&gt;">
+			<table width="100%" cellspacing="0" cellpadding="0" border="0" class="main"><tr>							<td valign="top" class="name">&lt;compilers&gt;</td><td valign="top" nowrap class="compatibility">&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><pre>&lt;compilers&gt;
+    &lt;compiler language=languageAlias
+       extension=fileExt
+       type=typeName
+       warningLevel=number
+       compilerOptions=optionString /&gt;
+&lt;/compilers&gt;</pre>
+					</td><td valign="top" nowrap class="requirements">&#160;</td>
+				</tr>
+				<tr><td colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Enth&auml;lt mindestens ein <span class="literal">&lt;compiler&gt;</span>-Element, das Konfigurationsoptionen f&uuml;r einen bestimmten mit ASP.NET verwendeten Compiler definiert.
+</p>
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="scope"><span class="title">Einsatzbereich</span></td>
+				</tr>
+				<tr>
+					<td><p>Beliebig</p>
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="attributes"><span class="title">Attribute</span></td></tr><tr><td>Keine
+
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td />
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="child elements"><span class="title">Untergeordnete Elemente</span>
+					</td>
+					    </tr>
+					    <tr>
+					      <td><p><span class="literal">&lt;compiler&gt;</span></p>
+      </td>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="notes"><span class="title">Hinweise</span></td>
+				</tr>
+				<tr>
+					<td><p>Dank der Elemente <span class="literal">&lt;compilers&gt;</span> und <span class="literal">&lt;compiler&gt;</span> braucht zur Unterst&uuml;tzung einer neuen .NET-Sprache in ASP.NET nur ein neues <span class="literal">&lt;compiler&gt;</span>-Element hinzugef&uuml;gt zu werden, das die Sprach-Aliasnamen, die Dateierweiterung f&uuml;r die Klassendateien dieser Sprache sowie Typinformationen f&uuml;r den Sprachcompiler angibt.
+</p>
+					</td>
+				</tr>
+			</table>
+		</div>
+<div id="&lt;compiler&gt;">
+			<table width="100%" cellspacing="0" cellpadding="0" border="0" class="main"><tr>							<td valign="top" class="name">&lt;compiler&gt;</td><td valign="top" nowrap class="compatibility">&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><pre>&lt;compiler language=languageAlias
+    extension=fileExt
+    type=typeName
+    warningLevel=number
+    compilerOptions=optionString /&gt;</pre>
+					</td><td valign="top" nowrap class="requirements">&#160;</td>
+				</tr>
+				<tr><td colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Gibt Konfigurationsoptionen f&uuml;r eine bestimmte Sprache an.</p>
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="scope"><span class="title">Einsatzbereich</span></td>
+				</tr>
+				<tr>
+					<td><p>Beliebig</p>
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="attributes"><span class="title">Attribute</span></td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<ul><li><i><span class="literal">language</span></i><br>&#160;
+			  Gibt den oder die Namen an, &uuml;ber die die Sprache im Attribut <span class="literal">language</span> der Direktive <span class="literal">@</span> <span class="literal">Page</span> angegeben wird. Mehrere Namen sind durch Strichpunkte zu trennen. Dieses Attribut ist erforderlich.
+</li><li><i><span class="literal">extension</span></i><br>&#160;
+			  Gibt die Dateierweiterungen an, die von Code-Behind-Dateien f&uuml;r die betreffende Sprache verwendet werden. Mehrere Eintr&auml;ge sind durch Strichpunkte zu trennen. Dieses Attribut ist erforderlich.
+</li><li><i><span class="literal">type</span></i><br>&#160;
+			  Gibt die .NET-Typinformationen f&uuml;r die Klasse an, die zum Kompilieren von Ressourcen in der betreffenden Sprache verwendet werden soll. Dieses Attribut ist erforderlich.
+</li><li><i><span class="literal">warningLevel</span></i><br>&#160;
+			  Gibt die Compiler-Warnstufe f&uuml;r die Sprache an. Dieses Attribut ist optional und wird m&ouml;glicherweise nicht f&uuml;r alle Compiler unterst&uuml;tzt.
+</li><li><i><span class="literal">compilerOptions</span></i><br>&#160;
+			  Gibt eine Zeichenfolge mit g&uuml;ltigen Compiler-Optionen an, die an den Compiler &uuml;bergeben werden.
+</li></ul>
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="child elements"><span class="title">Untergeordnete Elemente</span></td></tr><tr><td>Keine
+
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="notes"><span class="title">Hinweise</span></td>
+				</tr>
+				<tr>
+					<td><p>Das Element <span class="literal">&lt;compilers&gt;</span> in der Datei <span class="emphasis">machine.config</span> ist ein anschauliches Beispiel f&uuml;r die Verwendung dieses Elements. Schauen Sie den Konfigurationsabschnitt an, um festzustellen, wie die Compiler f&uuml;r Visual Basic .NET, C# und JScript .NET konfiguriert werden.
+</p>
+					</td>
+				</tr>
+			</table>
+		</div>
+<div id="&lt;customErrors&gt;">
+			<table width="100%" cellspacing="0" cellpadding="0" border="0" class="main"><tr>							<td valign="top" class="name">&lt;customErrors&gt;</td><td valign="top" nowrap class="compatibility">&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><pre>&lt;customErrors
+    defaultRedirect=Url
+    mode=mode &gt;
+    &lt;error statusCode=httpStatusCode
+       redirect=Url /&gt;
+&lt;/customErrors&gt;</pre>
+					</td><td valign="top" nowrap class="requirements">&#160;</td>
+				</tr>
+				<tr><td colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Gibt mindestens eine Seite an, zu der Benutzer umgeleitet werden, wenn ein nicht verarbeiteter Ausnahmefehler in einer ASP.NET-Anwendung festgestellt wird. Es k&ouml;nnen eine Standardfehlerseite sowie eine oder mehrere Fehlerseiten f&uuml;r bestimmte HTTP-Fehlercodes angegeben werden.
+</p>
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="scope"><span class="title">Einsatzbereich</span></td>
+				</tr>
+				<tr>
+					<td><p>Beliebig</p>
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="attributes"><span class="title">Attribute</span></td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<ul><li><i><span class="literal">defaultRedirect</span></i><br>&#160;
+			  Gibt die URL der Seite an, auf die Benutzer bei allen Fehlern umgeleitet werden, wenn f&uuml;r den HTTP-Statuscode des betreffenden Fehlers keine bestimmte Fehlerseite konfiguriert ist. Dieses Attribut ist optional.
+</li><li><i><span class="literal">mode</span></i><br>&#160;
+			  Gibt den benutzerdefinierten Fehlermodus an. G&uuml;ltige Werte sind <span class="literal">Off</span>, <span class="literal">On</span> und <span class="literal">RemoteOnly</span>. <span class="literal">Off</span> deaktiviert die benutzerdefinierte Fehlerbehandlung, <span class="literal">On</span> aktiviert benutzerdefinierte Fehlerseiten f&uuml;r lokale und Remote-Anforderungen. <span class="literal">RemoteOnly</span> aktiviert benutzerdefinierte Fehlerseiten f&uuml;r Remote-Anforderungen, sendet aber detaillierte Fehlermeldungen f&uuml;r lokale Anforderungen. Dieses Attribut ist erforderlich.
+</li></ul>
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="child elements"><span class="title">Untergeordnete Elemente</span>
+					</td>
+					    </tr>
+					    <tr>
+					      <td><p><span class="literal">&lt;error&gt;</span></p>
+					      </td>
+    </tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td><p>Das Beispiel konfiguriert eine Standardseite, die Remote-Clients angezeigt wird, wenn ein nicht verarbeiteter Ausnahmefehler auftritt:
+</p><span class="programlisting"><pre>&lt;configuration&gt;
+   &lt;system.web&gt;
+      &lt;customErrors
+         defaultRedirect="Error.aspx" /&gt;
+   &lt;/system.web&gt;
+&lt;/configuration&gt;</pre>
+						</span></td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="notes"><span class="title">Hinweise</span></td>
+				</tr>
+				<tr>
+					<td><p>Wenn Sie das Attribut <span class="literal">mode</span> auf <span class="literal">RemoteOnly</span> setzen, erhalten Sie detaillierte Fehlerinformationen nur von dem lokalen Rechner, auf dem die Seiten ausgef&uuml;hrt werden. Remote-Anforderungen geben die benutzerdefinierte Fehlerseite zur&uuml;ck, die ggf. f&uuml;r den Statuscode des aufgetretenen Fehlers konfiguriert wurde.
+</p><p>Wenn Sie die von ASP.NET ausgegebenen Debugging-Informationen sehen m&ouml;chten, wenn ein Fehler auftritt, muss das Attribut <span class="literal">mode</span> auf <span class="literal">Off</span> gesetzt sein.
+</p>
+					</td>
+				</tr>
+			</table>
+		</div>
+<div id="&lt;error&gt;">
+			<table width="100%" cellspacing="0" cellpadding="0" border="0" class="main"><tr>							<td valign="top" class="name">&lt;error&gt;</td><td valign="top" nowrap class="compatibility">&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><pre>&lt;error statusCode=httpStatusCode
+    redirect=Url /&gt;</pre>
+					</td><td valign="top" nowrap class="requirements">&#160;</td>
+				</tr>
+				<tr><td colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Gibt eine benutzerdefinierte Fehlerseite an, auf die Benutzer bei einem bestimmten HTTP-Statuscode umgeleitet werden sollen.
+</p>
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="scope"><span class="title">Einsatzbereich</span></td>
+				</tr>
+				<tr>
+					<td><p>Beliebig</p>
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="attributes"><span class="title">Attribute</span></td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<ul><li><i><span class="literal">statusCode</span></i><br>&#160;
+			  Gibt den HTTP-Statuscode (z.&#160; B. 404 bei einer nicht gefundenen Seite) f&uuml;r die angegebene benutzerdefinierte Fehlerseite an. Dieses Attribut ist optional.
+</li><li><i><span class="literal">redirect</span></i><br>&#160;
+			  Gibt die URL der Seite an, auf die Anforderungen mit dem entsprechenden HTTP-Statuscode umgeleitet werden sollen. Dieses Attribut ist optional.
+</li></ul>
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="child elements"><span class="title">Untergeordnete Elemente</span>
+					</td>
+					    </tr>
+					    <tr>
+					      <td><p>None</p>
+					      </td>
+    </tr>
+
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td><p>Dieses Beispiel konfiguriert eine benutzerdefinierte Fehlerseite f&uuml;r den Fehlercode 404 und verwendet die im vorigen Beispiel konfigurierte Standardfehlerseite.
+</p><span class="programlisting"><pre>&lt;configuration&gt;
+   &lt;system.web&gt;
+      &lt;customErrors
+         defaultRedirect="Error.aspx"&gt;
+         &lt;error statusCode="404" redirect="My404ErrorPage.aspx"/&gt;
+      &lt;/customErrors&gt;
+   &lt;/system.web&gt;
+&lt;/configuration&gt;</pre>
+						</span></td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="notes"><span class="title">Hinweise</span></td>
+				</tr>
+				<tr>
+					<td><p>Zwar sind benutzerdefinierte Fehlerseiten eine praktische M&ouml;glichkeit, Benutzer vor den sonst &uuml;blichen Fehlercodes abzuschirmen und stattdessen aussagekr&auml;ftigere Meldungen anzuzeigen, sind aber kein Ersatz f&uuml;r eine "richtige" Fehlerbehandlung. Bis der Fehler eine benutzerdefinierte Fehlerseite erreicht, ist es bereits wesentlich schwieriger, den Fehler auf elegante Weise zu beheben, was zu Leistungseinbu&szlig;en f&uuml;r den Benutzer f&uuml;hren kann.
+</p>
+					</td>
+				</tr>
+			</table>
+		</div>
+<div id="&lt;globalization&gt;">
+			<table width="100%" cellspacing="0" cellpadding="0" border="0" class="main"><tr>							<td valign="top" class="name">&lt;globalization&gt;</td><td valign="top" nowrap class="compatibility">&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><pre>&lt;globalization
+    requestEncoding=encodingString
+    responseEncoding=encodingString
+    fileEncoding=encodingString
+    culture=cultureString
+    uiCulture=cultureString /&gt;</pre>
+					</td><td valign="top" nowrap class="requirements">&#160;</td>
+				</tr>
+				<tr><td colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Stellt Attribute zur Konfiguration von Kodierungs- und Kultureinstellungen bereit. Diese Attribute bilden die Grundlage f&uuml;r die erwartete Kodierung von Anforderungen, Antworten und Dateien zur Internationalisierung.
+</p>
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="scope"><span class="title">Einsatzbereich</span></td>
+				</tr>
+				<tr>
+					<td><p>Beliebig</p>
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="attributes"><span class="title">Attribute</span></td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<ul><li><i><span class="literal">requestEncoding</span></i><br>&#160;
+			  Gibt die angenommene Kodierung eingehender Anforderungen an. Dies kann jeder g&uuml;ltige Kodierungsstring sein und muss mit dem Attribut <span class="literal">responseEncoding</span> &uuml;bereinstimmen. Der Standard ist <span class="literal">UTF-8</span>. Dieses Attribut ist optional.
+</li><li><i><span class="literal">responseEncoding</span></i><br>&#160;
+			  Gibt an, welche Kodierung f&uuml;r den Inhalt der Antworten verwendet werden soll. Dies kann jeder g&uuml;ltige Kodierungsstring sein und muss mit dem Attribut <span class="literal">requestEncoding</span> &uuml;bereinstimmen. Der Standard ist <span class="literal">UTF-8</span>. Dieses Attribut ist optional.
+</li><li><i><span class="literal">fileEncoding</span></i><br>&#160;
+			  Gibt an, welche Kodierung zum Parsen von <span class="emphasis">.aspx</span>-, <span class="emphasis">.asmx</span>- und <span class="emphasis">.asax</span>-Dateien verwendet werden soll. Dieses Attribut ist optional.
+</li><li><i><span class="literal">culture</span></i><br>&#160;
+			  Gibt die angenommene Kultur von eingehenden Anforderungen an. Der Wert kann jeder g&uuml;ltige Kulturstring sein. Dieses Attribut ist optional.
+</li><li><i><span class="literal">uiCulture</span></i><br>&#160;
+			  Gibt die Kultur f&uuml;r Suchen nach l&auml;nderspezifischen Ressourcen an. Der Wert kann jeder g&uuml;ltige Kulturstring sein. Dieses Attribut ist optional.
+</li></ul>
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="child elements"><span class="title">Untergeordnete Elemente</span></td></tr><tr><td>Keine
+
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td><p>Diese Beispiel zeigt, wie die Standardeinstellungen f&uuml;r <span class="literal">&lt;globalization&gt;</span> in <span class="emphasis">web.config</span> konfiguriert sind.
+</p><span class="programlisting"><pre>&lt;configuration&gt;
+   &lt;system.web&gt;
+      &lt;globalization
+         requestEncoding="utf-8"
+         responseEncoding="utf-8" /&gt;
+   &lt;/system.web&gt;
+&lt;/configuration&gt;</pre>
+						</span></td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="notes"><span class="title">Hinweise</span></td>
+				</tr>
+				<tr>
+					<td><p>Eine Liste g&uuml;ltiger Kulturstrings finden Sie in der Dokumentation zum .NET-Framework f&uuml;r die Klasse <span class="literal">System.Globalization.CultureInfo</span>.
+</p>
+					</td>
+				</tr>
+			</table>
+		</div>
+<div id="&lt;httpHandlers&gt;">
+			<table width="100%" cellspacing="0" cellpadding="0" border="0" class="main"><tr>							<td valign="top" class="name">&lt;httpHandlers&gt;</td><td valign="top" nowrap class="compatibility">&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><pre>&lt;httpHandlers&gt;
+    &lt;add verb=httpVerbs
+        path=pathInfo
+        type=typeInfo
+        validate=boolean /&gt;
+    &lt;remove verb=httpVerbs
+        path=pathInfo /&gt;
+    &lt;clear /&gt;
+&lt;/httpHandlers&gt;</pre>
+					</td><td valign="top" nowrap class="requirements">&#160;</td>
+				</tr>
+				<tr><td colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Dient zum Hinzuf&uuml;gen oder Entfernen von HTTP-Handlern (<span class="literal">HttpHandlers</span>), die die Verarbeitung von Anforderungen f&uuml;r ein bestimmtes HTTP-Verb und/oder Dateityp oder Pfad &uuml;bernehmen. ASP.NET selbst ist als HTTP-Handler f&uuml;r <span class="emphasis">.aspx</span>- und <span class="emphasis">.asmx</span>-Dateien eingerichtet. HTTP-Handler sollen verhindern, dass Quellcode f&uuml;r andere ASP.NET-Dateitypen, wie etwa <span class="emphasis">global.asax</span>, heruntergeladen wird.
+</p>
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="scope"><span class="title">Einsatzbereich</span></td>
+				</tr>
+				<tr>
+					<td><p>Beliebig</p>
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="attributes"><span class="title">Attribute</span></td></tr><tr><td>Keine
+
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td />
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="child elements"><span class="title">Untergeordnete Elemente</span><ul><li><i><span class="literal">&lt;add&gt;</span></i><br>&#160;
+			  F&uuml;gt einen HTTP-Handler hinzu. Die vom HTTP-Handler verarbeiteten HTTP-Verben (<span class="literal">GET</span>, <span class="literal">POST</span> usw.) werden durch das Attribut <span class="literal">verb</span> angegeben. Mit dem Stellvertreterzeichen <span class="literal">*</span> werden alle Verben angegeben. Die vom HTTP-Handler zu bearbeitenden Pfade oder Dateierweiterungen werden durch das Attribut <span class="literal">path</span> angegeben. Welche Klasse zur Verarbeitung der Anforderung verwendet wird, wird im Attribut <span class="literal">type</span> angegeben. Diese Klasse muss die <span class="literal">IHttpHandler</span>-Schnittstelle implementieren. Das Attribut <span class="literal">validate</span> teilt ASP.NET mit, ob die im <span class="literal">type</span>-Attribut angegebene Klasse schon geladen werden soll, bevor eine entsprechende Anforderung eingeht.
+</li><li><i><span class="literal">&lt;remove&gt;</span></i><br>&#160;
+			  Entfernt einen zuvor konfigurierten HTTP-Handler ausgehend von den Angaben in den Attributen <span class="literal">verb</span> und <span class="literal">path</span>. Die Attribute m&uuml;ssen mit einem zuvor konfigurierten <span class="literal">&lt;add&gt;</span>-Element &uuml;bereinstimmen.
+</li><li><i><span class="literal">&lt;clear&gt;</span></i><br>&#160;
+			  L&ouml;scht alle zuvor konfigurierten HTTP-Handler.</li></ul>
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td><p>Das folgende Beispiel konfiguriert einen benutzerdefinierten HTTP-Handler f&uuml;r die Dateierweiterung <span class="emphasis">.aspnetian</span>:
+</p><span class="programlisting"><pre>&lt;configuration&gt;
+   &lt;system.web&gt;
+      &lt;httpHandlers&gt;
+         &lt;add verb="*"
+            path="*.aspnetian"
+            type="aspnetian.aspnetianHandler" /&gt;
+      &lt;/httpHandlers&gt;
+   &lt;/system.web&gt;
+&lt;/configuration&gt;</pre>
+						</span></td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="notes"><span class="title">Hinweise</span></td>
+				</tr>
+				<tr>
+					<td><p>Damit das Beispiel einwandfrei funktioniert, m&uuml;ssen Sie die Dateierweiterung <span class="emphasis">.aspnetian</span> dem ISAPI-Handler von ASP.NET zuweisen. Andernfalls wird diese Anforderung nicht dem benutzerdefinierten HTTP-Handler &uuml;bergeben. Kapitel 9 enth&auml;lt eine schrittweise Anleitung zur Zuweisung zus&auml;tzlicher Dateitypen zum ISAPI-Handler von ASP.NET.
+</p>
+					</td>
+				</tr>
+			</table>
+		</div>
+<div id="&lt;httpModules&gt;">
+			<table width="100%" cellspacing="0" cellpadding="0" border="0" class="main"><tr>							<td valign="top" class="name">&lt;httpModules&gt;</td><td valign="top" nowrap class="compatibility">&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><pre>&lt;httpModules&gt;
+    &lt;add
+        name=moduleName
+        type=typeInfo /&gt;
+    &lt;remove name=moduleName /&gt;
+    &lt;clear /&gt;
+&lt;/httpModules&gt;</pre>
+					</td><td valign="top" nowrap class="requirements">&#160;</td>
+				</tr>
+				<tr><td colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Dient zum Hinzuf&uuml;gen oder Entfernen von HTTP-Modulen (<span class="literal">HttpModules</span>). <span class="literal">HttpModules</span> sind spezielle Klassen, die an der Verarbeitung aller Anwendungsanforderungen beteiligt sind. In ASP.NET sind Caching, der Sitzungsstatus sowie die Authentifizierungs- und Autorisierungsfunktionen als HTTP-Module implementiert.
+</p>
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="scope"><span class="title">Einsatzbereich</span></td>
+				</tr>
+				<tr>
+					<td><p>Beliebig</p>
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="attributes"><span class="title">Attribute</span></td></tr><tr><td>Keine
+
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td />
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="child elements"><span class="title">Untergeordnete Elemente</span><ul><li><i><span class="literal">&lt;add&gt;</span></i><br>&#160;
+			  F&uuml;gt ein HTTP-Modul hinzu. Welche Klasse dieses HTTP-Modul implementiert, wird durch das Attribut <span class="literal">type</span> festgelegt. Diese Klasse muss die <span class="literal">IHttpModule</span>-Schnittstelle implementieren. Das Attribut <span class="literal">name</span> stellt einen Namen bereit, &uuml;ber den auf das HTTP-Modul verwiesen werden kann, z.&#160; B. sp&auml;ter in einem <span class="literal">&lt;remove&gt;</span>-Element.
+</li><li><i><span class="literal">&lt;remove&gt;</span></i><br>&#160;
+			  Entfernt entsprechend dem angegebenen <span class="literal">name</span>-Attribut ein zuvor konfiguriertes HTTP-Modul. Das Attribut muss mit einem zuvor konfigurierten <span class="literal">&lt;add&gt;</span>-Element &uuml;bereinstimmen.
+</li><li><i><span class="literal">&lt;clear&gt;</span></i><br>&#160;
+			  L&ouml;scht alle zuvor konfigurierten HTTP-Module.</li></ul>
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td><p>In diesem Beispiel wird das HTTP-Modul f&uuml;r den Sitzungsstatus entfernt &#160;&#8211; ein n&uuml;tzlicher Schritt, wenn Sie dieses Modul nicht verwenden:
+</p><span class="programlisting"><pre>&lt;configuration&gt;
+   &lt;system.web&gt;
+      &lt;httpModules&gt;
+         &lt;remove name="Session" /&gt;
+      &lt;/httpModules&gt;
+   &lt;/system.web&gt;
+&lt;/configuration&gt;</pre>
+						</span></td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="notes"><span class="title">Hinweise</span></td>
+				</tr>
+				<tr>
+					<td><p>Wenn Sie ein bestimmtes HTTP-Modul, z.&#160; B. das Modul f&uuml;r den Sitzungsstatus oder Authentifizierungsmodule, nicht verwenden, k&ouml;nnen Sie unn&ouml;tigen Overhead einsparen, indem Sie diese Module mit dem Element <span class="literal">&lt;remove&gt;</span> aus der <span class="emphasis">web.config</span>-Datei der Anwendung entfernen.
+</p>
+					</td>
+				</tr>
+			</table>
+		</div>
+<div id="&lt;httpRuntime&gt;">
+			<table width="100%" cellspacing="0" cellpadding="0" border="0" class="main"><tr>							<td valign="top" class="name">&lt;httpRuntime&gt;</td><td valign="top" nowrap class="compatibility">&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><pre>&lt;httpRuntime
+    appRequestQueueLimit=numRequests
+    executionTimeout=numSeconds
+    maxRequestLength=numKBytes
+    minFreeLocalRequestFreeThreads=numThreads
+    minFreeThreads=numThreads
+    useFullyQualifiedRedirectUrl=boolean /&gt; </pre>
+					</td><td valign="top" nowrap class="requirements">&#160;</td>
+				</tr>
+				<tr><td colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Enth&auml;lt Attribute zur Konfiguration der Einstellungen f&uuml;r die ASP.NET-HTTP-Runtime.
+</p>
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="scope"><span class="title">Einsatzbereich</span></td>
+				</tr>
+				<tr>
+					<td><p>Beliebig</p>
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="attributes"><span class="title">Attribute</span></td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<ul><li><i><span class="literal">appRequestQueueLimit</span></i><br>&#160;
+			  Gibt an, wie viele Anforderungen maximal in der Warteschlange stehen d&uuml;rfen. Sobald diese Obergrenze erreicht ist, wird an weitere Anforderungen die Antwort "503" (Server ist ausgelastet) ausgegeben. Der Standard ist 100.
+</li><li><i><span class="literal">executionTimeout</span></i><br>&#160;
+			  Gibt an, wie viele Sekunden f&uuml;r die Ausf&uuml;hrung einer Anforderung zur Verf&uuml;gung stehen, bevor die Anforderung von der Runtime beendet wird. Der Standard ist 90.
+</li><li><i><span class="literal">maxRequestLength</span></i><br>&#160;
+			  Gibt die maximale Gr&ouml;&szlig;e (KB) von Dateien an, die ein Client in eine ASP.NET-Anwendung laden darf. Dieses Attribut dient in erster Linie zur Verhinderung von "Denial of Service"-Angriffen, bei denen versucht wird, sehr gro&szlig;e Dateien auf den Server hochzuladen. Der Standard ist 4096.
+</li><li><i><span class="literal">minFreeLocalRequestFreeThreads</span></i><br>&#160;
+			  Gibt an, wie viele Threads mindestens f&uuml;r Anforderungen vom lokalen Host, die zus&auml;tzliche Threads ben&ouml;tigen, reserviert werden. Der Standard ist 4.
+</li><li><i><span class="literal">minFreeThreads</span></i><br>&#160;
+			  Gibt an, wie viele Threads mindestens f&uuml;r Anforderungen, die zus&auml;tzliche Threads ben&ouml;tigen, reserviert werden. Der Standard ist 8.
+</li><li><i><span class="literal">useFullyQualifiedRedirectUrl</span></i><br>&#160;
+			  Gibt an, ob an den Client zur Umleitung gesendete URLs absolut oder relativ angegeben werden. Der Standard ist <span class="literal">False</span>, was bedeutet dass die URL relativ ist.
+</li></ul>
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="child elements"><span class="title">Untergeordnete Elemente</span></td></tr><tr><td>Keine
+
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td><p>Dieses Beispiel legt fest, dass clientseitige Umleitungs-URLs vollst&auml;ndig und absolut angegeben werden m&uuml;ssen. Dies ist f&uuml;r einige der mobilen Steuerelemente im Microsoft Mobile Internet Toolkit erforderlich:
+</p><span class="programlisting"><pre>&lt;configuration&gt;
+   &lt;system.web&gt;
+      &lt;httpRuntime
+         useFullyQualifiedRedirectUrl="true" /&gt;
+   &lt;/system.web&gt;
+&lt;/configuration&gt;</pre>
+						</span></td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="notes"><span class="title">Hinweise</span></td>
+				</tr>
+				<tr>
+					<td><p>Eines der am h&auml;ufigsten angepassten Attribute ist <span class="literal">maxRequestLength</span>, denn bei Sites, bei denen Dateien hochgeladen werden m&uuml;ssen, ist 4&#160; MB oft nicht ausreichend. Vorsicht bei Erh&ouml;hung dieses Werts! Es empfiehlt sich, das Attribut auf die maximal erwartete Dateigr&ouml;&szlig;e zu setzen. Wenn Sie diesen Wert zu hoch w&auml;hlen, kann Ihre Seite f&uuml;r "Denial of Service"-Attacken anf&auml;llig werden.
+</p>
+					</td>
+				</tr>
+			</table>
+		</div>
+<div id="&lt;identity&gt;">
+			<table width="100%" cellspacing="0" cellpadding="0" border="0" class="main"><tr>							<td valign="top" class="name">&lt;identity&gt;</td><td valign="top" nowrap class="compatibility">&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><pre>&lt;identity
+    impersonate=boolean
+    userName=string
+    password=string /&gt;</pre>
+					</td><td valign="top" nowrap class="requirements">&#160;</td>
+				</tr>
+				<tr><td colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Gibt an, ob ein Identit&auml;tswechsel f&uuml;r Anforderungen m&ouml;glich ist, sowie welche Identit&auml;t und welches dazugeh&ouml;rige Kennwort f&uuml;r Anforderungen vom ASP.NET-Worker-Prozess verwendet werden sollen.
+</p>
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="scope"><span class="title">Einsatzbereich</span></td>
+				</tr>
+				<tr>
+					<td><p>Beliebig</p>
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="attributes"><span class="title">Attribute</span></td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<ul><li><i><span class="literal">impersonate</span></i><br>&#160;
+			  Gibt an, ob bei der Anwendung ein Identit&auml;tswechsel m&ouml;glich ist. Ist dieses Attribut auf <span class="literal">True</span> gesetzt, gelten f&uuml;r Anforderungen des ASP.NET-Worker-Prozesses die Sicherheitseinstellungen des im Attribut <span class="literal">userName</span> angegebenen Kontos. Ist dieses Attribut leer, gelten die Einstellungen des Kontos des angemeldeten Benutzers. Der Standard ist <span class="literal">False</span>.
+</li><li><i><span class="literal">userName</span></i><br>&#160;
+			  Gibt den Benutzernamen des Windows-Kontos an, das f&uuml;r einen Identit&auml;tswechsel verwendet werden soll. Wird hier kein Wert angegeben oder wird das Attribut weggelassen, gelten f&uuml;r Anforderungen die Einstellungen des angemeldeten Benutzers.
+</li><li><i><span class="literal">password</span></i><br>&#160;
+			  Gibt das Kennwort f&uuml;r das im Attribut <span class="literal">userName</span> bezeichnete Konto an. Dieses Kennwort wird im Klartext gespeichert.
+</li></ul>
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="child elements"><span class="title">Untergeordnete Elemente</span></td></tr><tr><td>Keine
+
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td><p>Im folgenden Beispiel wird der Identit&auml;tswechsel f&uuml;r den angemeldeten und durch IIS authentifizierten Benutzer aktiviert:
+</p><span class="programlisting"><pre>&lt;configuration&gt;
+   &lt;system.web&gt;
+      &lt;identity
+         impersonate="true"
+         userName="" /&gt;
+   &lt;/system.web&gt;
+&lt;/configuration&gt;</pre>
+						</span></td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="notes"><span class="title">Hinweise</span></td>
+				</tr>
+				<tr>
+					<td><p>Da im Attribut <span class="literal">password</span> Kennworte in lesbarer Form gespeichert werden, sollten Sie gr&uuml;ndlich abw&auml;gen, ob der Einsatz dieser Funktionalit&auml;t sinnvoll ist. Das Speichern vertraulicher Informationen wie Kennw&ouml;rtern in Form von Textdateien stellt ein m&ouml;gliches Sicherheitsrisiko dar.
+</p>
+					</td>
+				</tr>
+			</table>
+		</div>
+<div id="&lt;machineKey&gt;">
+			<table width="100%" cellspacing="0" cellpadding="0" border="0" class="main"><tr>							<td valign="top" class="name">&lt;machineKey&gt;</td><td valign="top" nowrap class="compatibility">&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><pre>&lt;machineKey
+    validationKey="autogenerate|value"
+    decryptionKey="autogenerate|value"
+    validation="SHA1|MD5|3DES" /&gt;</pre>
+					</td><td valign="top" nowrap class="requirements">&#160;</td>
+				</tr>
+				<tr><td colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Gibt die Einstellungen f&uuml;r Kryptographieschl&uuml;ssel an, die zur Validierung und Entschl&uuml;sselung von Cookies zur formularbasierten Authentifizierung verwendet werden.
+</p>
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="scope"><span class="title">Einsatzbereich</span></td>
+				</tr>
+				<tr>
+					<td><p>All</p>
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="attributes"><span class="title">Attribute</span></td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<ul><li><i><span class="literal">validationKey</span></i><br>&#160;
+			  Der Schl&uuml;ssel, der zur Validierung von Cookie-Daten f&uuml;r die formularbasierte Authentifizierung, zur MAC-&Uuml;berpr&uuml;fung von <span class="literal">ViewState</span> und f&uuml;r Sitzungsstatus-Cookies verwendet wird. Der Standardwert ist <span class="literal">autogenerate</span>, wodurch ein zuf&auml;lliger Schl&uuml;ssel erzeugt und gespeichert wird. Bei Web-Farm-Implementierungen k&ouml;nnen Sie diesen Wert f&uuml;r jeden Server auf die gleiche Anzahl von Zeichen im Schl&uuml;ssel (40-128) setzen, damit alle Server eine erfolgreiche Validierung durchf&uuml;hren k&ouml;nnen.
+</li><li><i><span class="literal">decryptionKey</span></i><br>&#160;
+			  Der Schl&uuml;ssel, der zur Entschl&uuml;sselung von Cookie-Daten f&uuml;r die formularbasierte Authentifizierung verwendet wird. Der Standardwert ist <span class="literal">autogenerate</span>, wodurch ein zuf&auml;lliger Schl&uuml;ssel erzeugt und gespeichert wird. Bei Web-Farm-Implementierungen k&ouml;nnen Sie diesen Wert f&uuml;r jeden Server auf die gleiche Anzahl von Zeichen im Schl&uuml;ssel (40-128) setzen, damit alle Server eine erfolgreiche Validierung durchf&uuml;hren k&ouml;nnen.
+</li><li><i><span class="literal">validation</span></i><br>&#160;
+			  Gibt den Verschl&uuml;sselungstyp an, der bei der Datenvalidierung verwendet wird.</li></ul>
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="child elements"><span class="title">Untergeordnete Elemente</span></td></tr><tr><td>Keine
+
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="notes"><span class="title">Hinweise</span></td>
+				</tr>
+				<tr>
+					<td><p>Bei Web-Farms m&uuml;ssen Sie darauf achten, dass die Werte f&uuml;r <span class="literal">validationKey</span> und <span class="literal">decryptionKey</span> f&uuml;r alle Server in der Farm &uuml;bereinstimmen. Sind die Werte nicht abgestimmt, kann dies zu Fehlern bei der formularbasierten Authentifizierung, zu <span class="literal">ViewState</span>-Fehlern oder zu Problemen mit dem Sitzungsstatus f&uuml;hren.
+</p>
+					</td>
+				</tr>
+			</table>
+		</div>
+<div id="&lt;pages&gt;">
+			<table width="100%" cellspacing="0" cellpadding="0" border="0" class="main"><tr>							<td valign="top" class="name">&lt;pages&gt;</td><td valign="top" nowrap class="compatibility">&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><pre>&lt;pages
+    buffer=boolean
+    enableSessionState="true|false|ReadOnly"
+    enableViewState=boolean
+    enableViewStateMac=boolean
+    autoEventWireup=boolean
+    smartNavigation=boolean
+    pageBaseType=typeInfo
+    userControlBaseType=typeInfo /&gt;</pre>
+					</td><td valign="top" nowrap class="requirements">&#160;</td>
+				</tr>
+				<tr><td colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Enth&auml;lt Attribute zur Konfiguration der Standardeinstellungen von ASP.NET-Seiten und -Benutzersteuerelementen. Diese Einstellungen k&ouml;nnen durch Attribute der Direktive <span class="literal">@</span> <span class="literal">Page</span> oder <span class="literal">@</span> <span class="literal">Control</span> au&szlig;er Kraft gesetzt werden.
+</p>
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="scope"><span class="title">Einsatzbereich</span></td>
+				</tr>
+				<tr>
+					<td><p>Beliebig</p>
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="attributes"><span class="title">Attribute</span></td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<ul><li><i><span class="literal">buffer</span></i><br>&#160;
+			  Gibt an, ob das Puffern der Seitenausgabe aktiviert oder deaktiviert ist. Der Standard ist <span class="literal">True</span>.
+</li><li><i><span class="literal">enableSessionState</span></i><br>&#160;
+			  Gibt an, ob eine Seite Zugriff auf das Modul f&uuml;r den Sitzungsstatus hat. M&ouml;gliche Werte sind <span class="literal">True</span>, <span class="literal">False</span> und <span class="literal">ReadOnly</span>. Der Standard ist <span class="literal">True</span>.
+</li><li><i><span class="literal">enableViewState</span></i><br>&#160;
+			  Gibt an, ob <span class="literal">ViewState</span> auf Seitenebene aktiviert ist. Der Standard ist <span class="literal">True</span>.
+</li><li><i><span class="literal">enableViewStateMac</span></i><br>&#160;
+			  Gibt auf Seitenebene an, ob f&uuml;r das verborgene <span class="literal">ViewState</span>-Feld eine Rechner-Authentifizierungspr&uuml;fung (Machine Authentication Check, MAC) durchgef&uuml;hrt wird. Anhand dieser Angabe l&auml;sst sich eine clientseitige Manipulation von <span class="literal">ViewState</span> feststellen. Der Standard ist <span class="literal">True</span>.
+</li><li><i><span class="literal">autoEventWireup</span></i><br>&#160;
+			  Gibt an, ob ASP.NET automatisch bestimmte Seitenereignisse, z.&#160; B. <span class="literal">Page_Load</span>, unterst&uuml;tzt. Der Standard ist <span class="literal">True</span>.
+</li><li><i><span class="literal">smartNavigation</span></i><br>&#160;
+			  Gibt an, ob die Funktion "Smart Navigation" auf Seitenebene aktiviert ist. F&uuml;r diese Funktion unterst&uuml;tzt Internet Explorer ab Version 5 Postbacks und die Aktualisierung von Teilen einer Seite. Der Standard ist <span class="literal">False</span>.
+</li><li><i><span class="literal">pageBaseType</span></i><br>&#160;
+			  Gibt die Basisklasse an, von der sich alle Seiten ableiten. Der Standardwert ist <span class="literal">System.Web.UI.Page</span>.
+</li><li><i><span class="literal">userControlBaseType</span></i><br>&#160;
+			  Gibt die Basisklasse an, von der sich alle Benutzersteuerelemente ableiten. Der Standardwert ist <span class="literal">System.Web.UI.UserControl</span>.
+</li></ul>
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="child elements"><span class="title">Untergeordnete Elemente</span></td></tr><tr><td>Keine
+
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td><p>Das Beispiel deaktiviert sowohl <span class="literal">SessionState</span> als auch <span class="literal">ViewState</span> auf Seitenebene:
+</p><span class="programlisting"><pre>&lt;configuration&gt;
+   &lt;system.web&gt;
+      &lt;pages
+         enableSessionState="false"
+         enableViewState="false" /&gt;
+   &lt;/system.web&gt;
+&lt;/configuration&gt;</pre>
+						</span></td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="notes"><span class="title">Hinweise</span></td>
+				</tr>
+				<tr>
+					<td><p>Mit dem Element <span class="literal">&lt;pages&gt;</span> k&ouml;nnen Sie schnell und einfach auf Anwendungs- oder Ordnerebene Standardwerte f&uuml;r die Seiten der Anwendung festlegen. Beispielsweise k&ouml;nnen Sie damit Seiten, die keinen Zugriff auf den Sitzungsstatus erfordern, in einem separaten Ordner ablegen und &uuml;ber das Element <span class="literal">&lt;pages&gt;</span> den Sitzungsstatus f&uuml;r diesen Ordner deaktivieren. In diesem Fall wird f&uuml;r einen Benutzer erst eine Sitzung erstellt, wenn der Benutzer eine Seite in der Anwendung anfordert, f&uuml;r die <span class="literal">EnableSessionState</span> auf <span class="literal">True</span> gesetzt ist.
+</p><p>Die Standardeinstellung von <span class="literal">EnableViewStateMac</span> ist <span class="literal">True</span>. Dies sollten Sie nicht vergessen, denn bei der MAC-Pr&uuml;fung werden die Einstellungen im Element <span class="literal">&lt;machineKey&gt;</span> verwendet, um eine verschl&uuml;sselte Version des verborgenen <span class="literal">ViewState</span>-Felds zu erstellen. In einer Web-Farm m&uuml;ssen die <span class="literal">&lt;machineKey&gt;</span>-Einstellungen f&uuml;r jeden Server in der Farm &uuml;bereinstimmen. Andernfalls schl&auml;gt die MAC-Pr&uuml;fung fehl, wenn die urspr&uuml;ngliche Anforderung eines Benutzers von dem einen Server verarbeitet wird, ein sp&auml;teres Postback dagegen von einem anderen Server mit abweichenden Einstellungen f&uuml;r <span class="literal">&lt;machineKey&gt;</span>.
+</p>
+					</td>
+				</tr>
+			</table>
+		</div>
+<div id="&lt;processModel&gt;">
+			<table width="100%" cellspacing="0" cellpadding="0" border="0" class="main"><tr>							<td valign="top" class="name">&lt;processModel&gt;</td><td valign="top" nowrap class="compatibility">&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><pre>&lt;processModel
+    enable=boolean
+    timeout="Infinite"|HH:MM:SS
+    idleTimeout="Infinite"|HH:MM:SS
+    shutdownTimeout="Infinite"|HH:MM:SS
+    requestLimit=numRequests
+    requestQueueLimit="Infinite"|numRequests
+    restartQueueLimit="Infinite"|numRequests
+    memoryLimit=percentMemory
+    cpuMask=cpuNumBitMask
+    webGarden=boolean
+    userName=username
+    password=password
+    logLevel="All|None|Errors"
+    clientConnectedCheck=HH:MM:SS
+    comAuthenticationLevel="Default|None|Connect|Call|Pkt|
+       PktIntegrity|PktPrivacy"
+comImpersonationLevel="Default|Anonymous|Identify|Impersonate|
+    Delegate"
+    responseRestartDeadlockInterval="Infinite"|HH:MM:SS
+    responseDeadlockInterval="Infinite"|HH:MM:SS
+    maxWorkerThreads=numThreads
+    maxIoThreads=numThreads
+    serverErrorMessageFile=fileName /&gt;</pre>
+					</td><td valign="top" nowrap class="requirements">&#160;</td>
+				</tr>
+				<tr><td colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Enth&auml;lt Attribute zur Konfiguration des ASP.NET-Worker-Prozesses in IIS 5.
+</p>
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="scope"><span class="title">Einsatzbereich</span></td>
+				</tr>
+				<tr>
+					<td><p>Nur Rechner</p>
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="attributes"><span class="title">Attribute</span></td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<ul><li><i><span class="literal">enable</span></i><br>&#160;
+			  Gibt an, ob die <span class="literal">&lt;processModel&gt;</span>-Einstellungen aktiviert sind. Der Standard ist <span class="literal">True</span>.
+</li><li><i><span class="literal">timeout</span></i><br>&#160;
+			  Gibt im Format <span class="replaceable">hh:mm:ss</span> die Lebensdauer des Prozesses an. Wenn die in diesem Wert angegebene Zeit abl&auml;uft, wird ein neuer Prozess gestartet und der aktuelle Prozess wird beendet. Sie k&ouml;nnen diese Zeit&uuml;berschreitung deaktivieren, indem Sie den Wert <span class="literal">Infinite</span> verwenden. Der Standard ist <span class="literal">Infinite</span>.
+</li><li><i><span class="literal">idleTimeout</span></i><br>&#160;
+			  Gibt die Lebensdauer des Prozesses bei Leerlauf an und verwendet dazu das Format <span class="replaceable">hh:mm:ss</span>. Wenn die in diesem Wert angegebene Zeit abl&auml;uft, wird der aktuelle Prozess beendet. Sie k&ouml;nnen diese Zeit&uuml;berschreitung deaktivieren, indem Sie den Wert <span class="literal">Infinite</span> verwenden. Der Standard ist <span class="literal">Infinite</span>.
+</li><li><i><span class="literal">shutdownTimeout</span></i><br>&#160;
+			  Gibt im Format <span class="replaceable">hh:mm:ss</span> an, welche Zeitspanne zur Verf&uuml;gung steht, um den Prozess regul&auml;r zu beenden. Wenn die angegebene Zeit abl&auml;uft, wird der Prozess abgebrochen. Sie k&ouml;nnen diese Zeit&uuml;berschreitung deaktivieren, indem Sie den Wert <span class="literal">Infinite</span> verwenden. Der Standard ist <span class="literal">0:00:05</span>.
+</li><li><i><span class="literal">requestLimit</span></i><br>&#160;
+			  Gibt an, wie viele Anforderungen der ASP.NET-Prozess verarbeiten kann, bevor er beendet und neu gestartet wird. Mithilfe dieses Attributs k&ouml;nnen Sie den ASP.NET-Prozess proaktiv neu starten, um Speicherlecks oder andere Probleme zu kompensieren, die durch &auml;ltere in der Anwendung erforderliche Ressourcen (z.&#160; B. COM-Komponenten) verursacht werden. Der Standardwert ist <span class="literal">Infinite</span>. Dadurch wird diese Funktion deaktiviert.
+</li><li><i><span class="literal">requestQueueLimit</span></i><br>&#160;
+			  Gibt an, wie viele Anforderungen der ASP.NET-Prozess in die Warteschlange stellen kann, bevor er beendet und neu gestartet wird. Dieses Attribut kann verwendet werden, um f&uuml;r Situationen ger&uuml;stet zu sein, in denen der gleichzeitige Zugriff auf Ressourcen dazu f&uuml;hrt, dass Anforderungen in die Warteschlange gestellt werden. Der Standard ist <span class="literal">5000</span>.
+</li><li><i><span class="literal">restartQueueLimit</span></i><br>&#160;
+			  Gibt an, wie viele Anforderungen in der Warteschlange verbleiben, wenn der Prozess aufgrund der Einstellung <span class="literal">requestQueueLimit</span> neu gestartet wird. Der Standard ist <span class="literal">10</span>.
+</li><li><i><span class="literal">memoryLimit</span></i><br>&#160;
+			  Gibt an, welchen Prozentsatz des physischen Speichers des Servers der ASP.NET-Prozess maximal in Anspruch nehmen darf. Wird dieser Wert &uuml;berschritten, wird ein neuer Prozess gestartet und der aktuelle Prozess beendet. Der Standard ist <span class="literal">60</span>.
+</li><li><i><span class="literal">cpuMask</span></i><br>&#160;
+			  Wird in Web-Garden-Szenarios verwendet, um die CPU oder CPUs in einem Mehrprozessorserver anzugeben, auf dem der ASP.NET-Prozess ausgef&uuml;hrt wird. Dieser Wert ist eine Bitmaske. Der Standardwert ist <span class="literal">0xffffffff</span>. Dadurch wird angegeben, dass f&uuml;r jede CPU ein Worker-Prozess erstellt werden soll.
+</li><li><i><span class="literal">webGarden</span></i><br>&#160;
+			  Gibt an, ob das Web-Gardening, bei dem Worker-Prozesse bestimmten Prozessoren in einem Mehrprozessorserver zugeordnet sind, aktiviert ist. Der Standard ist <span class="literal">False</span>.
+</li>
+<li><i><span class="literal">userName</span></i><br>&#160; Gibt an, unter welcher Identit&auml;t der ASP.NET-Worker-Prozess ausgef&uuml;hrt wird. Dies kann ein g&uuml;ltiges NT-Konto oder einer von zwei speziellen Werten sein:
+  <ul>
+<li><span class="literal">SYSTEM</span><br>&nbsp;F&uuml;hrt den ASP.NET-Prozess als SYSTEM-Konto aus. Dies ist ein mit zahlreichen Rechten ausgestattetes Verwaltungskonto.</li>
+<li><span class="literal">machine</span><br>&nbsp;F&uuml;hrt den ASP.NET-Prozess als ASPNET-Konto aus. Dieses Konto wird mit dem .NET-Framework installiert und ist ein Spezialkonto mit wenigen Rechten. Dieser Prozess ist die Standardeinstellung und gew&auml;hrleistet ohne weitere Konfigurationsschritte ein hervorragendes Sicherheitsniveau f&uuml;r mit ASP.NET geschriebenen Webanwendungen. In der Dokumentation zum Element &lt;processModel&gt;steht f&auml;lschlicherweise, dass SYSTEM die Standardeinstellung ist.</li>
+</ul>
+</li><li><i><span class="literal">password</span></i><br>&#160;
+			  Gibt das Kennwort f&uuml;r das im Attribut <span class="literal">userName</span> bezeichnete Konto an. Verwenden Sie beim Einsatz des Kontos <span class="literal">SYSTEM</span> oder <span class="literal">machine</span> den Wert <span class="literal">AutoGenerate</span> (den Standardwert).
+</li>
+<li><i><span class="literal">logLevel</span></i><br>&#160; Gibt an, welche Prozessereignisse im NT-Ereignisprotokoll aufgezeichnet werden sollen. G&uuml;ltige Werte:
+
+<ul>
+<li><span class="literal">All</span><br>
+    &nbsp;Alle Prozessereignisse werden aufgezeichnet.</li>
+      <li><span class="literal">Errors</span><br>
+    &nbsp;Nur Fehler werden aufgezeichnet. Dies ist die Standardeinstellung.</li>
+      <li><span class="literal">None</span><br>
+    &nbsp;Keine Prozessereignisse werden aufgezeichnet.</li>
+    </ul>
+
+</li><li><i><span class="literal">clientConnectedCheck</span></i><br>&#160;
+			  Gibt im Format <span class="replaceable">hh:mm:ss</span> an, wie lange eine Anforderung in der Warteschlange verbleiben kann, bevor der ASP.NET-Prozess &uuml;berpr&uuml;ft, ob noch eine Verbindung zum Client besteht. Der Standard ist <span class="literal">0:00:05</span>.
+</li><li><i><span class="literal">comAuthenticationLevel</span></i><br>&#160;
+			  Gibt die Authentifizierungsebene f&uuml;r die DCOM-Sicherheit an. Der Standard ist <span class="literal">Connect</span>.
+</li><li><i><span class="literal">comImpersonationLevel</span></i><br>&#160;
+			  Gibt die Authentifizierungsebene f&uuml;r die COM-Sicherheit an. Der Standard ist <span class="literal">Impersonate</span>.
+</li><li><i><span class="literal">
+responseRestartDeadlockInterval
+</span></i><br>&#160;
+			  Gibt im Format <span class="replaceable">hh:mm:ss</span> die Zeitdauer an, die zwischen den aufgrund des <span class="literal">responseDeadlockInterval</span>-Attributwerts durchgef&uuml;hrten Prozessneustarts verstreichen darf. Durch diese Angabe wird der st&auml;ndige Wechsel von Prozessen aufgrund von gegenseitigen Sperren (Deadlocks) vermieden. Sie k&ouml;nnen diese Funktion deaktivieren, indem Sie den Wert <span class="literal">Infinite</span> verwenden. Der Standard ist <span class="literal">00:09:00</span>.
+</li><li><i><span class="literal">responseDeadlockInterval</span></i><br>&#160;
+			  Gibt im Format <span class="replaceable">hh:mm:ss</span> die Zeitdauer an, die ohne Antwort verstreichen darf, wenn Anforderungen in der Warteschlange stehen. Wenn die angegebene Zeit abl&auml;uft, wird der Prozess beendet und neu gestartet. Sie k&ouml;nnen diese Funktion deaktivieren, indem Sie den Wert <span class="literal">Infinite</span> verwenden. Der Standard ist <span class="literal">00:03:00</span>.
+</li><li><i><span class="literal">maxWorkerThreads</span></i><br>&#160;
+			  Gibt die maximale Anzahl von Worker-Threads pro CPU im Thread-Pool an. Der Standard ist <span class="literal">25</span>.
+</li><li><i><span class="literal">maxIoThreads</span></i><br>&#160;
+			  Gibt die maximale Anzahl von IO-Threads pro CPU im Thead-Pool an. Der Standard ist <span class="literal">25</span>.
+</li><li><i><span class="literal">serverErrorMessageFile</span></i><br>&#160;
+			  Gibt den Namen der Datei an, die bei einem Fehler aufgrund eines nicht verf&uuml;gbaren Servers aufgerufen wird.
+</li></ul>				  </td>
+			  </tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="child elements"><span class="title">Untergeordnete Elemente</span></td></tr><tr><td>Keine
+
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="notes"><span class="title">Hinweise</span></td>
+				</tr>
+				<tr>
+					<td><p>Im nativen Modus von IIS 6 werden die Einstellungen im <span class="literal">&lt;processModel&gt;</span>-Element ignoriert.
+</p><p>Da die Einstellungen im <span class="literal">&lt;processModel&gt;</span>-Element vom nicht verwalteten <span class="emphasis">aspnet_isapi.dll</span>-Handler, der Anforderungen an den verwalteten <span class="emphasis">aspnet_wp.exe</span>-Worker-Prozess &uuml;bergibt, gelesen und &uuml;bernommen werden, werden &Auml;nderungen am <span class="literal">&lt;processModel&gt;</span>-Element erst angewendet, wenn IIS neu gestartet wird.
+</p>
+					</td>
+				</tr>
+			</table>
+		</div>
+<div id="&lt;securityPolicy&gt;">
+			<table width="100%" cellspacing="0" cellpadding="0" border="0" class="main"><tr>							<td valign="top" class="name">&lt;securityPolicy&gt;</td><td valign="top" nowrap class="compatibility">&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><pre>&lt;securityPolicy&gt;
+    &lt;trustLevel
+       name=trustLevelName
+       policyFile=fileName /&gt;
+&lt;/securityPolicy&gt;</pre>
+					</td><td valign="top" nowrap class="requirements">&#160;</td>
+				</tr>
+				<tr><td colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Konfiguriert die Zuweisungen von Trust-Namen (die vom Element <span class="literal">&lt;trust&gt;</span> verwendet werden) zu Dateien mit Sicherheitsrichtlinien.
+Die Sicherheitsrichtliniendateien enthalten Elemente, die die speziell f&uuml;r die betreffende Trust-Ebene Berechtigungen f&uuml;r den Codezugriff konfigurieren. <span class="literal">&lt;securityPolicy&gt;</span> kann eines oder mehrere <span class="literal">&lt;
+trustLevel&gt;</span>-Elemente enthalten.
+</p>
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="scope"><span class="title">Einsatzbereich</span></td>
+				</tr>
+				<tr>
+					<td><p>Rechner, Anwendung</p>
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="attributes"><span class="title">Attribute</span></td></tr><tr><td>Keine
+
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td />
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="child elements"><span class="title">Untergeordnete Elemente</span><ul><li><i><span class="literal">&lt;trustLevel&gt;</span></i><br>&#160;
+			  Jedes <span class="literal">&lt;trustLevel&gt;</span>-Element weist den Namen einer Trust-Ebene einer bestimmten Sicherheitsrichtliniendatei zu, die die Berechtigungen f&uuml;r den Codezugriff f&uuml;r diese Codeebene implementiert. Das Attribut <span class="literal">name</span> gibt den Namen an, &uuml;ber den im <span class="literal">&lt;trust&gt;</span>-Element auf die Trust-Ebene verwiesen wird. Das Attribut <span class="literal">policyFile</span> gibt den Namen der Richtliniendatei an, die diesem Namen zugewiesen wird.
+</li></ul>
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td><p>Dieses Beispiel stammt aus dem Standard-<span class="literal">&lt;securityPolicy&gt;</span>-Element in der Datei <span class="emphasis">machine.config</span>:
+</p><span class="programlisting"><pre>&lt;securityPolicy&gt;
+   &lt;trustLevel
+      name="Full"
+      policyFile="internal" /&gt;
+   &lt;trustLevel
+      name="High"
+      policyFile="web_hightrust.config" /&gt;
+   &lt;trustLevel
+      name="Low"
+      policyFile="web_lowtrust.config" /&gt;
+   &lt;trustLevel
+      name="None"
+      policyFile="web_notrust.config" /&gt;
+&lt;/securityPolicy&gt;</pre>
+						</span></td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="notes"><span class="title">Hinweise</span></td>
+				</tr>
+				<tr>
+					<td><p>Wenn Sie in einer bestimmten Anwendung die geltenden Berechtigungen f&uuml;r den Codezugriff &auml;ndern m&ouml;chten, k&ouml;nnen Sie eine neue Richtliniendatei f&uuml;r den Codezugriff (CAS-Datei) anlegen und diese Datei mithilfe des Elements <span class="literal">&lt;trustLevel&gt;</span> einer benutzerdefinierten Trust-Ebene zuweisen. Zum Implementieren der neuen Sicherheitsrichtlinie f&uuml;gen Sie der <span class="emphasis">web.config</span>-Datei der betreffenden Anwendung ein <span class="literal">&lt;trust&gt;</span>-Element hinzu und geben Sie in diesem den Namen der zuzuweisenden Richtliniendatei an.
+</p>
+					</td>
+				</tr>
+			</table>
+		</div>
+<div id="&lt;sessionState&gt;">
+			<table width="100%" cellspacing="0" cellpadding="0" border="0" class="main"><tr>							<td valign="top" class="name">&lt;sessionState&gt;</td><td valign="top" nowrap class="compatibility">&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><pre>&lt;sessionState
+    mode="Off|Inproc|StateServer|SQLServer"
+    cookieless=boolean
+    timeout=numMinutes
+    stateNetworkTimeout=numSeconds
+    stateConnectionString="tcpip=server:port"
+    sqlConnectionString=connString /&gt;</pre>
+					</td><td valign="top" nowrap class="requirements">&#160;</td>
+				</tr>
+				<tr><td colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description" />
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="scope"><span class="title">Einsatzbereich</span></td>
+				</tr>
+				<tr>
+					<td><p>Rechner, Anwendung</p>
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="attributes"><span class="title">Attribute</span></td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<ul><li><i><span class="literal">mode</span></i><br>&#160;
+			  Gibt an, ob der Sitzungsstatus aktiviert ist, und falls ja, wie die Statusdaten gespeichert werden. G&uuml;ltige Werte:
+</li><ul>
+  <li><span class="literal">Off</span><br>
+&nbsp;Der Sitzungsstatus ist deaktiviert.</li>
+  <li><span class="literal">InProc</span><br>
+&nbsp;Die Sitzungsstatusdaten werden auf dem lokalen Server im Arbeitsspeicher gespeichert. Dies ist dasselbe Verfahren wie beim Sitzungsstatus im klassischen ASP. In diesem Sitzungsstatusmodus kann der Sitzungsstatus nicht von mehreren Servern in einer Web-Farm gemeinsam genutzt werden.</li>
+  <li><span class="literal">StateServer</span><br>
+&nbsp;Die Sitzungsstatusdaten werden in einem speziellen NT-Statusdienst auf einem Statusserver abgelegt. In diesem Sitzungsstatusmodus kann der Sitzungsstatus von mehreren Servern in einer Web-Farm gemeinsam genutzt werden.</li>
+  <li><span class="literal">SQLServer</span><br>
+&nbsp;Die Sitzungsstatusdaten werden in einer speziellen SQL Server-Datenbank auf einem SQL-Server abgelegt. In diesem Sitzungsstatusmodus kann der Sitzungsstatus von mehreren Servern in einer Web-Farm gemeinsam genutzt werden. Dieser Modus erfordert au&szlig;erdem die Ausf&uuml;hrung einer SQL-Abfrage (die im SDK f&uuml;r das .NET-Framework enthalten ist), um die SQL Server-Datenbank einzurichten.</li>
+</ul>
+<br>
+Der Standard ist <span class="literal">InProc</span>.
+<li><i><span class="literal">cookieless</span></i><br>&#160;
+		    Gibt an, ob Cookies verwendet werden, um Benutzer bestimmten Sitzungen zuzuordnen. Wird dieses Attribut auf <span class="literal">True</span> gesetzt, wird die Sitzungs-ID automatisch f&uuml;r jede Anforderung in die URL eingearbeitet. Dies erfordert, dass Ihre Anwendung relative URLs verwendet, damit dieses Verfahren richtig funktioniert. Der Standard ist <span class="literal">False</span>.
+</li><li><i><span class="literal">timeout</span></i><br>&#160;
+			  Gibt das Zeitlimit f&uuml;r die Sitzung in Minuten an. Nach Ablauf dieses Zeitraums wird bei Inaktivit&auml;t (d.&#160; h. wenn keine Anforderungen mit dieser Sitzungs-ID empfangen werden) eine Zeit&uuml;berschreitung ausgel&ouml;st. Der Standard ist <span class="literal">20</span>.
+</li><li><i><span class="literal">stateNetworkTimeout</span></i><br>&#160;
+			  Gibt das Zeitlimit f&uuml;r den Netzwerkbetrieb in Sekunden an. Nach Ablauf dieses Zeitraums wird eine Zeit&uuml;berschreitung ausgel&ouml;st, wenn der Sitzungsstatusmodus <span class="literal">StateServer</span> lautet. Der Standard ist <span class="literal">10</span>.
+</li><li><i><span class="literal">stateConnectionString</span></i><br>&#160;
+			  Gibt bei Verwendung des Modus <span class="literal">StateServer</span> den Servernamen oder die IP-Adresse und die Nummer des TCP-Ports f&uuml;r den Server an, der den Sitzungsstatus speichert. Dieses Attribut ist erforderlich, wenn das Attribut <span class="literal">mode</span> auf <span class="literal">StateServer</span> gesetzt ist. Der Standardwert ist <span class="literal">tcpip=127.0.0.1:42424</span>.
+</li><li><i><span class="literal">sqlConnectionString</span></i><br>&#160;
+			  Gibt den Namen des SQL-Servers und die zugeh&ouml;rigen Authentifizierungsdaten an, wenn als Sitzungsmodus <span class="literal">SQLServer</span> verwendet wird. Dieses Attribut ist erforderlich, wenn das Attribut <span class="literal">mode</span> auf <span class="literal">SQLServer</span> gesetzt ist. Der Standardwert ist <span class="literal">data source=127.0.0.1;user</span>
+<span class="literal">id=sa;password=</span>. Soweit m&ouml;glich, sollte dieser Wert gesicherte Verbindungen verwenden, damit Benutzer-ID und Kennwort f&uuml;r SQL nicht in der Datei <span class="emphasis">web.config</span> oder <span class="emphasis">machine.config</span> abgelegt werden m&uuml;ssen. Damit Sie den Sitzungsstatusmodus <span class="literal">SQL Server</span> verwenden k&ouml;nnen, m&uuml;ssen Sie die Stapeldatei <span class="emphasis">InstallSqlState.sql</span> auf dem SQL-Zielserver ausf&uuml;hren, um die <span class="literal">ASPState</span>-Datenbank mit den dazugeh&ouml;rigen Tabellen und gespeicherten Prozeduren zu erstellen. Standardm&auml;&szlig;ig wird diese Datei im Ordner <span class="emphasis">%windir%\Microsoft.NET\Framework\</span><span class="emphasis">%version%</span> installiert.
+</li></ul>				  </td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="child elements"><span class="title">Untergeordnete Elemente</span></td></tr><tr><td>Keine
+
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td><p>Im folgenden Beispiel wird der Sitzungsstatus so konfiguriert, dass der Modus <span class="literal">SQLServer</span> ohne Cookies verwendet wird:
+</p><span class="programlisting"><pre>&lt;configuration&gt;
+   &lt;system.web&gt;
+      &lt;sessionState
+         mode="SQLServer"
+         cookieless="true"
+         sqlConnectionString="data source=myServer;trusted_
+connection=true" /&gt;
+   &lt;/system.web&gt;
+&lt;/configuration&gt;</pre>
+						</span></td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="notes"><span class="title">Hinweise</span></td>
+				</tr>
+				<tr>
+					<td><p>Wenn der Modus <span class="literal">SQLServer</span> mit einer gesicherten Verbindung verwendet wird, muss die Kontoidentit&auml;t des ASP.NET-Worker-Prozesses bei der SQL Server-Datenbank eine Anmeldung durchf&uuml;hren k&ouml;nnen und die f&uuml;r den Zugriff auf die <span class="literal">ASPState</span>- und <span class="literal">TempDB</span>-Datenbanken erforderlichen Berechtigungen besitzen. Wenn keine gesicherte Verbindung genutzt werden kann, sollten Sie ein eigenes Konto speziell zum Zugriff auf die Statusdatenbank erstellen und dieses Konto f&uuml;r das Attribut <span class="emphasis">sqlConnectionString</span> verwenden.
+</p><p>Egal welchen der Out-of-Process-Sitzungsstatusmodi Sie verwenden, es empfiehlt sich in jedem Fall, mit dem Attribut <span class="literal">EnableSessionState</span> der Direktive <span class="literal">@</span> <span class="literal">Page</span> den Sitzungsstatus f&uuml;r die Seiten der Anwendung zu deaktivieren, die ihn nicht verwenden. Andernfalls werden von diesen Seiten unn&ouml;tige rechner&uuml;bergreifende Aufrufe durchgef&uuml;hrt, um nicht verwendete Daten &uuml;ber den Sitzungsstatus abzurufen. F&uuml;r eine Seite, die Sitzungsdaten zwar ausliest, aber nicht ver&auml;ndert, k&ouml;nnen Sie auch das Attribut <span class="literal">EnableSessionState</span> auf <span class="literal">ReadOnly</span> setzen, um rechner&uuml;bergreifende Aufrufe zum Speichern aktualisierter Sitzungsdaten zu verhindern.
+</p>
+					</td>
+				</tr>
+			</table>
+		</div>
+<div id="&lt;trace&gt;">
+			<table width="100%" cellspacing="0" cellpadding="0" border="0" class="main"><tr>							<td valign="top" class="name">&lt;trace&gt;</td><td valign="top" nowrap class="compatibility">&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><pre>&lt;trace
+    enabled=boolean
+    localOnly=boolean
+    pageOutput=boolean
+    requestLimit=numRequests
+    traceMode="SortByTime|SortByCategory" /&gt;</pre>
+					</td><td valign="top" nowrap class="requirements">&#160;</td>
+				</tr>
+				<tr><td colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description" />
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="scope"><span class="title">Einsatzbereich</span></td>
+				</tr>
+				<tr>
+					<td><p>Beliebig</p>
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="attributes"><span class="title">Attribute</span></td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<ul><li><i><span class="literal">enabled</span></i><br>&#160;
+			  Gibt an, ob die Ablaufverfolgung (Tracing) aktiviert ist. Der Standard ist <span class="literal">False</span>.
+</li><li><i><span class="literal">localOnly</span></i><br>&#160;
+			  Gibt an, ob die Ausgabe der Ablaufverfolgung von anderen Rechnern als dem lokalen Host gelesen werden kann. Der Standard ist <span class="literal">True</span>.
+</li><li><i><span class="literal">pageOutput</span></i><br>&#160;
+			  Gibt an, ob die Ausgabe der Ablaufverfolgung auf der Seite angezeigt oder im Speicher abgelegt und dort &uuml;ber eine spezielle <span class="emphasis">Trace.axd</span>-URL zug&auml;nglich gemacht wird. <span class="emphasis">Trace.axd</span> stellt eine Verbindung zu einem HTTP-Handler her, der alle gegenw&auml;rtig f&uuml;r eine bestimmte Anwendung gespeicherten Ablaufverfolgungen anzeigt. Der Standard ist <span class="literal">False</span>.
+</li><li><i><span class="literal">requestLimit</span></i><br>&#160;
+			  Gibt an, wie viele Anforderungen im Ablaufverfolgungspuffer gespeichert werden k&ouml;nnen, der von <span class="emphasis">Trace.axd</span> ausgelesen wird. Wenn die in diesem Attribut festgelegte Gesamtzahl von Ablaufverfolgungen erreicht ist, werden erst dann weitere Ablaufverfolgungen gespeichert, wenn das Ablaufverfolgungsprotokoll geleert wurde. Die von <span class="emphasis">Trace.axd</span> angezeigte Seite enth&auml;lt einen Link zum Leeren des Ablaufverfolgungsprotokolls. Der Standard ist <span class="literal">10</span>.
+</li><li><i><span class="literal">traceMode</span></i><br>&#160;
+			  Gibt die Sortierreihenfolge der Elemente im Abschnitt <span class="literal">Trace Information</span> der Ablaufverfolgung an. G&uuml;ltige Werte sind <span class="literal">SortByTime</span> und <span class="literal">SortByCategory</span>. <span class="literal">SortByCategory</span> ist n&uuml;tzlich, wenn Sie <span class="literal">Trace.Write</span> und <span class="literal">Trace.Warn</span> verwenden und Ihre eigenen Kategorienamen als Parameter &uuml;bergeben. Der Standard ist <span class="literal">SortByTime</span>.
+</li></ul>
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="child elements"><span class="title">Untergeordnete Elemente</span></td></tr><tr><td>Keine
+
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td><p>Dieses Beispiel aktiviert die Ablaufverfolgung auf Anwendungsebene:</p><span class="programlisting"><pre>&lt;configuration&gt;
+   &lt;system.web&gt;
+      &lt;trace enabled="true" /&gt;
+   &lt;/system.web&gt;
+&lt;/configuration&gt;</pre>
+						</span></td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="notes"><span class="title">Hinweise</span></td>
+				</tr>
+				<tr>
+					<td><p>Kapitel 10 bietet einen &Uuml;berblick &uuml;ber den Einsatz der Ablaufverfolgung in ASP.NET.
+</p>
+					</td>
+				</tr>
+			</table>
+		</div>
+<div id="&lt;trust&gt;">
+			<table width="100%" cellspacing="0" cellpadding="0" border="0" class="main"><tr>							<td valign="top" class="name">&lt;trust&gt;</td><td valign="top" nowrap class="compatibility">&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><pre>&lt;trust
+    level="Full|High|Low|None"
+    originUrl=URL /&gt;</pre>
+					</td><td valign="top" nowrap class="requirements">&#160;</td>
+				</tr>
+				<tr><td colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Weist einem Rechner, einer Site oder einer Anwendung eine benannte Trust-Ebene zu, die mit dem untergeordneten Element <span class="literal">&lt;trustLevel&gt;</span> des Elements <span class="literal">&lt;securityPolicy&gt;</span> erstellt wurde.
+</p>
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="scope"><span class="title">Einsatzbereich</span></td>
+				</tr>
+				<tr>
+					<td><p>Rechner, Anwendung</p>
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="attributes"><span class="title">Attribute</span></td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<ul><li><i><span class="literal">level</span></i><br>&#160;
+			  Gibt an, welche Trust-Ebene gelten soll. Dieses Attribut kann jeden im Element <span class="literal">&lt;securityPolicy&gt;</span> definierten Wert annehmen. Der Standard ist <span class="literal">Full</span>. Dieses Attribut ist erforderlich.
+</li><li><i><span class="literal">originUrl</span></i><br>&#160;
+			  Gibt die Ursprungs-URL einer Anwendung an. Dieses Attribut sorgt daf&uuml;r, dass Klassen wie <span class="literal">WebRequest</span>, die f&uuml;r bestimmte Berechtigungen m&ouml;glicherweise die Angabe des Ursprungs-Hosts erfordern, ordnungsgem&auml;&szlig; funktionieren. Dieses Attribut ist optional.
+</li></ul>
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="child elements"><span class="title">Untergeordnete Elemente</span></td></tr><tr><td>Keine
+
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td><p>Dieses Beispiel legt die CAS-Berechtigungen der Anwendung entsprechend einer benutzerdefinierten Trust-Ebene fest:
+</p><span class="programlisting"><pre>&lt;configuration&gt;
+   &lt;system.web&gt;
+      &lt;trust level="myTrustLevel" /&gt;
+   &lt;/system.web&gt;
+&lt;/configuration&gt;</pre>
+						</span></td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="notes"><span class="title">Hinweise</span></td>
+				</tr>
+				<tr>
+					<td><p>Vergewissern Sie sich, dass Sie die sicherheitsspezifischen Auswirkungen, die der Einsatz benutzerdefinierter Sicherheitsrichtlinienzuweisungen mit sich bringt, genau kennen, bevor Sie dieses Element verwenden. Falsche Berechtigungen k&ouml;nnen schwerwiegende Probleme f&uuml;r Ihre Anwendung verursachen.
+</p>
+					</td>
+				</tr>
+			</table>
+		</div>
+<div id="&lt;location&gt;">
+			<table width="100%" cellspacing="0" cellpadding="0" border="0" class="main"><tr>							<td valign="top" class="name">&lt;location&gt;</td><td valign="top" nowrap class="compatibility">&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><pre>&lt;location
+    path=pathToConfigure
+    allowOverride=boolean &gt;
+    &lt;system.web&gt;
+       &lt;! --  Configuration settings  -- &gt;
+    &lt;/system.web&gt;
+&lt;/location&gt;</pre>
+					</td><td valign="top" nowrap class="requirements">&#160;</td>
+				</tr>
+				<tr><td colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Mit diesem Element k&ouml;nnen Sie verhindern, dass Einstellungen in <span class="emphasis">machine.config</span> oder <span class="emphasis">web.config</span> in untergeordneten Konfigurationsdateien au&szlig;er Kraft gesetzt werden. Sie k&ouml;nnen damit &uuml;ber eine Konfigurationsdatei in einem &uuml;bergeordneten Ordner auch Einstellungen f&uuml;r bestimmte Dateien oder Ordner konfigurieren.
+</p>
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="scope"><span class="title">Einsatzbereich</span></td>
+				</tr>
+				<tr>
+					<td><p>Beliebig</p>
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="attributes"><span class="title">Attribute</span></td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<ul><li><i><span class="literal">path</span></i><br>&#160;
+			  Gibt den Pfad der Datei bzw. des Ordners an, f&uuml;r die/den die Konfigurationseinstellungen im Tag-Paar <span class="literal">&lt;location&gt;</span> gelten sollen.
+</li><li><i><span class="literal">allowOverride</span></i><br>&#160;
+			  Gibt an, ob untergeordnete Konfigurationsdateien Werte au&szlig;er Kraft setzen k&ouml;nnen, die im Tag-Paar <span class="literal">&lt;location&gt;</span> konfiguriert sind. Dieses Attribut sperrt Konfigurationseinstellungen (in der Datei <span class="emphasis">machine.config</span>), die einheitlich verwendet werden sollen.
+</li></ul>
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="child elements"><span class="title">Untergeordnete Elemente</span>
+					</td>
+					    </tr>
+					    <tr>
+					      <td><p><span class="literal">&lt;system.web&gt;</span></p>
+					      </td>
+    </tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td><p>W&uuml;rde dieses Beispiel in <span class="emphasis">machine.config</span> verwendet, m&uuml;ssten alle Anwendungen auf dem Rechner die Windows-Authentifizierung verwenden:
+</p><span class="programlisting"><pre>&lt;configuration&gt;
+   &lt;location
+      allowOverride="false"&gt;
+      &lt;system.web&gt;
+         &lt;authentication mode="Windows"&gt;
+      &lt;/system.web&gt;
+   &lt;/location&gt;
+   &lt;system.web&gt;
+      &lt;!-- Other configuration settings --&gt;
+   &lt;/system.web&gt;
+&lt;/configuration&gt;</pre>
+						</span></td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="notes"><span class="title">Hinweise</span></td>
+				</tr>
+				<tr>
+					<td><p>Dieses Tag bietet weit reichende Steuerungsm&ouml;glichkeiten bei der Konfiguration. Sie k&ouml;nnen nicht nur, wie gezeigt, eine Authentifizierungsmethode f&uuml;r alle Anwendungen vorschreiben, sondern k&ouml;nnen mit dem Attribut <span class="literal">path</span> in der Datei <span class="emphasis">web.config</span> im Stammverzeichnis der Anwendung auch mehrere untergeordnete Ordner oder Datei konfigurieren. Durch eine solche Konfiguration verhindern Sie eine gro&szlig;e Zahl untergeordneter <span class="emphasis">web.config</span>-Dateien, die in einer gro&szlig;en Anwendung verwaltet werden m&uuml;ssen.
+</p>
+					</td>
+				</tr>
+			</table>
+		</div>
+	</body></html>

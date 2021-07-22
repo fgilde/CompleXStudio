@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DataSetSettingPages" targetNamespace="http://tempuri.org/DataSetSettingPages.xsd" xmlns:mstns="http://tempuri.org/DataSetSettingPages.xsd" xmlns="http://tempuri.org/DataSetSettingPages.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DataSetSettingPages" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_DataSetName="DataSetSettingPages" msprop:Generator_UserDSName="DataSetSettingPages" msprop:EnableTableAdapterManager="true">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="DataTableSettingPages" msprop:Generator_UserTableName="DataTableSettingPages" msprop:Generator_RowDeletedName="DataTableSettingPagesRowDeleted" msprop:Generator_TableClassName="DataTableSettingPagesDataTable" msprop:Generator_RowChangedName="DataTableSettingPagesRowChanged" msprop:Generator_RowClassName="DataTableSettingPagesRow" msprop:Generator_RowChangingName="DataTableSettingPagesRowChanging" msprop:Generator_RowEvArgName="DataTableSettingPagesRowChangeEvent" msprop:Generator_RowEvHandlerName="DataTableSettingPagesRowChangeEventHandler" msprop:Generator_TablePropName="DataTableSettingPages" msprop:Generator_TableVarName="tableDataTableSettingPages" msprop:Generator_RowDeletingName="DataTableSettingPagesRowDeleting">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ServiceId" msdata:DataType="System.Guid, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" msprop:Generator_UserColumnName="ServiceId" msprop:Generator_ColumnPropNameInRow="ServiceId" msprop:Generator_ColumnVarNameInTable="columnServiceId" msprop:Generator_ColumnPropNameInTable="ServiceIdColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="PageId" msprop:Generator_UserColumnName="PageId" msprop:Generator_ColumnPropNameInRow="PageId" msprop:Generator_ColumnVarNameInTable="columnPageId" msprop:Generator_ColumnPropNameInTable="PageIdColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="ParentPageId" msprop:Generator_UserColumnName="ParentPageId" msprop:Generator_ColumnPropNameInRow="ParentPageId" msprop:Generator_ColumnVarNameInTable="columnParentPageId" msprop:Generator_ColumnPropNameInTable="ParentPageIdColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="text" msprop:Generator_UserColumnName="text" msprop:Generator_ColumnPropNameInRow="text" msprop:Generator_ColumnVarNameInTable="columntext" msprop:Generator_ColumnPropNameInTable="textColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="ImageIndex" msprop:Generator_UserColumnName="ImageIndex" msprop:Generator_ColumnPropNameInRow="ImageIndex" msprop:Generator_ColumnVarNameInTable="columnImageIndex" msprop:Generator_ColumnPropNameInTable="ImageIndexColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="ISettingsPage" msdata:DataType="System.Object, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" msprop:Generator_UserColumnName="ISettingsPage" msprop:Generator_ColumnPropNameInRow="ISettingsPage" msprop:Generator_ColumnVarNameInTable="columnISettingsPage" msprop:Generator_ColumnPropNameInTable="ISettingsPageColumn" type="xs:anyType" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1">
+      <xs:selector xpath=".//mstns:DataTableSettingPages" />
+      <xs:field xpath="mstns:ServiceId" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

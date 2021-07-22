@@ -1,0 +1,36 @@
+<html>
+<link rel="stylesheet" href="josh.css">
+<body bgcolor="#FFFFFF">
+
+		<div id="Beschreibung">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">onpaste</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">nicht zutreffend</span> IE <span class="emphasis">5(Win)</span>  DOM <span class="emphasis">nicht zutreffend</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Aufw&auml;rtsverbreitung: Ja; Abbruch m&ouml;glich: Ja</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Wird ausgel&ouml;st, nachdem der Benutzer (&uuml;ber das Men&uuml; <span class="emphasis">Bearbeiten</span>, eine Tastenkombination oder ein Kontextmen&uuml;) den Befehl <span class="emphasis">Einf&uuml;gen</span> aufgerufen hat, um eine Kopie des Inhalts der Zwischenablage in den ausgew&auml;hlten Inhalt einzuf&uuml;gen. Mithilfe einer Ereignisbehandlungsroutinenfunktion f&uuml;r dieses Ereignis k&ouml;nnen Sie den Einf&uuml;gen-Vorgang erweitern und beispielsweise zus&auml;tzliche Daten aus dem <span class="literal">clipboardData</span>-Objekt abrufen (die von einer der Ereignisbehandlungsroutinenfunktionen im Rahmen des Kopier- oder Ausschneiden-Vorgangs dort abgelegt wurden).</p>
+							</td>
+						</tr>
+						<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Wenn Sie dem Benutzer den Zugriff auf einen <span class="emphasis">Einf&uuml;gen</span>-Men&uuml;befehl f&uuml;r ein ansonsten nicht bearbeitbares Element erm&ouml;glichen m&ouml;chten, stellen Sie in der Ereignisbehandlungsroutine <span class="literal">onbeforepaste</span> desselben Objekts, f&uuml;r das Sie auch die Ereignisbehandlungsroutine <span class="literal">onpaste</span> definiert haben, die Eigenschaft <span class="literal">event.returnValue</span> auf <span class="literal">false</span> ein. M&ouml;chten Sie hingegen verhindern, dass der Benutzer Inhalte aus der Zwischenablage des Systems einf&uuml;gt, setzen Sie die Eigenschaft <span class="literal">event.returnValue</span> in der Ereignisbehandlungsroutine <span class="literal">onpaste</span> auf <span class="literal">false</span>.</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="typicaltargets"><span class="title">Typische Ziele</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Alle dargestellten Elemente.</p>
+					</td>
+				</tr>
+			</table>
+		</div>
+</body>
+</html>

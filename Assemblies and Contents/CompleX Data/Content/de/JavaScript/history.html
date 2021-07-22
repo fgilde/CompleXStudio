@@ -1,0 +1,327 @@
+<html>
+<link rel="stylesheet" href="josh.css">
+<body bgcolor="#FFFFFF">
+
+		<div id="Beschreibung">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">history</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">2</span>  IE <span class="emphasis">3</span>  DOM <span class="emphasis">nicht zutreffend</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>W&auml;hrend einer Sitzung verwendet der Browser das <span class="literal">history</span>-Objekt, um eine Liste der vom Benutzer besuchten URLs zu verwalten. Diese Liste (die als ein Array gespeichert wird) nutzt der Browser zur Unterst&uuml;tzung der Navigation mit den Schaltfl&auml;chen <span class="emphasis">Zur&uuml;ck</span> und <span class="emphasis">Vorw&auml;rts </span>. Auf Grund der empfindlichen Natur privater Informationen, die im <span class="literal">history</span>-Objekt gespeichert sind, werden Skripts, die diese Informationen erfassen und heimlich an einen Server &uuml;bertragen k&ouml;nnten, nicht viele Details offen gelegt. In aktuelleren Browserversionen verwaltet jedes Fenster ein eigenes <span class="literal">history</span>-Objekt.
+</p>
+							</td>
+						</tr>
+						<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Um eine h&auml;ufig gestellte Frage zu beantworten: Nein, Sie k&ouml;nnen die Funktion der Zur&uuml;ck-Schaltfl&auml;che eines Browsers nicht blockieren oder deaktivieren. Sie haben jedoch die M&ouml;glichkeit zu verhindern, dass die aktuelle Seite in die Verlaufsliste des Browsers aufgenommen wird, wenn der Benutzer auf einen Hyperlink auf der Seite klickt. Verwenden Sie zu diesem Zweck beim Skripten der Links die <span class="literal">location.replace( )</span>-Navigationsmethode. In Navigator ab Version 4 l&auml;sst sich (mithilfe signierter Skripts und mit ausdr&uuml;cklicher Zustimmung des Benutzers) die Symbolleiste im Browserfenster entfernen (siehe Beschreibung des <span class="literal">locationbar</span>-Objekts). Sie k&ouml;nnen auch ein neues Fenster ohne Symbolleiste &ouml;ffnen (siehe <span class="literal">window.open( )</span>-Methode).
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectmodelreference"><span class="title">Objektmodellreferenz</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>[window.]history</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectspecificproperties"><span class="title">Objektspezifische Eigenschaften</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<table border="1"><tbody><tr><td><span class="literal">current</span></td><td><span class="literal">length</span></td><td><span class="literal">next</span></td><td><span class="literal">previous</span></td>
+								</tr>
+							</tbody></table>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectspecificmethods"><span class="title">Objektspezifische Methoden</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<table border="1"><tbody><tr><td><span class="literal">back( )</span></td><td><span class="literal">forward( )</span></td><td><span class="literal">go( )</span></td><td><span class="literal">item( )</span></td>
+								</tr>
+							</tbody></table>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectspecificeventhandlerproperties"><span class="title">Objektspezifische Ereignisbehandlungsroutineneigenschaften</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Keine. </p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="current, next, previous">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">current, next, previous</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">4  </span>IE <span class="emphasis">nicht zutreffend</span>  DOM <span class="emphasis">nicht zutreffend</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Schreibgesch&uuml;tzt</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Die URL der aktuellen, n&auml;chsten und vorherigen URLs in einem <span class="literal">history</span>-Array. Diese Informationen sind privater Natur und k&ouml;nnen im Navigator 4 (und h&ouml;her) nur mit signierten Skripts und der Genehmigung des Benutzers abgerufen werden. Signierte Skripts geh&ouml;ren nicht zum Umfang dieses Buches, aber ein gutes JavaScript-Buch sollte Informationen zum Erstellen und Programmieren von signierten Skripts enthalten.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>netscape.security.PrivilegeManager.enablePrivilege("UniversalBrowserRead");
+var prevURL = parent.otherFrame.history.previous;
+netscape.security.PrivilegeManager.revertPrivilege("UniversalBrowserRead");</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>URL-Zeichenfolge.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Standardwert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Keiner. </p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="length">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">length</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">2</span>  IE <span class="emphasis">3</span>  DOM <span class="emphasis">nicht zutreffend</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Schreibgesch&uuml;tzt</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Die Anzahl an Objekten in der Verlaufsliste. Auch mit diesen Informationen ist es Ihnen nicht erlaubt, einen bestimmten Verlaufseintrag zu extrahieren, es sei denn, Sie verwenden signierte Skripts und haben die Genehmigung des Benutzers (in Navigator 4 oder h&ouml;her).
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>if (history.length &gt; 4) {
+    ...
+}</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Eine ganze Zahl.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Standardwert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Keiner. </p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="back( )">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">back( )</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">2</span>  IE <span class="emphasis">3</span>  DOM <span class="emphasis">nicht zutreffend</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Die grundlegende Aktion ist das Navigieren zum zuvor angezeigten Dokument, &auml;hnlich wie bei einem Mausklick auf die Schaltfl&auml;che <span class="emphasis">Zur&uuml;ck</span> des Browsers. In Navigator ab Version 4 k&ouml;nnen Sie jedoch die Methode <span class="literal">back( )</span> anweisen, zu einem bestimmten Fenster bzw. Frame zu navigieren, und so das Standardverhalten der Schaltfl&auml;che <span class="emphasis">Zur&uuml;ck</span> umgehen. Beispielsweise werden wiederholte Aufrufe von <span class="literal">parent.otherFrame.history.back( )</span> schlie&szlig;lich aus dem Verlauf f&uuml;r den Frame herausf&uuml;hren und enden. Andererseits sind wiederholte Aufrufe von <span class="literal">top.history.back( )</span> das Gleiche wie das Klicken auf die Schaltfl&auml;che <span class="emphasis">Zur&uuml;ck</span>, und f&uuml;hren schlie&szlig;lich vollst&auml;ndig aus dem Frameset heraus, wenn es nicht das erste Dokument war, das in der aktuellen Browser-Sitzung geladen wurde.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Parameter</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Keine. </p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Zur&uuml;ckgegebener Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Keiner.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="forward( )">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">forward( )</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">2</span>  IE <span class="emphasis">3</span>  DOM <span class="emphasis">nicht zutreffend</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Die grundlegende Aktion ist das Navigieren zu der URL, zu der auch die Schaltfl&auml;che <span class="emphasis">Vorw&auml;rts</span> im Browser f&uuml;hrt (wenn sie aktiviert ist). Hier gelten &auml;hnliche Vorsichtsma&szlig;nahmen zum Fensterverlauf wie f&uuml;r die Methode <span class="literal">history.back( )</span>.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Parameter</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Keine. </p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Zur&uuml;ckgegebener Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Keiner.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="go( )">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">go( )</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">2</span>  IE <span class="emphasis">3</span>  DOM <span class="emphasis">nicht zutreffend</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">go(<span class="replaceable">stepCount </span>| "<span class="replaceable">URL</span>")</p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Navigiert zu einer bestimmten Position in der Verlaufsliste.</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Parameter</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<ul><li><span class="literal"></span>Eine ganze Zahl, die angibt, um wie viele Objekte der Browser von der aktuellen Auflistung weg navigieren soll. Der Wert Null f&uuml;hrt dazu, dass die aktuelle Seite erneut geladen wird; der Wert <span class="literal">-1</span> bedeutet das Gleiche wie <span class="literal">back( )</span>; der Wert <span class="literal">-2</span> steht f&uuml;r die URL zwei Schritte vor dem aktuellen Objekt in der Verlaufsliste. Ein Bug in IE 3 f&uuml;hrt dazu, dass alle Werte au&szlig;er <span class="literal">0</span> als eine <span class="literal">-1</span> behandet werden.
+</li><li><span class="literal"></span>Eine URL oder (im Navigator) ein Dokumenttitel, der in der Verlaufsliste gespeichert wurde. </li></ul>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Zur&uuml;ckgegebener Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Keiner.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="item( )">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">item( )</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">4  </span>IE <span class="emphasis">nicht zutreffend</span>  DOM <span class="emphasis">nicht zutreffend</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">item(<span class="replaceable">itemNumber</span>)</p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Gibt die URL an einer bestimmten Stelle in der Verlaufsliste zur&uuml;ck. Diese privaten Informationen k&ouml;nnen nur mithilfe signierter Netscape-Skripts und mit ausdr&uuml;cklicher Zustimmung des Benutzers abgerufen werden.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Parameter</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<ul><li><span class="literal"></span>Eine ganze Zahl, die die Anzahl der Eintr&auml;ge in der Verlaufsliste angibt. Der zul&auml;ssige Wertebereich reicht von <span class="literal">0</span> bis zum Wert von <span class="literal">history.length</span> minus 1.
+</li></ul>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Zur&uuml;ckgegebener Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>URL-Zeichenfolge.</p>
+					</td>
+				</tr>
+			</table>
+		</div>
+
+</body>
+</html>

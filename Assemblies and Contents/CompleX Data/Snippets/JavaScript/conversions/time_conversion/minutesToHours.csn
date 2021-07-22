@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding = "utf-8"?>
+<snippet xmlns:MMString="http://www.macromedia.com/schemes/dat/string/" MMString:name = "Snippets/JavaScript/conversions/time_conversion/minutesToHours_csn/snippet/name/Minutes" MMString:description = "Snippets/JavaScript/conversions/time_conversion/minutesToHours_csn/snippet/description/Converts"hrs:min"." preview="code" type="block">
+
+<insertText location="beforeSelection">
+<![CDATA[function minutesToHours(min)
+{
+  var hrs = Math.floor(min/60);
+  min = min % 60;
+  if(min<10) min = "0" + min;
+  return hrs + ":" + min;
+}
+]]>
+</insertText>
+<insertText location="afterSelection"><![CDATA[]]>
+</insertText>
+</snippet>

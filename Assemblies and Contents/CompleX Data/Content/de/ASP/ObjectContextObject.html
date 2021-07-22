@@ -1,0 +1,607 @@
+<html>
+<head>
+<title>ObjectContext-Objekt</title>
+</head>
+<body bgcolor="#FFFFFF" text="#000000">
+<div id="Beschreibung">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">ObjectContext-Objekt</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description">
+
+
+<p><!--<primary>ObjectContext
+object</primary>--> <!--<primary>transactional
+scripts</primary>--> <!--<primary>events</primary><secondary>ObjectContext object</secondary>-->Ab Version 2.0 geh&ouml;rt zu den wichtigen Funktionen von ASP (Windows Active Server Pages) die Erstellung von Transaktionsskripts. Hierbei handelt es sich um Skripts, deren Codesegmente entweder alle erfolgreich sind oder als Gruppe fehlschlagen. Beim Einsatz eines solchen Skripts entfernt ein Codeabschnitt beispielsweise einen Datensatz aus einer Inventartabelle, und ein zweiter Abschnitt f&uuml;gt der Vertriebsprotokolltabelle einen Datensatz hinzu. Das Skript ist jedoch nur insgesamt erfolgreich, wenn beide Codeabschnitte erfolgreich ausgef&uuml;hrt werden. D.&nbsp;h., wenn der Inventardatensatz nicht entfernt bzw. der Vertriebsdatensatz nicht hinzugef&uuml;gt werden kann, schl&auml;gt das Skript fehl. Beide Prozesse werden in diesem Fall r&uuml;ckg&auml;ngig gemacht: Der evtl. gel&ouml;schte Inventardatensatz wird erneut in die Datenbank eingef&uuml;gt, und der ggf. hinzugef&uuml;gte Vertriebsdatensatz wird wieder aus der Protokolltabelle gel&ouml;scht. Die M&ouml;glichkeit, mehrere Funktionen in einer Transaktionseinheit zusammenzufuassen, die als Ganzes erfolgreich ist bzw. fehlschl&auml;gt, ist eine bedeutende Verbesserung der Leistung von ASP-Anwendungen. Zuvor mussten alle Transaktionen von Datenbanktransaktionen unterst&uuml;tzt werden.</p>
+
+
+
+
+<p>ASP-Anwendungstransaktionen werden &uuml;ber <!--<primary>Microsoft Transaction Server</primary>--> <!--<primary>MTS (Microsoft Transaction Server)</primary>--> <!--<primary>Microsoft Transaction Server</primary><seealso>ObjectContext object</seealso>--> <!--<primary>MTS (Microsoft Transaction Server)</primary><seealso>ObjectContext object</seealso>-->Windows 2000 COM+ Component Services bzw. Microsoft Transaction Server (MTS, f&uuml;r Windows NT) gesteuert. Dieser Teil der BackOffice-Suite erm&ouml;glicht Ihnen die Steuerung aller Datenbankaktionen, die entsprechend kodiert sind. Die Unterst&uuml;tzung f&uuml;r Transaktionsskripts ist in IIS und Personal Web Server (PWS) integriert und erfordert keinen speziellen Setup. Ohne COM+ Component Services bzw. MTS-Transaktionsunterst&uuml;tzung (in ASP 2.0) m&uuml;ssten Ihre Anwendungen alle Datenbank&auml;nderungen manuell verfolgen und r&uuml;ckg&auml;ngig machen und dabei den Zugriff von mehreren Benutzern und Zugangskonflikte usw. verfolgen. MTS bzw. COM+ Component Services bietet diese Unterst&uuml;tzung f&uuml;r einen nur geringf&uuml;gig h&ouml;heren Kodierungsaufwand, so lange Ihre Anwendung mit der Datenbank Microsoft SQL Server verbunden ist bzw. das XA-Protokoll des X/Open-Konsortiums unterst&uuml;tzt. Beachten Sie jedoch, dass Dateiaktionen noch nicht (bzw. nicht automatisch) unterst&uuml;tzt werden.</p>
+
+
+
+
+<p>Die Unterst&uuml;tzung von Transaktionen in ASP ist durch die Verwendung des Objekts ObjectContext kodiert, das das eigentliche Objekt ObjectContext von COM+ Component Services repr&auml;sentiert. Durch Aufrufen der Methoden des Objekts ObjectContext und Kodieren der zugeh&ouml;rigen Ereignisse k&ouml;nnen Sie ein Transaktionsskript mit nur einigen Zeilen mehr Code erstellen.</p>
+
+
+
+
+<p>Um das gesamte Skript auf einer bestimmten Seite als Transaktionsskript zu deklarieren, f&uuml;gen Sie dem Skript einfach die folgende Codezeile als erste Zeile hinzu.</p>
+
+
+
+
+<span class="PROGRAMLISTING"><pre>&lt;%@ TRANSACTION = Required %&gt;</pre></span>
+
+
+
+
+<p>Weitere Informationen zur ASP-Direktive <span class="LITERAL">TRANSACTION</span><!--<primary>TRANSACTION
+directive</primary>--> finden Sie in <link linkend="ch11-1-fm2xml">Kapitel&nbsp;11</link>. An dieser Stelle ist nur wichtig, dass diese Zeile an erster Stelle im Skript stehen muss. Die Zeile sorgt daf&uuml;r, dass der Webserver die Component Services verwendet, damit das Skript als Ganzes erfolgreich ist bzw. fehlschl&auml;gt.</p>
+
+
+
+
+<p><!--<primary>committing transactions</primary>--> <!--<primary>aborting transactions</primary>--> <!--<primary>SetComplete method
+(ObjectContext)</primary>--> <!--<primary>SetAbort method (ObjectContext)</primary>-->Damit die Transaktion wirksam wird bzw. um sie abzubrechen, rufen Sie einfach die Methode SetComplete bzw. SetAbort des ObjectContext-Objekts auf. Wenn es sich um eine komplexe Transaktion mit Codesegmenten handelt, die nicht von Component Services unterst&uuml;tzt werden (namentlich Dateiaktionen), k&ouml;nnen Sie diese Aktionen in den ObjectContext-Ereignissen <!--<primary>OnTransactionCommit event (ObjectContext)</primary>--> <!--<primary>OnTransactionAbort event (ObjectContext)</primary>-->OnTransactionCommit und OnTransactionAbort gesondert kodieren. Beispiele zu diesen Methoden und Ereignisprozeduren finden Sie im Referenzabschnitt weiter unten in diesem Kapitel.</p>
+
+
+
+
+<!--
+<p class="TITLE">ObjectContext Object Summary</p>
+
+
+
+
+<dl>
+<dt>Properties</dt>
+<dd><p>None</p></dd>
+
+
+
+
+
+<dt>Collections</dt>
+<dd><p>None</p></dd>
+
+
+
+
+
+
+
+<dt>Methods</dt>
+<dd><p>SetAbort</p>
+
+
+
+
+<p>SetComplete</p>
+</dd>
+
+
+
+
+<dt>Events</dt>
+<dd><p>OnTransactionAbort</p>
+
+
+
+
+
+<p>OnTransactionCommit</p>
+</dd>
+
+</dl>
+
+-->
+</td></tr>
+</table>
+</div>
+<div id="CommentsTroubleshooting">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+Anmerkungen/Fehlerbehebung</td>
+<td class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2">&nbsp;</td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+
+<p><!--<primary>comments and troubleshooting</primary><secondary>transactional scripts</secondary>-->Zurzeit bestehen zwei &auml;u&szlig;erst wichtige Einschr&auml;nkungen bei der Erstellung von Transaktionsskripts:</p>
+
+<ul><dd><p>Es werden ausschlie&szlig;lich Datenbankaktionen unterst&uuml;tzt. Zus&auml;tzlich werden nur SQL-Server und -Datenbanken, die das XA-Protokoll unterst&uuml;tzen, von COM+ Component Services bzw. MTS unterst&uuml;tzt.</p></dd><dd><p>Eine Transaktion kann nicht mehr als eine ASP-Seite umfassen. Aus diesem Grund m&uuml;ssen Sie Ihre Seiten sehr sorgsam erstellen, damit sie alle Aktionen enthalten, die f&uuml;r Ihre Transaktionen erforderlich sind. Dabei d&uuml;rfen sie jedoch nicht so gro&szlig; sein, dass die Verarbeitung der Seite stark verlangsamt wird.</p></dd></ul>
+<p>Wenn Sie Ihre eigenen Serverkomponenten schreiben, um einige oder alle Datenbankaktionen in Ihrer Transaktion zu vervollst&auml;ndigen, muss diese Komponente in einem MTS-Paket registriert sein. (MTS-Transaktionsunterst&uuml;tzung ist nur gegeben, wenn eine Komponente registriert ist. Dar&uuml;ber hinaus sollten Sie Ihre eigenen <!--<primary>library packages,
+custom</primary>--> <!--<primary>custom library
+packages</primary>-->Bibliothekspakete erstellen und Ihre Komponenten nicht in das prozessinterne IIS-Paket aufnehmen. Benutzerdefinierte Bibliothekspakete k&ouml;nnen von mehreren ASP-Anwendungen verwendet werden und werden im gleichen Prozess wie die ASP-DLL ausgef&uuml;hrt. Die Einrichtung von Bibliothekspaketen bewirkt auch, dass Ihre Komponente <!--<primary>pooling library
+packages</primary>-->zur Wiederverwendung durch Ihre Anwendungen gepoolt werden kann. Dieses Pooling wird ebenfalls von MTS verwaltet. Sie k&ouml;nnen Ihre Komponenten auch einem Serverpaket hinzuf&uuml;gen. Dies ist jedoch nur f&uuml;r aufgabenbasierte Transaktionen erforderlich bzw. f&uuml;r Transaktionen, die auf Remote-Computern ausgef&uuml;hrt werden.)
+</p>
+
+
+
+
+<p>Weitere Informationen zum Objekt ObjectContext und zu Serverkomponenten siehe auch <citetitle>Developing ASP Components</citetitle> von Shelley Powers, ver&ouml;ffentlicht von O'Reilly.</p>
+
+
+
+<p class="footnote"> 
+
+
+
+<p><!--<primary>transactions, object scope
+and</primary>--> <!--<primary>scope</primary><secondary>transactional
+objects</secondary>--> <!--<primary>application-level
+scope</primary><secondary>transactional objects
+and</secondary>--> <!--<primary>global
+variables</primary><secondary>transactional objects
+and</secondary>--> <!--<primary>ObjectContext
+object</primary><secondary>object scope
+and</secondary>-->Objekten mit Transaktionssitzungs- <!--<primary>session-level
+scope</primary><secondary>transactional objects
+and</secondary>-->oder anwendungsweiter G&uuml;ltigkeit sollten Sie keine Funktion zuweisen, da Transaktionsobjekte nach ihrem Abschluss deaktiviert werden. Wenn Sie einem solchen Objekt Sitzungs- oder Anwendungsg&uuml;ltigkeit geben, schlagen Aufrufe nach Abschluss der Transaktion fehl und erzeugen einen Fehler.</p>
+
+
+
+
+<p>Obwohl Transaktionen nur f&uuml;r Datenbankaktionen unterst&uuml;tzt werden, k&ouml;nnen Sie den Ereignisprozeduren OnTransactionCommit und OnTransactionAbort Code hinzuf&uuml;gen, um Ihre eigene, nicht datenbankbasierte Transaktionsunterst&uuml;tzung zu gew&auml;hren. Code in diesen Ereignisprozeduren k&ouml;nnte zum Beispiel zum Schreiben oder L&ouml;schen von Dateien nach erfolgreicher oder fehlgeschlagener Ausf&uuml;hrung einer bestimmten Transaktion aus dem Dateisystem verwendet werden.</p>
+
+
+
+
+<p>ObjectContext stellt &uuml;ber die Methoden, auf die Sie &uuml;ber ASP Zugriff haben, noch sechs weitere Methoden bereit. Auf diese kann jedoch nur mit Hilfe von Code in den Serverkomponenten zugegriffen werden, die &uuml;ber COM+ Component Services bzw. MTS verwaltet werden. Diese werden hier nicht n&auml;her erl&auml;utert.</p>
+
+
+
+
+<p>Transaktionsskripts sind eine &auml;u&szlig;erst wichtige Hinzuf&uuml;gung zu ASP. Selbst wenn Sie ausschlie&szlig;lich &uuml;ber den Einsatz von ActiveX-Datenobjekten Zugriff auf Datenbanktransaktionen h&auml;tten, w&auml;re dies eine &auml;u&szlig;erst wichtige und n&uuml;tzliche Funktion. Durch die Erstellung von benutzerdefinierten Serverkomponenten k&ouml;nnen Sie jedoch komplexe und leistungsstarke Transaktionen erstellen.</p>
+</td>
+</tr>
+</table>
+</div>
+<div id="SetAbort">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+SetAbort</td>
+<td class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2"><span class="LITERAL">ObjectContext.SetAbort</span>
+</td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+<p><!--<primary>SetAbort method
+(ObjectContext)</primary>--> <!--<primary>aborting
+transactions</primary>--> <!--<primary>ObjectContext object</primary><secondary>method and event reference</secondary>-->Bricht eine Transaktion als Ganzes ab. Beim Aufruf dieses Befehls wird die Transaktion nicht erfolgreich beendet, unabh&auml;ngig davon, ob Code in Ihrem Skript bereits ausgef&uuml;hrt wurde.</p>
+
+
+
+
+<p>Sie k&ouml;nnen diese Methode in Ihrem Skript einsetzen, nachdem Sie den Abschluss eines bestimmten Teils der Transaktion getestet haben oder eine von MTS bzw. COM+ Component Services verwaltete Serverkomponente sie aufrufen kann. Durch den Aufruf von SetAbort stellen Sie die Teile einer Transaktion wieder her, die ggf. bereits aufgetreten sind. Dar&uuml;ber hinaus wird die Ereignisprozedur ObjectContext_OnTransactionAbort aufgerufen, wenn diese in Ihrem Skript vorhanden ist.</p>
+
+
+
+</td>
+</tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td></tr>
+<tr>
+<td colspan="2" class="DESCRIPTIONTITLE">Parameter</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+
+
+<p>Keine</p>
+
+
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="DESCRIPTIONTITLE">Beispiel</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+
+
+<span class="PROGRAMLISTING"><pre>&lt;%
+
+' The following code tests the result from a method call
+' to a custom server component that attempts to remove
+' a book from the inventory table and then tests the
+' results from a credit card check.
+
+' Based on this code and the segment that follows it, the 
+' script will call either the SetAbort or the SetComplete 
+' method of the ObjectContext object.
+
+' Attempt to sell 2 copies of the book Animal Farm.
+intBooks = MyInventory.SellBook("Animal Farm", 2)
+
+' Check the credit card given by the client.
+intCheckCC = MyCreditChecker.ChkCard("0001231234")
+
+If intBooks = 2 And intCheckCC = 0 Then
+
+   ' Complete the transaction. Two copies of the book 
+   ' are in the inventory and the credit card checks out.
+   ObjectContext.SetComplete
+
+Else
+
+   ' Abort the transaction. Either there are not two 
+   ' copies of the book in the inventory or the credit 
+   ' card did not check out.
+   ObjectContext.SetAbort
+
+End If
+
+%&gt;</pre></span>
+
+
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="DESCRIPTIONTITLE">Hinweise</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+
+
+<p>Alle Segmente in einem Transaktionsskript k&ouml;nnen die Methode SetAbort aufrufen. Beachten Sie jedoch, dass Code, der nach dem Aufruf von SetAbort vorhanden ist, erst nach der Ereignisprozedur OnTransactionAbort ausgef&uuml;hrt wird, wenn diese existiert. Aus diesem Grund sollten Sie sicherstellen, dass Ihre Ereignisprozedur OnTransactionAbort alle Optimierungsschritte ausf&uuml;hrt, die f&uuml;r Aktionen erforderlich ist, die nicht durch eine Transaktion unterst&uuml;tzt werden (namentlich Dateiaktionen).</p>
+
+
+
+
+<p>Wenn bestimmter Code unabh&auml;ngig vom Aufruf SetAbort verarbeitet werden soll, m&uuml;ssen Sie diesen im Skript vor dem Aufruf SetAbort platzieren oder den Abschluss der Transaktion nach Ihrem Code im Skript testen.</p>
+
+
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+<div id="SetComplete">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+SetComplete</td>
+<td class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2"><span class="LITERAL">ObjectContext.SetComplete</span>
+</td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+<p><!--<primary>SetComplete method
+(ObjectContext)</primary>--> <!--<primary>committing transactions</primary>-->Gibt den erfolgreichen Abschluss einer Transaktion an. Wenn diese Methode aufgerufen wird, wird der Code in der Ereignisprozedur OnTransactionCommit verarbeitet, wenn dieser vorhanden ist.</p>
+
+
+
+
+<p>Der Aufruf der Methode SetComplete direkt aus dem Skript selbst weist auf den erfolgreichen Abschluss des Skripts auf der Seite hin. Diese Methode &uuml;berschreibt jedoch nicht das m&ouml;gliche Fehlschlagen des Codes innerhalb der Komponenten, auf die das Skript Bezug nimmt. Alle Transaktionskomponenten im Skript m&uuml;ssen SetComplete angeben, damit die Transaktion wirksam wird.</p>
+
+
+
+</td>
+</tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td></tr>
+<tr>
+<td colspan="2" class="DESCRIPTIONTITLE">Parameter</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+
+
+<p>Keine</p>
+
+
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="DESCRIPTIONTITLE">Beispiel</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+
+
+<p>Siehe das Beispiel im Abschnitt oben unter &quot;SetAbort&quot;.</p>
+
+
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="DESCRIPTIONTITLE">Hinweise</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+
+
+<p>Beachten Sie, dass der Aufruf von SetComplete nicht unbedingt bedeutet, dass die gesamte Transaktion abgeschlossen ist. Jede Komponente, die durch das Skript aufgerufen wird, muss ebenfalls die Methode SetComplete des ObjectContext-Objekts aufrufen.</p>
+
+
+
+
+<p>Wenn Sie SetComplete nicht explizit aufrufen, ist die Transaktion erst abgeschlossen, nachdem der gesamte Code ohne Aufruf von SetAbort verarbeitet ist. Wenn SetAbort bis zum Ende des Skripts nicht aufgerufen wird, wird die Ereignisprozedur OnTransactionCommit (falls vorhanden) verarbeitet, unabh&auml;ngig davon, ob SetComplete aufgerufen wird.</p>
+
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+<div id="OnTransactionAbort">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+OnTransactionAbort</td>
+<td class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2"><span class="LITERAL">OnTransactionAbort( )</span>
+</td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+<p>Die Ereignisprozedur <!--<primary>OnTransactionAbort event (ObjectContext)</primary>-->OnTransactionAbort wird umgehend verarbeitet, wenn die Methode SetAbort des ObjectContext-Objekts explizit im Skriptcode oder durch eine Serverkomponente vom Skriptcode aufgerufen wird. Ruft kein Code die Methode SetAbort auf, wird diese Ereignisprozedur nie verarbeitet.</p>
+
+
+
+</td>
+</tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td></tr>
+<tr>
+<td colspan="2" class="DESCRIPTIONTITLE">Parameter</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+
+
+<p>Keine</p>
+
+
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="DESCRIPTIONTITLE">Beispiel</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+
+
+<span class="PROGRAMLISTING"><pre>&lt;% 
+
+' The following code procedure is processed when the code in 
+' the SetAbort method example is processed.
+Sub OnTransactionAbort ( )
+%&gt;
+   Your book sales transaction could not be completed.
+   Either there was not sufficient inventory for your
+   sale to be processed, or your credit card did not 
+   go through.
+&lt;%
+   ' Clean up any nontransactional actions here...
+
+End Sub
+
+%&gt;</pre></span>
+
+
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="DESCRIPTIONTITLE">Hinweise</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+
+
+<p>Verwenden Sie die Methode OnTransactionAbort, um nicht unterst&uuml;tzte Aktionen Ihrer Transaktion zu optimieren, die r&uuml;ckg&auml;ngig gemacht werden m&uuml;ssen, falls die Transaktion fehlschl&auml;gt. Dies schlie&szlig;t &Auml;nderungen an Variablen (mit sitzungs- bzw. anwendungsweiter G&uuml;ltigkeit), der Registrierung und am Dateisystem ein. Sie sollten jedoch darauf achten, dass Ihre Serverkomponenten nach Abschluss einer Aktion &quot;aufr&auml;umen&quot;.</p>
+
+
+
+
+<p>Das Ereignis OnTransactionAbort wird auch dazu verwendet, den Client &uuml;ber das Fehlschlagen der Transaktion zu informieren.</p>
+
+
+
+
+<p>Rufen Sie die Methoden SetAbort und SetCommit nicht aus der Ereignisprozedur OnTransactionAbort auf. Dies k&ouml;nnte eine Schleife einf&uuml;gen und dazu f&uuml;hren, das die Funktionalit&auml;t Ihrer Anwendung und/oder Daten verloren gehen.</p>
+
+
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+<div id="OnTransactionCommit">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+OnTransactionCommit</td>
+<td class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2"><span class="LITERAL">OnTransactionCommit( )</span>
+</td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+<p>Die Ereignisprozedur <!--<primary>OnTransactionCommit event (ObjectContext)</primary>-->OnTransactionCommit wird umgehend verarbeitet, wenn die Methode SetCompletedes ObjectContext-Objekts explizit im Skriptcode oder durch eine Serverkomponente vom Skriptcode aufgerufen wird. Sie wird implizit aufgerufen, wenn kein Skript auf der aktuellen Seite die Methode SetAbort aufgerufen hat.</p>
+
+
+
+</td>
+</tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td></tr>
+<tr>
+<td colspan="2" class="DESCRIPTIONTITLE">Parameter</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+
+
+<p>Keine</p>
+
+
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="DESCRIPTIONTITLE">Beispiel</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+
+
+<span class="PROGRAMLISTING"><pre>&lt;% 
+
+' The following code procedure is processed when the code in 
+' the SetComplete method example is processed.
+Sub OnTransactionCommit ( )
+%&gt;
+   Your book sales transaction was completed.
+   Thank you for your sale.
+
+&lt;%
+   Session("intTotalSales") = Session("intTotalSales") + 1
+
+   ' Process any nontransactional code here...
+
+End Sub
+
+%&gt;</pre></span>
+
+
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="DESCRIPTIONTITLE">Hinweise</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+
+
+<p>Die Ereignisprozedur OnTransactionCommit kann dazu eingesetzt werden, den Client &uuml;ber den Erfolg der Transaktion zu informieren. Sie kann auch f&uuml;r Code verwendet werden, der nur ausgef&uuml;hrt werden soll, nachdem eine Transaktion erfolgreich abgeschlossen wurde.</p>
+
+
+
+
+<p>Rufen Sie die Methoden SetAbort und SetCommit nicht aus der Ereignisprozedur OnTransactionCommit auf. Dies k&ouml;nnte eine Schleife einf&uuml;gen und dazu f&uuml;hren, das die Funktionalit&auml;t Ihrer Anwendung und/oder Daten verloren gehen.
+
+
+</p>
+
+
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+</body>
+</html>

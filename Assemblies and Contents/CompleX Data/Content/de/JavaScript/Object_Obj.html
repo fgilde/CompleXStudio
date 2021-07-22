@@ -1,0 +1,766 @@
+<html>
+<link rel="stylesheet" href="josh.css">
+<body bgcolor="#FFFFFF">
+
+		<div id="Beschreibung">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">Object</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">3</span> IE <span class="emphasis">4</span> ECMA <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Das <span class="literal">Object</span>-Objekt ist nicht nur die Grundlage aller nativen JavaScript-Objekte, sondern dar&uuml;ber hinaus das Reinmodell des JavaScript-Objekts an sich – einschlie&szlig;lich der benutzerdefinierten Skriptobjekte, die Sie erstellen. Mithilfe des <span class="literal">Object</span>-Objekts k&ouml;nnen Sie in Ihren Skripts Dinge mit Verhalten erzeugen, die von benutzerdefinierten Eigenschaften und/oder Methoden definiert werden. In aller Regel erstellen Sie zun&auml;chst mit der Konstruktorfunktion ein leeres Objekt und weisen anschlie&szlig;end den neuen Eigenschaften dieses Objekts Werte zu.
+</p>
+							</td>
+						</tr>
+						<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>In Navigator ab Version 4 und IE ab Version 5 k&ouml;nnen Sie Eigenschaften und Werte auch &uuml;ber eine spezielle literale Syntax zuweisen, die zugleich auch die <span class="literal">Object</span>-Instanz erstellt:
+</p>
+<span class="PROGRAMLISTING"><pre>var myObject = &#123;<var class="replaceable">propName1</var>:<var class="replaceable">propValue1</var>[, <var class="replaceable">propName2</var>:<var class="replaceable">propValue2</var>[, 
+...<var class="replaceable">propNameN</var>:<var class="replaceable">propValueN</var>]]}</pre></span>
+							</td>
+						</tr>
+						<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Sie k&ouml;nnen Objekte auch als Datenstrukturen f&uuml;r strukturierte benutzerdefinierte Daten in Ihren Skripts verwenden, in &auml;hnlicher Weise wie Sie ein Array mit benannten Indexwerten erstellen.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="properties"><span class="title">Eigenschaften</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<table border="1"><tbody><tr><td><span class="literal">constructor</span></td><td> <span class="literal">prototype</span></td>
+								</tr>
+							</tbody></table>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="methods"><span class="title">Methoden</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<table border="1"><tbody><tr><td><span class="literal">hasOwnProperty( )</span></td><td><span class="literal">isPrototypeOf( )</span></td><td><span class="literal">propertyIsEnumerable( )</span></td>
+								</tr>
+								<tr><td><span class="literal">toLocaleString( )</span></td><td><span class="literal">toString( )</span></td><td><span class="literal">valueOf( )</span></td>
+								</tr>
+							</tbody></table>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="creatinganobjectobject"><span class="title">Erstellen eines Object-Objekts</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>var myObject = new Object( );
+var myObject = &#123;<span class="replaceable">propName1</span>:<span class="replaceable">propVal1</span>[, <span class="replaceable">propName2</span>:<span class="replaceable">propVal2</span>[,...<span class="replaceable">N</span>]]};
+var myObject = new <span class="replaceable">constructorFuncName</span>([<span class="replaceable">propVal1</span>[, <span class="replaceable">propVal2</span>[,...<span class="replaceable">N</span>]]]);</pre>
+						</span></td>
+				</tr>
+			</table>
+		</div><div id="constructor">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">constructor</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">4</span> IE <span class="emphasis">4</span> ECMA <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Lesen/Schreiben</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Stellt eine Referenz auf die Funktion bereit, die die Instanz eines <span class="literal">Object</span>-Objekts erstellt hat – die native <span class="literal">Object( )</span>-Konstruktorfunktion in einem Browser.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>if (myVar.constructor == Object) &#123;
+    // process native string
+}</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Funktionsobjektreferenz.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="prototype">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">prototype</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">4</span> IE <span class="emphasis">4</span> ECMA <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Lesen/Schreiben</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Dies ist eine Eigenschaft des statischen <span class="literal">Object</span>-Objekts. Mit der Eigenschaft <span class="literal">prototype</span> k&ouml;nnen Sie sp&auml;teren Instanzen eines <span class="literal">Object</span>Objekts im aktuellen Dokument neue Eigenschaften und Methoden zuweisen. Beispiele hierzu finden Sie in der Beschreibung der Eigenschaft <span class="literal">Array.prototype</span>.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>Object.prototype.author = "DG";</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Beliebige Daten, einschlie&szlig;lich Funktionsreferenzen.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="hasOwnProperty( )">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">hasOwnProperty( )</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">5.5(Win)</span> ECMA <span class="emphasis">3</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">hasOwnProperty("<span class="replaceable">propertyName</span>")</p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Gibt den Booleschen Wert <span class="literal">true</span> zur&uuml;ck, wenn der Konstruktor (oder die literale Zuweisung) der aktuellen Objektinstanz zu dem Zeitpunkt, als Sie die Instanz erstellten, eine Eigenschaft enthielt, deren Name mit dem Parameterwert &uuml;bereinstimmte. Eine Eigenschaft, die einem Objekt &uuml;ber seine <span class="literal">prototype</span>-Eigenschaft zugewiesen wurde, wird nicht als Eigenschaft des Objekts selbst betrachtet.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Parameter</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<ul><li><span class="literal"></span>String mit dem Namen einer Objekteigenschaft.</li></ul>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Zur&uuml;ckgegebener Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Boolescher Wert: <span class="literal">true</span> | <span class="literal">false</span>.</p>
+					</td>
+				</tr>
+			</table>
+		</div>
+		<div id="isDisabled">
+					<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+						<tr><td valign="top" class="name">isDisabled</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">nicht zutreffend</span> IE <span class="emphasis">5.5(Win)</span> DOM <span class="emphasis">nicht zutreffend</span></td>
+						</tr>
+						<tr>
+							<td valign="top" nowrap class="usage"><p class="literal"></p>
+							</td><td valign="top" nowrap class="requirements"><span class="emphasis">Schreibgesch&uuml;tzt</span></td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="description"><p>Legt fest, ob das aktuelle Element deaktiviert ist. Legt den tats&auml;chlichen Deaktivierungsstatus offen, der entweder explizit f&uuml;r das Element festgelegt oder von einem &uuml;bergeordneten Element geerbt wurde.
+		</p>
+									</td>
+								</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td><span class="programlisting"><pre>if (document.getElementById("<span class="replaceable">elementID</span>").isDisabled) &#123;
+		    // process the disabled element
+		}</pre>
+								</span></td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Boolescher Wert: <span class="literal">true</span> | <span class="literal">false</span>.</p>
+							</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td valign="top" nowrap colspan="2" class="default"><span class="title">Standardwert</span></td>
+						</tr>
+						<tr>
+							<td colspan="2"><p><span class="literal">false</span></p>
+							</td>
+						</tr>
+					</table>
+		</div>
+		<div id="isPrototypeOf( )">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">isPrototypeOf( )</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">5.5(Win)</span> ECMA <span class="emphasis">3</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">isPrototypeOf(<span class="replaceable">objectReference</span>)</p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Gibt den Booleschen Wert <span class="literal">true</span> zur&uuml;ck, wenn das aktuelle Objekt und das als Parameter &uuml;bergebene Objekt an irgendeinem Punkt in der Prototyp-Erbfolge der beiden Objekte &uuml;bereinstimmen. Beachten Sie, dass IE und Navigator in Bezug auf die Ergebnisse nicht immer einer Meinung sind.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Parameter</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<ul><li><span class="literal"></span>Referenz auf ein Objekt, f&uuml;r das m&ouml;glicherweise dieselbe Prototyp-Vererbung gilt wie f&uuml;r das aktuelle Objekt.
+</li></ul>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Zur&uuml;ckgegebener Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Boolescher Wert: <span class="literal">true</span> | <span class="literal">false</span>.</p>
+					</td>
+				</tr>
+			</table>
+		</div>
+		<div id="lang">
+					<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+						<tr><td valign="top" class="name">lang</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">4</span> DOM <span class="emphasis">1</span></td>
+						</tr>
+						<tr>
+							<td valign="top" nowrap class="usage"><p class="literal"></p>
+							</td><td valign="top" nowrap class="requirements"><span class="emphasis">Lesen/Schreiben</span></td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="description"><p>Gibt an, welche Sprache f&uuml;r die Attribut- und Eigenschaftswerte des Elements verwendet wird. Andere Anwendungen und Suchmaschinen k&ouml;nnen anhand dieser Informationen W&ouml;rterb&uuml;cher f&uuml;r die Rechtschreibpr&uuml;fung ausw&auml;hlen und Indizes erstellen.
+		</p>
+									</td>
+								</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td><span class="programlisting"><pre>document.getElementById("<span class="replaceable">elementID</span>").lang = "de";</pre>
+								</span></td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Sprachcode, bei dem nicht zwischen Gro&szlig;- und Kleinschreibung unterschieden wird.</p>
+							</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td valign="top" nowrap colspan="2" class="default"><span class="title">Standardwert</span></td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Vorgabe des Browsers. </p>
+							</td>
+						</tr>
+					</table>
+		</div>
+		<div id="propertyIsEnumerable( )">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">propertyIsEnumerable( )</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">5.5(Win)</span> ECMA <span class="emphasis">3</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">propertyIsEnumerable("<span class="replaceable">propertyName</span>")</p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Gibt den Booleschen Wert <span class="literal">true</span> zur&uuml;ck, wenn sich die Eigenschaft, deren Name als Parameter &uuml;bergeben wird, f&uuml;r die <span class="literal">for</span>/<span class="literal">in</span>-Eigenschaftsinspektion durch das Objekt offen legt.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Parameter</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<ul><li><span class="literal"></span>String mit dem Namen einer Objekteigenschaft.</li></ul>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Zur&uuml;ckgegebener Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Boolescher Wert: <span class="literal">true</span> | <span class="literal">false</span>.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="toLocaleString( )">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">toLocaleString( )</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">5.5(Win)</span> ECMA <span class="emphasis">3</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Browser k&ouml;nnen selbstst&auml;ndig bestimmen, wie die Stringdarstellungen von Objektinstanzen lokalisiert werden sollen. Derzeit scheinen sie dieselbe Aktion auszuf&uuml;hren wie die Methode <span class="literal">toString( )</span> und den Wert <span class="literal">[object Object]</span> zur&uuml;ckzugeben.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Parameter</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Keine.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Zur&uuml;ckgegebener Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>String.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="toString( )">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">toString( )</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">4</span> IE <span class="emphasis">4</span> ECMA <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Gibt den Wert eines Objekts als String zur&uuml;ck. In neueren Browsern ist dieser Wert <span class="literal">[object</span>
+<span class="literal">Object]</span>.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Parameter</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Keine.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Zur&uuml;ckgegebener Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>String.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="valueOf( )">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">valueOf( )</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">4</span> IE <span class="emphasis">4</span> ECMA <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Gibt den Objektwert zur&uuml;ck.</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Parameter</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Keine. </p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Zur&uuml;ckgegebener Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Eine Objektreferenz.</p>
+					</td>
+				</tr>
+			</table>
+		</div>
+		<div id="componentFromPoint( )">
+					<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+						<tr><td valign="top" class="name">componentFromPoint( )</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">nicht zutreffend</span> IE <span class="emphasis">5(Win)</span> DOM <span class="emphasis">nicht zutreffend</span></td>
+						</tr>
+						<tr>
+							<td valign="top" nowrap class="usage"><p class="literal">componentFromPoint(<span class="replaceable">x</span>, <span class="replaceable">y</span>)</p>
+							</td><td valign="top" nowrap class="requirements"></td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="description"><p>Gibt eine Zeichenfolge zur&uuml;ck, die angibt, an welcher Stelle im Element sich die Koordinatenpunkte befinden. Bei Elementen mit Bildlaufleisten legt der zur&uuml;ckgegebene Wert offen, welcher Teil der Bildlaufleiste an der Koordinatenposition liegt. Wenn Sie den Microsoft-Dokumentbearbeitungsmodus aktivieren, werden noch weitere Elementbereiche wie ziehbare Fenstergriffe im R&uuml;ckgabewert angegeben. Bei Bereichen von Elementen ohne Bildlaufleisten oder Griffen k&ouml;nnen Sie au&szlig;erdem bestimmen, ob eine Koordinate innerhalb oder au&szlig;erhalb des Elements liegt, was vor allem bei der Erkennung von Kollisionen zwischen Koordinaten und dem Element hilfreich ist.
+		</p>
+									</td>
+								</tr>
+								<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+								</tr>
+								<tr>
+									<td colspan="2"><p>Die am h&auml;ufigsten verwendete Quelle f&uuml;r Koordinatenparameterwerte ist das <span class="literal">event</span>-Objekt, insbesondere dessen Eigenschaften <span class="literal">event.clientX</span> und <span class="literal">event.clientY</span>. Sie k&ouml;nnen diese Werte direkt anwenden. Beispiel:
+		</p>
+									</td>
+								</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="parameters"><span class="title">Parameter</span></td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td>
+								<ul><li><span class="literal"></span>Positiver oder negativer Pixelwert relativ zum oberen Rand des Bildschirms.</li><li><span class="literal"></span>Positiver oder negativer Pixelwert relativ vom linken Rand des Bildschirms.
+		</li></ul>
+							</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="returnedvalue"><span class="title">Zur&uuml;ckgegebener Wert</span></td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Einer der in der folgenden Tabelle aufgef&uuml;hrten Zeichenfolgenwerte.</p>
+							</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td>
+								<table border="1"><tbody><th>Zur&uuml;ckgegebene Zeichenfolgenwerte</th><th>Beschreibung</th><tr><td>leere Zeichenfolge</td><td>Innerhalb des Inhaltsbereichs des Elements</td>
+										</tr>
+										<tr><td><span class="literal">outside</span></td><td>Au&szlig;erhalb des Inhaltsbereichs des Elements</td>
+										</tr>
+										<tr><td><span class="literal">handleBottom</span></td><td>Unterer Bearbeitungsmodusgriff</td>
+										</tr>
+										<tr><td><span class="literal">handleBottomLeft</span></td><td>Linker unterer Bearbeitungsmodusgriff</td>
+										</tr>
+										<tr><td><span class="literal">handleBottomRight</span></td><td>Rechter unterer Bearbeitungsmodusgriff</td>
+										</tr>
+										<tr><td><span class="literal">handleLeft</span></td><td>Linker Bearbeitungsmodusgriff</td>
+										</tr>
+										<tr><td><span class="literal">handleRight</span></td><td>Rechter Bearbeitungsmodusgriff</td>
+										</tr>
+										<tr><td><span class="literal">handleTop</span></td><td>Oberer Bearbeitungsmodusgriff</td>
+										</tr>
+										<tr><td><span class="literal">handleTopLeft</span></td><td>Linker oberer Bearbeitungsmodusgriff</td>
+										</tr>
+										<tr><td><span class="literal">handleTopRight</span></td><td>Rechter oberer Bearbeitungsmodusgriff</td>
+										</tr>
+										<tr><td><span class="literal">scrollbarDown</span></td><td>Abw&auml;rtspfeil der Bildlaufleiste</td>
+										</tr>
+										<tr><td><span class="literal">scrollbarHThumb</span></td><td>Schieberegler der horizontalen Bildlaufleiste</td>
+										</tr>
+										<tr><td><span class="literal">scrollbarLeft</span></td><td>Linkspfeil der Bildlaufleiste</td>
+										</tr>
+										<tr><td><span class="literal">scrollbarPageDown</span></td><td>Bild-ab-Bereich der Bildlaufleiste</td>
+										</tr>
+										<tr><td><span class="literal">scrollbarPageLeft</span></td><td>Bild-links-Bereich der Bildlaufleiste</td>
+										</tr>
+										<tr><td><span class="literal">scrollbarPageRight</span></td><td>Bild-rechts-Bereich der Bildlaufleiste</td>
+										</tr>
+										<tr><td><span class="literal">scrollbarPageUp</span></td><td>Bild-auf-Bereich der Bildlaufleiste</td>
+										</tr>
+										<tr><td><span class="literal">scrollbarRight</span></td><td>Rechtspfeil der Bildlaufleiste</td>
+										</tr>
+										<tr><td><span class="literal">scrollbarUp</span></td><td>Aufw&auml;rtspfeil der Bildlaufleiste</td>
+										</tr>
+										<tr><td><span class="literal">scrollbarVThumb</span></td><td>Schieberegler der vertikalen Bildlaufleiste</td>
+										</tr>
+									</tbody></table>
+							</td>
+						</tr>
+					</table>
+				</div>
+				<div id="contains( )">
+					<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+						<tr><td valign="top" class="name">contains( )</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">nicht zutreffend</span> IE <span class="emphasis">4</span> DOM <span class="emphasis">nicht zutreffend</span></td>
+						</tr>
+						<tr>
+							<td valign="top" nowrap class="usage"><p class="literal">contains(<span class="replaceable">elementReference</span>)</p>
+							</td><td valign="top" nowrap class="requirements"></td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="description"><p>Gibt an, ob das aktuelle Element das angegebene Element enth&auml;lt.</p>
+									</td>
+								</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="parameters"><span class="title">Parameter</span></td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td>
+								<ul><li><span class="literal"></span>Eine vollst&auml;ndige Elementobjektreferenz (z. B. <span class="literal">document.getElementByID("myDIV")</span>).
+		</li></ul>
+							</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="returnedvalue"><span class="title">Zur&uuml;ckgegebener Wert</span></td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Boolescher Wert: <span class="literal">true</span> | <span class="literal">false</span>.</p>
+							</td>
+						</tr>
+					</table>
+		</div>
+<div id="getBoundingClientRect( )">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">getBoundingClientRect( )</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">nicht zutreffend</span> IE <span class="emphasis">5(Win)</span> DOM <span class="emphasis">nicht zutreffend</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Gibt ein IE-<span class="literal">TextRectangle</span>-Objekt zur&uuml;ck, das den durch das aktuelle Element (auch Bilder und andere Nicht-Text-Elemente) belegten rechteckigen Bereich beschreibt. Die Breite des Rechtecks (mit Eigenschaften f&uuml;r <span class="literal">top</span>-, <span class="literal">right</span>-, <span class="literal">bottom</span>- und <span class="literal">left</span>-Koordinaten) entspricht der des breitesten Inhaltsbereichs (z. B. der l&auml;ngsten Zeile eines umbrochenen Absatzes) und seine H&ouml;he der Summe aller Inhalte. Informationen zum Abrufen der Ma&szlig;e der Rechtecke einzelner Zeilen eines Textelements finden Sie in der Abhandlung der Methode <span class="literal">getClientRects( )</span>.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Parameter</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Keine.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Zur&uuml;ckgegebener Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p><span class="literal">TextRectangle</span>-Objekt.</p>
+					</td>
+				</tr>
+			</table>
+		</div>
+BREAKFILE
+		<div id="getClientRects( )">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">getClientRects( )</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">nicht zutreffend</span> IE <span class="emphasis">5(Win)</span> DOM <span class="emphasis">nicht zutreffend</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Gibt ein Array aller IE-<span class="literal">TextRectangle</span>-Objekte zur&uuml;ck. Bei den Eintr&auml;gen des Arrays handelt es sich um die <span class="literal">TextRectangle</span>-Objekte der einzelnen Zeilen eines mehrzeiligen Textelements. Zeilen mit unterschiedlichen Schriftgr&ouml;&szlig;en oder Zeilenh&ouml;hen werden von unterschiedlich hohen Rechtecken umschlossen. Informationen zu den Eigenschaften finden Sie in der Abhandlung des <span class="literal">TextRectangle</span>-Objekts. Wenn Sie ein einziges <span class="literal">TextRectangle</span>-Objekt f&uuml;r ein gesamtes Element erhalten m&ouml;chten, verwenden Sie die Methode <span class="literal">getBoundingClientRect( )</span>.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Parameter</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Keine.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Zur&uuml;ckgegebener Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Array mit <span class="literal">TextRectangle</span>-Objekten.</p>
+					</td>
+				</tr>
+			</table>
+		</div>
+		<div id="releaseCapture( )">
+					<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+						<tr><td valign="top" class="name">releaseCapture( )</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">nicht zutreffend</span> IE <span class="emphasis">5(Win)</span> DOM <span class="emphasis">nicht zutreffend</span></td>
+						</tr>
+						<tr>
+							<td valign="top" nowrap class="usage"><p class="literal"></p>
+							</td><td valign="top" nowrap class="requirements"></td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="description"><p>Schaltet den Erfassungsmodus f&uuml;r Mausereignisse ab, der zuvor mit der Methode <span class="literal">setCapture( )</span> eingeschaltet wurde. Im IE-Ereignismodell k&ouml;nnen Mausereignisse nur vor&uuml;bergehend erfasst werden, um sie beispielsweise zu verarbeiten, w&auml;hrend ein als positioniertes <span class="literal">div</span>-Element implementiertes Kontextmen&uuml; aktiviert ist. In IE wird die Ereigniserfassung au&szlig;erdem durch verschiedene Benutzeraktionen automatisch deaktiviert: durch Weitergabe des Fokus an ein anderes Fenster, einen anderen Frame oder das Adressfeld des Browsers, durch Rollen eines Fensters, durch Einblenden eines Systemdialogfelds oder durch Aufrufen des echten Kontextmen&uuml;s.
+		</p>
+									</td>
+								</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="parameters"><span class="title">Parameter</span></td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Keine.</p>
+							</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="returnedvalue"><span class="title">Zur&uuml;ckgegebener Wert</span></td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Keiner.</p>
+							</td>
+						</tr>
+					</table>
+		</div>
+			<div id="setCapture( )">
+					<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+						<tr><td valign="top" class="name">setCapture( )</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">nicht zutreffend</span> IE <span class="emphasis">5(Win)</span> DOM <span class="emphasis">nicht zutreffend</span></td>
+						</tr>
+						<tr>
+							<td valign="top" nowrap class="usage"><p class="literal">setCapture([<span class="replaceable">containerFlag</span>])</p>
+							</td><td valign="top" nowrap class="requirements"></td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="description"><p>Aktiviert den IE-Erfassungsmodus f&uuml;r alle Mausklickereignisse (<span class="literal">onclick</span>, <span class="literal">ondblclick</span>, <span class="literal">onmousedown</span>, <span class="literal">onmousemove</span>, <span class="literal">onmouseout</span>, <span class="literal">onmouseover</span>, <span class="literal">onmouseup</span>), damit die gesamte Ereignisverarbeitung f&uuml;r diese Ereignisse ungeachtet des eigentlichen Ereignisziels an das aktuelle Element &uuml;bertragen wird. Hilfreich bei der Einrichtung der f&uuml;r die Behandlung benutzerdefinierter Kontextmen&uuml;s oder f&uuml;r Drag&amp;Drop-Operationen ben&ouml;tigten Mausmodalit&auml;t. Solange die Erfassung aktiviert ist, enth&auml;lt die Eigenschaft <span class="literal">event.srcElement</span> eines jeden Ereignisses eine Referenz auf das Element, das das Ereignis normalerweise empfangen w&uuml;rde. Die Ereignisse werden jedoch ausschlie&szlig;lich von den Ereignisbehandlungsroutinen des im Erfassungsmodus arbeitenden Elements verarbeitet. Wenn Sie den modalen Effekt nicht mehr ben&ouml;tigen, k&ouml;nnen Sie den Erfassungsmodus mithilfe der Methode <span class="literal">releaseCapture( )</span> wieder deaktivieren. In IE wird die Ereigniserfassung au&szlig;erdem durch verschiedene Benutzeraktionen automatisch deaktiviert: durch Weitergabe des Fokus an ein anderes Fenster, einen anderen Frame oder das Adressfeld des Browsers, durch Rollen eines Fensters, durch Einblenden eines Systemdialogfelds oder durch Aufrufen des echten Kontextmen&uuml;s.
+		</p>
+									</td>
+								</tr>
+								<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+								</tr>
+								<tr>
+									<td colspan="2"><p>IE ab Version 5.5 bietet einen optionalen Parameter, der eine genauere Steuerung der Ereignisverbreitung erm&ouml;glicht, wenn ein Benutzer ein Mausereignis f&uuml;r ein Element ausl&ouml;st, dessen Parent-Element im Erfassungsmodus arbeitet. Das Standardverhalten (der Parameter wird weggelassen oder ist auf <span class="literal">true</span> gesetzt) bewirkt, dass der Parent-Container Ereignisse wie erwartet abf&auml;ngt. Wenn Sie den Parameter jedoch auf <span class="literal">false</span> setzen, werden Ereignisse zuerst an ihre eigentlichen Ereignisziele (Child-Elemente des im Erfassungsmodus arbeitenden Elements) weitergeleitet. Solche Ereignisse k&ouml;nnen anschlie&szlig;end ganz normal aufw&auml;rts verbreitet werden; alle anderen Mausereignisse werden direkt an das Element geleitet, das im Erfassungsmodus arbeitet. Wenn Sie beispielsweise die Methode <span class="literal">setCapture( )</span> f&uuml;r ein Element aufrufen, das ein Formular mit klickbaren Formularsteuerelementen enth&auml;lt, kann es sinnvoll sein, den Parameter <span class="literal">false</span> zu verwenden, damit Mausaktionen (zum Beispiel ein Mausklick auf ein Textfeld) trotz des aktivierten Erfassungsmodus ihre eigentlichen Ziele erreichen. Andernfalls w&uuml;rden die Child-Elemente auf Mausaktionen nicht reagieren und sich die Formularsteuerelemente so verhalten, als seien sie deaktiviert.
+		</p>
+									</td>
+								</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="parameters"><span class="title">Parameter</span></td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td>
+								<ul><li><span class="literal"></span><span class="literal">true</span> (Standardeinstellung), wenn das aktuelle Element, sofern es sich um einen Container handelt, alle Mausereignisse abfangen soll, oder <span class="literal">false</span>, um Mausereignisse vor der aufw&auml;rts gerichteten Verbreitung an ihre eigentlichen Ziele weiterzuleiten.
+		</li></ul>
+							</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="returnedvalue"><span class="title">Zur&uuml;ckgegebener Wert</span></td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Keiner.</p>
+							</td>
+						</tr>
+					</table>
+		</div>
+</body>
+</html>

@@ -1,0 +1,744 @@
+<html>
+<link rel="stylesheet" href="josh.css">
+<body bgcolor="#FFFFFF">
+
+		<div id="Beschreibung">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">Array</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">3</span> IE <span class="emphasis">4</span> ECMA <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Ein Array ist eine geordnete Objektsammlung aus einem oder mehreren Datenelementen. JavaScript-Array-Eintr&auml;ge k&ouml;nnen jeden beliebigen Datentyp aufweisen, und ein Array kann verschiedene Datentypen enthalten. Jedem Eintrag in einem Array ist ein Index zugeordnet. Das Standardverhalten f&uuml;r den Index ist ein auf Null basierender Integer (der erste Eintrag hat den Index Null [0]). Ein Indexwert kann auch in Form eines Strings vorliegen, wobei sich der Stringindex jedoch wie der Eigenschaftsname eines Array-Objekts verh&auml;lt und keinen Einfluss auf die numerischen Indizes hat. (Daher k&ouml;nnen durch Strings indizierte Eintr&auml;ge nicht anhand der Eigenschaft <span class="literal">length</span>, sondern nur mithilfe einer <span class="literal">for-in</span>-Schleife durchlaufen werden.) Ein Array-Objekt kann sowohl durch Integer als auch durch Strings indizierte Elemente in separaten Mengen enthalten.
+</p>
+							</td>
+						</tr>
+						<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Der Zugriff auf einen Eintrag in einem Array erfordert den Namen des Arrays und den Index in eckigen Klammern:
+</p><span class="programlisting"><pre>cars[0]
+cars["Ford"]</pre></span>
+							</td>
+						</tr>
+						<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Sie k&ouml;nnen auch ein Array erstellen, das seinerseits Arrays enth&auml;lt, um ein mehrdimensionales Array zu simulieren. Zum Referenzieren eines Elements in einem zweidimensionalen Array wird folgende Syntax verwendet:
+</p><span class="programlisting">
+<pre>myArray[x][y]</pre>
+</span>
+							</td>
+						</tr>
+						<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Die Anzahl von Eintr&auml;gen in einem JavaScript-Array (die L&auml;nge) kann sich mit der Zeit &auml;ndern. Daher ist es weder erforderlich noch in irgendeiner besonderen Weise von Vorteil, ein leeres Array f&uuml;r eine bestimmte Gr&ouml;&szlig;e zu initialisieren. Wenn Sie einem Array unbestimmter L&auml;nge einen neuen Eintrag hinzuf&uuml;gen m&ouml;chten, weisen Sie den gew&uuml;nschten Wert dem jeweils n&auml;chsth&ouml;heren Array-Indexwert zu:
+</p>
+							</td>
+						</tr>
+						<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>IE ab Version 4 und Navigator ab Version 4 unterst&uuml;tzen ein verk&uuml;rztes Verfahren zum Erstellen von Arrays, bei dem die Werte in literaler Schreibweise in eckigen Klammern stehen.
+</p><span class="programlisting"><pre>cars[cars.length] = &quot;Bentley&quot;;</pre></span>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="properties"><span class="title">Eigenschaften</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<table border="1"><tbody><tr><td><span class="literal">constructor</span></td><td><span class="literal">length</span></td><td><span class="literal">prototype</span></td>
+								</tr>
+							</tbody></table>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="methods"><span class="title">Methoden</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<table border="1"><tbody><tr><td><span class="literal">concat( )</span></td><td><span class="literal">join( )</span></td><td><span class="literal">pop( )</span></td>
+								</tr>
+								<tr><td><span class="literal">push( )</span></td><td><span class="literal">reverse( )</span></td><td><span class="literal">shift( )</span></td>
+								</tr>
+								<tr><td><span class="literal">slice( )</span></td><td><span class="literal">sort( )</span></td><td><span class="literal">splice( )</span></td>
+								</tr>
+								<tr><td><span class="literal">toLocaleString( )</span></td><td><span class="literal">toString( )</span></td><td><span class="literal">unshift( )</span></td>
+								</tr>
+							</tbody></table>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="creatinganarray"><span class="title">Erstellen eines Array</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>var myArray = new Array( );
+var myArray = new Array(<span class="replaceable">sizeInteger</span>);
+var myArray = new Array(<span class="replaceable">element0</span>, <span class="replaceable">element1</span>, ..., <span class="replaceable">elementN</span>);
+var myArray = [<span class="replaceable">element0</span>, <span class="replaceable">element1</span>, ..., <span class="replaceable">elementN</span>];</pre>
+						</span></td>
+				</tr>
+			</table>
+		</div><div id="constructor">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">constructor</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">4</span> IE <span class="emphasis">4</span> ECMA <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Lesen/Schreiben</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Dies ist eine Referenz auf die Funktion, die die Instanz eines <span class="literal">Array</span>-Objekts erstellt hat – die native <span class="literal">Array( )</span>-Konstruktorfunktion in einem Browser.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>if (myVar.constructor == Array) {
+    // process native string
+}</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Funktionsobjektreferenz.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="length">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">length</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">3</span> IE <span class="emphasis">4</span> ECMA <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Lesen/Schreiben</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Gibt die Anzahl numerisch indizierter Eintr&auml;ge zur&uuml;ck, die in einem Array gespeichert sind. Falls die Konstruktorfunktion, die zum Erstellen des Arrays verwendet wurde, eine vorl&auml;ufige L&auml;nge angibt, spiegelt die Eigenschaft <span class="literal">length</span> diesen Wert wider, auch wenn die Daten nicht jeden Slot belegen.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>for (var i = 0; i &lt; myArray.length; i++) {
+    ...
+}</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Integer.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="prototype">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">prototype</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">3</span> IE <span class="emphasis">4</span> ECMA <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Lesen/Schreiben</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Dies ist eine Eigenschaft des statischen <span class="literal">Array</span>-Objekts. Mit der Eigenschaft <span class="literal">prototype</span> k&ouml;nnen Sie sp&auml;teren Array-Instanzen im aktuellen Dokument neue Eigenschaften und Methoden zuweisen. Beispielsweise erstellt die folgende Funktion eine durch Wagenr&uuml;cklauf getrennte Liste von Elementen in einem Array, und zwar in umgekehrter Reihenfolge:
+</p>
+							</td>
+						</tr>
+						<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Damit dies in einem Array m&ouml;glich ist, weisen Sie diese Funktionsreferenz einer <span class="literal">prototype</span>-Eigenschaft zu, deren Name als Methode verwendet werden soll, um diese Funktion aufzurufen:
+</p>
+							</td>
+						</tr>
+						<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Wenn ein Skript an dieser Stelle ein Array erstellt:</p>
+							</td>
+						</tr>
+						<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>kann das neue Array die Methode <span class="literal">showReverseList( )</span> verwenden. Der Aufruf dieser Methode lautet:
+</p>
+							</td>
+						</tr>
+						<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Auf die gleiche Weise k&ouml;nnen Sie Eigenschaften hinzuf&uuml;gen. Mit diesen Eigenschaften k&ouml;nnen Sie Informationen &uuml;ber das Array hinzuf&uuml;gen (z. B. das Erstellungsdatum), ohne dass die geordnete Reihenfolge der Array-Daten beeintr&auml;chtigt wird. Wenn ein neues Dokument in das Fenster bzw. den Frame geladen wird, startet das statische <span class="literal">Array</span>-Objekt erneut.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>Array.prototype.created = "";</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Beliebige Daten, einschlie&szlig;lich Funktionsreferenzen.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="concat( )">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">concat( )</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">4</span> IE <span class="emphasis">4</span> ECMA <span class="emphasis">3</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">concat(<span class="replaceable">item1</span>[, <span class="replaceable">item2</span>[, ..<span class="emphasis">.</span><span class="replaceable">itemN</span>]])</p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Gibt ein Array zur&uuml;ck, das das aktuelle Array-Objekt mit einem oder mehreren weiteren als Parameter an die Methode &uuml;bergebenen Array-Objekten (oder anderen Werten) kombiniert.
+</p>
+							</td>
+						</tr>
+						<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Dabei wird keines der urspr&uuml;nglichen Arrays ge&auml;ndert.</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Parameter</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<ul><li><span class="literal"></span>Ein beliebiger JavaScript-Wert, einschlie&szlig;lich eines weiteren Arrays.</li></ul>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Zur&uuml;ckgegebener Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Ein <span class="literal">Array</span>-Objekt.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="join( )">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">join( )</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">3</span> IE <span class="emphasis">4</span> ECMA <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">join(["<span class="replaceable">delimiterString</span>"])</p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Gibt einen String zur&uuml;ck, der aus einer Liste von Elementen (als Strings) besteht, die in einem Array enthalten sind. Die Trennzeichen zwischen den Elementen werden durch den Parameter f&uuml;r die Methode definiert. Beachten Sie, dass in einem Array nur solche Elemente enthalten sind, auf die &uuml;ber einen ganzzahligen Index zugegriffen werden kann. Elemente, die &uuml;ber einen Stringindexwert referenziert werden, werden als Eigenschaften des Array-Objekts behandelt und sind daher unabh&auml;ngig von ganzzahligen Indexwerten. Allerdings k&ouml;nnen beide Eintragstypen problemlos in einem Array enthalten sein. Die Methode <span class="literal">join( )</span> funktioniert nur in Verbindung mit den ganzzahlig indizierten Elementen.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Parameter</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<ul><li><span class="literal"></span>Eine beliebige Zeichenfolge. Nicht-alphanumerische Zeichen m&uuml;ssen die URL-kodierten &Auml;quivalente (<span class="literal">%0D</span> f&uuml;r Wagenr&uuml;cklauf) verwenden. Standardm&auml;&szlig;ig wird ein Komma als Trennzeichen verwendet.
+</li></ul>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Zur&uuml;ckgegebener Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>String.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="pop( )">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">pop( )</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">4</span> IE <span class="emphasis">5.5(Win)</span> ECMA <span class="emphasis">2</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Gibt den Wert des letzten Elements in einem Array zur&uuml;ck und entfernt es aus dem Array. Die L&auml;nge des Arrays wird um eins verringert.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Parameter</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Keine.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Zur&uuml;ckgegebener Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Ein beliebiger JavaScript-Wert.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="push( )">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">push( )</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">4</span> IE <span class="emphasis">5.5(Win)</span> ECMA <span class="emphasis">2</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">push(<span class="replaceable">item1</span>[, <span class="replaceable">item2</span>[, ..<span class="emphasis">.</span><span class="replaceable">itemN</span>]])</p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>H&auml;ngt ein oder mehrere Elemente an das Ende eines Arrays an. Die L&auml;nge des Arrays wird um eins erh&ouml;ht.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Parameter</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<ul><li><span class="literal"></span>Liste mit durch Kommas getrennten JavaScript-Werten (einschlie&szlig;lich Objektreferenzen).
+</li></ul>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Zur&uuml;ckgegebener Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Der zum Array hinzugef&uuml;gte Wert.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="reverse( )">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">reverse( )</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">3</span> IE <span class="emphasis">4</span> ECMA <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Kehrt die Reihenfolge der Elemente in einem Array um und gibt eine Kopie des Arrays in der neuen Reihenfolge zur&uuml;ck. Die Methode <span class="literal">reverse( )</span> sortiert nicht nur die Werte im Array neu, sondern gibt auch eine Kopie des neu sortierten Arrays zur&uuml;ck.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Parameter</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Keine.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Zur&uuml;ckgegebener Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Ein <span class="literal">Array</span>-Objekt.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="shift( )">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">shift( )</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">4</span> IE <span class="emphasis">5.5(Win)</span> ECMA <span class="emphasis">2</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Gibt den Wert des erstem Elements in einem Array zur&uuml;ck und entfernt es aus dem Array. Die L&auml;nge des Arrays wird um eins verringert.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Parameter</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Keine.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Zur&uuml;ckgegebener Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Ein beliebiger JavaScript-Wert.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="slice( )">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">slice( )</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">4</span> IE <span class="emphasis">4</span> ECMA <span class="emphasis">2</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">slice(<span class="replaceable">startIndex</span>[, <span class="replaceable">endIndex</span>]) </p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Gibt ein Array zur&uuml;ck, das eine Teilmenge der aneinander grenzenden Elemente aus dem Haupt-Array bildet. Parameter legen fest, wo die Auswahl beginnt und endet.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Parameter</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<ul><li><span class="literal"></span>Ein auf Null basierender Integer f&uuml;r das erste Element aus der Teilmenge des aktuellen Arrays.
+</li><li><span class="literal"></span>Ein optionaler auf Null basierende Integer f&uuml;r das letzte Element aus der Teilmenge des aktuellen Array. Falls dieser Wert ausgelassen wird, erfolgt die Auswahl von der <span class="replaceable">startIndex</span>-Position bis zum Ende des Arrays.
+</li></ul>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Zur&uuml;ckgegebener Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Ein <span class="literal">Array</span>-Objekt.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="sort( )">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">sort( )</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">3</span> IE <span class="emphasis">4</span> ECMA <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">sort([<span class="replaceable">compareFunction</span>])</p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Sortiert die Werte des Arrays entweder nach dem ASCII-Wert der Stringversion jedes Array-Eintrags oder nach einer von Ihnen erstellten Vergleichsfunktion. Die Methode <span class="literal">sort( )</span> ruft die Vergleichsfunktion wiederholt auf und &uuml;bergibt zwei Werte vom Array. Die Vergleichsfunktion sollte einen Integerwert zur&uuml;ckgeben, der von der Funktion <span class="literal">sort( )</span> wie folgt interpretiert wird:
+</p>
+							</td>
+						</tr>
+						<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Die folgende Vergleichsfunktion sortiert die Werte eines Arrays in numerischer Reihenfolge (anstelle der ASCII-Reihenfolge):
+</p>
+							</td>
+						</tr>
+						<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Zum Sortieren eines Arrays nach dieser Funktion lautet die Anweisung:</p>
+							</td>
+						</tr>
+						<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Wenn die Methode <span class="literal">sort( )</span> abgeschlossen ist, wurden alle Werte jeweils paarweise an die Funktion <span class="literal">doCompare( )</span> gesendet und die Wertepaare danach sortiert, ob der erste oder der zweite Wert der gr&ouml;&szlig;ere von beiden ist.
+</p>
+							</td>
+						</tr>
+						<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Die Methode <span class="literal">sort( )</span> sortiert die Werte im Array nicht nur neu, sondern gibt auch eine Kopie des sortierten Arrays zur&uuml;ck.
+</p>
+							</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td>
+								<table border="1"><tbody><tr><th>Wert</th><th>Bedeutung</th></tr>
+										<tr><td> &lt;0</td><td>Der zweite &uuml;bergebene Wert sollte nach dem ersten Wert einsortiert werden.</td>
+										</tr>
+										<tr><td> 0</td><td>Die Sortierreihenfolge der zwei Werte sollte sich nicht &auml;ndern.</td>
+										</tr>
+										<tr><td> &gt;0</td><td>Der erste &uuml;bergebene Wert sollte nach dem zweiten Wert einsortiert werden.</td>
+										</tr>
+									</tbody></table>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Parameter</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<ul><li><span class="literal"></span>Eine Referenz auf eine Funktion, die zwei Parameter empf&auml;ngt und ein Ergebnis als Integer zur&uuml;ckgibt.
+</li></ul>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Zur&uuml;ckgegebener Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Ein <span class="literal">Array</span>-Objekt mit nach den angegebenen Kriterien sortierten Eintr&auml;gen.
+</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="splice( )">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">splice( )</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">4</span> IE <span class="emphasis">5.5(Win)</span> ECMA <span class="emphasis">2</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">splice(<span class="replaceable">startIndex</span>, <span class="replaceable">deleteCount</span>[, <span class="replaceable">item1</span>[, <span class="replaceable">item2</span>[, ...<span class="replaceable">itemN</span>]]]) </p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Entfernt einen oder mehrere aufeinander folgende Elemente aus einem Array und f&uuml;gt an ihrer Stelle optional neue Elemente ein. Die L&auml;nge des Arrays wird entsprechend angepasst.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Parameter</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<ul><li><span class="literal"></span>Ein auf Null basierender Integer f&uuml;r das erste Element aus der Teilmenge des aktuellen Arrays.
+</li><li><span class="literal"></span>Ein Integer, der angibt, wie viele Elemente ab der <span class="replaceable">startIndex</span>-Position aus dem Array entfernt werden sollen.
+</li><li><span class="literal"></span>Liste mit durch Kommas getrennten JavaScript-Werten, die anstelle der entfernten Elemente in das Array eingef&uuml;gt werden sollen. Die Anzahl der Elemente muss nicht mit dem Wert von <span class="replaceable">deleteCount</span> &uuml;bereinstimmen.
+</li></ul>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Zur&uuml;ckgegebener Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Ein <span class="literal">Array</span>-Objekt mit den entfernten Elementen.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="toLocaleString( )">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">toLocaleString( )</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">5.5(Win)</span> ECMA <span class="emphasis">2</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Gibt einen String mit durch Komma getrennten Werten zur&uuml;ck, deren Format theoretisch auf die Anforderungen der Standardsprache des Browsers zugeschnitten ist. Allerdings bestehen hier je nach Browser und Datentyp feine Unterschiede in der Implementierung. IE ab Version 5.5 wandelt alle numerischen Werte in Strings mit zwei Dezimalstellen um, gibt bei Objektreferenzen jedoch einen Fehler zur&uuml;ck. Netscape 6 beh&auml;lt bei Integerwerten das urspr&uuml;ngliche Format bei und zeigt Objektreferenzen als <span class="literal">[object</span>
+<span class="replaceable">objectType</span><span class="literal">]</span> an. Laut ECMA-Standard bleiben derartige Interpretationen dem jeweiligen Browserhersteller &uuml;berlassen.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Parameter</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Keine.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Zur&uuml;ckgegebener Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>String mit Komma als Trennzeichen.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="toString( )">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">toString( )</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">3</span> IE <span class="emphasis">4</span> ECMA <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Gibt denselben String mit durch Kommas getrennten Werten zur&uuml;ck wie die Methode <span class="literal">Array.join( )</span> mit einem Komma als Parameter. Alle Werte, einschlie&szlig;lich der Objekte, werden in einen &auml;quivalenten String umgewandelt (<span class="literal">[object]</span> in IE/Windows, <span class="literal">[object</span>
+<span class="replaceable">objectType</span><span class="literal">]</span> in IE 5/Macintosh und Netscape 6).
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Parameter</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Keine.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Zur&uuml;ckgegebener Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>String mit Komma als Trennzeichen.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="unshift( )">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">unshift( )</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">4</span> IE <span class="emphasis">5.5(Win)</span> ECMA <span class="emphasis">2</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">unshift(<span class="replaceable">item1</span>[, <span class="replaceable">item2</span>[, ..<span class="emphasis">.</span><span class="replaceable">itemN</span>]])</p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>F&uuml;gt ein oder mehrere Elemente am Anfang eines Arrays ein. Die L&auml;nge des Arrays wird um die Anzahl der hinzugef&uuml;gten Elemente erh&ouml;ht und die Methode gibt die neue L&auml;nge des Arrays zur&uuml;ck.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Parameter</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<ul><li><span class="literal"></span>Liste mit durch Kommas getrennten JavaScript-Methoden. </li></ul>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Zur&uuml;ckgegebener Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Integer.</p>
+					</td>
+				</tr>
+			</table>
+		</div>
+
+</body>
+</html>

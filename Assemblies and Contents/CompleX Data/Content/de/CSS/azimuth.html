@@ -1,0 +1,98 @@
+<html>
+<link rel="stylesheet" href="josh.css">
+<body bgcolor="#FFFFFF">
+<div id="Beschreibung">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">azimuth</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">nicht zutreffend</span> IE <span class="emphasis">nicht zutreffend</span> CSS <span class="emphasis">2</span></td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Vererbt: Ja</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Bei einem Zuh&ouml;rer im Zentrum eines kreisf&ouml;rmigen Klangraums (wie in einem Kino mit Surround-Sound) legt <span class="literal">azimuth</span> den horizontalen Klangwinkel fest (beispielsweise bei einem sprachf&auml;higen Browser). Siehe auch das Attribut <span class="literal">elevation</span>.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="csssyntax"><span class="title">CSS-Syntax</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>azimuth: <span class="replaceable">angle</span> | <span class="replaceable">angleConstant</span> || <span class="replaceable">direction</span></pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+				</tr>
+				<tr>
+					<td><p>Bis zu zwei Werte (au&szlig;er <span class="literal">inherit</span>). Der erste Wert repr&auml;sentiert den Winkel, im Uhrzeigersinn von der Geradeausrichtung gez&auml;hlt; der zweite Wert stellt eine Erh&ouml;hung des Winkels um 20 Grad nach links bzw. rechts dar. <span class="replaceable">angle</span> ist ein beliebiger Wert im Bereich -360 bis +360 (einschlie&szlig;lich) plus "deg" wie in <span class="literal">90deg</span>. Die Richtung f&uuml;r den Wert <span class="literal">0deg</span> ist direkt vor dem Zuh&ouml;rer. Um die Richtung links vom Zuh&ouml;rer festzulegen, kann als Wert entweder <span class="literal">-90deg</span> oder <span class="literal">270deg</span> verwendet werden. Optional k&ouml;nnen Sie einen <span class="replaceable">angleConstant</span>-Wert aus einer gro&szlig;en Bibliothek von Beschreibungen f&uuml;r festgelegte Punkte im Kreis w&auml;hlen. Wenn Sie den Modifizierer <span class="literal">behind</span> hinzuf&uuml;gen, verschieben sich die Werte von der Vorderseite nach hinten.</p><p>F&uuml;r den Wert <span class="replaceable">direction</span> k&ouml;nnen Sie aus zwei Konstanten w&auml;hlen: <span class="literal">leftwards</span> | <span class="literal">rightwards</span>. Diese Einstellungen drehen die Klangrichtung im jeweiligen Drehsinn um 20 Grad.</p>
+						<table border="1"><tbody><tr><th>Wert</th><th>Entspricht</th><th>Wert</th><th>Entspricht</th></tr>
+								<tr><td>center</td><td>0deg</td><td>center behind</td><td>180deg</td>
+								</tr>
+								<tr><td>center-right</td><td>20deg</td><td>center-right behind</td><td>160deg</td>
+								</tr>
+								<tr><td>right</td><td>40deg</td><td>right behind</td><td>140deg</td>
+								</tr>
+								<tr><td>far-right</td><td>60deg</td><td>far-right behind</td><td>120deg</td>
+								</tr>
+								<tr><td>right-side</td><td>90deg</td><td>right-side behind</td><td>90deg</td>
+								</tr>
+								<tr><td>left-side</td><td>270deg</td><td>left-side behind</td><td>270deg</td>
+								</tr>
+								<tr><td>far-left</td><td>300deg</td><td>far-left behind</td><td>240deg</td>
+								</tr>
+								<tr><td>left</td><td>320deg</td><td>left behind</td><td>220deg</td>
+								</tr>
+								<tr><td>center-left</td><td>340deg</td><td>center-left behind</td><td>200deg</td>
+								</tr>
+							</tbody></table>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="initvalue"><span class="title">Anfangswert</span></td>
+				</tr>
+				<tr>
+					<td><p><span class="literal">center</span></p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>h1 {azimuth: 45deg}p.aside {azimuth: center-right behind}</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="appliesto"><span class="title">Gilt f&uuml;r</span></td>
+				</tr>
+				<tr>
+					<td><p>Alle Elemente. </p>
+					</td>
+				</tr>
+			</table>
+		</div>
+</body>
+</html>

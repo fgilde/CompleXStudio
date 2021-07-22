@@ -1,0 +1,1089 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{01AACE3D-EA5F-4FC6-A8E1-F3AC880FB4CD}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CompleX</RootNamespace>
+    <AssemblyName>CompleX Studio</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <ManifestCertificateThumbprint>BE32C0195590008324C862D93BDD6C8974E1DD8B</ManifestCertificateThumbprint>
+    <ManifestKeyFile>CompleX Editor_TemporaryKey.pfx</ManifestKeyFile>
+    <GenerateManifests>true</GenerateManifests>
+    <SignManifests>false</SignManifests>
+    <SignAssembly>false</SignAssembly>
+    <ApplicationIcon>cs.ico</ApplicationIcon>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation />
+    <PublishUrl>D:\Dev\Spielwiese\Florian Gilde\CompleX\CompleX\bin\!OutputRelease\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>2</ApplicationRevision>
+    <ApplicationVersion>3.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkProfile />
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <DebugSymbols>true</DebugSymbols>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DevExpress.BonusSkins.v17.2, Version=17.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.Pdf.v17.2.Core, Version=17.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.Office.v17.2.Core, Version=17.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.RichEdit.v17.2.Core, Version=17.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.RichEdit.v17.2.Export, Version=17.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.Printing.v17.2.Core, Version=17.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.Data.v17.2, Version=17.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.Tutorials.v17.2, Version=17.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.Utils.v17.2, Version=17.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraBars.v17.2, Version=17.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraEditors.v17.2, Version=17.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraPrinting.v17.2, Version=17.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraGrid.v17.2, Version=17.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraLayout.v17.2, Version=17.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraNavBar.v17.2, Version=17.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraTreeList.v17.2, Version=17.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraVerticalGrid.v17.2, Version=17.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraWizard.v17.2, Version=17.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="GrepWrap">
+      <HintPath>..\Assemblies\GrepWrap.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="Microsoft.WindowsAPICodePack, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.WindowsAPICodePack.Shell, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="PresentationCore">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="PresentationFramework">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Design" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="UIAutomationProvider">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\SolutionInfo.cs">
+      <Link>Properties\SolutionInfo.cs</Link>
+    </Compile>
+    <Compile Include="Classes\ClipboardController.cs" />
+    <Compile Include="Classes\ComplexOutPutWriter.cs" />
+    <Compile Include="Classes\MultiClipboard.cs">
+    </Compile>
+    <Compile Include="Classes\Office2007ColorTable.cs" />
+    <Compile Include="Classes\Office2007Helpers.cs" />
+    <Compile Include="Classes\Office2007Renderer.cs" />
+    <Compile Include="Classes\TanColor.cs" />
+    <Compile Include="Classes\WizardParameterFactory.cs" />
+    <Compile Include="Classes\WizardParameters.cs" />
+    <Compile Include="ClassViewer.cs" />
+    <Compile Include="CompleXException.cs" />
+    <Compile Include="CompleX Studio.cs" />
+    <Compile Include="Controls\ActionListControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\ActionListControl.Designer.cs">
+      <DependentUpon>ActionListControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\AttributeColorEdit.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\AttributeColorEdit.Designer.cs">
+      <DependentUpon>AttributeColorEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\AttributeEditor.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\AttributeEditor.Designer.cs">
+      <DependentUpon>AttributeEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\AttributeFlagEdit.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\AttributeFlagEdit.Designer.cs">
+      <DependentUpon>AttributeFlagEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\AttributeListEdit.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\AttributeListEdit.Designer.cs">
+      <DependentUpon>AttributeListEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\AttributePathEdit.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\AttributePathEdit.Designer.cs">
+      <DependentUpon>AttributePathEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\AttributeSizeEdit.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\AttributeSizeEdit.Designer.cs">
+      <DependentUpon>AttributeSizeEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\AttributeStyleEdit.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\AttributeStyleEdit.Designer.cs">
+      <DependentUpon>AttributeStyleEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\AttributeTextEdit.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\AttributeTextEdit.Designer.cs">
+      <DependentUpon>AttributeTextEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\BaseEditControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\BaseEditControl.Designer.cs">
+      <DependentUpon>BaseEditControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\CommandHistory.cs" />
+    <Compile Include="Controls\DefaultEditControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\DefaultEditControl.Designer.cs">
+      <DependentUpon>DefaultEditControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\EditExceptionControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\EditExceptionControl.Designer.cs">
+      <DependentUpon>EditExceptionControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ErrorMessageControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\ErrorMessageControl.designer.cs">
+      <DependentUpon>ErrorMessageControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\EventEditControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\EventEditControl.Designer.cs">
+      <DependentUpon>EventEditControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\FavoritesControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\FavoritesControl.designer.cs">
+      <DependentUpon>FavoritesControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\FileExplorer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\FileExplorer.Designer.cs">
+      <DependentUpon>FileExplorer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\FindResultsControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\FindResultsControl.Designer.cs">
+      <DependentUpon>FindResultsControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\FtpExplorer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\FtpExplorer.Designer.cs">
+      <DependentUpon>FtpExplorer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\FtpFileListExplorer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\FtpFileListExplorer.Designer.cs">
+      <DependentUpon>FtpFileListExplorer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\HostedControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\HostedControl.Designer.cs">
+      <DependentUpon>HostedControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\IAttributeEdit.cs" />
+    <Compile Include="Controls\MessageLogControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\MessageLogControl.designer.cs">
+      <DependentUpon>MessageLogControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\MultiTreeView.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\NewProjectControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\NewProjectControl.Designer.cs">
+      <DependentUpon>NewProjectControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\FileListControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\FileListControl.Designer.cs">
+      <DependentUpon>FileListControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\RegexTextBox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\RegexTextBox.Designer.cs">
+      <DependentUpon>RegexTextBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\SearchOptionsControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\SearchOptionsControl.Designer.cs">
+      <DependentUpon>SearchOptionsControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\SearchReplaceControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\SearchReplaceControl.Designer.cs">
+      <DependentUpon>SearchReplaceControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\SearchTextBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\SearchTextBox.Designer.cs">
+      <DependentUpon>SearchTextBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\SelectPluginControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\SelectPluginControl.Designer.cs">
+      <DependentUpon>SelectPluginControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ServiceInfo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\ServiceInfo.Designer.cs">
+      <DependentUpon>ServiceInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\SettingsHostControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\SettingsHostControl.Designer.cs">
+      <DependentUpon>SettingsHostControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ShellControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\ShellTextBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\StringListEditControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\StringListEditControl.Designer.cs">
+      <DependentUpon>StringListEditControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\TagEditControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\TagEditControl.Designer.cs">
+      <DependentUpon>TagEditControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\TagSelector.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\TagSelector.Designer.cs">
+      <DependentUpon>TagSelector.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\TaskListControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\TaskListControl.Designer.cs">
+      <DependentUpon>TaskListControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ToolBox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\ToolBox.Designer.cs">
+      <DependentUpon>ToolBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ToolBoxItemEditControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\ToolBoxItemEditControl.Designer.cs">
+      <DependentUpon>ToolBoxItemEditControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DataSets\DataSetClipboard.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetClipboard.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSets\DataSetFindResults.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetFindResults.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSets\DataSetMessageLog.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetMessageLog.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSets\DataSetProjectTree.cs">
+      <DependentUpon>DataSetProjectTree.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSets\DataSetProjectTree.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetProjectTree.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSets\DataSetSettingPages.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetSettingPages.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\AboutDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\AboutDialog.Designer.cs">
+      <DependentUpon>AboutDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\AddDirectoryDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\AddDirectoryDialog.Designer.cs">
+      <DependentUpon>AddDirectoryDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\AddFavoritesDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\AddFavoritesDialog.designer.cs">
+      <DependentUpon>AddFavoritesDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\BaseDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\BaseDialog.Designer.cs">
+      <DependentUpon>BaseDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\BaseDialogHelper.cs" />
+    <Compile Include="Dialogs\BrowserDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\BrowserDialog.designer.cs">
+      <DependentUpon>BrowserDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\GlassBaseDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\GlassBaseDialog.Designer.cs">
+      <DependentUpon>GlassBaseDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\ExportProjectDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\ExportProjectDialog.Designer.cs">
+      <DependentUpon>ExportProjectDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\IBaseDialog.cs" />
+    <Compile Include="Dialogs\MainEditForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\MainEditForm.Designer.cs">
+      <DependentUpon>MainEditForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\InputDlg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\InputDlg.designer.cs">
+      <DependentUpon>InputDlg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\PromptSaveDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\PromptSaveDialog.Designer.cs">
+      <DependentUpon>PromptSaveDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\QuickCommandForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\QuickCommandForm.Designer.cs">
+      <DependentUpon>QuickCommandForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\QuickOpenForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\QuickOpenForm.Designer.cs">
+      <DependentUpon>QuickOpenForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\SelectStringDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\SelectStringDialog.Designer.cs">
+      <DependentUpon>SelectStringDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\SimpleBrowserDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\SimpleBrowserDialog.Designer.cs">
+      <DependentUpon>SimpleBrowserDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\TagEditorDlg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\TagEditorDlg.Designer.cs">
+      <DependentUpon>TagEditorDlg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\TagSelectorDlg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\TagSelectorDlg.Designer.cs">
+      <DependentUpon>TagSelectorDlg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\WizardDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\WizardDialog.Designer.cs">
+      <DependentUpon>WizardDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ErrorManager.cs" />
+    <Compile Include="ComplexMainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ComplexMainForm.designer.cs">
+      <DependentUpon>ComplexMainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Events.cs" />
+    <Compile Include="Helper\DevExpressHelper.cs" />
+    <Compile Include="Helper\HtmlHelper.cs" />
+    <Compile Include="Helper\PlaceHolder.cs" />
+    <Compile Include="Helper\StringExtensions.cs" />
+    <Compile Include="Helper\Utilities.cs" />
+    <Compile Include="RuntimeServiceProvider.cs" />
+    <Compile Include="Services\ContentService.cs" />
+    <Compile Include="Services\LanguageService.cs" />
+    <Compile Include="Services\MenuService.cs" />
+    <Compile Include="Services\MessageService.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ServiceModel\ApplicationHost.cs" />
+    <Compile Include="ServiceModel\Host.cs" />
+    <Compile Include="Program.cs" />
+    <EmbeddedResource Include="Controls\ActionListControl.resx">
+      <DependentUpon>ActionListControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\AttributeColorEdit.resx">
+      <DependentUpon>AttributeColorEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\AttributeEditor.resx">
+      <DependentUpon>AttributeEditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\AttributeFlagEdit.resx">
+      <DependentUpon>AttributeFlagEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\AttributeListEdit.resx">
+      <DependentUpon>AttributeListEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\AttributePathEdit.resx">
+      <DependentUpon>AttributePathEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\AttributeSizeEdit.resx">
+      <DependentUpon>AttributeSizeEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\AttributeStyleEdit.resx">
+      <DependentUpon>AttributeStyleEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\AttributeTextEdit.resx">
+      <DependentUpon>AttributeTextEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\DefaultEditControl.resx">
+      <DependentUpon>DefaultEditControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\EditExceptionControl.resx">
+      <DependentUpon>EditExceptionControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\ErrorMessageControl.resx">
+      <DependentUpon>ErrorMessageControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\EventEditControl.de.resx">
+      <DependentUpon>EventEditControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\EventEditControl.en.resx">
+      <DependentUpon>EventEditControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\EventEditControl.resx">
+      <DependentUpon>EventEditControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\FavoritesControl.de.resx">
+      <DependentUpon>FavoritesControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\FavoritesControl.en.resx">
+      <DependentUpon>FavoritesControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\FavoritesControl.resx">
+      <DependentUpon>FavoritesControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\FileExplorer.de.resx">
+      <DependentUpon>FileExplorer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\FileExplorer.resx">
+      <DependentUpon>FileExplorer.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\FileListControl.de.resx">
+      <DependentUpon>FileListControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\FindResultsControl.resx">
+      <DependentUpon>FindResultsControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\FtpExplorer.de.resx">
+      <DependentUpon>FtpExplorer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\FtpExplorer.resx">
+      <DependentUpon>FtpExplorer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\FtpFileListExplorer.de.resx">
+      <DependentUpon>FtpFileListExplorer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\FtpFileListExplorer.resx">
+      <DependentUpon>FtpFileListExplorer.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\MessageLogControl.de.resx">
+      <DependentUpon>MessageLogControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\MessageLogControl.en.resx">
+      <DependentUpon>MessageLogControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\MessageLogControl.resx">
+      <DependentUpon>MessageLogControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\NewProjectControl.de.resx">
+      <DependentUpon>NewProjectControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\NewProjectControl.en.resx">
+      <DependentUpon>NewProjectControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\NewProjectControl.resx">
+      <DependentUpon>NewProjectControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\FileListControl.resx">
+      <DependentUpon>FileListControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\ProjectExplorer.de.resx">
+      <DependentUpon>ProjectExplorer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\RegexTextBox.resx">
+      <DependentUpon>RegexTextBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\SearchOptionsControl.de.resx">
+      <DependentUpon>SearchOptionsControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\SearchOptionsControl.resx">
+      <DependentUpon>SearchOptionsControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\SearchReplaceControl.de.resx">
+      <DependentUpon>SearchReplaceControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\SearchReplaceControl.resx">
+      <DependentUpon>SearchReplaceControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\SelectPluginControl.resx">
+      <DependentUpon>SelectPluginControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\ServiceInfo.de.resx">
+      <DependentUpon>ServiceInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\ServiceInfo.resx">
+      <DependentUpon>ServiceInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\SettingsHostControl.de.resx">
+      <DependentUpon>SettingsHostControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\SettingsHostControl.resx">
+      <DependentUpon>SettingsHostControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\ShellControl.resx">
+      <DependentUpon>ShellControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\ShellTextBox.resx">
+      <DependentUpon>ShellTextBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\StringListEditControl.resx">
+      <DependentUpon>StringListEditControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\TagEditControl.de.resx">
+      <DependentUpon>TagEditControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\TagEditControl.resx">
+      <DependentUpon>TagEditControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\TagSelector.resx">
+      <DependentUpon>TagSelector.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\TaskListControl.resx">
+      <DependentUpon>TaskListControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\ToolBox.de.resx">
+      <DependentUpon>ToolBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\ToolBox.resx">
+      <DependentUpon>ToolBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\ToolBoxItemEditControl.de.resx">
+      <DependentUpon>ToolBoxItemEditControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\ToolBoxItemEditControl.resx">
+      <DependentUpon>ToolBoxItemEditControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\AboutDialog.de.resx">
+      <DependentUpon>AboutDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\AboutDialog.resx">
+      <DependentUpon>AboutDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\AddDirectoryDialog.de.resx">
+      <DependentUpon>AddDirectoryDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\AddDirectoryDialog.resx">
+      <DependentUpon>AddDirectoryDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\AddFavoritesDialog.de.resx">
+      <DependentUpon>AddFavoritesDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\AddFavoritesDialog.resx">
+      <DependentUpon>AddFavoritesDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\BaseDialog.de.resx">
+      <DependentUpon>BaseDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\BaseDialog.resx">
+      <DependentUpon>BaseDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\BrowserDialog.resx">
+      <DependentUpon>BrowserDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\GlassBaseDialog.de.resx">
+      <DependentUpon>GlassBaseDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\GlassBaseDialog.resx">
+      <DependentUpon>GlassBaseDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\ExportProjectDialog.de.resx">
+      <DependentUpon>ExportProjectDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\ExportProjectDialog.resx">
+      <DependentUpon>ExportProjectDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\InputDlg.de.resx">
+      <DependentUpon>InputDlg.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\MainEditForm.de.resx">
+      <DependentUpon>MainEditForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\MainEditForm.resx">
+      <DependentUpon>MainEditForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\InputDlg.resx">
+      <DependentUpon>InputDlg.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\PromptSaveDialog.de.resx">
+      <DependentUpon>PromptSaveDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\PromptSaveDialog.resx">
+      <DependentUpon>PromptSaveDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\QuickCommandForm.de.resx">
+      <DependentUpon>QuickCommandForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\QuickCommandForm.resx">
+      <DependentUpon>QuickCommandForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\QuickOpenForm.de.resx">
+      <DependentUpon>QuickOpenForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\QuickOpenForm.resx">
+      <DependentUpon>QuickOpenForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\SelectStringDialog.de.resx">
+      <DependentUpon>SelectStringDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\SelectStringDialog.resx">
+      <DependentUpon>SelectStringDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\SimpleBrowserDialog.resx">
+      <DependentUpon>SimpleBrowserDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\TagEditorDlg.de.resx">
+      <DependentUpon>TagEditorDlg.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\TagEditorDlg.en.resx">
+      <DependentUpon>TagEditorDlg.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\TagEditorDlg.resx">
+      <DependentUpon>TagEditorDlg.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\TagSelectorDlg.de.resx">
+      <DependentUpon>TagSelectorDlg.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\TagSelectorDlg.resx">
+      <DependentUpon>TagSelectorDlg.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\WizardDialog.de.resx">
+      <DependentUpon>WizardDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\WizardDialog.resx">
+      <DependentUpon>WizardDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ComplexMainForm.resx">
+      <DependentUpon>ComplexMainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Properties\Resources.de.resx">
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\ProjectExplorer.resx">
+      <DependentUpon>ProjectExplorer.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="app.config" />
+    <None Include="DataSets\DataSetClipboard.xsc">
+      <DependentUpon>DataSetClipboard.xsd</DependentUpon>
+    </None>
+    <None Include="DataSets\DataSetClipboard.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetClipboard.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSets\DataSetClipboard.xss">
+      <DependentUpon>DataSetClipboard.xsd</DependentUpon>
+    </None>
+    <None Include="DataSets\DataSetFindResults.xsc">
+      <DependentUpon>DataSetFindResults.xsd</DependentUpon>
+    </None>
+    <None Include="DataSets\DataSetFindResults.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetFindResults.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSets\DataSetFindResults.xss">
+      <DependentUpon>DataSetFindResults.xsd</DependentUpon>
+    </None>
+    <None Include="DataSets\DataSetMessageLog.xsc">
+      <DependentUpon>DataSetMessageLog.xsd</DependentUpon>
+    </None>
+    <None Include="DataSets\DataSetMessageLog.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetMessageLog.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DataSets\DataSetMessageLog.xss">
+      <DependentUpon>DataSetMessageLog.xsd</DependentUpon>
+    </None>
+    <None Include="DataSets\DataSetProjectTree.xsc">
+      <DependentUpon>DataSetProjectTree.xsd</DependentUpon>
+    </None>
+    <None Include="DataSets\DataSetProjectTree.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetProjectTree.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DataSets\DataSetProjectTree.xss">
+      <DependentUpon>DataSetProjectTree.xsd</DependentUpon>
+    </None>
+    <Compile Include="ServiceModel\IHost.cs" />
+    <Compile Include="Controls\ProjectExplorer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\ProjectExplorer.designer.cs">
+      <DependentUpon>ProjectExplorer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Services\FileService.cs" />
+    <Compile Include="Services\OutputService.cs" />
+    <Compile Include="Services\ProjectService.cs" />
+    <Compile Include="Services\SearchService.cs" />
+    <Compile Include="Services\StatusBarService.cs" />
+    <Compile Include="Themes\Themes.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CompleX Dialogs\CompleX Presentation Controls.csproj">
+      <Project>{A01B3D7A-5CCC-4EA8-B1A3-8FE4EB508DC0}</Project>
+      <Name>CompleX Presentation Controls</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CompleX Library\CompleX Library.csproj">
+      <Project>{268EA5A6-4530-4550-B90D-0CB13834266A}</Project>
+      <Name>CompleX Library</Name>
+      <Private>True</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\CompleX Scripting\CompleX.Scripting.csproj">
+      <Project>{0F1D1D69-7FBF-45AA-AB3C-FBC6EBCFE5E5}</Project>
+      <Name>CompleX.Scripting</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CompleX Settings\CompleX Settings.csproj">
+      <Project>{38140D21-82E5-4958-937B-B90DE9178E84}</Project>
+      <Name>CompleX Settings</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CompleX Types\CompleX Types.csproj">
+      <Project>{A6AC02F5-2519-418D-AC9B-0D750CFED944}</Project>
+      <Name>CompleX Types</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DOL\DOLBase.csproj">
+      <Project>{2D477598-FCF8-41EA-939D-EA2F4A354EC3}</Project>
+      <Name>DOLBase</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DOL\DOLHtml.csproj">
+      <Project>{34D39999-83F1-40EF-9A4B-0DECA74353A3}</Project>
+      <Name>DOLHtml</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.2.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 2.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Warning.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="DataSets\DataSetSettingPages.xsc">
+      <DependentUpon>DataSetSettingPages.xsd</DependentUpon>
+    </None>
+    <None Include="DataSets\DataSetSettingPages.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetSettingPages.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSets\DataSetSettingPages.xss">
+      <DependentUpon>DataSetSettingPages.xsd</DependentUpon>
+    </None>
+    <None Include="Resources\error.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\löschen_16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\info_24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\einstellungen_16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\plus16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\minus16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\info.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\info1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\information.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\questionmark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imgLargeIcons.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imgLargeIcons1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imgSmallIcons.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\anhang_loeschen_16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ComplexStudio_Logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ComplexStudio_Desktop_Icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <SplashScreen Include="cs.png">
+    </SplashScreen>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\exportieren.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\importieren.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\importieren.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\exportieren.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ImgOpen.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ImgOpenWindowsFolder.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ImgWindows.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ImgInfoImage.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ImgCopy.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\schliessen_16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="cs.ico" />
+    <None Include="Resources\Img28.png" />
+    <None Include="Properties\DataSources\CompleX_Types.TaskListEntry.datasource" />
+    <None Include="Resources\cs.ico" />
+    <None Include="Resources\Img5.png" />
+    <None Include="Resources\Img4.png" />
+    <None Include="Resources\Img3.png" />
+    <None Include="Resources\Img2.png" />
+    <None Include="Resources\Img1.png" />
+    <None Include="Resources\Img6.png" />
+    <None Include="Resources\fileDelete_16.png" />
+    <None Include="Resources\fileNew_16.png" />
+    <None Include="Resources\neues_objekt_16.png" />
+    <None Include="Resources\ordner_16.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

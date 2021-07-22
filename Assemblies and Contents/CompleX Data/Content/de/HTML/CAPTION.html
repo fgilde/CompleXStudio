@@ -1,0 +1,271 @@
+<html>
+<link rel="stylesheet" href="josh.css">
+<body bgcolor="#FFFFFF">
+
+		<div id="Beschreibung">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">&lt;CAPTION&gt;</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">alle</span> IE <span class="emphasis">alle</span> HTML <span class="emphasis">3.2</span>&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">&lt;CAPTION&gt;...&lt;/CAPTION&gt;</p>
+					</td><td valign="top" nowrap class="requirements">HTML-End-Tag: Erforderlich&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p><span class="literal">caption</span>-Elemente d&uuml;rfen nur innerhalb von <span class="literal">table</span>-Elementen platziert werden (unmittelbar nach dem Start-Tag <span class="literal">&lt;TABLE&gt;</span> ), um Text als &Uuml;berschrift f&uuml;r die Tabelle zu kennzeichnen. Eine &Uuml;berschrift gilt f&uuml;r die gesamte Tabelle, wohingegen Tabellen&uuml;berschriften (<span class="literal">th</span>-Element) jeweils eine einzelne Spalte oder Zeile der Tabelle betreffen. In einem <span class="literal">table</span>-Element wird nur jeweils ein <span class="literal">caption</span>-Element erkannt.</p><p>Eine &Uuml;berschrift enth&auml;lt &uuml;blicherweise eine kurze Beschreibung der Tabelle. Ein l&auml;ngere Beschreibung kann im Attribut <span class="literal">summary</span> des <span class="literal">table</span>-Elements enthalten sein, die bei sprachf&auml;higen Browsern wiedergegeben wird. Das <span class="literal">caption</span>-Element unterscheidet sich hiervon in erster Linie durch das Attribut <span class="literal">align</span>. Dieses Attribut gilt zwar in HTML 4 als veraltet, erm&ouml;glicht aber die Festlegung der Position, an der die &Uuml;berschrift im Bezug zur eigentlichen Tabelle erscheinen soll.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>&lt;TABLE ...&gt;&lt;CAPTION class="tableCaptions"&gt;   Table 3-2. Sample Inverse Framistan Values&lt;/CAPTION&gt;...&lt;/TABLE&gt;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectmodelreference"><span class="title">Objektmodellreferenz</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>[window.]document.getElementById(<span class="replaceable">elementID</span>)</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectmodelreference"><span class="title">Elementspezifische Attribute</span></td>
+</tr><tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+</tr><tr><td>
+        <table border="1">
+<tbody><tr><td><span class="literal">align</span></td><td><span class="literal">valign</span></td>
+								</tr>
+							</tbody></table>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectmodelreference"><span class="title">Elementspezifische Ereignisbehandlungsroutinenattribute</span></td>
+				</tr>
+				<tr>
+					<td><p>Keine.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="align">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">align</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">alle</span> IE <span class="emphasis">alle</span> HTML <span class="emphasis">3.2</span>&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">align="<span class="replaceable">where</span>"</p>
+					</td><td valign="top" nowrap class="requirements">Optional&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Bestimmt, wie die &Uuml;berschrift relativ zur Tabelle dargestellt wird. Nicht alle Browserversionen unterst&uuml;tzen s&auml;mtliche M&ouml;glichkeiten f&uuml;r dieses Attribut. Nur <span class="literal">top</span> und <span class="literal">bottom</span> k&ouml;nnen bei allen Browsern verwendet werden.</p><p>&Uuml;berschriften oberhalb bzw. unterhalb von Tabellen werden in der aktuellen Body-Schrift wiedergegeben (au&szlig;er wenn durch Tag oder Stylesheet ge&auml;ndert) und entlang der Tabelle horizontal zentriert. Ist die &Uuml;berschrift breiter als die Tabelle, wird der Text bei beibehaltener Zentrierung umgebrochen.</p><p>In HTML 4.0 wird den Stylesheet-Attributen <span class="literal">text-align</span> und <span class="literal">vertical-align</span> Vorrang vor dem Attribut <span class="literal">align</span> einger&auml;umt.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>&lt;CAPTION align="top"&gt;Table II. Stock List&lt;/CAPTION&gt;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+				</tr>
+				<tr>
+					<td><p>Welche Stringwerte f&uuml;r dieses Attribut zul&auml;ssig sind, h&auml;ngt von der Browserversion ab. W&auml;hlen Sie f&uuml;r Ihre Zwecke die passenden Werte aus der folgenden Tabelle aus:</p><p>Einzelheiten zur Implementierung enth&auml;lt die Ausf&uuml;hrung zur Textausrichtung in einer Containerbox im Abschnitt 8.1.5 am Anfang dieses Kapitels.</p>
+						<table border="1"><tbody><th>Wert</th><th>IE 4+</th><th>NN 4</th><th>NN 6</th><th>HTML 4</th><tr><td>bottom</td><td>&radic;</td><td>&radic;</td><td>&radic;</td><td>&radic;</td>
+								</tr>
+								<tr><td>center</td><td>&radic;</td><td>-</td><td>-</td><td>-</td>
+								</tr>
+								<tr><td>left</td><td>&radic;</td><td>-</td><td>&radic;</td><td>&radic;</td>
+								</tr>
+								<tr><td>right</td><td>&radic;</td><td>-</td><td>&radic;</td><td>&radic;</td>
+								</tr>
+								<tr><td>top</td><td>&radic;</td><td>&radic;</td><td>&radic;</td><td>&radic;</td>
+								</tr>
+							</tbody></table>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Standardwert</span></td>
+				</tr>
+				<tr>
+					<td><p><span class="literal">top</span> (in IE <span class="literal">center</span>, wenn das Attribut <span class="literal">valign</span> ebenfalls gesetzt ist).</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectmodelreference"><span class="title">Objektmodellreferenz</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>[window.]document.getElementById(<span class="replaceable">elementID</span>).align</pre>
+						</span></td>
+				</tr>
+			</table>
+		</div>
+		<div id="lang">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">lang</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">3</span> IE <span class="emphasis">4</span> HTML <span class="emphasis">4</span>&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">lang="<span class="replaceable">languageCode</span>"</p>
+					</td><td valign="top" nowrap class="requirements">Optional&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Die f&uuml;r die Attributwerte und Inhalte des Elements verwendete Sprache. Mithilfe dieser Informationen ist der Browser besser in der Lage, bestimmte Details wie Ligaturen (sofern von der betreffenden Schrift unterst&uuml;tzt oder in der geschriebenen Sprache erforderlich), Anf&uuml;hrungszeichen und Worttrennungen korrekt darzustellen. Andere Anwendungen und Suchmaschinen k&ouml;nnen anhand dieser Informationen W&ouml;rterb&uuml;cher f&uuml;r die Rechtschreibpr&uuml;fung ausw&auml;hlen und Indizes erstellen.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>&lt;SPAN lang="de"&gt;Deutsche Bundesbahn&lt;/SPAN&gt;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+				</tr>
+				<tr>
+					<td><p>Sprachcode, bei dem nicht zwischen Gro&szlig;- und Kleinschreibung unterschieden wird.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Standardwert</span></td>
+				</tr>
+				<tr>
+					<td><p>Vorgabe des Browsers.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectmodelreference"><span class="title">Objektmodellreferenz</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>[window.]document.getElementById(<span class="replaceable">elementID).</span>lang</pre>
+						</span></td>
+				</tr>
+			</table>
+		</div>
+		<div id="valign">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">valign</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">nicht zutreffend</span> IE <span class="emphasis">3</span> HTML <span class="emphasis">nicht zutreffend</span>&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">valign="<span class="replaceable">where</span>"</p>
+					</td><td valign="top" nowrap class="requirements">Optional&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Mit dem fr&uuml;hen IE-Attribut <span class="literal">valign</span> wird festgelegt, ob die &Uuml;berschrift oberhalb oder unterhalb der Tabelle erscheint. Auch wenn dieses Attribut nun Teil des <span class="literal">align</span>-Attributs ist, gibt es wegen der besonderen Art und Weise, wie der IE die Werte <span class="literal">left</span>, <span class="literal">center</span> und <span class="literal">right</span> des Attributs <span class="literal">align</span> behandelt, f&uuml;r <span class="literal">valign</span> noch immer Verwendung. Sie k&ouml;nnen <span class="literal">valign</span> beispielsweise dazu verwenden, um &Uuml;berschriften unter der Tabelle zu positionieren, und mit <span class="literal">align="right"</span> den Text dort rechtsb&uuml;ndig ausrichten. Diese Kombination ist beim HTML 4-Attribut nicht m&ouml;glich.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>&lt;CAPTION align="right" valign="bottom"&gt;Table 3-2. Fiber Content.&lt;/CAPTION&gt;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+				</tr>
+				<tr>
+					<td><p>Zwei m&ouml;gliche Werte (Gro&szlig;-/Kleinschreibung unwichtig): <span class="literal">bottom</span> | <span class="literal">top</span>.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Standardwert</span></td>
+				</tr>
+				<tr>
+					<td><p><span class="literal">top</span></p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectmodelreference"><span class="title">Objektmodellreferenz</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>[window.]document.getElementById(<span class="replaceable">elementID</span>).valign </pre>
+						</span></td>
+				</tr>
+			</table>
+		</div>
+</body>
+</html>

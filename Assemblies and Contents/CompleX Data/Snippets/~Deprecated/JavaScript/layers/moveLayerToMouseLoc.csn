@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding = "utf-8"?>
+<snippet xmlns:MMString="http://www.macromedia.com/schemes/dat/string/" MMString:name = "Snippets/~Deprecated/JavaScript/layers/moveLayerToMouseLoc_csn/snippet/name/Move" MMString:description = "Snippets/~Deprecated/JavaScript/layers/moveLayerToMouseLoc_csn/snippet/description/Code" preview="code" type="block">
+
+<insertText location="beforeSelection">
+<![CDATA[// * Dependencies * 
+// this function requires the following snippets:
+// JavaScript/readable_MM_functions/findObj
+// JavaScript/readable_MM_functions/showHideLayers
+// JavaScript/events/getMouseLoc
+function moveLayerToMouseLoc(theLayer, offsetH, offsetV)
+{
+  var obj;
+  if ((findObj(theLayer))!=null)
+  {
+    if (document.layers)  //NS
+    {
+      document.onMouseMove = getMouseLoc;
+      obj = document.layers[theLayer];
+      obj.left = mLoc.x +offsetH;
+      obj.top  = mLoc.y +offsetV;
+    }
+    else if (document.all)//IE
+    {
+      getMouseLoc();
+      obj = document.all[theLayer].style;
+      obj.pixelLeft = mLoc.x +offsetH;
+      obj.pixelTop  = mLoc.y +offsetV;
+    }
+    showHideLayers(theLayer,'','show');
+  }
+}
+// get mouse location
+function Point(x,y) {  this.x = x; this.y = y; }
+mLoc = new Point(-500,-500);
+function getMouseLoc(e)
+{
+  if(!document.all)  //NS
+  {
+    mLoc.x = e.pageX;
+    mLoc.y = e.pageY;
+  }
+  else               //IE
+  {
+    mLoc.x = event.x + document.body.scrollLeft;
+    mLoc.y = event.y + document.body.scrollTop;
+  }
+  return true;
+}
+//NS init:
+if(document.layers){ document.captureEvents(Event.MOUSEMOVE); document.onMouseMove = getMouseLoc; }
+]]>
+</insertText>
+<insertText location="afterSelection"><![CDATA[]]>
+</insertText>
+</snippet>

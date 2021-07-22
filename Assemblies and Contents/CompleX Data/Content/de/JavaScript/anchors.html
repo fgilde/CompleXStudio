@@ -1,0 +1,221 @@
+<html>
+<link rel="stylesheet" href="josh.css">
+<body bgcolor="#FFFFFF">
+
+		<div id="Beschreibung">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">anchors</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">2</span>  IE <span class="emphasis">3</span>  DOM <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Eine Sammlung aller <span class="literal">a</span>-Elemente, die sich aufgrund der ihnen zugewiesenen <span class="literal">name</span>-Attribute wie Anker (und nicht wie Hyperlinks) verhalten. Mitglieder dieser Sammlung werden in der Quellcodereihenfolge sortiert. Navigator und Internet Explorer unterst&uuml;tzen eine Array-Schreibweise zum Zugriff auf einen einzelnen Anker in der Sammlung (z. B. <span class="literal">document.anchors[0]</span>, <span class="literal">document.anchors["section3"]</span>). In Internet Explorer 4 kann der Indexwert dar&uuml;ber hinaus in runde (statt eckige) Klammern gesetzt werden (z. B. <span class="literal">document.anchors(0)</span>). Falls der Name des Ankers als ein Indexwert verwendet werden soll (immer als Stringbezeichner), m&uuml;ssen Sie darauf achten, den Wert des <span class="literal">name</span>-Attributs anstelle des <span class="literal">id</span>-Attributs zu verwenden. Zur Verwendung des <span class="literal">id</span>-Attributs in einer Referenz auf einen Anker greifen Sie &uuml;ber eine <span class="literal">document.all.</span><span class="replaceable">elementID</span>-Referenz (nur IE) oder eine <span class="literal">document.getElementByID("</span><span class="replaceable">elementID</span><span class="literal">")</span>-Referenz auf das Objekt zu.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectmodelreference"><span class="title">Objektmodellreferenz</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>document.anchors</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectspecificproperties"><span class="title">Objektspezifische Eigenschaften</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<table border="1"><tbody><tr><td><span class="literal">length</span></td>
+								</tr>
+							</tbody></table>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectspecificmethods"><span class="title">Objektspezifische Methoden</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<table border="1"><tbody><tr><td><span class="literal">item( )</span></td><td><span class="literal">namedItem( )</span></td><td><span class="literal">tags( )</span></td><td><span class="literal">urns( )</span></td>
+								</tr>
+							</tbody></table>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectspecificeventhandlerproperties"><span class="title">Objektspezifische Ereignisbehandlungsroutineneigenschaften</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Keine. </p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="length">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">length</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">2</span>  IE <span class="emphasis">3</span>  DOM <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Schreibgesch&uuml;tzt</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Gibt die Anzahl von Elementen in der Sammlung zur&uuml;ck.</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>var howMany = document.anchors.length;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Eine ganze Zahl. </p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="item( )">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">item( )</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">4</span>  DOM <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">item(<span class="replaceable">index</span>[, <span class="replaceable">subindex</span>]) item(<span class="replaceable">index</span>)</p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Gibt ein einzelnes Ankerobjekt oder eine Ankerobjektsammlung zur&uuml;ck, das bzw. die dem mit dem Indexwert (oder bei IE optional mit dem <span class="literal">index</span>- und dem <span class="literal">subindex</span>-Wert) &uuml;bereinstimmenden Element entspricht.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Parameter</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<ul><li><span class="literal"></span>Handelt es sich bei dem Parameter um eine auf Null basierende ganze Zahl (erforderlich in Netscape 6), ist der zur&uuml;ckgegebene Wert ein einzelnes Element, das dem angegebenen Element in der Quellcodereihenfolge (verschachtelt im aktuellen Element) entspricht. Handelt es sich bei dem Parameter um eine Zeichenfolge, ist der zur&uuml;ckgegebene Wert eine Sammlung der Elemente, deren <span class="literal">id</span>- oder <span class="literal">name</span>-Eigenschaft mit dieser Zeichenfolge &uuml;bereinstimmt.
+</li><li><span class="literal"></span>Wenn Sie eine Zeichenfolge als ersten Parameter angeben (nur IE), k&ouml;nnen Sie den zweiten Parameter verwenden, um einen auf Null basierenden Index anzugeben, der das angegebene Element aus der Sammlung abruft, dessen <span class="literal">id</span>- oder <span class="literal">name</span>-Eigenschaft mit der Zeichenfolge des ersten Parameters &uuml;bereinstimmt.
+</li></ul>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Zur&uuml;ckgegebener Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Ein Ankerobjekt oder eine Ankerobjektsammlung (Array). Falls keine &Uuml;bereinstimmung mit den Parametern vorliegt, lautet der zur&uuml;ckgegebene Wert <span class="literal">null</span>.
+</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="namedItem( )">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">namedItem( )</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">6</span>  DOM <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">namedItem(<span class="replaceable">IDOrName</span>)</p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Gibt ein einzelnes Ankerobjekt oder eine Ankerobjektsammlung zur&uuml;ck, das bzw. die dem mit dem Wert der Parameterzeichenfolge &uuml;bereinstimmenden Element entspricht.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Parameter</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<ul><li><span class="literal"></span>Die Zeichenfolge, die denselben Wert wie das <span class="literal">id</span>- oder <span class="literal">name</span>-Attribut des gew&uuml;nschten Elements enth&auml;lt.
+</li></ul>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Zur&uuml;ckgegebener Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Ein Ankerobjekt oder eine Ankerobjektsammlung (Array). Falls keine &Uuml;bereinstimmung mit den Parametern vorliegt, lautet der zur&uuml;ckgegebene Wert <span class="literal">null</span>.
+</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="tags( )">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">tags( )</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">nicht zutreffend</span> IE <span class="emphasis">4</span>  DOM <span class="emphasis">nicht zutreffend</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">tags(<span class="replaceable">tagName</span>)</p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Gibt eine Sammlung von Objekten zur&uuml;ck (aus allen in der aktuellen Objektsammlung verschachtelten Objekten), deren Tags mit dem <span class="replaceable">tagName</span>-Parameter &uuml;bereinstimmen. In allen IE-Objektsammlungen implementiert (siehe <span class="literal">all.tags( )</span>-Methode), f&uuml;r Sammlungen desselben Elementtyps jedoch &uuml;berfl&uuml;ssig.
+</p>
+							</td>
+						</tr>
+			</table>
+		</div><div id="urns( )">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">urns( )</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">nicht zutreffend</span> IE <span class="emphasis">5(Win)</span>  DOM <span class="emphasis">nicht zutreffend</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">urns(<span class="replaceable">URN</span>)</p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Siehe <span class="literal">all.urns( )</span>-Methode</p>
+							</td>
+						</tr>
+			</table>
+		</div>
+
+</body>
+</html>

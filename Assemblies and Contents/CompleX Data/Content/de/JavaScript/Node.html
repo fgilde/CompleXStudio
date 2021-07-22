@@ -1,0 +1,1148 @@
+<html>
+<link rel="stylesheet" href="josh.css">
+<body bgcolor="#FFFFFF">
+
+		<div id="Beschreibung">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">Node</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">5</span>  DOM <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Das <span class="literal">Node</span>-Objekt ist eine abstrakte Darstellung des grundlegenden Inhaltsbausteins eines Dokuments im W3C-DOM. Alle Inhaltskomponenten, die Sie im W3C-DOM-Modell adressieren k&ouml;nnen, werden als Nodes bezeichnet: unbenannte, zusammenh&auml;ngende Textzeichenfolgen zwischen Tags, Elemente mit Tags, Name/Wert-Attributpaare, spezielle Hilfselemente wie Kommentare, <span class="literal">DOCTYPE</span>-Deklarationen und sogar das Dokument selbst, um nur einige Beispiele zu nennen.
+</p>
+							</td>
+						</tr>
+						<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Ein <span class="literal">Node</span>-Objekt verf&uuml;gt &uuml;ber eine umfangreiche Palette von Eigenschaften und Methoden, von denen die meisten die Beziehungen einer Node mit den sie umgebenden Nodes betreffen. Die Objekte in einem Dokument, die von einem Skript gelesen und gesteuert werden, sind als Ableger des grundlegenden <span class="literal">Node</span>-Objekts definiert. Dies bedeutet, dass die wichtigsten Inhaltsobjekte, mit denen ein DHTML-Skript arbeitet – HTML-Elemente, Textnodes und Elementattribute – zun&auml;chst einmal alle dieselben Eigenschaften und Methoden aufweisen. Erst dann fallen ihnen, entsprechend ihren Aufgaben als HTML-Elementen, weitere Eigenschaften und/oder Methoden zu, die ihre jeweilige Funktion erfordert.
+</p>
+							</td>
+						</tr>
+						<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>W&auml;hrend das Nodemodell des W3C-DOM die Erbfolge der einzelnen Inhaltskomponenten eines Dokuments regelt, stellt es einen h&ouml;chst akkuraten Konzeptrahmen dar, mit dem es im Vergleich zu der HTML-&auml;hnlichen Knappheit der ersten DOM-Generation und des Microsoft-DOM zuweilen etwas schwerf&auml;llig wirkt. Das Ziel ist jedoch letztlich, ein einheitliches Modell bereitzustellen, das sowohl mit XML- als auch mit HTML-Dokumenten (in ihrer reinen HTML- und der erweiterten XML-Form) funktioniert.
+</p>
+							</td>
+						</tr>
+			</table>
+		</div>
+<div id="ATTRIBUTE_NODE, CDATA_SECTION_NODE, COMMENT_NODE, DOCUMENT_FRAGMENT_NODE, DOCUMENT_NODE, DOCUMENT_TYPE_NODE, ELEMENT_NODE, ENTITY_NODE, ENTITY_REFERENCE_NODE, NOTATION_NODE, PROCESSING_INSTRUCTION_NODE, TEXT_NODE">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">ATTRIBUTE_NODE, CDATA_SECTION_NODE, COMMENT_NODE, DOCUMENT_FRAGMENT_NODE, DOCUMENT_NODE, DOCUMENT_TYPE_NODE, ELEMENT_NODE, ENTITY_NODE, ENTITY_REFERENCE_NODE, NOTATION_NODE, PROCESSING_INSTRUCTION_NODE, TEXT_NODE</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">nicht zutreffend</span> DOM <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements"><span class="emphasis">Schreibgesch&uuml;tzt</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Diese Gruppe von Konstanten geh&ouml;rt zum Root-<span class="literal">Node</span>-Objekt des W3C-DOM und wird daher von allen Nodes und Elementen auf Dokumentebene geerbt. Jede Eigenschaft entspricht einem ganzzahligen Wert, der mit der <span class="literal">nodeType</span>-Eigenschaft der einzelnen DOM-Nodes verkn&uuml;pft ist. Mithilfe dieser Eigenschaften k&ouml;nnen Sie den gesuchten Nodetyp in Vergleichen oder &auml;hnlichen Skriptoperationen in einer leichter lesbaren Weise angeben.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>if (myObject.nodeType == document.ELEMENT_NODE) &#123;
+    // process as an element here
+}</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Ganze Zahl, die einem DOM-Nodetyp entspricht.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<table border="1"><tbody><th>Eigenschaft</th><th>nodeType-Wert</th><tr><td><span class="literal">ELEMENT_NODE</span></td><td><span class="literal">1</span></td>
+								</tr>
+								<tr><td><span class="literal">ATTRIBUTE_NODE</span></td><td><span class="literal">2</span></td>
+								</tr>
+								<tr><td><span class="literal">TEXT_NODE</span></td><td><span class="literal">3</span></td>
+								</tr>
+								<tr><td><span class="literal">CDATA_SECTION_NODE</span></td><td><span class="literal">4</span></td>
+								</tr>
+								<tr><td><span class="literal">ENTITY_REFERENCE_NODE</span></td><td><span class="literal">5</span></td>
+								</tr>
+								<tr><td><span class="literal">ENTITY_NODE</span></td><td><span class="literal">6</span></td>
+								</tr>
+								<tr><td><span class="literal">PROCESSING_INSTRUCTION_NODE</span></td><td><span class="literal">7</span></td>
+								</tr>
+								<tr><td><span class="literal">COMMENT_NODE</span></td><td><span class="literal">8</span></td>
+								</tr>
+								<tr><td><span class="literal">DOCUMENT_NODE</span></td><td><span class="literal">9</span></td>
+								</tr>
+								<tr><td><span class="literal">DOCUMENT_TYPE_NODE</span></td><td><span class="literal">10</span></td>
+								</tr>
+								<tr><td><span class="literal">DOCUMENT_FRAGMENT_NODE</span></td><td><span class="literal">11</span></td>
+								</tr>
+								<tr><td><span class="literal">NOTATION_NODE</span></td><td><span class="literal">12</span></td>
+								</tr>
+							</tbody></table>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Standardwert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Konstantenwerte (siehe oben). </p>
+					</td>
+				</tr>
+			</table>
+		</div>
+		<div id="attributes[ ]">
+					<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+						<tr><td valign="top" class="name">attributes[ ]</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">5</span> DOM <span class="emphasis">1</span> </td>
+						</tr>
+						<tr>
+							<td valign="top" nowrap class="usage"><p class="literal"></p>
+							</td><td valign="top" nowrap class="requirements"><span class="emphasis">Schreibgesch&uuml;tzt</span></td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="description"><p>Gibt ein benanntes Node-Map-Objekt zur&uuml;ck, das einem Array (Sammlung) mit Attributobjekten (W3C-DOM-Typ <span class="literal">Attr</span>) &auml;hnelt, aber auch einige eigene Methoden aufweist, die den Zugriff auf die Objekte dieses Arrays erleichtern. Das IE-Array <span class="literal">attributes</span> enth&auml;lt Eintr&auml;ge f&uuml;r alle Attribute des internen DTD des Elements sowie alle benutzerdefinierten Attribute (<span class="literal">expando</span>), die in IE 6 im HTML-Quellcode explizit gesetzt wurden. In einem Skript vorgenommene &Auml;nderungen an den Attributen des Elements oder ihren Werten werden in diesem Array nicht widergespiegelt.
+		</p>
+									</td>
+								</tr>
+								<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+								</tr>
+								<tr>
+									<td colspan="2"><p>Bei Netscape 6 enth&auml;lt das <span class="literal">attributes</span>-Array nur Eintr&auml;ge f&uuml;r solche Attribute, die im HTML-Quellcode explizit f&uuml;r das Element definiert sind, einschlie&szlig;lich der benutzerdefinierten Attribute. In einem Skript vorgenommene &Auml;nderungen an Attributen (Hinzuf&uuml;gungen oder L&ouml;schungen) oder ihren Werten werden in den vom <span class="literal">attributes</span>-Array referenzierten <span class="literal">attribute</span>-Objekten widergespiegelt.
+		</p>
+									</td>
+								</tr>
+								<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+								</tr>
+								<tr>
+									<td colspan="2"><p>Statt mithilfe von Methoden des benannten Node-Map-Objekts k&ouml;nnen Sie &uuml;ber die standardm&auml;&szlig;ige JavaScript-Arraysyntax auf die einzelnen Attributobjekte zugreifen. Im Gro&szlig;en und Ganzen ist es jedoch wesentlich bequemer, bei der Skripterstellung entweder &uuml;ber ihre Widerspiegelung als Elementobjekteigenschaften oder &uuml;ber die Methoden <span class="literal">getAttribute( )</span> und <span class="literal">setAttribute( )</span> auf HTML-Elementattributwerte zuzugreifen. Informationen zu den Eigenschaften und Methoden dieser Objekte im W3C-DOM (hilfreich beim Analysieren von XML-Dokumenten) finden Sie in den Abhandlungen der Objekte <span class="literal">Attr</span> und <span class="literal">NamedNodeMap</span>.
+		</p>
+									</td>
+								</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td><span class="programlisting"><pre>var ldAttr = document.getElementById("myImg").attributes.getNamedItem("longdesc");</pre>
+								</span></td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Array (Sammlung) der Attributobjektreferenzen in der Quellcodereihenfolge (Netscape 6) bzw. in alphabetischer (IE/Mac) oder willk&uuml;rlicher (IE/Windows) Reihenfolge.
+		</p>
+							</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td valign="top" nowrap colspan="2" class="default"><span class="title">Standardwert</span></td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Modell des aktuellen Elements. </p>
+							</td>
+						</tr>
+					</table>
+		</div>
+		<div id="childNodes[ ]">
+					<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+						<tr><td valign="top" class="name">childNodes[ ]</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">5</span> DOM <span class="emphasis">1</span></td>
+						</tr>
+						<tr>
+							<td valign="top" nowrap class="usage"><p class="literal"></p>
+							</td><td valign="top" nowrap class="requirements"><span class="emphasis">Schreibgesch&uuml;tzt</span></td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="description"><p>Dies ist eine Eigenschaft des <span class="literal">Node</span>-Objekts im W3C-DOM, die aus einem Array (Nodeliste) mit Referenzen auf alle Child-Nodes auf der n&auml;chstniedrigeren Ebene der Nodehierarchie besteht (unabh&auml;ngig davon, ob es sich hierbei um einen Teil des Dokumentbaums oder um Dokumentfragmente handelt, die noch nicht in den Dokumentbaum eingef&uuml;gt wurden). Um tiefer verschachtelte Nodes zu erreichen, m&uuml;ssen Sie auf den <span class="literal">childNode</span>-Array der einzelnen Child-Nodes der aktuellen Node zugreifen. Eine f&uuml;r die Navigation in einem Nodebaum unverzichtbare Eigenschaft. Informationen zu den Eigenschaften und Methoden dieses Arraytyps finden Sie in der Abhandlung des <span class="literal">NodeList</span>-Objekts.
+		</p>
+									</td>
+								</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td><span class="programlisting"><pre>for (var i = 0; i &lt; nodeRef.childNodes.length; i++) &#123;
+		    if (nodeRef.childNodes[i].nodeType == document.ELEMENT_NODE) &#123;
+		        // operate on an element
+		    }
+		}</pre>
+								</span></td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Array mit Nodeobjektreferenzen.</p>
+							</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td valign="top" nowrap colspan="2" class="default"><span class="title">Standardwert</span></td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Array mit einer L&auml;nge von Null. </p>
+							</td>
+						</tr>
+					</table>
+		</div>
+		<div id="firstChild, lastChild">
+					<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+						<tr><td valign="top" class="name">firstChild, lastChild</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">5</span> DOM <span class="emphasis">1</span></td>
+						</tr>
+						<tr>
+							<td valign="top" nowrap class="usage"><p class="literal"></p>
+							</td><td valign="top" nowrap class="requirements"><span class="emphasis">Schreibgesch&uuml;tzt</span></td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="description"><p>Geben eine Referenz auf die erste bzw. letzte Child-Node der aktuellen Elementnode zur&uuml;ck. In aller Regel handelt es sich bei diesen Child-Nodes um in einem Element verschachtelte Textnodes. Bei einem einfachen Element, das nur eine Textnode enth&auml;lt, geben beide Eigenschaften eine Referenz auf dieselbe Textnode zur&uuml;ck. Komplexere Konstruktionen wie <span class="literal">tr</span>-Elemente k&ouml;nnen weitere Elementnodes (<span class="literal">td</span>-Elemente) als Child-Nodes enthalten, wobei manche Browser unter Umst&auml;nden jedoch Wagenr&uuml;ckl&auml;ufe (CR-Zeichen) zwischen Elementen im Quellcode in Textnodes umwandeln. Aus diesem Grund ist es sinnvoll, den Typ der von diesen Eigenschaften zur&uuml;ckgegebenen Node vor der Weiterverarbeitung zu &uuml;berpr&uuml;fen.
+		</p>
+									</td>
+								</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td><span class="programlisting"><pre>if (document.getElementById("<span class="replaceable">elementID</span>").firstChild.nodeType == 3) &#123;
+		    // process as a text node
+		}</pre>
+								</span></td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+						</tr>
+						<tr>
+							<td colspan="2"><p><span class="literal">Node</span>-Objektreferenz (auf eine Textnode, HTML-Elementnode o. &auml;.).
+		</p>
+							</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td valign="top" nowrap colspan="2" class="default"><span class="title">Standardwert</span></td>
+						</tr>
+						<tr>
+							<td colspan="2"><p><span class="literal">null</span></p>
+							</td>
+						</tr>
+					</table>
+		</div>
+		<div id="hasAttribute( )">
+					<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+						<tr><td valign="top" class="name">hasAttribute( )</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">nicht zutreffend</span> DOM <span class="emphasis">1</span></td>
+						</tr>
+						<tr>
+							<td valign="top" nowrap class="usage"><p class="literal">hasAttribute("<span class="replaceable">attributeName</span>")</p>
+							</td><td valign="top" nowrap class="requirements"></td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="description"><p>Gibt den Booleschen Wert <span class="literal">true</span> zur&uuml;ck, wenn das aktuelle Element ein Attribut aufweist, dessen Name mit dem Parameter der Methode &uuml;bereinstimmt.
+		</p>
+									</td>
+								</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="parameters"><span class="title">Parameter</span></td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td>
+								<ul><li><span class="literal"></span>Der Name des gesuchten Attributs (Gro&szlig;-/Kleinschreibung beachten).</li></ul>
+							</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="returnedvalue"><span class="title">Zur&uuml;ckgegebener Wert</span></td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Boolescher Wert: <span class="literal">true</span> | <span class="literal">false</span>.</p>
+							</td>
+						</tr>
+					</table>
+		</div>
+		<div id="lastChild">
+					<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+						<tr><td valign="top" class="name">lastChild</td><td valign="top" nowrap class="compatibility"></td>
+						</tr>
+						<tr>
+							<td valign="top" nowrap class="usage"><p class="literal"></p>
+							</td><td valign="top" nowrap class="requirements"></td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="description"><p>Siehe firstChild.</p>
+									</td>
+								</tr>
+					</table>
+		</div>
+		<div id="localName, namespaceURI, prefix">
+					<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+						<tr><td valign="top" class="name">localName, namespaceURI, prefix</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">nicht zutreffend</span> DOM <span class="emphasis">2</span></td>
+						</tr>
+						<tr>
+							<td valign="top" nowrap class="usage"><p class="literal"></p>
+							</td><td valign="top" nowrap class="requirements"><span class="emphasis">Schreibgesch&uuml;tzt</span></td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="description"><p>Diese drei Eigenschaften gelten haupts&auml;chlich f&uuml;r XML-Dokumentelemente mit Tags, die mithilfe von XML-Namespaces definiert wurden. Im Folgenden finden Sie ein einfaches Beispiel f&uuml;r ein solches Dokument:
+		</p>
+									</td>
+								</tr>
+								<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+								</tr>
+								<tr>
+									<td colspan="2"><p>Die Eigenschaften legen Einzelheiten zu den Namensmerkmalen des Elements offen. Ein <span class="literal">localName</span> ist das &Auml;quivalent zur <span class="literal">nodeName</span>-Eigenschaft des Elements, also sein dokumentweit g&uuml;ltiger Tag-Name, auch wenn der Tag-Name von einem aus einem anderen Namespace stammenden Element wiederverwendet wird. Das <span class="literal">prefix</span> hingegen verbindet das Element mit einem Pr&auml;fixnamen, der normalerweise mit einem <span class="literal">xmlns</span>-Attribut eines Containers im XML-Dokument definiert wird. Dies erleichtert Ihrem Skript die Identifizierung des Namespace, dem das Element zugeordnet ist. Eine weitere Bindung wird durch die Eigenschaft <span class="literal">namespaceURI</span> offen gelegt, die die dem <span class="literal">xmlns</span>-Attribut eines Containerelements zugewiesene URI-Zeichenfolge zur&uuml;ckgibt. Obwohl alle drei Eigenschaften zum <span class="literal">Node</span>-Objekt geh&ouml;ren, weisen sie f&uuml;r andere Nodetypen als Element- und Attributnodes den Wert <span class="literal">null</span> auf (oder vielmehr sollten sie den Wert <span class="literal">null</span> aufweisen, sind in Netscape 6 jedoch leere Zeichenfolgen).
+		</p>
+									</td>
+								</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td><span class="programlisting"><pre>var allTitles = document.getElementsByTagName("title");
+		for (var i = 0; i &lt; allTitles.length; i++) &#123;
+		    if (allTitles[i].prefix == "libBook" &amp;&amp;
+		        allTitles[i].namespaceURI.indexOf("catalog.umv.edu") != -1) &#123;
+		        // process title elements from the desired namespace here
+		    }
+		}</pre>
+								</span></td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Zeichenfolgen. </p>
+							</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td valign="top" nowrap colspan="2" class="default"><span class="title">Standardwert</span></td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>F&uuml;r <span class="literal">localName</span> der Tag-Name des Elements. Ansonsten eine leere Zeichenfolge.
+		</p>
+							</td>
+						</tr>
+					</table>
+		</div>
+			<div id="nextSibling, previousSibling">
+					<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+						<tr><td valign="top" class="name">nextSibling, previousSibling</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">5</span> DOM <span class="emphasis">1</span></td>
+						</tr>
+						<tr>
+							<td valign="top" nowrap class="usage"><p class="literal"></p>
+							</td><td valign="top" nowrap class="requirements"><span class="emphasis">Schreibgesch&uuml;tzt</span></td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="description"><p>Geben eine Referenz auf die n&auml;chste bzw. vorhergehende Node im Dokumentbaum zur&uuml;ck, die auf derselben Ebene verschachtelt ist wie die aktuelle Node. Wenn sich an der durch den Eigenschaftsnamen angegebenen Position keine Node befindet, gibt die Eigenschaft den Wert <span class="literal">null</span> zur&uuml;ck. Bei einer Textnode, die die einzige Node innerhalb einer Elementnode darstellt, geben beide Eigenschaften den Wert <span class="literal">null</span> zur&uuml;ck. Die Abfolge der Nodes wird anfangs durch die Quellcodereihenfolge bestimmt, in einem Skript vorgenommene &Auml;nderungen am Dokumentbaum werden jedoch in den von diesen Eigenschaften zur&uuml;ckgegebenen Nodes widergespiegelt.
+		</p>
+									</td>
+								</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td><span class="programlisting"><pre>var nextNode = document.getElementById("<span class="replaceable">elementID</span>").nextSibling;</pre>
+								</span></td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+						</tr>
+						<tr>
+							<td colspan="2"><p><span class="literal">Node</span>-Objektreferenz (auf eine Textnode, HTML-Elementnode o. &auml;.).
+		</p>
+							</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td valign="top" nowrap colspan="2" class="default"><span class="title">Standardwert</span></td>
+						</tr>
+						<tr>
+							<td colspan="2"><p><span class="literal">null</span></p>
+							</td>
+						</tr>
+					</table>
+		</div>
+		<div id="nodeName">
+					<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+						<tr><td valign="top" class="name">nodeName</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">5</span> DOM <span class="emphasis">1</span></td>
+						</tr>
+						<tr>
+							<td valign="top" nowrap class="usage"><p class="literal"></p>
+							</td><td valign="top" nowrap class="requirements"><span class="emphasis">Schreibgesch&uuml;tzt</span></td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="description"><p>Gibt eine Zeichenfolge zur&uuml;ck, die den Namen der Node entsprechend ihres Nodetyps angibt. Bei Element- und Attributnodes gibt die Eigenschaft den Tag-Namen bzw. den Attributnamen zur&uuml;ck. Bei vielen anderen Nodetypen, denen keine eigene Beschriftung zugeordnet ist, gibt die Eigenschaft <span class="literal">nodeName</span> eine feste Zeichenfolge zur&uuml;ck, die den Nodetyp angibt, z. B. <span class="literal">#text</span> f&uuml;r eine Textnode und <span class="literal">#document</span> f&uuml;r die Root-Dokumentnode. Bei Elementen gibt die Eigenschaft denselben Zeichenfolgenwert zur&uuml;ck wie die Eigenschaft <span class="literal">tagName</span> des Elementobjekts. Beachten Sie, dass Browser bis einschlie&szlig;lich IE 6 und Netscape 7 Element-Tag-Zeichenfolgen unabh&auml;ngig vom Quellcodestil oder der <span class="literal">DOCTYPE</span>-Spezifikation in Gro&szlig;buchstaben zur&uuml;ckgeben.
+		</p>
+									</td>
+								</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td><span class="programlisting"><pre>if (document.getElementById("<span class="replaceable">elementID</span>").nextSibling.nodeName == "#text") &#123;
+		    // process as a text node
+		}</pre>
+								</span></td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Feste Zeichenfolge f&uuml;r <span class="literal">#cdata-section</span>-, <span class="literal">#document</span>-, <span class="literal">#document-fragment</span>- und <span class="literal">#text</span>-Nodes, variable Zeichenfolge f&uuml;r Attribut-, Element- und andere Nodetypen.
+		</p>
+							</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td valign="top" nowrap colspan="2" class="default"><span class="title">Standardwert</span></td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Nodespezifisch. </p>
+							</td>
+						</tr>
+					</table>
+		</div>
+		<div id="nodeType">
+					<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+						<tr><td valign="top" class="name">nodeType</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">5</span> DOM <span class="emphasis">1</span></td>
+						</tr>
+						<tr>
+							<td valign="top" nowrap class="usage"><p class="literal"></p>
+							</td><td valign="top" nowrap class="requirements"><span class="emphasis">Schreibgesch&uuml;tzt</span></td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="description"><p>Gibt eine ganze Zahl zur&uuml;ck, die einem im W3C-DOM spezifizierten Nodetyp entspricht. Diese Eigenschaft wird beim Testen des Nodeobjekttyps bevorzugt verwendet (anstelle der <span class="literal">nodeName</span>-Eigenschaftswerte). Jeder Nodetyp weist einen Wert auf, aber nicht alle Browser, die die Eigenschaft <span class="literal">nodeTyp</span> unterst&uuml;tzen, unterst&uuml;tzen alle Nodetypen als Objekte. Den ganzzahligen Werten sind entsprechende Konstanten zugewiesen, mit deren Hilfe Sie ausf&uuml;hrlichere, aber leichter lesbare Skriptvergleiche f&uuml;r die Nodetypverarbeitung erstellen k&ouml;nnen (siehe Eigenschaft <span class="literal">ATTRIBUTE_NODE</span> weiter vorne in diesem Kapitel). Beachten Sie, dass es keine M&ouml;glichkeit gibt, Elementtypen (z. B. eine Root-<span class="literal">Element</span>-Node und eine <span class="literal">HTMLElement</span>-Node) anhand der <span class="literal">nodeType</span>-Eigenschaft voneinander zu unterscheiden. Beachten Sie au&szlig;erdem, dass IE 6 f&uuml;r Windows den Typ eines <span class="literal">DOCTYPE</span>-Elements f&auml;lschlicherweise als Kommentarnode erkennt.
+		</p>
+									</td>
+								</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td><span class="programlisting"><pre>if (document.getElementById("<span class="replaceable">elementID</span>").firstChild.nodeType == 1) &#123;
+		    // process as an element
+		}</pre>
+								</span></td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Ganzzahlige Werte (siehe unten stehende Tabelle).</p>
+							</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td>
+								<table border="1"><tbody><th>Wert</th><th>Nodetyp</th><th>W3C-DOM</th><th>IE/Windows</th><th>IE/Mac</th><th>NN</th><tr><td><span class="literal">1</span></td><td><span class="literal">ELEMENT_NODE</span></td><td>1</td><td>5</td><td>5</td><td>6</td>
+										</tr>
+										<tr><td><span class="literal">2</span></td><td><span class="literal">ATTRIBUTE_NODE</span></td><td>1</td><td>6</td><td>5</td><td>6</td>
+										</tr>
+										<tr><td><span class="literal">3</span></td><td><span class="literal">TEXT_NODE</span></td><td>1</td><td>5</td><td>5</td><td>6</td>
+										</tr>
+										<tr><td><span class="literal">4</span></td><td><span class="literal">CDATA_SECTION_NODE</span></td><td>1</td><td>--</td><td>--</td><td>--</td>
+										</tr>
+										<tr><td><span class="literal">5</span></td><td><span class="literal">ENTITY_REFERENCE_NODE</span></td><td>1</td><td>--</td><td>--</td><td>--</td>
+										</tr>
+										<tr><td><span class="literal">6</span></td><td><span class="literal">ENTITY_NODE</span></td><td>1</td><td>--</td><td>--</td><td>--</td>
+										</tr>
+										<tr><td><span class="literal">7</span></td><td><span class="literal">PROCESSING_INSTRUCTION_NODE</span></td><td>1</td><td>--</td><td>--</td><td>--</td>
+										</tr>
+										<tr><td><span class="literal">8</span></td><td><span class="literal">COMMENT_NODE</span></td><td>1</td><td>6</td><td>5</td><td>6</td>
+										</tr>
+										<tr><td><span class="literal">9</span></td><td><span class="literal">DOCUMENT_NODE</span></td><td>1</td><td>5</td><td>5</td><td>6</td>
+										</tr>
+										<tr><td><span class="literal">10</span></td><td><span class="literal">DOCUMENT_TYPE_NODE</span></td><td>1</td><td>--</td><td>--</td><td>6</td>
+										</tr>
+										<tr><td><span class="literal">11</span></td><td><span class="literal">DOCUMENT_FRAGMENT_NODE</span></td><td>1</td><td>--</td><td>--</td><td>6</td>
+										</tr>
+										<tr><td><span class="literal">12</span></td><td><span class="literal">NOTATION_NODE</span></td><td>1</td><td>--</td><td>--</td><td>--</td>
+										</tr>
+									</tbody></table>
+							</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td valign="top" nowrap colspan="2" class="default"><span class="title">Standardwert</span></td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Nodespezifisch. </p>
+							</td>
+						</tr>
+					</table>
+		</div>
+<div id="ownerDocument">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">ownerDocument</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE 5(Mac)/<span class="emphasis">6(Win)</span> DOM <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements"><span class="emphasis">Schreibgesch&uuml;tzt</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Gibt eine Referenz auf das <span class="literal">document</span>-Element zur&uuml;ck, das die aktuelle Node enth&auml;lt. Potenziell hilfreich in Funktionen zur Verarbeitung von Objektreferenzen, die aus Ereigniseigenschaften abgerufen oder als ID-Zeichenfolgen &uuml;bergeben wurden. Die entsprechende IE-Eigenschaft ist <span class="literal">document</span>.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>var currDoc = document.getElementById("<span class="replaceable">elementID</span>").ownerDocument;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p><span class="literal">document</span>-Objektreferenz.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Standardwert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Das aktuelle <span class="literal">document</span>-Objekt.</p>
+					</td>
+				</tr>
+			</table>
+		</div>
+		<div id="parentNode">
+					<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+						<tr><td valign="top" class="name">parentNode</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">5</span> DOM <span class="emphasis">1</span></td>
+						</tr>
+						<tr>
+							<td valign="top" nowrap class="usage"><p class="literal"></p>
+							</td><td valign="top" nowrap class="requirements"><span class="emphasis">Schreibgesch&uuml;tzt</span></td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="description"><p>Gibt eine Referenz auf die n&auml;chst&auml;u&szlig;ere Node (in der Regel ein Element) zur&uuml;ck, die als Container der aktuellen Node im Dokumentbaum fungiert. Die Beziehung zwischen der aktuellen Node und seiner Parent-Node ist rein struktureller Natur und hat nichts mit dem Positionierungskontext zu tun. Eine Parent-Node ist eine Node, die die aktuelle Node vollst&auml;ndig einschlie&szlig;t – nicht zu verwechseln mit gleichrangigen Geschwister-Nodes, die bestenfalls eine Seite mit der aktuellen Node gemein haben. Sie k&ouml;nnen auch hier die gleichen Kaskadierungstricks anwenden wie bei der IE-Eigenschaft <span class="literal">parentElement</span>, es w&auml;re jedoch riskant, die Ergebnisse der elementbezogenen IE-Eigenschaften vollkommen mit den Ergebnissen der nodebezogenen W3C-DOM-Eigenschaften gleichzusetzen, wenngleich neuere IE-Versionen beide Sichtweisen unterst&uuml;tzen.
+		</p>
+									</td>
+								</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td><span class="programlisting"><pre>if (document.getElementById("<span class="replaceable">elementID</span>").parentNode.nodeType == 1) &#123;
+		    document.getElementById("<span class="replaceable">elementID</span>").parentNode.style.fontSize = "14pt";
+		}</pre>
+								</span></td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Elementobjektreferenz.</p>
+							</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td valign="top" nowrap colspan="2" class="default"><span class="title">Standardwert</span></td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Nodespezifisch. </p>
+							</td>
+						</tr>
+					</table>
+		</div>
+		<div id="addEventListener( )">
+					<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+						<tr><td valign="top" class="name">addEventListener( )</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">nicht zutreffend</span> DOM <span class="emphasis">2</span></td>
+						</tr>
+						<tr>
+							<td valign="top" nowrap class="usage"><p class="literal">addEventListener("<span class="replaceable">eventType</span>", <span class="replaceable">listenerFunction</span>, <span class="replaceable">useCapture</span>)</p>
+							</td><td valign="top" nowrap class="requirements"></td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="description"><p>Bindet eine Ereignisbehandlungsroutinenfunktion an die aktuelle Node, sodass die Funktion ausgef&uuml;hrt wird, wenn ein Ereignis eines bestimmten Typs gezielt bei der Node eingeht oder sie im Rahmen der Ereignisverbreitung passiert. Beachten Sie, dass W3C-DOM-Ereignisse &uuml;ber Textnodes ebenso verbreitet werden wie &uuml;ber Elementnodes. Je nach der Einstellung des dritten (Booleschen) Parameters "horcht" die Node entweder w&auml;hrend der Ereigniserfassung oder w&auml;hrend der Ereignisverbreitung auf den Ereignistyp. Sie k&ouml;nnen diese Methode mit unterschiedlichen Parameterwerten mehrmals f&uuml;r dieselbe Node aufrufen und auf diese Weise beliebig viele Ereignisbehandlungsverhalten zuweisen, k&ouml;nnen f&uuml;r jedes Ereignis und jeden Verbreitungstyp jedoch jeweils immer nur eine Listener-Funktion aufrufen. Wenn der Event-Listener vor&uuml;bergehend hinzuf&uuml;gt wurde, l&auml;sst er sich mithilfe der Methode <span class="literal">removeEventListener( )</span> wieder entfernen.
+		</p>
+									</td>
+								</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="parameters"><span class="title">Parameter</span></td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td>
+								<ul><li><span class="literal"></span>Eine Zeichenfolge mit einem dem Objektmodell des Browsers bekannten Ereignistyp (ohne das Pr&auml;fix "on"). Das W3C-DOM kennt folgende Ereignistypen (und Netscape 6 implementiert die meisten von ihnen):
+		</li><li><span class="literal"></span>Eine Referenz auf die Funktion, die ausgef&uuml;hrt werden soll, wenn die Node den Ereignistyp im angegebenen Verbreitungsmodus erkennt. Da es sich hierbei um eine Referenz auf ein Funktionsobjekt handelt, darf der Name weder in Klammern stehen noch die Klammern der Funktion enthalten. W&auml;hren der Ausf&uuml;hrung &uuml;bergibt der Browser das aktuelle <span class="literal">event</span>-Objekt automatisch als Parameter an die Listener-Funktion.
+		</li><li><span class="literal"></span>Ein Boolescher Wert. <span class="literal">true</span> bedeutet, dass die Node nur auf den Ereignistyp horcht, w&auml;hrend das Ereignis zur Zielnode hin verbreitet wird (Erfassungsphase). <span class="literal">false</span> bedeutet, dass die Node nur auf den Ereignistyp horcht, w&auml;hrend das Ereignis vom Ereignisziel aus wieder nach au&szlig;en verbreitet wird (Verbreitungsphase). Wenn es sich beim Ereignisziel um die aktuelle Node handelt, k&ouml;nnen beide Booleschen Werte verwendet werden.
+		</li></ul>
+							</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="returnedvalue"><span class="title">Zur&uuml;ckgegebener Wert</span></td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Keiner.</p>
+							</td>
+						</tr>
+					</table>
+				</div>
+				<div id="appendChild( )">
+					<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+						<tr><td valign="top" class="name">appendChild( )</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">5</span> DOM <span class="emphasis">1</span></td>
+						</tr>
+						<tr>
+							<td valign="top" nowrap class="usage"><p class="literal">appendChild(<span class="replaceable">nodeObject</span>)</p>
+							</td><td valign="top" nowrap class="requirements"></td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="description"><p>F&uuml;gt nach dem Ende der letzten Child-Node eine neue Node in das aktuelle Nodeobjekt ein. Das aktuelle Nodeobjekt muss in der Lage sein, Child-Nodes zu enthalten, andernfalls gibt die Methode eine Ausnahme zur&uuml;ck. Diese Methode ist das am h&auml;ufigsten angewendete Verfahren zum Anh&auml;ngen eines dynamisch erstellten Elements, einer Textnode oder eines Dokumentfragments an ein vorhandenes Element und kann beispielsweise in einem Skript genutzt werden, um neue Inhaltsabschnitte f&uuml;r ein Dokument zusammenzustellen. Wenn die als Parameter mit der Methode <span class="literal">appendChild( )</span> &uuml;bergebene Nodereferenz jedoch auf eine vorhandene Node im Dokumentbaum weist, wird diese Node zuerst aus dem Baum entfernt und anschlie&szlig;end wieder als letzter Eintrag in die Liste der Child-Nodes im aktuellen Objekt eingef&uuml;gt. Auf diese Weise l&auml;sst sich eine Node rasch und m&uuml;helos von einer Position an das Ende eines Containers verschieben.
+		</p>
+<span class="PROGRAMLISTING"><pre>&lt;?xml version=&quot;1.0&quot; encoding=&quot;ISO-8859-1&quot;&gt;
+&lt;results xmlns:libBook=&quot;http://catalog.umv.edu/schema&quot;&gt;
+&lt;libBook:title libBook:rareBooks=&quot;true&quot;&gt;De Principia&lt;/libBook:title&gt;
+&lt;/results&gt;?</pre></span>
+									</td>
+								</tr>
+								<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+								</tr>
+								<tr>
+									<td colspan="2"><p>Wenn Sie eine Textnode als gleichrangige Node an eine vorhandene Textnode anh&auml;ngen, werden die beiden Textnodes nicht automatisch zu einer Node zusammengefasst. Sie k&ouml;nnen jedoch alle gleichrangigen Textnodes zu einer gro&szlig;en Textnode verschmelzen, indem Sie die Methode <span class="literal">normalize( )</span> des Parent-Objekts aufrufen.
+		</p>
+									</td>
+								</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="parameters"><span class="title">Parameter</span></td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td>
+								<ul><li><span class="literal"></span>Referenz auf ein beliebiges Nodeobjekt eines Typs, der als Child-Objekt des aktuellen Objekts verwendet werden kann. Diese Node kann aus dynamisch erzeugten Inhalten erstellt (z. B. Textnode, Element oder Dokumentfragment) oder aus dem vorhandenen Dokumentbaum &uuml;bernommen werden.
+		</li></ul>
+							</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="returnedvalue"><span class="title">Zur&uuml;ckgegebener Wert</span></td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Referenz auf die angeh&auml;ngte Node.</p>
+							</td>
+						</tr>
+					</table>
+		</div>
+		<div id="hasAttributes( )">
+					<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+						<tr><td valign="top" class="name">hasAttributes( )</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">nicht zutreffend</span> DOM <span class="emphasis">1</span></td>
+						</tr>
+						<tr>
+							<td valign="top" nowrap class="usage"><p class="literal"></p>
+							</td><td valign="top" nowrap class="requirements"></td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="description"><p>Gibt den Booleschen Wert <span class="literal">true</span> zur&uuml;ck, wenn das aktuelle Element ein Attribut aufweist, das im Tag explizit zugewiesen wurde.
+		</p>
+									</td>
+								</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="parameters"><span class="title">Parameter</span></td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Keine.</p>
+							</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="returnedvalue"><span class="title">Zur&uuml;ckgegebener Wert</span></td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Boolescher Wert: <span class="literal">true</span> | <span class="literal">false</span>.</p>
+							</td>
+						</tr>
+					</table>
+				</div>
+				<div id="hasChildNodes( )">
+					<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+						<tr><td valign="top" class="name">hasChildNodes( )</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">5</span> DOM <span class="emphasis">1</span></td>
+						</tr>
+						<tr>
+							<td valign="top" nowrap class="usage"><p class="literal"></p>
+							</td><td valign="top" nowrap class="requirements"></td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="description"><p>Gibt den Booleschen Wert <span class="literal">true</span> zur&uuml;ck, wenn die aktuelle Node eine oder mehrere Child-Nodes enth&auml;lt.
+		</p>
+									</td>
+								</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="parameters"><span class="title">Parameter</span></td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Keine.</p>
+							</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="returnedvalue"><span class="title">Zur&uuml;ckgegebener Wert</span></td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Boolescher Wert: <span class="literal">true</span> | <span class="literal">false</span>.</p>
+							</td>
+						</tr>
+					</table>
+		</div>
+		<div id="insertBefore( )">
+					<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+						<tr><td valign="top" class="name">insertBefore( )</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">5</span> DOM <span class="emphasis">1</span></td>
+						</tr>
+						<tr>
+							<td valign="top" nowrap class="usage"><p class="literal">insertBefore(<span class="replaceable">newChildNode</span>, <span class="replaceable">referenceChildNodeOrNull</span>)</p>
+							</td><td valign="top" nowrap class="requirements"></td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="description"><p>F&uuml;gt eine Node als Child der aktuellen Node (in der Regel eines Elements) vor einer ihrer anderen Child-Nodes in die aktuelle Node ein. Bei der neuen Child-Node kann es sich um eine Referenz auf eine bereits im Dokumentbaum vorhandene Node handeln, in welchem Fall diese Node von ihrer urspr&uuml;nglichen Position an die angegebene Position verschoben wird. Die Child-Node kann auch in Form einer Node eines beliebigen g&uuml;ltigen DOM-Nodetyps neu erstellt werden, beispielsweise als Dokumentfragment (das HTML-Tags enthalten kann) oder als <span class="literal">Attr</span>-Node (nur Netscape 6 und IE 6).
+		</p>
+									</td>
+								</tr>
+								<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+								</tr>
+								<tr>
+									<td colspan="2"><p>Mit dem zweiten Parameter k&ouml;nnen Sie eine der vorhandenen Child-Nodes als Referenzpunkt festlegen, vor der die neue Child-Node eingef&uuml;gt wird. Wenn Sie als zweiten Parameter den Wert <span class="literal">null</span> &uuml;bergeben (oder in IE den Wert weglassen), wird die neue Node als letzte Child-Node in die aktuelle Node eingef&uuml;gt – das Resultat entspricht der Methode <span class="literal">appendChild( )</span>.
+		</p>
+									</td>
+								</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="parameters"><span class="title">Parameter</span></td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td>
+								<ul><li><span class="literal"></span>Ein g&uuml;ltiges Nodeobjekt, das als Child-Objekt eines Parent-Objekts verwendet werden kann.</li><li><span class="literal"></span>Eine beliebige Child-Node der aktuellen Node oder <span class="literal">Null</span>. </li></ul>
+							</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="returnedvalue"><span class="title">Zur&uuml;ckgegebener Wert</span></td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Referenz auf das eingef&uuml;gte Nodeobjekt.</p>
+							</td>
+						</tr>
+					</table>
+				</div>
+				<div id="isSupported( )">
+					<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+						<tr><td valign="top" class="name">isSupported( )</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">nicht zutreffend</span> DOM <span class="emphasis">2</span></td>
+						</tr>
+						<tr>
+							<td valign="top" nowrap class="usage"><p class="literal">isSupported("<span class="replaceable">feature</span>", "<span class="replaceable">version</span>")</p>
+							</td><td valign="top" nowrap class="requirements"></td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="description"><p>Gibt den Booleschen Wert <span class="literal">true</span> zur&uuml;ck, wenn die aktuelle Node das angegebene W3C-DOM-Modul in der entsprechenden Version unterst&uuml;tzt (d. h. mit den erforderlichen Spezifikationen dieses Moduls konform ist). Die Methode <span class="literal">hasFeature( )</span> des Objekts <span class="literal">document.implementation</span> f&uuml;hrt zwar denselben Test durch, jedoch mit der gesamten Browseranwendung. Die Methode <span class="literal">isSupported( )</span> hingegen f&uuml;hrt diesen Test mit einer einzelnen Node durch, damit Sie feststellen k&ouml;nnen, ob eine bestimmte Funktion f&uuml;r den aktuellen Nodetyp unterst&uuml;tzt wird. Die Parameterwerte der Methoden <span class="literal">isSupported( )</span> und <span class="literal">document.implementation.hasFeature( )</span> sind identisch.
+		</p>
+									</td>
+								</tr>
+								<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+								</tr>
+								<tr>
+									<td colspan="2"><p>Es obliegt dem Browserhersteller sicherzustellen, dass das im Browser implementierte DOM mit den einzelnen Modulen konform ist, bevor er den Browser autorisiert, f&uuml;r ein Modul den Wert <span class="literal">true</span> zur&uuml;ckzugeben. Dies bedeutet nat&uuml;rlich nicht notwendigerweise, dass die Implementierung fehlerfrei oder mit anderen Implementierungen konsistent ist. Caveat Scriptor.
+		</p>
+									</td>
+								</tr>
+								<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+								</tr>
+								<tr>
+									<td colspan="2"><p>Theoretisch k&ouml;nnen Sie mithilfe dieser Methode pr&uuml;fen, ob ein bestimmtes Modul unterst&uuml;tzt wird, bevor Sie auf eine Eigenschaft zugreifen oder eine Methode aufrufen, wie in dem folgenden Fragment, in dem <span class="literal">myElem</span> eine Referenz auf eine Elementnode ist:
+		</p>
+									</td>
+								</tr>
+								<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+								</tr>
+								<tr>
+									<td colspan="2"><p>In der Praxis ist die Objekterkennung eine bessere L&ouml;sung, da W3C-DOM-Berichtfunktionen noch nicht sehr verbreitet und ganz sicher nicht r&uuml;ckw&auml;rtskompatibel sind.
+		</p><span class="PROGRAMLISTING"><pre>if (myElem.isSupported(&quot;CSS&quot;, &quot;2.0&quot;)) &#123;
+    myElem.style.color = &quot;green&quot;;
+}</pre></span>
+									</td>
+								</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="parameters"><span class="title">Parameter</span></td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td>
+								<ul><li><span class="literal"></span>Im W3C-DOM, Level 2, sind folgende Modulnamenzeichenfolgen zul&auml;ssig (Gro&szlig;-/Kleinschreibung beachten): <span class="literal">Core</span>, <span class="literal">XML</span>, <span class="literal">HTML</span>, <span class="literal">Views</span>, <span class="literal">StyleSheets</span>, <span class="literal">CSS</span>, <span class="literal">CSS2</span>, <span class="literal">Events</span>, <span class="literal">UIEvents</span>, <span class="literal">MouseEvents</span>, <span class="literal">MutationEvents</span>, <span class="literal">HTMLEvents</span>, <span class="literal">Range</span>, <span class="literal">Traversal</span>.
+		</li><li><span class="literal"></span>Zeichenfolge, die die Haupt- und Unterversion des im ersten Parameter genannten DOM-Moduls angibt. F&uuml;r W3C-DOM, Level 2, lautet die Versionsnummer <span class="literal">2.0</span>, selbst wenn das DOM-Modul einen anderen W3C-Standard mit abweichendem Nummerierungssystem unterst&uuml;tzt. Der Test auf die HTML-DOM-Modulunterst&uuml;tzung gilt somit f&uuml;r Version 2.0, obgleich HTML bei Version 4.x steht.
+		</li></ul>
+							</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="returnedvalue"><span class="title">Zur&uuml;ckgegebener Wert</span></td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Boolescher Wert: <span class="literal">true</span> | <span class="literal">false</span>.</p>
+							</td>
+						</tr>
+					</table>
+		</div>
+		<div id="normalize( )">
+					<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+						<tr><td valign="top" class="name">normalize( )</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">nicht zutreffend</span> DOM <span class="emphasis">2</span></td>
+						</tr>
+						<tr>
+							<td valign="top" nowrap class="usage"><p class="literal"></p>
+							</td><td valign="top" nowrap class="requirements"></td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="description"><p>F&uuml;hrt alle gleichrangigen Textnodes der aktuellen Node (Elementnode) in einer einzigen Textnode zusammen. Diese Methode muss unter Umst&auml;nden nach dem Einf&uuml;gen oder Entfernen von Child-Nodes eines Elements aufgerufen werden, wenn Ihre node&uuml;bergreifenden Skripts davon ausgehen, dass ein zusammenh&auml;ngender Text immer in einer einzigen Textnode enthalten ist. Laut dem W3C-DOM darf eine Textnode in einem normalen Dokumentbaum keine gleichrangigen Textnodes aufweisen.
+		</p>
+									</td>
+								</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="parameters"><span class="title">Parameter</span></td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Keine.</p>
+							</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="returnedvalue"><span class="title">Zur&uuml;ckgegebener Wert</span></td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Keiner.</p>
+							</td>
+						</tr>
+					</table>
+		</div>
+		<div id="removeChild( )">
+					<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+						<tr><td valign="top" class="name">removeChild( )</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">5</span> DOM <span class="emphasis">1</span></td>
+						</tr>
+						<tr>
+							<td valign="top" nowrap class="usage"><p class="literal">removeChild(<span class="replaceable">childNodeReference</span>)</p>
+							</td><td valign="top" nowrap class="requirements"></td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="description"><p>Entfernt eine Child-Node aus dem aktuellen Element. Als Parameter muss eine Referenz auf eine im aktuellen Element verschachtelte Child-Node angegeben werden. Eine entfernte Child-Node ist nicht mehr im Dokumentbaum enthalten, liegt aber weiterhin im Arbeitsspeicher vor. Die Methode gibt eine Referenz auf die entfernte Node zur&uuml;ck, sodass Sie diese modifizieren und an anderer Stelle wieder in den Dokumentbaum einf&uuml;gen k&ouml;nnen. Beachten Sie, dass Sie eine Node anweisen k&ouml;nnen, eine ihrer Child-Nodes zu entfernen, eine Node sich aber nicht selbst entfernen kann (siehe im Gegensatz dazu die Hinweise zur IE-Methode <span class="literal">removeNode( )</span>).
+		</p>
+									</td>
+								</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="parameters"><span class="title">Parameter</span></td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td>
+								<ul><li><span class="literal"></span>Referenz auf eine vorhandene Child-Node.</li></ul>
+							</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="returnedvalue"><span class="title">Zur&uuml;ckgegebener Wert</span></td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Eine Referenz auf die entfernte Node.</p>
+							</td>
+						</tr>
+					</table>
+		</div>
+		<div id="replaceNode( )">
+					<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+						<tr><td valign="top" class="name">replaceNode( )</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">nicht zutreffend</span> IE <span class="emphasis">5(Win)</span> DOM <span class="emphasis">nicht zutreffend</span></td>
+						</tr>
+						<tr>
+							<td valign="top" nowrap class="usage"><p class="literal">replaceNode(<span class="replaceable">newNodeObjectReference</span>)</p>
+							</td><td valign="top" nowrap class="requirements"></td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="description"><p>Ersetzt die aktuelle Node durch eine neue Node. Die neue Child-Node kann (z. B. als Text- oder Elementnode) entweder neu erstellt oder in Form einer Referenz auf eine an anderer Stelle im Dokumentbaum enthaltene Node eingebunden werden. Im letzteren Fall bewirkt der Aufruf der Methode <span class="literal">replaceNode( )</span>, dass die Node an ihrer urspr&uuml;nglichen Position im Dokumentbaum entfernt und in die aktuelle Node eingef&uuml;gt wird.
+		</p>
+									</td>
+								</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="parameters"><span class="title">Parameter</span></td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td>
+								<ul><li><span class="literal"></span>Referenz auf das Nodeobjekt, das die aktuelle Node ersetzen soll.</li></ul>
+							</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="returnedvalue"><span class="title">Zur&uuml;ckgegebener Wert</span></td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Referenz auf die entfernte Node.</p>
+							</td>
+						</tr>
+					</table>
+		</div>
+		<div id="swapNode( )">
+					<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+						<tr><td valign="top" class="name">swapNode( )</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">nicht zutreffend</span> IE <span class="emphasis">5(Win)</span> DOM <span class="emphasis">nicht zutreffend</span></td>
+						</tr>
+						<tr>
+							<td valign="top" nowrap class="usage"><p class="literal">swapNode(<span class="replaceable">otherNodeObject</span>)</p>
+							</td><td valign="top" nowrap class="requirements"></td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="description"><p>Ersetzt die aktuelle Node im Dokumentbaum durch die als Parameter angegebene Node. Das andere Nodeobjekt kann entweder neu erstellt oder in Form einer Referenz auf eine an anderer Stelle im Dokumentbaum enthaltene Node eingebunden werden. Im letzteren Fall werden die beiden Nodes untereinander ausgetauscht. Wenn die beiden Nodes unterschiedliche Nodetypen oder Elementdarstellungstypen aufweisen (z. B. ein Inline-Element und ein Blockelement), kann dies deutliche Auswirkungen auf die Darstellung des Dokuments haben.
+		</p>
+									</td>
+								</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="parameters"><span class="title">Parameter</span></td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td>
+								<ul><li><span class="literal"></span>Referenz auf ein beliebiges Nodeobjekt, in der Regel auf eine andere Node im Dokumentbaum.
+		</li></ul>
+							</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="returnedvalue"><span class="title">Zur&uuml;ckgegebener Wert</span></td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Referenz auf die Node, von der aus die Methode aufgerufen wird (d. h. die aktuelle Node).
+		</p>
+							</td>
+						</tr>
+					</table>
+		</div>
+
+<div id="swapNode( )">
+
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">swapNode( )</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">nicht zutreffend</span> IE <span class="emphasis">5(Win)</span> DOM <span class="emphasis">nicht zutreffend</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">swapNode(<span class="replaceable">otherNodeObject</span>)</p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Ersetzt die aktuelle Node im Dokumentbaum durch die als Parameter angegebene Node. Das andere Nodeobjekt kann entweder neu erstellt oder in Form einer Referenz auf eine an anderer Stelle im Dokumentbaum enthaltene Node eingebunden werden. Im letzteren Fall werden die beiden Nodes untereinander ausgetauscht. Wenn die beiden Nodes unterschiedliche Nodetypen oder Elementdarstellungstypen aufweisen (z.&#160;B. ein Inline-Element und ein Blockelement), kann dies deutliche Auswirkungen auf die Darstellung des Dokuments haben.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Parameter</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<ul><li><span class="literal"></span>Referenz auf ein beliebiges Nodeobjekt, in der Regel auf eine andere Node im Dokumentbaum.
+</li></ul>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Zur&uuml;ckgegebener Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Referenz auf die Node, von der aus die Methode aufgerufen wird (d.&#160;h. die aktuelle Node).
+</p>
+					</td>
+				</tr>
+			</table>
+		</div>
+</body>
+</html>

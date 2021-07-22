@@ -1,0 +1,36 @@
+<html>
+<link rel="stylesheet" href="josh.css">
+<body bgcolor="#FFFFFF">
+
+		<div id="Beschreibung">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">ondblclick</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">4 </span>IE <span class="emphasis">4 </span>DOM <span class="emphasis">nicht zutreffend</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Aufw&auml;rtsverbreitung: Ja; Abbruch m&ouml;glich: Ja</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Wird ausgel&ouml;st, nachdem der Benutzer das zweite Mal in kurzer Folge die Maustaste gedr&uuml;ckt oder eine &auml;quivalente Aktion (siehe <span class="literal">onclick</span>) ausgef&uuml;hrt hat. Ein Doppelklick setzt sich aus einer ganz speziellen Abfolge von Mausereignissen zusammen. Diese Sequenz sieht folgenderma&szlig;en aus: <span class="literal">onmousedown</span>, <span class="literal">onmouseup</span>, <span class="literal">onclick</span>, <span class="literal">onmouseup</span> und <span class="literal">ondblclick</span>. Die maximale Zeitspanne zwischen den beiden Mausklicks eines Doppelklicks ist in den Mauseinstellungen der Systemsteuerung auf dem Client-Computer festgelegt.</p>
+							</td>
+						</tr>
+						<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Da das <span class="literal">onclick</span>-Ereignis vor dem <span class="literal">ondblclick</span>-Ereignis ausgel&ouml;st wird, sollte die ihm zugewiesene <span class="literal">onclick</span>-Ereignisbehandlungsroutine (sofern vorhanden) nur harmlose Aktionen ausf&uuml;hren und beispielsweise ein Element (nach dem Vorbild der Desktopsymbole des Betriebssystems) hervorheben. Wenn ein Element einen Doppelklick erfordert, sollte kein anderes Ereignis irgendeine wesentliche Aufgabe ausf&uuml;hren.</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="typicaltargets"><span class="title">Typische Ziele</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>In Navigator 4 ist die Unterst&uuml;tzung dieses Ereignisses auf das <span class="literal">a</span>-Element beschr&auml;nkt (jedoch nicht auf dem Macintosh), IE ab Version 4 und Netscape 6 unterst&uuml;tzen das Ereignis f&uuml;r alle darstellbaren Elementen sowie f&uuml;r das <span class="literal">document</span>-Objekt.</p>
+					</td>
+				</tr>
+			</table>
+		</div>
+</body>
+</html>

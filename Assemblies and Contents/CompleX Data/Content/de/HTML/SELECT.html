@@ -1,0 +1,612 @@
+<html>
+<link rel="stylesheet" href="josh.css">
+<body bgcolor="#FFFFFF">
+
+		<div id="Beschreibung">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">&lt;SELECT&gt;</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">alle</span> IE <span class="emphasis">alle</span> HTML <span class="emphasis">alle</span>&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">&lt;SELECT&gt;...&lt;/SELECT&gt;</p>
+					</td><td valign="top" nowrap class="requirements">HTML-End-Tag: Erforderlich&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Das Element <span class="literal">select</span> zeigt Informationen aus verschachtelten <span class="literal">option</span>-Elementen in einem Dokument entweder als Listenfeld oder als Popupmen&uuml; an. In der Regel treffen Benutzer eine Auswahl aus einer Liste mit Eintr&auml;gen (wenn das Attribut <span class="literal">size</span> einen Wert gr&ouml;&szlig;er als 1 hat und das Attribut <span class="literal">multiple</span> gesetzt ist, k&ouml;nnen auch mehrere Optionen aus einem Listenfeld ausgew&auml;hlt werden). Das Attribut <span class="literal">value</span> des ausgew&auml;hlten <span class="literal">option</span>-Elements wird zusammen mit einem Formular als Wert des Namens-/Wertpaars an den Server &uuml;bermittelt. Wenn das Element eine Mehrfachauswahl zul&auml;sst, werden mehrere durch <span class="literal">&amp;</span> getrennte Namens-/Wertpaare (jeweils mit dem gleichen Elementnamen) im Formular &uuml;bergeben. In Navigator 4 muss ein <span class="literal">select</span>-Element in ein <span class="literal">form</span>-Element gestellt werden.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>&lt;SELECT name="chapters"&gt;    &lt;OPTION value="chap1.html"&gt;Chapter 1&lt;/OPTION&gt;    &lt;OPTION value="chap2.html"&gt;Chapter 2&lt;/OPTION&gt;    &lt;OPTION value="chap3.html"&gt;Chapter 3&lt;/OPTION&gt;    &lt;OPTION value="chap4.html"&gt;Chapter 4&lt;/OPTION&gt;&lt;/SELECT&gt;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectmodelreference"><span class="title">Objektmodellreferenz</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>[window.]document.<span class="replaceable">formName</span>.<span class="replaceable">selectName</span>[window.]document.forms[i].elements[j][window.]document.getElementById(<span class="replaceable">elementID</span>) </pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectmodelreference"><span class="title">Elementspezifische Attribute</span></td>
+</tr><tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+</tr><tr><td>
+        <table border="1">
+<tbody><tr><td><span class="literal">accesskey</span></td><td><span class="literal">align</span></td><td><span class="literal">datafld</span></td><td><span class="literal">datasrc</span></td><td><span class="literal">disabled</span></td>
+								</tr>
+								<tr><td><span class="literal">multiple</span></td><td><span class="literal">name</span></td><td><span class="literal">size</span></td><td><span class="literal">tabindex</span></td><td></td>
+								</tr>
+							</tbody></table>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectmodelreference"><span class="title">Elementspezifische EreignisbehandlungsroutinenAttribute</span></td>
+</tr><tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+</tr><tr><td>
+        <table border="1">
+<tbody><th>Routine</th><th>NN</th><th>IE</th><th>HTML</th><tr><td>onafterupdate</td><td>--</td><td>4</td><td>--</td>
+								</tr>
+								<tr><td>onbeforeupdate</td><td>--</td><td>4</td><td>--</td>
+								</tr>
+								<tr><td>onchange</td><td>2</td><td>3</td><td>4</td>
+								</tr>
+							</tbody></table>
+					</td>
+				</tr>
+			</table>
+		</div><div id="accesskey">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">accesskey</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">nicht zutreffend</span> IE <span class="emphasis">4</span> HTML <span class="emphasis">nicht zutreffend</span>&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">accesskey="<span class="replaceable">character</span>"</p>
+					</td><td valign="top" nowrap class="requirements">Optional&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Dieses gemeinsam verwendete Attribut ist hier aufgelistet, um Sie daran zu erinnern, dass es f&uuml;r das Element <span class="literal">select</span> nur von IE unterst&uuml;tzt wird. Weitere Informationen finden Sie in den Ausf&uuml;hrungen zu den gemeinsam verwendeten Attributen weiter vorne in diesem Kapitel.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="align">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">align</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">nicht zutreffend</span> IE <span class="emphasis">4</span> HTML <span class="emphasis">nicht zutreffend</span>&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">align="<span class="replaceable">alignmentConstant</span>"</p>
+					</td><td valign="top" nowrap class="requirements">Optional&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Bestimmt, wie das Rechteck des <span class="literal">select</span>-Elements im Verh&auml;ltnis zu dem Inhalt angeordnet wird, der das Element umgibt (dies ist insbesondere dann von Bedeutung, wenn das Attribut <span class="literal">size</span> einen Wert gr&ouml;&szlig;er als 1 hat). Weitere Informationen enth&auml;lt Abschnitt 8.1.5 weiter vorne in diesem Kapitel. Denken Sie daran, dass nur Internet Explorer das Attribut <span class="literal">align</span> f&uuml;r <span class="literal">select</span>-Elemente unterst&uuml;tzt.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>&lt;SELECT name="chapters" multiple align="baseline"&gt;...&lt;/SELECT&gt;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+				</tr>
+				<tr>
+					<td><p>Konstante (Gro&szlig;-/Kleinschreibung unwichtig).</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Standardwert</span></td>
+				</tr>
+				<tr>
+					<td><p><span class="literal">bottom</span> (IE/Windows); <span class="literal">absmiddle</span> (IE/Macintosh).</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectmodelreference"><span class="title">Objektmodellreferenz</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>[window.]document.<span class="replaceable">formName</span>.<span class="replaceable">selectName</span>.align[window.]document.forms[i].elements[j].align[window.]document.getElementById(<span class="replaceable">elementID</span>).align  </pre>
+						</span></td>
+				</tr>
+			</table>
+		</div><div id="datafld">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">datafld</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">nicht zutreffend</span> IE <span class="emphasis">4</span> HTML <span class="emphasis">|4|</span>&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">datafld="<span class="replaceable">columnName</span>"</p>
+					</td><td valign="top" nowrap class="requirements">Optional&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Wird in IE 4 f&uuml;r die Datenbindung verwendet, um den Spaltennamen einer Remote-Datenquelle mit der Eigenschaft <span class="literal">selectedIndex</span> eines <span class="literal">select</span>-Elements zu verkn&uuml;pfen (d.&#160;h. ein Null-basierter Indexwert des Eintrags, der derzeit in der Liste ausgew&auml;hlt ist, wie aus der Beschreibung des Objekt <span class="literal">select</span> in Kapitel 9 ersichtlich). Sie k&ouml;nnen die Datenbindung daher nur bei <span class="literal">select</span>-Elementen einsetzen, bei denen das Attribut <span class="literal">multiple</span> nicht angegeben ist. F&uuml;r das Element muss au&szlig;erdem das Attribut <span class="literal">datasrc</span> gesetzt sein. Funktioniert in IE 5/Mac nur mit Textdateien als Datenquellen.</p><p>Dieses Attribut war in HTML 4 reserviert, wurde aber in XHTML 1.0 gestrichen.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>&lt;SELECT name="chapters" datasrc="DBSRC3" datafld="chapterRequest"&gt;    &lt;OPTION value="chap1.html"&gt;Chapter 1&lt;/OPTION&gt;    &lt;OPTION value="chap2.html"&gt;Chapter 2&lt;/OPTION&gt;    &lt;OPTION value="chap3.html"&gt;Chapter 3&lt;/OPTION&gt;    &lt;OPTION value="chap4.html"&gt;Chapter 4&lt;/OPTION&gt;&lt;/SELECT&gt;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+				</tr>
+				<tr>
+					<td><p>Bezeichner (Gro&szlig;-/Kleinschreibung beachten).</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Standardwert</span></td>
+				</tr>
+				<tr>
+					<td><p>Keiner.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectmodelreference"><span class="title">Objektmodellreferenz</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>[window.]document.<span class="replaceable">formName</span>.<span class="replaceable">selectName</span>.dataFld[window.]document.forms[i].elements[j].dataFld[window.]document.getElementById(<span class="replaceable">elementID</span>).dataFld  </pre>
+						</span></td>
+				</tr>
+			</table>
+		</div><div id="datasrc">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">datasrc</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">nicht zutreffend</span> IE <span class="emphasis">4</span> HTML <span class="emphasis">|4|</span>&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">datasrc="<span class="replaceable">dataSourceName</span>"</p>
+					</td><td valign="top" nowrap class="requirements">Optional&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Wird in IE f&uuml;r die Datenbindung verwendet, um den Bezeichner des <span class="literal">object</span>-Elements der Seite anzugeben, das das Datenquellenobjekt f&uuml;r den Remote-Datenzugriff l&auml;dt. Der Inhalt der Datenquelle wird mit dem Attribut <span class="literal">datafld</span> angegeben. Funktioniert in IE 5/Mac nur mit Textdateien als Datenquellen.</p><p>Dieses Attribut war in HTML 4 reserviert, wurde aber in XHTML 1.0 gestrichen.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>&lt;SELECT name="chapters" datasrc="#DBSRC3" datafld="chapterRequest"&gt;    &lt;OPTION value="chap1.html"&gt;Chapter 1&lt;/OPTION&gt;    &lt;OPTION value="chap2.html"&gt;Chapter 2&lt;/OPTION&gt;    &lt;OPTION value="chap3.html"&gt;Chapter 3&lt;/OPTION&gt;    &lt;OPTION value="chap4.html"&gt;Chapter 4&lt;/OPTION&gt;&lt;/SELECT&gt;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+				</tr>
+				<tr>
+					<td><p>Bezeichner (Gro&szlig;-/Kleinschreibung beachten).</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Standardwert</span></td>
+				</tr>
+				<tr>
+					<td><p>Keiner.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectmodelreference"><span class="title">Objektmodellreferenz</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>[window.]document.<span class="replaceable">formName</span>.<span class="replaceable">selectName</span>.dataSrc[window.]document.forms[i].elements[j].dataSrc[window.]document.getElementById(<span class="replaceable">elementID</span>).dataSrc  </pre>
+						</span></td>
+				</tr>
+			</table>
+		</div><div id="disabled">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">disabled</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">4</span> HTML <span class="emphasis">4</span>&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">disabled</p>
+					</td><td valign="top" nowrap class="requirements">Optional&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Wenn dieses Attribut vorhanden ist, werden das Element <span class="literal">select</span> sowie seine verschachtelten <span class="literal">option</span>-Elemente vollst&auml;ndig deaktiviert. Wenn das Element deaktiviert ist, erh&auml;lt es keine Ereignisse. Sie k&ouml;nnen auch einzelne Optionen &uuml;ber die <span class="literal">disabled</span>-Eigenschaften der jeweiligen Elemente deaktivieren.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>&lt;SELECT name="chapters" disabled&gt;    &lt;OPTION value="chap1.html"&gt;Chapter 1&lt;/OPTION&gt;    &lt;OPTION value="chap2.html"&gt;Chapter 2&lt;/OPTION&gt;    &lt;OPTION value="chap3.html"&gt;Chapter 3&lt;/OPTION&gt;    &lt;OPTION value="chap4.html"&gt;Chapter 4&lt;/OPTION&gt;&lt;/SELECT&gt;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+				</tr>
+				<tr>
+					<td><p>Ist dieses Attribut vorhanden, wird sein Wert auf <span class="literal">true</span> gesetzt.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Standardwert</span></td>
+				</tr>
+				<tr>
+					<td><p><span class="literal">false</span></p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectmodelreference"><span class="title">Objektmodellreferenz</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>[window.]document.<span class="replaceable">formName</span>.<span class="replaceable">selectName</span>.disabled[window.]document.forms[i].elements[j].disabled[window.]document.getElementById(<span class="replaceable">elementID</span>).disabled  </pre>
+						</span></td>
+				</tr>
+			</table>
+		</div>
+		<div id="lang">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">lang</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">3</span> IE <span class="emphasis">4</span> HTML <span class="emphasis">4</span>&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">lang="<span class="replaceable">languageCode</span>"</p>
+					</td><td valign="top" nowrap class="requirements">Optional&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Die f&uuml;r die Attributwerte und Inhalte des Elements verwendete Sprache. Mithilfe dieser Informationen ist der Browser besser in der Lage, bestimmte Details wie Ligaturen (sofern von der betreffenden Schrift unterst&uuml;tzt oder in der geschriebenen Sprache erforderlich), Anf&uuml;hrungszeichen und Worttrennungen korrekt darzustellen. Andere Anwendungen und Suchmaschinen k&ouml;nnen anhand dieser Informationen W&ouml;rterb&uuml;cher f&uuml;r die Rechtschreibpr&uuml;fung ausw&auml;hlen und Indizes erstellen.
+</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>&lt;SPAN lang="de"&gt;Deutsche Bundesbahn&lt;/SPAN&gt;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+				</tr>
+				<tr>
+					<td><p>Sprachcode, bei dem nicht zwischen Gro&szlig;- und Kleinschreibung unterschieden wird.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Standardwert</span></td>
+				</tr>
+				<tr>
+					<td><p>Vorgabe des Browsers.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectmodelreference"><span class="title">Objektmodellreferenz</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>[window.]document.getElementById(<span class="replaceable">elementID).</span>lang</pre>
+						</span></td>
+				</tr>
+			</table>
+		</div>
+		<div id="multiple">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">multiple</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">alle</span> IE <span class="emphasis">alle</span> HTML <span class="emphasis">alle</span>&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">multiple</p>
+					</td><td valign="top" nowrap class="requirements">Optional&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Wenn das Attribut <span class="literal">multiple</span> vorhanden ist, wird der Browser angewiesen, das Element <span class="literal">select</span> als Listenfeld darzustellen, in dem der Benutzer mehrere Optionen ausw&auml;hlen kann. Standardm&auml;&szlig;ig wird das Attribut <span class="literal">size</span> auf die Anzahl der verschachtelten <span class="literal">option</span>-Elemente gesetzt; der Wert kann jedoch &uuml;ber das Attribut <span class="literal">size</span> au&szlig;er Kraft gesetzt werden. Benutzer k&ouml;nnen aufeinander folgende Eintr&auml;ge ausw&auml;hlen, indem sie bei gedr&uuml;ckter <span class="emphasis">Umschalttaste</span> auf den ersten und den letzten Eintrag in der Gruppe klicken. Zur Auswahl nicht aufeinander folgender Eintr&auml;ge m&uuml;ssen die Benutzer unter Windows die <span class="emphasis">Strg-</span>Taste und auf dem Macintosh die <span class="emphasis">Befehlstaste</span> gedr&uuml;ckt halten und dann auf die gew&uuml;nschten Eintr&auml;ge klicken. Das Attribut <span class="literal">multiple</span> ist wirkungslos, wenn <span class="literal">size</span> auf 1 gesetzt ist und somit ein Popupmen&uuml; erscheint.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>&lt;SELECT name="equipment" multiple&gt;    &lt;OPTION value="monitor"&gt;Video monitor&lt;/OPTION&gt;    &lt;OPTION value="modem"&gt;Modem&lt;/OPTION&gt;    &lt;OPTION value="printer"&gt;Printer&lt;/OPTION&gt;    ...&lt;/SELECT&gt;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+				</tr>
+				<tr>
+					<td><p>Ist dieses Attribut vorhanden, wird sein Wert auf <span class="literal">true</span> gesetzt.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Standardwert</span></td>
+				</tr>
+				<tr>
+					<td><p><span class="literal">false</span></p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectmodelreference"><span class="title">Objektmodellreferenz</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>[window.]document.<span class="replaceable">formName</span>.<span class="replaceable">selectName</span>.multiple[window.]document.forms[i].elements[j].multiple[window.]document.getElementById(<span class="replaceable">elementID</span>).multiple  [window.]document.<span class="replaceable">formName</span>.<span class="replaceable">selectName</span>.type[window.]document.forms[i].elements[j].type[window.]document.getElementById(<span class="replaceable">elementID</span>).type  </pre>
+						</span></td>
+				</tr>
+			</table>
+		</div><div id="name">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">name</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">alle</span> IE <span class="emphasis">alle</span> HTML <span class="emphasis">alle</span>&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">name="<span class="replaceable">elementIdentifier</span>"</p>
+					</td><td valign="top" nowrap class="requirements">Optional&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Der Name, der zusammen mit dem Formular als Teil des Namens-/Wertpaars des Elements &uuml;bermittelt wird. Dies &auml;hnelt dem Attribut <span class="literal">name</span> des Elements <span class="literal">input</span>.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>&lt;SELECT name="cpu" id="cpu"&gt;    &lt;OPTION value="486"&gt;486&lt;/OPTION&gt;    &lt;OPTION value="pentium"&gt;Pentium&lt;/OPTION&gt;    &lt;OPTION value="pentium2"&gt;Pentium II&lt;/OPTION&gt;    ...&lt;/SELECT&gt;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+				</tr>
+				<tr>
+					<td><p>Bezeichner (Gro&szlig;-/Kleinschreibung beachten).</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Standardwert</span></td>
+				</tr>
+				<tr>
+					<td><p>Keiner.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectmodelreference"><span class="title">Objektmodellreferenz</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>[window.]document.<span class="replaceable">formName</span>.<span class="replaceable">selectName</span>.name[window.]document.forms[i].elements[j].name[window.]document.getElementById(<span class="replaceable">elementID</span>).name  </pre>
+						</span></td>
+				</tr>
+			</table>
+		</div><div id="size">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">size</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">alle</span> IE <span class="emphasis">alle</span> HTML <span class="emphasis">alle</span>&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">size="<span class="replaceable">rowCount</span>"</p>
+					</td><td valign="top" nowrap class="requirements">Optional&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Bestimmt die Anzahl von Zeilen mit <span class="literal">option</span>-Elementen, die im <span class="literal">select</span>-Element angezeigt werden. Lautet der Wert 1, wird der Inhalt des <span class="literal">select</span>-Elements als Popupmen&uuml; angezeigt; ist der Wert gr&ouml;&szlig;er als 1, werden die <span class="literal">option</span>-Elemente in einem Listenfeld dargestellt. Die Browser steuern die Elementbreite auf Grundlage des breitesten Textes, der mit den verschachtelten <span class="literal">option</span>-Elementen verkn&uuml;pft ist.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>&lt;SELECT name="equipment" size="3"&gt;    &lt;OPTION value="monitor"&gt;Video monitor&lt;/OPTION&gt;    &lt;OPTION value="modem"&gt;Modem&lt;/OPTION&gt;    &lt;OPTION value="printer"&gt;Printer&lt;/OPTION&gt;    ...&lt;/SELECT&gt;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+				</tr>
+				<tr>
+					<td><p>Beliebiger positiver Integerwert.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Standardwert</span></td>
+				</tr>
+				<tr>
+					<td><p><span class="literal">1</span></p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectmodelreference"><span class="title">Objektmodellreferenz</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>[window.]document.<span class="replaceable">formName</span>.<span class="replaceable">selectName</span>.size[window.]document.forms[i].elements[j].size[window.]document.getElementById(<span class="replaceable">elementID</span>).size  </pre>
+						</span></td>
+				</tr>
+			</table>
+		</div><div id="tabindex">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">tabindex</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">4</span> HTML <span class="emphasis">4</span>&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">tabindex="<span class="replaceable">integer</span>"</p>
+					</td><td valign="top" nowrap class="requirements">Optional&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Dieses gemeinsam verwendete Attribut ist hier aufgelistet, um Sie daran zu erinnern, dass es von Netscape 6 und HTML 4 unterst&uuml;tzt wird, um den Zugriff auf komplexe Formularsteuerelemente zu erleichtern. Wenn das <span class="literal">select</span>-Element den Fokus besitzt, kann der Benutzer mit der Tastatur die gew&uuml;nschten Eintr&auml;ge ausw&auml;hlen. Weitere Informationen zu diesem Attribut finden Sie weiter vorne in diesem Kapitel.</p>
+					</td>
+				</tr>
+			</table>
+		</div>
+</body>
+</html>

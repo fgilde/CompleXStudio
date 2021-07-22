@@ -1,0 +1,226 @@
+<html>
+
+<link rel="stylesheet" href="../HTML/josh.css"><head>
+
+
+<title>Page-Direktive</title>
+</head>
+<body bgcolor="#FFFFFF" text="#000000">
+<div id="Beschreibung">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">Page-Direktive</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description">
+<p>Die Direktive <span class="LITERAL">page</span> definiert seitenabh&auml;ngige Attribute, wie Skriptsprache, Fehlerseite und Pufferanforderungen.
+</p>
+
+<p>Eine JSP-&Uuml;bersetzungseinheit (bestehend aus Quelldatei und allen Dateien, die mit der Direktive <span class="LITERAL">include</span> eingeschlossen werden) kann mehrere <span class="LITERAL">page</span>-Direktiven enthalten, vorausgesetzt, jedes Attribut tritt nur einmal auf (mit Ausnahme des Attributs <span class="LITERAL">import</span>). Bei Verwendung von mehreren Attributwerten f&uuml;r <span class="LITERAL">import</span> werden sie in eine Liste von <span class="LITERAL">import</span>-Definitionen kombiniert.
+</p>
+
+<p>Beispiel:</p>
+
+<span class="PROGRAMLISTING"><pre>&lt;%@ page language=&quot;java&quot; 
+  contentType=&quot;text/html;charset=Shift_JIS&quot;%&gt;
+&lt;%@ page import=&quot;java.util.*, java.text.*&quot; %&gt;
+&lt;%@ page import=&quot;java.sql.Date&quot; %&gt;</pre></span>
+</td>
+</tr>
+</table>
+</div>
+<div id="autoFlush">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">autoFlush</td>
+<td valign="top" class="COMPATIBILITY">Standardwert: <span class="LITERAL">true</span></td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description">
+<p>Auf <span class="LITERAL">true</span> eingestellt, wenn der Seitenpuffer automatisch geleert werden soll, sobald er voll ist. Auf <span class="LITERAL">false</span> eingestellt, wenn bei einem vollen Seitenpuffer eine Ausnahme ausgel&ouml;st werden soll.
+</p>
+</td>
+</tr>
+</table>
+</div>
+<div id="buffer">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">buffer</td>
+<td valign="top" class="COMPATIBILITY">Standardwert: <span class="LITERAL">8kb</span></td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description">
+<p>Gibt die Puffergr&ouml;&szlig;e f&uuml;r die Seite an. Der Wert muss als Gr&ouml;&szlig;e in KB gefolgt von <span class="LITERAL">kb</span> ausgedr&uuml;ckt werden. Wenn kein Puffer verwendet werden soll, wird das Schl&uuml;sselwort <span class="LITERAL">none</span> verwendet.
+</p>
+</td>
+</tr>
+</table>
+</div>
+<div id="contentType">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">contentType</td>
+<td valign="top" class="COMPATIBILITY">Standardwert: <span class="LITERAL">text/html</span></td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description">
+<p>Der MIME-Typ f&uuml;r die von der Seite erzeugte Antwort. Wahlweise auch der Zeichensatz f&uuml;r die Quellseite (beispielsweise <span class="LITERAL">text/html;charset=Shift_JIS</span>).
+</p>
+</td>
+</tr>
+</table>
+</div>
+<div id="errorPage">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">errorPage</td>
+<td valign="top" class="COMPATIBILITY">Kein Standardwert</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description">
+<p>Ein seiten- oder kontextbezogener URI-Pfad, an den die JSP-Seite Benutzer weiterleitet, wenn der Code in der Seite eine Ausnahme ausl&ouml;st.
+</p>
+</td>
+</tr>
+</table>
+</div>
+<div id="extends">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">extends</td>
+<td valign="top" class="COMPATIBILITY">Kein Standardwert</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description">
+<p>Der vollst&auml;ndige Name einer Java-Klasse, die die erzeugte JSP-Implementierungsklasse erweitert. Die Klasse muss die Schnittstelle <span class="LITERAL">JspPage</span> oder <span class="LITERAL">HttpJspPage</span> im Paket <span class="LITERAL">javax.servlet.jsp</span> implementieren.
+</p>
+
+<p>Es wird empfohlen, dieses Attribut <em>nicht</em> zu verwenden. Wenn Sie eine eigene &uuml;bergeordnete Klasse angeben, verf&uuml;gt der Webcontainer &uuml;ber weniger M&ouml;glichkeiten, eine spezialisierte &uuml;bergeordnete Klasse mit hohem Leistungspotenzial bereitzustellen.
+</p>
+</td>
+</tr>
+</table>
+</div>
+<div id="import">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">import</td>
+<td valign="top" class="COMPATIBILITY">Kein Standardwert</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description">
+<p>Eine Java-Importdeklaration, das hei&szlig;t eine durch Kommas getrennte Liste der vollst&auml;ndigen Klassen- oder Paketnamen, gefolgt von <span class="LITERAL">.*</span> (f&uuml;r alle &ouml;ffentlichen Klassen im Paket).
+</p>
+</td>
+</tr>
+</table>
+</div>
+<div id="info">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">info</td>
+<td valign="top" class="COMPATIBILITY">Kein Standardwert</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description">
+<p>Text, mit dem ein Webcontainer die Seite in der Administrationsbenutzeroberfl&auml;che beschreiben kann. 
+</p>
+</td>
+</tr>
+</table>
+</div>
+<div id="isErrorPage">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">isErrorPage</td>
+<td valign="top" class="COMPATIBILITY">Standardwert: <span class="LITERAL">false</span></td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description">
+<p>Wird f&uuml;r eine Seite, die als Fehlerseite verwendet wird, auf <span class="LITERAL">true</span> eingestellt, damit die implizite Ausnahmenvariable den Skriptelementen zur Verf&uuml;gung steht. F&uuml;r regul&auml;re JSP-Seiten sollte <span class="LITERAL">false</span> verwendet werden.
+</p>
+</td>
+</tr>
+</table>
+</div>
+<div id="isThreadSafe">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">isThreadSafe</td>
+<td valign="top" class="COMPATIBILITY">Standardwert: <span class="LITERAL">true</span></td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description">
+<p>Auf <span class="LITERAL">true</span> eingestellt, wenn der Container mehrere Threads durch die Seite ausf&uuml;hren kann (damit die Seite parallele Anforderungen verarbeiten kann). Der Wert <span class="LITERAL">false</span> bewirkt, dass der Container alle Anforderungen f&uuml;r die Seite serialisiert. Es ist auch m&ouml;glich, einen Pool von Instanzen der JSP-Seitenimplementierungsklasse zu verwenden, damit mehrere Anforderungen gleichzeitig verarbeitet werden k&ouml;nnen. Es empfiehlt sich, immer <span class="LITERAL">true</span> zu verwenden und Multithread-Situationen zu verarbeiten, indem JSP-Deklarationen vermieden werden und indem sichergestellt wird, dass alle von der Seite verwendeten Objekte thread-sicher sind.
+</p>
+</td>
+</tr>
+</table>
+</div>
+<div id="language">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">language</td>
+<td valign="top" class="COMPATIBILITY">Standardwert: <span class="LITERAL">java</span></td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description">
+<p>Die in der Seite verwendete Skriptsprache.</p>
+</td>
+</tr>
+</table>
+</div>
+<div id="session">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">session</td>
+<td valign="top" class="COMPATIBILITY">Standardwert: <span class="LITERAL">true</span></td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description">
+<p>Auf <span class="LITERAL">true</span> eingestellt, wenn die Seite an einer Benutzersitzung teilnehmen soll. Die Einstellung <span class="LITERAL">false</span> bewirkt, dass die implizite Variable <span class="LITERAL">session</span> nicht f&uuml;r Skriptelemente in der Seite verf&uuml;gbar ist.
+</p>
+</td>
+</tr>
+</table>
+</div>
+</body>
+</html>

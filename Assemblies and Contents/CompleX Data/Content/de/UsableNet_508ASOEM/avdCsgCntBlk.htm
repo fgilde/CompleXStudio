@@ -1,0 +1,139 @@
+<html xmlns:un="http://usablenet.com/namespaces/508_rules">
+   <link rel="stylesheet" href="josh.css">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   
+      <title>Detailanzeige f&uuml;r Regel: Blinkende Inhalte vermeiden</title>
+      <!--
+  508/W3C Accessibility Suite OEM V2 for Macromedia Dreamweaver
+  (C) Copyright 2001-2005 UsableNet Inc. All rights reserved.
+  -->
+   </head>
+   <body bgcolor="#ffffff">
+      <div id="Beschreibung">
+         <table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+            <tr>
+               <td valign="top" nowrap="true" class="name">Blinkende Inhalte vermeiden</td>
+               <td valign="top" nowrap="true" class="compatibility">&nbsp;</td>
+            </tr>
+            <tr>
+               <td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+            </tr>
+            <tr>
+               <td valign="top" align="right" nowrap="true" colspan="2" class="requirements">WAI / WCAG 1.0 Priorit&auml;t 2 Checkpunkt 7.2</td>
+            </tr>
+            <tr>
+               <td colspan="2" class="clearseparation">&nbsp;</td>
+            </tr>
+            <tr>
+               <td colspan="2" class="clearseparation">&nbsp;</td>
+            </tr>
+            <tr>
+               <td valign="top" colspan="2" class="description"><b>Problembeschreibung</b><br>
+                  
+                           
+                  <p>
+                     Die Seite enth&auml;lt ein BLINK-Tag, hierbei handelt es sich nicht um ein Standard-Tag.
+                     	 
+                  </p>
+                        
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2" class="clearseparation">&nbsp;</td>
+            </tr>
+            <tr>
+               <td colspan="2" class="clearseparation">&nbsp;</td>
+            </tr>
+            <tr>
+               <td valign="top" colspan="2" class="description"><b>Probleml&ouml;sung</b>
+                  
+                           
+                  <p>
+                     Ersetzen Sie das BLINK-Tag durch eine andere angemessenere Formatierung, bei welcher der Text nicht auftaucht und wieder verschwindet
+                     und der Benutzer keinen Einfluss auf diesen Effekt hat. 
+                     	 
+                  </p>
+                  
+                  <p>
+                     W3C r&auml;t von der Verwendung der Tags BLINK und MARQUEE ab (<strong>HTML Techniques for Web Content Accessibility Guidelines 1.0</strong>
+                     [http://www.w3.org/TR/WCAG10-HTML-TECHS/#style-text]
+                     ).
+                     
+                  </p>
+                  
+                  <p>
+                     Sollte tats&auml;chlich einmal ein blinkender Effekt erzielt werden m&uuml;ssen, dann k&ouml;nnen Sie dies auch mit der CSS-Eigenschaft 'text-decoration:
+                     blink' erreichen. Das Ergebnis ist das gleiche, aber:
+                     
+                     
+                  </p>
+                  
+                  <ul>
+                     
+                     <li> Der Besucher der Website kann die Verarbeitung von CSS-Eigenschaften durch den Browser unterdr&uuml;cken, so dass das Blinken
+                        aufh&ouml;rt.
+                     </li>
+                     
+                     <li> Noch besser ist es, mehrere CSS-Stildateien mit der Seite zu verlinken.  Die meisten Eigenschaften bleiben zwar erhalten
+                        (und zwar in allen Dateien), nicht dagegen 'text-decoration: blink'. Der Besucher, der sich eines aktuellen Browsers bedient,
+                        kann zwischen den einzelnen Stildateien umschalten und die Datei ausw&auml;hlen, die alle gew&uuml;nschten Funktionen ausf&uuml;hrt, das
+                        Blinken jedoch unterdr&uuml;ckt.
+                        
+                     </li>
+                     
+                     <li> Die HTML-Datei enth&auml;lt g&uuml;ltigen Code und wird kleiner (da die Blink-Eigenschaft nur einmal in der externen Stildatei aufgef&uuml;hrt
+                        ist).
+                        
+                     </li>
+                     
+                  </ul>    
+                        
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2" class="clearseparation">&nbsp;</td>
+            </tr>
+            <tr>
+               <td colspan="2" class="clearseparation">&nbsp;</td>
+            </tr>
+            <tr>
+               <td valign="top" colspan="2" class="description"><b>Problemerkl&auml;rung</b><br>
+                  
+                           
+                  <p>
+                     Das BLINK-Tag aktiviert und deaktiviert die betreffenden Inhalte, der Benutzer des Browsers hat keine M&ouml;glichkeit, dieses
+                     ein- und ausschaltende Verhalten zu beenden. 
+                     	 
+                  </p>
+                  
+                  <p>
+                     Dieses Blinkverhalten ist f&uuml;r das Auge sehr irritierend und erschwert die Konzentration auf die Inhalte der Seite bzw. auf
+                     das Ausf&uuml;llen von ggf. auf der Seite enthaltenen Formularen. 
+                     
+                  </p>
+                  
+                  <p>
+                     F&uuml;r Benutzer mit Sehst&ouml;rungen sind die Folgen noch schwerwiegender, da ihnen die Konzentration auf die Inhalte der Seite noch
+                     weiter erschwert wird. Versetzen Sie sich in die Lage von Benutzern, die eine Bildschirmlupe einsetzen, um einen kleinen Teil
+                     der Seite anzuzeigen, der sich mit dem blinkenden Text &uuml;berschneidet. In einem solchen Fall wird auch ein erheblicher Teil
+                     der Ausschnittsvergr&ouml;&szlig;erung blinken, was ebenfalls die Konzentration auf die eigentliche Aufgabe erschwert.
+                     
+                  </p>
+                  
+                  <p>
+                     Au&szlig;erdem sollten Sie ber&uuml;cksichtigen, dass jede Person unter Stress in gewisser Weise in der Aufnahme von Informationen behindert
+                     ist. Wenn beispielsweise jemand in einem vollen und l&auml;rmerf&uuml;llten Flughafen an einem Kiosksystem ein E-Ticket f&uuml;r einen Flug
+                     kaufen m&ouml;chte und eine lange Menschenschlange hinter sich wei&szlig;, die ebenfalls dieses Kiosksystem nutzen m&ouml;chte, dann wird
+                     sich diese Person in aller Regel nicht vollst&auml;ndig auf ihre Aufgabe konzentrieren k&ouml;nnen. Wenn dann noch blinkende Elemente
+                     auf der Seite zu sehen sind, hilft dies der betreffenden Person ganz bestimmt nicht weiter.
+                     
+                  </p>
+                      
+                        
+               </td>
+            </tr>
+         </table>
+      </div>
+   </body>
+</html>

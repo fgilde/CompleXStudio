@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding = "utf-8"?>
+<snippet xmlns:MMString="http://www.macromedia.com/schemes/dat/string/" MMString:name = "Snippets/JavaScript/date/DDtoDate_csn/snippet/name/Date" MMString:description = "Snippets/JavaScript/date/DDtoDate_csn/snippet/description/Adds" preview="code" type="wrap">
+
+<insertText location="beforeSelection">
+<![CDATA[function DDtoDay(inputDate)
+{
+  var dateString = new Array('','st','nd','rd','th','th','th','th','th','th','th','th','th','th','th','th','th','th','th','th','th','st','nd','rd','th','th','th','th','th','th','th','st');
+  returnDate = '';
+  tempDate = parseInt(inputDate);
+  if (tempDate >= 1 && tempDate <= 31)
+  {
+	  returnDate = inputDate + dateString[tempDate];
+	}
+	return returnDate;
+}]]>
+</insertText>
+<insertText location="afterSelection"><![CDATA[]]>
+</insertText>
+</snippet>

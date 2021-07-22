@@ -1,0 +1,128 @@
+<html>
+<link rel="stylesheet" href="josh.css">
+<body bgcolor="#FFFFFF">
+
+		<div id="Beschreibung">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">display</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">4</span> IE <span class="emphasis">4</span> CSS <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Vererbt: Nein</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Mehrzweckattribut, das bestimmt, wie ein Browser unsichtbare Boxen um alle Elemente und Textnodes herum behandeln soll. Ein Blockebenen-Element weist beispielsweise ganz andere Merkmale auf als ein Inline-Element (zumindest was die Darstellung des Elements in Bezug auf den umgebenden Inhalt anbetrifft). Die CSS-Spezifikation sieht zahlreiche solche Boxen vor, da der von ihnen belegte Platz direkt durch Elemente wie Rahmen oder sogar durch Darstellungsregeln (Steuerung von Definitionslisteneintr&auml;gen durch einen kompakten Style) beeinflusst werden kann. In der Praxis d&uuml;rften Sie keinen oder nur einen geringen Unterschied zwischen verschiedenen Anzeigetypen sehen, da das in den Browser integrierte Stylesheet keine anders lautenden Angaben f&uuml;r die Variationen enth&auml;lt (beispielsweise kann die Darstellung eines <span class="literal">table</span>-Elements genau gleich sein, unabh&auml;ngig davon, ob f&uuml;r das Stilattribut <span class="literal">display</span> die Einstellung <span class="literal">block</span> oder <span class="literal">table</span> angegeben ist). Gleichzeitig k&ouml;nnen Sie mit dem Style <span class="literal">display</span> aber das Standarddarstellungsverhalten von Elementen au&szlig;er Kraft setzen, um z.&#160;B. eine Blocktabelle als Inline-Tabelle wiederzugeben.</p><p>Die wichtigste Funktion des DHTML-Stilattributs <span class="literal">display</span> besteht darin, in einem Skript zwischen der Darstellung eines Elements und des von ihm belegten Platzes und der v&ouml;lligen Ausblendung umzuschalten. Bei der Einstellung <span class="literal">none</span> ist das Element unsichtbar, und alle umgebenden Inhalte nehmen den Platz ein, den das Element normalerweise beanspruchen w&uuml;rde. Dies unterscheidet sich vom Attribut <span class="literal">visibility</span>, bei dem f&uuml;r das ausgeblendete Element Platz reserviert wird. Um das Element erneut auf den Standardanzeigemodus zu setzen, k&ouml;nnen Sie einen der g&auml;ngigen Anzeigetypen (<span class="literal">block</span> und <span class="literal">inline</span>) oder einen mit dem Element verkn&uuml;pften spezifischen Anzeigetyp (wie z.&#160;B. <span class="literal">list-item</span> bei einem <span class="literal">li</span>-Element) zuordnen, falls dieser von den Zielbrowsern unterst&uuml;tzt wird.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="csssyntax"><span class="title">CSS-Syntax</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>display: <span class="replaceable">displayType</span></pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+				</tr>
+				<tr>
+					<td><p>In der CSS-Spezifikation sind zahlreiche Anzeigetypen vorgesehen, doch die Browserunterst&uuml;tzung ist weitaus restriktiver. Welche Typen unterst&uuml;tzt werden, geht aus der folgenden Tabelle hervor.</p>
+						<table border="1"><tbody><tr><th>Anzeigetyp</th><th>IE/Windows</th><th>IE/Mac</th><th>NN</th><th>CSS</th></tr>
+								<tr><td><span class="literal">block</span></td><td>5</td><td>4</td><td>6</td><td>2</td>
+								</tr>
+								<tr><td><span class="literal">compact</span></td><td>--</td><td>--</td><td>--</td><td>2</td>
+								</tr>
+								<tr><td><span class="literal">inline</span></td><td>5</td><td>4</td><td>6</td><td>2</td>
+								</tr>
+								<tr><td><span class="literal">inline-block</span></td><td>5.5</td><td>--</td><td>--</td><td>--</td>
+								</tr>
+								<tr><td><span class="literal">inline-table</span></td><td>--</td><td>5</td><td>--</td><td>2</td>
+								</tr>
+								<tr><td><span class="literal">list-item</span></td><td>5</td><td>5</td><td>6</td><td>2</td>
+								</tr>
+								<tr><td><span class="literal">marker</span></td><td>--</td><td>--</td><td>--</td><td>2</td>
+								</tr>
+								<tr><td><span class="literal">none</span></td><td>4</td><td>4</td><td>6</td><td>2</td>
+								</tr>
+								<tr><td><span class="literal">run-in</span></td><td>--</td><td>5</td><td>--</td><td>2</td>
+								</tr>
+								<tr><td><span class="literal">table</span></td><td>--</td><td>5</td><td>6</td><td>2</td>
+								</tr>
+								<tr><td><span class="literal">table-caption</span></td><td>--</td><td>5</td><td>--</td><td>2</td>
+								</tr>
+								<tr><td><span class="literal">table-cell</span></td><td>--</td><td>5</td><td>6</td><td>2</td>
+								</tr>
+								<tr><td><span class="literal">table-column-group</span></td><td>--</td><td>5</td><td>--</td><td>2</td>
+								</tr>
+								<tr><td><span class="literal">table-footer-group</span></td><td>5.5</td><td>5</td><td>6</td><td>2</td>
+								</tr>
+								<tr><td><span class="literal">table-header-group</span></td><td>5</td><td>5</td><td>6</td><td>2</td>
+								</tr>
+								<tr><td><span class="literal">table-row</span></td><td>--</td><td>5</td><td>6</td><td>2</td>
+								</tr>
+								<tr><td><span class="literal">table-row-group</span></td><td>--</td><td>5</td><td>6</td><td>2</td>
+								</tr>
+							</tbody></table>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="initvalue"><span class="title">Anfangswert</span></td>
+				</tr>
+				<tr>
+					<td><p>Abh&auml;ngig vom jeweiligen Element.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>.hidden {display: none}</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="appliesto"><span class="title">Gilt f&uuml;r</span></td>
+				</tr>
+				<tr>
+					<td><p>Alle Elemente (manche Anzeigetypen sind nur bei bestimmten Elementen g&uuml;ltig).</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectmodelreference"><span class="title">Objektmodellreferenz</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>[window.]document.getElementById("<span class="replaceable">elementID</span>").style.display</pre>
+						</span></td>
+				</tr>
+			</table>
+		</div>
+</body>
+</html>

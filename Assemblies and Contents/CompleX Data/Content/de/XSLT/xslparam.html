@@ -1,0 +1,202 @@
+<html>
+<head>
+<title>&lt;xsl:param&gt;</title>
+</head>
+<body bgcolor="#FFFFFF" text="#000000">
+<div id="Beschreibung">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">&lt;xsl:param&gt;</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description">
+Diese Anweisung definiert den Namen und Wert des von einer Vorlage zu verwendenden Parameters. Dieses Element kann in der obersten Ebene vorkommen oder innerhalb des Elements <span class="LITERAL">&lt;xsl:template&gt;</span>. Erscheint <span class="LITERAL">&lt;xsl:param&gt;</span> in der obersten Elementebene, handelt es sich um einen globalen Parameter, der f&uuml;r alle Bereiche des Stylesheets sichtbar ist. Es gibt zwei Methoden, um den Wert des Parameters zu definieren:  Er kann im Attribut <span class="LITERAL">select</span> angegeben oder &uuml;ber eine XSLT-Vorlage im Element <span class="LITERAL">&lt;xsl:param&gt;</span> definiert werden. </td></tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Kategorie</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<p>Anweisung</p>
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Obligatorische Attribute</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<dl>
+<dt>
+name
+</dt>
+<dd>
+Dieses Attribut definiert den Namen dieses Parameters.
+<P></p>
+</dl>
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Optionale Attribute</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<dl>
+<dt>
+select
+</dt>
+<dd>
+Ein XPath-Ausdruck, der den Wert dieses Parameters definiert.
+<P></p>
+</dl>
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Inhalt</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<p>Wird das Attribut <span class="LITERAL">select</span> verwendet, sollte <span class="LITERAL">&lt;xsl:param&gt;</span> leer sein. Andernfalls enth&auml;lt es eine XSLT-Vorlage.</p>
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">&Uuml;bergeordnete Elemente</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<p>
+
+<span class="LITERAL">&lt;xsl:stylesheet&gt;</span> und <span class="LITERAL">&lt;xsl:template&gt;</span>. Wenn <span class="LITERAL">&lt;xsl:param&gt;</span> dem Element <span class="LITERAL">&lt;xsl:stylesheet&gt;</span> untergeordnet ist, handelt es sich um einen globalen Parameter, der im gesamten Stylesheet sichtbar ist. Die XSLT-Spezifikation legt nicht fest, wie globale Parameter an den XSLT-Prozessor zu &uuml;bergeben sind. Dazu sollten Sie die Dokumentation Ihres Prozessors lesen. (Im <link linkend="xslt-CHP-4-SECT-4.3">Abschnitt 4.4.3</link> in <link linkend="xslt-CHP-4">Kapitel 4</link> finden Sie eine &Uuml;bersicht dazu, wie Sie Parameter an die am h&auml;ufigsten eingesetzten XSLT-Prozessoren &uuml;bergeben.)  </p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Definition</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<p>XSLT-Abschnitt 11, Variablen und Parameter </p>
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Beispiel</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<p>Es folgt ein Stylesheet, das mehrere <span class="LITERAL">&lt;xsl:param&gt;</span>-Elemente definiert, sowohl globale als auch lokale. Beachten Sie, dass einer dieser Parameter eine Knotenmenge ist. Parameter k&ouml;nnen jeden XPath- oder XSLT-Datentyp annehmen. </p>
+<span class="PROGRAMLISTING"><pre>
+&lt;?xml version="1.0"?&gt;
+&lt;xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform"&gt;
+
+  &lt;xsl:output method="text"/&gt;
+
+  &lt;xsl:variable name="newline"&gt;
+&lt;xsl:text&gt;
+&lt;/xsl:text&gt;
+  &lt;/xsl:variable&gt;
+
+<!--<?troff .Nd 10?>-->
+  &lt;xsl:param name="favoriteNumber" select="23"/&gt;
+  &lt;xsl:param name="favoriteColor"/&gt;
+
+  &lt;xsl:template match="/"&gt;
+    &lt;xsl:value-of select="$newline"/&gt;
+    &lt;xsl:value-of select="list/title"/&gt;
+    &lt;xsl:value-of select="$newline"/&gt;
+    &lt;xsl:variable name="listitems" select="list/listitem"/&gt;
+    &lt;xsl:call-template name="processListitems"&gt;
+      &lt;xsl:with-param name="items" select="$listitems"/&gt;
+      &lt;xsl:with-param name="color" select="'yellow'"/&gt;
+      &lt;xsl:with-param name="number" select="$favoriteNumber"/&gt;
+    &lt;/xsl:call-template&gt;
+  &lt;/xsl:template&gt;
+
+  &lt;xsl:template name="processListitems"&gt;
+    &lt;xsl:param name="items"/&gt;
+    &lt;xsl:param name="color" select="'blue'"/&gt;
+
+    &lt;xsl:for-each select="$items"&gt;
+      &lt;xsl:value-of select="position()"/&gt;
+      &lt;xsl:text&gt;.  &lt;/xsl:text&gt;
+      &lt;xsl:value-of select="."/&gt;
+      &lt;xsl:value-of select="$newline"/&gt;
+    &lt;/xsl:for-each&gt;
+
+    &lt;xsl:value-of select="$newline"/&gt;
+    
+    &lt;xsl:text&gt;Your favorite color is &lt;/xsl:text&gt;
+    &lt;xsl:value-of select="$favoriteColor"/&gt;
+    &lt;xsl:text&gt;.&lt;/xsl:text&gt;
+    &lt;xsl:value-of select="$newline"/&gt;
+    &lt;xsl:text&gt;The color passed to this template is &lt;/xsl:text&gt;
+    &lt;xsl:value-of select="$color"/&gt;
+    &lt;xsl:text&gt;.&lt;/xsl:text&gt;
+    &lt;xsl:value-of select="$newline"/&gt;
+  &lt;/xsl:template&gt;
+
+&lt;/xsl:stylesheet&gt;</pre></span>
+<p>Dieses Stylesheet wird zur Umwandlung des folgenden Dokuments verwendet:</p>
+<span class="PROGRAMLISTING"><pre>
+&lt;?xml version="1.0"?&gt;
+&lt;list&gt;
+  &lt;title&gt;A few of my favorite albums&lt;/title&gt;
+  &lt;listitem&gt;A Love Supreme&lt;/listitem&gt;
+  &lt;listitem&gt;Beat Crazy&lt;/listitem&gt;
+  &lt;listitem&gt;Here Come the Warm Jets&lt;/listitem&gt;
+  &lt;listitem&gt;Kind of Blue&lt;/listitem&gt;
+  &lt;listitem&gt;London Calling&lt;/listitem&gt;
+  &lt;listitem&gt;Remain in Light&lt;/listitem&gt;
+  &lt;listitem&gt;The Joshua Tree&lt;/listitem&gt;
+  &lt;listitem&gt;The Indestructible Beat of Soweto&lt;/listitem&gt;
+&lt;/list&gt;</pre></span>
+<p>Hier die Ergebnisse:</p>
+<span class="PROGRAMLISTING"><pre>
+
+A few of my favorite albums
+1.  A Love Supreme
+2.  Beat Crazy
+3.  Here Come the Warm Jets
+4.  Kind of Blue
+5.  London Calling
+6.  Remain in Light
+7.  The Joshua Tree
+8.  The Indestructible Beat of Soweto
+
+Your favorite color is purple.
+The color passed to this template is yellow.</pre></span>
+<p>Um diese Ergebnisse zu erzeugen, wurde der Wert <span class="LITERAL">purple</span> an den XSLT-Prozessor &uuml;bergeben. Mit Xalan wird der Wert wie folgt &uuml;bergeben:</p>
+<span class="PROGRAMLISTING"><pre>
+java org.apache.xalan.xslt.Process -in test4.xml -xsl param.xsl 
+  -param favoriteColor purple</pre></span>
+
+<p>(Der Befehl sollte in eine Zeile eingegeben werden.)  Im <link linkend="xslt-CHP-4-SECT-4.3">Abschnitt 4.4.3</link> in <link linkend="xslt-CHP-4">Kapitel 4</link> finden Sie eine vollst&auml;ndige Erl&auml;uterung globaler Parameter und wie sie f&uuml;r verschiedene XSLT-Prozessoren gesetzt werden. </p>
+
+</td>
+</tr>
+</table>
+</div>
+</body>
+</html>

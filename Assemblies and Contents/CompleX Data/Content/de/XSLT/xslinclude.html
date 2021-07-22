@@ -1,0 +1,120 @@
+<html>
+<head>
+<title>&lt;xsl:include&gt;</title>
+</head>
+<body bgcolor="#FFFFFF" text="#000000">
+<div id="Beschreibung">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">&lt;xsl:include&gt;</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description">
+Diese Anweisung gestattet das Einbinden eines anderen XSLT-Stylesheets. Mit diesem Element k&ouml;nnen Sie allgemeine Transformationen in einem separaten Stylesheet unterbringen und die Templates dann jederzeit aus diesem Stylesheet einbinden. Im Gegensatz zu <span class="LITERAL">&lt;xsl:import&gt;</span> haben alle Vorlagen, die mit <span class="LITERAL">&lt;xsl:include&gt;</span> eingebunden werden, dieselbe Priorit&auml;t wie die Vorlagen in dem Stylesheet, in das eingebunden wird. Ein weiterer Unterschied ist, dass <span class="LITERAL">&lt;xsl:include&gt;</span> an beliebiger Stelle in einem Stylesheet vorkommen kann, w&auml;hrend <span class="LITERAL">&lt;xsl:import&gt;</span> gleich am Anfang erscheinen muss. </td></tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Kategorie</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<p>Element der obersten Ebene</p>
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Obligatorische Attribute</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<dl>
+<dt>
+href
+</dt>
+<dd>
+Dieses Attribut definiert den URI des einzubindenden Stylesheets.
+<P></p>
+</dl>
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Optionale Attribute</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<p>Keine</p>
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Inhalt</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<p>Keiner. <span class="LITERAL">&lt;xsl:include&gt;</span> ist ein leeres Element.</p>
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">&Uuml;bergeordnetes Element</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<p> <span class="LITERAL">&lt;xsl:include&gt;</span> ist ein Element der obersten Ebene und kann nur dem Element <span class="LITERAL">&lt;xsl:stylesheet&gt;</span> untergeordnet werden. </p>
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Definition</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<p>XSLT-Abschnitt 2.6.1, Stylesheet-Inklusion. </p>
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Beispiel</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+<p>Das Element <span class="LITERAL">&lt;xsl:include&gt;</span> stellt eine gute Methode dar, um Stylesheets in kleinere Module aufzuteilen, die sich leichter wiederverwenden lassen. In der Fallstudie kamen eine Reihe verschiedener Stylesheets vor, von denen jedes Vorlagen f&uuml;r bestimmte Zwecke enthielt. Die <span class="LITERAL">&lt;xsl:include&gt;</span>-Elemente sehen folgenderma&szlig;en aus:</p>
+
+<span class="PROGRAMLISTING"><pre>
+&lt;xsl:include href="toot-o-matic-variables.xsl"/&gt;
+
+&lt;xsl:include href="xslt-utilities.xsl"/&gt;
+&lt;xsl:include href="dw-style.xsl"/&gt;
+
+&lt;xsl:include href="build-main-index.xsl"/&gt;
+&lt;xsl:include href="build-section-indexes.xsl"/&gt;
+&lt;xsl:include href="build-individual-panels.xsl"/&gt;
+&lt;xsl:include href="build-graphics.xsl"/&gt;
+&lt;xsl:include href="build-pdf-file.xsl"/&gt;
+&lt;xsl:include href="build-zip-file.xsl"/&gt;</pre></span>
+<p>Eine Segmentierung von Stylesheets in dieser Weise hat zudem den Vorteil, dass sich die Fehlersuche einfacher gestaltet. Hier im Beispiel befinden sich alle Regeln zum Erstellen einer PDF-Datei im Stylesheet <filename>build-pdf-file.xsl</filename>. Sollten also die PDF-Dateien nicht korrekt erstellt werden, ist die Wahrscheinlichkeit gro&szlig;, dass das Problem in der Datei <filename>build-pdf-file.xsl</filename> liegt. Alle visuellen Elemente der generierten HTML-Seiten werden im Stylesheet <filename>dw-style.xsl</filename> erstellt. Wenn Sie also die Darstellung aller HTML-Seiten &auml;ndern m&uuml;ssen, gen&uuml;gt es, die Templates in der Datei <filename>dw-style.xsl</filename> zu bearbeiten. </p>
+</td>
+</tr>
+</table>
+</div>
+</body>
+</html>

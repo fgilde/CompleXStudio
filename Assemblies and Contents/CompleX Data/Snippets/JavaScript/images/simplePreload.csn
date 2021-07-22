@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding = "utf-8"?>
+<snippet xmlns:MMString="http://www.macromedia.com/schemes/dat/string/" MMString:name = "Snippets/JavaScript/images/simplePreload_csn/snippet/name/Simple" MMString:description = "Snippets/JavaScript/images/simplePreload_csn/snippet/description/Simple" preview="code" type="block">
+
+<insertText location="beforeSelection">
+<![CDATA[// Example:
+// simplePreload( '01.gif', '02.gif' ); 
+function simplePreload()
+{ 
+  var args = simplePreload.arguments;
+  document.imageArray = new Array(args.length);
+  for(var i=0; i<args.length; i++)
+  {
+    document.imageArray[i] = new Image;
+    document.imageArray[i].src = args[i];
+  }
+}
+]]>
+</insertText>
+<insertText location="afterSelection"><![CDATA[]]>
+</insertText>
+</snippet>

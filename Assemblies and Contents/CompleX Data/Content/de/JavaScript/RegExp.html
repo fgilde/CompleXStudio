@@ -1,0 +1,374 @@
+<html>
+<link rel="stylesheet" href="josh.css">
+<body bgcolor="#FFFFFF">
+
+		<div id="Beschreibung">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">RegExp</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">4</span> IE <span class="emphasis">4</span> ECMA <span class="emphasis">3</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Das <span class="literal">RegExp</span>-Objekt ist ein statisches Objekt, das Instanzen eines regul&auml;ren Ausdrucks erzeugt und alle regul&auml;ren Ausdr&uuml;cke im aktuellen Fenster oder Frame &uuml;berwacht. Instanzen des <span class="literal">RegExp</span>-Objekts werden im Abschnitt &uuml;ber <span class="literal">regular expression</span>-Objekte beschrieben.
+</p>
+							</td>
+						</tr>
+						<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Regul&auml;re Ausdr&uuml;cke k&ouml;nnen verwendet werden, um nach Text zu suchen, der bestimmten Zeichenmustern oder -eigenschaften entspricht. Mit einem regul&auml;ren Ausdruck kann z. B. sehr schnell festgestellt werden, ob es sich bei einem Eintrag in einem Textfeld um eine f&uuml;nfstellige Nummer handelt. Zum Definieren des Musters, f&uuml;r das &Uuml;bereinstimmungen gefunden werden sollen, sind Kenntnisse einer separaten Syntax erforderlich, die in dieser Dokumentation nicht vermittelt werden (Informationen hierzu finden Sie aber in <span class="emphasis">Mastering Regular Expressions</span> von Jeffrey E.F. Friedl, erschienen bei O'Reilly). Eine Zusammenfassung der Syntax finden Sie im Abschnitt &uuml;ber <span class="literal">regular expression</span>-Objekte.
+</p>
+							</td>
+						</tr>
+						<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Die Eigenschaften des <span class="literal">RegExp</span>-Objekts speichern Informationen &uuml;ber die letzte Operation mit einem beliebigen regul&auml;ren Ausdruck im Dokument. Daher ist es denkbar, dass sich die Eigenschaften nach jeder Operation &auml;ndern, bei der ein regul&auml;rer Ausdruck Anwendung findet. Zu diesen Operationen geh&ouml;ren nicht nur die Methoden einer <span class="literal">regular expression</span>-Objektinstanz (<span class="literal">exec( )</span> und <span class="literal">test( )</span>), sondern auch die <span class="literal">String</span>-Objektmethoden, die regul&auml;re Ausdr&uuml;cke als Parameter akzeptieren (<span class="literal">match( )</span>, <span class="literal">replace( )</span> und <span class="literal">split( )</span>). Einige dieser Eigenschaften werden auch an das <span class="literal">regular expression</span>-Objekte &uuml;bergeben, um den n&auml;chsten Vorgang mit dem regul&auml;ren Ausdruck vorzubereiten.
+</p>
+							</td>
+						</tr>
+						<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Alle Eigenschaften haben sowohl lange Namen als auch Kurznamen, die mit <span class="literal">$</span> beginnen.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="properties"><span class="title">Eigenschaften</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<table border="1"><tbody><tr><td><span class="literal">index</span></td><td><span class="literal">input</span></td><td><span class="literal">lastIndex</span></td><td><span class="literal">lastMatch</span></td><td><span class="literal">lastParen</span></td><td><span class="literal">leftContext</span></td>
+								</tr>
+								<tr><td><span class="literal">multiline</span></td><td><span class="literal">prototype</span></td><td><span class="literal">rightContext</span></td><td><span class="literal">$1</span></td><td><span class="literal">$2</span></td><td><span class="literal">$3</span></td>
+								</tr>
+								<tr><td><span class="literal">$4</span></td><td><span class="literal">$5</span></td><td><span class="literal">$6</span></td><td><span class="literal">$7</span></td><td><span class="literal">$8</span></td><td><span class="literal">$9</span></td>
+								</tr>
+							</tbody></table>
+					</td>
+				</tr>
+			</table>
+		</div><div id="index">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">index</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">nicht zutreffend</span> IE <span class="emphasis">4</span> ECMA <span class="emphasis">nicht zutreffend</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Schreibgesch&uuml;tzt</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Dies ist der auf Null basierende Indexwert der Zeichenposition innerhalb des Strings, bei der der letzte Suchvorgang f&uuml;r das Muster begonnen hat. Die Endposition wird durch die Eigenschaft <span class="literal">lastIndex</span> bereitgestellt.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>var srchStart = RegExp.index;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Integer.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="input">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">input</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">4</span> IE <span class="emphasis">4</span> ECMA <span class="emphasis">nicht zutreffend</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Lesen/Schreiben</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Dies ist der Hauptstring, mit dem ein regul&auml;rer Ausdruck verglichen wird. Wenn der Hauptstring so an den Vorgang mit dem regul&auml;ren Ausdruck &uuml;bergeben wird wie ein Parameter an eine Methode, ist dieser Wert <span class="literal">null</span>. Die Kurzversion lautet <span class="literal">$_</span> (Dollarzeichen, Unterstrich).
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>RegExp.input = "Four score and seven years ago...";</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>String.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="lastIndex">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">lastIndex</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">nicht zutreffend</span> IE <span class="emphasis">4</span> ECMA <span class="emphasis">nicht zutreffend</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Lesen/Schreiben</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Dies ist der auf Null basierende Indexwert des Zeichens innerhalb des Strings, bei dem der n&auml;chste Suchvorgang f&uuml;r das Muster beginnt. Bei einer neuer Suche ist der Wert Null. Sie k&ouml;nnen den Wert auch manuell einstellen, wenn Sie die Suche an einer anderen Position starten oder einige Zeichen &uuml;berspringen m&ouml;chten. Diese Eigenschaft wird in die <span class="literal">regular expression</span>-Objektinstanz &uuml;bernommen und dort in Navigator unterst&uuml;tzt.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>myRE.lastIndex = 30;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Integer.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="lastMatch">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">lastMatch</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">4</span> IE <span class="emphasis">5(Mac)/5.5(Win)</span> ECMA <span class="emphasis">nicht zutreffend</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Schreibgesch&uuml;tzt</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Gibt als Ergebnis des letzten Vorgangs den String zur&uuml;ck, der mit dem regul&auml;ren Ausdruck &uuml;bereinstimmt. Die Kurzversion lautet <span class="literal">$&amp;</span>.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>var matched = RegExp.lastMatch;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>String.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="lastParen">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">lastParen</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">4</span> IE <span class="emphasis">5(Mac)/5.5(Win)</span> ECMA <span class="emphasis">nicht zutreffend</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Schreibgesch&uuml;tzt</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Gibt als Ergebnis des letzten Vorgangs den String zur&uuml;ck, der mit der in Klammern gesetzten Unterkomponente des regul&auml;ren Ausdrucks &uuml;bereinstimmt. Die Kurzversion lautet <span class="literal">$+</span>.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>var myValue = RegExp.lastParen;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>String.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="leftContext, rightContext">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">leftContext, rightContext</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">4</span> IE <span class="emphasis">5(Mac)/5.5(Win)</span> ECMA <span class="emphasis">nicht zutreffend</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Schreibgesch&uuml;tzt</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Die Eigenschaft <span class="literal">leftContext</span> gibt den String beginnend mit dem Anfang des zuletzt gesuchten Textes bis zu - aber nicht einschlie&szlig;lich - dem &uuml;bereinstimmenden String zur&uuml;ck. Die Eigenschaft <span class="literal">rightContext</span> gibt den String beginnend mit dem unmittelbar auf den &uuml;bereinstimmenden String folgenden Teil des Hauptstrings bis zum Ende des Strings zur&uuml;ck. Die Kurzversion lautet <span class="literal">$`</span> <span class="literal">bzw.</span> <span class="literal">$'</span>. Da sich bei sp&auml;teren Suchvorg&auml;ngen f&uuml;r denselben Hauptstring der Anfang unweigerlich in Richtung Ende des Hauptstrings bewegt, kann sich der Anfangspunkt des <span class="literal">leftContext</span>-Wertes bei jedem Vorgang verschieben.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>var wholeContext = RegExp.leftContext + RegExp.lastMatch + RegExp.rightContext;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>String.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="multiline">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">multiline</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">4</span> IE <span class="emphasis">5(Mac)/5.5(Win)</span> ECMA <span class="emphasis">3</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Lesen/Schreiben</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Wenn sich die Suche &uuml;ber mehrere Textzeilen erstreckt, wird die Eigenschaft <span class="literal">multiline</span> auf <span class="literal">true</span> gesetzt. Dies ist beispielsweise bei einem Suchvorgang in einem <span class="literal">textarea</span>-Element der Fall. Die Kurzversion lautet <span class="literal">$*</span>.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>if (RegExp.multiline) {
+    ...
+}</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Boolesch.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="prototype">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">prototype</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">4</span> IE <span class="emphasis">4</span> ECMA <span class="emphasis">3</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Lesen/Schreiben</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Informationen finden Sie in der Abhandlung dieser Eigenschaft im Abschnitt &uuml;ber das <span class="literal">Array</span>-Objekt.</p>
+							</td>
+						</tr>
+			</table>
+		</div><div id="$1, ..., $9">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">$1, ..., $9</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">4</span> IE <span class="emphasis">4</span> ECMA <span class="emphasis">nicht zutreffend</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Schreibgesch&uuml;tzt</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>In Klammern gesetzte Unterkomponenten eines regul&auml;ren Ausdrucks geben Ergebnisse zur&uuml;ck. Diese Ergebnisse werden einzeln in Eigenschaften gespeichert, die von 1 bis 9 nummeriert und mit dem Kurzsymbol <span class="literal">$</span> versehen sind. Die Reihenfolge basiert auf der Position der linken Klammer einer Unterkomponente: Das Ergebnis der am weitesten links gelegenen Unterkomponente wird in <span class="literal">$1</span> gespeichert. Diese Eigenschaften k&ouml;nnen direkt in Parametern f&uuml;r <span class="literal">String</span>-Methoden verwendet werden, die regul&auml;re Ausdr&uuml;cke verwenden (siehe Methode <span class="literal">String.replace( )</span>).
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>RegExp.$2</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>String. </p>
+					</td>
+				</tr>
+			</table>
+		</div>
+
+</body>
+</html>

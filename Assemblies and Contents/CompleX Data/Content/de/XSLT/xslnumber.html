@@ -1,0 +1,714 @@
+<html>
+<head>
+<title>&lt;xsl:number&gt;</title>
+</head>
+<body bgcolor="#FFFFFF" text="#000000">
+<div id="Beschreibung">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">&lt;xsl:number&gt;</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description">
+Diese Anweisung dient zum Z&auml;hlen.  Sie wird meist daf&uuml;r verwendet, Teile eines Dokuments zu nummerieren, wenngleich sie auch zur Formatierung eines numerischen Werts dienen kann.</td></tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Kategorie</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<p>Anweisung</p>
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Obligatorische Attribute</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<p>Keine</p>
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Optionale Attribute</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<dl>
+<dt>
+count
+</dt>
+<dd>
+Das Attribut <span class="LITERAL">
+count
+</span> ist ein XPath-Ausdruck, der definiert, was gez&auml;hlt werden soll.
+<P></p>
+<dt>
+level
+</dt>
+<dd>
+Dieses Attribut definiert, welche Ebenen des Ausgangsbaums beim Nummerieren von Elementen ber&uuml;cksichtigt werden sollen. Die drei Werte f&uuml;r dieses Attribut sind <span class="LITERAL">
+single
+</span>, <span class="LITERAL">
+multiple
+</span> und <span class="LITERAL">
+any
+</span>:
+<P></p>
+<dl>
+<dt>
+<span class="LITERAL">
+single
+</span>
+</dt>
+<dd>
+Z&auml;hlt nur die Elemente einer Ebene. Der XSLT-Prozessor geht zun&auml;chst zum ersten Knoten auf der Achse <span class="LITERAL">
+ancestor-or-self
+</span>, der dem Attribut <span class="LITERAL">
+count
+</span>entspricht, dann z&auml;hlt er diesen Knoten plus alle Parallelknoten davor, die ebenfalls dem Attribut<span class="LITERAL">
+count
+</span>entsprechen.
+<P></p>
+<dt>
+<span class="LITERAL">
+multiple
+</span>
+</dt>
+<dd>
+Z&auml;hlt Elemente auf mehreren Ebenen. Der XSLT-Prozessor durchsucht alle Vorfahren des aktuellen Knotens sowie den aktuellen Knoten selbst und w&auml;hlt daraus alle Knoten aus, die dem Attribut <span class="LITERAL">
+count
+</span> entsprechen.
+<P></p>
+<dt>
+<span class="LITERAL">
+any
+</span>
+</dt>
+<dd>
+Umfasst alle Vorfahren des aktuellen Knotens (ebenso wie <span class="LITERAL">
+level=
+"
+multiple
+"
+</span>) sowie alle Elemente auf der <span class="LITERAL">
+preceding
+</span>-Achse.
+<P></p>
+</dl>
+<p>
+In allen diesen F&auml;llen, wenn das Attribut <span class="LITERAL">
+from
+</span> verwendet wird, sind die einzigen Vorfahren die untersucht werden, die Nachfahren des n&auml;chsten Vorfahren, der dem <span class="LITERAL">
+from
+</span>-Attribut entspricht. Anders ausgedr&uuml;ckt: mit <span class="LITERAL">
+from=
+"
+h1
+"
+</span> werden beim Z&auml;hlen nur die Knoten ber&uuml;cksichtigt, die unter dem n&auml;chsten <span class="LITERAL">
+&lt;
+h1
+&gt;
+</span>-Attribut erscheinen.
+</p>
+<dt>
+from
+</dt>
+<dd>
+Das Attribut <span class="LITERAL"> from </span> ist ein XPath-Ausdruck, der definiert, wo die Z&auml;hlung beginnt. Sie k&ouml;nnen mit Hilfe des Attributs <span class="LITERAL">
+from
+</span> etwa festlegen, dass die Z&auml;hlung beim vorigen <span class="LITERAL">
+&lt;
+h1
+&gt;
+</span>-Element beginnen soll.
+<P></p>
+<dt>
+value
+</dt>
+<dd>
+Ein Ausdruck, der in eine Zahl konvertiert wird. Die Anwendung dieses Attributs ist eine schnelle Methode, um eine Zahl zu formatieren, das Element <span class="LITERAL">
+&lt;
+xsl:number value=
+"
+7
+"
+format=
+"
+i:
+"
+/
+&gt;
+</span> gibt den folgenden String zur&uuml;ck: &quot; vii: &quot; .
+<P></p>
+<dt>
+format
+</dt>
+<dd>
+Das Attribut <span class="LITERAL">
+format
+</span> definiert das Format der generierten Zahl:
+<P></p>
+<dl>
+<dt>
+<span class="LITERAL">
+format=
+"
+1
+"
+</span>
+</dt>
+<dd>
+Formatiert eine Sequenz an Zahlen als <span class="LITERAL">
+1 2 3 4 5 6 7 8 9 10 11 ...
+</span> .
+<P></p>
+<dt>
+<span class="LITERAL">
+format=
+"
+01
+"
+</span>
+</dt>
+<dd>
+Formatiert eine Sequenz an Zahlen als <span class="LITERAL"> 01 02 03 04 ... 09 10 11 ... 99 100 101 ... </span> .
+<P></p>
+<dt>
+<span class="LITERAL">
+format=
+"
+a
+"
+</span>
+</dt>
+<dd>
+Formatiert eine Sequenz an Zahlen als <span class="LITERAL"> a b c d e f ... x y z aa ab ac ... </span> .
+<P></p>
+<dt>
+<span class="LITERAL">
+format=
+"
+A
+"
+</span>
+</dt>
+<dd>
+Formatiert eine Sequenz an Zahlen als <span class="LITERAL"> A B C D E F ... X Y Z AA AB AC ... </span> .
+<P></p>
+<dt>
+<span class="LITERAL">
+format=
+"
+i
+"
+</span>
+</dt>
+<dd>
+Formatiert eine Sequenz an Zahlen als <span class="LITERAL"> i ii iii iv v vi vii viii ix x ... </span> .
+<P></p>
+<dt>
+<span class="LITERAL">
+format=
+"
+I
+"
+</span>
+</dt>
+<dd>
+Formatiert eine Sequenz an Zahlen als <span class="LITERAL"> I II III IV V VI VII VIII IX X ... </span> .
+<P></p>
+<dt>
+<span class="LITERAL">
+format=
+"
+anything else
+"
+</span>
+</dt>
+<dd>
+Wie das funktioniert, h&auml;ngt vom verwendeten XSLT-Prozessor ab. Die XSLT-Spezifikation listet mehrere weitere Nummerierungsschemata auf (thail&auml;ndische Ziffern, Katakana-Nummerierung, traditionelle hebr&auml;ische Nummerierung, usw.). Lesen Sie in der Dokumentation Ihres XSLT-Prozessors nach, welche Formate er unterst&uuml;tzt. Falls ein XSLT-Prozessor das angeforderte Nummerierungsschema nicht unterst&uuml;tzt, schreibt die XSLT-Spezifikation vor, dass das <span class="LITERAL">
+format=
+"
+1
+"
+</span> als Standardformat verwendet wird.
+<P></p>
+</dl>
+<dt>
+lang
+</dt>
+<dd>
+Das Attribut <span class="LITERAL">
+lang
+</span> definiert die Sprache, dessen Alphabet verwendet werden soll. Verschiedene XSLT-Prozessors unterst&uuml;tzen verschiedene Sprachwerte, lesen Sie daher die Dokumentation des XSLT-Prozessors, den Sie verwenden wollen.
+<P></p>
+<dt>
+letter-value
+</dt>
+<dd>
+Dieses Attribut hat den Wert <span class="LITERAL">
+alphabetic
+</span> oder <span class="LITERAL">
+traditional
+</span>. Es gibt eine Reihe von Sprachen, in denen Nummerierungsschemata verwendet werden, die auf zwei Buchstaben basieren: der eine weist numerische Werte in alphabetischer Reihenfolge zu, w&auml;hrend der andere eine f&uuml;r diese Sprache spezifische Tradition verwendet. (R&ouml;mische Ziffern &ndash; ein Buchstaben-gest&uuml;tztes Nummerierungsschema, das keine alphabetische Reihenfolge verwendet &ndash; sind ein Beispiel daf&uuml;r.) Der Standardwert f&uuml;r dieses Attribut lautet <span class="LITERAL"> alphabetic </span>.
+<P></p>
+<dt>
+grouping-separator
+</dt>
+<dd>
+Dieses Attribut ist das Zeichen, das zwischen den Zifferngruppen in einer generierten Nummer verwendet werden soll. Der Standardwert ist ein Komma (<span class="LITERAL">
+,
+</span>).
+<P></p>
+<dt>
+grouping-size
+</dt>
+<dd>
+Dieses Attribut definiert die Anzahl an Ziffern, die in jeder Gruppe erscheinen. Der Standardwert ist <span class="LITERAL">
+3
+</span>.
+<P></p>
+</dl>
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Inhalt</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<p>Keiner. <span class="LITERAL">&lt;xsl:number&gt;</span> ist ein leeres Element. </p>
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">&Uuml;bergeordnetes Element</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<p>
+<span class="LITERAL">&lt;xsl:number&gt;</span> erscheint innerhalb einer Vorlage.</p>
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Definition</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<p>XSLT-Abschnitt 7.7, Nummerieren.</p>
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Beispiel</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<p>Um die ganze Funktionsweise von <span class="LITERAL">&lt;xsl:number&gt;</span> zu veranschaulichen, wird ein XML-Dokument ben&ouml;tigt, das viele Teile enth&auml;lt, die gez&auml;hlt werden k&ouml;nnen.  Es wird das folgende Dokument verwendet:</p>
+<span class="PROGRAMLISTING"><pre>
+&lt;?xml version="1.0"?&gt;
+&lt;book&gt;
+  &lt;chapter&gt;
+    &lt;title&gt;Alfa Romeo&lt;/title&gt;
+    &lt;sect1&gt;
+      &lt;title&gt;Bentley&lt;/title&gt;
+    &lt;/sect1&gt;
+    &lt;sect1&gt;
+      &lt;title&gt;Chevrolet&lt;/title&gt;
+      &lt;sect2&gt;
+        &lt;title&gt;Dodge&lt;/title&gt;
+        &lt;sect3&gt;
+          &lt;title&gt;Eagle&lt;/title&gt;
+        &lt;/sect3&gt;
+      &lt;/sect2&gt;
+    &lt;/sect1&gt;
+  &lt;/chapter&gt;
+  &lt;chapter&gt;
+    &lt;title&gt;Ford&lt;/title&gt;
+    &lt;sect1&gt;
+      &lt;title&gt;GMC&lt;/title&gt;
+      &lt;sect2&gt;
+        &lt;title&gt;Honda&lt;/title&gt;
+        &lt;sect3&gt;
+          &lt;title&gt;Isuzu&lt;/title&gt;
+        &lt;/sect3&gt;
+        &lt;sect3&gt;
+          &lt;title&gt;Javelin&lt;/title&gt;
+        &lt;/sect3&gt;
+        &lt;sect3&gt;
+          &lt;title&gt;K-Car&lt;/title&gt;
+        &lt;/sect3&gt;
+        &lt;sect3&gt;
+          &lt;title&gt;Lincoln&lt;/title&gt;
+        &lt;/sect3&gt;
+      &lt;/sect2&gt;
+      &lt;sect2&gt;
+        &lt;title&gt;Mercedes&lt;/title&gt;
+      &lt;/sect2&gt;
+      &lt;sect2&gt;
+        &lt;title&gt;Nash&lt;/title&gt;
+        &lt;sect3&gt;
+          &lt;title&gt;Opel&lt;/title&gt;
+        &lt;/sect3&gt;
+        &lt;sect3&gt;
+          &lt;title&gt;Pontiac&lt;/title&gt;
+        &lt;/sect3&gt;
+      &lt;/sect2&gt;
+      &lt;sect2&gt;
+        &lt;title&gt;Quantum&lt;/title&gt;
+        &lt;sect3&gt;
+          &lt;title&gt;Rambler&lt;/title&gt;
+        &lt;/sect3&gt;
+        &lt;sect3&gt;
+          &lt;title&gt;Studebaker&lt;/title&gt;
+        &lt;/sect3&gt;
+      &lt;/sect2&gt;
+    &lt;/sect1&gt;
+    &lt;sect1&gt;
+      &lt;title&gt;Toyota&lt;/title&gt;
+      &lt;sect2&gt;
+        &lt;title&gt;Um, is there a car that starts with "U"?&lt;/title&gt;
+      &lt;/sect2&gt;
+    &lt;/sect1&gt;
+    &lt;sect1&gt;
+      &lt;title&gt;Volkswagen&lt;/title&gt;
+    &lt;/sect1&gt;
+  &lt;/chapter&gt;
+&lt;/book&gt;</pre></span>
+<p>Die Anweisung <span class="LITERAL">&lt;xsl:number&gt;</span> wird auf verschiedene Arten verwendet, um die verschiedenen M&ouml;glichkeiten der Nummerierung zu veranschaulichen.  Zun&auml;chst sollen das Stylesheet und die Ergebnisse betrachtet werden, dann folgt die Erl&auml;uterung.  Hier das Stylesheet:</p>
+<span class="PROGRAMLISTING"><pre>
+&lt;?xml version="1.0"?&gt;
+&lt;xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform"&gt;
+
+  &lt;xsl:output method="text"/&gt;
+
+  &lt;xsl:variable name="newline"&gt;
+&lt;xsl:text&gt;
+&lt;/xsl:text&gt;
+  &lt;/xsl:variable&gt;
+
+  &lt;xsl:template match="/"&gt;
+    &lt;xsl:value-of select="$newline"/&gt;
+    &lt;xsl:apply-templates select="book" mode="number-1"/&gt;
+    &lt;xsl:apply-templates select="book" mode="number-2"/&gt;
+    &lt;xsl:apply-templates select="book" mode="number-3"/&gt;
+    &lt;xsl:apply-templates select="book" mode="number-4"/&gt;
+    &lt;xsl:apply-templates select="book" mode="number-5"/&gt;
+    &lt;xsl:apply-templates select="book" mode="number-6"/&gt;
+<!--<?troff .Nd 10?>-->
+    &lt;xsl:apply-templates select="book" mode="number-7"/&gt;
+  &lt;/xsl:template&gt;
+
+  &lt;xsl:template match="book" mode="number-1"&gt;
+    &lt;xsl:text&gt;Test #1: level="multiple", 
+         count="chapter|sect1|sect2|sect3", 
+         format="1.1.1.1. "&lt;/xsl:text&gt;
+    &lt;xsl:value-of select="$newline"/&gt;
+    &lt;xsl:value-of select="$newline"/&gt;
+    &lt;xsl:for-each select="chapter|.//sect1|.//sect2|.//sect3"&gt;
+      &lt;xsl:number level="multiple" count="chapter|sect1|sect2|sect3"
+        format="1.1.1.1. "/&gt;
+        &lt;xsl:value-of select="title"/&gt;
+        &lt;xsl:value-of select="$newline"/&gt;
+    &lt;/xsl:for-each&gt;
+    &lt;xsl:value-of select="$newline"/&gt;
+  &lt;/xsl:template&gt;
+
+  &lt;xsl:template match="book" mode="number-2"&gt;
+    &lt;xsl:text&gt;Test #2: level="any", 
+         count="chapter|sect1|sect2|sect3", 
+         format="1. "&lt;/xsl:text&gt;
+    &lt;xsl:value-of select="$newline"/&gt;
+    &lt;xsl:value-of select="$newline"/&gt;
+    &lt;xsl:for-each select="chapter|.//sect1|.//sect2|.//sect3"&gt;
+      &lt;xsl:number level="any" count="chapter|sect1|sect2|sect3"
+        format="1. "/&gt;
+        &lt;xsl:value-of select="title"/&gt;
+        &lt;xsl:value-of select="$newline"/&gt;
+    &lt;/xsl:for-each&gt;
+    &lt;xsl:value-of select="$newline"/&gt;
+  &lt;/xsl:template&gt;
+
+  &lt;xsl:template match="book" mode="number-3"&gt;
+    &lt;xsl:text&gt;Test #3: level="single", 
+         count="chapter|sect1|sect2|sect3", 
+         format="1.1.1.1. "&lt;/xsl:text&gt;
+    &lt;xsl:value-of select="$newline"/&gt;
+    &lt;xsl:value-of select="$newline"/&gt;
+    &lt;xsl:for-each select="chapter|.//sect1|.//sect2|.//sect3"&gt;
+      &lt;xsl:number level="single" count="chapter|sect1|sect2|sect3"
+        format="1.1.1.1. "/&gt;
+        &lt;xsl:value-of select="title"/&gt;
+        &lt;xsl:value-of select="$newline"/&gt;
+    &lt;/xsl:for-each&gt;
+    &lt;xsl:value-of select="$newline"/&gt;
+  &lt;/xsl:template&gt;
+
+<!--<?troff .Nd 10?>-->
+  &lt;xsl:template match="book" mode="number-4"&gt;
+    &lt;xsl:text&gt;Test #4: level="multiple", 
+         select=".//sect2",
+         count="chapter|sect1|sect2", 
+         format="I-A-i: "&lt;/xsl:text&gt;
+    &lt;xsl:value-of select="$newline"/&gt;
+    &lt;xsl:value-of select="$newline"/&gt;
+    &lt;xsl:for-each select=".//sect2"&gt;
+      &lt;xsl:number level="multiple" count="chapter|sect1|sect2"
+        format="I-A-i: "/&gt;
+        &lt;xsl:value-of select="title"/&gt;
+        &lt;xsl:value-of select="$newline"/&gt;
+    &lt;/xsl:for-each&gt;
+    &lt;xsl:value-of select="$newline"/&gt;
+  &lt;/xsl:template&gt;
+
+  &lt;xsl:template match="book" mode="number-5"&gt;
+    &lt;xsl:text&gt;Test #5: level="any", 
+         count="[various elements]"
+         from="[various elements]"
+         format="1.1.1.1. "&lt;/xsl:text&gt;
+    &lt;xsl:value-of select="$newline"/&gt;
+    &lt;xsl:value-of select="$newline"/&gt;
+    &lt;xsl:for-each select=".//sect3"&gt;
+      &lt;xsl:number level="any" from="book" count="chapter" format="1."/&gt;
+      &lt;xsl:number level="any" from="chapter" count="sect1" format="1."/&gt;
+      &lt;xsl:number level="any" from="sect1" count="sect2" format="1."/&gt;
+      &lt;xsl:number level="any" from="sect2" count="sect3" format="1. "/&gt;
+      &lt;xsl:value-of select="title"/&gt;
+      &lt;xsl:value-of select="$newline"/&gt;
+    &lt;/xsl:for-each&gt;
+    &lt;xsl:value-of select="$newline"/&gt;
+  &lt;/xsl:template&gt;
+
+  &lt;xsl:template match="book" mode="number-6"&gt;
+    &lt;xsl:text&gt;Test #6: level="any", 
+         count="chapter|sect1|sect2|sect3",
+         grouping-separator=",",
+         using a variable to start counting at 1000.&lt;/xsl:text&gt; 
+    &lt;xsl:value-of select="$newline"/&gt;
+    &lt;xsl:value-of select="$newline"/&gt;
+    &lt;xsl:for-each select="chapter|.//sect1|.//sect2|.//sect3"&gt;
+      &lt;xsl:variable name="value1"&gt;
+        &lt;xsl:number level="any" count="chapter|sect1|sect2|sect3"/&gt;
+      &lt;/xsl:variable&gt;
+      &lt;xsl:number value="$value1 + 999"
+        grouping-separator="." grouping-size="3"/&gt;
+      &lt;xsl:text&gt;. &lt;/xsl:text&gt;
+      &lt;xsl:value-of select="title"/&gt;
+      &lt;xsl:value-of select="$newline"/&gt;
+    &lt;/xsl:for-each&gt;
+    &lt;xsl:value-of select="$newline"/&gt;
+  &lt;/xsl:template&gt;
+
+  &lt;xsl:template match="book" mode="number-7"&gt;
+    &lt;xsl:text&gt;Test #7: level="multiple", 
+         count="chapter|sect1|sect2|sect3", 
+         format="1.1.1.1. ",
+         selecting up to the first two &lt;sect1&gt; elements from chapter 2.&lt;/xsl:text&gt;
+    &lt;xsl:value-of select="$newline"/&gt;
+    &lt;xsl:value-of select="$newline"/&gt;
+    &lt;xsl:for-each select="chapter[2]/sect1[position() &lt; 3]"&gt;
+      &lt;xsl:for-each select="chapter|.//sect1|.//sect2|.//sect3"&gt;
+        &lt;xsl:number level="multiple" count="chapter|sect1|sect2|sect3"
+          format="1.1.1.1. "/&gt;
+        &lt;xsl:value-of select="title"/&gt;
+        &lt;xsl:value-of select="$newline"/&gt;
+      &lt;/xsl:for-each&gt;
+    &lt;/xsl:for-each&gt;
+  &lt;/xsl:template&gt;
+
+&lt;/xsl:stylesheet&gt;</pre></span>
+<p>Und hier die Ergebnisse:</p>
+<span class="PROGRAMLISTING"><pre>
+
+Test #1: level="multiple", 
+         count="chapter|sect1|sect2|sect3", 
+         format="1.1.1.1. "
+
+1. Alfa Romeo
+1.1. Bentley
+1.2. Chevrolet
+1.2.1. Dodge
+1.2.1.1. Eagle
+2. Ford
+2.1. GMC
+2.1.1. Honda
+2.1.1.1. Isuzu
+2.1.1.2. Javelin
+2.1.1.3. K-Car
+2.1.1.4. Lincoln
+2.1.2. Mercedes
+2.1.3. Nash
+2.1.3.1. Opel
+2.1.3.2. Pontiac
+2.1.4. Quantum
+2.1.4.1. Rambler
+2.1.4.2. Studebaker
+2.2. Toyota
+<!--<?troff .Nd 10?>-->
+2.2.1. Um, is there a car that starts with "U"?
+2.3. Volkswagen
+
+Test #2: level="any", 
+         count="chapter|sect1|sect2|sect3", 
+         format="1. "
+
+1. Alfa Romeo
+2. Bentley
+3. Chevrolet
+4. Dodge
+5. Eagle
+6. Ford
+7. GMC
+8. Honda
+9. Isuzu
+10. Javelin
+11. K-Car
+12. Lincoln
+13. Mercedes
+14. Nash
+15. Opel
+16. Pontiac
+17. Quantum
+18. Rambler
+19. Studebaker
+20. Toyota
+21. Um, is there a car that starts with "U"?
+22. Volkswagen
+
+Test #3: level="single", 
+         count="chapter|sect1|sect2|sect3", 
+         format="1.1.1.1. "
+
+1. Alfa Romeo
+1. Bentley
+2. Chevrolet
+1. Dodge
+1. Eagle
+2. Ford
+1. GMC
+1. Honda
+1. Isuzu
+2. Javelin
+3. K-Car
+4. Lincoln
+2. Mercedes
+3. Nash
+1. Opel
+2. Pontiac
+4. Quantum
+1. Rambler
+2. Studebaker
+2. Toyota
+1. Um, is there a car that starts with "U"?
+3. Volkswagen
+
+Test #4: level="multiple", 
+         select=".//sect2",
+         count="chapter|sect1|sect2", 
+         format="I-A-i: "
+
+I-B-i: Dodge
+II-A-i: Honda
+II-A-ii: Mercedes
+II-A-iii: Nash
+II-A-iv: Quantum
+II-B-i: Um, is there a car that starts with "U"?
+
+Test #5: level="any", 
+         count="[various elements]"
+         from="[various elements]"
+         format="1.1.1.1. "
+
+1.2.1.1. Eagle
+2.1.1.1. Isuzu
+2.1.1.2. Javelin
+2.1.1.3. K-Car
+2.1.1.4. Lincoln
+2.1.3.1. Opel
+2.1.3.2. Pontiac
+2.1.4.1. Rambler
+2.1.4.2. Studebaker
+
+Test #6: level="any", 
+         count="chapter|sect1|sect2|sect3",
+         grouping-separator=",",
+         using a variable to start counting at 1000.
+
+1,000. Alfa Romeo
+1,001. Bentley
+1,002. Chevrolet
+1,003. Dodge
+1,004. Eagle
+1,005. Ford
+1,006. GMC
+1,007. Honda
+1,008. Isuzu
+1,009. Javelin
+1,010. K-Car
+1,011. Lincoln
+1,012. Mercedes
+1,013. Nash
+1,014. Opel
+1,015. Pontiac
+1,016. Quantum
+1,017. Rambler
+1,018. Studebaker
+1,019. Toyota
+1,020. Um, is there a car that starts with "U"?
+1,021. Volkswagen
+
+Test #7: level="multiple", 
+         count="chapter|sect1|sect2|sect3", 
+         format="1.1.1.1. ",
+         selecting up to the first two &lt;sect1&gt; elements from chapter 2.
+
+2.1. GMC
+2.1.1. Honda
+2.1.1.1. Isuzu
+2.1.1.2. Javelin
+2.1.1.3. K-Car
+2.1.1.4. Lincoln
+2.1.2. Mercedes
+2.1.3. Nash
+2.1.3.1. Opel
+2.1.3.2. Pontiac
+2.1.4. Quantum
+2.1.4.1. Rambler
+2.1.4.2. Studebaker
+2.2. Toyota
+2.2.1. Um, is there a car that starts with "U"?</pre></span>
+<p>In Test 1, wurde <span class="LITERAL">level="multiple"</span> verwendet, um die Elemente <span class="LITERAL">&lt;chapter&gt;</span>, <span class="LITERAL">&lt;sect1&gt;</span>, <span class="LITERAL">&lt;sect2&gt;</span> und <span class="LITERAL">&lt;sect3&gt;</span> zu z&auml;hlen.  Diese auf mehreren Ebenen zu nummerieren, ergibt f&uuml;r jedes Element eine Ziffer mit einem Punkt dahinter.  Die Ziffer vor <span class="LITERAL">Studebaker</span> beispielsweise bezeichnet das zweite <span class="LITERAL">&lt;sect3&gt;</span>-Element innerhalb des vierten <span class="LITERAL">&lt;sect2&gt;</span>-Elements innerhalb des ersten <span class="LITERAL">&lt;sect1&gt;</span>-Elements innerhalb des zweiten <span class="LITERAL">&lt;chapter&gt;</span>-Elements.  </p>
+<p>Test 2 verwendet <span class="LITERAL">level="any"</span>, um alle <span class="LITERAL">&lt;chapter&gt;</span>-, <span class="LITERAL">&lt;sect1&gt;</span>-, <span class="LITERAL">&lt;sect2&gt;</span>- und <span class="LITERAL">&lt;sect3&gt;</span>-Elemente in ihrer Reihenfolge zu z&auml;hlen.  </p>
+<p>Test 3 verwendet <span class="LITERAL">level="single"</span>, um die Elemente auf der jeweiligen Ebene zu z&auml;hlen.  Das bedeutet, dass das vierte <span class="LITERAL">&lt;sect3&gt;</span>-Element innerhalb eines bestimmten <span class="LITERAL">&lt;sect2&gt;</span>-Elements mit einer <span class="LITERAL">4</span> nummeriert wird (oder mit <span class="LITERAL">iv</span> oder <span class="LITERAL">D</span> oder dem sonst relevanten Format).  Beachten Sie, dass die f&uuml;r jedes Element verwendete Zahl identisch ist mit der letzten Ziffer zu jedem Element in Test 1.  </p>
+<p>Test 4 macht mehrere Dinge unterschiedlich: Zun&auml;chst werden als Nummerierungsstile Gro&szlig;buchstaben und r&ouml;mische Zahlen in Kleinbuchstaben verwendet.  Als Zweites werden Element auf mehreren Ebenen gez&auml;hlt (f&uuml;r die Elemente <span class="LITERAL">&lt;chapter&gt;</span>, <span class="LITERAL">&lt;sect1&gt;</span> und <span class="LITERAL">&lt;sect2&gt;</span>), <!--<?troff .ne 10?>-->doch werden nur die <span class="LITERAL">&lt;sect2&gt;</span>-Elemente verarbeitet.  Obwohl nur der title-Text des <span class="LITERAL">&lt;sect2&gt;</span>-Elements ausgegeben wird, kann die Nummer der richtigen Ebene erzeugt werden.  </p>
+<p>Test 5 erzeugt &auml;hnliche Zahlen wie in Test 4, verwendet aber das Attribut <span class="LITERAL">from</span>.  Die Zahlen f&uuml;r die <span class="LITERAL">&lt;sect3&gt;</span>-Elemente werden in vier Stadien erstellt: Zun&auml;chst werden die <span class="LITERAL">&lt;chapter&gt;</span>-Vorfahren gez&auml;hlt, beginnend beim ersten <span class="LITERAL">&lt;book&gt;</span>-Vorfahren, dann werden die <span class="LITERAL">&lt;sect1&gt;</span>-Vorfahren gez&auml;hlt, beginnend bei dem ersten <span class="LITERAL">&lt;chapter&gt;</span>-Vorfahren, usw.</p>
+<p>Test 6 beginnt die Z&auml;hlung bei 1000 anstelle von 1. Dazu muss der von <span class="LITERAL">&lt;xsl:number&gt;</span> erzeugte Wert in einer Variable gespeichert werden und anschlie&szlig;end der Wert der Variable plus 1000 ausgegeben werden. Beachten Sie, dass im <span class="LITERAL">value</span>-Attribut des <span class="LITERAL">&lt;xsl:number&gt;</span>-Elements ein Ausdruck verwendet werden kann.  Zudem wurde das Attribut <span class="LITERAL">grouping-separator</span> verwendet, um die dreiziffrigen Gruppen durch Kommata abzutrennen. In einem Deutschen Text h&auml;tte man auf dieselbe Weise anstelle des Kommas den Punkt als Tausendertrennzeichen definiert. </p>
+<p>In Test 7 schlie&szlig;lich werden nur Elemente aus dem ersten und zweiten <span class="LITERAL">&lt;sect1&gt;</span>-Element (<span class="LITERAL">&lt;sect1&gt;</span>-Elemente, deren <span class="LITERAL">position()</span> kleiner als 3 ist) im zweiten <span class="LITERAL">&lt;chapter&gt;</span>-Element nummeriert.  Obwohl nur diese Abschnitte verarbeitet werden, k&ouml;nnen mit Hilfe von <span class="LITERAL">&lt;xsl:number&gt;</span> die richtigen Nummern f&uuml;r die Elemente erzeugt werden. </p>
+</td>
+</tr>
+</table>
+</div>
+</body>
+</html>

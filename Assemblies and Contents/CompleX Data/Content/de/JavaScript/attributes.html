@@ -1,0 +1,443 @@
+<html>
+<link rel="stylesheet" href="josh.css">
+<body bgcolor="#FFFFFF">
+
+		<div id="Beschreibung">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">attributes, NamedNodeMap</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">5</span>  DOM <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Bei dem von der <span class="literal">attributes</span>-Eigenschaft eines W3C-DOM-Elementobjekts zur&uuml;ckgegebenen Objekt handelt es sich stets um eine Objektsammlung (Array) mit Verweisen auf <span class="literal">Attr</span>-Objekte (bzw. <span class="literal">attribute</span>-Objekte). Einem Node-Attributtyp ist immer ein Name zugeordnet, sodass die Methoden der Objektsammlung dieser Nodes direkt &uuml;ber den Namen auf sie zugreifen k&ouml;nnen und nicht erst das gesamte Array nach einem passenden Nodenamen durchsuchen m&uuml;ssen. In der W3C-DOM-Struktur wird die abstrakte Darstellung dieses Arrays benannter Nodes als <span class="literal">NamedNodeMap</span>-Objekt bezeichnet, das teilweise dieselben Eigenschaften und Methoden verwendet wie das <span class="literal">attributes</span>-Objekt von IE. Da beide Objekte auf dieselben Bereiche eines Dokumentbaums verweisen, werden sie an dieser Stelle gemeinsam behandelt. Die Gruppe der <span class="literal">NamedNodeMap</span>-Objekte umfasst noch weitere W3C-DOM-Sammlungen, doch w&auml;hrend der Arbeit mit HTML-Dokumenten wird Ihnen die <span class="literal">NamedNodeMap</span> haupts&auml;chlich in Form einer <span class="literal">Attr</span>-Sammlung begegnen. Mitglieder dieser Sammlung werden in der Quellcodereihenfolge sortiert.
+</p>
+							</td>
+						</tr>
+						<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Es gibt auch direktere M&ouml;glichkeiten, auf das Attribut eines Elements zuzugreifen (etwa mithilfe der <span class="literal">getAttribute( )</span>- oder <span class="literal">getAttributNode( )</span>-Methoden der einzelnen Elemente). Die hier dargestellten Eigenschaften und Methoden basieren jedoch auf der Annahme, dass Ihrem Skript eine vom Hostelement unabh&auml;ngige Attributsammlung als Grundlage f&uuml;r Ihre Verarbeitung &uuml;bergeben wurde.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectmodelreference"><span class="title">Objektmodellreferenz</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre><span class="replaceable">elementReference</span>.attributes</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectspecificproperties"><span class="title">Objektspezifische Eigenschaften</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<table border="1"><tbody><tr><td><span class="literal">length</span></td>
+								</tr>
+							</tbody></table>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectspecificmethods"><span class="title">Objektspezifische Methoden</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<table border="1"><tbody><tr><td><span class="literal">getNamedItem( )</span></td><td><span class="literal">getNamedItemNS( )</span></td><td><span class="literal">item( )</span></td><td><span class="literal">removeNamedItem( )</span></td>
+								</tr>
+								<tr><td><span class="literal">removeNamedItemNS( )</span></td><td><span class="literal">setNamedItem( )</span></td><td><span class="literal">setNamedItemNS( )</span></td><td></td>
+								</tr>
+							</tbody></table>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectspecificeventhandlerproperties"><span class="title">Objektspezifische Ereignisbehandlungsroutineneigenschaften</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Keine. </p>
+					</td>
+				</tr>
+			</table>
+		</div>
+
+		<div id="length">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">length</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">5</span>  DOM <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Schreibgesch&uuml;tzt</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Gibt die Anzahl von Elementen in der Sammlung zur&uuml;ck.</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>var howMany = document.getElementById("myTable").attributes.length;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Eine ganze Zahl. </p>
+					</td>
+				</tr>
+			</table>
+		</div>
+		<div id="getExpression( )">
+					<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+						<tr><td valign="top" class="name">getExpression( )</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">nicht zutreffend</span> IE <span class="emphasis">5(Win)</span> DOM <span class="emphasis">nicht zutreffend</span></td>
+						</tr>
+						<tr>
+							<td valign="top" nowrap class="usage"><p class="literal">getExpression("<span class="replaceable">attributeName</span>")</p>
+							</td><td valign="top" nowrap class="requirements"></td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="description"><p>Gibt eine Zeichenfolgenversion des Skriptausdrucks zur&uuml;ck, der in einem entsprechenden <span class="literal">setExpression( )</span>-Methodenaufruf f&uuml;r ein Attribut des aktuellen Elements verwendet wurde. Die Methode <span class="literal">setExpression( )</span> weist einen Zeichenfolgenausdruck zu, der zur Berechnung des dem Attribut zugewiesenen Werts dient. Die Berechnung des Ausdruck wird durch ein Ereignis eines bestimmten Typs oder die Methode <span class="literal">document.recalc( )</span> automatisch ausgel&ouml;st. Wenn Sie den aktuellen Wert des Attributs ermitteln m&ouml;chten, m&uuml;ssen Sie die Funktion <span class="literal">eval( )</span> auf die von der Methode <span class="literal">getExpression( )</span> zur&uuml;ckgegebene Zeichenfolge anwenden. Weitere Informationen finden Sie in der Abhandlung der Methode <span class="literal">setExpression( )</span> weiter hinten in diesem Kapitel.
+		</p>
+									</td>
+								</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="parameters"><span class="title">Parameter</span></td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td>
+								<ul><li><span class="literal"></span>Der Name des Attributs des aktuellen Elements, dem mit der Methode <span class="literal">setExpression( )</span> ein Ausdruck zugewiesen wird.
+		</li></ul>
+							</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="returnedvalue"><span class="title">Zur&uuml;ckgegebener Wert</span></td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Zeichenfolge.</p>
+							</td>
+						</tr>
+					</table>
+		</div>
+		<div id="getNamedItem( )">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">getNamedItem( )</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">6</span>  DOM <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">getNamedItem("<span class="replaceable">attributeName</span>")</p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Gibt ein einzelnes <span class="literal">Attr</span>-Objekt zur&uuml;ck, das dem Attribut entspricht, dessen Nodename mit dem Parameterwert &uuml;bereinstimmt.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Parameter</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<ul><li><span class="literal"></span>Zeichenfolge, die dem Namensteil des Namens-/Wertpaars eines Attributs entspricht.
+</li></ul>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Zur&uuml;ckgegebener Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Referenz auf ein <span class="literal">Attr</span>-Objekt. Falls keine &Uuml;bereinstimmung mit dem Parameterwert vorliegt, lautet der zur&uuml;ckgegebene Wert <span class="literal">null</span>.
+</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="getNamedItemNS( )">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">getNamedItemNS( )</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">nicht zutreffend</span>  DOM <span class="emphasis">2</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">getNamedItemNS("<span class="replaceable">namespaceURI</span>", "<span class="replaceable">localName</span>")</p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Gibt ein einzelnes <span class="literal">Attr</span>-Objekt zur&uuml;ck, dessen lokaler Name und Namespace-URI mit den Parameterwerten &uuml;bereinstimmen.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Parameter</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<ul><li><span class="literal"></span>URI-Zeichenfolge, die einer URI entspricht, welche weiter vorne im Dokument einer Beschriftung zugewiesenen wurde.</li><li><span class="literal"></span>Der lokale Namensteil des Attributs. </li></ul>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Zur&uuml;ckgegebener Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Referenz auf ein <span class="literal">Attr</span>-Objekt. Falls keine &Uuml;bereinstimmung mit den Parameterwerten vorliegt, lautet der zur&uuml;ckgegebene Wert <span class="literal">null</span>.
+</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="item( )">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">item( )</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">5</span>  DOM <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">item(<span class="replaceable">index</span>)</p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Gibt ein einzelnes <span class="literal">Attr</span>-Objekt zur&uuml;ck, das dem mit dem Indexwert &uuml;bereinstimmenden Element entspricht.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Parameter</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<ul><li><span class="literal"></span>Eine auf Null basierende ganze Zahl, die dem angegebenen Element in der Quellcodereihenfolge entspricht.
+</li></ul>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Zur&uuml;ckgegebener Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Referenz auf ein <span class="literal">Attr</span>-Objekt. Falls keine &Uuml;bereinstimmung mit dem Indexwert vorliegt, lautet der zur&uuml;ckgegebene Wert <span class="literal">null</span>. Anders als bei einigen anderen IE-Sammlungen ist beim <span class="literal">attributes</span>-Objekt kein Zeichenfolgenindexwert zul&auml;ssig.
+</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="removeNamedItem( )">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">removeNamedItem( )</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">6</span>  DOM <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">removeNamedItem("<span class="replaceable">attributeName</span>")</p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Entfernt ein einzelnes <span class="literal">Attr</span>-Objekt aus der Objektsammlung, das dem Attribut entspricht, dessen Nodename mit dem Parameterwert &uuml;bereinstimmt.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Parameter</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<ul><li><span class="literal"></span>Zeichenfolge, die dem Namensteil des Namens-/Wertpaars eines Attributs entspricht.
+</li></ul>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Zur&uuml;ckgegebener Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Referenz auf das entfernte <span class="literal">Attr</span>-Objekt. Falls keine &Uuml;bereinstimmung mit dem Parameterwert vorliegt, lautet der zur&uuml;ckgegebene Wert <span class="literal">null</span>.
+</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="removeNamedItemNS( )">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">removeNamedItemNS( )</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">nicht zutreffend</span>  DOM <span class="emphasis">2</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">removeNamedItemNS("<span class="replaceable">namespaceURI</span>", "<span class="replaceable">localName</span>")</p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Entfernt ein einzelnes <span class="literal">Attr</span>-Objekt aus der Objektsammlung, dessen lokaler Name und Namespace-URI mit den Parameterwerten &uuml;bereinstimmen.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Parameter</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<ul><li><span class="literal"></span>URI-Zeichenfolge, die einer URI entspricht, welche weiter vorne im Dokument einer Beschriftung zugewiesenen wurde.</li><li><span class="literal"></span>Der lokale Namensteil des Attributs. </li></ul>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Zur&uuml;ckgegebener Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Referenz auf das entfernte <span class="literal">Attr</span>-Objekt. Falls keine &Uuml;bereinstimmung mit den Parameterwerten vorliegt, erzeugt die Methode einen Fehler.
+</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="setNamedItem( )">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">setNamedItem( )</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">6</span>  DOM <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">setNamedItem(<span class="replaceable">attrObjectReference</span>)</p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>F&uuml;gt ein einzelnes <span class="literal">Attr</span>-Objekt in die aktuelle Attributsammlung ein. Wenn es sich beim Ziel des Attributs um ein vorhandenes Element handelt, k&ouml;nnen Sie auch die <span class="literal">setAttributeNode( )</span>-Methode auf das Element anwenden, um das <span class="literal">Attr</span>-Objekt einzuf&uuml;gen. Beim Aufruf der <span class="literal">setNamedItem( )</span>-Methode sucht der Browser zun&auml;chst nach einer &Uuml;bereinstimmung zwischen dem Namen des neuen Attributs und den Attributnamen in der Sammlung. Wenn eine &Uuml;bereinstimmung vorliegt, wird das urspr&uuml;ngliche Attribut durch das neue Attribut ersetzt, andernfalls wird das neue Attribut in die Sammlung aufgenommen.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Parameter</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<ul><li><span class="literal"></span>Eine Referenz auf ein <span class="literal">Attr</span>-Nodeobjekt, das mithilfe der Methode <span class="literal">document.createAttribute( )</span> erstellt wurde, oder auf eine <span class="literal">Attr</span>-Node aus einem anderen Element im Dokumentbaum.
+</li></ul>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Zur&uuml;ckgegebener Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Referenz auf ein <span class="literal">Attr</span>-Objekt, die entweder neu angelegt oder von einer anderen Stelle innerhalb des Dokumentbaums &uuml;bernommen wird.
+</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="setNamedItemNS( )">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">setNamedItemNS( )</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">nicht zutreffend</span>  DOM <span class="emphasis">2</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">setNamedItemNS(<span class="replaceable">attrObjectReference</span>)</p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>F&uuml;gt ein einzelnes <span class="literal">Attr</span>-Objekt in die aktuelle Attributsammlung ein. Wenn es sich beim Ziel des Attributs um ein vorhandenes Element handelt, k&ouml;nnen Sie auch die <span class="literal">setAttributeNodeNS( )</span>-Methode auf das Element anwenden, um das <span class="literal">Attr</span>-Objekt einzuf&uuml;gen. Beim Aufruf der <span class="literal">setNamedItemNS( )</span>-Methode sucht der Browser zun&auml;chst nach einer &Uuml;bereinstimmung zwischen dem lokalen Namen und der Namespace-URI des neuen Attributs und lokalen Namen und Namespace-URIs in der Sammlung. Wenn eine &Uuml;bereinstimmung vorliegt, wird das urspr&uuml;ngliche Attribut durch das neue Attribut ersetzt, andernfalls wird das neue Attribut in die Sammlung aufgenommen.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Parameter</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<ul><li><span class="literal"></span>Eine Referenz auf ein <span class="literal">Attr</span>-Nodeobjekt, das mithilfe der Methode <span class="literal">document.createAttributeNS( )</span> erstellt wurde, oder auf eine <span class="literal">Attr</span>-Node aus einem anderen Element im Dokumentbaum.
+</li></ul>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Zur&uuml;ckgegebener Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Referenz auf ein <span class="literal">Attr</span>-Objekt, die entweder neu angelegt oder von einer anderen Stelle innerhalb des Dokumentbaums &uuml;bernommen wird.
+</p>
+					</td>
+				</tr>
+			</table>
+		</div>
+
+</body>
+</html>

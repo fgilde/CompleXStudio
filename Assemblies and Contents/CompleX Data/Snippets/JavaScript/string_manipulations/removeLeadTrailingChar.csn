@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding = "utf-8"?>
+
+<snippet xmlns:MMString="http://www.macromedia.com/schemes/dat/string/" MMString:name = "Snippets/JavaScript/string_manipulations/removeLeadTrailingChar_csn/snippet/name/Remove" MMString:description = "Snippets/JavaScript/string_manipulations/removeLeadTrailingChar_csn/snippet/description/Removes" preview="code" type="block">
+
+
+<insertText location="beforeSelection">
+
+<![CDATA[function removeLeadingAndTrailingWhitespace(inputString) 
+{
+  if (typeof inputString == "string")
+  {
+    var firstNonWhite = inputString.search(/\S/);
+
+    if (firstNonWhite != -1)
+    {
+      for (var i=inputString.length-1; i >= 0; i--)
+      {
+        if (inputString.charAt(i).search(/\S/) != -1)
+        {
+          inputString = inputString.substring(firstNonWhite, i+1);
+          break;
+        }
+      }
+    }
+  }
+
+  return inputString;
+}
+]]>
+
+</insertText>
+
+<insertText location="afterSelection"><![CDATA[]]>
+
+</insertText>
+
+</snippet>

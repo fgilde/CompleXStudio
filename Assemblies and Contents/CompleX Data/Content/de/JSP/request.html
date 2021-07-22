@@ -1,0 +1,992 @@
+<html>
+<link rel="stylesheet" href="../HTML/josh.css">
+<head>
+
+
+<title>request</title>
+</head>
+<body bgcolor="#FFFFFF" text="#000000">
+<div id="Beschreibung">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">request</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Variablenname:</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+<p><span class="LITERAL">request</span></p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Schnittstellenname:</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+<p><span class="LITERAL">javax.servlet.http.HttpServletRequest</span></p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Erweitert:</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+<p><span class="LITERAL">javax.servlet.ServletRequest</span></p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Implementiert von:</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+<p>Interne containerabh&auml;ngige Klasse</p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">JSP-Seitentyp:</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+<p>Verf&uuml;gbar in regul&auml;ren JSP-Seiten und Fehlerseiten</p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Beschreibung</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+<p>Der Variablen <span class="LITERAL">request</span> wird ein Verweis auf eine interne containerabh&auml;ngige Klasse zugewiesen, die eine protokollabh&auml;ngige Schnittstelle implementiert, die wiederum die Schnittstelle <span class="LITERAL">javax.servlet.ServletRequest</span> erweitert. Da JSP 1.1 nur das HTTP-Protokoll unterst&uuml;tzt, implementiert die Klasse immer die Schnittstelle <span class="LITERAL">javax.servlet.http.HttpServletRequest</span>. Die Methodenbeschreibungen in diesem Abschnitt enthalten die Methoden von beiden Schnittstellen.
+</p>
+</td>
+</tr>
+</table>
+</div>
+<div id="getAttribute">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">getAttribute()</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"> </td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="usage"><span class="LITERAL">public Object getAttribute(String name)</span></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+Gibt den Wert des benannten Attributs als <span class="LITERAL">Object</span> zur&uuml;ck. Wenn kein Attribut mit dem angegebenen Namen vorhanden ist, lautet die R&uuml;ckgabe <span class="LITERAL">null</span>.
+</p></td>
+</tr>
+</table>
+</div>
+<div id="getAttributeNames">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">getAttributeNames()</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"> </td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="usage"><span class="LITERAL">public java.util.Enumeration getAttributeNames()</span></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+Gibt eine <span class="LITERAL">Enumeration</span> mit den Namen der Attribute zur&uuml;ck, die f&uuml;r diese Anforderung verf&uuml;gbar sind. Wenn die Anforderung keine Attribute hat, ist die <span class="LITERAL">Enumeration</span> leer.
+</p></td>
+</tr>
+</table>
+</div>
+<div id="getAuthType">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">getAuthType()</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"> </td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="usage"><span class="LITERAL">public String getAuthType()</span></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+Gibt den Namen des Authentifizierungsschemas zur&uuml;ck, mit dem das Servlet gesch&uuml;tzt wird (beispielsweise BASIC oder SSL). Wenn das Servlet nicht gesch&uuml;tzt ist, lautet die R&uuml;ckgabe <span class="LITERAL">null</span>.
+</p></td>
+</tr>
+</table>
+</div>
+<div id="getCharacterEncoding">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">getCharacterEncoding()</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"> </td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="usage"><span class="LITERAL">public String getCharacterEncoding()</span></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+Gibt den Namen der Zeichenkodierungsmethode zur&uuml;ck, die im Body dieser Anforderung verwendet wird. Wenn f&uuml;r die Anforderung keine Zeichenkodierungsmethode festgelegt ist, lautet die R&uuml;ckgabe <span class="LITERAL">null</span>.
+</p></td>
+</tr>
+</table>
+</div>
+<div id="getContentLength">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">getContentLength()</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"> </td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="usage"><span class="LITERAL">public int getContentLength()</span></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+Gibt die L&auml;nge des Anforderungs-Body in Byte zur&uuml;ck (falls im Eingabedatenstrom verf&uuml;gbar). Wenn die L&auml;nge nicht bekannt ist, lautet die R&uuml;ckgabe <span class="LITERAL">-1</span>.
+</p></td>
+</tr>
+</table>
+</div>
+<div id="getContentType">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">getContentType()</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"> </td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="usage"><span class="LITERAL">public String getContentType()</span></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+Gibt den MIME-Typ des Anforderungs-Body zur&uuml;ck. Wenn der Typ nicht bekannt ist, lautet die R&uuml;ckgabe <span class="LITERAL">null</span>.
+</p></td>
+</tr>
+</table>
+</div>
+<div id="getContextPath">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">getContextPath()</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"> </td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="usage"><span class="LITERAL">public String getContextPath()</span></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+Gibt den Teil der Anforderungs-URI zur&uuml;ck, der den Kontext der Anforderung angibt.
+</p></td>
+</tr>
+</table>
+</div>
+<div id="getCookies">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">getCookies()</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"> </td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="usage"><span class="LITERAL">public Cookie[] getCookies()</span></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+Gibt ein Array mit allen <span class="LITERAL">Cookie</span>-Objekten zur&uuml;ck, die der Client mit dieser Anforderung gesendet hat. Wenn die Anforderung keine Cookies enth&auml;lt, lautet die R&uuml;ckgabe <span class="LITERAL">null</span>.
+</p></td>
+</tr>
+</table>
+</div>
+<div id="getDateHeader">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">getDateHeader()</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"> </td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="usage"><span class="LITERAL">public long getDateHeader(String name)</span></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+Gibt den Wert des angegebenen Anforderungs-Headers zur&uuml;ck, und zwar als <span class="LITERAL">long</span>-Wert, der einen Datenwert darstellt. Wenn die Anforderung keinen Header enth&auml;lt, lautet die R&uuml;ckgabe <span class="LITERAL">-1</span>.
+</p></td>
+</tr>
+</table>
+</div>
+<div id="getHeader">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">getHeader()</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"> </td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="usage"><span class="LITERAL">public String getHeader(String name)</span></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+Gibt den Wert des angegebenen Anforderungs-Headers als <span class="LITERAL">String</span> zur&uuml;ck. Wenn die Anforderung keinen Header enth&auml;lt, lautet die R&uuml;ckgabe <span class="LITERAL">null</span>.
+</p></td>
+</tr>
+</table>
+</div>
+<div id="getHeaderNames">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">getHeaderNames()</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"> </td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="usage"><span class="LITERAL">public java.util.Enumeration getHeaderNames()</span></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+Gibt alle in dieser Anforderung enthaltenen Header-Namen als <span class="LITERAL">Enumeration</span> aus <span class="LITERAL">String</span>-Objekten zur&uuml;ck. Wenn die Anforderung keine Header enth&auml;lt, ist die <span class="LITERAL">Enumeration</span> leer.
+</p></td>
+</tr>
+</table>
+</div>
+<div id="getHeaders">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">getHeaders()</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"> </td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="usage"><span class="LITERAL">public java.util.Enumeration getHeaders(String name)</span></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+Gibt alle Werte des angegebenen Anforderungs-Headers als <span class="LITERAL">Enumeration</span> aus <span class="LITERAL">String</span>-Objekten zur&uuml;ck. Wenn die Anforderung den angegebenen Header nicht enth&auml;lt, ist die <span class="LITERAL">Enumeration</span> leer.
+</p></td>
+</tr>
+</table>
+</div>
+<div id="getInputStream">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">getInputStream()</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"> </td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="usage"><span class="LITERAL">public ServletInputStream getInputStream()<br> &nbsp;&nbsp;throws java.io.IOException</span></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+Ruft den Body der Anforderung unter Verwendung von <span class="LITERAL">ServletInputStream</span> in Form von Bin&auml;rdaten ab.
+</p></td>
+</tr>
+</table>
+</div>
+<div id="getIntHeader">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">getIntHeader()</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"> </td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="usage"><span class="LITERAL">public int getIntHeader(String name)</span></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+Gibt den Wert des angegebenen Anforderungs-Headers als <span class="LITERAL">int</span>-Wert zur&uuml;ck. Wenn die Anforderung keinen Header enth&auml;lt, lautet die R&uuml;ckgabe <span class="LITERAL">-1</span>.
+</p></td>
+</tr>
+</table>
+</div>
+<div id="getLocale">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">getLocale()</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"> </td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="usage"><span class="LITERAL">public java.util.Locale getLocale()</span></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+Gibt das bevorzugte Gebietsschema-Objekt <span class="LITERAL">Locale</span> zur&uuml;ck, in dem der Client Inhalt akzeptiert, und zwar auf Grundlage des Headers <span class="LITERAL">Accept-Language</span>.
+</p></td>
+</tr>
+</table>
+</div>
+<div id="getLocales">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">getLocales()</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"> </td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="usage"><span class="LITERAL">public java.util.Enumeration getLocales()</span></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+Gibt eine <span class="LITERAL">Enumeration</span> der Gebietsschema-Objekte <span class="LITERAL">Locale</span> zur&uuml;ck, die die Gebietsschemas angibt, die der Client akzeptiert, und zwar auf Grundlage des Headers <span class="LITERAL">Accept-Language</span>. Die Enumeration beginnt mit dem bevorzugten Gebietsschema und ist in absteigender Reihenfolge geordnet.
+</p></td>
+</tr>
+</table>
+</div>
+<div id="getMethod">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">getMethod()</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"> </td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="usage"><span class="LITERAL">public String getMethod()</span></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+Gibt den Namen der HTTP-Methode zur&uuml;ck, die f&uuml;r diese Anforderung verwendet wurde, wie beispielsweise <span class="LITERAL">GET</span>, <span class="LITERAL">POST</span> oder <span class="LITERAL">PUT</span>.
+</p></td>
+</tr>
+</table>
+</div>
+<div id="getParameter">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">getParameter()</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"> </td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="usage"><span class="LITERAL">public String getParameter(String name)</span></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+Gibt den Wert eines Anforderungsparameters als <span class="LITERAL">String</span> zur&uuml;ck. Wenn der Parameter nicht vorhanden ist, lautet die R&uuml;ckgabe <span class="LITERAL">null</span>.
+</p></td>
+</tr>
+</table>
+</div>
+<div id="getParameterNames">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">getParameterNames()</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"> </td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="usage"><span class="LITERAL">public String getParameterNames()</span></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+Gibt eine <span class="LITERAL">Enumeration</span> mit <span class="LITERAL">String</span>-Objekten zur&uuml;ck, die die Namen der Parameter in dieser Anforderung enth&auml;lt.
+</p></td>
+</tr>
+</table>
+</div>
+<div id="getParameterValues">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">getParameterValues()</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"> </td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="usage"><span class="LITERAL">public String[] getParameterValues()</span></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+Gibt ein Array aus <span class="LITERAL">String</span>-Objekten zur&uuml;ck, das alle Werte des angegebenen Anforderungsparameters enth&auml;lt. Wenn der Parameter nicht vorhanden ist, lautet die R&uuml;ckgabe <span class="LITERAL">null</span>.
+</p></td>
+</tr>
+</table>
+</div>
+<div id="getPathInfo">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">getPathInfo()</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"> </td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="usage"><span class="LITERAL">public String getPathInfo()</span></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+Gibt alle zus&auml;tzlichen Informationen zum URI-Pfad zur&uuml;ck, die der Client mit dieser Anforderung gesendet hat. Wenn keine zus&auml;tzlichen Pfadinformationen vorhanden sind, lautet die R&uuml;ckgabe <span class="LITERAL">null</span>. Bei einer JSP-Seite gibt diese Methode immer <span class="LITERAL">null</span> zur&uuml;ck.
+</p></td>
+</tr>
+</table>
+</div>
+<div id="getPathTranslated">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">getPathTranslated()</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"> </td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="usage"><span class="LITERAL">public String getPathTranslated()</span></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+Gibt das Ergebnis von <span class="LITERAL">getPathInfo()</span> zur&uuml;ck, und zwar &uuml;bersetzt in den entsprechenden Dateisystempfad. Wenn <span class="LITERAL">getPathInfo()</span> den Wert <span class="LITERAL">null</span> zur&uuml;ckgibt, lautet die R&uuml;ckgabe <span class="LITERAL">null</span>.
+</p></td>
+</tr>
+</table>
+</div>
+<div id="getProtocol">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">getProtocol()</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"> </td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="usage"><span class="LITERAL">public String getProtocol()</span></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+Gibt den Namen und die Version des Protokolls zur&uuml;ck, das f&uuml;r die Anforderung verwendet wird, und zwar im folgenden Format: <em>Protokoll</em>/<em>Hauptversion</em>.<em>Nebenversion</em>, also beispielsweise <span class="LITERAL">HTTP/1.1</span>.
+</p></td>
+</tr>
+</table>
+</div>
+<div id="getQueryString">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">getQueryString()</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"> </td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="usage"><span class="LITERAL">public String getQueryString()</span></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+Gibt den Abfrage-String zur&uuml;ck, der in der Anforderungs-URI nach dem Pfad enthalten ist.
+</p></td>
+</tr>
+</table>
+</div>
+<div id="getReader">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">getReader()</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"> </td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="usage"><span class="LITERAL">public java.io.BufferedReader getReader() throws java.io.IOException</span></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+Ruft den Body der Anforderung unter Verwendung von <span class="LITERAL">BufferedReader</span> in Form von Zeichendaten ab.
+</p></td>
+</tr>
+</table>
+</div>
+<div id="getRemoteAddr">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">getRemoteAddr()</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"> </td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="usage"><span class="LITERAL">public String getRemoteAddr()</span></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+Gibt die IP-Adresse (Internet Protocol) des Clients zur&uuml;ck, der die Anforderung gesendet hat.
+</p></td>
+</tr>
+</table>
+</div>
+<div id="getRemoteHost">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">getRemoteHost()</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"> </td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="usage"><span class="LITERAL">public String getRemoteHost()</span></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+Gibt den vollst&auml;ndigen Namen des Clienthosts zur&uuml;ck, der die Anforderung gesendet hat. Wenn der Hostname nicht bestimmt werden kann, wird die IP-Adresse des Clients zur&uuml;ckgegeben.
+</p></td>
+</tr>
+</table>
+</div>
+<div id="getRemoteUser">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">getRemoteUser()</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"> </td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="usage"><span class="LITERAL">public String getRemoteUser()</span></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+Gibt die Anmelde-ID des Benutzers zur&uuml;ck, der diese Anforderung gesendet hat, sofern der Benutzer authentifiziert wurde. Wenn der Benutzer nicht authentifiziert wurde, lautet die R&uuml;ckgabe <span class="LITERAL">null</span>.
+</p></td>
+</tr>
+</table>
+</div>
+<div id="getRequestDispatcher">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">getRequestDispatcher()</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"> </td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="usage"><span class="LITERAL">public RequestDispatcher getRequestDispatcher(String path)</span></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+Gibt ein Objekt <span class="LITERAL">RequestDispatcher</span> zur&uuml;ck, das als Wrapper f&uuml;r die Ressource dient, die sich am angegebenen Pfad befindet.
+</p></td>
+</tr>
+</table>
+</div>
+<div id="getRequestedSessionId">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">getRequestedSessionId()</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"> </td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="usage"><span class="LITERAL">public String getRequestedSessionId()</span></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+Gibt die vom Client angegebene Sitzungs-ID zur&uuml;ck.
+</p></td>
+</tr>
+</table>
+</div>
+<div id="getRequestURI">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">getRequestURI()</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"> </td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="usage"><span class="LITERAL">public String getRequestURI()</span></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+Gibt den Teil dieser Anforderungs-URI zur&uuml;ck, der sich zwischen dem Protokollnamen und dem Abfrage-String in der ersten Zeile der HTTP-Anforderung befindet.
+</p></td>
+</tr>
+</table>
+</div>
+<div id="getScheme">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">getScheme()</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"> </td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="usage"><span class="LITERAL">public String getScheme()</span></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+Gibt den Namen des Schemas (Protokolls) zur&uuml;ck, das f&uuml;r diese Anforderung verwendet wurde, wie beispielsweise <span class="LITERAL">http</span>, <span class="LITERAL">https</span> oder <span class="LITERAL">ftp</span>.
+</p></td>
+</tr>
+</table>
+</div>
+<div id="getServerName">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">getServerName()</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"> </td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="usage"><span class="LITERAL">public String getServerName()</span></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+Gibt den Hostnamen des Servers zur&uuml;ck, der die Anforderung empfangen hat.
+</p></td>
+</tr>
+</table>
+</div>
+<div id="getServerPort">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">getServerPort()</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"> </td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="usage"><span class="LITERAL">public int getServerPort()</span></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+Gibt die Nummer des Anschlusses zur&uuml;ck, an dem die Anforderung empfangen wurde.
+</p></td>
+</tr>
+</table>
+</div>
+<div id="getServletPath">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">getServletPath()</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"> </td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="usage"><span class="LITERAL">public String getServletPath()</span></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+Gibt den Teil dieser Anforderungs-URI zur&uuml;ck, mit dem das Servlet aufgerufen wird. Bei einer JSP-Seite ist dies der vollst&auml;ndige kontextbezogene Pfad der Seite.
+</p></td>
+</tr>
+</table>
+</div>
+<div id="getSession">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">getSession()</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"> </td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="usage"><span class="LITERAL">public HttpSession getSession()</span></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+Gibt das aktuelle Sitzungsobjekt <span class="LITERAL">HttpSession</span> zur&uuml;ck, das zu dieser Anforderung geh&ouml;rt. Wenn die Anforderung keine Sitzung hat, wird ein neues Objekt <span class="LITERAL">HttpSession</span> erstellt, der Anforderung zugeordnet und zur&uuml;ckgegeben.
+</p></td>
+</tr>
+</table>
+</div>
+<div id="getSession">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">getSession()</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"> </td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="usage"><span class="LITERAL">public HttpSession getSession(boolean create)</span></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+Gibt das aktuelle Sitzungsobjekt <span class="LITERAL">HttpSession</span> zur&uuml;ck, das zu dieser Anforderung geh&ouml;rt. Wenn keine aktuelle Sitzung vorhanden ist und <span class="LITERAL">create</span> den Wert <span class="LITERAL">true</span> hat, wird ein neues Objekt <span class="LITERAL">HttpSession</span>erstellt, der Anforderung zugeordnet und zur&uuml;ckgegeben. Wenn <span class="LITERAL">create</span> den Wert <span class="LITERAL">false</span> hat und die Anforderung keiner Sitzung zugeordnet ist, gibt diese Methode <span class="LITERAL">null</span> zur&uuml;ck.
+</p></td>
+</tr>
+</table>
+</div>
+<div id="getUserPrincipal">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">getUserPrincipal()</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"> </td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="usage"><span class="LITERAL">public java.security.Principal getUserPrincipal()</span></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+Gibt ein Objekt <span class="LITERAL">Principal</span> zur&uuml;ck, das den Namen des derzeit authentifizierten Benutzers enth&auml;lt.
+</p></td>
+</tr>
+</table>
+</div>
+<div id="isRequestedSessionIdFromCookie">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">isRequestedSessionIdFromCookie()</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"> </td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="usage"><span class="LITERAL">public boolean isRequestedSessionIdFromCookie()</span></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+&Uuml;berpr&uuml;ft, ob die angeforderte Sitzungs-ID als Cookie empfangen wurde.
+</p></td>
+</tr>
+</table>
+</div>
+<div id="isRequestedSessionIdFromURL">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">isRequestedSessionIdFromURL()</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"> </td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="usage"><span class="LITERAL">public boolean isRequestedSessionIdFromURL()</span></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+&Uuml;berpr&uuml;ft, ob die angeforderte Sitzungs-ID als Teil der Anforderungs-URL empfangen wurde.
+</p></td>
+</tr>
+</table>
+</div>
+<div id="isRequestedSessionIdValid">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">isRequestedSessionIdValid()</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"> </td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="usage"><span class="LITERAL">public boolean isRequestedSessionIdValid()</span></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+&Uuml;berpr&uuml;ft, ob die angeforderte Sitzungs-ID noch g&uuml;ltig ist.
+</p></td>
+</tr>
+</table>
+</div>
+<div id="isSecure">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">isSecure()</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"> </td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="usage"><span class="LITERAL">public boolean isSecure()</span></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+Gibt einen <span class="LITERAL">boolean</span>-Wert zur&uuml;ck, der angibt, ob diese Anforderung &uuml;ber einen sicheren Kanal gesendet wurde (wie HTTPS) oder nicht.
+</p></td>
+</tr>
+</table>
+</div>
+<div id="isUserInRole">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">isUserInRole()</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"> </td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="usage"><span class="LITERAL">public boolean isUserInRole(String role)</span></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+Gibt einen <span class="LITERAL">boolean</span>-Wert zur&uuml;ck, der angibt, ob der authentifizierte Benutzer in der angegebenen logischen Rolle enthalten ist oder nicht.
+</p></td>
+</tr>
+</table>
+</div>
+<div id="removeAttribute">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">removeAttribute()</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"> </td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="usage"><span class="LITERAL">public void removeAttribute(String name)</span></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+Entfernt das angegebene Attribut aus der Anforderung.
+</p></td>
+</tr>
+</table>
+</div>
+<div id="setAttribute">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">setAttribute()</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"> </td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="usage"><span class="LITERAL">public Object setAttribute(String name, Object attribute)</span></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+Speichert das angegebene Attribut in der Anforderung.
+</p></td>
+</tr>
+</table>
+</div>
+<div id="getRealPath">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">getRealPath()</td>
+<td valign="top" class="COMPATIBILITY">Veraltet</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"> </td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="usage"><span class="LITERAL">public String getRealPath()</span></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+Ab der Servlet 2.1-API sollte stattdessen <span class="LITERAL">ServletContext.getRealPath(String)</span> verwendet werden.
+</p></td>
+</tr>
+</table>
+</div>
+<div id="isRequestSessionIdFromUrl">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">isRequestSessionIdFromUrl()</td>
+<td valign="top" class="COMPATIBILITY">Veraltet</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"> </td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="usage"><span class="LITERAL">public boolean isRequestSessionIdFromUrl()</span></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+Ab der Servlet 2.1-API sollte stattdessen <span class="LITERAL">isRequestedSessionIdFromURL()</span> verwendet werden.
+</p></td>
+</tr>
+</table>
+</div>
+</body>
+</html>

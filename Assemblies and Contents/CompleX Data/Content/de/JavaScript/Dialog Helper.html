@@ -1,0 +1,339 @@
+<html>
+<link rel="stylesheet" href="josh.css">
+<body bgcolor="#FFFFFF">
+
+		<div id="Beschreibung">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">Dialog Helper</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">nicht zutreffend</span> IE <span class="emphasis">6(Win)</span>  DOM <span class="emphasis">nicht zutreffend</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Das Dialog Helper-Objekt ist ein ActiveX-Steuerelement, da in IE 6 f&uuml;r Windows enthalten ist und eine kleine Auswahl potentiell n&uuml;tzlicher System- und Dokumentinformationen bereitstellt. Au&szlig;erdem zeigt die Methode ein Farbauswahldialogfeld an, mit dessen Hilfe Ihre Skripts die Farbauswahl des Benutzers &uuml;bernehmen k&ouml;nnen. In aller Regel wird dieses Objekt bei der Skripterstellung in IE-Bearbeitungsmodus verwendet, wenn der Benutzer Farben, Schriften und Elemente ausw&auml;hlen muss. Seine Eigenschaften und Methoden k&ouml;nnen jedoch auch bei der Festlegung herk&ouml;mmlicher Browserdokumenteinstellungen hilfreich sein.
+</p>
+							</td>
+						</tr>
+						<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>F&uuml;r das Laden dieses Objekts in die Seite wird das folgende <span class="literal">&lt;object&gt;</span>-Tag ben&ouml;tigt:
+</p>
+<span class="PROGRAMLISTING"><pre>&lt;object id=&quot;dlgHelper&quot; classid=&quot;clsid:3050f819-98b5-11cf-bb82-00aa00bdce0b&quot; 
+        width=&quot;0px&quot; height=&quot;0px&gt;
+&lt;/object&gt; &quot;</pre></span>
+							</td>
+						</tr>
+						<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Da dieses Objekt nicht dargestellt wird, k&ouml;nnen Sie sein Tag im <span class="literal">head</span>-Abschnitt Ihres Dokuments platzieren. Au&szlig;erdem haben Sie die M&ouml;glichkeit, dem <span class="literal">id</span>-Attribut einen Bezeichner Ihrer Wahl zuzuweisen. Einmal geladen, l&auml;sst sich das Objekt als globales Objekt im Fenster referenzieren.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="htmlequivalent"><span class="title">HTML-&Auml;quivalent</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Keines.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectmodelreference"><span class="title">Objektmodellreferenz</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>[window.]document.getElementById("<span class="replaceable">elementID</span>")</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectspecificproperties"><span class="title">Objektspezifische Eigenschaften</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<table border="1"><tbody><tr><td><span class="literal">blockFormats</span></td><td><span class="literal">fonts</span></td>
+								</tr>
+							</tbody></table>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectspecificmethods"><span class="title">Objektspezifische Methoden</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<table border="1"><tbody><tr><td><span class="literal">ChooseColorDlg( )</span></td><td><span class="literal">getCharset( )</span></td>
+								</tr>
+							</tbody></table>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectspecificeventhandlerproperties"><span class="title">Objektspezifische Ereignisbehandlungsroutineneigenschaften</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Keine.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="blockFormats">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">blockFormats</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">nicht zutreffend</span> IE <span class="emphasis">6</span>  DOM <span class="emphasis">nicht zutreffend</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Schreibgesch&uuml;tzt</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Gibt eine Objektsammlung unverschl&uuml;sselter Namen von Blockebenen-Elementen zur&uuml;ck, die vom Browser unterst&uuml;tzt werden. Anders als bei anderen IE-Sammlungen m&uuml;ssen Sie zum Lesen der Elementanzahl auf ihre <span class="literal">Count</span>-Eigenschaft und nicht auf die <span class="literal">length</span>-Eigenschaft zugreifen. Die Namen der Elemente werden in Form von Zeichenfolgen zur&uuml;ckgegeben, wie zum Beispiel "Heading 1" und "Numbered List" (die den Elementen <span class="literal">h1</span> und <span class="literal">ol</span> entsprechen). Der Zugriff auf die in der Objektsammlung enthaltenen Elemente geschieht mithilfe ihrer <span class="literal">item( )</span>-Methode.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>var blockList = dlgHelper.blockFormats;
+var blockNames = new Array( );
+for (var i = 0; i &lt; blockList.Count; i++) {
+    blockNames[blockNames.length]= blockList.item(i);
+}</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Array mit Zeichenfolgen</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Standardwert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Abh&auml;ngig von der Implementierung.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="fonts">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">fonts</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">nicht zutreffend</span> IE <span class="emphasis">6</span>  DOM <span class="emphasis">nicht zutreffend</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Schreibgesch&uuml;tzt</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Gibt eine Objektsammlung mit unverschl&uuml;sselten Namen der Systemschriften zur&uuml;ck. Anders als bei anderen IE-Sammlungen m&uuml;ssen Sie zum Lesen der Elementanzahl auf ihre <span class="literal">Count</span>-Eigenschaft und nicht auf die <span class="literal">length</span>-Eigenschaft zugreifen. Die Namen der Elemente werden in Form von Zeichenfolgen zur&uuml;ckgegeben, wie zum Beispiel "MS Sans Serif" oder "Verdana". Der Zugriff auf die in der Objektsammlung enthaltenen Elemente geschieht mithilfe ihrer <span class="literal">item( )</span>-Methode.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>var fontList = dlgHelper.fonts;
+var fontNames = new Array( );
+for (var i = 0; i &lt; fontList.Count; i++) {
+    fontNames [fontNames .length]= fontList .item(i);
+}</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Array mit Zeichenfolgen</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Standardwert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Abh&auml;ngig von der Implementierung.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="ChooseColorDlg( )">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">ChooseColorDlg( )</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">nicht zutreffend</span> IE <span class="emphasis">6</span>  DOM <span class="emphasis">nicht zutreffend</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">ChooseColorDlg([<span class="replaceable">initialHexColor</span>])</p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Zeigt ein Farbauswahldialogfeld an und gibt eine Dezimalzahl zur&uuml;ck, die der vom Benutzer ausgew&auml;hlten Farbe entspricht. Um die Farbe auf den Stil oder eine andere Farbeigenschaftseinstellung anzuwenden, m&uuml;ssen Sie den Dezimalwert m&ouml;glicherweise in einen geeigneten hexadezimalen Triplett-Wert im Format <span class="literal">#</span><span class="replaceable">RRGGBB</span> umwandeln. Das folgende Fragment demonstriert die Befehlsfolge zum Abfragen der Farbe, Umwandeln der R&uuml;ckgabe in den gew&uuml;nschten Zahlenwert und Zuweisen des Ergebniswerts an eine Stileigenschaft:
+</p>
+<span class="PROGRAMLISTING"><pre>var colorChoice = dlgHelper.ChooseColorDlg( );
+var hexColor = colorChoice.toString(16);
+while (hexColor.length&lt; 6) {hexColor = &quot;0&quot; + hexColor;}
+document.body.style.color = &quot;#&quot; + hexColor; </pre></span>
+							</td>
+						</tr>
+						<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Wenn der Benutzer im Dialogfeld eine benutzerdefinierte Farbe ausw&auml;hlt und einem kleinen Schnellzugriffsfeld hinzuf&uuml;gt, wird diese Farbe beim n&auml;chsten Aufruf des Dialogfeld nicht mehr im Farbfeld angezeigt. Eine benutzerdefinierte Farbe kann jedoch nach wie vor in die Vorauswahl aufgenommen werden, indem Sie ihren Hex-Wert als Parameter an die Methode &uuml;bergeben.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Parameter</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<ul><li><span class="literal"></span>Optionale hexadezimale Zahl zur Voreinstellung der im Dialogfeld standardm&auml;&szlig;ig ausgew&auml;hlten Farbe.
+</li></ul>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Zur&uuml;ckgegebener Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Dezimaler Integerwert, der die ausgew&auml;hlte Farbe angibt (0 bis zur Anzahl der in den Client-Einstellungen definierten Farben).
+</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="getCharset( )">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">getCharset( )</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">nicht zutreffend</span> IE <span class="emphasis">6</span>  DOM <span class="emphasis">nicht zutreffend</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">getCharset("<span class="replaceable">fontName</span>")</p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Gibt eine ganze Zahl zur&uuml;ck, die einer Konstanten entspricht, welche einem dem Betriebssystem bekannten Zeichensatz zugeordnet ist. Zu den f&uuml;r Schriftfamilien, die auf Latin-basierten Systemen installiert sind, h&auml;ufig zur&uuml;ckgegebenen Werten geh&ouml;ren die Werte 0 (der reine ANSI-Zeichensatz) und 2 (ein Symbolzeichensatz). Der erforderliche Parameter ist der Name einer Schrift, die auf ihren Zeichensatz hin untersucht werden soll. Diese Namen k&ouml;nnen aus der <span class="literal">fonts</span>-Eigenschaft des <span class="literal">Dialog Helper</span>-Objekts abgerufen werden.
+</p>
+<span class="PROGRAMLISTING"><pre>var setID = dlgHelper.getCharset(dlgHelper.fonts.item(4));</pre></span>
+							</td>
+						</tr>
+						<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Unter verschiedenen Windows-Versionen k&ouml;nnen unterschiedliche Zeichensatzgruppen installiert sein.</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Parameter</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<ul><li><span class="literal"></span>Zeichenfolge mit dem Namen der installierten Systemschrift.</li></ul>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Zur&uuml;ckgegebener Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Eine ganze Zahl.</p>
+					</td>
+				</tr>
+			</table>
+		</div>
+
+<div id="dir">
+
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">dir</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">5</span> DOM <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements"><span class="emphasis">Lesen/Schreiben</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Gibt die Richtung der Zeichendarstellung f&uuml;r den Elementtext an, sofern diese nicht durch den Unicode-Standard und dem Standard-Browsersprachsystem vorgegeben ist. Die Zeichendarstellung erfolgt entweder von links nach rechts oder von rechts nach links.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p><span class="literal">ltr</span> <span class="literal">|</span> <span class="literal">rtl</span> (von der Gro&szlig;-/Kleinschreibung unabh&auml;ngige Zeichenfolge).
+</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Standardwert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p><span class="literal">ltr</span></p>
+					</td>
+				</tr>
+			</table>
+		</div>
+</body>
+</html>

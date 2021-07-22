@@ -1,0 +1,572 @@
+<html>
+
+<link rel="stylesheet" href="../HTML/josh.css"><head>
+
+
+<title>pageContext</title>
+</head>
+<body bgcolor="#FFFFFF" text="#000000">
+<div id="Beschreibung">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">pageContext</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Variablenname:</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+<p><span class="LITERAL">pageContext</span></p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Klassenname:</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+<p><span class="LITERAL">javax.servlet.jsp.PageContext</span></p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Erweitert:</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+<p>Keine</p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Implementiert:</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+<p>Keine</p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Implementiert von:</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+<p>Eine konkrete Unterklasse dieser abstrakten Klasse ist als interne containerabh&auml;ngige Klasse verf&uuml;gbar.
+</p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">JSP-Seitentyp:</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+<p>Verf&uuml;gbar in regul&auml;ren JSP-Seiten und Fehlerseiten</p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Beschreibung</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+<p>Eine Instanz von <span class="LITERAL">PageContext</span> erm&ouml;glicht den Zugriff auf alle JSP-Ebenen und mehrere <span class="LITERAL">page</span>-Attribute. Au&szlig;erdem bietet sie eine Ebene oberhalb der Containerimplementierungsdetails, damit Container portable JSP-Implementierungsklassen generieren k&ouml;nnen. Die Ebene von JSP-Seiten wird von <span class="LITERAL">PageContext</span>-Attributen dargestellt. F&uuml;r jede Anforderung erstellt der Webcontainer eine eindeutige Instanz dieses Objekts und weist sie der Variablen <span class="LITERAL">pageContext</span> zu.
+</p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Konstanten</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+<span class="PROGRAMLISTING"><pre>public static final int PAGE_SCOPE = 1;
+public static final int REQUEST_SCOPE = 2;
+public static final int SESSION_SCOPE = 3;
+public static final int APPLICATION_SCOPE = 4;</pre></span>
+
+</td>
+</tr>
+</table>
+</div>
+<div id="findAttribute">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">findAttribute()</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="usage"><span class="LITERAL">public abstract Object findAttribute(String name)</span></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+Sucht das benannte Attribut nacheinander in der Seite, Anforderung, Sitzung (falls g&uuml;ltig) und der Anwendungsebene und gibt den zugeh&ouml;rigen Wert zur&uuml;ck. Wenn das Attribut nicht gefunden wird, lautet die R&uuml;ckgabe <span class="LITERAL">null</span>.
+</p></td>
+</tr>
+</table>
+</div>
+<div id="forward">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">forward()</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="usage"><span class="LITERAL">public abstract void forward(String relativeUrlPath)<br> &nbsp;&nbsp;throws ServletException, java.io.IOException</span></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+Leitet die aktuelle Anforderung an eine andere aktive Komponente in der Anwendung weiter, wie beispielsweise ein Servlet oder eine JSP-Seite. Wenn der angegebene URI-Pfad mit einem Schr&auml;gstrich beginnt, wird er als kontextbezogen interpretiert, andernfalls als seitenbezogen.
+</p>
+<p>
+Die Antwort darf nach einem Aufruf dieser Methode nicht mehr ge&auml;ndert werden, da sie &uuml;bernommen wird, bevor die Methode eine R&uuml;ckgabe liefert.
+</p></td>
+</tr>
+</table>
+</div>
+<div id="getAttribute">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">getAttribute()</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="usage"><span class="LITERAL">public abstract Object getAttribute(String name)</span></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+Gibt das <span class="LITERAL">Object</span> zur&uuml;ck, das dem angegebenen Attributnamen auf Seitenebene zugeordnet ist. Wenn das Attribut nicht gefunden wird, lautet die R&uuml;ckgabe <span class="LITERAL">null</span>.
+</p></td>
+</tr>
+</table>
+</div>
+<div id="getAttribute">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">getAttribute()</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="usage"><span class="LITERAL">public abstract Object getAttribute(String name, int scope)</span></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+Gibt das <span class="LITERAL">Object</span> zur&uuml;ck, das dem angegebenen Attributnamen auf der angegebenen Ebene zugeordnet ist. Wenn das Attribut nicht gefunden wird, lautet die R&uuml;ckgabe <span class="LITERAL">null</span>. Das Argument <span class="LITERAL">scope</span> muss einer der <span class="LITERAL">int</span>-Werte sein, die von den statischen Ebenenvariablen <span class="LITERAL">PageContext</span> angegeben werden.
+</p></td>
+</tr>
+</table>
+</div>
+<div id="getAttributeNamesInScope">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">getAttributeNamesInScope()</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="usage"><span class="LITERAL">public abstract java.util.Enumeration getAttributeNamesInScope(int scope)</span></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+Gibt eine <span class="LITERAL">Enumeration</span> mit <span class="LITERAL">String</span>-Objekten zur&uuml;ck, die alle Attributnamen f&uuml;r die angegebene Ebene enthalten. Das Argument <span class="LITERAL">scope</span> muss einer der <span class="LITERAL">int</span>-Werte sein, die von den statischen Ebenenvariablen <span class="LITERAL">PageContext</span> angegeben werden.
+</p></td>
+</tr>
+</table>
+</div>
+<div id="getAttributesScope">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">getAttributesScope()</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="usage"><span class="LITERAL">public abstract int getAttributesScope(String name)</span></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+Gibt einen der <span class="LITERAL">int</span>-Werte zur&uuml;ck, die von den statischen Ebenenvariablen <span class="LITERAL">PageContext</span> f&uuml;r die Ebene des Objekts angegeben werden, das dem angegebenen Attributnamen zugeordnet ist. Wenn das Attribut nicht gefunden wird, lautet die R&uuml;ckgabe <span class="LITERAL">0</span>.
+</p></td>
+</tr>
+</table>
+</div>
+<div id="getException">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">getException()</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="usage"><span class="LITERAL">public abstract Exception getException()</span></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+Gibt die Ausnahme <span class="LITERAL">Exception</span> zur&uuml;ck, die den Aufruf der aktuellen Seite verursacht hat, wenn das Attribut <span class="LITERAL">isErrorPage</span> der Direktive <span class="LITERAL">page</span> auf <span class="LITERAL">true</span> eingestellt ist.
+</p></td>
+</tr>
+</table>
+</div>
+<div id="getOut">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">getOut()</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="usage"><span class="LITERAL">public abstract JspWriter getOut()</span></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+Gibt das aktuelle Objekt <span class="LITERAL">JspWriter</span> f&uuml;r die Seite zur&uuml;ck. Wenn diese Methode von einer Tag-Prozedur aufgerufen wird, die <span class="LITERAL">BodyTag</span> implementiert, oder im Body eines anderen Aktionselements verschachtelt ist, kann es sich bei dem zur&uuml;ckgegebenen Objekt um eine Instanz der Unterklasse <span class="LITERAL">BodyContent</span> handeln.
+</p></td>
+</tr>
+</table>
+</div>
+<div id="getPage">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">getPage()</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="usage"><span class="LITERAL">public abstract Object getPage()</span></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+Gibt das <span class="LITERAL">Object</span> zur&uuml;ck, das die Instanz der JSP-Seitenimplementierungsklasse darstellt, der dieses Objekt <span class="LITERAL">PageContext</span> zugeordnet ist.
+</p></td>
+</tr>
+</table>
+</div>
+<div id="getRequest">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">getRequest()</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="usage"><span class="LITERAL">public abstract ServletRequest getRequest()</span></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+Gibt das aktuelle Anforderungsobjekt <span class="LITERAL">ServletRequest</span> zur&uuml;ck.
+</p></td>
+
+</tr>
+</table>
+</div>
+<div id="getResponse">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">getResponse()</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="usage"><span class="LITERAL">public abstract ServletResponse getResponse()</span></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+Gibt das aktuelle Anwortobjekt <span class="LITERAL">ServletResponse</span> zur&uuml;ck.
+</p></td>
+</tr>
+</table>
+</div>
+<div id="getServletConfig">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">getServletConfig()</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="usage"><span class="LITERAL">public abstract ServletConfig getServletConfig()</span></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+Gibt das Objekt <span class="LITERAL">ServletConfig</span> f&uuml;r diese Instanz der JSP-Seitenimplementierungsklasse zur&uuml;ck.
+</p></td>
+</tr>
+</table>
+</div>
+<div id="getServletContext">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">getServletContext()</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="usage"><span class="LITERAL">public abstract ServletContext getServletContext()</span></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+Gibt das Objekt <span class="LITERAL">ServletContext</span> f&uuml;r diese Instanz der JSP-Seitenimplementierungsklasse zur&uuml;ck.
+</p></td>
+</tr>
+</table>
+</div>
+<div id="getSession">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">getSession()</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="usage"><span class="LITERAL">public abstract HttpSession getSession()</span></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+Gibt das aktuelle Sitzungsobjekt <span class="LITERAL">HttpSession</span> zur&uuml;ck. Wenn das Attribut <span class="LITERAL">session</span> der Direktive <span class="LITERAL">page</span> auf <span class="LITERAL">false</span> eingestellt ist, lautet die R&uuml;ckgabe <span class="LITERAL">null</span>.
+</p></td>
+</tr>
+</table>
+</div>
+<div id="handlePageException">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">handlePageException()</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="usage"><span class="LITERAL">public abstract void handlePageException(Exception e)<br> &nbsp;&nbsp;throws ServletException, java.io.IOException</span></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+Diese Methode soll von der JSP-Implementierungsklasse nur zu dem Zweck aufgerufen werden, nicht verarbeitete Ausnahmen zu verarbeiten. Dazu wird die Anforderungsausnahme an die Fehlerseite weitergeleitet, die vom Attribut <span class="LITERAL">errorPage</span> der Direktive <span class="LITERAL">page</span> angegeben wird, oder es wird eine implementierungsabh&auml;ngige Aktion ausgef&uuml;hrt (wenn keine Fehlerseite angegeben ist).
+</p></td>
+</tr>
+</table>
+</div>
+<div id="include">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">include()</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+
+<td valign="top" colspan="2" class="usage"><span class="LITERAL">public abstract void include(String relativeUrlPath)</span><br> &nbsp;&nbsp;throws ServletException, java.io.IOException</td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+Bewirkt, dass die angegebene Ressource als Teil der aktuellen Anforderung verarbeitet wird. Das aktuelle Objekt <span class="LITERAL">JspWriter</span> wird geleert, bevor die Zielressource aufgerufen wird. Die Ausgabe, die bei der Anforderungsverarbeitung durch die Zielressource entsteht, wird direkt in das Schreibobjekt des aktuellen Objekts <span class="LITERAL">ServletResponse</span> geschrieben. Wenn der angegebene URI-Pfad mit einem Schr&auml;gstrich beginnt, wird er als kontextbezogen interpretiert, andernfalls als seitenbezogen.
+</p></td>
+</tr>
+</table>
+</div>
+<div id="initialize">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">initialize()</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="usage"><span class="LITERAL">public abstract void initialize(Servlet servlet, ServletRequest request, ServletResponse response, String errorPageURL, boolean needsSession, int bufferSize, boolean autoFlush)<br> &nbsp;&nbsp;throws java.io.IOException, IllegalStateException, IllegalArgumentException</span></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+Diese Methode wird aufgerufen, um ein Objekt <span class="LITERAL">PageContext</span> zu initialisieren, damit es von einer JSP-Implementierungsklasse verwendet werden kann, um eine eingehende Anforderung zu beantworten. Normalerweise wird diese Methode von der Methode <span class="LITERAL">JspFactory.getPageContext()</span> aufgerufen.
+</p></td>
+</tr>
+</table>
+</div>
+<div id="popBody">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">popBody()</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="usage"><span class="LITERAL">public JspWriter popBody()</span></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+Diese Methode soll von der JSP-Seitenimplementierungsklasse nur zu dem Zweck aufgerufen werden, das vorherige Objekt <span class="LITERAL">JspWriter</span>, das von der zugeh&ouml;rigen Methode <span class="LITERAL">pushBody()</span> gespeichert wurde, als aktuelles Objekt <span class="LITERAL">JspWriter</span> neu zuzuweisen.
+</p></td>
+</tr>
+</table>
+</div>
+<div id="pushBody">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">pushBody()</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="usage"><span class="LITERAL">public BodyContent pushBody()</span></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+Diese Methode soll von der JSP-Seitenimplementierungsklasse nur zu dem Zweck aufgerufen werden, ein neues Objekt <span class="LITERAL">BodyContent</span> abzurufen und das aktuelle Objekt <span class="LITERAL">JspWriter</span> im internen Stack des Objekts <span class="LITERAL">PageContext</span> zu speichern.
+</p></td>
+</tr>
+</table>
+</div>
+<div id="release">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">release()</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="usage"><span class="LITERAL">public abstract void release()</span></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+Setzt den internen Status eines Objekts <span class="LITERAL">PageContext</span> zur&uuml;ck. Dabei werden alle internen Verweise freigegeben, und das Objekt <span class="LITERAL">PageContext</span> wird f&uuml;r eine eventuelle Wiederverwendung durch einen sp&auml;teren Aufruf von <span class="LITERAL">initialize()</span> vorbereitet. Normalerweise wird diese Methode von der Methode <span class="LITERAL">JspFactory.releasePageContext()</span> aufgerufen.
+</p></td>
+</tr>
+</table>
+</div>
+<div id="removeAttribute">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">removeAttribute()</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="usage"><span class="LITERAL">public abstract void removeAttribute(String name)</span><br> <span class="LITERAL">public abstract void removeAttribute(String name, int scope)</span></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+Entfernt den Objektverweis, der dem angegebenen Attributnamen zugeordnet ist, aus der Seitenebene oder der angegebenen Ebene. Das Argument <span class="LITERAL">scope</span> muss einer der <span class="LITERAL">int</span>-Werte sein, die von den statischen Ebenenvariablen <span class="LITERAL">PageContext</span> angegeben werden.
+</p></td>
+</tr>
+</table>
+</div>
+<div id="setAttribute">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">setAttribute()</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="usage"><span class="LITERAL">public abstract void setAttribute(String name, Object attribute)<br> public abstract void setAttribute(String name, Object o, int scope)</span></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+Speichert den angegebenen Attributnamen und das angegebene Objekt in der Seitenebene oder in der angegebenen Ebene. Das Argument <span class="LITERAL">scope</span> muss einer der <span class="LITERAL">int</span>-Werte sein, die von den statischen Ebenenvariablen <span class="LITERAL">PageContext</span> angegeben werden.
+</p></td>
+</tr>
+</table>
+</div>
+<div id="PageContext">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">PageContext()</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="usage"><span class="LITERAL">public PageContext()</span></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+Erstellt eine Instanz der Klasse <span class="LITERAL">PageContext</span>. Normalerweise wird die Instanz von der Klasse <span class="LITERAL">JspFactory</span> erstellt und initialisiert.
+</p></td>
+</tr>
+</table>
+</div>
+</body>
+</html>

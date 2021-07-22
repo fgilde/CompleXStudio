@@ -1,0 +1,1466 @@
+<html>
+<head>
+<title>Stream-Objekt</title>
+</head>
+<body bgcolor="#FFFFFF" text="#000000">
+<div id="Beschreibung">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">Stream-Objekt</td>
+<td valign="top" class="COMPATIBILITY">(Versionen 2.5, 2.6)</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description">
+<synopsis>Dim <span class="replaceable">stream</span> As ADODB.Stream</synopsis>
+
+
+<p>Ein Stream-Objekt repr&auml;sentiert einen von einer URL erhaltenen Datenstrom, ein Record-Objekt oder &uuml;berhaupt nichts.</p>
+
+</td></tr>
+</table>
+</div>
+<div id="Stream.Cancel">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+Stream.Cancel-Methode</td>
+<td class="COMPATIBILITY">(Versionen 2.5, 2.6)</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2"><br>record.Cancel</td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+
+
+<p>Die Methode Cancel bricht einen asynchronen Vorgang f&uuml;r das Stream-Objekt ab.</p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Beschreibung</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Die Methode Cancel bricht einen asynchronen Vorgang des Record-Objekts ab, das von der Methode Open aufgerufen wurde.</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Siehe auch</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Stream.Open-Methode</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+<div id="Stream.CharSet">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+Stream.CharSet-Eigenschaft</td>
+<td class="COMPATIBILITY">(Versionen 2.5, 2.6)</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2"><br>stream.CharSet = <span class="replaceable">characterset</span></td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+
+
+<p>Die Eigenschaft CharSet gibt den Zeichensatz an, in den der Inhalt eines Textdatenstroms &uuml;bersetzt werden soll.</p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Datentyp</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>String</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Beschreibung</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Die Eigenschaft CharSet kann nur dann auf einen g&uuml;ltigen Zeichensatz festgelegt werden, wenn die Eigenschaft Position des Stream-Objekts auf &quot;0&quot; gesetzt ist. Die f&uuml;r ein System g&uuml;ltigen Zeichens&auml;tze sind in den Unterschl&uuml;sseln <span class="LITERAL">HKEY_CLASSES_ROOT\MIME\Database\CharSet</span> definiert.</p>
+
+
+<p>Der Standardwert f&uuml;r die Eigenschaft CharSet ist &quot;unicode&quot;. Wenn der Zeichensatz w&auml;hrend der Arbeit ge&auml;ndert wird, werden die Daten &uuml;bersetzt, w&auml;hrend sie aus dem Datenstrom gelesen und an die Anwendung weitergeleitet werden. Beim Schreiben von Daten werden die Informationen &uuml;bersetzt, bevor sie in der Datenquelle gespeichert werden.</p>
+
+
+<p>Diese Eigenschaft ist nur f&uuml;r Textdatenstr&ouml;me g&uuml;ltig, die Stream-Objekte mit einem Eigenschaftswert Type von <span class="LITERAL">adTypeText</span> sind.</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Siehe auch</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Stream.Type-Eigenschaft</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+<div id="Stream.Close">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+Stream.Close-Methode</td>
+<td class="COMPATIBILITY">(Versionen 2.5, 2.6)</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2"><br>record.Close</td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+
+
+<p>Die Methode Close schlie&szlig;t ein ge&ouml;ffnetes Stream-Objekt.</p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Beschreibung</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Die Methode Close kann nur f&uuml;r ein ge&ouml;ffnetes Stream-Objekt aufgerufen werden. Nach Aufruf der Close-Methode kann die Open-Methode erneut aufgerufen werden, um das Stream-Objekt wieder zu &ouml;ffnen. Durch Aufrufen der Close-Methode werden alle dem Stream-Objekt zugewiesenen Ressourcen freigegeben.</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+<div id="Stream.CopyTo">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+Stream.CopyTo-Methode</td>
+<td class="COMPATIBILITY">(Versionen 2.5, 2.6)</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2"><br><span class="replaceable">stream</span>.CopyTo <span class="replaceable">DestStream, NumChars</span></td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+
+
+<p>Die CopyTo-Methode kopiert Daten von einem Datenstrom zu einem anderen.</p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Argumente</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<dl>
+<dt><span class="replaceable">DestStream</span> (Stream-Objekt)</dt>
+<dd><p>Muss auf ein g&uuml;ltiges, offenes Stream-Objekt eingestellt sein. Andernfalls tritt ein Laufzeitfehler auf.</p></dd>
+
+</dl>
+
+
+<dl>
+<dt><span class="replaceable">NumChars</span> (ganzzahliger Wert)</dt>
+<dd><p>Optional. Gibt die Anzahl Zeichen an, die von dem Quell- zum Ziel-Stream-Objekt kopiert werden sollen. Der Standardwert ist &quot;-1&quot;. Dieser Wert bedeutet, dass alle verbleibenden Daten kopiert werden sollen.</p></dd>
+
+</dl>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Beschreibung</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>&Uuml;ber die CopyTo-Methode werden Daten eines Quell-Stream-Objekts, beginnend an der aktuellen Position des Datenstromzeigers (angegeben durch die Stream.Position-Eigenschaft), kopiert. Die Anzahl der kopierten Zeichen entspricht entweder der durch das Argument <span class="replaceable">NumChars</span> angegebenen Anzahl oder dem Rest des Quelldatenstroms, wenn das Argument <span class="replaceable">NumChars</span> gr&ouml;&szlig;er als die Anzahl der verbleibenden Zeichen in dem Quelldatenstrom ist bzw. der Wert des Arguments <span class="replaceable">NumChars</span> &quot;-1&quot; betr&auml;gt.</p>
+
+
+<p>Die Position des Datenstromzeigers des Ziel-Stream-Objekts wird automatisch auf das n&auml;chste verf&uuml;gbare Byte im Stream-Objekt gesetzt. Die CopyTo-Methode entfernt nach dem Kopiervorgang &uuml;bersch&uuml;ssige Daten nicht aus dem Ziel-Stream-Objekt. Hierf&uuml;r m&uuml;ssen Sie die SetEOS-Methode aufrufen.</p>
+
+
+<p>Daten aus einem Text-Stream-Objekt k&ouml;nnen in ein bin&auml;res Stream-Objekt kopiert werden, jedoch nicht umgekehrt von einem bin&auml;ren zu einem Text-Stream-Objekt.</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Siehe auch</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Stream.Position-Eigenschaft, Stream.SetEOS-Methode</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+<div id="Stream.EOS">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+Stream.EOS-Eigenschaft</td>
+<td class="COMPATIBILITY">(Versionen 2.5, 2.6)</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2"><br><span class="replaceable">Boolean = stream</span>.EOS</td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+
+
+<p>Die EOS-Eigenschaft gibt an, dass der Datenstromzeiger sich zur Zeit am Ende des Datenstroms befindet.</p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Datentyp</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Boolesch</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Beschreibung</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Die Eigenschaft EOS ist <span class="LITERAL">True</span>, wenn der Datenstromzeiger sich direkt nach der letzten Information im Datenstrom befindet und auf den End-Of-Stream-Zeiger zeigt.</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+<div id="Stream.Flush">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+Stream.Flush-Methode</td>
+<td class="COMPATIBILITY">(Versionen 2.5, 2.6)</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2"><br>stream.Flush</td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+
+
+<p>&Uuml;ber die Flush-Methode stellen Sie sicher, dass alle &Auml;nderungen, die an einem Stream-Objekt vorgenommen wurden, f&uuml;r die Ressource &uuml;bernommen werden, die das Stream-Objekt repr&auml;sentiert.</p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Beschreibung</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Die Flush-Methode &uuml;bergibt verbleibende &Auml;nderungen an dem Stream-Objekt an die Ressource, die durch das Stream-Objekt repr&auml;sentiert wird. Microsoft versichert, dass dies sehr selten erforderlich ist, da ADO diese Methode wann immer m&ouml;glich intern im Hintergrund aufruft. Dar&uuml;ber hinaus wird der Datenstrom beim Schlie&szlig;en eines Stream-Objekt zuerst an die Datenquelle &uuml;bergeben.</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+<div id="Stream.LineSeparator">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+Stream.LineSeparator-Eigenschaft</td>
+<td class="COMPATIBILITY">(Versionen 2.5, 2.6)</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2"><br><span class="replaceable">stream</span>.LineSeparator = <span class="replaceable">lineseparator</span></td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+
+
+<p>Die Eigenschaft LineSeparator legt das bzw. die Zeichen fest, das/die f&uuml;r die Angabe des Endes einer Zeile in Textdatenstr&ouml;men verwendet wird.</p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Datentyp</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>LineSeparatorEnum</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Beschreibung</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Der Standardwert f&uuml;r die LineSeparator-Eigenschaft ist <span class="LITERAL">adCRLF</span>. Dieser Wert steht sowohl f&uuml;r Zeilenumbruch als auch Zeilenvorschub.</p>
+
+
+<p>Diese Eigenschaft ist nur f&uuml;r Textdatenstr&ouml;me g&uuml;ltig, die Stream-Objekte mit einem Eigenschaftswert Type von <span class="LITERAL">adTypeText</span> sind.</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Siehe auch</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>LineSeparatorEnum-Enumeration, Stream.SkipLine-Methode</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+<div id="Stream.LoadFromFile">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+Stream.LoadFromFile-Methode</td>
+<td class="COMPATIBILITY">(Versionen 2.5, 2.6)</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2"><br>stream.LoadFromFile <span class="replaceable">FileName</span></td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+
+
+<p>&Uuml;ber die Methode LoadFromFile wird ein Dateiinhalt in ein bereits ge&ouml;ffnetes Stream-Objekt geladen.</p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Argumente</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<dl>
+<dt><span class="replaceable">FileName</span> (String)</dt>
+<dd><p>Muss einen Namen einer g&uuml;ltigen Datei enthalten, die in das zur Zeit ge&ouml;ffnete Stream-Objekt geladen werden soll. Falls die durch dieses Argument angegebene Datei nicht gefunden wird, tritt ein Laufzeitfehler auf.</p></dd>
+
+</dl>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Beschreibung</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Die LoadFromFile-Methode funktioniert nur mit einem bereits ge&ouml;ffneten Stream-Objekt. Hierbei wird der Inhalt des Objekts durch den Inhalt der in dem LoadFromFile-Argument angegebenen Datei <span class="replaceable">FileName</span> ersetzt. Alle vorher bestehenden Daten werden &uuml;berschrieben und &uuml;berz&auml;hlige Daten abgeschnitten. Das Stream-Objekt verliert jedoch nicht seine Beziehung zu der Ressource, durch die es urspr&uuml;nglich ge&ouml;ffnet wurde.</p>
+
+
+<p>Die LoadFromFile-Methode kann zum Hochladen einer Datei von einem Client auf einen Server eingesetzt werden.</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+<div id="Stream.Mode">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+Stream.Mode-Eigenschaft</td>
+<td class="COMPATIBILITY">(Versionen 2.5, 2.6)</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2"><br><span class="replaceable">stream</span>.Mode = ConnectModeEnum</td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+
+
+<p>Die Mode-Eigenschaft zeigt die Berechtigungen zur Bearbeitung von Daten in einem Stream-Objekt an.</p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Datentyp</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>ConnectModeEnum</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Beschreibung</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Der Standardwert f&uuml;r die Mode-Eigenschaft eines Stream-Objekts, das einer zugrunde liegenden Quelle zugeordnet ist, ist <span class="LITERAL">adModeRead</span>. F&uuml;r Stream-Objekte, die im Speicher instanziiert sind, ist der Standardwert f&uuml;r die Mode-Eigenschaft <span class="LITERAL">adModeUnknown</span>.</p>
+
+
+<p>F&uuml;r die Eigenschaft Mode besteht Lese- und Schreibberechtigung, w&auml;hrend das Stream-Objekt geschlossen ist. In ge&ouml;ffnetem Zustand ist sie schreibgesch&uuml;tzt.</p>
+
+
+<p>Wenn die Mode-Eigenschaft f&uuml;r ein Stream-Objekt nicht angegeben ist, wird sie von der Quelle &uuml;bernommen, die zum &Ouml;ffnen des Objekts verwendet wird, z.&nbsp;B. von einem Record-Objekt.</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Siehe auch</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>ConnectModerEnum-Enumeration, Stream.Open-Methode</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+<div id="Stream.Open">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+Stream.Open-Methode</td>
+<td class="COMPATIBILITY">(Versionen 2.5, 2.6)</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2"><br>stream.Open <span class="replaceable">Source, Mode, OpenOptions, UserName, Password</span></td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+
+
+<p>Anhand der Open-Methode wird ein Stream-Objekt aus einer URL, einem ge&ouml;ffneten Record-Objekt oder ohne Quelle im Speicher ge&ouml;ffnet.</p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Argumente</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<dl>
+<dt><span class="replaceable">Source</span> (Variante)</dt>
+<dd><p>Optional. Gibt die Quelle der zu &ouml;ffnenden Ressource an. Hierbei kann es sich um eine URL oder ein ge&ouml;ffnetes Record-Objekt handeln. Durch Auslassen dieses Arguments wird ADO angewiesen, das Stream-Objekt ausschlie&szlig;lich im Speicher zu &ouml;ffnen.</p></dd>
+
+</dl>
+
+
+<dl>
+<dt><span class="replaceable">Mode</span> (ConnectModeEnum)</dt>
+<dd><p>Optional. Gibt die Zugangsberechtigungen zum &Ouml;ffnen des Stream-Objekts an. Der Standardwert ist <span class="LITERAL">adModeUnknown</span>. Wenn das Stream-Objekt &uuml;ber ein Record-Objekt ge&ouml;ffnet wird, wird der Mode-Wert von diesem Objekt &uuml;bernommen und dieses Argument ignoriert.</p></dd>
+
+</dl>
+
+
+<dl>
+<dt><span class="replaceable">OpenOptions</span> (StreamOpenOptions)</dt>
+<dd><p>Optional. Kann einem oder mehreren StreamOpenOptions-Enumerationswerten entsprechen, die angeben, ob das Stream-Objekt asynchron oder &uuml;ber ein Record-Objekt ge&ouml;ffnet werden soll. Der Standardwert ist jedoch <span class="LITERAL">adOpenStreamUnspecified</span>.</p></dd>
+
+</dl>
+
+
+<dl>
+<dt><span class="replaceable">UserName</span> (String)</dt>
+<dd><p>Optional. Gibt bei Bedarf den Benutzernamen an, der f&uuml;r den Zugriff auf die Ressource verwendet wird, die vom Quellargument angegeben ist. Wenn das Stream-Objekt &uuml;ber ein Record-Objekt ge&ouml;ffnet wird, wird dieser Wert ignoriert, da der Zugriff auf diese Ressource bereits gew&auml;hrt ist.</p></dd>
+
+</dl>
+
+
+<dl>
+<dt><span class="replaceable">Password</span> (String)</dt>
+<dd><p>Optional. Gibt bei Bedarf das Kennwort zur &Uuml;berpr&uuml;fung des Arguments <span class="replaceable">UserName</span> an. Wenn das Stream-Objekt &uuml;ber ein Record-Objekt ge&ouml;ffnet wird, wird dieser Wert ignoriert, da der Zugriff auf diese Ressource bereits gew&auml;hrt ist.</p></dd>
+
+</dl>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Beschreibung</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Die Open-Methode des Stream-Objekts kann &uuml;ber eine URL-Quelle, ein bereits ge&ouml;ffnetes Record-Objekt oder ohne eine Quelle ge&ouml;ffnet werden. Letzteres bedeutet, dass das Stream-Objekt im Speicher ge&ouml;ffnet wird. Wird nach der letzteren Methode vorgegangen, besteht Lese- und Schreibberechtigung f&uuml;r das Stream-Objekt wie auch bei den anderen Methoden, Sie k&ouml;nnen Daten jedoch nur unter der Verwendung der Methoden SaveToFile bzw. LoadFromFile &uuml;bergeben und abrufen.</p>
+
+
+<p>Wenn ein Stream-Objekt &uuml;ber ein bereits ge&ouml;ffnetes Record-Objekt ge&ouml;ffnet wird, wird der Mode-Wert des Record-Objekts &uuml;bernommen und die Eigenschaften <span class="replaceable">UserName</span> und <span class="replaceable">Password</span>, falls angegeben, werden ignoriert, da der Zugriff bereits gew&auml;hrt sein muss, wenn das Record-Objekt ge&ouml;ffnet ist. Beim &Ouml;ffnen eines Stream-Objekts &uuml;ber ein Record-Objekt m&uuml;ssen Sie den Enumerationswert <span class="LITERAL">adOpenStreamFromRecord</span> als OpenOptions-Argument festlegen. ADO verwendet dann den Standarddatenstrom des Record-Objekts, um das Stream-Objekt mit Daten zu f&uuml;llen.</p>
+
+
+<p>Wenn Sie das Stream-Objekt mit einer URL &ouml;ffnen, m&uuml;ssen Sie das URL-Schl&uuml;sselwort (URL=scheme://Server/Ordner) verwenden.</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Siehe auch</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>ConnectModeEnum-Enumeration, Stream.LoadFromFile-Methode, Stream.Mode-Eigenschaft, Stream.SaveToFile-Methode, StreamOpenOptionsEnum-Enumeration</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+<div id="Stream.Position">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+Stream.Position-Eigenschaft</td>
+<td class="COMPATIBILITY">(Versionen 2.5, 2.6)</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2"><br><span class="replaceable">stream</span>.Position = <span class="replaceable">number</span></td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+
+
+<p>Die Eigenschaft Position  gibt die Position des Datenstromzeigers innerhalb des Stream-Objekts an.</p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Datentyp</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Long</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Beschreibung</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Die Eigenschaft Position  kann auf eine beliebige positive Zahl oder auf Null gesetzt werden. Ihr Wert kann auch gr&ouml;&szlig;er sein als die Gr&ouml;&szlig;e des aktuellen Stream-Objekts. Wenn Sie letzteres f&uuml;r Datenstr&ouml;me mit Schreibberechtigung ausf&uuml;hren, k&ouml;nnen Sie die Gr&ouml;&szlig;e des Stream-Objekts erh&ouml;hen, indem Sie automatisch <span class="LITERAL">Null</span>-Werte hinzuf&uuml;gen. Dasselbe k&ouml;nnen Sie f&uuml;r schreibgesch&uuml;tzte Datenstr&ouml;me ausf&uuml;hren, allerdings wird hierdurch die Gr&ouml;&szlig;e nicht ver&auml;ndert, und dieser Vorgang wird nicht empfohlen.</p>
+
+
+<p>Die Eigenschaft Position gibt die Anzahl Byte an, die der Datenstromzeiger vom ersten Byte im Datenstrom entfernt ist. Wenn Ihr Zeichensatz mehrere Byte f&uuml;r jedes Zeichen zul&auml;sst, m&uuml;ssen Sie diese Anzahl mit der gew&uuml;nschten Position multiplizieren, um die genaue Zeichenposition zu ermitteln. Wenn Sie beispielsweise mit Unicode arbeiten, repr&auml;sentiert &quot;0&quot; das erste und &quot;2&quot; das zweite Zeichen.</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+<div id="Stream.Read">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+Stream.Read-Methode</td>
+<td class="COMPATIBILITY">(Versionen 2.5, 2.6)</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2"><br>bytes = stream.Read (<span class="replaceable">NumBytes</span>)</td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+
+
+<p>Die Methode Read liest eine Anzahl Byte eines Bin&auml;rdatenstroms.</p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Argumente</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<dl>
+<dt><span class="replaceable">NumBytes</span> (Long oder StreamReadEnum)</dt>
+<dd><p>Optional. Gibt die Anzahl Byte an, die aus dem Bin&auml;rdatenstrom gelesen werden sollen. Der Standardwert ist <span class="LITERAL">adReadAll</span>, bei dem alle im Datenstrom verbliebenen Byte zur&uuml;ckgegeben werden.</p></dd>
+
+</dl>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">R&uuml;ckgabewerte</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Variante (Array)</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Beschreibung</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Die Read-Methode wird dazu eingesetzt, Bin&auml;rdatenstr&ouml;me zu lesen (die Eigenschaft Stream.Type entspricht <span class="LITERAL">adTypeBinary</span>), w&auml;hrend die ReadText-Methode zum Lesen von Textdatenstr&ouml;men verwendet wird (die Eigenschaft Stream.Type entspricht <span class="LITERAL">adTypeText</span>).</p>
+
+
+<p>Der R&uuml;ckgabewert ist ein Varianten-Array aus Byte, deren Anzahl der Anzahl der erforderlichen Byte bzw. der Anzahl im Datenstrom verbleibender Byte entspricht, wenn die Anzahl der verbleibenden Byte kleiner als die erforderliche Anzahl Byte ist. Sind keine Daten f&uuml;r die R&uuml;ckgabe vorhanden, wird der Variantenwert <span class="LITERAL">Null</span> zur&uuml;ckgegeben.</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Siehe auch</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Stream.ReadText-Methode, Stream.Type-Eigenschaft, StreamReadEnum-Enumeration</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+<div id="Stream.ReadText">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+Stream.ReadText-Methode</td>
+<td class="COMPATIBILITY">(Versionen 2.5, 2.6)</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2"><br>string = stream.ReadText (<span class="replaceable">NumChars</span>)</td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+
+
+<p>Die Methode ReadText liest eine Anzahl Zeichen eines Bin&auml;rdatenstroms.</p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Argumente</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<dl>
+<dt><span class="replaceable">NumChars</span> (Long oder StreamReadEnum)</dt>
+<dd><p>Optional. Gibt die Anzahl Zeichen an, die aus dem Textdatenstrom gelesen werden sollen. Der Standardwert ist <span class="LITERAL">adReadAll</span>, bei dem alle im Datenstrom verbliebenen Zeichen zur&uuml;ckgegeben werden. Sie k&ouml;nnen auch festlegen, dass die n&auml;chste Datenzeile mit dem Enumerationswert <span class="LITERAL">adReadLine</span> zur&uuml;ckgegeben wird.</p></dd>
+
+</dl>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">R&uuml;ckgabewerte</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>String</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Beschreibung</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Die ReadText-Methode liest Textdatenstr&ouml;me (die Eigenschaft Stream.Type entspricht <span class="LITERAL">adTypeText</span>), w&auml;hrend die Read-Methode zum Lesen von Bin&auml;rdatenstr&ouml;men verwendet wird (die Eigenschaft Stream.Type entspricht <span class="LITERAL">adTypeBinary</span>).</p>
+
+
+<p>Der R&uuml;ckgabewert ist ein Werte-String, der der Anzahl der erforderlichen Zeichen bzw. der Anzahl im Datenstrom verbleibender Zeichen entspricht, wenn die Anzahl der verbleibenden Zeichen kleiner als die erforderliche Anzahl Zeichen ist. Sind keine Daten f&uuml;r die R&uuml;ckgabe vorhanden, wird der Variantenwert <span class="LITERAL">Null</span> zur&uuml;ckgegeben.</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Siehe auch</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Stream.Read-Methode, Stream.Type-Eigenschaft, StreamReadEnum-Enumeration</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+<div id="Stream.SaveToFile">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+Stream.SaveToFile-Methode</td>
+<td class="COMPATIBILITY">(Versionen 2.5, 2.6)</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2"><br>stream.SaveToFile (<span class="replaceable">FileName, SaveOptions</span>)</td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+
+
+<p>Die Methode SaveToFile &uuml;bergibt die Daten eines Bin&auml;rdatenstroms an eine lokale Datei.</p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Argumente</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<dl>
+<dt><span class="replaceable">FileName</span> (String)</dt>
+<dd><p>Gibt an, wohin der Inhalt des aktuellen Stream-Objekts &uuml;bergeben wird.</p></dd>
+
+</dl>
+
+
+<dl>
+<dt><span class="replaceable">SaveOptions</span> (SaveOptionsEnum)</dt>
+<dd><p>Gibt an, ob eine Datei erstellt werden soll, wenn bisher keine vorhanden ist, ob eine vorhandene Datei &uuml;berschrieben werden soll, oder ob ein Fehler gemeldet werden soll, wenn bereits eine Datei vorhanden ist.</p></dd>
+
+</dl>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Beschreibung</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Die Methode SaveToFile &uuml;berschreibt eine vorhandene Datei vollst&auml;ndig, wenn der Enumerationswert <span class="LITERAL">adSaveCreateOverwrite</span> im Argument SaveOptions verwendet wird.</p>
+
+
+<p>Der Einsatz dieser Methode &auml;ndert weder den Inhalt des Stream-Objekts noch dessen Verkn&uuml;pfung zu der urspr&uuml;nglichen Ressource, mit der das Stream-Objekt ge&ouml;ffnet wurde. Der einzige Unterschied zu dem Stream-Objekt ist, dass die Eigenschaft Position auf den Anfang des Datenstroms (0) festgelegt ist.</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Siehe auch</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>SaveOptionsEnum-Enumeration, Stream.Position-Eigenschaft</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+<div id="Stream.SetEOS">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+Stream.SetEOS-Methode</td>
+<td class="COMPATIBILITY">(Versionen 2.5, 2.6)</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2"><br>stream.SetEOS</td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+
+
+<p>Die Methode SetEOS &auml;ndert den EOS in einem gegebenen Stream-Objekt und schneidet die Daten ab, die nach dem neuen EOS-Zeiger liegen.</p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Beschreibung</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Die SetEOS-Methode kann die L&auml;nge eines Stream-Objekts verk&uuml;rzen, wenn die Methoden Write, WriteText und CopyTo verwendet werden, die den Datenstrom nicht verk&uuml;rzen k&ouml;nnen.</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Siehe auch</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Stream.CopyTo-Methode, Stream.Write-Methode, Stream.WriteText-Methode</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+<div id="Stream.Size">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+Stream.Size-Eigenschaft</td>
+<td class="COMPATIBILITY">(Versionen 2.5, 2.6)</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2"><br><span class="replaceable">size = stream</span>.Size</td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+
+
+<p>Die Eigenschaft Size repr&auml;sentiert die Anzahl Byte in einem Stream-Objekt.</p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Datentyp</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Long</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Beschreibung</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Da die Gr&ouml;&szlig;e des Stream-Objekts nur durch Ressourcen eingeschr&auml;nkt ist, enth&auml;lt ein Long-Wert m&ouml;glicherweise nicht die korrekte Gr&ouml;&szlig;e eines Datenstroms, wenn dieser die gr&ouml;&szlig;tm&ouml;gliche Zahl &uuml;bersteigt, die ein Long-Wert enthalten kann.</p>
+
+
+<p>Ist die Gr&ouml;&szlig;e des Datenstroms unbekannt, wird der Wert &quot;-1&quot; zur&uuml;ckgegeben.</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+<div id="Stream.SkipLine">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+Stream.SkipLine-Methode</td>
+<td class="COMPATIBILITY">(Versionen 2.5, 2.6)</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2"><br>stream.SkipLine</td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+
+
+<p>Die Methode SkipLine &uuml;berspringt ganze Zeilen beim Lesen von Textdatenstr&ouml;men.</p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Beschreibung</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Die SkipLine-Methode &uuml;berspringt eine ganze Zeile in einem Textdatenstrom (Stream.Type entspricht <span class="LITERAL">adTypeText</span>). Dies wird ausgef&uuml;hrt, indem nach dem n&auml;chsten Auftreten eines Zeilentrennzeichen (durch die Eigenschaft LineSeparator angegeben, die standardm&auml;&szlig;ig auf <span class="LITERAL">adCRLF</span> gesetzt ist) oder des EOS-Zeigers gesucht wird.</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Siehe auch</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>LineSeparatorEnum-Enumeration, Stream.LineSeparator-Eigenschaft, Stream.Type-Eigenschaft</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+<div id="Stream.State">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+Stream.State-Eigenschaft</td>
+<td class="COMPATIBILITY">(Versionen 2.5, 2.6)</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2"><br><span class="replaceable">state</span> = record.State</td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+
+
+<p>Die Eigenschaft State gibt den aktuellen Status des Stream-Objekts an.</p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Datentyp</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Long (ObjectStateEnum)</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Beschreibung</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Die schreibgesch&uuml;tzte Eigenschaft State gibt einen Long-Wert zur&uuml;ck, der als Enumerationswert ObjectStateEnum gewertet werden kann. Der Standardwert f&uuml;r das Stream-Objekt ist geschlossen.</p>
+
+
+<p>F&uuml;r das Stream-Objekt kann die Eigenschaft State mehrere Werte zur&uuml;ckgeben, wenn das Objekt einen Vorgang asynchron ausf&uuml;hrt (d.&nbsp;h. <span class="LITERAL">adStateOpen</span> und <span class="LITERAL">adStateExecuting</span>).</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Siehe auch</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>ObjectStateEnum-Enumeration</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+<div id="Stream.Type">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+Stream.Type-Eigenschaft</td>
+<td class="COMPATIBILITY">(Versionen 2.5, 2.6)</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2"><br><span class="replaceable">streamtype = stream</span>.Type</td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+
+
+<p>Die Eigenschaft Type gibt an, wie die Daten eines Stream-Objekts analysiert werden sollen.</p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Datentyp</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>StreamTypeEnum-Enumeration</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Beschreibung</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Der Standardwert f&uuml;r ein Stream-Objekt ist <span class="LITERAL">adTypeText</span>, wenn jedoch Bin&auml;rdaten in ein neues Stream-Objekt geschrieben werden, wird die Eigenschaft Type automatisch auf den Wert <span class="LITERAL">adTypeBinary</span> ge&auml;ndert.</p>
+
+
+<p>F&uuml;r die Eigenschaft Type besteht Lese- und Schreibberechtigung, w&auml;hrend der Datenstromzeiger sich auf Null befindet (Eigenschaft Position ist &quot;0&quot;), und sie ist schreibgesch&uuml;tzt, wenn der Zeiger sich an einer anderen Position befindet.</p>
+
+
+<p>Wenn die Eigenschaft Type auf <span class="LITERAL">adTypeText</span> eingestellt ist, sollten Sie die Methoden ReadText und WriteText zum Bearbeiten und Abrufen von Daten verwenden. Wenn die Eigenschaft Type auf <span class="LITERAL">adTypeBinary</span> eingestellt ist, sollten Sie die Methoden Read und Write zum Bearbeiten und Abrufen von Daten verwenden.</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Siehe auch</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Stream.Read-Methode, Stream.ReadText-Methode, Stream.Write-Methode, Stream.WriteText-Methode, StreamTypeEnum-Enumeration</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+<div id="Stream.Write">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+Stream.Write-Methode</td>
+<td class="COMPATIBILITY">(Versionen 2.5, 2.6)</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2"><br>stream.Write <span class="replaceable">Buffer</span></td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+
+
+<p>Die Methode Write schreibt eine Anzahl Byte in einen Bin&auml;rdatenstrom.</p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Argumente</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<dl>
+<dt><span class="replaceable">Buffer</span> (Variante)</dt>
+<dd><p>Enth&auml;lt ein Array von Byte-Werten, die in den aktuellen Bin&auml;rdatenstrom geschrieben werden sollen.</p></dd>
+
+</dl>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Beschreibung</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Nach dem Schreiben der angegebenen Byte in das Stream-Objekt, wird die Eigenschaft Position auf das Byte gesetzt, das auf das zuletzt geschriebene Byte folgt. Daten, die sich nach dem Ende der geschriebenen Byte befinden, werden nicht abgeschnitten. Wenn Sie diese Daten abschneiden m&ouml;chten, rufen Sie die Methode SetEOS auf.</p>
+
+
+<p>Wenn die geschriebenen Daten &uuml;ber die L&auml;nge des Stream-Objekts hinausgehen, werden die neuen Daten an das Stream-Objekt angeh&auml;ngt, der Datenstrom wird verl&auml;ngert, und der EOS-Zeiger wird an das neue Ende des Datenstroms verschoben.</p>
+
+
+<p>Die Write-Methode wird dazu eingesetzt, in Bin&auml;rdatenstr&ouml;me zu schreiben (die Eigenschaft Stream.Type entspricht <span class="LITERAL">adTypeBinary</span>), w&auml;hrend die WriteText-Methode zum Schreiben in Textdatenstr&ouml;me verwendet wird (die Eigenschaft Stream.Type entspricht <span class="LITERAL">adTypeText</span>).</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Siehe auch</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Stream.EOS-Eigenschaft, Stream.SetEOS-Methode, Stream.Type-Eigenschaft, Stream.WriteText-Methode, StreamWriteEnum-Enumeration</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+<div id="Stream.WriteText">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+Stream.WriteText-Methode</td>
+<td class="COMPATIBILITY">(Versionen 2.5, 2.6)</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2"><br>stream.WriteText <span class="replaceable">Data, Options</span></td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+
+
+<p>Die Methode WriteText schreibt eine Anzahl Byte in einen Bin&auml;rdatenstrom.</p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Argumente</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<dl>
+<dt><span class="replaceable">Data</span> (String)</dt>
+<dd><p>Repr&auml;sentiert die String-Daten, die in das Stream-Objekt geschrieben werden sollen.</p></dd>
+
+</dl>
+
+
+<dl>
+<dt><span class="replaceable">Options</span> (StreamWriteEnum)</dt>
+<dd><p>Optional. Gibt an, ob die Daten ausschlie&szlig;lich in das Stream-Objekt geschrieben werden oder ob dem Stream-Objekt die Daten und ein Zeilentrennzeichen (angegeben durch die Eigenschaft LineSeparator) hinzugef&uuml;gt werden. Standardm&auml;&szlig;ig wird kein Zeilentrennzeichen hinzugef&uuml;gt.</p></dd>
+
+</dl>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Beschreibung</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Nach dem Schreiben des angegebenen Strings in das Stream-Objekt, wird die Eigenschaft Position auf das Zeichen gesetzt, das auf das zuletzt geschriebene Zeichen folgt. Daten, die sich nach dem Ende der geschriebenen Byte befinden, werden nicht abgeschnitten. Wenn Sie diese Daten abschneiden m&ouml;chten, rufen Sie die Methode SetEOS auf.</p>
+
+
+<p>Wenn die geschriebenen Daten &uuml;ber die L&auml;nge des Stream-Objekts hinausgehen, werden die neuen Daten an das Stream-Objekt angeh&auml;ngt, der Datenstrom wird verl&auml;ngert, und der EOS-Zeiger wird an das neue Ende des Datenstroms verschoben.</p>
+
+
+<p>Die WriteText-Methode wird dazu eingesetzt, in Textdatenstr&ouml;me zu schreiben (die Eigenschaft Stream.Type entspricht <span class="LITERAL">adTypeText</span>), w&auml;hrend die Write-Methode zum Schreiben in Bin&auml;rdatenstr&ouml;me verwendet wird (die Eigenschaft Stream.Type entspricht <span class="LITERAL">adTypeBinary</span>).</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Siehe auch</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Stream.EOS-Eigenschaft, Stream.SetEOS-Methode, Stream.Type-Eigenschaft, Stream.WriteText-Methode, StreamWriteEnum-Enumeration</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+</body>
+</html>

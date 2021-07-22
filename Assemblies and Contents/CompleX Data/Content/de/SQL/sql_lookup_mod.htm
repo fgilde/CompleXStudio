@@ -1,0 +1,102 @@
+<html>
+<head>
+<title>ASP.NET lookup module</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<script src="../lookupMod.js"></script>
+<script language="JavaScript">
+var BOOK_NAME = "O'REILLY-SQL-Sprachreferenz";
+var KEYWORDS = new Array(
+  "ALTER PROCEDURE",   "Befehlsreferenz",   "ALTER PROCEDURE",
+  "ALTER TABLE",   "Befehlsreferenz",   "ALTER TABLE",
+  "ALTER TRIGGER",   "Befehlsreferenz",   "ALTER TRIGGER",
+  "ALTER VIEW",   "Befehlsreferenz",   "ALTER VIEW",
+  "CALL",   "Befehlsreferenz",   "CALL",
+  "CASE",   "Befehlsreferenz",   "CASE",
+  "CAST",   "Befehlsreferenz",   "CAST",
+  "CLOSE CURSOR",   "Befehlsreferenz",   "CLOSE CURSOR",
+  "COMMIT TRANSACTION",   "Befehlsreferenz",   "COMMIT TRANSACTION",
+  "Verkettungsoperatoren",   "Befehlsreferenz",   "Verkettungsoperatoren",
+  "CONNECT",   "Befehlsreferenz",   "CONNECT",
+  "CREATE DATABASE",   "Befehlsreferenz",   "CREATE DATABASE",
+  "CREATE FUNCTION",   "Befehlsreferenz",   "CREATE FUNCTION",
+  "CREATE INDEX",   "Befehlsreferenz",   "CREATE INDEX",
+  "CREATE PROCEDURE",   "Befehlsreferenz",   "CREATE PROCEDURE",
+  "CREATE ROLE",   "Befehlsreferenz",   "CREATE ROLE",
+  "CREATE SCHEMA",   "Befehlsreferenz",   "CREATE SCHEMA",
+  "CREATE TABLE",   "Befehlsreferenz",   "CREATE TABLE",
+  "CREATE TRIGGER",   "Befehlsreferenz",   "CREATE TRIGGER",
+  "CREATE VIEW",   "Befehlsreferenz",   "CREATE VIEW",
+  "DECLARE CURSOR",   "Befehlsreferenz",   "DECLARE CURSOR",
+  "DELETE",   "Befehlsreferenz",   "DELETE",
+  "DISCONNECT",   "Befehlsreferenz",   "DISCONNECT",
+  "DROP DATABASE",   "Befehlsreferenz",   "DROP DATABASE",
+  "DROP FUNCTION",   "Befehlsreferenz",   "DROP FUNCTION",
+  "DROP INDEX",   "Befehlsreferenz",   "DROP INDEX",
+  "DROP PROCEDURE",   "Befehlsreferenz",   "DROP PROCEDURE",
+  "DROP ROLE",   "Befehlsreferenz",   "DROP ROLE",
+  "DROP TABLE",   "Befehlsreferenz",   "DROP TABLE",
+  "DROP TRIGGER",   "Befehlsreferenz",   "DROP TRIGGER",
+  "DROP VIEW",   "Befehlsreferenz",   "DROP VIEW",
+  "FETCH",   "Befehlsreferenz",   "FETCH",
+  "GRANT",   "Befehlsreferenz",   "GRANT",
+  "INSERT",   "Befehlsreferenz",   "INSERT",
+  "LIKE",   "Befehlsreferenz",   "LIKE-Operator",
+  "OPEN",   "Befehlsreferenz",   "OPEN",
+  "Operatoren",   "Befehlsreferenz",   "Operatoren",
+  "RETURN",   "Befehlsreferenz",   "RETURN",
+  "REVOKE",   "Befehlsreferenz",   "REVOKE",
+  "ROLLBACK",   "Befehlsreferenz",   "ROLLBACK",
+  "SAVEPOINT",   "Befehlsreferenz",   "SAVEPOINT",
+  "SELECT",   "Befehlsreferenz",   "SELECT",
+  "SET CONNECTION",   "Befehlsreferenz",   "SET CONNECTION",
+  "SET ROLE",   "Befehlsreferenz",   "SET ROLE",
+  "SET TIME ZONE",   "Befehlsreferenz",   "SET TIME ZONE",
+  "SET TRANSACTION",   "Befehlsreferenz",   "SET TRANSACTION",
+  "START TRANSACTION",   "Befehlsreferenz",   "START TRANSACTION",
+  "TRUNCATE TABLE",   "Befehlsreferenz",   "TRUNCATE TABLE",
+  "UPDATE",   "Befehlsreferenz",   "UPDATE",
+  "AVG",   "Aggregatfunktionen",   "AVG und SUM",
+  "SUM",   "Aggregatfunktionen",   "AVG und SUM",
+  "COUNT",   "Aggregatfunktionen",   "COUNT",
+  "MIN",   "Aggregatfunktionen",   "MIN und MAX",
+  "MAX",   "Aggregatfunktionen",   "MIN und MAX");
+
+
+  function referenceLookup()
+  {
+    var sqlVal;
+    var dom = dw.getDocumentDOM();
+
+	if (dom){
+    //To synchronize the design and code view
+    dom.synchronizeDocument();
+
+    var docEl = dom.documentElement;
+    var wholeDoc = docEl.outerHTML;
+    var theSel = dom.source.getSelection();
+    var startPoint = searchBackwards(theSel[0],dom);
+    var endPoint = searchForwards(theSel[1],dom,wholeDoc.length);
+    var selTag = dom.offsetsToNode(theSel[0],theSel[1]);
+    var keyword;
+    var j;
+    keyword = dom.source.getText(startPoint,endPoint);
+    keyword = keyword.toUpperCase();
+
+    var sqlVal = getTopic(keyword);
+    }
+
+	if (!sqlVal)
+    {
+      sqlVal = new Array("");
+    }
+
+	return sqlVal;
+  }
+
+  </script>
+  </head>
+  <body bgcolor="#FFFFFF" text="#000000">
+  </body>
+  </html>
+
+

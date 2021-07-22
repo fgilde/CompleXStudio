@@ -1,0 +1,3253 @@
+<html>
+<link rel="stylesheet" href="josh.css">
+<body bgcolor="#FFFFFF">
+
+<div id="Beschreibung">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">event</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">4</span>  IE <span class="emphasis">4</span>  DOM <span class="emphasis">2</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Das <span class="literal">event</span>-Objekt enth&auml;lt Informationen zu einem vom Benutzer oder System erzeugten Ereignis. Es gibt jedoch drei verschiedene Arten von <span class="literal">event</span>-Objekten, also eines f&uuml;r jedes der drei in Browsern verwendeten Objektmodelle: IE f&uuml;r Windows, Navigator 4 und Netscape 6 (aus dem W3C-DOM). IE 5 f&uuml;r Macintosh implementiert eine Mischung aus den Ereignistypen von IE f&uuml;r Windows und Netscape 6. Beispiele f&uuml;r die Verarbeitung von Ereignissen in einer browser&uuml;bergreifenden Umgebung finden Sie in Kapitel 6. Da eine <span class="literal">event</span>-Objekteigenschaft nur selten in mehreren Ereignismodellen anwendbar ist, sollten Sie die Browserkompatibilit&auml;tslisten f&uuml;r die folgenden Eigenschaften genauestens beachten.
+</p>
+							</td>
+						</tr>
+						<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Aufgrund der objektorientierten Natur der ihm zugrunde liegenden W3C-DOM-<span class="literal">Event</span>-Objektstruktur ist das <span class="literal">event</span>-Objekt von Netscape 6 relativ komplex. Im Gegensatz zum IE-<span class="literal">event</span>-Objekt ist das <span class="literal">event</span>-Objekt von Netscape 6 kein allumfassendes Objekt, sondern legt je nach Ereignisklassifikation verschiedene Gruppen von Eigenschaften und Methoden offen. Alle Ereignisklassen weisen die Eigenschaften und Methoden des Root-<span class="literal">Event</span>-Objekts des W3C-DOM auf. Die tats&auml;chlichen Ereignisobjektinstanzen geh&ouml;ren jedoch stets einer der Unterklassen des <span class="literal">Event</span>-Objekts (und manchmal sogar einer seiner Unter-Unterklassen) an. Bei diesen Unterklassen handelt es sich um <span class="literal">UIEvent</span> (so genannte Benutzeroberfl&auml;chenereignisse wie <span class="literal">DOMFocusIn</span>), <span class="literal">MouseEvent</span> (z. B. die wohlbekannten Mausereignisse), <span class="literal">MutationEvent</span> (Ereignisse, die eine in einem Skript vorgenommene &Auml;nderung der Nodestruktur des Dokuments kennzeichnen) und, demn&auml;chst in DOM-Level-3, <span class="literal">TextEvent</span> (tastaturbezogene Ereignisse). Netscape 6 implementiert eine eigene tempor&auml;re Tastaturereignisklassifikation namens <span class="literal">KeyEvent</span>, bei der es sich um eine Unterklasse von <span class="literal">UIEvent</span> handelt, obwohl sie zur Vereinfachung der Skripterstellung auch bestimmte <span class="literal">MouseEvent</span>-Eigenschaften enth&auml;lt.
+</p>
+							</td>
+						</tr>
+						<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Im Gro&szlig;en und Ganzen hat diese funktionale Unterteilung der Objekte keine Auswirkung auf die Ereignisverarbeitung in Netscape 6, da Eigenschaften, die mit einem bestimmten Ereignis verkn&uuml;pft sind, von einer f&uuml;r diesen Ereignistyp eingerichtete Event-Listener-Funktion erfasst werden. Die Ereignisklasse ist also von untergeordneter Bedeutung. Dennoch ist es interessant zu sehen, auf welche Weise sich Ereignisobjekteigenschaften und -methoden &uuml;ber diese objektorientierte Struktur verbreiten. Die folgende Tabelle zeigt die Verteilung der Eigenschaften auf Netscape 6- und W3C-DOM-Ereignisklassen.
+</p>
+							</td>
+						</tr>
+						<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Die folgende Tabelle zeigt die Verteilung der Methoden auf Netscape 6- und W3C-DOM-Ereignisklassen.
+</p>
+							</td>
+						</tr>
+						<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Das <span class="literal">event</span>-Modell in Netscape 6 implementiert au&szlig;erdem die Eigenschaften des statischen <span class="literal">Event</span>-Objekts von Navigator 4 und erbt eine umfangreiche Liste von W3C-DOM-<span class="literal">TextEvent</span>-Objektkonstanten, die nicht-alphanumerische Tastencodes darstellen (und Konstantennamen wie <span class="replaceable">eventObject</span><span class="literal">.DOM_VK_PAGE_UP</span> aufweisen). Diese Tastsaturkonstanten sind im k&uuml;nftigen W3C-DOM-Level-3-Ereignismodul definiert, in Netscape 6 jedoch bereits implementiert (wenngleich die Werte noch nicht exakt festgelegt sind). Eine Liste der Eigenschaften f&uuml;r das statische <span class="literal">Event</span>-Objekt in Navigator 4 finden Sie in der Abhandlung des <span class="literal">Event</span>-Objekts im Anschluss an diese Betrachtung einer Ereignisinstanz.
+</p>
+							</td>
+						</tr>
+						<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Wie in Kapitel 6 ausf&uuml;hrlich beschrieben ist, m&uuml;ssen Sie unterschiedliche Skripttechniken anwenden, um in den Ereignismodellen von IE und Navigator eine Referenz auf ein <span class="literal">event</span>-Objekt zu erhalten. Liegt diese Referenz erst einmal vor, haben Sie bei der browser&uuml;bergreifenden Angleichung der Ereignisverarbeitung schon einen gro&szlig;en Schritt geschafft. Bei den folgenden Beispielfragmenten wird davon ausgegangen, dass mit fr&uuml;heren Skriptanweisungen bereits eine Referenz auf das browserspezifische <span class="literal">event</span>-Objekt erlangt (und in der Regel in einer Variablen namens <span class="literal">evt</span> gespeichert) wurde.
+</p>
+							</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td>
+								<table border="1"><tbody><tr><th></th><th>Event</th><th>UIEvent</th><th>MouseEvent</th><th>KeyEventIn Netscape 6 zur Bereitstellung zus&auml;tzlicher Funktionen oder anstelle des noch nicht fertig gestellten Tastaturereignismodells von DOM-Level-3 implementiert. Enth&auml;lt zur Vereinfachung der Skripterstellung auch einige <span class="literal">MouseEvent</span>-Eigenschaften.</th><th>TextEventF&uuml;r DOM-Level-3 beantragt, aber in Netscape 6 nicht implementiert.</th><th>MutationEvent</th></tr>
+										<tr><td>Event-Eigenschaften</td>
+										</tr>
+										<tr><td>bubbles</td><td>&radic;</td><td>&radic;</td><td>&radic;</td><td>&radic;</td><td>&radic;</td><td>&radic;</td>
+										</tr>
+										<tr><td>cancelable</td><td>&radic;</td><td>&radic;</td><td>&radic;</td><td>&radic;</td><td>&radic;</td><td>&radic;</td>
+										</tr>
+										<tr><td>cancelBubbleIE property implemented in Netscape 6 for cross-browser convenience.</td><td>&radic;</td><td>&radic;</td><td>&radic;</td><td>&radic;</td><td></td><td>&radic;</td>
+										</tr>
+										<tr><td>currentTarget</td><td>&radic;</td><td>&radic;</td><td>&radic;</td><td>&radic;</td><td>&radic;</td><td>&radic;</td>
+										</tr>
+										<tr><td>eventPhase</td><td>&radic;</td><td>&radic;</td><td>&radic;</td><td>&radic;</td><td>&radic;</td><td>&radic;</td>
+										</tr>
+										<tr><td>originalTarget8</td><td>&radic;</td><td>&radic;</td><td>&radic;</td><td>&radic;</td><td></td><td>&radic;</td>
+										</tr>
+										<tr><td>target</td><td>&radic;</td><td>&radic;</td><td>&radic;</td><td>&radic;</td><td>&radic;</td><td>&radic;</td>
+										</tr>
+										<tr><td>timeStamp</td><td>&radic;</td><td>&radic;</td><td>&radic;</td><td>&radic;</td><td>&radic;</td><td>&radic;</td>
+										</tr>
+										<tr><td>type</td><td>&radic;</td><td>&radic;</td><td>&radic;</td><td>&radic;</td><td>&radic;</td><td>&radic;</td>
+										</tr>
+										<tr><td>UIEvent-Eigenschaften</td>
+										</tr>
+										<tr><td>detail</td><td></td><td>&radic;</td><td>&radic;</td><td>&radic;</td><td>&radic;</td><td></td>
+										</tr>
+										<tr><td>view</td><td></td><td>&radic;</td><td>&radic;</td><td>&radic;</td><td>&radic;</td><td></td>
+										</tr>
+										<tr><td>MouseEvent-Eigenschaften</td>
+										</tr>
+										<tr><td>altKey</td><td></td><td></td><td>&radic;</td><td>&radic;</td><td></td><td></td>
+										</tr>
+										<tr><td>button</td><td></td><td></td><td>&radic;</td><td></td><td></td><td></td>
+										</tr>
+										<tr><td>clientX</td><td></td><td></td><td>&radic;</td><td>&radic;</td><td></td><td></td>
+										</tr>
+										<tr><td>clientY</td><td></td><td></td><td>&radic;</td><td>&radic;</td><td></td><td></td>
+										</tr>
+										<tr><td>ctrlKey</td><td></td><td></td><td>&radic;</td><td>&radic;</td><td></td><td></td>
+										</tr>
+										<tr><td>metaKey</td><td></td><td></td><td>&radic;</td><td>&radic;</td><td></td><td></td>
+										</tr>
+										<tr><td>relatedTarget</td><td></td><td></td><td>&radic;</td><td></td><td></td><td></td>
+										</tr>
+										<tr><td>screenX</td><td></td><td></td><td>&radic;</td><td>&radic;</td><td></td><td></td>
+										</tr>
+										<tr><td>screenY</td><td></td><td></td><td>&radic;</td><td>&radic;</td><td></td><td></td>
+										</tr>
+										<tr><td>shiftKey</td><td></td><td></td><td>&radic;</td><td>&radic;</td><td></td><td></td>
+										</tr>
+										<tr><td>KeyEvent-Eigenschaften</td>
+										</tr>
+										<tr><td>charCode8</td><td></td><td></td><td></td><td>&radic;</td><td></td><td></td>
+										</tr>
+										<tr><td>isChar8</td><td></td><td></td><td></td><td>&radic;</td><td></td><td></td>
+										</tr>
+										<tr><td>keyCode8</td><td></td><td></td><td></td><td>&radic;</td><td></td><td></td>
+										</tr>
+										<tr><td>rangeOffset8</td><td></td><td></td><td></td><td>&radic;</td><td></td><td></td>
+										</tr>
+										<tr><td>rangeParent8</td><td></td><td></td><td></td><td>&radic;</td><td></td><td></td>
+										</tr>
+										<tr><td>TextEvent-Eigenschaften</td><td></td><td></td><td></td><td></td><td></td><td></td>
+										</tr>
+										<tr><td>keyVal9</td><td></td><td></td><td></td><td></td><td>&radic;</td><td></td>
+										</tr>
+										<tr><td>numPad9</td><td></td><td></td><td></td><td></td><td>&radic;</td><td></td>
+										</tr>
+										<tr><td>outputString9</td><td></td><td></td><td></td><td></td><td>&radic;</td><td></td>
+										</tr>
+										<tr><td>virtKeyVal9</td><td></td><td></td><td></td><td></td><td>&radic;</td><td></td>
+										</tr>
+										<tr><td>visibleOutputGenerated9</td><td></td><td></td><td></td><td></td><td>&radic;</td><td></td>
+										</tr>
+										<tr><td>MutationEvent-Eigenschaften</td>
+										</tr>
+										<tr><td>attrChange</td><td></td><td></td><td></td><td></td><td></td><td>&radic;</td>
+										</tr>
+										<tr><td>attrName</td><td></td><td></td><td></td><td></td><td></td><td>&radic;</td>
+										</tr>
+										<tr><td>newValue</td><td></td><td></td><td></td><td></td><td></td><td>&radic;</td>
+										</tr>
+										<tr><td>prevValue</td><td></td><td></td><td></td><td></td><td></td><td>&radic;</td>
+										</tr>
+										<tr><td>relatedNode</td><td></td><td></td><td></td><td></td><td></td><td>&radic;</td>
+										</tr>
+									</tbody></table>
+							</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td>
+								<table border="1"><tbody><tr><th></th><th>Event</th><th>UIEvent</th><th>MouseEvent</th><th>KeyEventIn Netscape 6 zur Bereitstellung zus&auml;tzlicher Funktionen oder anstelle des noch nicht fertig gestellten Tastaturereignismodells von DOM-Level-3 implementiert. Enth&auml;lt zur Vereinfachung der Skripterstellung auch einige 
+<span class="literal">MouseEvent</span>-Eigenschaften.
+</th><th>TextEventF&uuml;r DOM-Level-3 beantragt, aber in Netscape 6 nicht implementiert.
+</th><th>MutationEvent</th></tr>
+										<tr><td>Event-Methoden</td>
+										</tr>
+										<tr><td>initEvent( )</td><td>&radic;</td><td>&radic;</td><td>&radic;</td><td>&radic;</td><td>&radic;</td><td>&radic;</td>
+										</tr>
+										<tr><td>getPreventDefault( )11</td><td>&radic;</td><td>&radic;</td><td>&radic;</td><td>&radic;</td><td></td><td>&radic;</td>
+										</tr>
+										<tr><td>preventDefault( )</td><td>&radic;</td><td>&radic;</td><td>&radic;</td><td>&radic;</td><td>&radic;</td><td>&radic;</td>
+										</tr>
+										<tr><td>stopPropagation( )</td><td>&radic;</td><td>&radic;</td><td>&radic;</td><td>&radic;</td><td>&radic;</td><td>&radic;</td>
+										</tr>
+										<tr><td>UIEvent-Methoden</td>
+										</tr>
+										<tr><td>initUIEvent( )</td><td></td><td>&radic;</td><td></td><td></td><td></td><td></td>
+										</tr>
+										<tr><td>MouseEvent-Methoden</td>
+										</tr>
+										<tr><td>initMouseEvent( )</td><td></td><td></td><td>&radic;</td><td></td><td></td><td></td>
+										</tr>
+										<tr><td>KeyEvent-Methoden</td>
+										</tr>
+										<tr><td>initKeyEvent( )</td><td></td><td></td><td></td><td>&radic;</td><td></td><td></td>
+										</tr>
+										<tr><td>TextEvent-Methoden</td>
+										</tr>
+										<tr><td>checkModifier( )12</td><td></td><td></td><td></td><td></td><td>&radic;</td><td></td>
+										</tr>
+										<tr><td>initModifier( )12</td><td></td><td></td><td></td><td></td><td>&radic;</td><td></td>
+										</tr>
+										<tr><td>initTextEvent( )12</td><td></td><td></td><td></td><td></td><td>&radic;</td><td></td>
+										</tr>
+										<tr><td>MutationEvent-Methoden</td>
+										</tr>
+										<tr><td>initMutationEvent( )</td><td></td><td></td><td></td><td></td><td></td><td>&radic;</td>
+										</tr>
+									</tbody></table>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectmodelreference"><span class="title">Objektmodellreferenz</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<ul><li><span class="literal"></span><span class="replaceable">eventObj</span></li><li><span class="literal"></span><span class="literal">[window.]event</span></li></ul>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectspecificproperties"><span class="title">Objektspezifische Eigenschaften</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<table border="1"><tbody><tr><td><span class="literal">altKey</span></td><td><span class="literal">altLeft</span></td><td><span class="literal">attrChange</span></td><td><span class="literal">attrName</span></td>
+								</tr>
+								<tr><td><span class="literal">behaviorCookie</span></td><td><span class="literal">behaviorPart</span></td><td><span class="literal">bookmarks</span></td><td><span class="literal">boundElements</span></td>
+								</tr>
+								<tr><td><span class="literal">bubbles</span></td><td><span class="literal">button</span></td><td><span class="literal">cancelable</span></td><td><span class="literal">cancelBubble</span></td>
+								</tr>
+								<tr><td><span class="literal">charCode</span></td><td><span class="literal">clientX</span></td><td><span class="literal">clientY</span></td><td><span class="literal">contentOverflow</span></td>
+								</tr>
+								<tr><td><span class="literal">ctrlKey</span></td><td><span class="literal">ctrlLeft</span></td><td><span class="literal">currentTarget</span></td><td><span class="literal">data</span></td>
+								</tr>
+								<tr><td><span class="literal">dataFld</span></td><td><span class="literal">dataTransfer</span></td><td><span class="literal">detail</span></td><td><span class="literal">eventPhase</span></td>
+								</tr>
+								<tr><td><span class="literal">fromElement</span></td><td><span class="literal">isChar</span></td><td><span class="literal">keyCode</span></td><td><span class="literal">layerX</span></td>
+								</tr>
+								<tr><td><span class="literal">layerY</span></td><td><span class="literal">metaKey</span></td><td><span class="literal">modifiers</span></td><td><span class="literal">newValue</span></td>
+								</tr>
+								<tr><td><span class="literal">nextPage</span></td><td><span class="literal">offsetX</span></td><td><span class="literal">offsetY</span></td><td><span class="literal">originalTarget</span></td>
+								</tr>
+								<tr><td><span class="literal">pageX</span></td><td><span class="literal">pageY</span></td><td><span class="literal">prevValue</span></td><td><span class="literal">propertyName</span></td>
+								</tr>
+								<tr><td><span class="literal">qualifier</span></td><td><span class="literal">rangeOffset</span></td><td><span class="literal">rangeParent</span></td><td><span class="literal">reason</span></td>
+								</tr>
+								<tr><td><span class="literal">recordset</span></td><td><span class="literal">relatedNode</span></td><td><span class="literal">relatedTarget</span></td><td><span class="literal">repeat</span></td>
+								</tr>
+								<tr><td><span class="literal">returnValue</span></td><td><span class="literal">screenX</span></td><td><span class="literal">screenY</span></td><td><span class="literal">shiftKey</span></td>
+								</tr>
+								<tr><td><span class="literal">shiftLeft</span></td><td><span class="literal">srcElement</span></td><td><span class="literal">srcFilter</span></td><td><span class="literal">srcUrn</span></td>
+								</tr>
+								<tr><td><span class="literal">target</span></td><td><span class="literal">timeStamp</span></td><td><span class="literal">toElement</span></td><td><span class="literal">type</span></td>
+								</tr>
+								<tr><td><span class="literal">view</span></td><td><span class="literal">wheelDelta</span></td><td><span class="literal">which</span></td><td><span class="literal">x</span></td>
+								</tr>
+								<tr><td><span class="literal">y</span></td><td></td><td></td><td></td>
+								</tr>
+							</tbody></table>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectspecificmethods"><span class="title">Objektspezifische Methoden</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<table border="1"><tbody><tr><td><span class="literal">getPreventDefault( )</span></td><td><span class="literal">initEvent( )</span></td><td><span class="literal">initKeyEvent( )</span></td><td><span class="literal">initMouseEvent( )</span></td>
+								</tr>
+								<tr><td><span class="literal">initMutationEvent( )</span></td><td><span class="literal">initUIEvent( )</span></td><td><span class="literal">preventDefault( )</span></td><td><span class="literal">stopPropagation( )</span></td>
+								</tr>
+							</tbody></table>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectspecificeventhandlerproperties"><span class="title">Objektspezifische Ereignisbehandlungsroutineneigenschaften</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Keine. </p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="altKey">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">altKey</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6  </span>IE <span class="emphasis">4  </span>DOM <span class="emphasis">2</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Schreibgesch&uuml;tzt</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Gibt den Wert <span class="literal">true</span> zur&uuml;ck, wenn zum Zeitpunkt des Ereignisses die linke oder rechte <span class="emphasis">Alt</span>-Taste gedr&uuml;ckt war.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>if (evt.altKey) {
+    //handle case of Alt key down
+}</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Boolescher Wert: <span class="literal">true</span> | <span class="literal">false</span>.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Standardwert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p><span class="literal">false</span></p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="altLeft">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">altLeft</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">nicht zutreffend</span> IE <span class="emphasis">5.5(Win)</span>  DOM <span class="emphasis">nicht zutreffend</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Schreibgesch&uuml;tzt</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Gibt den Wert <span class="literal">true</span> zur&uuml;ck, wenn zum Zeitpunkt des Ereignisses die linke <span class="emphasis">Alt</span>-Taste gedr&uuml;ckt war.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>if (evt.altLeft) {
+    //handle case of left Alt key down
+}</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Boolescher Wert: <span class="literal">true</span> | <span class="literal">false</span>.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Standardwert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p><span class="literal">false</span></p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="attrChange">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">attrChange</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">nicht zutreffend</span>  DOM <span class="emphasis">2</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Schreibgesch&uuml;tzt</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Gibt einen ganzzahligen Code zur&uuml;ck, der der Art der auf einen <span class="literal">DOMAttrModified</span>-Ereignistyp des W3C-DOM-Mutationsereignisses hin an einer <span class="literal">Attr</span>-Node vorgenommenen &Auml;nderung entspricht. Jedes Mutationsereignisobjekt verf&uuml;gt &uuml;ber drei Konstanten, die ebenfalls den ganzzahligen Werten entsprechen und mit deren Hilfe Sie ausf&uuml;hrlichere, aber leichter lesbare Skriptvergleiche f&uuml;r die Verarbeitung von <span class="literal">DOMAttrModified</span>-Ereignissen aufstellen k&ouml;nnen. Eine &Uuml;bersicht &uuml;ber diese Werte und Konstanten finden Sie in der folgenden Tabelle.
+</p>
+							</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td>
+								<table border="1"><tbody><tr><th>Wert</th><th>Konstante</th><th>Beschreibung</th></tr>
+										<tr><td><span class="literal">1</span></td><td><span class="replaceable">evtObj</span><span class="literal">.MODIFICATION</span></td><td>Ge&auml;nderter Wert der vorhandenen <span class="literal">Attr</span>-Node.</td>
+										</tr>
+										<tr><td><span class="literal">2</span></td><td><span class="replaceable">evtObj</span><span class="literal">.ADDITION</span></td><td>Die <span class="literal">Attr</span>-Node wurde dem Dokumentbaum hinzugef&uuml;gt.</td>
+										</tr>
+										<tr><td><span class="literal">3</span></td><td><span class="replaceable">evtObj</span><span class="literal">.REMOVAL</span></td><td>Die <span class="literal">Attr</span>-Node wurde aus dem Dokumentbaum entfernt.</td>
+										</tr>
+									</tbody></table>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>if (evt.attrChange == evt.MODIFICATION) {
+    // do post-processing of attribute value change
+}</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Ganzzahliger Wert: <span class="literal">1</span> | <span class="literal">2</span> | <span class="literal">3</span>.
+</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Standardwert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Keiner.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="attrName">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">attrName</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">nicht zutreffend</span>  DOM <span class="emphasis">2</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Schreibgesch&uuml;tzt</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Gibt eine Zeichenfolge mit dem Namen einer <span class="literal">Attr</span>-Node zur&uuml;ck, die von einem <span class="literal">DOMAttrModified</span>-Ereignistyp des W3C-DOM-Mutationsereignisses betroffen ist.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>var changedAttr = evt.attrName;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Zeichenfolgenwert.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Standardwert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Leere Zeichenfolge.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="behaviorCookie, behaviorPart, bookmarks, boundElements">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">behaviorCookie, behaviorPart, bookmarks, boundElements</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">nicht zutreffend</span> IE <span class="emphasis">6(Win)</span>  DOM <span class="emphasis">nicht zutreffend</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Schreibgesch&uuml;tzt</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Diese Eigenschaften werden von dem <span class="literal">event</span>-Objekt in IE 6 f&uuml;r Windows zur&uuml;ckgegeben (mit den Werten <span class="literal">0</span>, <span class="literal">0</span>, <span class="literal">null</span> und einem leeren Array), von Microsoft jedoch nicht dokumentiert. M&ouml;glicherweise werden diese Eigenschaften in einer k&uuml;nftigen Version unterst&uuml;tzt und implementiert.
+</p>
+							</td>
+						</tr>
+			</table>
+		</div><div id="bubbles">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">bubbles</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">nicht zutreffend</span>  DOM <span class="emphasis">2</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Schreibgesch&uuml;tzt</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Gibt den Booleschen Wert <span class="literal">true</span> zur&uuml;ck, wenn das Standardverhalten des Ereignisses dem Ereignis erlaubt, sich durch die Elementhierarchie nach oben zu verbreiten.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>if (evt.bubbles) {
+    // handle case of the event bubbling
+}</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Boolescher Wert: <span class="literal">true</span> | <span class="literal">false</span>.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Standardwert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Ereignistypabh&auml;ngig. </p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="button">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">button</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6  </span>IE <span class="emphasis">4  </span>DOM <span class="emphasis">2</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Schreibgesch&uuml;tzt</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Gibt an, mit welcher Maustaste das Mausereignis ausgel&ouml;st wurde. Beachten Sie, dass eine typische Macintosh-Maus nur eine Maustaste aufweist. Au&szlig;erdem m&uuml;ssen Sie, wenn Sie den rechten Mausklick zum Aufruf des Kontextmen&uuml;s in IE/Windows abfangen m&ouml;chten, die <span class="literal">oncontextmenu</span>-Ereignisbehandlungsroutine verwenden.
+</p>
+							</td>
+						</tr>
+						<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Hinsichtlich der f&uuml;r diese Eigenschaft zur&uuml;ckgegebenen Zahlenwerte bestehen deutliche Unstimmigkeiten zwischen den verschiedenen DOM-Spezifikationen und -Implementierungen. Das W3C-DOM, wie es in Netscape 6 implementiert ist, gibt f&uuml;r die linke (prim&auml;re) Maustaste den Wert Null an. IE f&uuml;r Windows unterst&uuml;tzt weitere Werte f&uuml;r Maustastenkombinationen.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>if (evt.button == 2) {
+    // handle event for right button
+}</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Ganzzahliger Wert (siehe unten stehende Tabelle).</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<table border="1"><tbody><th>Taste(n)</th><th>IE</th><th>NN 6</th><th>W3C-DOM</th><tr><td>Keine Taste</td><td><span class="literal">0</span></td><td><span class="literal">null</span></td><td><span class="literal">null</span></td>
+								</tr>
+								<tr><td>Linke (prim&auml;re)</td><td><span class="literal">1</span></td><td><span class="literal">0</span></td><td><span class="literal">0</span></td>
+								</tr>
+								<tr><td>Mittlere</td><td><span class="literal">4</span></td><td><span class="literal">1</span></td><td><span class="literal">1</span></td>
+								</tr>
+								<tr><td>Rechte</td><td><span class="literal">2</span></td><td><span class="literal">2</span></td><td><span class="literal">2</span></td>
+								</tr>
+								<tr><td>Linke und rechte</td><td><span class="literal">3</span></td><td>--</td><td>--</td>
+								</tr>
+								<tr><td>Linke und mittlere</td><td><span class="literal">5</span></td><td>--</td><td>--</td>
+								</tr>
+								<tr><td>Rechte und mittlere</td><td><span class="literal">6</span></td><td>--</td><td>--</td>
+								</tr>
+								<tr><td>Linke und mittlere und rechte</td><td><span class="literal">7</span></td><td>--</td><td>--</td>
+								</tr>
+							</tbody></table>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Standardwert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p><span class="literal">0</span></p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="cancelable">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">cancelable</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">nicht zutreffend</span>  DOM <span class="emphasis">2</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Schreibgesch&uuml;tzt</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Gibt den Booleschen Wert <span class="literal">true</span> zur&uuml;ck, wenn es sich bei dem Ereignis um einen Ereignistyp handelt, dessen Standardverhalten in Bezug auf das Zielelement mithilfe der <span class="literal">preventDefault( )</span>-Methode abgebrochen werden kann.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>if (evt.cancelable ) {
+    evt.preventDefault( );
+}</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Boolescher Wert: <span class="literal">true</span> | <span class="literal">false</span>.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Standardwert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Ereignistypabh&auml;ngig. </p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="cancelBubble">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">cancelBubble</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6  </span>IE <span class="emphasis">4  </span>DOM <span class="emphasis">nicht zutreffend</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Lesen/Schreiben</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Legt fest, ob das Ereignis in der Elementcontainerhierarchie nach oben verbreitet werden soll. In der Regel m&uuml;ssen Sie diese Eigenschaft auf <span class="literal">true</span> setzen, um das Standardverhalten zu &uuml;berschreiben und um zu verhindern, dass das Ereignis weiter verbreitet wird. Netscape 6 implementiert diese IE-Eigenschaft aus praktischen Gr&uuml;nden. Das W3C-DOM-&Auml;quivalent ist die Methode <span class="literal">stopPropagation( )</span> des <span class="literal">event</span>-Objekts.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>evt.cancelBubble = true;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Boolescher Wert: <span class="literal">true</span> | <span class="literal">false</span>.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Standardwert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p><span class="literal">false</span></p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="charCode">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">charCode</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6  </span>IE <span class="emphasis">nicht zutreffend</span>  DOM <span class="emphasis">nicht zutreffend</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Schreibgesch&uuml;tzt</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Gibt einen ganzzahligen Wert zur&uuml;ck, der dem Unicode-Wert des von der Taste, die das Ereignis ausgel&ouml;st hat, erzeugten Zeichens entspricht. Der Zeichencode unterscheidet sich vom Tastencode insofern, als beim Zeichencode zwischen Gro&szlig;- und Kleinbuchstaben unterschieden wird (z. B. 97 = "a", 65 = "A"), wohingegen der <span class="literal">keyCode</span>-Wert sich unmittelbar auf die Taste bezieht, gleich welches Zeichen mit ihr jeweils erzeugt wird. Diese Eigenschaft enth&auml;lt im Allgemeinen nur bei <span class="literal">onkeypress</span>-Ereignissen einen Wert, w&auml;hrend sie bei <span class="literal">onkeydown</span>- und <span class="literal">onkeyup</span>-Ereignissen den Wert 0 aufweist. Informationen zum IE-&Auml;quivalent finden Sie unter der <span class="literal">keyCode</span>-Eigenschaft.
+</p>
+							</td>
+						</tr>
+						<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Wenn das Tastaturmodul f&uuml;r W3C-DOM-Level-3 fertig ist, wird diese Eigenschaft wahrscheinlich umbenannt.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>if (evt.charCode &gt; 96 &amp;&amp; evt.charCode &lt; 123) {
+    evt.target.value += String.fromCharCode(evt.charCode - 32);
+    evt.preventDefault( );
+}</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Eine ganze Zahl.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Standardwert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Ereignisspezifisch.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="clientX, clientY">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">clientX, clientY</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6  </span>IE <span class="emphasis">4  </span>DOM <span class="emphasis">2</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Schreibgesch&uuml;tzt</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Gibt die horizontale (x) und vertikale (y) Koordinate der Maus bei Ausl&ouml;sung des aktuellen Ereignisses an. Diese Koordinaten sind relativ zum sichtbaren Dokumentbereich des Browserfensters bzw. Frames. Bei der Umwandlung dieser Koordinaten in IE-Dokumentkoordinaten m&uuml;ssen Sie darauf achten, die Bildlaufwerte des <span class="literal">body</span>-Elements (bzw. die Bildlaufwerte des <span class="literal">html</span>-Elements im standardkompatiblen Modus von IE 6) hinzuzurechnen. Bei Netscape 6 stellen die Eigenschaften <span class="literal">pageX</span> und <span class="literal">pageY</span> die Koordinaten im Dokumentbereich bereit.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>if ((evt.clientX &gt;= 10 &amp;&amp; evt.clientX &lt;= 20) &amp;&amp;
+(evt.clientY &gt;= 50 &amp;&amp; evt.clientY &lt;= 100)) {
+    // process code for click in hot zone bounded by 10,50 and 20,100
+}</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Ganzzahliger Pixelwert.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Standardwert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Keiner. </p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="contentOverflow">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">contentOverflow</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">nicht zutreffend</span> IE <span class="emphasis">5.5(Win)</span>  DOM <span class="emphasis">nicht zutreffend</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Schreibgesch&uuml;tzt</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Gibt den Booleschen Wert <span class="literal">true</span> zur&uuml;ck, wenn f&uuml;r die Aufnahme bislang nicht dargestellter &uuml;bersch&uuml;ssiger Inhalte ein neues Layoutrechteck ben&ouml;tigt wird. Die Eigenschaft gilt nur f&uuml;r das <span class="literal">onlayoutcomplete</span>-Ereignis, wenn Sie benutzerdefinierte Druck- oder Druckvorschauvorlagen einsetzen. Weitere Informationen zu der f&uuml;r solche Vorlagen erforderlichen C++-Programmierung finden Sie unter http://msdn.microsoft.com/library/Standardwert.asp?url=/workshop/browser/hosting/printpreview/reference/reference.asp.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Boolescher Wert: <span class="literal">true</span> | <span class="literal">false</span>.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Standardwert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p><span class="literal">false</span></p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="ctrlKey">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">ctrlKey</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6  </span>IE <span class="emphasis">4  </span>DOM <span class="emphasis">2</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Schreibgesch&uuml;tzt</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Gibt den Wert <span class="literal">true</span> zur&uuml;ck, wenn zum Zeitpunkt des Ereignisses die linke oder rechte <span class="emphasis">Strg</span>-Taste gedr&uuml;ckt war. Informationen zum Testen dieser Taste in einem browser&uuml;bergreifenden Ereignisbehandlungscode finden Sie in Kapitel 6.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>if (evt.ctrlKey) {
+    // process for Control key being down
+}</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Boolescher Wert: <span class="literal">true</span> | <span class="literal">false</span>.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Standardwert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p><span class="literal">false</span></p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="ctrlLeft">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">ctrlLeft</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">nicht zutreffend</span> IE <span class="emphasis">5.5(Win)</span>  DOM <span class="emphasis">nicht zutreffend</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Schreibgesch&uuml;tzt</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Gibt den Wert <span class="literal">true</span> zur&uuml;ck, wenn zum Zeitpunkt des Ereignisses die linke <span class="emphasis">Strg</span>-Taste gedr&uuml;ckt war.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>if (evt.ctrlLeft) {
+    // process for left Control key being down
+}</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Boolescher Wert: <span class="literal">true</span> | <span class="literal">false</span>.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Standardwert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p><span class="literal">false</span></p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="currentTarget">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">currentTarget</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">nicht zutreffend</span>  DOM <span class="emphasis">2</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Schreibgesch&uuml;tzt</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Gibt eine Referenz auf die Node zur&uuml;ck, deren Event-Listener das Ereignis momentan verarbeitet. Erm&ouml;glicht es einer Funktion festzustellen, ob sie von der tats&auml;chlichen Zielnode oder im Rahmen der Ereignisverbreitung von einer anderen Node aufgerufen wurde.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>if (evt.currentTarget.nodeType == 1) {
+    // process at element level for possible text node target
+}</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Referenz auf eine Node in der Ereignisverbreitungshierarchie.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Standardwert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Referenz auf das Ereignisziel.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="data">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">data</td><td valign="top" nowrap class="compatibility">NN |<span class="emphasis">4|</span>  IE <span class="emphasis">nicht zutreffend</span> DOM <span class="emphasis">nicht zutreffend</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Schreibgesch&uuml;tzt</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Stellt zus&auml;tzliche Daten bereit, die mit dem Navigator 4-Ereignis <span class="literal">dragdrop</span> verkn&uuml;pft sind. Die <span class="literal">data</span>-Eigenschaft gibt die URL des Elements zur&uuml;ck, das auf dem Fenster oder Frame abgelegt wird.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>var srcDoc = evtObj.data;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Zeichenfolge.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Standardwert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Keiner. </p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="dataFld">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">dataFld</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">nicht zutreffend</span> IE <span class="emphasis">5(Win)</span>  DOM <span class="emphasis">nicht zutreffend</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Lesen/Schreiben</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Die <span class="literal">dataFld</span>-Eigenschaft wird in IE f&uuml;r die Datenbindung verwendet und enth&auml;lt den Namen des mit der Spalte der HTML-Tabelle verkn&uuml;pften Felds des Datenquellenobjekts. Diese Eigenschaft erh&auml;lt ihren Wert, wenn im Rahmen der Datenbindung ein <span class="literal">oncellchange</span>-Ereignis in einer Tabelle erzeugt wird.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Zeichenfolge.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Standardwert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Leere Zeichenfolge. </p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="dataTransfer">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">dataTransfer</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">nicht zutreffend</span> IE <span class="emphasis">5(Win)</span>  DOM <span class="emphasis">nicht zutreffend</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Schreibgesch&uuml;tzt</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Gibt eine Referenz auf das <span class="literal">dataTransfer</span>-Objekt zur&uuml;ck, um die &Uuml;bertragung benutzerdefinierter Daten zwischen dem Quell- und Zielobjekt einer Drag&amp;Drop-Operation zu vereinfachen. Informationen zur Verwendung finden Sie unter dem <span class="literal">dataTransfer</span>-Objekt.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Referenz auf ein <span class="literal">dataTransfer</span>-Objekt.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Standardwert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Keiner. </p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="detail">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">detail</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">nicht zutreffend</span>  DOM <span class="emphasis">2</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Schreibgesch&uuml;tzt</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Gibt eine ganze Zahl zur&uuml;ck, die weitere ereignistypspezifische Informationen bereitstellt. Bei Maustastenereignissen gibt diese Zahl an, wie oft hintereinander der Benutzer auf dieselbe Koordinatenposition geklickt hat, ohne den Mauszeiger zu bewegen. Wenn der Benutzer den Mauszeiger bewegt, wird der Z&auml;hler in Erwartung der n&auml;chsten Bet&auml;tigung der Maustaste zur&uuml;ckgesetzt. Bei einem <span class="literal">DOMActivate</span>-Ereignistyp gibt die <span class="literal">detail</span>-Eigenschaft den Wert <span class="literal">1</span> zur&uuml;ck, wenn der Benutzer eine einfache Aktion (Klick oder Tabulatortaste), und den Wert <span class="literal">2</span>, wenn der Benutzer eine komplexere Aktion (Doppelklick) ausf&uuml;hrt.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>if (evt.type == "click" &amp;&amp; evt.detail &gt; 5) {
+    alert("Relax, dude!");
+}</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Eine ganze Zahl.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Standardwert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Ereignistypspezifisch </p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="eventPhase">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">eventPhase</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">nicht zutreffend</span>  DOM <span class="emphasis">2</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Schreibgesch&uuml;tzt</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Gibt eine ganze Zahl zur&uuml;ck, aus der sich ersehen l&auml;sst, ob der Event-Listener das Ereignis w&auml;hrend der Erfassungsphase, am Ereignisziel oder in der Verbreitungsphase verarbeitet. W3C-DOM-Ereignisobjekte implementieren dar&uuml;ber hinaus unverschl&uuml;sselte Konstanten, die diesen drei Werten entsprechen.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>if (evt.eventPhase == evt.AT_TARGET) {
+    // process event listener from the event target
+}</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Ganzzahliger Wert (siehe unten stehende Tabelle).</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<table border="1"><tbody><th>Wert</th><th>Konstante</th><tr><td><span class="literal">1</span></td><td><span class="replaceable">eventObjectReference</span><span class="literal">.CAPTURING_PHASE</span>
+</td>
+								</tr>
+								<tr><td><span class="literal">2</span></td><td><span class="replaceable">eventObjectReference</span><span class="literal">.AT_TARGET</span>
+</td>
+								</tr>
+								<tr><td><span class="literal">3</span></td><td><span class="replaceable">eventObjectReference</span><span class="literal">.BUBBLING_PHASE</span>
+</td>
+								</tr>
+							</tbody></table>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Standardwert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p><span class="literal">2</span> </p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="fromElement">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">fromElement</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">nicht zutreffend</span> IE <span class="emphasis">4</span>  DOM <span class="emphasis">nicht zutreffend</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Schreibgesch&uuml;tzt</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Gibt eine Referenz auf das Objekt zur&uuml;ck, in dem sich der Cursor unmittelbar vor dem <span class="literal">onMouseOver</span>- oder <span class="literal">onMouseOut</span>-Ereignis befand.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>if (evt.fromElement.id == "lowerLevel") {
+    ...
+}</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Elementobjektreferenz.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Standardwert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Keiner.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="isChar">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">isChar</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6  </span>IE <span class="emphasis">nicht zutreffend</span>  DOM <span class="emphasis">nicht zutreffend</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Schreibgesch&uuml;tzt</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Gibt den Wert <span class="literal">true</span> zur&uuml;ck, wenn das Tastaturereignis von einer Zeichentaste ausgel&ouml;st wurde. In der Praxis gibt Netscape 6 f&uuml;r alle Tasten den Wert <span class="literal">true</span> zur&uuml;ck, einschlie&szlig;lich der Funktionstasten. Verwenden Sie f&uuml;r die Verarbeitung von Nicht-Zeichentasten die Ereignisbehandlungsroutinen <span class="literal">onkeydown</span> und <span class="literal">onkeyup</span>.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Boolescher Wert: <span class="literal">true</span> | <span class="literal">false</span>.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Standardwert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p><span class="literal">true</span> </p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="keyCode">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">keyCode</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6  </span>IE <span class="emphasis">4  </span>DOM <span class="emphasis">nicht zutreffend</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Lesen/Schreiben</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Weist in IE und Netscape 6 geringf&uuml;gige Unterschiede in den Merkmalen auf, hinsichtlich der Ereignisse <span class="literal">onkeydown</span> und <span class="literal">onkeyup</span> behandeln die beiden Browserklassen die <span class="literal">keyCode</span>-Eigenschaft jedoch auf dieselbe Weise. F&uuml;r diese Ereignisse gibt die <span class="literal">keyCode</span>-Eigenschaft den der Taste zugeordneten Code zur&uuml;ck, unabh&auml;ngig davon, welches Zeichen von der Taste jeweils erzeugt wird. Auf einer typischen Tastatur mit Latin-Zeichensatz erzeugt die <span class="emphasis">A</span>-Taste den Code <span class="literal">65</span>. Zusatztasten erzeugen eigene Ereignisse und Codes, wenn sie gedr&uuml;ckt und wieder losgelassen werden.
+</p>
+							</td>
+						</tr>
+						<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>F&uuml;r das <span class="literal">onkeypress</span>-Ereignis gibt nur IE einen signifikanten Wert zur&uuml;ck, der dem Unicode-Wert des Zeichens entspricht, das beim Dr&uuml;cken der Taste in einem Textfeld angezeigt wird (z. B. 65 f&uuml;r "A" oder 97 f&uuml;r "a"). Die &auml;quivalente Eigenschaft zum <span class="literal">onkeypress</span>-Ereignis in Netscape 6 lautet <span class="literal">charCode</span>. Informationen zum Verarbeiten von Tastaturereignissen finden Sie in Kapitel 6.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>if (evt.keyCode == 65) {
+    ...
+}</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Eine ganze Zahl.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Standardwert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Keiner.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="layerX, layerY">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">layerX, layerY</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">4  </span>IE <span class="emphasis">nicht zutreffend</span>  DOM <span class="emphasis">nicht zutreffend</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Schreibgesch&uuml;tzt</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Gibt die horizontale (x) und vertikale (y) Koordinate der Maus bei Ausl&ouml;sung des aktuellen Ereignisses an. Diese Koordinaten sind relativ zur Ebene mit dem Inhalt. Falls keine Ebenen oder positionierbaren Elemente definiert wurden, wird die Standardebene des Basisdokuments als Referenzpunkt verwendet. Diese Eigenschaften entsprechen somit den Eigenschaften <span class="literal">pageX</span> und <span class="literal">pageY</span>. In Netscape ab Version 6 werden diese Eigenschaften bei <span class="literal">input</span>-Elementen f&uuml;r Texte und Kennw&ouml;rter sowie bei <span class="literal">textarea</span>-und <span class="literal">select</span>-Elementen in Bezug auf den rechteckigen Bereich des Elements selbst gemessen.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>if ((evt.layerX &gt;= 10 &amp;&amp; evt.layerX &lt;= 20) &amp;&amp;
+(evt.layerY &gt;= 50 &amp;&amp; evt.layerY &lt;= 100)) {
+    // process code for click in hot zone bounded by 10,50 and 20,100
+}</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Ganzzahliger Pixelwert.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Standardwert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Keiner.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="metaKey">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">metaKey</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6  </span>IE <span class="emphasis">nicht zutreffend</span>  DOM <span class="emphasis">nicht zutreffend</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Schreibgesch&uuml;tzt</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Gibt den Wert <span class="literal">true</span> zur&uuml;ck, wenn zum Zeitpunkt des Ereignisses die <span class="emphasis">Meta</span>-Taste (die <span class="emphasis">Befehlstaste</span> auf der Macintosh-Tastatur) gedr&uuml;ckt war.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>if (evt.metaKey) {
+    // process for meta key being down
+}</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Boolescher Wert: <span class="literal">true</span> | <span class="literal">false</span>.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Standardwert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p><span class="literal">false</span></p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="modifiers">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">modifiers</td><td valign="top" nowrap class="compatibility">NN |<span class="emphasis">4|</span>  IE <span class="emphasis">nicht zutreffend</span> DOM <span class="emphasis">nicht zutreffend</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Schreibgesch&uuml;tzt</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Stellt eine Ganzzahl bereit, die die zum Zeitpunkt des Navigator 4-Ereignisses gedr&uuml;ckte(n) Zusatztaste(n) darstellt. Mithilfe des Operators <span class="literal">&amp;</span> und einer Reihe statischer <span class="literal">Event</span>-Objektkonstanten k&ouml;nnen Sie feststellen, ob eine bestimmte Zusatztaste gedr&uuml;ckt war. Siehe Kapitel 6.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>var altKeyPressed = evt.modifiers &amp; Event.ALT_MASK;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Eine ganze Zahl.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Standardwert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p><span class="literal">0</span></p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="newValue, prevValue">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">newValue, prevValue</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">nicht zutreffend</span>  DOM <span class="emphasis">2</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Schreibgesch&uuml;tzt</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Geben eine Zeichenfolge mit den neuen und bisherigen Werten der jeweils mit den Ereignistypen <span class="literal">DOMAttrModified</span> und <span class="literal">DOMCharacterDataModified</span> der W3C-DOM-Mutationsereignisklassen verkn&uuml;pften Daten zur&uuml;ck. Diese Informationen k&ouml;nnen beispielsweise beim Erstellen eines Undo-Puffers zum R&uuml;ckg&auml;ngigmachen von &Auml;nderungen an Elementattributen oder <span class="literal">CharacterData</span>-Nodeinhalten hilfreich sein.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>undoAttrBuffer = {attrNode:evt.relatedNode, oldVal:evt.prevValue};</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Zeichenfolgenwert.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Standardwert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Leere Zeichenfolge.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="nextPage">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">nextPage</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">nicht zutreffend</span> IE <span class="emphasis">5.5(Win)</span>  DOM <span class="emphasis">nicht zutreffend</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Schreibgesch&uuml;tzt</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Gibt eine Zeichenfolge zur&uuml;ck, die anzeigt, ob die n&auml;chste Seite einer benutzerdefinierten Druckvorlage auf einer linken oder einer rechten Druckseite erscheinen wird. Weitere Informationen zu der f&uuml;r Vorlagen erforderlichen C++-Programmierung finden Sie unter http://msdn.microsoft.com/library/Standardwert.asp?url=/workshop/browser/hosting/printpreview/reference/reference.asp.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Zeichenfolgenkonstante: <span class="literal">left</span> | <span class="literal">right</span> | (leere Zeichenfolge).
+</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Standardwert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Leere Zeichenfolge.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="offsetX, offsetY">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">offsetX, offsetY</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">nicht zutreffend</span> IE <span class="emphasis">4</span>  DOM <span class="emphasis">nicht zutreffend</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Schreibgesch&uuml;tzt</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Stellt die linke und obere Koordinate des Mauszeigers relativ zum Element mit dem Inhalt (ausschlie&szlig;lich Auff&uuml;llung, Rahmen oder R&auml;nder) beim Starten des Ereignisses bereit. Sie k&ouml;nnen das &uuml;bergeordnete Element &uuml;ber die Eigenschaft <span class="literal">offsetParent</span> ermitteln. Weitere Informationen zu Anomalien beim Messen des Versatzes in Internet Explorer finden Sie in Abschnitt 9.2 am Anfang dieses Kapitels.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>if (evt.offsetX &lt;= 20 &amp;&amp; evt.offsetY &lt;=40) {
+    ...
+}</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Ein ganzzahliger Pixelwert.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Standardwert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Keiner.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="originalTarget">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">originalTarget</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6  </span>IE <span class="emphasis">nicht zutreffend</span>  DOM <span class="emphasis">nicht zutreffend</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Schreibgesch&uuml;tzt</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Gibt eine Referenz auf eine Node zur&uuml;ck, die Netscape 6 intern als das authentische erste Ziel des Ereignisses behandelt. Im Gro&szlig;en und Ganzen ist diese Information bei der DHTML-Skripterstellung nicht wirklich hilfreich, da sie sich auf die interne Konstruktion bestimmter Elemente bezieht (so ist in einem <span class="literal">input</span>-Element vom Typ <span class="literal">text</span> beispielsweise ein <span class="literal">div</span>-Element verschachtelt, wobei der DOM-Nodebaum das <span class="literal">div</span>-Element jedoch nicht als Child-Node des <span class="literal">input</span>-Elements erkennt). Bei vielen Ereignissen und Ereigniszielen referenziert die <span class="literal">target</span>- und die <span class="literal">originalTarget</span>-Eigenschaft dieselbe Node.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Nodeobjektreferenz</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Standardwert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Elementspezifisch. </p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="pageX, pageY">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">pageX, pageY</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">4  </span>IE <span class="emphasis">nicht zutreffend</span>  DOM <span class="emphasis">nicht zutreffend</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Schreibgesch&uuml;tzt</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Stellt die linke und obere Koordinate des Elementinhalts relativ zur linken oberen Ecke des Seitenbereichs beim Starten des Ereignisses bereit. Diese Messungen ignorieren einen Bildlauf auf der Seite.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>if (evt.pageX &lt;= 20 &amp;&amp; evt.pageY &lt;=40) {
+    ...
+}</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Ein ganzzahliger Pixelwert.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Standardwert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Keiner. </p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="prevValue">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">prevValue</td><td valign="top" nowrap class="compatibility"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Siehe newValue.</p>
+							</td>
+						</tr>
+			</table>
+		</div><div id="propertyName">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">propertyName</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">nicht zutreffend</span> IE <span class="emphasis">5(Win)</span>  DOM <span class="emphasis">nicht zutreffend</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Lesen/Schreiben</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Gibt eine Zeichenfolge zur&uuml;ck, die den Namen der w&auml;hrend eines <span class="literal">onpropertychange</span>-Ereignisses ge&auml;nderten Objekteigenschaft enth&auml;lt. Bei anderen Ereignistypen wird eine leere Zeichenfolge zur&uuml;ckgegeben. Wenn es sich bei der ge&auml;nderten Eigenschaft um eine Eigenschaft einer Eigenschaft handelt (z. B. eine Eigenschaft der <span class="literal">style</span>-Eigenschaft eines Elements), wird der Wert in der Punktschreibweise (z. B. <span class="literal">style.color</span>) zur&uuml;ckgegeben.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>if (evt.propertyName.indexOf("style") == 0) {
+    // perform further processing on a changed style
+}</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Zeichenfolge mit Eigenschaftsname.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Standardwert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Leere Zeichenfolge.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="qualifier">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">qualifier</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">nicht zutreffend</span> IE <span class="emphasis">5(Win)</span>  DOM <span class="emphasis">nicht zutreffend</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Lesen/Schreiben</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Wird in Verbindung mit IE-Datenbindungsereignissen (z. B. <span class="literal">ondatesetcomplete</span>) verwendet. Gibt einen Zeichenfolgenwert zur&uuml;ck, der ein Datenquellenmitglied bezeichnet und als Parameter f&uuml;r den Zugriff auf die benannte Datensatzgruppe einer Datenquelle verwendet werden kann. Informationen dazu, welches Datenquellenobjekt Sie verwenden, um festzustellen, ob es Qualifier-Daten bereitstellt, finden Sie in der Microsoft-Dokumentation.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Zeichenfolge.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Standardwert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Leere Zeichenfolge.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="rangeOffset">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">rangeOffset</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6  </span>IE <span class="emphasis">nicht zutreffend</span>  DOM <span class="emphasis">nicht zutreffend</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Schreibgesch&uuml;tzt</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Gibt eine ganze Zahl zur&uuml;ck, die dem Zeichen-Offset innerhalb einer Node entspricht, die das Netscape 6-DOM als m&ouml;glichen Bereichsendpunkt ansieht. Die Referenz auf die Node befindet sich in der zugeordneten <span class="literal">rangeParent</span>-Eigenschaft des <span class="literal">event</span>-Objekts. Diese beiden Werte k&ouml;nnen den entsprechenden <span class="literal">Range</span>-Objektmethoden des W3C-DOM als Parameter &uuml;bergeben werden, um einen Start- oder Endpunkt festzulegen. Auf diese Weise k&ouml;nnte ein <span class="literal">mousedown</span>-Event-Listener beispielsweise den Startpunkt und eine <span class="literal">mouseup</span>-Event-Listener-Funktion den Endpunkt eines Bereichs definieren, wobei sie jeweils die Werte <span class="literal">rangeParent</span> und <span class="literal">rangeOffset</span> an die <span class="literal">Range</span>-Objektmethoden &uuml;bergeben.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>var rng;
+function processMouseDown(evt) {
+    rng = document.createRange( );
+    rng.setStart(evt.rangeParent, evt.rangeOffset);
+}</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Eine ganze Zahl.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Standardwert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p><span class="literal">0</span></p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="rangeParent">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">rangeParent</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6  </span>IE <span class="emphasis">nicht zutreffend</span>  DOM <span class="emphasis">nicht zutreffend</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Schreibgesch&uuml;tzt</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Gibt eine Referenz auf eine Node im Dokumentbaum zur&uuml;ck, die sich als Start- oder Endpunkt eines W3C-Textbereichs eignen w&uuml;rde. Wird in Verbindung mit der <span class="literal">rangeOffset</span>-Eigenschaft eingesetzt.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>function processMouseUp(evt) {
+    rng.setEnd(evt.rangeParent, evt.rangeOffset);
+}</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Referenz auf eine Node.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Standardwert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Keiner.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="reason">
+		<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">reason</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">nicht zutreffend</span> IE <span class="emphasis">4</span>  DOM <span class="emphasis">nicht zutreffend</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Lesen/Schreiben</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Gibt einen Code zur&uuml;ck, der mit einem <span class="literal">ondatesetcomplete</span>-Ereignis verkn&uuml;pft ist und angibt, ob die IE-Datenbindung erfolgreich war oder, wenn unvollst&auml;ndig, ob die &Uuml;bertragung auf Grund eines Fehlers oder durch den Client oder Benutzer gestoppt wurde. Diese Eigenschaft muss in einer Ereignisbehandlungsroutine f&uuml;r das Ereignis <span class="literal">ondatesetcomplete</span> ausgewertet werden. In IE 4 ist diese Eigenschaft schreibgesch&uuml;tzt. Obwohl IE 5/Mac diese Eigenschaft des <span class="literal">event</span>-Objekts beinhaltet, ist das entsprechende Ereignis nicht implementiert.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>if (evt.reason == 2) {
+    alert("An error occurred during the most recent update.");
+}</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Einer von drei m&ouml;glichen ganzzahligen Werten:</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<ul><li><span class="literal"></span>&Uuml;bertragung war erfolgreich</li><li><span class="literal"></span>&Uuml;bertragung abgebrochen</li><li><span class="literal"></span>&Uuml;bertragung wurde durch einen Fehler unterbrochen</li></ul>
+					</td>
+				</tr><span class="literal">0</span>
+				<tr>
+					<td colspan="2"><p>&Uuml;bertragung war erfolgreich</p>
+					</td>
+				</tr><span class="literal">1</span>
+				<tr>
+					<td colspan="2"><p>&Uuml;bertragung abgebrochen</p>
+					</td>
+				</tr><span class="literal">2</span>
+				<tr>
+					<td colspan="2"><p>&Uuml;bertragung wurde durch einen Fehler unterbrochen</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Standardwert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Keiner.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="recordset">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">recordset</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">nicht zutreffend</span> IE <span class="emphasis">5(Win)</span>  DOM <span class="emphasis">nicht zutreffend</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Lesen/Schreiben</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Gibt eine Referenz auf das Datensatzgruppenobjekt f&uuml;r die IE-Datenbindung zur&uuml;ck, das mit einem datumsbezogenen Ereignis verkn&uuml;pft ist.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Objektreferenz.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Standardwert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Keiner.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="relatedNode">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">relatedNode</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">nicht zutreffend</span>  DOM <span class="emphasis">2</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Schreibgesch&uuml;tzt</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Gibt eine Referenz auf eine Node zur&uuml;ck, die von der Aktion, die bestimmte W3C-DOM-Mutationsereignisse ausl&ouml;st, betroffen ist. Diese Eigenschaft erm&ouml;glicht einen wesentlich direkteren Zugriff auf eine von einem Ereignis betroffene Node (siehe unten stehende Tabelle).
+</p>
+							</td>
+						</tr>
+						<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Bei anderen Mutationsereignistypen gibt die Eigenschaft den Wert <span class="literal">null</span>, bei anderen Ereignisklassen den Wert <span class="literal">undefined</span> zur&uuml;ck.
+</p>
+							</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td>
+								<table border="1"><tbody><tr><th>Mutationsereignistyp</th><th>eventObj.relatedNode-Referenz</th></tr>
+										<tr><td><span class="literal">DOMNodeInserted</span></td><td>Parent-Node der eingef&uuml;gten Node</td>
+										</tr>
+										<tr><td><span class="literal">DOMNodeRemoved</span></td><td>Urspr&uuml;ngliche Parent-Node der entfernten Node</td>
+										</tr>
+										<tr><td><span class="literal">DOMAttrModified</span></td><td><span class="literal">Attr</span>-Node</td>
+										</tr>
+									</tbody></table>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>var newParent = evt.relatedNode;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Referenz auf eine Node, <span class="literal">null</span> oder <span class="literal">undefined</span>.
+</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Standardwert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Keiner.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="relatedTarget">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">relatedTarget</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">nicht zutreffend</span>  DOM <span class="emphasis">2</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Schreibgesch&uuml;tzt</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Gibt eine Referenz auf eine dargestellte Node im Dokumentbaum zur&uuml;ck, die je nach Ereignistyp das vorherige oder n&auml;chste Ereignisziel repr&auml;sentiert. Bei einem <span class="literal">mouseover</span>-Ereignistyp bezieht sich die Eigenschaft <span class="literal">relatedTarget</span> auf die Node, von der der Cursor zuletzt fortbewegt wurde. Bei einem <span class="literal">mouseout</span>-Ereignis hingegen verweist die <span class="literal">relatedTarget</span>-Eigenschaft auf die Node, zu der der Cursor weiterbewegt wurde. Die entsprechende IE-Funktionalit&auml;t wird durch die Eigenschaften <span class="literal">fromElement</span> und <span class="literal">toElement</span> des IE-<span class="literal">event</span>-Objekts bereitgestellt.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>var beenThere = evt.relatedTarget;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Referenz auf eine Node.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Standardwert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Keiner.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="repeat">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">repeat</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">nicht zutreffend</span> IE <span class="emphasis">5(Win)</span>  DOM <span class="emphasis">nicht zutreffend</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Lesen/Schreiben</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Gibt bei einem <span class="literal">onkeydown</span>-Ereignis den Booleschen Wert <span class="literal">true</span> zur&uuml;ck, wenn die Taste ausreichend lange gedr&uuml;ckt wurde, um die Zeichenwiederholfunktion auszul&ouml;sen. Mit dem folgenden Beispielcode k&ouml;nnen Sie die Eingabe von Text mit der automatischen Zeichenwiederholfunktion in ein Feld unterbinden.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>function handleKeyDown( ) {
+    if (evt.repeat) {
+        evt.returnValue = false;
+    }
+}</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Boolescher Wert: <span class="literal">true</span> | <span class="literal">false</span>.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Standardwert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p><span class="literal">false</span></p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="returnValue">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">returnValue</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">nicht zutreffend</span> IE <span class="emphasis">4</span>  DOM <span class="emphasis">nicht zutreffend</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Lesen/Schreiben</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Stellt den Wert bereit, der vom Quellenelement des Ereignisses zur&uuml;ckgegeben wird, um die Standardaktion, die mit dem Ereignis verkn&uuml;pft ist, zu erlauben oder zu verhindern. Wenn <span class="literal">event.returnValue</span> auf <span class="literal">false</span> gesetzt ist, f&uuml;hrt das Element seinen normalen Vorgang nicht aus, z. B. das Navigieren zu einem Hyperlink oder das Senden eines Formulars. Diese Eigenschaft hat keinen Einfluss auf einen tats&auml;chlichen Wert, den Sie von einer Ereignisbehandlungsroutinenfunktion zur&uuml;ckerhalten m&ouml;chten.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>evt.returnValue = false;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Boolescher Wert: <span class="literal">true</span> | <span class="literal">false</span>.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Standardwert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p><span class="literal">true</span></p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="screenX, screenY">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">screenX, screenY</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">4</span>  IE <span class="emphasis">4</span>  DOM <span class="emphasis">2</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Schreibgesch&uuml;tzt</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Stellt die horizontalen und vertikalen Pixelkoordinatenpunkte der Position bereit, an der sich der Cursor auf dem Bildschirm befand, als das Ereignis auftrat. Die linke obere Ecke des Bildschirms ist der Punkt 0,0. Es gibt keine bestimmte Koordination mit dem Browserfenster oder Dokument, es sei denn, Sie haben das Fenster selbst positioniert und wissen, wo sich das aktive Fenster in Relation zum Bildschirm befindet.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>if (evt.screenX &lt; 5 || evt.screenY &lt; 5) {
+    alert("You\'re too close to the edge!");
+}</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Beliebige positive ganze Zahl oder Null.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Standardwert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p><span class="literal">0</span> </p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="shiftKey">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">shiftKey</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6  </span>IE <span class="emphasis">4  </span>DOM <span class="emphasis">2</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Schreibgesch&uuml;tzt</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Gibt den Wert <span class="literal">true</span> zur&uuml;ck, wenn zum Zeitpunkt des Ereignisses die linke oder rechte <span class="emphasis">Umschalttaste</span> gedr&uuml;ckt war.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>if (evt.shiftKey) {
+    // process for Shift key being down
+}</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Boolescher Wert: <span class="literal">true</span> | <span class="literal">false</span>.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Standardwert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p><span class="literal">false</span></p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="shiftLeft">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">shiftLeft</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">nicht zutreffend</span> IE <span class="emphasis">5.5(Win)</span>  DOM <span class="emphasis">nicht zutreffend</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Schreibgesch&uuml;tzt</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Gibt den Wert <span class="literal">true</span> zur&uuml;ck, wenn zum Zeitpunkt des Ereignisses die linke <span class="emphasis">Umschalttaste</span> gedr&uuml;ckt war.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>if (evt.shiftLeft) {
+    // process for left Shift key being down
+}</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Boolescher Wert: <span class="literal">true</span> | <span class="literal">false</span>.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Standardwert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p><span class="literal">false</span></p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="srcElement">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">srcElement</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">nicht zutreffend</span> IE <span class="emphasis">4</span>  DOM <span class="emphasis">nicht zutreffend</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Schreibgesch&uuml;tzt</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Verweist auf ein Elementobjekt, das das aktuelle Ereignis urspr&uuml;nglich erhalten hat. Diese Eigenschaft eignet sich besonders in <span class="literal">switch</span>-Konstruktionen f&uuml;r eine Ereignisbehandlungsroutinenfunktion, die denselben Ereignistyp f&uuml;r eine Reihe verschiedener Elemente handhaben muss. Die entsprechende Eigenschaft in Netscape 6 lautet <span class="literal">target</span>.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>switch (evt.srcElement.id) {
+    case "myDIV":
+        ...
+    ...
+}</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Elementobjektreferenz.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Standardwert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Keiner. </p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="srcFilter">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">srcFilter</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">nicht zutreffend</span> IE <span class="emphasis">4(Win)</span>  DOM <span class="emphasis">nicht zutreffend</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Schreibgesch&uuml;tzt</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Verweist auf das Filterobjekt, das ein <span class="literal">onfilterchange</span>-Ereignis ausgel&ouml;st hat.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Filterobjektreferenz.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Standardwert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Keiner.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="srcUrn">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">srcUrn</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">nicht zutreffend</span> IE <span class="emphasis">5(Win)</span>  DOM <span class="emphasis">nicht zutreffend</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Schreibgesch&uuml;tzt</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Zeichenfolge mit dem URN eines angeh&auml;ngten Verhaltens, das ein Ereignis ausgel&ouml;st hat.</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Zeichenfolge.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Standardwert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p><span class="literal">null</span></p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="target">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">target</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">4</span> IE <span class="emphasis">nicht zutreffend</span>  DOM <span class="emphasis">2</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Schreibgesch&uuml;tzt</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Verweist auf das Nodeobjekt, das als beabsichtigtes Ziel des aktuellen Ereignisses dient. Im Gegensatz zu der entsprechenden IE-Eigenschaft <span class="literal">srcElement</span> kann die <span class="literal">target</span>-Eigenschaft in Netscape 6 selbst dann auf eine Textnode verweisen, wenn die Ereignisbehandlungsroutine f&uuml;r das Element definiert ist, das die Textnode umgibt. Bei der Ereignisverarbeitung f&uuml;r ein solches Szenario m&uuml;ssen Sie den <span class="literal">nodeType</span> ber&uuml;cksichtigen um die Referenz auf das umgebende Element in IE und Navigator zu vereinheitlichen. Beispiele f&uuml;r browser&uuml;bergreifenden Ereignisbehandlungscode finden Sie in Kapitel 6.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>var elem = (evt.target) ? evt.target: evt.srcElement;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Nodeobjektreferenz.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Standardwert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Keiner. </p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="timeStamp">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">timeStamp</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">nicht zutreffend</span>  DOM <span class="emphasis">2</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Schreibgesch&uuml;tzt</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Stellt einen ganzzahligen Millisekundenwert bereit, den Sie als relative Zeitangabe f&uuml;r das Auftreten eines Ereignisses verwenden k&ouml;nnen. Obwohl das W3C-DOM den 1. Januar 1970 (den Beginn des Java- und JavaScript-Zeitalters) als Bezugszeitpunkt empfiehlt, ist dieser relative Wert als Ausgangspunkt f&uuml;r die Berechnung einer verl&auml;sslichen absoluten Zeitangabe nicht geeignet. Sie k&ouml;nnen jedoch die Werte der <span class="literal">timeStamp</span>-Eigenschaft zweier Ereignisse miteinander vergleichen, um festzustellen, wie viel Zeit zwischen ihnen vergangen ist.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>var clickTime = evt.timeStamp;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Eine ganze Zahl.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Standardwert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Aktueller Zeitstempel. </p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="toElement">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">toElement</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">nicht zutreffend</span> IE <span class="emphasis">4</span>  DOM <span class="emphasis">nicht zutreffend</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Schreibgesch&uuml;tzt</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Gibt eine Referenz auf das Elementobjekt zur&uuml;ck, zu dem sich der Cursor bewegt hat, als er das <span class="literal">onmouseout</span>-Ereignis ausl&ouml;ste.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>if (evt.toElement.id == "upperLevel") {
+    ...
+}</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Elementobjektreferenz.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Standardwert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Keiner. </p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="type">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">type</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">4</span>  IE <span class="emphasis">4</span>  DOM <span class="emphasis">2</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Schreibgesch&uuml;tzt</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Gibt die Art des aktuellen Ereignisses an (ohne das Pr&auml;fix "on"). Alle Werte sind in Kleinbuchstaben.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>if (evt.type == "change") {
+    ...
+}</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Ein beliebiger Ereignisname (ohne das Pr&auml;fix "on") als Zeichenfolge.
+</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Standardwert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Keiner.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="view">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">view</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">nicht zutreffend</span>  DOM <span class="emphasis">2</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Schreibgesch&uuml;tzt</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Gibt eine Referenz auf die W3C-DOM-Ansicht (d. h. das <span class="literal">window</span>- oder <span class="literal">frame</span>-Objekt in der Netscape-Implementierung) zur&uuml;ck, in der das Ereignis aufgetreten ist.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>var whichWin = evt.view;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Referenz auf ein Fensterobjekt.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Standardwert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Aktuelles Fenster.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="wheelDelta">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">wheelDelta</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">nicht zutreffend</span> IE <span class="emphasis">5.5(Win)</span>  DOM <span class="emphasis">nicht zutreffend</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Schreibgesch&uuml;tzt</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Gibt einen ganzzahligen Wert zur&uuml;ck, der angibt, in welcher Richtung der Benutzer das Mausrad einer entsprechend ausgestatteten Maus w&auml;hrend eines <span class="literal">onmousewheel</span>-Ereignisses gedreht hat. Ein positiver Wert bedeutet, dass der Benutzer das Mausrad in Richtung des Bildschirms gedreht hat, ein negativer Wert bezeichnet die entgegengesetzte Drehrichtung.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>if (evt.wheelDelta &gt; 0) {
+    ...
+}</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Ganze Zahl, in der Regel <span class="literal">120</span> oder <span class="literal">-120</span>.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Standardwert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Keiner.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="which">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">which</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">4  </span>IE <span class="emphasis">nicht zutreffend</span>  DOM <span class="emphasis">nicht zutreffend</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Schreibgesch&uuml;tzt</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Gibt einen Wert zur&uuml;ck, der f&uuml;r die Art des Ereignisses wichtig ist. Bei Mausereignissen ist diese Eigenschaft eine ganze Zahl, mit der angegeben wird, welche Maustaste verwendet wurde (<span class="literal">1</span> ist die linke Taste, <span class="literal">3</span> ist die rechte Taste). Bei Tastaturereignissen ist diese Eigenschaft eine ganze Zahl f&uuml;r den ASCII-Code der Taste. Diese Eigenschaft wurde aus dem Navigator 4-Ereignismodell in Netscape 6 &uuml;bernommen. Wenn Sie Navigator 4 nicht mehr unterst&uuml;tzen m&uuml;ssen, verwenden Sie stattdessen die Eigenschaften <span class="literal">button</span>, <span class="literal">charCode</span> und <span class="literal">keyCode</span>.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>if (evt.which == 65) {
+    ...
+}</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Eine ganze Zahl.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Standardwert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Keiner. </p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="x, y">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">x, y</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">nicht zutreffend</span> IE <span class="emphasis">4</span>  DOM <span class="emphasis">nicht zutreffend</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Schreibgesch&uuml;tzt</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Geben die horizontalen und vertikalen Pixelkoordinaten des Mauszeigers zum Zeitpunkt des Ereignisses zur&uuml;ck. F&uuml;r alle mit Ausnahme der relativ positionierten Elemente wird als Koordinatensystem das <span class="literal">body</span>-Element (bzw. das <span class="literal">html</span>-Element im standardkompatiblen Modus von IE 6) verwendet. Wenn das Ereignis innerhalb des Rechtecks eines relativ positionierten Elements auftritt, ist das Koordinatensystem auf den Bereich dieses Elements (mit der linken oberen Ecke des Elements als Bezugspunkt 0,0) begrenzt. Befand sich der Zeiger au&szlig;erhalb des Dokumentbereichs eines Browserfensters, wird der Wert <span class="literal">-1</span> zur&uuml;ckgegeben.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>if (evt.x &lt; 20 &amp;&amp; evt.y &lt; 30) {
+    ...
+}</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Eine ganze Zahl.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Standardwert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Keiner. </p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="getPreventDefault( )">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">getPreventDefault( )</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6  </span>IE <span class="emphasis">nicht zutreffend</span>  DOM <span class="emphasis">nicht zutreffend</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Gibt den Booleschen Wert <span class="literal">true</span> zur&uuml;ck, wenn die Methode <span class="literal">preventDefault( )</span> f&uuml;r das aktuelle Ereignisobjekt aufgerufen wurde. Erm&ouml;glicht vor allem die Abfrage des <span class="literal">preventDefault</span>-Status in einem Skript. Bei dieser Eigenschaft handelt es sich um eine Netscape 6-Erweiterung des W3C-DOM-Ereignismoduls.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Parameter</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Keine.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Zur&uuml;ckgegebener Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Boolescher Wert: <span class="literal">true</span> | <span class="literal">false</span>.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="initEvent( )">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">initEvent( )</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">nicht zutreffend</span>  DOM <span class="emphasis">2</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">initEvent("<span class="replaceable">eventType</span>", <span class="replaceable">bubblesFlag</span>, <span class="replaceable">cancelableFlag</span>)</p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Gibt die mindestens erforderliche Initialisierung eines mit der Methode <span class="literal">document.createEvent( )</span> erzeugten Ereignisobjekts an. Nachdem ein in einem Skript erzeugtes Ereignis initialisiert wurde, kann es als Parameter f&uuml;r die <span class="literal">dispatchEvent( )</span>-Methode einer Node verwendet werden.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Parameter</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<ul><li><span class="literal"></span>Zeichenfolge, die die Art des Ereignisses angibt (<span class="literal">click</span>, <span class="literal">mousedown</span>, <span class="literal">keypress</span>, <span class="literal">DOMAttrModified</span> usw.).
+</li><li><span class="literal"></span>Boolescher Wert (<span class="literal">true</span> | <span class="literal">false</span>), der angibt, ob das Ereignis standardm&auml;&szlig;ig nach oben verbreitet wird oder nicht.
+</li><li><span class="literal"></span>Boolescher Wert (<span class="literal">true</span> | <span class="literal">false</span>), der angibt, ob die Standardaktion des Ereignisses mithilfe der Methode <span class="literal">preventDefault( )</span> unterbunden werden kann.
+</li></ul>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Zur&uuml;ckgegebener Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Keiner.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="initKeyEvent( )">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">initKeyEvent( )</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6  </span>IE <span class="emphasis">nicht zutreffend</span>  DOM <span class="emphasis">nicht zutreffend</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">initKeyEvent("<span class="replaceable">eventType</span>", <span class="replaceable">bubblesFlag</span>, <span class="replaceable">cancelableFlag</span>, <span class="replaceable">view</span>, <span class="replaceable">ctrlKeyFlag</span>, <span class="replaceable">altKeyFlag</span>, <span class="replaceable">shiftKeyFlag</span>, <span class="replaceable">metaKeyFlag</span>, <span class="replaceable">keyCode</span>, <span class="replaceable">charCode</span>)</p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Initialisiert ein neu erstelltes Ereignisobjekt mit einem kompletten Satz von Eigenschaftswerten f&uuml;r ein Tastaturereignis. Der Name und die Parameter dieser Methode werden f&uuml;r das formale DOM-Level-3-Ereignismodul, in dem Tastaturereignisse (vorl&auml;ufig als "Textereignisse" bezeichnet) ver&ouml;ffentlicht werden, m&ouml;glicherweise ge&auml;ndert. Alle Parameter m&uuml;ssen vorhanden und auf Standardwerte (z. B. <span class="literal">false</span> f&uuml;r Boolesche Tastenmarken oder Null f&uuml;r ganzzahlige Codenummern) eingestellt sein, wenn die Werte f&uuml;r den Ereignistyp nicht signifikant sind.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Parameter</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<ul><li><span class="literal"></span>Zeichenfolge, die die Art des Ereignisses angibt: <span class="literal">keydown</span>, <span class="literal">keypress</span>, <span class="literal">keyup</span>.
+</li><li><span class="literal"></span>Boolescher Wert (<span class="literal">true</span> | <span class="literal">false</span>), der angibt, ob das Ereignis standardm&auml;&szlig;ig nach oben verbreitet wird oder nicht.
+</li><li><span class="literal"></span>Boolescher Wert (<span class="literal">true</span> | <span class="literal">false</span>), der angibt, ob die Standardaktion des Ereignisses mithilfe der Methode <span class="literal">preventDefault( )</span> unterbunden werden kann.
+</li><li><span class="literal"></span>Referenz auf das Fenster- oder Frame-Objekt, in dem das dynamisch erzeugte Ereignis vermutlich aufgetreten ist.
+</li><li><span class="literal"></span>Boolescher Wert (<span class="literal">true</span> | <span class="literal">false</span>), der den Zustand der <span class="emphasis">Strg</span>-Taste f&uuml;r dieses Ereignis angibt.
+</li><li><span class="literal"></span>Boolescher Wert (<span class="literal">true</span> | <span class="literal">false</span>), der den Zustand der <span class="emphasis">Alt</span>-Taste f&uuml;r dieses Ereignis angibt.
+</li><li><span class="literal"></span>Boolescher Wert (<span class="literal">true</span> | <span class="literal">false</span>), der den Zustand der <span class="emphasis">Umschalttaste</span> f&uuml;r dieses Ereignis angibt.
+</li><li><span class="literal"></span>Boolescher Wert (<span class="literal">true</span> | <span class="literal">false</span>), der den Zustand der <span class="emphasis">Meta</span>-Taste (z. B. der Befehlstaste beim Macintosh) f&uuml;r dieses Ereignis angibt.
+</li><li><span class="literal"></span>Ganzzahliger Tastencode f&uuml;r dieses Ereignis.</li><li><span class="literal"></span>Ganzzahliger Zeichencode f&uuml;r dieses Ereignis.</li></ul>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Zur&uuml;ckgegebener Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Keiner.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="initMouseEvent( )">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">initMouseEvent( )</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">nicht zutreffend</span>  DOM <span class="emphasis">2</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">initMouseEvent("<span class="replaceable">eventType</span>", <span class="replaceable">bubblesFlag</span>, <span class="replaceable">cancelableFlag</span>, <span class="replaceable">view</span>, <span class="replaceable">detailVal</span>, <span class="replaceable">screenX</span>, <span class="replaceable">screenY</span>, <span class="replaceable">clientX</span>, <span class="replaceable">clientY</span>, <span class="replaceable">ctrlKeyFlag</span>, <span class="replaceable">altKeyFlag</span>, <span class="replaceable">shiftKeyFlag</span>, <span class="replaceable">metaKeyFlag</span>, <span class="replaceable">buttonCode</span>, <span class="replaceable">relatedTargetNodeRef</span>)</p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Initialisiert ein neu erstelltes Ereignisobjekt mit einem kompletten Satz von Eigenschaftswerten f&uuml;r ein Mausereignis. Alle Parameter m&uuml;ssen vorhanden und auf Standardwerte (z. B. <span class="literal">false</span> f&uuml;r Boolesche Tastenmarken, Null f&uuml;r ganzzahlige Werte oder <span class="literal">null</span> f&uuml;r eine Nodereferenz) eingestellt sein, wenn die Werte f&uuml;r den Ereignistyp nicht signifikant sind.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Parameter</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<ul><li><span class="literal"></span>Zeichenfolge, die die Art des Ereignisses angibt (z. B. <span class="literal">click</span>, <span class="literal">mousedown</span>, <span class="literal">mousemove</span>, <span class="literal">mouseout</span>, <span class="literal">mouseover</span> oder <span class="literal">mouseup</span>).
+</li><li><span class="literal"></span>Boolescher Wert (<span class="literal">true</span> | <span class="literal">false</span>), der angibt, ob das Ereignis standardm&auml;&szlig;ig nach oben verbreitet wird oder nicht.
+</li><li><span class="literal"></span>Boolescher Wert (<span class="literal">true</span> | <span class="literal">false</span>), der angibt, ob die Standardaktion des Ereignisses mithilfe der Methode <span class="literal">preventDefault( )</span> unterbunden werden kann.
+</li><li><span class="literal"></span>Referenz auf das Fenster- oder Frame-Objekt, in dem das dynamisch erzeugte Ereignis vermutlich aufgetreten ist.
+</li><li><span class="literal"></span>Ganzzahliger Code f&uuml;r Detaildaten, die mit dem Ereignis verkn&uuml;pft sind.</li><li><span class="literal"></span>Ganze Zahl, die die horizontale Bildschirmkoordinate angibt.</li><li><span class="literal"></span>Ganze Zahl, die die vertikale Bildschirmkoordinate angibt.</li><li><span class="literal"></span>Ganze Zahl, die die horizontale Browserfensterkoordinate angibt.</li><li><span class="literal"></span>Ganze Zahl, die die vertikale Browserfensterkoordinate angibt.</li><li><span class="literal"></span>Boolescher Wert (<span class="literal">true</span> | <span class="literal">false</span>), der den Zustand der <span class="emphasis">Strg</span>-Taste f&uuml;r dieses Ereignis angibt.
+</li><li><span class="literal"></span>Boolescher Wert (<span class="literal">true</span> | <span class="literal">false</span>), der den Zustand der <span class="emphasis">Alt</span>-Taste f&uuml;r dieses Ereignis angibt.
+</li><li><span class="literal"></span>Boolescher Wert (<span class="literal">true</span> | <span class="literal">false</span>), der den Zustand der <span class="emphasis">Umschalttaste</span> f&uuml;r dieses Ereignis angibt.
+</li><li><span class="literal"></span>Boolescher Wert (<span class="literal">true</span> | <span class="literal">false</span>), der den Zustand der <span class="emphasis">Meta</span>-Taste (z. B. der <span class="emphasis">Befehlstaste</span> beim Macintosh) f&uuml;r dieses Ereignis angibt.
+</li><li><span class="literal"></span>Ganzzahliger Tastencode f&uuml;r dieses Ereignis.</li><li><span class="literal"></span>Referenz auf die Node, die das vorherige oder n&auml;chste Mausereignis empf&auml;ngt.</li></ul>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Zur&uuml;ckgegebener Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Keiner.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="initMutationEvent( )">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">initMutationEvent( )</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">nicht zutreffend</span>  DOM <span class="emphasis">2</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">initMutationEvent("<span class="replaceable">eventType</span>", <span class="replaceable">bubblesFlag</span>, <span class="replaceable">cancelableFlag</span>, <span class="replaceable">relatedNodeRef</span>, <span class="replaceable">prevValue</span>, <span class="replaceable">newValue</span>, <span class="replaceable">attrName</span>, <span class="replaceable">attrChangeCode</span>)</p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Initialisiert ein neu erstelltes Ereignisobjekt mit einem kompletten Satz von Eigenschaftswerten f&uuml;r ein Mutationsereignis. Alle Parameter m&uuml;ssen vorhanden und auf Standardwerte (z. B. <span class="literal">false</span> f&uuml;r Boolesche Tastenmarken oder Null f&uuml;r ganzzahlige Codenummern) eingestellt sein, wenn die Werte f&uuml;r den Ereignistyp nicht signifikant sind.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Parameter</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<ul><li><span class="literal"></span>Zeichenfolge, die die Art des Ereignisses angibt: <span class="literal">DOMAttrModified</span>, <span class="literal">DOMCharacterDataModified</span>, <span class="literal">DOMNodeInserted</span>, <span class="literal">DOMNodeInsertedIntoDocument</span>, <span class="literal">DOMNodeRemoved</span>, <span class="literal">DOMNodeRemovedFrom-Document</span>, <span class="literal">DOMSubtreeModified</span>.
+</li><li><span class="literal"></span>Boolescher Wert (<span class="literal">true</span> | <span class="literal">false</span>), der angibt, ob das Ereignis standardm&auml;&szlig;ig nach oben verbreitet wird oder nicht.
+</li><li><span class="literal"></span>Boolescher Wert (<span class="literal">true</span> | <span class="literal">false</span>), der angibt, ob die Standardaktion des Ereignisses mithilfe der Methode <span class="literal">preventDefault( )</span> unterbunden werden kann.
+</li><li><span class="literal"></span>Referenz auf eine mit dem Ereignis verkn&uuml;pfte Node. Kann nur in Verbindung mit den Ereignistypen <span class="literal">DOMNodeInserted</span>, <span class="literal">DOMNodeRemoved</span> und <span class="literal">DOMAttrModified</span> verwendet werden.
+</li><li><span class="literal"></span>Zeichenfolge mit dem vorherigen Wert f&uuml;r eine <span class="literal">Attr</span>- oder <span class="literal">CharacterData</span>-Node. Kann nur in Verbindung mit den Ereignistypen <span class="literal">DOMAttrModified</span> und <span class="literal">DOMCharacterDataModified</span> verwendet werden.
+</li><li><span class="literal"></span>Zeichenfolge mit dem neuen Wert f&uuml;r eine <span class="literal">Attr</span>- oder <span class="literal">CharacterData</span>-Node. Kann nur in Verbindung mit den Ereignistypen <span class="literal">DOMAttrModified</span> und <span class="literal">DOMCharacterDataModified</span> verwendet werden.
+</li><li><span class="literal"></span>Zeichenfolge mit dem Namen einer <span class="literal">Attr</span>-Node. Kann nur in Verbindung mit dem Ereignistyp <span class="literal">DOMAttrModified</span> verwendet werden.
+</li><li><span class="literal"></span>Ganze Zahl, die den Code f&uuml;r die Art der vom Ereignis simulierten &Auml;nderung angibt. Kann nur in Verbindung mit dem Ereignistyp <span class="literal">DOMAttrModified</span> verwendet werden.
+</li></ul>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Zur&uuml;ckgegebener Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Keiner.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="initUIEvent( )">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">initUIEvent( )</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">nicht zutreffend</span>  DOM <span class="emphasis">2</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">initUIEvent("<span class="replaceable">eventType</span>", <span class="replaceable">bubblesFlag</span>, <span class="replaceable">cancelableFlag</span>, <span class="replaceable">view</span>, <span class="replaceable">detailVal</span>)</p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Initialisiert ein neu erstelltes Ereignisobjekt mit einem kompletten Satz von Eigenschaftswerten f&uuml;r ein UI-Ereignis. Alle Parameter m&uuml;ssen vorhanden und auf Standardwerte (z. B. <span class="literal">false</span> f&uuml;r Boolesche Tastenmarken oder Null f&uuml;r ganzzahlige Werte) eingestellt sein, wenn die Werte f&uuml;r den Ereignistyp nicht signifikant sind.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Parameter</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<ul><li><span class="literal"></span>Zeichenfolge, die die Art des Ereignisses angibt (z. B. <span class="literal">DomFocusIn</span>, <span class="literal">DOMFocusOut</span> oder <span class="literal">DOMActivate</span>).
+</li><li><span class="literal"></span>Boolescher Wert (<span class="literal">true</span> | <span class="literal">false</span>), der angibt, ob das Ereignis standardm&auml;&szlig;ig nach oben verbreitet wird oder nicht.
+</li><li><span class="literal"></span>Boolescher Wert (<span class="literal">true</span> | <span class="literal">false</span>), der angibt, ob die Standardaktion des Ereignisses mithilfe der Methode <span class="literal">preventDefault( )</span> unterbunden werden kann.
+</li><li><span class="literal"></span>Referenz auf das Fenster- oder Frame-Objekt, in dem das dynamisch erzeugte Ereignis vermutlich aufgetreten ist.
+</li><li><span class="literal"></span>Ganzzahliger Code f&uuml;r Detaildaten, die mit dem Ereignis verkn&uuml;pft sind.</li></ul>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Zur&uuml;ckgegebener Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Keiner.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="preventDefault( )">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">preventDefault( )</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">nicht zutreffend</span>  DOM <span class="emphasis">2</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Weist das aktuelle Ereignis an, die normalerweise f&uuml;r die Node durchgef&uuml;hrte Operation zu &uuml;bergehen. Einmal vorgenommen, kann die Moduseinstellung f&uuml;r das aktuelle Ereignis nicht mehr r&uuml;ckg&auml;ngig gemacht werden. Die folgende Netscape 6-spezifische Event-Listener-Funktion f&uuml;r ein <span class="literal">keypress</span>-Ereignis sorgt daf&uuml;r, dass in ein Textfeld nur Ziffern eingegeben werden k&ouml;nnen:
+</p>
+<span class="PROGRAMLISTING"><pre>function numsOnly(evt) {
+    if (evt.charCode&lt; 48 || evt.charCode &gt; 57) {
+        evt.preventDefault( );
+    }
+} </pre></span>
+							</td>
+						</tr>
+						<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Dieses Verfahren entspricht der Zuweisung des Wertes <span class="literal">false</span> zur IE-Eigenschaft <span class="literal">event.returnValue</span> oder der Auswertung <span class="literal">return false</span> durch eine Ereignisbehandlungsroutine.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Parameter</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Keine.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Zur&uuml;ckgegebener Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Keiner.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="stopPropagation( )">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">stopPropagation( )</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">nicht zutreffend</span>  DOM <span class="emphasis">2</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Verhindert, dass das aktuelle Ereignis in der Erfassungs- oder der Verbreitungshierarchie &uuml;ber die das Ereignis verarbeitende Node hinaus verbreitet wird.  Diese Methode f&uuml;hrt dieselbe Aktion aus wie die Zuweisung des Wertes <span class="literal">false</span> zur <span class="literal">cancelBubble</span>-Eigenschaft des Ereignisobjekts (nur bei aufw&auml;rts gerichteter Verbreitung).
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Parameter</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Keine.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Zur&uuml;ckgegebener Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Keiner.</p>
+					</td>
+				</tr>
+			</table>
+		</div>
+
+</body>
+</html>

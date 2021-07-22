@@ -1,0 +1,76 @@
+<I></I><html>
+<link rel="stylesheet" href="../HTML/josh.css">
+<head>
+
+
+<title>&lt;jsp:include&gt;</title>
+</head>
+<body bgcolor="#FFFFFF" text="#000000">
+<div id="Beschreibung">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">&lt;jsp:include&gt;</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description">
+
+
+<p>Mit der Aktion <span class="LITERAL">&lt;jsp:include&gt;</span> wird die Antwort von einer anderen JSP-Seite, einem Servlet oder einer statischen Datei in derselben Webanwendung eingeschlossen. Die Ausf&uuml;hrung der aktuellen Seite wird fortgesetzt, nachdem die von der Zielressource erzeugte Antwort eingeschlossen wurde.
+</p>
+
+<p>Wenn die Aktion <span class="LITERAL">&lt;jsp:include&gt;</span> ausgef&uuml;hrt wird, wird jeglicher Antwortinhalt aus dem Puffer geleert. Obwohl dieses Verhalten mit dem Attribut <span class="LITERAL">flush</span> gesteuert werden kann, ist in JSP 1.1 ausschlie&szlig;lich der Wert <span class="LITERAL">true</span> g&uuml;ltig. Diese Einschr&auml;nkung wird wahrscheinlich in einer zuk&uuml;nftigen Version von JSP aufgehoben.
+</p>
+
+<p>Auch in der Zielressource entsprechen die Informationen zum URI-Pfad, die &uuml;ber das implizite Objekt <span class="LITERAL">request</span> verf&uuml;gbar sind, den Informationen zum URI-Pfad f&uuml;r die JSP-Quellseite. Alle anderen Anforderungsinformationen werden ebenfalls unver&auml;ndert beibehalten, so dass die Zielressource Zugriff auf alle urspr&uuml;nglichen Parameter und Header hat, die mit der Anforderung &uuml;bergeben wurden. Zus&auml;tzliche Parameter k&ouml;nnen &uuml;ber die Elemente <span class="LITERAL">&lt;jsp:param&gt;</span> im Body des Elements <span class="LITERAL">&lt;jsp:include&gt;</span> an die Zielressource &uuml;bergeben werden.
+</p>
+<p>Beispiel:</p>
+
+<span class="PROGRAMLISTING"><pre>&lt;jsp:include page=&quot;navigation.jsp&quot; /&gt;</pre></span>
+
+</td></tr>
+</table>
+</div>
+<div id="page">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">page</td>
+<td valign="top" class="COMPATIBILITY"><span class="LITERAL">String</span></td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="usage">Wert zur Anforderungszeit akzeptiert: ja</td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+Obligatorisch. Ein seiten- oder kontextbezogener URI-Pfad f&uuml;r die einzuschlie&szlig;ende Ressource.
+</p></td>
+</tr>
+</table>
+</div>
+<div id="flush">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">flush</td>
+<td valign="top" class="COMPATIBILITY"><span class="LITERAL">String</span></td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="usage">Wert zur Anforderungszeit akzeptiert: nein</td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+In JSP 1.1 obligatorisch, als Wert wird nur <span class="LITERAL">true</span> akzeptiert.
+</p></td>
+</tr>
+</table>
+</div>
+</body>
+</html>

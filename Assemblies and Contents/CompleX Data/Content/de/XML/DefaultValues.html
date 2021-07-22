@@ -1,0 +1,68 @@
+<html>
+<head>
+<title>Vorgabewerte</title>
+</head>
+<body bgcolor="#FFFFFF" text="#000000">
+<div id="Beschreibung">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">Vorgabewerte</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description">
+
+<p>F&uuml;r den Fall, dass ein optionales Attribut in einem Element nicht vorkommt, kann ein Vorgabewert festgelegt werden, der vom XML-Parser an die Client-Anwendung weiterzuleiten ist. In der folgenden Tabelle sind verschiedene Vorgabewertklauseln f&uuml;r Attribute sowie deren Bedeutung aufgef&uuml;hrt:</p>
+
+<table border="1">
+
+
+
+<thead>
+<tr valign="top">
+<td>
+<p>Vorgabewertklausel</p>
+</td>
+<td>
+<p>Erkl&auml;rung</p>
+</td>
+</tr>
+</thead>
+<tbody>
+<tr valign="top">
+<td>
+<p><span class="LITERAL">#REQUIRED</span></p>
+</td>
+<td>
+<p>F&uuml;r Attribute mit dieser Klausel muss ein Wert angegeben werden.</p>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<p><span class="LITERAL">#IMPLIED</span></p>
+</td>
+<td>
+<p>F&uuml;r Attribute mit dieser Klausel ist die Angabe eines Werts optional.</p>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<p><span class="LITERAL">[#FIXED ]</span> &quot;<emphasis>Vorgabewert</emphasis>&quot;</p>
+</td>
+<td>
+<p>Wird f&uuml;r Attribute mit dieser Klausel kein Wert angegeben, so verwendet der XML-Parser den angegebenen Vorgabewert. Mit dem Token <span class="LITERAL">#FIXED</span> muss der Wert des Attributs mit dem Vorgabewert &uuml;bereinstimmen. In jedem Fall besitzt das &uuml;bergeordnete Element ein Attribut mit diesem Namen.</p>
+</td>
+</tr>
+</tbody>
+
+</table>
+
+<p>Der Modifizierer <span class="LITERAL">#FIXED</span> bedeutet, dass das Attribut nur den in der Attributdeklaration angegebenen Wert enthalten darf. Zwar ist das redundant, aber es ist dennoch m&ouml;glich, f&uuml;r ein Element einen Attributwert ausdr&uuml;cklich anzugeben, wenn das Attribut als <span class="LITERAL">#FIXED</span> deklariert worden ist. Die einzige Einschr&auml;nkung besteht darin, dass der Attributwert dem in der <span class="LITERAL">#FIXED</span>-Deklaration angegebenen Wert genau entsprechen muss.</p>
+</td></tr>
+</table>
+</div>
+</body>
+</html>

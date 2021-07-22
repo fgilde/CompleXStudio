@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding = "utf-8"?>
+
+<snippet xmlns:MMString="http://www.macromedia.com/schemes/dat/string/" MMString:name = "Snippets/JavaScript/sort/bubbleSort_csn/snippet/name/Bubble" MMString:description = "Snippets/JavaScript/sort/bubbleSort_csn/snippet/description/A" preview="code" type="block">
+
+
+<insertText location="beforeSelection">
+
+<![CDATA[function bubbleSort(theArray)
+{
+  var i, j;
+  for (i = theArray.length - 1; i >= 0; i--)
+  {
+    for (j = 0; j <= i; j++)
+    {
+      if (theArray[j+1] < theArray[j])
+      {
+        var temp = theArray[j];
+        theArray[j] = theArray[j+1];
+        theArray[j+1] = temp;
+      }
+    }
+  }
+  return theArray;
+}
+]]>
+
+</insertText>
+
+<insertText location="afterSelection"><![CDATA[]]>
+
+</insertText>
+
+</snippet>

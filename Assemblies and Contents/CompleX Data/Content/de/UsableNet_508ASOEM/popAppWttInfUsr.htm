@@ -1,0 +1,140 @@
+<html xmlns:un="http://usablenet.com/namespaces/508_rules">
+   <link rel="stylesheet" href="josh.css">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   
+      <title>Detailanzeige f&uuml;r Regel: Benutzer &uuml;ber die Anzeige von Pop-Ups informieren</title>
+      <!--
+  508/W3C Accessibility Suite OEM V2 for Macromedia Dreamweaver
+  (C) Copyright 2001-2005 UsableNet Inc. All rights reserved.
+  -->
+   </head>
+   <body bgcolor="#ffffff">
+      <div id="Beschreibung">
+         <table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+            <tr>
+               <td valign="top" nowrap="true" class="name">Benutzer &uuml;ber die Anzeige von Pop-Ups informieren</td>
+               <td valign="top" nowrap="true" class="compatibility">&nbsp;</td>
+            </tr>
+            <tr>
+               <td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+            </tr>
+            <tr>
+               <td valign="top" align="right" nowrap="true" colspan="2" class="requirements">WAI / WCAG 1.0 Priorit&auml;t 2 Checkpunkt 10.1</td>
+            </tr>
+            <tr>
+               <td colspan="2" class="clearseparation">&nbsp;</td>
+            </tr>
+            <tr>
+               <td colspan="2" class="clearseparation">&nbsp;</td>
+            </tr>
+            <tr>
+               <td valign="top" colspan="2" class="description"><b>Problembeschreibung</b><br>
+                  
+                           
+                  <p>
+                     Die Seite enth&auml;lt ein Skript, das an BODY-Tag gebunden ist, &uuml;ber welches ein neues Fenster ge&ouml;ffnet wird, sobald die Seite
+                     vom Browser ge&ouml;ffnet wird (d. h. ein Pop-Up-Fenster). In diesem Fall erf&uuml;llt die Seite diesen Checkpunkt nicht. 
+                     	 
+                  </p>
+                      
+                        
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2" class="clearseparation">&nbsp;</td>
+            </tr>
+            <tr>
+               <td colspan="2" class="clearseparation">&nbsp;</td>
+            </tr>
+            <tr>
+               <td valign="top" colspan="2" class="description"><b>Probleml&ouml;sung</b>
+                  
+                           
+                  <p>
+                     Versuchen Sie das &ouml;ffnen von Pop-Up-Fenstern zu verhindern.
+                     	 
+                  </p>
+                  
+                  
+                  <p>
+                     Sollte das &ouml;ffnen eines Pop-Up-Fensters erw&uuml;nscht sein, f&uuml;gen Sie in das neue Fenster eine "Schlie&szlig;en"-Schaltfl&auml;che ein, mit
+                     der das neue Fenster geschlossen werden kann.
+                     
+                  </p>
+                  
+                        
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2" class="clearseparation">&nbsp;</td>
+            </tr>
+            <tr>
+               <td colspan="2" class="clearseparation">&nbsp;</td>
+            </tr>
+            <tr>
+               <td valign="top" colspan="2" class="description"><b>Problemerkl&auml;rung</b><br>
+                  
+                           
+                  <p>
+                     Sobald der Browser ein Pop-Up-Fenster &ouml;ffnet, wird die Arbeitsumgebung des Benutzers ge&auml;ndert. Dies hat folgende Gr&uuml;nde:
+                     	 
+                  </p>
+                  
+                  <ul>
+                     
+                     <li> Im neuen Fenster &auml;ndern sich ggf. einige der Browserfunktionen.  So sind die Schaltfl&auml;chen des Browsers ggf. vollst&auml;ndig
+                        ausgeblendet, das neue Fenster hat eine andere Form bzw. Position, das neue Fenster liegt einmal &uuml;ber und ein anderes Mal
+                        unter dem alten Fenster. 
+                        
+                     </li>
+                     
+                     <li> Auch wenn er nicht deaktiviert wurde, kann die Schaltfl&auml;che "Zur&uuml;ck" des Browsers nicht funktionieren, da es f&uuml;r das neue
+                        Fenster keinen Verlauf (also keine vorherige URL) gibt.
+                        
+                     </li>
+                     
+                     <li> Bei Pop-Up-Fenstern ist die &auml;nderung noch tiefgreifender, da sie, abgesehen von einem Klick auf einen Hyperlink oder der
+                        Eingabe einer URL, auch ohne ausdr&uuml;cklichen Benutzereingriff angezeigt werden.
+                        
+                     </li>
+                     
+                  </ul>
+                  
+                  <p>
+                     Diese unter Umst&auml;nden zusammen auftretenden Faktoren, verst&auml;rken m&ouml;gliche Probleme der Besucher, vor allem dann, wenn diese
+                     behindert sind oder behindertengerechte Techniken einsetzen. Wenn das neue Fenster beispielsweise mit der gleichen Gr&ouml;&szlig;e und
+                     der gleichen Position ge&ouml;ffnet wird wie das alte, so liegt es <strong>genau &uuml;ber</strong> dem alten Fenster und der Benutzer kann ggf. keinen Unterschied erkennen. Der Besucher mag dann die Tatsache, das die Schaltfl&auml;che
+                     "Zur&uuml;ck" nicht funktioniert, als Fehler des Browsers ansehen (und den Browser neu starten) oder als Fehler der Seite (und
+                     zu einer anderen Seite wechseln).
+                     
+                  </p>
+                  
+                  <p>
+                     F&uuml;r Besucher mit Sehbehinderung ist es noch schlimmer: Bildschirmleseger&auml;te sind unter Umst&auml;nden nicht in der Lage ihnen mitzuteilen,
+                     dass &uuml;berhaupt ein neues Fenster ge&ouml;ffnet wurde. Und Benutzer von Bildschirmlupen k&ouml;nnen zwar vermuten, dass es irgendwo ein
+                     neues Fenster gibt, d&uuml;rften aber Schwierigkeiten haben, dieses zu finden.
+                     
+                  </p>
+                  
+                  <p>
+                     Aus diesen Gr&uuml;nden ist es im Allgemeinen dringend erforderlich, dass Website-Besucher &uuml;ber das &ouml;ffnen neuer Fenster informiert
+                     werden. Und nat&uuml;rlich sollten die Besucher diese Information erhalten, <strong>bevor</strong> das Fenster ge&ouml;ffnet wird, hierzu ist nat&uuml;rlich ein Pop-Up-Fenster denkbar wenig geeignet.
+                     
+                  </p>
+                  
+                  <p>
+                     Auf jeden Fall sollte das neue Fenster eine Schaltfl&auml;che enthalten, die den Besucher zu der Seite zur&uuml;ck bringt, welche das
+                     neue Fenster ge&ouml;ffnet hat (bzw. die das neue Fenster schlie&szlig;t). Diese Schaltfl&auml;chen m&uuml;ssen auch dann noch funktionieren, wenn
+                     das neue Fenster die Standardschaltfl&auml;chen des Browsers deaktiviert hat.
+                     
+                  </p>
+                  
+                      
+                        
+               </td>
+            </tr>
+         </table>
+      </div>
+   </body>
+</html>

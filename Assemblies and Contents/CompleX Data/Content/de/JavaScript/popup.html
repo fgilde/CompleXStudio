@@ -1,0 +1,277 @@
+<html>
+<link rel="stylesheet" href="josh.css">
+<body bgcolor="#FFFFFF">
+
+		<div id="Beschreibung">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">popup</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">nicht zutreffend</span> IE <span class="emphasis">5.5(Win)</span>  DOM <span class="emphasis">nicht zutreffend</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Ein <span class="literal">popup</span>-Objekt ist ein rechteckiger Anzeigebereich, der keines der typischen Merkmale eines Browserfensters (R&auml;nder, Bildlaufleisten, Titelleiste usw.) und keinen Referenzpfad zur&uuml;ck zum Hauptdokument aufweist.  Ein Skript muss das <span class="literal">popup</span>-Objekt in einer bestimmten Gr&ouml;&szlig;e und an einer bestimmten Position erstellen und das Fenster mit Inhalten f&uuml;llen, indem es seiner <span class="literal">document.body.innerHTML</span>-Eigenschaft eine HTML-Zeichenfolge zuweist. Au&szlig;erdem muss Ihr Skript daf&uuml;r sorgen, dass dieser Bereich sich vom Dokument abhebt, indem es entweder der <span class="literal">document.body.style</span>-Eigenschaft des Popupobjekts oder den Stilen der in ihm enthaltenen Elemente Hintergrundfarben und R&auml;nder zuweist.
+</p>
+							</td>
+						</tr>
+						<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Obwohl dieses <span class="literal">popup</span>-Objekt im Grunde ein <span class="literal">document</span>-Objekt enth&auml;lt, ist es in keiner Weise mit dem <span class="literal">window</span>-Objekt verwandt und kann daher auch keine externen Dokumente laden. Andererseits ist es nicht an Frames und das Browserfenster selbst gebunden, was ihm das Erscheinungsbild eines betriebssystemnahen HTML-Inhaltsbeh&auml;lters verleiht. Somit k&ouml;nnten Sie dieses Objekt f&uuml;r ein Dropdownmen&uuml; oder ein Kommentarfenster verwenden, das unabh&auml;ngig von Framerahmen und sogar au&szlig;erhalb des Browserfensters selbst dargestellt werden kann.
+</p>
+							</td>
+						</tr>
+						<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Ein <span class="literal">popup</span>-Objekt ist ein fl&uuml;chtiges visuelles Element, das sich durch einen Mausklick au&szlig;erhalb des Popupbereichs wieder ausblenden l&auml;sst. Sie k&ouml;nnen den Elementen im Dokument des Popupfensters jedoch alle verf&uuml;gbaren Mausereignisse zuweisen und auf diese Weise Effekte wie Rollover und Men&uuml;aktionen erzielen. Der HTML-Inhalt kann auch Bilder umfassen.
+</p>
+							</td>
+						</tr>
+						<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Popupobjekte lassen sich mithilfe der <span class="literal">window.createPopup( )</span>-Methode erstellen. Das folgende einfache Beispiel zeigt das typische Verfahren zum Erstellen, Auff&uuml;llen und Anzeigen eines Popupobjekts:
+</p>
+<span class="PROGRAMLISTING"><pre>var popup = window.createPopup( );
+var bod = popup.document.body;
+bod.style.border = &quot;3px solid #ff8800&quot;;
+bod.style.padding = &quot;2px&quot;;
+bod.style.backgroundColor = &quot;lightyellow&quot;;
+bod.innerHTML = 
+  &lt;p style='font-family:Arial, sans-serif; font-size:10px'&gt;Some popup text.&lt;/p&gt;&quot;;
+popup.show(100, 100, 100, 26, document.body);&quot;</pre></span>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectmodelreference"><span class="title">Objektmodellreferenz</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre><span class="replaceable">popupObjectRef</span></pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectspecificproperties"><span class="title">Objektspezifische Eigenschaften</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<table border="1"><tbody><tr><td><span class="literal">document</span></td><td><span class="literal">isOpen</span></td>
+								</tr>
+							</tbody></table>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectspecificmethods"><span class="title">Objektspezifische Methoden</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<table border="1"><tbody><tr><td><span class="literal">hide( )</span></td><td><span class="literal">show( )</span></td>
+								</tr>
+							</tbody></table>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectspecificeventhandlerproperties"><span class="title">Objektspezifische Ereignisbehandlungsroutineneigenschaften</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Keine. </p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="document">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">document</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">nicht zutreffend</span> IE <span class="emphasis">5.5(Win)</span>  DOM <span class="emphasis">nicht zutreffend</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Schreibgesch&uuml;tzt</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Gibt eine Referenz auf das <span class="literal">document</span> innerhalb des <span class="literal">popup</span>-Objekts zur&uuml;ck. Die meisten (wenngleich nicht alle) Eigenschaften des regul&auml;ren <span class="literal">document</span>-Objekts lassen sich auf das <span class="literal">document</span>-Objekt des Popups anwenden. Diese Eigenschaft stellt das prim&auml;re Gateway zur Zuweisung von HTML-Inhalten zum Popup dar. Diese Eigenschaft ist schreibgesch&uuml;tzt, die Eigenschaften des <span class="literal">document</span>-Objekts k&ouml;nnen jedoch gelesen und geschrieben werden und erm&ouml;glichen somit das Zuweisen von Werten zu seinem Inhalt.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre><span class="replaceable">popupRef</span>.document.body.innerHTML = "&lt;p&gt;Howdy, pardner!&lt;/p&gt;";</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p><span class="literal">document</span>-Objektreferenz.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Standardwert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Das aktuelle <span class="literal">document</span>-Objekt.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="isOpen">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">isOpen</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">nicht zutreffend</span> IE <span class="emphasis">5.5(Win)</span>  DOM <span class="emphasis">nicht zutreffend</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Schreibgesch&uuml;tzt</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Gibt einen Booleschen Wert zur&uuml;ck, der angibt, ob das <span class="literal">popup</span>-Objekt sichtbar ist. Selbst wenn das Popupobjekt verborgen ist, k&ouml;nnen Skripts auf seinen Inhalt zugreifen.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>if (<span class="replaceable">popupRef</span>.isOpen) &#123;
+    <span class="replaceable">popupRef</span>.hide( );
+}</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Boolescher Wert: <span class="literal">true</span> | <span class="literal">false</span>.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Standardwert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p><span class="literal">false</span></p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="hide( )">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">hide( )</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">nicht zutreffend</span> IE <span class="emphasis">5.5(Win)</span>  DOM <span class="emphasis">nicht zutreffend</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Blendet das <span class="literal">popup</span>-Objekt aus. Wird im Allgemeinen auf eine Benutzeraktion f&uuml;r den Inhalt des Popupobjekts hin in einem Skript aufgerufen.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Parameter</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Keine.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Zur&uuml;ckgegebener Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Keiner.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="show( )">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">show( )</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">nicht zutreffend</span> IE <span class="emphasis">5.5(Win)</span>  DOM <span class="emphasis">nicht zutreffend</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">show(<span class="replaceable">left</span>, <span class="replaceable">top</span>, <span class="replaceable">width</span>, <span class="replaceable">height</span>[, <span class="replaceable">positioningElemRef</span>])</p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Zeigt das <span class="literal">popup</span>-Objekt an, in der Regel nachdem sein Inhalt zugewiesen wurde. Alle Abmessungen und die Position werden mithilfe von Parametern festgelegt. Die Position kann optional in Bezug auf ein Element im Hauptdokument angegeben werden. Die Parameter f&uuml;r die Position und die Positionierungselemente k&ouml;nnen aus <span class="literal">event</span>-Objekteigenschaften (<span class="literal">even.clientX</span>, <span class="literal">event.clientY</span> und <span class="literal">event.scrElement</span>) &uuml;bernommen werden.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Parameter</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<ul><li><span class="literal"></span>Horizontale Pixelkoordinate in Bezug auf den linken Bildschirmrand oder, falls durch den optionalen Parameter festgelegt, auf ein HTML-Element.
+</li><li><span class="literal"></span>Vertikale Pixelkoordinate in Bezug auf den oberen Bildschirmrand oder, falls durch den optionalen Parameter festgelegt, auf ein HTML-Element.
+</li><li><span class="literal"></span>&Auml;u&szlig;ere Breite des Popupbereichs in Pixel.</li><li><span class="literal"></span>&Auml;u&szlig;ere H&ouml;he des Popupbereichs in Pixel.</li><li><span class="literal"></span>Eine optionale Referenz auf ein beliebiges Element, auf das von dem die Methode aufrufenden Skript aus zugegriffen werden kann. Richtet einen Koordinatenkontext f&uuml;r die Parameter <span class="replaceable">left</span> und <span class="replaceable">top</span> ein.
+</li></ul>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Zur&uuml;ckgegebener Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Keiner.</p>
+					</td>
+				</tr>
+			</table>
+		</div>
+
+</body>
+</html>

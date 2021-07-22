@@ -1,0 +1,190 @@
+<html>
+<head>
+<title>&lt;xsl:element&gt;</title>
+</head>
+<body bgcolor="#FFFFFF" text="#000000">
+<div id="Beschreibung">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">&lt;xsl:element&gt;</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description">
+Diese Anweisung erm&ouml;glicht die Erstellung eines Elements im Ausgabedokument. Sie funktioniert &auml;hnlich wie die Anweisung <span class="LITERAL">&lt;xsl:attribute&gt;</span>.</td></tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Kategorie</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<p>Anweisung</p>
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Obligatorische Attribute</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<dl>
+<dt>
+name
+</dt>
+<dd>
+Dieses Attribut definiert den Namen dieses Elements. Der Wert <span class="LITERAL">
+name=
+"
+fred
+"
+</span> etwa erzeugt im Ausgabedokument das Element <span class="LITERAL">
+&lt;
+fred
+&gt;
+</span>.
+<P></p>
+</dl>
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Optionale Attribute</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<dl>
+<dt>
+namespace
+</dt>
+<dd>
+Definiert den Namensraum f&uuml;r dieses Attribut.
+<P></p>
+<dt>
+use-attribute-sets
+</dt>
+<dd>
+Listet eine oder mehrere Attributmengen auf, die vom erzeugten Element verwendet werden sollen. Wenn Sie mehrere Attributmengen angeben, sollten Sie die Namen durch Leerraumzeichen trennen.
+<P></p>
+</dl>
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Inhalt</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<p>Eine XSLT-Vorlage</p>
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">&Uuml;bergeordnetes Element</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<p>
+<span class="LITERAL">&lt;xsl:element&gt;</span> erscheint innerhalb einer Vorlage.</p>
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Definition</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<p>XSLT-Abschnitt 7.1.2, Erzeugung von Elementen mit <span class="LITERAL">xsl:element</span>.</p>
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Beispiel</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<p>Es wird ein generisches Stylesheet verwendet, welches das Eingabedokument in den Ergebnisbaum kopiert, mit einer Ausnahme: alle Attribute im Originaldokument werden im Ausgabedokument in untergeordnete Elemente konvertiert. Als Name der neuen Elemente wird der Name des Attributs <B>format </B>verwendet und sein Text wird zum Wert des Attributs. Da man nicht wissen kann, wie der Name des Attributs lautet, bevor das XML-Ausgangsdokument verarbeitet worden ist, muss mit Hilfe des Elements <span class="LITERAL">&lt;xsl:element&gt;</span> der Ergebnisbaum erstellt werden. Hier der Inhalt des Stylesheets:</p>
+<span class="PROGRAMLISTING"><pre>
+&lt;?xml version="1.0"?&gt;
+&lt;xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0"&gt;
+  &lt;xsl:output method="xml"/&gt;
+
+  &lt;xsl:template match="*"&gt;
+    &lt;xsl:element name="{name()}"&gt;
+      &lt;xsl:for-each select="@*"&gt;
+        &lt;xsl:element name="{name()}"&gt;
+          &lt;xsl:value-of select="."/&gt;
+        &lt;/xsl:element&gt;
+      &lt;/xsl:for-each&gt;
+      &lt;xsl:apply-templates select="*|text()"/&gt;
+    &lt;/xsl:element&gt;
+  &lt;/xsl:template&gt;
+
+&lt;/xsl:stylesheet&gt;</pre></span>
+<p>Dieses Stylesheet verwendet das Element <span class="LITERAL">&lt;xsl:element&gt;</span> an zwei Stellen: erstens, um ein neues Element mit demselben Namen wie das Originalelement zu erstellen und zweitens, um neue Elemente mit den Namen der einzelnen Attribute zu erstellen. Das Stylesheet wird auf das folgende Dokument angewendet:</p>
+<span class="PROGRAMLISTING"><pre>
+&lt;?xml version="1.0"?&gt;
+&lt;report&gt;
+  &lt;title&gt;Miles Flown in 2001&lt;/title&gt;
+  &lt;month sequence="01"&gt;
+    &lt;miles-flown&gt;12379&lt;/miles-flown&gt;
+    &lt;miles-earned&gt;35215&lt;/miles-earned&gt;
+  &lt;/month&gt;
+  &lt;month sequence="02"&gt;
+    &lt;miles-flown&gt;32857&lt;/miles-flown&gt;
+    &lt;miles-earned&gt;92731&lt;/miles-earned&gt;
+  &lt;/month&gt;
+  &lt;month sequence="03"&gt;
+    &lt;miles-flown&gt;19920&lt;/miles-flown&gt;
+    &lt;miles-earned&gt;76725&lt;/miles-earned&gt;
+  &lt;/month&gt;
+  &lt;month sequence="04"&gt;
+    &lt;miles-flown&gt;18903&lt;/miles-flown&gt;
+    &lt;miles-earned&gt;31781&lt;/miles-earned&gt;
+  &lt;/month&gt;
+&lt;/report&gt;</pre></span>
+<p>Und hier die Ergebnisse:</p>
+<span class="PROGRAMLISTING"><pre>
+&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;report&gt;
+  &lt;title&gt;Miles Flown in 2001&lt;/title&gt;
+  &lt;month&gt;&lt;sequence&gt;01&lt;/sequence&gt;
+    &lt;miles-flown&gt;12379&lt;/miles-flown&gt;
+    &lt;miles-earned&gt;35215&lt;/miles-earned&gt;
+  &lt;/month&gt;
+  &lt;month&gt;&lt;sequence&gt;02&lt;/sequence&gt;
+    &lt;miles-flown&gt;32857&lt;/miles-flown&gt;
+    &lt;miles-earned&gt;92731&lt;/miles-earned&gt;
+  &lt;/month&gt;
+  &lt;month&gt;&lt;sequence&gt;03&lt;/sequence&gt;
+    &lt;miles-flown&gt;19920&lt;/miles-flown&gt;
+    &lt;miles-earned&gt;76725&lt;/miles-earned&gt;
+  &lt;/month&gt;
+  &lt;month&gt;&lt;sequence&gt;04&lt;/sequence&gt;
+    &lt;miles-flown&gt;18903&lt;/miles-flown&gt;
+    &lt;miles-earned&gt;31781&lt;/miles-earned&gt;
+  &lt;/month&gt;
+&lt;/report&gt;</pre></span> <!--<?troff .hw document?>-->
+<p>Die Anweisung <span class="LITERAL">&lt;xsl:element&gt;</span> hat alle Elemente im Ausgabedokument erstellt, einschlie&szlig;lich der <span class="LITERAL">&lt;sequence&gt;</span>-Elemente, die aus den <span class="LITERAL">sequence</span>-Attributen im Originaldokument entstanden sind.</p>
+</td>
+</tr>
+</table>
+</div>
+</body>
+</html>

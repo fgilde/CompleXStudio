@@ -1,0 +1,181 @@
+<html>
+<head>
+<title>floor()-Funktion</title>
+</head>
+<body bgcolor="#FFFFFF" text="#000000">
+<div id="Beschreibung">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">floor()-Funktion</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description">
+Diese Funktion gibt die gr&ouml;&szlig;te Ganzzahl zur&uuml;ck, die nicht gr&ouml;&szlig;er als das Argument ist. </td></tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Eingaben</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<p>Eine Zahl. Wenn das Argument keine Zahl ist, wird es in eine Zahl umgewandelt als w&auml;re es von der Funktion <span class="LITERAL">number()</span> verarbeitet worden. L&auml;sst sich das Argument nicht in eine Zahl umwandeln, gibt die Funktion <span class="LITERAL">floor()</span> den Wert <span class="LITERAL">NaN</span> (Not a Number &ndash; keine Zahl) zur&uuml;ck.</p>
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Ausgabe</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<p>Die gr&ouml;&szlig;te Ganzzahl, die nicht gr&ouml;&szlig;er als das Argument ist bzw. <span class="LITERAL">NaN</span>, wenn sich das Argument nicht in eine Zahl konvertieren l&auml;sst. </p>
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Definition</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<p>XPath-Abschnitt 4.4, Zahlenfunktionen </p>
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Beispiel</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<p>Das folgende Stylesheet demonstriert die Ergebnisse, wenn die Funktion <span class="LITERAL">floor()</span> auf eine Vielzahl verschiedener Werte angewendet wird. Als Eingabe dient das folgende XML-Dokument:</p>
+<span class="PROGRAMLISTING"><pre>
+&lt;?xml version="1.0"?&gt;
+&lt;report&gt;
+  &lt;title&gt;Miles Flown in 2001&lt;/title&gt;
+  &lt;month sequence="01"&gt;
+    &lt;miles-flown&gt;12379&lt;/miles-flown&gt;
+    &lt;miles-earned&gt;35215&lt;/miles-earned&gt;
+  &lt;/month&gt;
+  &lt;month sequence="02"&gt;
+    &lt;miles-flown&gt;32857&lt;/miles-flown&gt;
+    &lt;miles-earned&gt;92731&lt;/miles-earned&gt;
+  &lt;/month&gt;
+  &lt;month sequence="03"&gt;
+    &lt;miles-flown&gt;19920&lt;/miles-flown&gt;
+    &lt;miles-earned&gt;76725&lt;/miles-earned&gt;
+  &lt;/month&gt;
+  &lt;month sequence="04"&gt;
+    &lt;miles-flown&gt;18903&lt;/miles-flown&gt;
+    &lt;miles-earned&gt;31781&lt;/miles-earned&gt;
+  &lt;/month&gt;
+&lt;/report&gt;</pre></span>
+<p>Hier das Stylesheet, das die Funktion <span class="LITERAL">floor()</span> verwendet:</p>
+<span class="PROGRAMLISTING"><pre>
+&lt;?xml version="1.0"?&gt;
+&lt;xsl:stylesheet version="1.0" 
+  xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+  xmlns:months="Lookup table for month names"&gt;
+
+  &lt;months:name sequence="01"&gt;January&lt;/months:name&gt;
+  &lt;months:name sequence="02"&gt;February&lt;/months:name&gt;
+  &lt;months:name sequence="03"&gt;March&lt;/months:name&gt;
+  &lt;months:name sequence="04"&gt;April&lt;/months:name&gt;
+  &lt;months:name sequence="05"&gt;May&lt;/months:name&gt;
+  &lt;months:name sequence="06"&gt;June&lt;/months:name&gt;
+  &lt;months:name sequence="07"&gt;July&lt;/months:name&gt;
+  &lt;months:name sequence="08"&gt;August&lt;/months:name&gt;
+  &lt;months:name sequence="09"&gt;September&lt;/months:name&gt;
+  &lt;months:name sequence="10"&gt;October&lt;/months:name&gt;
+  &lt;months:name sequence="11"&gt;November&lt;/months:name&gt;
+  &lt;months:name sequence="12"&gt;December&lt;/months:name&gt;
+
+  &lt;xsl:output method="text"/&gt;
+
+<!--<?troff .Nd 10?>-->
+  &lt;xsl:variable name="newline"&gt;
+&lt;xsl:text&gt;
+&lt;/xsl:text&gt;
+  &lt;/xsl:variable&gt;
+
+  &lt;xsl:template match="/"&gt;
+    &lt;xsl:value-of select="$newline"/&gt;
+    &lt;xsl:text&gt;Tests of the floor() function:&lt;/xsl:text&gt;
+
+    &lt;xsl:value-of select="$newline"/&gt;
+    &lt;xsl:value-of select="$newline"/&gt;
+    &lt;xsl:text&gt;   "floor('7.983')" = &lt;/xsl:text&gt;
+    &lt;xsl:value-of select="floor('7.983')"/&gt;
+
+    &lt;xsl:value-of select="$newline"/&gt;
+    &lt;xsl:text&gt;   "floor('-7.893')" = &lt;/xsl:text&gt;
+    &lt;xsl:value-of select="floor('-7.893')"/&gt;
+
+    &lt;xsl:value-of select="$newline"/&gt;
+    &lt;xsl:text&gt;   "floor(/report/month[@sequence='01']&lt;/xsl:text&gt;
+    &lt;xsl:text&gt;/miles-flown)" = &lt;/xsl:text&gt;
+    &lt;xsl:value-of select="floor(/report/month[@sequence='01']/miles-flown)"/&gt;
+
+    &lt;xsl:value-of select="$newline"/&gt;
+    &lt;xsl:text&gt;   "floor(document('')/*/months:name&lt;/xsl:text&gt;
+    &lt;xsl:text&gt;[@sequence='02'])" = &lt;/xsl:text&gt;
+    &lt;xsl:value-of select="floor(document('')/*/months:name[@sequence='02'])"/&gt;
+
+    &lt;xsl:value-of select="$newline"/&gt;
+    &lt;xsl:value-of select="$newline"/&gt;
+    &lt;xsl:for-each select="/report/month"&gt;
+      &lt;xsl:text&gt;   &lt;/xsl:text&gt;
+      &lt;xsl:value-of 
+        select="document('')/*/months:name[@sequence=current()/@sequence]"/&gt;
+      &lt;xsl:text&gt; - &lt;/xsl:text&gt;
+      &lt;xsl:value-of select="format-number(miles-flown, '##,###')"/&gt;
+      &lt;xsl:text&gt; miles flown, &lt;/xsl:text&gt;
+      &lt;xsl:value-of select="format-number(miles-earned, '##,###')"/&gt;
+      &lt;xsl:text&gt; miles earned.&lt;/xsl:text&gt;
+      &lt;xsl:value-of select="$newline"/&gt;
+      &lt;xsl:text&gt;      (Averaged &lt;/xsl:text&gt;
+      &lt;xsl:value-of select="floor(miles-earned div miles-flown)"/&gt;
+      &lt;xsl:text&gt; miles earned for each mile flown.)&lt;/xsl:text&gt;
+      &lt;xsl:value-of select="$newline"/&gt;
+      &lt;xsl:value-of select="$newline"/&gt;
+    &lt;/xsl:for-each&gt;
+  &lt;/xsl:template&gt;
+
+&lt;/xsl:stylesheet&gt;</pre></span>
+<p>Hier die Ausgabe des Stylesheets:</p>
+<span class="PROGRAMLISTING"><pre>
+
+Tests of the floor() function:
+
+   "floor('7.983')" = 7
+   "floor('-7.893')" = -8
+   "floor(/report/month[@sequence='01']/miles-flown)" = 12379
+   "floor(document('')/*/months:name[@sequence='02'])" = NaN
+
+   January - 12,379 miles flown, 35,215 miles earned.
+      (Averaged 2 miles earned for each mile flown.)
+
+   February - 32,857 miles flown, 92,731 miles earned.
+      (Averaged 2 miles earned for each mile flown.)
+
+   March - 19,920 miles flown, 76,725 miles earned.
+      (Averaged 3 miles earned for each mile flown.)
+
+   April - 18,903 miles flown, 31,781 miles earned.
+      (Averaged 1 miles earned for each mile flown.)
+</pre></span>
+<p>Beachten Sie, dass beim Anwenden der Funktion <span class="LITERAL">floor()</span> auf den String &quot;February&quot; (der durch <span class="LITERAL">document('')/*/months:name[@sequence='02']</span> bezeichnete Wert) die Funktion den Wert <span class="LITERAL">NaN</span> zur&uuml;ckgegeben hat. Sie k&ouml;nnen diese Ergebnisse mit denen der Funktion <span class="LITERAL">ceiling()</span> und der Funktion <span class="LITERAL">round()</span> vergleichen. </p>
+</td>
+</tr>
+</table>
+</div>
+</body>
+</html>

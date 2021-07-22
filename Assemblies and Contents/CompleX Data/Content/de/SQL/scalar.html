@@ -1,0 +1,779 @@
+<html><head>
+<link rel="stylesheet" href="josh.css"></head><body bgcolor="#FFFFFF">
+<div id="Beschreibung">
+			<table width="100%" cellspacing="0" cellpadding="0" border="0">
+				<tr><td valign="top" class="name">Skalare Funktionen</td><td valign="top" nowrap class="compatibility">&#160; </td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="Description"><p> Skalare Funktionen lassen sich in die in Tabelle 4.2 aufgelisteten Kategorien unterteilen.</p>
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="Description"><span class="title">Kategorien skalarer Funktionen </span></td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2">
+						<table border="1"><thead><tr><th>Funktionskategorie</th><th>Erl&auml;uterung</th></tr>
+							</thead><tbody><tr><td>Integriert</td><td>F&uuml;hrt Operationen mit in der Datenbank integrierten Werten oder Einstellungen durch.Oracle verwendet den Begriff "integriert" f&uuml;r alle Oracle-spezifischen Funktionen, die in dessen DBMS "eingebaut" sind. Deren Verwendung unterscheidet sich von den hier beschriebenen Funktionen.</td>
+								</tr>
+								<tr><td>Datum und Uhrzeit</td><td>F&uuml;hrt Operationen mit DATETIME-Feldern durch und gibt Werte im DATETIME-Format zur&uuml;ck.</td>
+								</tr>
+								<tr><td>Numerisch</td><td>F&uuml;hrt Operationen mit numerischen Werten durch und gibt numerische Werte zur&uuml;ck.</td>
+								</tr>
+								<tr><td>String</td><td>F&uuml;hrt Operationen mit Zeichenwerten (char<span class="emphasis">,</span> varchar, nchar, nvarchar und CLOB) durch und gibt einen String oder einen numerischen Wert zur&uuml;ck.</td>
+								</tr>
+							</tbody></table>
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr><td valign="top" class="Description" colspan="2">Beachten Sie, dass sowohl CASE als auch CAST Funktionen sind. Sie werden jedoch aufgrund ihrer Komplexit&auml;t und ihrer h&auml;ufigen Verwendung in SQL-Datenanweisungen in Kapitel 3 behandelt.</td>
+				</tr>
+			</table>
+</div>
+
+<div id="Integrierte">
+			<table width="100%" cellspacing="0" cellpadding="0" border="0" class="main">
+				<tr><td valign="top" class="name">Integrierte skalare Funktionen</td><td valign="top" nowrap class="compatibility">&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="Description"><p> Die integrierten skalaren Funktionen in SQL99 geben die aktuelle Benutzersitzung und deren Eigenschaften wie beispielsweise die Privilegien an. Integrierte skalare Funktionen sind fast immer nicht-deterministisch. Die ersten drei in Tabelle 4.3 genannten Funktionen geh&ouml;ren zur Kategorie   der Datums- und Uhrzeit-Funktionen. Obwohl die vier Hersteller viele zus&auml;tzlichen Funktionen anbieten, die &uuml;ber die hier genannten integrierten SQL-Funktionen hinausgehen, deklariert der SQL-Standard nur die in Tabelle 4.3 aufgef&uuml;hrten Funktionen.</p>
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="Description"><span class="title">Integrierte skalare Funktionen in SQL99 </span></td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2">
+						<table border="1"><thead><tr><th>Funktion</th><th>Verwendung</th></tr>
+							</thead><tbody><tr><td>CURRENT_DATE</td><td>Gibt das aktuelle Datum zur&uuml;ck.</td>
+								</tr>
+								<tr><td>CURRENT_TIME</td><td>Gibt die aktuelle Uhrzeit zur&uuml;ck.</td>
+								</tr>
+								<tr><td>CURRENT_TIMESTAMP</td><td>Gibt das aktuelle Datum und die aktuelle Uhrzeit zur&uuml;ck.</td>
+								</tr>
+								<tr><td>CURRENT_USER</td><td>Gibt den gerade aktiven Benutzer im Datenbankserver zur&uuml;ck.</td>
+								</tr>
+								<tr><td>SESSION_USER</td><td>Gibt die gerade aktive Autorisierungs-ID zur&uuml;ck, wenn sich diese vom Benutzer unterscheidet.</td>
+								</tr>
+								<tr><td>SYSTEM_USER</td><td>Gibt den gerade aktiven Benutzer auf Betriebssystemebene zur&uuml;ck.</td>
+								</tr>
+							</tbody></table>
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr><td valign="top" class="Description" colspan="2"> Die integrierten skalaren Funktionen in SQL99 geben die aktuelle Benutzersitzung und deren Eigenschaften wie beispielsweise die Privilegien an. Integrierte skalare Funktionen sind fast immer nicht-deterministisch. Die ersten drei in Tabelle 4.3 genannten Funktionen geh&ouml;ren zur Kategorie   der Datums- und Uhrzeit-Funktionen. Obwohl die vier Hersteller viele zus&auml;tzlichen Funktionen anbieten, die &uuml;ber die hier genannten integrierten SQL-Funktionen hinausgehen, deklariert der SQL-Standard nur die in Tabelle 4.3 aufgef&uuml;hrten Funktionen.</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="title"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" class="Description" colspan="2"><p>Die folgenden Abfragen geben die Werte von integrierten Funktionen zur&uuml;ck. Beachten Sie, dass die einzelnen Hersteller Datumsangaben jeweils in den nativen Formaten zur&uuml;ckgeben:</p>
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" class="Description" colspan="2"><pre>/* On MySQL */SELECT CURRENT_TIMESTAMP;-&gt; '2001-12-15 23:50:26'/* On Microsoft SQL Server */SELECT CURRENT_TIMESTAMPGO-&gt; 'Dec 15,2001 23:50:26'/* On Oracle */SELECT USER FROM dual;-&gt; dylan</pre>
+					</td>
+				</tr>
+
+			</table>
+		</div>
+
+<div id="Numerische">
+			<table width="100%" cellspacing="0" cellpadding="0" border="0" class="main">
+				<tr><td valign="top" class="name">Numerische skalare Funktionen</td><td valign="top" nowrap class="compatibility">&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="Description"><p> Die  Liste der offiziellen numerischen Funktionen in SQL99 ist ziemlich kurz. Die verschiedenen Hersteller bieten aber eine Vielzahl zus&auml;tzlicher mathematischer und statistischer Funktionen. MySQL unterst&uuml;tzt viele dieser Befehle in seinen SQL99-Inkarnationen. Die anderen Datenbankprodukte unterst&uuml;tzen dieselben numerischen skalaren Funktionen &uuml;ber ihre eigenen intern definierten Funktionen, verwenden aber andere Namen als der SQL-Standard. Die unterst&uuml;tzten numerischen Funktonen und deren Syntax finden Sie in Tabelle 4.4.</p>
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="Description"><span class="title">Numerische Funktionen in SQL99 </span></td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2">
+						<table border="1"><thead><tr><th>Funktion</th><th>Verwendung</th></tr>
+							</thead><tbody><tr><td>BIT_LENGTH(expression)</td><td>Gibt einen Integerwert zur&uuml;ck, der f&uuml;r die Anzahl der Bits in einem Ausdruck steht.</td>
+								</tr>
+								<tr><td>CHAR_LENGTH(expression)</td><td>Gibt einen Integerwert zur&uuml;ck, der f&uuml;r die Anzahl der Zeichen in einem Ausdruck steht.</td>
+								</tr>
+								<tr><td>EXTRACT(datetime_expression datepart FROM expression)</td><td>Erm&ouml;glicht das Extrahieren des Datumsabschnitts (YEAR, MONTH, DAY, HOUR, MINUTE, SECOND, TIMEZONE_HOUR oder TIMEZONE_MINUTE) aus einem Ausdruck.</td>
+								</tr>
+								<tr><td>OCTET_LENGTH(expression)</td><td>Gibt einen Integerwert zur&uuml;ck, der f&uuml;r die Anzahl der Oktette in einem Ausdruck steht. Dieser Wert ist identisch mit BIT_LENGTH/8.</td>
+								</tr>
+								<tr><td>POSITION(starting_string
+IN search_string)</td><td>Gibt einen Integerwert zur&uuml;ck, der f&uuml;r die Startposition eines Strings in einem Suchstring steht.</td>
+								</tr>
+							</tbody></table>
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="title"><span class="title">BIT_LENGTH,
+          CHAR_LENGTH, and OCTET_LENGTH</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Von allen Herstellern kommt Oracle der Funktion BIT_LENGTH am n&auml;chsten. Oracle unterst&uuml;tzt die Funktion LENGTHB, die einen Integerwert zur&uuml;ckgibt, der f&uuml;r die Anzahl der Byte in einem Ausdruck steht.</p><p>MySQL und PostgreSQL unterst&uuml;tzen CHAR_LENGTH und das SQL99-Synonym CHARACTER_LENGTH( ). PostgreSQL unterst&uuml;tzt au&szlig;erdem EXTRACT( ), OCTET_LENGTH( ) und POSITION( ) entsprechend dem SQL99-Standard. Die beiden anderen Hersteller haben vergleichbare Funktionen mit identischer Funktionalit&auml;t, bei SQL Server ist dies die Funktion LEN, bei Oracle die Funktion LENGTH.</p><p>MySQL und PostgreSQL unterst&uuml;tzen dar&uuml;ber hinaus auch vollst&auml;ndig die Funktion OCTET_LENGTH.</p>
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2"><span class="title">Beispiel	</span></td>
+				</tr>
+				<tr>
+					<td><p>Im folgenden Beispiel wird die L&auml;nge eines Strings und eines Wertes festgelegt, die aus einer Spalte abgerufen wurden:</p>
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>/* On MySQL and PostgreSQL */SELECT CHAR_LENGTH('hello');SELECT OCTET_LENGTH(book_title) FROM titles;/* On Microsoft SQL Server */SELECT DATALENGTH(title)FROM titlesWHERE type = 'popular_comp'GO/* On Oracle */SELECT LENGTH('HORATIO') "Length of characters"FROM dual;</pre>
+						</span></td>
+				</tr>
+	<tr>
+      <td valign="top" colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+    </tr>
+    <tr>
+      <td valign="top" colspan="2" class="example"><span class="title">EXTRACT </span></td>
+				</tr>
+				<tr>
+					<td><p>Die Funktion EXTRACT wird nur von PostgreSQL und MySQL unterst&uuml;tzt.</p><p>Jeder Hersteller unterst&uuml;tzt aber einen anderen Befehl, der dieselbe Funktionalit&auml;t bietet. Oracle verwendet die Funktion TO_CHAR, um einen Teil eines Datumswerts in einen Zeichenstring zu extrahieren. In SQL Server geschieht das mit der Funktion CONVERT.</p><p>Die MySQL-Implementierung geht etwas &uuml;ber den SQL99-Standard hinaus. In diesem ist die R&uuml;ckgabe mehrerer Felder in einem Aufruf von EXTRACT( ) (z.&#160;B. "DAY_HOUR") nicht vorgesehen. Mit den MySQL-Erweiterungen soll das erreicht werden, was die Kombination DATE_TRUNC( ) und DATE_PART( ) in PostgreSQL bewirkt. MySQL unterst&uuml;tzt diein Tabelle 4.5 aufgef&uuml;hrten Datumsbestandteile.</p>
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				 <tr>
+				      <td valign="top" colspan="2" class="example"><span class="title">Datumsbestandteile in MySQL </span> </td>
+				    </tr>
+				    <tr>
+				      <td valign="top" colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+				    </tr>
+				    <tr>
+				      <td> <table border="1" align="center">
+				          <tr>
+				            <th> <p>Typwert</p></th>
+				            <th> <p>Bedeutung</p></th>
+				            <th> <p>Erwartetes Format</p></th>
+				          </tr>
+
+				          <tr>
+						  <td>
+						  <p>SECOND</p></td>
+						  <td>
+						  <p>Sekunden</p></td>
+						  <td>
+						  <p>SECONDS</p></td>
+						  </tr>
+
+						  <tr>
+						  <td>
+						  <p>MINUTE</p></td>
+						  <td>
+						  <p>Minuten</p></td>
+						  <td>
+						  <p>MINUTES</p></td>
+						  </tr>
+
+						  <tr>
+						  <td>
+						  <p>HOUR</p></td>
+						  <td>
+						  <p>Stunden</p></td>
+						  <td>
+						  <p>HOURS</p></td>
+						  </tr>
+
+						  <tr>
+						  <td>
+						  <p>DAY</p></td>
+						  <td>
+						  <p>Tage</p></td>
+						  <td>
+						  <p>DAYS</p></td>
+						  </tr>
+
+						  <tr>
+						  <td>
+						  <p>MONTH</p></td>
+						  <td>
+						  <p>Monate</p></td>
+						  <td>
+						  <p>MONTHS</p></td>
+						  </tr>
+
+						  <tr>
+						  <td>
+						  <p>YEAR</p></td>
+						  <td>
+						  <p>Jahre</p></td>
+						  <td>
+						  <p>YEARS</p></td>
+						  </tr>
+
+						  <tr>
+						  <td>
+						  <p>MINUTE_SECOND</p></td>
+						  <td>
+						  <p>Minuten und Sekunden</p></td>
+						  <td>
+						  <p>"MINUTES:SECONDS"</p></td>
+						  </tr>
+
+						  <tr>
+						  <td>
+						  <p>HOUR_MINUTE</p></td>
+						  <td>
+						  <p>Stunden und Minuten</p></td>
+						  <td>
+						  <p>"HOURS:MINUTES"</p></td>
+						  </tr>
+
+						  <tr>
+						  <td>
+						  <p>DAY_HOUR</p></td>
+						  <td>
+						  <p>Tage und Stunden</p></td>
+						  <td>
+						  <p>"DAYS HOURS"</p></td>
+						  </tr>
+
+						  <tr>
+						  <td>
+						  <p>YEAR_MONTH</p></td>
+						  <td>
+						  <p>Jahre und Monate</p></td>
+						  <td>
+						  <p>"YEARS-MONTHS"</p></td>
+						  </tr>
+
+						  <tr>
+						  <td>
+						  <p>HOUR_SECOND</p></td>
+						  <td>
+						  <p>Stunden, Minuten, Sekunden</p></td>
+						  <td>
+						  <p>"HOURS:MINUTES:SECONDS"</p></td>
+						  </tr>
+
+						  <tr>
+						  <td>
+						  <p>DAY_MINUTE</p></td>
+						  <td>
+						  <p>Tage, Stunden, Minuten</p></td>
+						  <td>
+						  <p>"DAYS HOURS:MINUTES"</p></td>
+						  </tr>
+
+						  <tr>
+						  <td>
+						  <p>DAY_SECOND</p></td>
+						  <td>
+						  <p>Tage, Stunden, Minuten, Sekunden</p></td>
+						  <td>
+						  <p>"DAYSHOURS:MINUTES:SECONDS"</p></td>
+						  </tr>
+
+				        </table></td>
+				    </tr>
+
+
+				<tr>
+					<td valign="top" colspan="2"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td><p>Im folgenden Beispiel werden Datumsbestandteile aus verschiedenen Datums- und Uhrzeitwerten extrahiert:</p>
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>/* On MySQL  */SELECT EXTRACT(YEAR FROM "2013-07-02");-&gt; 1999SELECT EXTRACT(YEAR_MONTH FROM "2013-07-02 01:02:03");-&gt; 199907SELECT EXTRACT(DAY_MINUTE FROM "2013-07-02 01:02:03");-&gt; 20102</pre>
+						</span></td>
+				</tr>
+			<tr>
+
+	<tr>
+      <td valign="top" colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+    </tr>
+
+
+      <td valign="top" colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+    </tr>
+    <tr>
+      <td valign="top" colspan="2" class="example"><span class="title">POSITION</span></td>
+				</tr>
+				<tr>
+					<td><p>Die Funktion POSITION gibt einen Integerwert zur&uuml;ck, der die Startposition eines Strings in einem Suchstring angibt. MySQL und PostgreSQL unterst&uuml;tzen die Funktion POSITION ohne Abweichung von der SQL99-Syntax. PostgreSQL verf&uuml;gt &uuml;ber eine synonyme Funktion namens TEXTPOS, MySQL &uuml;ber die synonyme Funktion LOCATE.</p><p>In Oracle lautet das &Auml;quivalent INSTR. Microsoft SQL Server hat sowohl CHARINDEX als auch PATINDEX. CHARINDEX und PATINDEX sind sich sehr &auml;hnlich, au&szlig;er dass PATINDEX die Verwendung von Wildcard-Zeichen in den Suchkriterien erlaubt. Beispiel:</p>
+
+
+			<span class="programlisting">
+        <pre>/* On MySQL */
+SELECT LOCATE('bar', 'foobar');
+-&gt; 4
+
+/* On MySQL and PostgreSQL */
+SELECT POSITION('fu' IN 'snafhu');
+-&gt; 0
+
+/* On Microsoft SQL Server */
+SELECT CHARINDEX( 'de', 'abcdefg' )
+GO
+-&gt; 4
+SELECT PATINDEX( '%fg', 'abcdefg' )
+GO
+-&gt; 6
+</pre></span>
+</td>
+</tr>
+
+
+				</table>
+		</div>
+
+
+
+<div id="Stringfunktionen">
+			<table width="100%" cellspacing="0" cellpadding="0" border="0" class="main">
+				<tr><td valign="top" class="name">Stringfunktionen</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="Description"><p> Grundlegende Stringfunktionen bieten eine Vielzahl von M&ouml;glichkeiten und geben immer einen Stringwert als Ergebnismenge zur&uuml;ck. Manche Stringfunktionen sind dyadisch, d.&#160;h. sie verarbeiten zwei Strings gleichzeitig. SQL99 unterst&uuml;tzt die in Tabelle 4.6 genannten Stringfunktionen.</p>
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="Description"><span class="title"></span></td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2">
+						<table border="1" align="center">
+						<tr>
+						  <th> <p>Funktion</p></th>
+						  <th> <p>Verwendung</p></th>
+          				</tr>
+
+						<tr>
+						<td>
+						<span class="programlisting">
+        				<pre>CONCATENATE(expression || expression)</pre></span></td>
+						<td>
+						<p>Verkn&uuml;pft zwei oder mehr Literalausdr&uuml;cke, Spaltenwerte oder Variablen zu einem String.</p></td>
+						</tr>
+
+						<tr>
+						<td>
+						<span class="programlisting">
+        				<pre>CONVERT</pre></span></td>
+						<td>
+						<p>Konvertiert einen String in eine andere Darstellungsweise im gleichen Zeichensatz.</p></td>
+						</tr>
+
+						<tr>
+						<td>
+						<span class="programlisting">
+        				<pre>LOWER</pre></span></td>
+						<td>
+						<p>Konvertiert einen String in Kleinbuchstaben.</p></td>
+						</tr>
+
+						<tr>
+						<td>
+						<span class="programlisting">
+        				<pre>SUBSTRING</pre></span></td>
+						<td>
+						<p>Extrahiert einen Teil eines Strings.</p></td>
+						</tr>
+
+						<tr>
+						<td>
+						<span class="programlisting">
+        				<pre>TRANSLATE</pre></span></td>
+						<td>
+						<p>Konvertiert einen String von einem Zeichensatz in einen anderen.</p></td>
+						</tr>
+
+						<tr>
+						<td>
+						<span class="programlisting">
+        				<pre>TRIM</pre></span></td>
+						<td>
+						<p>Entfernt f&uuml;hrende und/oder nachgestellte Zeichen aus einem String.</p></td>
+						</tr>
+
+						<tr>
+						<td>
+						<span class="programlisting">
+        				<pre>UPPER</pre></span></td>
+						<td>
+						<p>Konvertiert einen String in Gro&szlig;buchstaben.</p></td>
+						</tr>
+						</table>
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2"><span class="title">CONCATENATE</span></td>
+				</tr>
+				<tr>
+					<td><p>SQL99 definiert einen  Verkettungsoperator ( || ), der zwei Strings zu einem Stringwert zusammenfasst. Mit der Funktion CONCATENATE werden zwei oder mehr Strings zu einem einzigen Ausgabestring zusammengefasst. PostgreSQL und Oracle unterst&uuml;tzen den Verkettungsoperator mit den zwei senkrechten Strichen. Microsoft SQL Server dagegen verwendet dasPluszeichen (+) als Verkettungsoperator.</p><p>MySQL unterst&uuml;tzt eine &auml;hnliche Funktion, n&auml;mlich CONCAT( ). N&auml;here Informationen zur Verkettung in Oracle, PostgreSQL und Microsoft SQL Server finden Sie im Abschnitt Verkettungsoperatorenin Kapitel 3.</p>
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2"><span class="title">Syntax in SQL99</span></td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>CONCATENATE('string1' || 'string2')</pre>
+						</span></td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2"><span class="title">Syntax in MySQL</span></td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>CONCAT(str1, str2, [,...n])</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td><p>Wenn einer der Verkettungswerte <span class="literal">null</span> ist, ist der gesamte zur&uuml;ckgegebene String <span class="literal">null</span>. Wenn ein numerischer Wert verkn&uuml;pft wird, wird er implizit in einen String konvertiert:</p>
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>SELECT CONCAT('My ', 'bologna ', 'has ', 'a ', 'first ', 'name...');-&gt; 'My bologna has a first name...'SELECT CONCAT('My ', NULL, 'has ', 'first ', 'name...');-&gt; NULL</pre>
+						</span></td>
+				</tr>
+			    <tr>
+      <td valign="top" colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+    </tr>
+    <tr>
+      <td valign="top" colspan="2" class="example"><span class="title">CONVERT und TRANSLATE</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Mit der Funktion CONVERT  wird die Darstellung eines Zeichenstrings innerhalb eines Zeichensatzes und einer Sortierreihenfolge ver&auml;ndert. CONVERT kann beispielsweise dazu verwendet werden, die Anzahl der Bits pro Zeichen zu &auml;ndern.</p><p>TRANSLATE hingegen &auml;ndert den Basiszeichensatz eines Stringwerts. So kann mit <span class="emphasis">TRANSLATE</span> zum Beispiel ein Wert aus einem westeurop&auml;ischen Zeichensatz in einen japanischen Kanji-Zeichensatz oder einen russischen Zeichensatz ge&auml;ndert werden. Die &Uuml;bersetzung muss bereits vorhanden sein, entweder per Voreinstellung oder mit dem Befehl CREATE TRANSLATION erzeugt.</p>
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2"><span class="title">Syntax in SQL99</span></td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>CONVERT (char_value target_char_set USING form_of_use source_char_name)TRANSLATE(char_value target_char_set USING translation_name)</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td><p>Von den hier besprochenen Datenbankherstellern unterst&uuml;tzt nur Oracle CONVERT und TRANSLATE mit derselben Bedeutung wie in SQL99. Die Oracle-Implementierung von TRANSLATE ist der von SQL99 sehr &auml;hnlich, die beiden sind jedoch nicht identisch. In der eigenen Implementierung akzeptiert Oracle nur zwei Argumente und erlaubt nur die &Uuml;bersetzung zwischen dem Zeichensatz der Datenbank und dem NLS-Zeichensatz.</p>
+					</td>
+				</tr>
+				<tr>
+					<td><p>Die MySQL-Implementierung der Funktion CONVERT &uuml;bersetzt nur Zahlen von einer Basis in eine andere. Die CONVERT-Implementierung von Microsoft SQL Server hingegen ist eine sehr umfangreiche Hilfsfunktion, die den Basisdatentyp eines Ausdrucks &auml;ndert, ansonsten aber nicht viel mit der CONVERT-Funktion in SQL99 gemeinsam hat. PostgreSQL unterst&uuml;tzt CONVERT nicht; die PostgreSQL-Implementierung von TRANSLATE dient dazu, eine Instanz eines Zeichenstrings in einen anderen Zeichenstring umzuwandeln.</p>
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2"><span class="title">MySQL: Syntax und Variationen</span></td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>CONV(int, from_base, to_base)</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td><p>MySQL unterst&uuml;tzt TRANSLATE nicht. Die MySQL-Implementierung von CONVERT gibt einen Stringwert zur&uuml;ck, der f&uuml;r die Zahl steht, die von "from_base value" in "to_base value" konvertiert wurde. Wenn eine der Zahlen NULL ist, gibt die Funktion NULL zur&uuml;ck. Nachfolgend einige Beispiele:</p>
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>SELECT CONV("a",16,2);-&gt; '1010'SELECT CONV("6E",18,8);-&gt; '172'SELECT CONV(-17,10,-18);-&gt; '-H'</pre>
+						</span></td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2"><span class="title">Microsoft SQL Server: Syntax und Variationen</span></td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>CONVERT (data_type[(length) | (precision,scale)], expression[,style])</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td><p>Microsoft SQL Server unterst&uuml;tzt TRANSLATE nicht. Die Microsoft-Implementierung der Funktion CONVERT folgt nicht der SQL99-Spezifikation. Sie entspricht stattdessen in ihrer Funktionsweise der Funktion CAST . Die Stilklausel wird verwendet, um das Format einer Datumskonvertierung anzugeben. N&auml;heres dazu finden Sie in der Dokumentation des Herstellers. Beispiel:</p>
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>SELECT title, CONVERT(char(7), ytd_sales)FROM titlesORDER BY titleGO</pre>
+						</span></td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2"><span class="title">Oracle: Syntax und Variationen</span></td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>CONVERT('char_value', target_char_set, source_char_set)TRANSLATE('char_value', 'from_text', 'to_text')</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td><p>In der Oracle-Implementierung gibt die Funktion CONVERT den <span class="emphasis">char_value</span> im Zielzeichensatz zur&uuml;ck. Der <span class="emphasis">char_value</span> ist der zu konvertierende String, <span class="emphasis">target_char_set</span> der Name des Zeichensatzes, in den der <span class="emphasis">char_value</span> konvertiert wird. <span class="emphasis">Source_char_set</span> bezeichnet den Zeichensatz, in dem der <span class="emphasis">char_value</span> urspr&uuml;nglich gespeichert war.</p>
+					</td>
+				</tr>
+				<tr>
+					<td><p>Sowohl der Ziel- als auch der Ausgangszeichensatz k&ouml;nnen aus Literalstrings, Variablen oder Spalten bestehen, die den Namen des Zeichensatzes enthalten. Beachten Sie, dass unzul&auml;ngliche Ersetzungszeichen ersetzt werden k&ouml;nnen, wenn aus oder in einen Zeichensatz konvertiert wird, der nicht alle in der Konvertierung vorkommenden Zeichen unterst&uuml;tzt.</p>
+					</td>
+				</tr>
+				<tr>
+					<td><p>Oracle unterst&uuml;tzt mehrere g&auml;ngige Zeichens&auml;tze wie <span class="emphasis">US7ASCII</span>, <span class="emphasis">WE8DECDEC</span>, <span class="emphasis">WE8HP</span>, <span class="emphasis">F7DEC</span>, <span class="emphasis">WE8EBCDIC500</span>, <span class="emphasis">WE8PC850</span> und <span class="emphasis">WE8ISO8859P1</span>. Beispiel:</p>
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>SELECT CONVERT('Gro&szlig;', 'US7ASCII', 'WE8HP')FROM DUAL;-&gt;Gross</pre>
+						</span></td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2"><span class="title">PostgreSQL: Syntax und Variationen</span></td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>TRANSLATE (character_string, from_text, to_text)</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td><p>PostgreSQL unterst&uuml;tzt CONVERT nicht. Die PostgreSQL-Implementierung der Funktion TRANSLATE bietet dagegen viel mehr als in der SQL99-Spezifikation angegeben. Sie konvertiert jedes Auftreten eines Textstrings in einen anderen String innerhalb eines weiteren angegebenen Strings. Beispiel:</p>
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>SELECT TRANSLATE('12345abcde', '5a', 'XX');-&gt; 1234XXbcdeSELECT TRANSLATE(title, 'Computer', 'PC')FROM  titlesWHERE type = 'Personal_computer'</pre>
+						</span></td>
+				</tr>
+			    <tr>
+      <td valign="top" colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+    </tr>
+    <tr>
+      <td valign="top" colspan="2" class="example"><span class="title">LOWER und UPPER</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Mit den Funktionen LOWER und UPPER k&ouml;nnen Sieeinen String schnell und einfach in Klein- bzw. Gro&szlig;buchstaben konvertieren. Diese Funktionen werden in allen in diesem Buch behandelten Datenbankimplementierungen unterst&uuml;tzt.</p>
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>SELECT LOWER('You Talkin To ME?'), UPPER('you talking to me?!');-&gt; you talking to me?, YOU TALKIN TO ME?!</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td><p>Die einzelnen Datenbankhersteller unterst&uuml;tzen auch eine Vielzahl implementierungsspezifischer Textformatierungsfunktionen.</p>
+					</td>
+				</tr>
+			    <tr>
+      <td valign="top" colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+    </tr>
+    <tr>
+      <td valign="top" colspan="2" class="example"><span class="title">SUBSTRING</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Mit der Funktion SUBSTRING  k&ouml;nnen Sie einen Zeichenstring aus einem anderen Zeichenstring extrahieren.</p>
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2"><span class="title">Syntax in SQL99</span></td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>SUBSTRING(extraction_string FROM starting_position [FOR length][COLLATE collation_name])</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td><p>Wenn einer der Eingabeparameter NULL ist, gibt die Funktion NULL zur&uuml;ck. Die<span class="emphasis">extraction_string</span> ist der String, aus dem der Zeichenwert extrahiert wird. Es kann sich dabei um einen Literalstring, eine Spalte in einer Tabelle mit einem Zeichendatentyp oder eine Variable mit einem Zeichendatentyp handeln. <span class="emphasis">starting_position</span> ist ein Integerwert, der angibt, ab welcher Position extrahiert werden soll. <span class="emphasis">length</span> ist ein optionaler Integerwert, der angibt, wie viele Zeichen beginnend bei der <span class="emphasis">starting_position</span> extrahiert werden sollen.</p>
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2"><span class="title">MySQL: Syntax und Variationen</span></td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>SUBSTRING(extraction_string FROM starting_position)</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td><p>Die MySQL-Implementierung geht davon aus, dass die Zeichen von der Startposition bis zum Ende des Zeichenstrings extrahiert werden sollen.</p>
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2"><span class="title">Microsoft SQL Server: Syntax und Variationen</span></td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>SUBSTRING(extraction_string [FROM starting_position] [FOR length])</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td><p>Microsoft SQL Server unterst&uuml;tzt weitestgehend den SQL99-Standard, allerdings nicht die COLLATE-Klausel. Bei Microsoft kann dieser Befehl auf Text, Bilder und bin&auml;re Datentypen angewendet werden; <span class="emphasis">starting_position</span> und <span class="emphasis">length</span> stehen dabei f&uuml;r die Anzahl der Byte und nicht f&uuml;r die Anzahl der zu z&auml;hlenden Zeichen.</p>
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2"><span class="title">Oracle: Syntax und Variationen</span></td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>SUBSTR(extraction_string, starting_position [, length])</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td><p>Die Oracle-Implementierung, SUBSTR, funktioniert weitestgehend wie in SQL99 beschrieben; die COLLATE-Klausel wird jedoch nicht unterst&uuml;tzt. Wenn <span class="emphasis">starting_value</span> eine negative Zahl ist, z&auml;hlt Oracle vom Ende des <span class="emphasis">extraction_string</span> an. Wenn <span class="emphasis">length</span> weggelassen wird, wird der Rest des Strings (beginnend bei <span class="emphasis">starting_position</span>) zur&uuml;ckgegeben.</p>
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2"><span class="title">PostgreSQL: Syntax und Variationen</span></td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>SUBSTRING(extraction_string [FROM starting_position] [FOR length])</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td><p>Microsoft SQL Server unterst&uuml;tzt weitestgehend den SQL99-Standard, allerdings nicht die COLLATE-Klausel.</p>
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2"><span class="title">Beispiele</span></td>
+				</tr>
+				<tr>
+					<td><p>Die folgenden Beispiele funktionieren fast alle mit allen vier in diesem Buch behandelten Datenbanken. Nur das zweite, Oracle-spezifische Beispiel mit einer negativen Startposition funktioniert nicht mit den anderen Datenbanken (angenommen, die SUBSTR von Oracle wird in SUBSTRING ge&auml;ndert):</p>
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>/* Oracle, ab der linken Seite */SELECT SUBSTR('ABCDEFG',3,4) FROM DUAL;-&gt; CDEF/* On Oracle, ab der rechten Seite */SELECT SUBSTR('ABCDEFG',-5,4) FROM DUAL;-&gt; CDEF/* MySQL */SELECT SUBSTRING('Be vewy, vewy quiet',5);-&gt; 'wy, vewy quiet''/* PostgreSQL oder SQL Server */SELECT au_lname, SUBSTRING(au_fname, 1, 1)FROM authorsWHERE au_lname = 'Carson'-&gt; Carson     C</pre>
+						</span></td>
+				</tr>
+			    <tr>
+      <td valign="top" colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+    </tr>
+    <tr>
+      <td valign="top" colspan="2" class="example"><span class="title">TRIM</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Die Funktion TRIM    entfernt f&uuml;hrende Leerzeichen und/oder nachgestellte Zeichen aus dem angegebenen Zeichenstring. Mit dieser Funktion k&ouml;nnen auch andere Zeichentypen aus dem angegebenen Zeichenstring entfernt werden. Standardm&auml;&szlig;ig wird das angegebene Zeichen von beiden Seiten des Zeichenstrings entfernt. Wenn kein String zum Entfernen angegeben ist, entfernt TRIM standardm&auml;&szlig;ig Leerzeichen.</p>
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2"><span class="title">Syntax in SQL99</span></td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>TRIM( [ [{LEADING | TRAILING | BOTH}] [removal_string] FROM ]  target_string  [COLLATE collation_name])</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td><p>"removal_string" ist der zu entfernende Zeichenstring. "target _string" ist der Zeichenstring, aus dem Zeichen entfernt werden sollen. Wenn kein "removal_string" angegeben ist, entfernt TRIM Leerzeichen. Die COLLATE-Klausel setzt die Ergebnismenge der Funktion in eine andere bereits vorhandene Sortierreihenfolge um.</p>
+					</td>
+				</tr>
+				<tr>
+					<td><p>MySQL, PostgreSQL und Oracle unterst&uuml;tzen die SQL99-Syntax von TRIM.</p>
+					</td>
+				</tr>
+				<tr>
+					<td><p>Microsoft SQL Server (und auch die anderen Hersteller) stellt die Funktionen LTRIM und RTRIM zur Verf&uuml;gung, um f&uuml;hrende und/oder nachgestellte Leerzeichen zu entfernen. Mit LTRIM und RTRIM k&ouml;nnen keine anderen Zeichen entfernt werden.</p>
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2"><span class="title">Beispiele</span></td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>SELECT TRIM('   wamalamadingdong  ');-&gt; 'wamalamadingdong'SELECT TRIM(LEADING '19' FROM '1976 AMC GREMLIN');-&gt; '76 AMC GREMLIN'SELECT TRIM(BOTH 'x' FROM 'xxxWHISKEYxxx');-&gt; 'WHISKEY'SELECT TRIM(TRAILING 'snack' FROM 'scooby snack');-&gt; 'scooby '</pre>
+						</span></td>
+				</tr>
+			</table>
+		</div>
+	</body></html>

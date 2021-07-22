@@ -1,0 +1,145 @@
+<html>
+	<head>
+		<title>xslt lookup module</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+		<script src="xslt_lookupMod.js"></script>
+		<script language="JavaScript">
+var BOOK_NAME = "O'REILLY XSLT-Referenz";
+var KEYWORDS = new Array(
+		"boolean(", "boolean()-Funktion", "Beschreibung",
+		"ceiling", "ceiling()-Funktion", "Beschreibung",
+		"concat", "concat()-Funktion", "Beschreibung",
+		"contains", "contains()-Funktion", "Beschreibung",
+		"count", "count()-Funktion", "Beschreibung",
+		"current", "current()-Funktion", "Beschreibung",
+		"node-set", "Datatypes", "Beschreibung",
+		"boolean", "Datatypes", "Beschreibung",
+		"number", "Datatypes", "Beschreibung",
+		"string", "Datatypes", "Beschreibung",
+		"result tree fragment", "Datatypes", "Beschreibung",
+		"document", "document()-Funktion", "Beschreibung",
+		"element-available", "element-available()-Funktion", "Beschreibung",
+		"false", "false()-Funktion", "Beschreibung",
+		"floor", "floor()-Funktion", "Beschreibung",
+		"format-number", "format-number()-Funktion", "Beschreibung",
+		"function-available", "function-available()-Funktion", "Beschreibung",
+		"generate-id", "generate-id()-Funktion", "Beschreibung",
+		"id", "id()-Funktion", "Beschreibung",
+		"key", "key()-Funktion", "Beschreibung",
+		"lang", "lang()-Funktion", "Beschreibung",
+		"last", "last()-Funktion", "Beschreibung",
+		"local-name", "local-name()-Funktion", "Beschreibung",
+		"name(", "name()-Funktion", "Beschreibung",
+		"namespace-uri", "namespace-uri()-Funktion", "Beschreibung",
+		"normalize-space", "normalize-space()-Funktion", "Beschreibung",
+		"not", "not()-Funktion", "Beschreibung",
+		"number(", "number()-Funktion", "Beschreibung",
+		"position(", "position()-Funktion", "Beschreibung",
+		"round", "round()-Funktion", "Beschreibung",
+		"starts-with", "starts-with()-Funktion", "Beschreibung",
+		"string(", "string()-Funktion", "Beschreibung",
+		"string-length", "string-length()-Funktion", "Beschreibung",
+		"substring-after", "substring-after()-Funktion", "Beschreibung",
+		"substring-before(", "substring-before()-Funktion", "Beschreibung",
+		"substring", "substring()-Funktion", "Beschreibung",
+		"sum", "sum()-Funktion", "Beschreibung",
+		"system-property", "system-property()-Funktion", "Beschreibung",
+		"translate", "translate()-Funktion", "Beschreibung",
+		"true", "true()-Funktion", "Beschreibung",
+		"unparsed-entity-uri", "unparsed-entity-uri()-Funktion", "Beschreibung",
+		"child", "XPath Axes", "Beschreibung",
+		"parent", "XPath Axes", "Beschreibung",
+		"self", "XPath Axes", "Beschreibung",
+		"attribute", "XPath Axes", "Beschreibung",
+		"ancestor", "XPath Axes", "Beschreibung",
+		"ancestor-or-self", "XPath Axes", "Beschreibung",
+		"descendant", "XPath Axes", "Beschreibung",
+		"descendant-or-self", "XPath Axes", "Beschreibung",
+		"preceding-sibling", "XPath Axes", "Beschreibung",
+		"following-sibling", "XPath Axes", "Beschreibung",
+		"preceding", "XPath Axes", "Beschreibung",
+		"following", "XPath Axes", "Beschreibung",
+		"namespace", "XPath Axes", "Beschreibung",
+		"xsl:apply-imports", "xsl:apply-imports", "Beschreibung",
+		"xsl:apply-templates", "xsl:apply-templates", "Beschreibung",
+		"xsl:attribute", "xsl:attribute", "Beschreibung",
+		"xsl:attribute-set", "xsl:attribute-set", "Beschreibung",
+		"xsl:call-template", "xsl:call-template", "Beschreibung",
+		"xsl:choose", "xsl:choose", "Beschreibung",
+		"xsl:comment", "xsl:comment", "Beschreibung",
+		"xsl:copy", "xsl:copy", "Beschreibung",
+		"xsl:copy-of", "xsl:copy-of", "Beschreibung",
+		"xsl:decimal-format", "xsl:decimal-format", "Beschreibung",
+		"xsl:element", "xsl:element", "Beschreibung",
+		"xsl:fallback", "xsl:fallback", "Beschreibung",
+		"xsl:for-each", "xsl:for-each", "Beschreibung",
+		"xsl:if", "xsl:if", "Beschreibung",
+		"xsl:import", "xsl:import", "Beschreibung",
+		"xsl:include", "xsl:include", "Beschreibung",
+		"xsl:key", "xsl:key", "Beschreibung",
+		"xsl:message", "xsl:message", "Beschreibung",
+		"xsl:namespace-alias", "xsl:namespace-alias", "Beschreibung",
+		"xsl:number", "xsl:number", "Beschreibung",
+		"xsl:otherwise", "xsl:otherwise", "Beschreibung",
+		"xsl:output", "xsl:output", "Beschreibung",
+		"xsl:param", "xsl:param", "Beschreibung",
+		"xsl:preserve-space", "xsl:preserve-space", "Beschreibung",
+		"xsl:processing-instruction", "xsl:processing-instruction", "Beschreibung",
+		"xsl:sort", "xsl:sort", "Beschreibung",
+		"xsl:strip-space", "xsl:strip-space", "Beschreibung",
+		"xsl:stylesheet", "xsl:stylesheet", "Beschreibung",
+		"xsl:template", "xsl:template", "Beschreibung",
+		"xsl:text", "xsl:text", "Beschreibung",
+		"xsl:transform", "xsl:transform", "Beschreibung",
+		"xsl:value-of", "xsl:value-of", "Beschreibung",
+		"xsl:variable", "xsl:variable", "Beschreibung",
+		"xsl:when", "xsl:when", "Beschreibung",
+		"xsl:with-param", "xsl:with-param", "Beschreibung"
+		);
+
+// XSLT Lookup Module
+function referenceLookup()
+{
+  var xsltVal = null;
+  var keyword = "";
+  var dom = dw.getDocumentDOM();
+  if (dom){
+  		if (dom.getView() == 'design' || (dom.getView() == 'split' && dom.getFocus() != 'textView')){
+			// If we're in design view and there's a tag selected, just
+			// use the tagname as the keyword
+			var selNode = dom.getSelectedNode();
+			if (selNode.nodeType == Node.ELEMENT_NODE)
+				keyword = selNode.tagName.toLowerCase();
+			// if the selection in design view is not a tag but we're in
+			// an XSLT document, default to the xsl:stylesheet topic.
+			else if (dom.documentType.indexOf("XSLT") != -1)
+				keyword = "xsl:stylesheet";
+		}
+		else {
+			var docEl = dom.documentElement;
+			var wholeDoc = docEl.outerHTML;
+			var theSel = dom.source.getSelection();
+			var startPoint = searchBackwards(theSel[0],dom);
+			var endPoint = searchForwards(theSel[1],dom,wholeDoc.length);
+			var j;
+			keyword = dom.source.getText(startPoint,endPoint);
+		}
+	  	// Special cases (multiple entries for single keyword)
+		if (keyword == "boolean" || keyword == "string" || keyword == "number" || keyword == "name" || keyword == "position") {
+  			if (dom.source.getText(endPoint,endPoint+1) == "("){
+  				keyword = keyword + "(";
+  			}
+  		}
+		xsltVal = getTopic(keyword);
+  }
+	if (!xsltVal){
+		xsltVal = new Array("");
+	}
+  return xsltVal;
+}
+		</script>
+	</head>
+	<body bgcolor="#ffffff" text="#000000">
+		<FONT face="MS UI Gothic"></FONT>
+	</body>
+</html>

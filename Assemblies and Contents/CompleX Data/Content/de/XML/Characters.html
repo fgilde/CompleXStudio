@@ -1,0 +1,27 @@
+<html>
+<head>
+<title>Zeichen</title>
+</head>
+<body bgcolor="#FFFFFF" text="#000000">
+<div id="Beschreibung">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">Zeichen</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description">
+
+<p>XML-Dokumente sind an sich Textdokumente, die sich aus Zeichen zusammensetzen. Um sicherzustellen, dass Dokumente &uuml;ber verschiedene Computersysteme hinweg portierbar sind und Inhalt in m&ouml;glichst vielen der geschriebenen menschlichen Sprachen umfassen k&ouml;nnen, ist f&uuml;r XML-Parser eine Implementierung des Unicode-Standard erforderlich. Das bedeutet nicht etwa, dass alle XML-Dokumente in Unicode gespeichert und bearbeitet werden m&uuml;ssen, sondern vielmehr, dass ein XML-Parser in der Lage sein muss, das Dokument von seinem urspr&uuml;nglichen Zeichensatz in den Unicode-Zeichensatz zu konvertieren. Alle XML-Parser m&uuml;ssen (mindestens) entweder UTF-8 oder UTF-16 als Eingabe-Kodierungsform unterst&uuml;tzen. Weitere Erl&auml;uterungen zu Kodierungsformen und Unicode erhalten Sie in <link linkend="xmlnut3-CHP-27">Kapitel 27</link>.</p>
+
+<tip id="xmlnut3-CHP-21-NOTE-131" role="ora">
+<p>Einer der vorwiegenden Unterschiede zwischen XML 1.0 und XML 1.1 ist die Definition, welche Unicode-Zeichen innerhalb eines XML-Dokuments zul&auml;ssig sind. In XML 1.0 wurden viele der ASCII-Steuerzeichen (wie etwa BEL und NAK) ausdr&uuml;cklich von der Verwendung in XML-Dokumenten ausgeschlossen. XML 1.1 hingegen l&auml;sst jegliches Unicode-Zeichen einschlie&szlig;lich der 60 Steuerzeichen zu (au&szlig;er Null, <span class="LITERAL">x0000</span>), solange sie in Form numerischer Zeichenreferenzen angegeben werden. Allerdings schreibt XML 1.1 vor, dass die C1-Steuerzeichen zwischen <span class="LITERAL">0x0080</span> und <span class="LITERAL">0x009F</span> in Form numerischer Zeichenreferenzen angegeben werden, was gem&auml;&szlig; XML 1.0 noch nicht notwendig war.</p>
+</tip>
+</td></tr>
+</table>
+</div>
+</body>
+</html>

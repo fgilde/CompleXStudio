@@ -1,0 +1,58 @@
+<html>
+<link rel="stylesheet" href="../HTML/josh.css">
+<head>
+
+
+<title>&lt;jsp:forward&gt;</title>
+</head>
+<body bgcolor="#FFFFFF" text="#000000">
+<div id="Beschreibung">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">&lt;jsp:forward&gt;</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description">
+
+
+<p>Die Aktion <span class="LITERAL">&lt;jsp:forward&gt;</span> &uuml;bergibt die Kontrolle &uuml;ber die Anforderungsverarbeitung an eine andere JSP-Seite oder ein anderes Servlet in derselben Webanwendung. Die Ausf&uuml;hrung der aktuellen Seite wird beendet, so dass die Zielressource die vollst&auml;ndige Kontrolle &uuml;ber die Anforderung erh&auml;lt.
+</p>
+
+<p>Wenn die Aktion <span class="LITERAL">&lt;jsp:forward&gt;</span> ausgef&uuml;hrt wird, wird jeglicher Antwortinhalt aus dem Puffer geleert. Wenn die Antwort bereits &uuml;bernommen wurde (also teilweise an den Browser gesendet wurde), schl&auml;gt die Weiterleitung mit einer Ausnahme <span class="LITERAL">IllegalStateException</span> fehl.
+</p>
+
+<p>Mit dieser Aktion werden die Informationen zum URI-Pfad, die &uuml;ber das implizite Objekt <span class="LITERAL">request</span> verf&uuml;gbar sind, so angepasst, dass sie den Informationen zum URI-Pfad f&uuml;r die Zielressource entsprechen. Alle anderen Anforderungsinformationen werden unver&auml;ndert beibehalten, so dass die Zielressource Zugriff auf alle urspr&uuml;nglichen Parameter und Header hat, die mit der Anforderung &uuml;bergeben wurden. Zus&auml;tzliche Parameter k&ouml;nnen &uuml;ber die Elemente <span class="LITERAL">&lt;jsp:param&gt;</span> im Body des Elements <span class="LITERAL">&lt;jsp:forward&gt;</span> an die Zielressource &uuml;bergeben werden.
+</p>
+<p>Beispiel:</p>
+
+<span class="PROGRAMLISTING"><pre>&lt;jsp:forward page=&quot;list.jsp&quot; /&gt;</pre></span>
+
+</td></tr>
+</table>
+</div>
+
+<div id="page">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">page</td>
+<td valign="top" class="COMPATIBILITY"><span class="LITERAL">String</span></td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="usage">Wert zur Anforderungszeit akzeptiert: ja</td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+Obligatorisch. Ein seiten- oder kontextbezogener URI-Pfad, an den die Ressource die Benutzer weiterleitet.
+</p></td>
+</tr>
+</table>
+</div>
+</body>
+</html>

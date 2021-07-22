@@ -1,0 +1,84 @@
+<tag name="cfgridcolumn" endtag="no">
+	<tagformat nlbeforetag="1" nlaftertag="1"/>
+	<tagdialog file="cfgridcolumn.htm" />
+   <attributes>
+      <attrib name="name" type="text"/>
+      <attrib name="header" type="text"/>
+      <attrib name="headeralign" type="enumerated">
+         <attriboption value="center"/>
+         <attriboption value="left"/>
+         <attriboption value="right"/>
+      </attrib>
+
+      <attrib name="dataalign" type="enumerated">
+         <attriboption value="center"/>
+         <attriboption value="left"/>
+         <attriboption value="right"/>
+      </attrib>
+
+      <attrib name="numberformat" type="text"/>
+      <attrib name="width" type="text"/>
+      <attrib name="font" type="font"/>
+      <attrib name="fontsize" type="text"/>
+      <attrib name="bold" type="enumerated">
+         <attriboption value="yes"/>
+         <attriboption value="no"/>
+      </attrib>
+
+      <attrib name="italic" type="enumerated">
+         <attriboption value="yes"/>
+         <attriboption value="no"/>
+      </attrib>
+
+      <attrib name="href" type="text"/>
+      <attrib name="hrefkey" type="text"/>
+      <attrib name="target" type="text"/>
+      <attrib name="select" type="enumerated">
+         <attriboption value="yes"/>
+         <attriboption value="no"/>
+      </attrib>
+
+      <attrib name="display" type="enumerated">
+         <attriboption value="yes"/>
+         <attriboption value="no"/>
+      </attrib>
+
+      <attrib name="type" type="enumerated">
+         <attriboption value="image"/>
+         <attriboption value="numeric"/>
+		 <attriboption value="string_nocase"/>
+		 <attriboption value="boolean"/>
+		 <attriboption value="currency"/>
+      </attrib>
+
+	  <attrib name="mask" type="text"/>
+
+      <attrib name="headerfont" type="font"/>
+      <attrib name="headerfontsize" type="text"/>
+      <attrib name="headerbold" type="enumerated">
+         <attriboption value="yes"/>
+         <attriboption value="no"/>
+      </attrib>
+
+      <attrib name="headeritalic" type="enumerated">
+         <attriboption value="yes"/>
+         <attriboption value="no"/>
+      </attrib>
+
+	  <attrib name="headertextcolor" type="color"/>
+	  <attrib name="textcolor" type="textbox"/>
+	  <attrib name="bgcolor" type="textbox"/>
+	  <attrib name="values" type="text"/>
+	  <attrib name="valuesdisplay" type="text"/>
+	  <attrib name="valuesdelimiter" type="text"/>
+   </attributes>
+
+   <attribcategories>
+      <attribgroup name="general" elements="name,type,header,display,mask"/>
+      <attribgroup name="appearance" elements="headeralign,dataalign,width,font,fontsize,bold,italic,headerfont,headerfontsize,headerbold,headeritalic"/>
+      <attribgroup name="special" elements="href,hrefkey,target,select,numberformat"/>
+      <attribgroup name="misc" elements=""/>
+   </attribcategories>
+
+</tag>
+

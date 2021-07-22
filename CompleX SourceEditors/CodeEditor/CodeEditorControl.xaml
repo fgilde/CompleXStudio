@@ -1,0 +1,53 @@
+﻿<UserControl x:Class="CompleX_SourceEditors.CodeEditor.CodeEditorControl"
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:avalonEdit="http://icsharpcode.net/sharpdevelop/avalonedit" 
+    mc:Ignorable="d" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" d:DesignHeight="200"
+    d:DesignWidth="266">
+    <DockPanel>
+        <ToolBar DockPanel.Dock="Top">
+            <ToggleButton IsChecked="{Binding ElementName=TextEditor,Path=ShowLineNumbers}">
+                <TextBlock Width="16" TextAlignment="Center">#</TextBlock>
+            </ToggleButton>
+            <ToggleButton IsChecked="{Binding ElementName=TextEditor,Path=Options.ShowEndOfLine}">
+                <TextBlock Width="16" TextAlignment="Center">¶</TextBlock>
+            </ToggleButton>
+            <ComboBox Name="highlightingComboBox"
+				              SelectedItem="{Binding SyntaxHighlighting, ElementName=TextEditor}"
+				              ItemsSource="{Binding Source={x:Static avalonEdit:HighlightingManager.Instance}, Path=HighlightingDefinitions}"
+                              SelectionChanged="HighlightingComboBox_SelectionChanged" />
+        </ToolBar>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="auto"/>
+            </Grid.RowDefinitions>
+            <avalonEdit:TextEditor
+				Name="TextEditor"
+                ShowLineNumbers="True"
+				FontFamily="Consolas"
+                Background="White"
+				FontSize="{Binding Value, ElementName=FontSizeSlider}" >
+            </avalonEdit:TextEditor>
+            <StatusBar Grid.Row="1">
+                <Slider x:Name="FontSizeSlider" Value="13" Maximum="150" Width="100" />
+                <Separator Background="LightGray"/>
+                <TextBlock Text="Offset:" />
+                <TextBlock x:Name="Offset" Text="{Binding ElementName=TextEditor,Path=TextArea.Caret.Offset}"/>
+                <Separator Background="LightGray"/>
+                <TextBlock Text="Line:" />
+                <TextBlock x:Name="Line" Text="{Binding ElementName=TextEditor,Path=TextArea.Caret.Line}"/>
+                <Separator Background="LightGray"/>
+                <TextBlock Text="Column:" />
+                <TextBlock x:Name="Column" Text="{Binding ElementName=TextEditor,Path=TextArea.Caret.Column}"/>
+                <StatusBar.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="#FFC3C8CB" Offset="0" />
+                        <GradientStop Color="#FFCDDAEF" Offset="1" />
+                    </LinearGradientBrush>
+                </StatusBar.Background>
+            </StatusBar>
+        </Grid>
+    </DockPanel>
+</UserControl>

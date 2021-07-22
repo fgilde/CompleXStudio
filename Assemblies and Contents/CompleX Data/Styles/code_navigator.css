@@ -1,0 +1,142 @@
+@charset "utf-8";
+/*************************************************************************
+*
+* ADOBE CONFIDENTIAL
+* ___________________
+*
+*  Copyright 2007 Adobe Systems Incorporated
+*  All Rights Reserved.
+*
+* NOTICE:  All information contained herein is, and remains
+* the property of Adobe Systems Incorporated and its suppliers,
+* if any.  The intellectual and technical concepts contained
+* herein are proprietary to Adobe Systems Incorporated and its
+* suppliers and may be covered by U.S. and Foreign Patents,
+* patents in process, and are protected by trade secret or copyright law.
+* Dissemination of this information or reproduction of this material
+* is strictly forbidden unless prior written permission is obtained
+* from Adobe Systems Incorporated.
+**************************************************************************/
+body 
+{
+	font: 12px/18px Tahoma, Helvetica, sans-serif;
+	color:#000;
+	background-color:#fff;
+	margin:0;
+	padding:0; 
+	-webkit-user-select: none; 
+}
+ul
+{
+	list-style-type:none;
+	margin-left: 0px;
+	margin-top: .5em;
+	padding-left: .3em;
+}
+ul ul 
+{
+	margin-top: 0px;
+	padding-left: 0.em;
+}
+li 
+{
+	margin-left: 2em;
+	padding-left: 0px;
+	text-indent:-2em;
+}
+.tooltipped 
+{
+	position:relative;
+}
+li.tooltipped a 
+{
+	color:black;
+	text-decoration:none;
+	border-bottom:1px dotted #999;
+	padding-bottom:2px;
+}
+li.tooltipped a:hover
+{
+	background-color:#eee;
+	border-bottom:1px solid black;
+}
+li.tooltipped .tooltip 
+{
+	display:block;
+	position:absolute;
+	overflow:hidden;
+	padding:0px;
+	font: 12px/18px Tahoma, Helvetica, sans-serif;
+	color:black;
+	background-color:transparent;
+	padding:2px;
+	left:5px;
+	top:5px;
+	z-index:2;
+	height:auto;
+}
+li.tooltipped .tooltip .tooltipcontent
+{
+	margin:0;
+	background-color:#FFFFE1;
+	padding:5px; /* must be in px for js to work */
+	border:1px solid black;
+
+}
+li.tooltipped .tooltip p
+{
+	margin:0;
+	padding:0 0 0 1.5em;
+	text-indent:-1.5em;
+}
+#formwrapper
+{
+	position:fixed;
+	bottom:0;
+	height:20px;
+	width:100%;
+	left:0;
+	font: 12px/20px Tahoma, Helvetica, sans-serif;
+	background-color:#eee;
+	border-top:1px solid white;
+	padding-bottom:3px;
+}
+#mainListWrapper
+{
+	position:fixed;
+	overflow:auto;
+	margin:0;
+	top:0;
+	left:0;
+	bottom:25px;
+	width:100%;
+	border-bottom:solid 1px #c0c0c0;
+}
+#formwrapper label
+{
+	margin-right: 10px;
+}
+#invocation_hint p
+{
+	margin:0 15px 0 8px;
+}
+#invocation_hint {
+	font: 12px/20px Tahoma, Helvetica, sans-serif;
+	float:left;
+	/* Don't add left or right margins here - it will mess up automatic dialog width computation */
+}
+#prefform {
+	width:auto;
+	text-align: right;
+	float: right;
+	/* Don't add left or right margins here - it will mess up automatic dialog width computation */
+}
+#prefform #show_popup 
+{
+	vertical-align:-3px;
+	margin-right:3px;
+}
+#prefform img {
+	vertical-align:-4px;
+}
+

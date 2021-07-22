@@ -1,0 +1,152 @@
+<html xmlns:un="http://usablenet.com/namespaces/508_rules">
+   <link rel="stylesheet" href="josh.css">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   
+      <title>Detailanzeige f&uuml;r Regel: Seitentitel korrekt definieren</title>
+      <!--
+  508/W3C Accessibility Suite OEM V2 for Macromedia Dreamweaver
+  (C) Copyright 2001-2005 UsableNet Inc. All rights reserved.
+  -->
+   </head>
+   <body bgcolor="#ffffff">
+      <div id="Beschreibung">
+         <table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+            <tr>
+               <td valign="top" nowrap="true" class="name">Seitentitel korrekt definieren</td>
+               <td valign="top" nowrap="true" class="compatibility">&nbsp;</td>
+            </tr>
+            <tr>
+               <td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+            </tr>
+            <tr>
+               <td valign="top" align="right" nowrap="true" colspan="2" class="requirements">WAI / WCAG 1.0 Priorit&auml;t 2 Checkpunkt 13.2</td>
+            </tr>
+            <tr>
+               <td colspan="2" class="clearseparation">&nbsp;</td>
+            </tr>
+            <tr>
+               <td colspan="2" class="clearseparation">&nbsp;</td>
+            </tr>
+            <tr>
+               <td valign="top" colspan="2" class="description"><b>Problembeschreibung</b><br>
+                  
+                  <p>
+                       Die Seite hat keinen g&uuml;ltigen Titel.
+                     
+                  </p>
+                      
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2" class="clearseparation">&nbsp;</td>
+            </tr>
+            <tr>
+               <td colspan="2" class="clearseparation">&nbsp;</td>
+            </tr>
+            <tr>
+               <td valign="top" colspan="2" class="description"><b>Probleml&ouml;sung</b>
+                  
+                  <p>
+                       Um den Titel einer Seite zu definieren, f&uuml;gen Sie am Anfang des Dokuments unmittelbar nach dem <strong>HTML</strong>-Tag die folgende Anweisungen ein:
+                     <pre>
+&lt;HEAD&gt;
+ &lt;TITLE&gt;
+  Buy the best strawberries fields in the world
+ &lt;/TITLE&gt;
+&lt;/HEAD&gt;
+</pre> 
+                     </p>
+                  
+                  
+                  <p>
+                       Mit Dreamweaver geht das etwas einfacher: F&uuml;llen Sie einfach im Editor-Fenster oben das Titelfeld aus.
+                     
+                  </p>
+                  
+                  
+                  <p>
+                       Beachten Sie hierbei bitte, dass effiziente Titel die folgenden Bedingungen erf&uuml;llen m&uuml;ssen:
+                     
+                  </p>
+                  
+                  <ul>
+                       
+                     <li> Titel m&uuml;ssen <strong>kurz</strong> und <strong>informativ</strong> sein.
+                     </li> 
+                       
+                     <li> Titel d&uuml;rfen keine HTML-Tags enthalten.</li>
+                       
+                     <li> Titel d&uuml;rfen in einem Dokument nur einmal definiert werden.</li>
+                     
+                  </ul>
+                      
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2" class="clearseparation">&nbsp;</td>
+            </tr>
+            <tr>
+               <td colspan="2" class="clearseparation">&nbsp;</td>
+            </tr>
+            <tr>
+               <td valign="top" colspan="2" class="description"><b>Problemerkl&auml;rung</b><br>
+                  
+                  <p>
+                       Mit dem TITLE-Tag wird der Titel eines Dokuments definiert f&uuml;r:
+                     
+                  </p>
+                  
+                  <ul>
+                       
+                     <li> Browser-Fenster</li>
+                       
+                     <li> Lesende Browser</li>
+                       
+                     <li> Lesezeichenlisten</li>
+                       
+                     <li> Verlaufslisten</li>
+                       
+                     <li> Ergebnislisten von Suchmaschinen</li>
+                     
+                  </ul>
+                  
+                  <p>
+                       Eine Seite mit schlecht oder gar nicht definiertem Titel ist f&uuml;r einen Benutzer eigentlich immer viel schwieriger zu finden
+                     und zu verstehen, wenn dieser ein Fenster erkennen, den Kontext feststellen oder ein Objekt aus einer Lesezeichen- bzw. Ergebnisliste
+                     ausw&auml;hlen muss. <br> Diese F&auml;lle treten h&auml;ufig dann auf, wenn assistive Technologien verwendet werden, da der Titel einer Seite dem Benutzer zuerst
+                     angegeben wird und den neuen Kontext der betreffenden Seite verdeutlichen soll.
+                     
+                  </p>
+                  
+                  <p>
+                       Effiziente Titel sollten <strong>kurz</strong> und <strong>informativ</strong> sein (d. h. die betreffende Seite angemessen beschreiben). <br> Um mit den Worten von Nielsen zu sprechen: <strong>Der Titel einer Seite muss einfach kristallklar sein</strong>.
+                     
+                  </p>
+                  
+                  <p>
+                       Titel sollten keine HTML-Tags enthalten, die diese vom Browser nicht interpretiert werden k&ouml;nnen (und den relevanten Teil
+                     des Seitentitels nur verst&uuml;mmeln).
+                     
+                  </p>
+                  
+                  <p>
+                       Au&szlig;erdem sollte eine Seite nur einen Titel haben: Sollten mehrere Titel vorhanden sein, wird nur einer von ihnen von den
+                     Browsern erkannt.
+                     
+                  </p>
+                  
+                  
+                  <p>
+                     Beachten Sie hierbei, dass Bildschirmleseger&auml;te, wenn sie den Benutzern die zur Verf&uuml;gung stehenden Frames darstellen, das
+                     Element TITLE der im Frame enthaltenen Seiten lesen (und nicht nur das Attribut TITLE des FRAME-Elements). Aus diesem Grund
+                     sollten die Seiten-TITLEs der in Frames dargestellten Seiten sorgf&auml;ltig und aussagekr&auml;ftig ausgew&auml;hlt werden.
+                     
+                  </p>
+                      
+               </td>
+            </tr>
+         </table>
+      </div>
+   </body>
+</html>

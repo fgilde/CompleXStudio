@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding = "utf-8"?>
+
+<snippet xmlns:MMString="http://www.macromedia.com/schemes/dat/string/" MMString:name = "Snippets/JavaScript/string_manipulations/numberToString_csn/snippet/name/Number" MMString:description = "Snippets/JavaScript/string_manipulations/numberToString_csn/snippet/description/Converts" preview="code" type="wrap">
+
+
+<insertText location="beforeSelection">
+
+<![CDATA[function numberToString(inputNumber,base)
+{
+  var prefix = '';
+  if (!base) base = 10;
+  if (base=8) prefix = '0';
+	if (base=16) prefix = '0x'
+  return (prefix + inputNumber.toString(base));
+}
+]]>
+
+</insertText>
+
+<insertText location="afterSelection"><![CDATA[]]>
+
+</insertText>
+
+</snippet>

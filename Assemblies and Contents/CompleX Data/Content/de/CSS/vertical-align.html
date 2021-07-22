@@ -1,0 +1,92 @@
+<html>
+<link rel="stylesheet" href="josh.css">
+<body bgcolor="#FFFFFF">
+
+		<div id="Beschreibung">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">vertical-align</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">4</span> CSS <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Vererbt: Nein</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>F&uuml;r dieses Attribut gibt es zwei S&auml;tze von Werten, die verschiedene Auswirkungen auf das Inline-Element haben. Der wichtigste Bezugspunkt f&uuml;r ein Inline-Element ist seine eigene Begrenzungsbox. Die beiden Werte <span class="literal">top</span> und <span class="literal">bottom</span> bestimmen, wie Text innerhalb der Begrenzungsbox dargestellt wird, n&auml;mlich b&uuml;ndig mit dem oberen bzw. unteren Rand.</p><p>Dieses Attribut ist nicht auf Inline-Textpassagen beschr&auml;nkt, es kann auch auf Bilder und Tabellen angewendet werden. Alle anderen Einstellungen f&uuml;r <span class="literal">vertical-align</span> definieren die vertikale Positionierung der gesamten Elementbox relativ zum Textinhalt des &uuml;bergeordneten Elements. Beim Standardwert <span class="literal">baseline</span> werden die Grundlinien des Inline-Textes (bzw. die Unterkante eines Elements wie <span class="literal">img</span>) und des &uuml;bergeordneten Textes auf gleicher H&ouml;he angeordnet. Dadurch kann ein <span class="literal">em</span>-Element als eigenes Inline-Element definiert sein, aber trotzdem mit dem umgebenden <span class="literal">p</span>-Element auf der Grundlinie eine Einheit bilden. Die restlichen Konstanten (und Prozent- oder L&auml;ngenwerte) bestimmen, wo die Begrenzungsbox des Elements relativ zum &uuml;bergeordneten Element platziert wird. Bei einem positiven Prozent- oder L&auml;ngenwert wird das Element so weit wie angegeben &uuml;ber der Grundlinie positioniert, bei einem negativen Wert unter der Grundlinie. Prozentwerte werden ausgehend von der Zeilenh&ouml;he berechnet.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="csssyntax"><span class="title">CSS-Syntax</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>vertical-align: <span class="replaceable">vertAlignType</span> | <span class="replaceable">length</span> | <span class="replaceable">percentage</span></pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+				</tr>
+				<tr>
+					<td><p>Zwei Konstanten legen die Ausrichtung des Texts im Element selbst fest: <span class="literal">bottom</span> | <span class="literal">top</span>.</p><p>Sechs Konstanten bestimmen die Ausrichtung der Begrenzungsbox des Elements relativ zum umgebenden Text (des &uuml;bergeordneten Elements): <span class="literal">baseline</span> | <span class="literal">middle</span> | <span class="literal">sub</span> | <span class="literal">super</span> | <span class="literal">text-bottom</span> | <span class="literal">text-top</span>. Beim Wert <span class="literal">baseline</span> liegen die Grundlinien des Inline- und des &uuml;bergeordneten Elements auf einer H&ouml;he. Bei der Einstellung <span class="literal">middle</span> wird die vertikale Mitte des Elements mit der Grundlinie plus einer halben x-H&ouml;he in der Schrift des &uuml;bergeordneten Elements ausgerichtet. <span class="literal">sub</span> und <span class="literal">super</span> verschieben das Element in eine tief- bzw. hochgestellte Position, allerdings wird dabei die Schriftgr&ouml;&szlig;e nicht ge&auml;ndert. Beim Wert <span class="literal">text-bottom</span> wird die Unterkante des Elements an der Unterkante der Schriftlinie des &uuml;bergeordneten Elements ausgerichtet; <span class="literal">text-top</span> bewirkt das Gleiche mit den Oberkanten.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="initvalue"><span class="title">Anfangswert</span></td>
+				</tr>
+				<tr>
+					<td><p><span class="literal">baseline</span></p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>span.sup {vertical-align: super; text-size: smaller}</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="appliesto"><span class="title">Gilt f&uuml;r</span></td>
+				</tr>
+				<tr>
+					<td><p>Nur Inline-Elemente.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectmodelreference"><span class="title">Objektmodellreferenz</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>[window.]document.getElementById("<span class="replaceable">elementID</span>").style.verticalAlign</pre>
+						</span></td>
+				</tr>
+			</table>
+		</div>
+</body>
+</html>

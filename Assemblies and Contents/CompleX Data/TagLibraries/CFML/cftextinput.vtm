@@ -1,0 +1,73 @@
+<tag name="cftextinput" endtag="yes">
+	<tagformat nlbeforetag="1" nlaftertag="1"/>
+	<tagdialog file="cftextinput.htm" />
+   <attributes>
+      <attrib name="name" type="text"/>
+      <attrib name="value" type="text"/>
+      <attrib name="required" type="enumerated">
+         <attriboption value="yes"/>
+         <attriboption value="no"/>
+      </attrib>
+
+      <attrib name="range" control="txtrange" type="text"/>
+      <attrib name="validate" control="dropvalidate" type="enumerated">
+         <attriboption value="date"/>
+         <attriboption value="eurodate"/>
+         <attriboption value="time"/>
+         <attriboption value="float"/>
+         <attriboption value="integer"/>
+         <attriboption value="telephone"/>
+         <attriboption value="zipcode"/>
+         <attriboption value="creditcard"/>
+         <attriboption value="social_security_number"/>
+      </attrib>
+
+      <attrib name="message" control="txtmessage" type="text"/>
+      <attrib name="size" control="txtsize" type="text"/>
+      <attrib name="font" control="txtfont" type="font"/>
+      <attrib name="fontsize" control="txtfontsize" type="text"/>
+      <attrib name="height" control="txtheight" type="text"/>
+      <attrib name="width" control="txtwidth" type="text"/>
+      <attrib name="vspace" control="txtvspace" type="text"/>
+      <attrib name="hspace" control="txthspace" type="text"/>
+      <attrib name="bold" control="checkbold" type="enumerated">
+         <attriboption value="yes"/>
+         <attriboption value="no"/>
+      </attrib>
+
+      <attrib name="italic" control="checkitalic" type="enumerated">
+         <attriboption value="yes"/>
+         <attriboption value="no"/>
+      </attrib>
+
+      <attrib name="align" control="dropalignment" type="enumerated">
+         <attriboption value="absbottom"/>
+         <attriboption value="absmiddle"/>
+         <attriboption value="baseline"/>
+         <attriboption value="bottom"/>
+         <attriboption value="left"/>
+         <attriboption value="middle"/>
+         <attriboption value="right"/>
+         <attriboption value="texttop"/>
+         <attriboption value="top"/>
+      </attrib>
+
+      <attrib name="bgcolor" control="colorbackcolor" type="color"/>
+      <attrib name="textcolor" control="colortextcolor" type="color"/>
+      <attrib name="maxlength" control="txtmaxlength" type="text"/>
+      <attrib name="pattern" control="txtpattern" type="text"/>
+      <attrib name="notsupported" control="txtnotsupported" type="text"/>
+      <attrib name="onerror" control="txtonerror" type="text"/>
+      <attrib name="onvalidate" control="txtonvalidate" type="text"/>
+   </attributes>
+
+   <attribcategories>
+      <attribgroup name="general" elements="name,value"/>
+      <attribgroup name="validation" elements="range,required,validate,message"/>
+      <attribgroup name="appearance" elements="size,align,width,height,vspace,hspace,maxlength"/>
+      <attribgroup name="font" elements="font,fontsize,bold,italic"/>
+      <attribgroup name="colors" elements="bgcolor,textcolor"/>
+      <attribgroup name="misc" elements="pattern,notsupported"/>
+	  <attribgroup name="events" elements="onerror,onvalidate"/>
+   </attribcategories>
+</tag>

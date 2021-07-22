@@ -1,0 +1,880 @@
+<html>
+<link rel="stylesheet" href="josh.css">
+<body bgcolor="#FFFFFF">
+
+		<div id="Beschreibung">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">cssRule, CSSRule, rule</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span>  IE <span class="emphasis">5</span>  DOM <span class="emphasis">2</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Ein Stylesheet-Regelobjekt geh&ouml;rt zur Sammlung der im Dokument enthaltenen <span class="literal">styleSheet</span>-Objekte. Im IE- und im W3C-DOM werden f&uuml;r Verweise auf diese Regelobjekte unterschiedliche Syntaxformate verwendet. Bei IE werden sie &uuml;ber die <span class="literal">rules</span>-Sammlung (das so genannte <span class="literal">rule</span>-Objekt), bei der W3C-Implementierung von Netscape 6 und IE 5/Macintosh &uuml;ber die <span class="literal">cssRules</span>-Sammlung (das so genannte <span class="literal">cssRule</span>-Objekt) referenziert. Beachten Sie, dass das <span class="literal">cssRule</span>-Objekt in IE 6 f&uuml;r Windows noch nicht implementiert ist.
+</p>
+							</td>
+						</tr>
+						<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Das entsprechende W3C-DOM-Abstraktobjekt wird als <span class="literal">CSSRule</span>-Objekt bezeichnet, doch diese Form des Objektnamens ist nur f&uuml;r Skriptersteller von Bedeutung, die die Prototyp-Eigenschaften und -Methoden des <span class="literal">CSSRule</span>-Objekts in Netscape 6 &auml;ndern m&ouml;chten. Das W3C-DOM definiert zus&auml;tzlich spezielle <span class="literal">CSSRule</span>-Objekttypen f&uuml;r die einzelnen <span class="literal">@</span>-Regeltypen (<span class="literal">CSSImportRule</span>, <span class="literal">CSSMediaRule</span> usw.). Ein Mitglied der <span class="literal">cssRules</span>-Sammlung kann jeden beliebigen dieser Typen aufweisen, der durch seine <span class="literal">type</span>-Eigenschaft angegeben wird. Jeder Typ weist eigene Eigenschaften und/oder Methoden auf, die f&uuml;r diesen <span class="literal">cssRule</span>-Typ gelten. Beachten Sie in der unten stehenden Liste, auf welche Typen die einzelnen Eigenschaften und Methoden jeweils anwendbar sind. Im Gro&szlig;en und Ganzen geh&ouml;ren die Inline-Regeln, die Sie in Ihren Skripts verwenden werden, jedoch zum Typ <span class="literal">CSSStyleRule</span>.
+</p>
+							</td>
+						</tr>
+						<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Seien Sie besonders vorsichtig, wenn Sie in einem Skript auf ein <span class="literal">rule</span>- oder <span class="literal">cssRule</span>-Objekt zugreifen. &Auml;nderungen, die Sie am Selektor oder an der Stildefinition einer Regel vornehmen, wirken sich auf das gesamte Dokument aus und k&ouml;nnen unter Umst&auml;nden, zum Beispiel wenn Sie einen Doppelpunkt falsch setzen, andere im Dokument verwendete Regeln unbrauchbar machen. Wenn Sie zwischen verschiedenen Stilen f&uuml;r ein Element, eine Klasse oder einen Elementtyp wechseln m&ouml;chten, ist es in der Regel sicherer und effizienter, andere Techniken zu verwenden, die in Verbindung mit mehreren Regeln oder Stylesheets funktionieren (z. B. <span class="literal">className</span>-Zuweisungen oder -Elemente vertauschen bzw. <span class="literal">styleSheet</span>-Objekte aktivieren und deaktivieren). Der Vollst&auml;ndigkeit des Objektmodells halber k&ouml;nnen Sie jedoch insbesondere beim W3C-DOM uneingeschr&auml;nkt auf Teile der Stylesheet-Regeln zugreifen, wenn dies unbedingt erforderlich ist.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectmodelreference"><span class="title">Objektmodellreferenz</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>document.styleSheets[i].rules[j]
+document.styleSheets[i].cssRules[j]</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectspecificproperties"><span class="title">Objektspezifische Eigenschaften</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<table border="1"><tbody><tr><td><span class="literal">cssRules</span></td><td><span class="literal">cssText</span></td><td><span class="literal">encoding</span></td><td><span class="literal">href</span></td>
+								</tr>
+								<tr><td><span class="literal">media</span></td><td><span class="literal">parentRule</span></td><td><span class="literal">parentStyleSheet</span></td><td><span class="literal">readOnly</span></td>
+								</tr>
+								<tr><td><span class="literal">selectorText</span></td><td><span class="literal">style</span></td><td><span class="literal">styleSheet</span></td><td><span class="literal">type</span></td>
+								</tr>
+							</tbody></table>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectspecificmethods"><span class="title">Objektspezifische Methoden</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<table border="1"><tbody><tr><td><span class="literal">deleteRule( )</span></td><td><span class="literal">insertRule( )</span></td>
+								</tr>
+							</tbody></table>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectspecificeventhandlerproperties"><span class="title">Objektspezifische Ereignisbehandlungsroutineneigenschaften</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Keine. </p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="cssRules">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">cssRules</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">nicht zutreffend</span>  DOM <span class="emphasis">2</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Schreibgesch&uuml;tzt</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Gibt eine Sammlung der <span class="literal">cssRule</span>-Objekte zur&uuml;ck, die in einer <span class="literal">@media</span>-Regel verschachtelt sind.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Referenz auf ein Objekt in der <span class="literal">cssRule</span>-Sammlung. </p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Standardwert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Array mit der L&auml;nge Null. </p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="w3cdomcssruletypes"><span class="title">W3C-DOM-CSSRule-Typen</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>CSSMediaRule</pre>
+						</span></td>
+				</tr>
+			</table>
+		</div><div id="cssText">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">cssText</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">5(Mac)</span> DOM <span class="emphasis">2</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Lesen/Schreiben</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Gibt den gesamten Text der Stylesheet-Regel an, einschlie&szlig;lich Selektor und Attributnamens-/Wertpaare in geschweiften Klammern. IE 6 f&uuml;r Windows stellt keine &auml;quivalente Eigenschaft bereit. In Browsern, die diese Eigenschaft unterst&uuml;tzen, haben &Auml;nderungen keine Auswirkung auf das Objekt oder seine Darstellung.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>document.styleSheets[0].cssRules[2].cssText = "td {text-align:center}";</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Zeichenfolge. </p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Standardwert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Keiner. </p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="w3cdomcssruletypes"><span class="title">W3C-DOM-CSSRule-Typen</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Alle. </p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="encoding">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">encoding</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">nicht zutreffend</span>  DOM <span class="emphasis">2</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Schreibgesch&uuml;tzt</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Gibt den Zeichensatzcode zur&uuml;ck (z. B. <span class="literal">ISO-8859-1</span> oder <span class="literal">UTF-8</span>), der mit einer <span class="literal">@charset</span>-Regel verkn&uuml;pft ist.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Zeichenfolge. </p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Standardwert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Keiner. </p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="w3cdomcssruletypes"><span class="title">W3C-DOM-CSSRule-Typen</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p><span class="literal">CSSCharsetRule</span></p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="href">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">href</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">nicht zutreffend</span>  DOM <span class="emphasis">2</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Schreibgesch&uuml;tzt</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Gibt die URI der externen Stylesheet-Datei zur&uuml;ck, die &uuml;ber eine <span class="literal">@import</span>-Regel importiert wird.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Zeichenfolge. </p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Standardwert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Keiner. </p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="w3cdomcssruletypes"><span class="title">W3C-DOM-CSSRule-Typen</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>CSSImportRule</pre>
+						</span></td>
+				</tr>
+			</table>
+		</div><div id="media">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">media</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">nicht zutreffend</span>  DOM <span class="emphasis">2</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Schreibgesch&uuml;tzt</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Gibt den Medientyp zur&uuml;ck, der f&uuml;r eine <span class="literal">@import</span>- oder <span class="literal">@media</span>-Regel angegeben ist.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Zeichenfolgenkonstante, die die vom Browser unterst&uuml;tzten Medientypen angibt (z. B. <span class="literal">screen</span> oder <span class="literal">print</span>).
+</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Standardwert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p><span class="literal">all</span></p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="w3cdomcssruletypes"><span class="title">W3C-DOM-CSSRule-Typen</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>CSSImportRule
+CSSMediaRule</pre>
+						</span></td>
+				</tr>
+			</table>
+		</div><div id="parentRule">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">parentRule</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">nicht zutreffend</span>  DOM <span class="emphasis">2</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Schreibgesch&uuml;tzt</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Verweist auf das <span class="literal">cssRule</span>-Objekt, das die aktuelle <span class="literal">cssRule</span> enth&auml;lt, beispielsweise eine in einer <span class="literal">@</span>-Regel verschachtelte Regel. Der Zugriff auf diesen Eigenschaftswert kann bei Netscape 6.2 zum Absturz f&uuml;hren.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>var superRule = document.styleSheets[0].cssRules[1].parentRule;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p><span class="literal">cssRule</span>-Objektreferenz. </p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Standardwert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p><span class="literal">null</span></p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="w3cdomcssruletypes"><span class="title">W3C-DOM-CSSRule-Typen</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Alle. </p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="parentStyleSheet">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">parentStyleSheet</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">5(Mac)</span> DOM <span class="emphasis">2</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Schreibgesch&uuml;tzt</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Verweist auf das <span class="literal">styleSheet</span>-Objekt, das die aktuelle <span class="literal">cssRule</span> enth&auml;lt. Erm&ouml;glicht die Bereitstellung einer Funktion, der eine Referenz auf ein <span class="literal">cssRule</span>-Objekt &uuml;bergeben wird und die daraufhin eine Referenz auf das &uuml;bergeordnete <span class="literal">styleSheet</span>-Objekt dieses Objekts zur&uuml;ckgibt, etwa um festzustellen, welche sonstigen Objekte in diesem Stylesheet enthalten sind.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>var ss = document.styleSheets[0].cssRules[3].parentStyleSheet;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p><span class="literal">styleSheet</span>-Objektreferenz. </p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Standardwert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Aktuelles Objekt.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="w3cdomcssruletypes"><span class="title">W3C-DOM-CSSRule-Typen</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Alle. </p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="readOnly">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">readOnly</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">nicht zutreffend</span> IE <span class="emphasis">5</span>  DOM <span class="emphasis">nicht zutreffend</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Schreibgesch&uuml;tzt</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Gibt den Booleschen Wert <span class="literal">true</span> zur&uuml;ck, wenn eine Regel &uuml;ber eine <span class="literal">@import</span>-Regel oder ein <span class="literal">link</span>-Element auf ein Dokument bezogen wird. Solche Regeln k&ouml;nnen nicht in einem Skript ver&auml;ndert werden, wenngleich sich einzelne Stileigenschaften eines einer solchen Regel unterworfenen Elements modifizieren lassen, weil in diesem Fall die <span class="literal">style</span>-Eigenschaft des Elements und nicht das <span class="literal">rule</span>-Objekt selbst ge&auml;ndert wird.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>if (!document.styleSheets[2].cssRules[0].readOnly) {
+    // not read-only, so OK to modify here
+}</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Boolescher Wert: <span class="literal">true</span> | <span class="literal">false</span>.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Standardwert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Variiert je nach Regeltyp.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="selectorText">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">selectorText</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span>  IE <span class="emphasis">5</span>  DOM <span class="emphasis">2</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Lesen/Schreiben</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Gibt den Selektor in der Stylesheet-Regel an. Obwohl diese Eigenschaft (au&szlig;er bei IE 5/Mac) gelesen und geschrieben werden kann, haben &Auml;nderungen keine Auswirkung auf das Objekt oder seine Darstellung.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>document.styleSheets[0].cssRules[2].selectorText = "td.leftHeaders";</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Zeichenfolge. </p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Standardwert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Keiner. </p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="w3cdomcssruletypes"><span class="title">W3C-DOM-CSSRule-Typen</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>CSSPageRule
+CSSStyleRule</pre>
+						</span></td>
+				</tr>
+			</table>
+		</div><div id="style">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">style</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span>  IE <span class="emphasis">5</span>  DOM <span class="emphasis">2</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Lesen/Schreiben</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Gibt ein <span class="literal">style</span>-Objekt mit Eigenschaften zur&uuml;ck, die die Attributeinstellungen der aktuellen Regel widerspiegeln. Dies ist dieselbe Art von <span class="literal">style</span>-Objekt, das auch den Elementen im Dokument zugeordnet ist (entsprechend dem W3C-DOM-Objekt <span class="literal">CSSStyleDeclaration</span>). Wenn Sie Stylesheet-Einstellungen auf Regelebene &auml;ndern m&uuml;ssen, verwenden Sie zu diesem Zweck die <span class="literal">style</span>-Eigenschaft von <span class="literal">rule</span> oder <span class="literal">cssRule</span>. &Auml;nderungen werden automatisch direkt &uuml;bernommen und wirken sich sofort auf die Elemente aus, die dieser Regel unterworfen sind.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>var oneRule;
+if (document.styleSheets) {
+    if (document.styleSheets[0].cssRules) {
+        oneRule = document.styleSheets[2].cssRules[1];
+    } else if (document.styleSheets[0].rules) {
+        oneRule = document.styleSheets[2].rules[1];
+    }
+}
+if (oneRule) {
+    oneRule.style.color = "red";
+    oneRule.style.fontWeight = "bold";
+}</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Referenz auf ein <span class="literal">style</span>-Objekt (bzw. <span class="literal">CSSStyleDeclaration</span>-Objekt in W3C).
+</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Standardwert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Aktuelles <span class="literal">style</span>-Objekt.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="w3cdomcssruletypes"><span class="title">W3C-DOM-CSSRule-Typen</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>CSSFontRule
+CSSPageRule
+CSSStyleRule</pre>
+						</span></td>
+				</tr>
+			</table>
+		</div><div id="styleSheet">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">styleSheet</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">nicht zutreffend</span>  DOM <span class="emphasis">2</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Schreibgesch&uuml;tzt</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Gibt eine Referenz auf das <span class="literal">styleSheet</span>-Objekt zur&uuml;ck, das im importierten Stylesheet enthalten ist. Dadurch haben Sie die M&ouml;glichkeit, <span class="literal">cssRule</span>-Objekte, die zu diesem <span class="literal">styleSheet</span>-Objekt geh&ouml;ren, zu untersuchen – im Grunde gelangen Sie auf die n&auml;chsttiefere Ebene der <span class="literal">styleSheet</span>-Objektstruktur der Remote-Stylesheet-Datei.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p><span class="literal">styleSheet</span>-Objektreferenz. </p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Standardwert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Keiner. </p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="w3cdomcssruletypes"><span class="title">W3C-DOM-CSSRule-Typen</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>CSSImportRule</pre>
+						</span></td>
+				</tr>
+			</table>
+		</div><div id="type">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">type</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">nicht zutreffend</span>  DOM <span class="emphasis">2</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Schreibgesch&uuml;tzt</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Gibt eine ganze Zahl zur&uuml;ck, die einem der sieben im W3C-DOM definierten <span class="literal">cssRule</span>-Typen entspricht. Jedem <span class="literal">cssRule</span>-Objekt in Netscape 6 ist eine unverschl&uuml;sselte Konstanteneigenschaft zugeordnet, die dem jeweiligen Regeltyp entspricht:
+</p>
+							</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td>
+								<table border="1"><tbody><tr><th>Konstante</th><th>&Auml;quivalenter Integerwert</th></tr>
+										<tr><td><span class="replaceable">cssRuleReference</span><span class="literal">.UNKNOWN_RULE</span>
+</td><td><span class="literal">0</span></td>
+										</tr>
+										<tr><td><span class="replaceable">cssRuleReference</span><span class="literal">.STYLE_RULE</span>
+</td><td><span class="literal">1</span></td>
+										</tr>
+										<tr><td><span class="replaceable">cssRuleReference</span><span class="literal">.CHARSET_RULE</span>
+</td><td><span class="literal">2</span></td>
+										</tr>
+										<tr><td><span class="replaceable">cssRuleReference</span><span class="literal">.IMPORT_RULE</span>
+</td><td><span class="literal">3</span></td>
+										</tr>
+										<tr><td><span class="replaceable">cssRuleReference</span><span class="literal">.MEDIA_RULE</span>
+</td><td><span class="literal">4</span></td>
+										</tr>
+										<tr><td><span class="replaceable">cssRuleReference</span><span class="literal">.FONT_FACE_RULE</span>
+</td><td><span class="literal">5</span></td>
+										</tr>
+										<tr><td><span class="replaceable">cssRuleReference</span><span class="literal">.PAGE_RULE</span>
+</td><td><span class="literal">6</span></td>
+										</tr>
+									</tbody></table>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>var oneRule = document.styleSheets[2].cssRules[1];
+if (oneRule.type == oneRule.IMPORT_RULE) {
+    // process @import rule
+}</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Eine ganze Zahl. </p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Standardwert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p><span class="literal">1</span></p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="w3cdomcssruletypes"><span class="title">W3C-DOM-CSSRule-Typen</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Alle. </p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="deleteRule( )">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">deleteRule( )</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">nicht zutreffend</span>  DOM <span class="emphasis">2</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">deleteRule(<span class="replaceable">index</span>)</p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Entfernt die durch die auf Null basierende Indexnummer angegebene Regel aus der aktuellen <span class="literal">@media</span>-Regel.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="w3cdomcssruletypes"><span class="title">W3C-DOM-CSSRule-Typen</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>CSSMediaRule</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Parameter</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<ul><li><span class="literal"></span>Eine auf Null basierende ganze Zahl, die dem angegebenen Element in der Quellcodereihenfolge entspricht.
+</li></ul>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Zur&uuml;ckgegebener Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Keiner.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="insertRule( )">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">insertRule( )</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">nicht zutreffend</span>  DOM <span class="emphasis">2</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">insertRule("<span class="replaceable">rule</span>", <span class="replaceable">index</span>)</p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>F&uuml;gt ein neue Regel (Selektortext und Stilattribute) an der durch den zweiten Parameter angegebenen Stelle in die aktuelle <span class="literal">@media</span>-Regel ein.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="w3cdomcssruletypes"><span class="title">W3C-DOM-CSSRule-Typen</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>CSSMediaRule</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Parameter</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<ul><li><span class="literal"></span>Eine Zeichenfolge, die den Selektor enth&auml;lt sowie die einzuf&uuml;gende Regel als Stilattribut in geschweiften Klammern.
+</li><li><span class="literal"></span>Eine auf Null basierende ganze Zahl, die dem angegebenen Element in der Quellcodereihenfolge entspricht.
+</li></ul>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Zur&uuml;ckgegebener Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Ganze Zahl, die die Position der Einf&uuml;gung angibt.</p>
+					</td>
+				</tr>
+			</table>
+		</div>
+
+</body>
+</html>

@@ -1,0 +1,140 @@
+<html>
+<head>
+<title>&lt;xsl:fallback&gt;</title>
+</head>
+<body bgcolor="#FFFFFF" text="#000000">
+<div id="Beschreibung">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">&lt;xsl:fallback&gt;</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description">
+Diese Anweisung definiert eine Vorlage, die verwendet werden soll, wenn ein Erweiterungselement nicht gefunden werden kann. </td></tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Kategorie</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<p>Anweisung</p>
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Obligatorische Attribute</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<p>Keine</p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Optionale Attribute</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<p>Keine</p>
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Inhalt</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<p>Eine XSLT-Vorlage</p>
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">&Uuml;bergeordnetes Element</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<p>
+<span class="LITERAL">&lt;xsl:fallback&gt;</span> erscheint innerhalb einer Vorlage.</p>
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Definition</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<p>XSLT-Abschnitt 15, R&uuml;ckgriff</p>
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Beispiel</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<p>Hier ein Stylesheet, das die Anweisung <span class="LITERAL">&lt;xsl:fallback&gt;</span> dazu verwendet, die Transformation zu beenden, wenn kein Erweiterungselement gefunden werden kann:</p>
+<span class="PROGRAMLISTING"><pre>
+&lt;?xml version="1.0"?&gt;
+&lt;xsl:stylesheet version="1.0" 
+  xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+  xmlns:db="xalan://DatabaseExtension"
+  extension-element-prefixes="db"&gt;
+
+  &lt;xsl:output method="html"/&gt;
+
+  &lt;xsl:template match="/"&gt;
+    &lt;html&gt;
+      &lt;head&gt;
+        &lt;title&gt;&lt;xsl:value-of select="report/title"/&gt;&lt;/title&gt;
+      &lt;/head&gt;
+      &lt;body&gt;
+        &lt;h1&gt;&lt;xsl:value-of select="report/title"/&gt;&lt;/h1&gt;
+        &lt;xsl:for-each select="report/section"&gt;
+          &lt;h2&gt;&lt;xsl:value-of select="title"/&gt;&lt;/h2&gt;
+          &lt;xsl:for-each select="dbaccess"&gt;
+            &lt;db:accessDatabase&gt;
+              &lt;xsl:fallback&gt;
+                &lt;xsl:message terminate="yes"&gt;
+                  Database library not available!
+                &lt;/xsl:message&gt;
+              &lt;/xsl:fallback&gt; 
+            &lt;/db:accessDatabase&gt;
+          &lt;/xsl:for-each&gt;
+        &lt;/xsl:for-each&gt;
+      &lt;/body&gt;
+    &lt;/html&gt;
+  &lt;/xsl:template&gt;
+
+&lt;/xsl:stylesheet&gt;</pre></span> <!--<?troff .Nd 10?>-->
+<p>Wenn ein Dokument mit diesem Stylesheet umgewandelt wird und kein Erweiterungselement gefunden werden kann, wird das Element <span class="LITERAL">&lt;xsl:fallback&gt;</span> verarbeitet und es entsteht folgendes Ergebnis:</p>
+<span class="PROGRAMLISTING"><pre>
+
+Database library not available!
+
+Processing terminated using xsl:message</pre></span>
+<p>In diesem Fall ist das Erweiterungselement die Java-Klasse <span class="LITERAL">DatabaseExtension</span>. Wenn, aus welchem Grund auch immer, diese Klasse nicht geladen werden kann, wird das Element <span class="LITERAL">&lt;xsl:fallback&gt;</span> verarbeitet. Beachten Sie, dass das Element <span class="LITERAL">&lt;xsl:fallback&gt;</span> nur verarbeitet wird, wenn das Erweiterungselement nicht gefunden werden kann. Wird der Code, der das Erweiterungselement implementiert, gefunden, kann aber nicht erfolgreich ausgef&uuml;hrt werden, muss die Situation auf andere Weise gel&ouml;st werden. Seien Sie sich auch bewusst, dass das genaue Format der Nachricht und die Art und Weise, wie der Stylesheet-Abbruch erfolgt, vom jeweiligen XSLT-Prozessor abh&auml;ngt. </p>
+</td>
+</tr>
+</table>
+</div>
+</body>
+</html>

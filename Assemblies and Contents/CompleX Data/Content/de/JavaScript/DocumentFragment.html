@@ -1,0 +1,79 @@
+<html>
+<link rel="stylesheet" href="josh.css">
+<body bgcolor="#FFFFFF">
+
+<div id="Beschreibung">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">DocumentFragment</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">nicht zutreffend</span>  DOM <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Beim W3C-DOM-<span class="literal">DocumentFragment</span>-Objekt handelt es sich im Grunde um einen kontextfreien Container f&uuml;r andere DOM-Nodes. Mit anderen Worten, Sie k&ouml;nnen allen Node-Eigenschaften und -Methoden verwenden, um eine Folge von Element- und Textnodes au&szlig;erhalb des Dokumentbaums zusammenzustellen, die nicht von Merkmalen des <span class="literal">DocumentFragment</span>-Containers beeinflusst wird. Wenn Sie die <span class="literal">DocumentFragment</span>-Node anschlie&szlig;end an den Dokumentbaum anh&auml;ngen oder in ihn einf&uuml;gen, l&ouml;st sich der <span class="literal">DocumentFragment</span>-Container auf, und die in ihm enthaltene Node bleibt innerhalb des Kontexts ihrer Position im Dokumentbaum stehen. F&uuml;r den Aufbau von Inhalten, die in einer Elementnode verpackt sind, wird das <span class="literal">DocumentFragment</span> nicht ben&ouml;tigt, da die Elementnode sowohl als tempor&auml;rer Container au&szlig;erhalb des Dokumentbaums als auch als regul&auml;rer Container im Dokumentbaum dienen kann. Wenn ein Inhaltssegment jedoch auf einer Seite oder auf beiden Seiten in einer Textnode endet, stellt die <span class="literal">DocumentFragment</span>-Node einen transparenten Beh&auml;lter bereit, der die Nodeenden zusammenh&auml;lt, bis sie in das Dokument eingebunden werden.
+</p>
+							</td>
+						</tr>
+						<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Verwenden Sie zum Erstellen eines leeren <span class="literal">DocumentFragment</span>-Containers die Methode <span class="literal">document.createDocumentFragment( )</span>. Eine Node vom Typ <span class="literal">DocumentFragment</span> erbt alle Eigenschaften und Methoden des <span class="literal">Node</span>-Objekts (zum Einf&uuml;gen und Anh&auml;ngen anderer Nodes, die Sie erstellen), und tr&auml;gt von sich aus nichts bei als ihre F&auml;higkeit, andere Nodes aufzunehmen. Verwechseln Sie eine <span class="literal">DocumentFragment</span>-Node nicht mit einer Zeichenfolge aus Text und Tags, die der <span class="literal">innerHTML</span>-Eigenschaft eines Elements zugewiesen wird. Das W3C-DOM stellt, zumindest in Level 2, keine solche Umwandlung von Zeichenfolgen in Nodehierarchie bereit.
+</p>
+							</td>
+						</tr>
+						<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Netscape 6 erweitert diese Node um eine <span class="literal">load( )</span>-Methode, die es einem Skript erm&ouml;glicht, XML-Dokumente in eine reine (und unsichtbare) <span class="literal">Document</span>-Node zu laden. Eine solche Node wird mithilfe der Methode <span class="literal">document.implementation.createDocument( )</span> erstellt. Dadurch k&ouml;nnen Skripts auf die XML-Daten in diesem Dokument &uuml;ber regul&auml;re W3C-DOM-Dokumentbaumeigenschaften und -methoden zugreifen.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectmodelreference"><span class="title">Objektmodellreferenz</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre><span class="replaceable">documentFragmentNodeReference</span></pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectspecificproperties"><span class="title">Objektspezifische Eigenschaften</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Keine. </p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectspecificmethods"><span class="title">Objektspezifische Methoden</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Keine. </p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectspecificeventhandlerproperties"><span class="title">Objektspezifische Ereignisbehandlungsroutineneigenschaften</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Keine. </p>
+					</td>
+				</tr>
+			</table>
+		</div>
+
+</body>
+</html>

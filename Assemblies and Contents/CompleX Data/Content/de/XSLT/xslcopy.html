@@ -1,0 +1,168 @@
+<html>
+<head>
+<title>&lt;xsl:copy&gt;</title>
+</head>
+<body bgcolor="#FFFFFF" text="#000000">
+<div id="Beschreibung">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">&lt;xsl:copy&gt;</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description">
+Diese Anweisung macht eine oberfl&auml;chliche Kopie eines Elements und f&uuml;gt sie in den Ergebnisbaum ein.  Sie kopiert den aktuellen Knoten und seine Namensraumknoten. Die untergeordneten Elemente des aktuellen Knotens sowie etwaige Attribute werden nicht kopiert.</td></tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Kategorie</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<p>Anweisung</p>
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Obligatorische Attribute</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<p>Keine</p>
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Optionale Attribute</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<dl>
+<dt>
+use-attribute-sets
+</dt>
+<dd>
+Listet eine oder mehrere Attributmengen auf, die vom erzeugten Element verwendet werden sollen. Wenn Sie mehrere Attributmengen angeben, sollten Sie die Namen durch Leerraumzeichen trennen. Weitere Erl&auml;uterungen erhalten Sie in der Beschreibung des Elements <span class="LITERAL">
+&lt;
+xsl:attribute-set
+&gt;
+</span>.
+<P></p>
+</dl>
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Inhalt</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<p>Eine XSLT-Vorlage</p>
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">&Uuml;bergeordnetes Element</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<p>
+<span class="LITERAL">&lt;xsl:copy&gt;</span> erscheint innerhalb einer Vorlage.</p>
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Definition</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<p>XSLT-Abschnitt 7.5, Kopieren</p>
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Beispiel</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<p>Die Funktionsweise der Anweisung <span class="LITERAL">&lt;xsl:copy&gt;</span> wird durch ein Beispiel veranschaulicht, das ein Element in den Ergebnisbaum kopiert. Beachten Sie, dass die Verarbeitung der Attributknoten des Ausgangsdokuments nicht ausdr&uuml;cklich angefordert wird, so dass der Ergebnisbaum keine Attribute enth&auml;lt. Hier das Stylesheet:</p>
+<span class="PROGRAMLISTING"><pre>
+&lt;?xml version="1.0"?&gt;
+&lt;xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0"&gt;
+  &lt;xsl:output method="xml"/&gt;
+
+  &lt;xsl:template match="*"&gt;
+    &lt;xsl:copy&gt;
+      &lt;xsl:apply-templates/&gt;
+<!--<?troff .Nd 10?>-->
+    &lt;/xsl:copy&gt;
+  &lt;/xsl:template&gt;
+
+&lt;/xsl:stylesheet&gt;</pre></span>
+<p>Dieses Stylesheet wird mit dem folgenden XML-Dokument getestet:</p>
+<span class="PROGRAMLISTING"><pre>
+&lt;?xml version="1.0"?&gt;
+&lt;report&gt;
+  &lt;title&gt;Miles Flown in 2001&lt;/title&gt;
+  &lt;month sequence="01"&gt;
+    &lt;miles-flown&gt;12379&lt;/miles-flown&gt;
+    &lt;miles-earned&gt;35215&lt;/miles-earned&gt;
+  &lt;/month&gt;
+  &lt;month sequence="02"&gt;
+    &lt;miles-flown&gt;32857&lt;/miles-flown&gt;
+    &lt;miles-earned&gt;92731&lt;/miles-earned&gt;
+  &lt;/month&gt;
+  &lt;month sequence="03"&gt;
+    &lt;miles-flown&gt;19920&lt;/miles-flown&gt;
+    &lt;miles-earned&gt;76725&lt;/miles-earned&gt;
+  &lt;/month&gt;
+  &lt;month sequence="04"&gt;
+    &lt;miles-flown&gt;18903&lt;/miles-flown&gt;
+    &lt;miles-earned&gt;31781&lt;/miles-earned&gt;
+  &lt;/month&gt;
+&lt;/report&gt;</pre></span>
+<p>Hier die Ergebnisse:</p>
+<span class="PROGRAMLISTING"><pre>
+&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;report&gt;
+  &lt;title&gt;Miles Flown in 2001&lt;/title&gt;
+  &lt;month&gt;
+    &lt;miles-flown&gt;12379&lt;/miles-flown&gt;
+    &lt;miles-earned&gt;35215&lt;/miles-earned&gt;
+  &lt;/month&gt;
+  &lt;month&gt;
+    &lt;miles-flown&gt;32857&lt;/miles-flown&gt;
+    &lt;miles-earned&gt;92731&lt;/miles-earned&gt;
+  &lt;/month&gt;
+  &lt;month&gt;
+    &lt;miles-flown&gt;19920&lt;/miles-flown&gt;
+    &lt;miles-earned&gt;76725&lt;/miles-earned&gt;
+  &lt;/month&gt;
+  &lt;month&gt;
+    &lt;miles-flown&gt;18903&lt;/miles-flown&gt;
+    &lt;miles-earned&gt;31781&lt;/miles-earned&gt;
+  &lt;/month&gt;
+&lt;/report&gt;</pre></span>
+<p><span class="LITERAL">&lt;xsl:copy&gt;</span> fertigt nur eine oberfl&auml;chliche Kopie an, bietet aber auch mehr Kontrolle &uuml;ber die Ausgabe als das Element <span class="LITERAL">&lt;xsl:copy-of&gt;</span>. Allerdings m&uuml;ssen Sie jeden untergeordneten Knoten und jeden Attributknoten ausdr&uuml;cklich angeben, der in den Ergebnisbaum kopiert werden soll. Das Element <span class="LITERAL">&lt;xsl:apply-templates&gt;</span> w&auml;hlt alle Texte, Elemente, Kommentare und Verarbeitungsanweisungen aus, die dem aktuellen Element untergeordnet sind. Ohne dieses Element w&uuml;rde der Ergebnisbaum nur ein einziges, leeres <span class="LITERAL">&lt;report&gt;</span>-Element enthalten. Vergleichen Sie diesen Ansatz mit dem Beispiel zum Element <span class="LITERAL">&lt;xsl:copy-of&gt;</span>.</p>
+</td>
+</tr>
+</table>
+</div>
+</body>
+</html>

@@ -1,0 +1,513 @@
+<html>
+<link rel="stylesheet" href="josh.css">
+<body bgcolor="#FFFFFF">
+
+		<div id="Beschreibung">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">&lt;FRAMESET&gt;</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">2</span> IE <span class="emphasis">3</span> HTML <span class="emphasis">4</span>&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">&lt;FRAMESET&gt;...&lt;/FRAMESET&gt;</p>
+					</td><td valign="top" nowrap class="requirements">HTML-End-Tag: Erforderlich&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Definiert das Layout einer aus mehreren Frames bestehenden Pr&auml;sentation im Anwendungsfenster des Browsers. Die prim&auml;re Aufgabe des <span class="literal">frameset</span>-Elements besteht darin, die zeilen- und spaltenweise Anordnung rechteckiger Frames festzulegen. Die f&uuml;r das <span class="literal">frameset</span>-Element definierten Attribute wirken sich auf alle darin verschachtelten <span class="literal">frame</span>-Elemente aus (au&szlig;er wenn diese Einstellungen f&uuml;r einen bestimmten <span class="literal">frame</span> durch ein &auml;hnliches Attribut au&szlig;er Kraft gesetzt sind). Das Tag eines <span class="literal">frameset</span>-Elements nimmt in einem HTML-Dokument den Platz ein, an dem sich normalerweise das <span class="literal">body</span>-Element befindet.</p><p>Sie k&ouml;nnen in einem <span class="literal">frameset</span>-Element weitere <span class="literal">frameset</span>-Elemente verschachteln. Mit dieser Taktik l&auml;sst sich ein Frame des &auml;u&szlig;eren <span class="literal">frameset</span>-Elements wiederum in zwei oder mehr Frames aufteilen. Wenn Sie beispielsweise ein <span class="literal">frameset</span>-Element mit drei Zeilen und zwei Spalten definieren, erhalten Sie insgesamt sechs Frames</p><p>Wenn Sie andererseits in einer Frame-Definition ein weiteres Frameset verschachteln, wird dieser Frame entsprechend weiter unterteilt.</p><p>Sie k&ouml;nnen <span class="literal">frameset</span>-Elemente so tief verschachteln wie f&uuml;r die Seitengestaltung erforderlich. Denken Sie jedoch daran, dass Frames bei bestimmten Betriebssystemen verst&auml;rkt Speicherressourcen beanspruchen. Nicht alle Benutzer sch&auml;tzen Frames mit Rahmen in gleicher Weise, selbst wenn eine solche Struktur f&uuml;r Ihre Seitengestaltung sinnvoll erscheinen mag.</p><p>Das <span class="literal">title</span>-Attribut des &auml;u&szlig;ersten Frameset-Dokuments bestimmt den Text in der Titelleiste des Browserfensters. Die in einzelne Frames geladenen Dokumente haben keinen Einfluss auf die Anzeige in der Titelleiste, auch wenn f&uuml;r Skriptzwecke und im Hinblick auf m&ouml;gliche Anwendungen in zuk&uuml;nftigen Browsern das Attribut <span class="literal">title</span> von Frame-Dokumenten auf jedem Fall definiert sein sollte.</p><p>Wenn der Benutzer die M&ouml;glichkeit erhalten soll, ein Frameset zu entfernen, k&ouml;nnen Sie eine Verkn&uuml;pfung oder eine Schaltfl&auml;che zum Aufrufen eines Skripts einf&uuml;gen. Das Skript sollte die Eigenschaft <span class="literal">top.location.href</span> auf die URL des wichtigsten Dokuments der in Frames geladenen Seiten setzen (d.&#160;h. auf den Hauptinhalt verweisen).</p><p>In strikten DTDs f&uuml;r HTML 4 und XHTML werden <span class="literal">frameset</span>- und <span class="literal">frame</span>-Elemente und (und die <span class="literal">target</span>-Attribute anderer auf Frames verweisender Elemente) explizit nicht unterst&uuml;tzt. Diese DTDs behandeln Frames als Elemente, die nicht mit reinem Document Markup gesteuert werden k&ouml;nnen. Frameset-Dokumente k&ouml;nnen mit den HTML 4 Transitional und Frameset DTDs bzw. mit der XHTML Frameset DTD validiert werden.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>&lt;FRAMESET cols="150,*"&gt;    &lt;FRAME name="navbar" id="navbar" src="nav.html"&gt;    &lt;FRAME name="main" id="main" src="page1.html"&gt;&lt;/FRAMESET&gt;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectmodelreference"><span class="title">Objektmodellreferenz</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>[window.]document.getElementById(<span class="replaceable">elementID)</span></pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectmodelreference"><span class="title">Elementspezifische Attribute</span></td>
+</tr><tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+</tr><tr><td>
+        <table border="1">
+<tbody><tr><td><span class="literal">border</span></td><td><span class="literal">bordercolor</span></td><td><span class="literal">cols</span></td><td><span class="literal">frameborder</span></td><td><span class="literal">framespacing</span></td><td><span class="literal">rows</span></td>
+								</tr>
+							</tbody></table>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectmodelreference"><span class="title">Elementspezifische EreignisbehandlungsroutinenAttribute</span></td>
+</tr><tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+</tr><tr><td>
+        <table border="1">
+<tbody><th>Routine</th><th>NN</th><th>IE</th><th>HTML</th><tr><td>onload</td><td>2</td><td>3</td><td>4</td>
+								</tr>
+								<tr><td>onunload</td><td>2</td><td>3</td><td>4</td>
+								</tr>
+							</tbody></table>
+					</td>
+				</tr>
+			</table>
+		</div><div id="border">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">border</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">3</span> IE <span class="emphasis">4</span> HTML <span class="emphasis">nicht zutreffend</span>&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">border="<span class="replaceable">pixelCount</span>"</p>
+					</td><td valign="top" nowrap class="requirements">Optional&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>In Frames werden standardm&auml;&szlig;ig 3D-Rahmen angezeigt. Die Standardbreite dieser Rahmen h&auml;ngt vom Browser und vom Betriebssystem ab. Sie k&ouml;nnen diese Breite ver&auml;ndern, indem Sie dem Attribut <span class="literal">border</span> des Framesets einen anderen Wert zuweisen. Nur das &auml;u&szlig;erste <span class="literal">frameset</span>-Element eines Systems aus verschachtelten Framesets reagiert auf die <span class="literal">border</span>-Attributeinstellung. Dieses Attribut steuert die Rahmen der einzelnen Frames, nicht den Rahmen um das Frameset herum.</p><p>Navigator 4 zeigt sowohl in der Windows- als auch in der Macintosh-Version einen Standardrahmen an, der dem <span class="literal">border</span>-Wert 5 entspricht. Bei IE betr&auml;gt der Standardwert f&uuml;r Windows 6 und f&uuml;r den Macintosh 1 (auch wenn der tats&auml;chlich dargestellte Rahmen um Einiges breiter als ein Pixel ist). Einstellungen f&uuml;r das Attribut <span class="literal">border</span> haben deshalb nicht bei allen Browsern den gleichen visuellen Effekt. Au&szlig;erdem verhalten sich manche Browser bei kleineren Werten sonderbar. Bei IE 6 f&uuml;r Windows werden f&uuml;r Werte unter 4 keine Rahmen angezeigt; bei Navigator geht der 3D-Effekt bei Werten unter 2 verloren. Abgesehen davon wird bei Navigator 4 f&uuml;r Macintosh in der Mitte von Frameleisten eine unpassende Vertiefung angezeigt.</p><p>Wegen dieser verwirrenden Implementierung w&auml;re es verst&auml;ndlich, wenn Sie &uuml;berhaupt keine Frame-Rahmen benutzen (d.&#160;h. das Attribut <span class="literal">border</span> auf <span class="literal">0</span> setzen). In manchen F&auml;llen bieten Rahmen jedoch einen vertrauten visuellen Kontext f&uuml;r Frame-Inhalte, die Bildlaufleisten erfordern. Frei schwebende Bildlaufleisten in Browserfenstern kommen manchen Benutzern m&ouml;glicherweise komisch vor.</p><p>Dass die HTML 4-Spezifikation das Attribut <span class="literal">border</span> nicht enth&auml;lt, mag einem in dem Glauben lassen, dass der Einsatz von Stylesheet-Rahmen anstelle von Rahmen, die nur an Frames gebunden sind, bevorzugt wird. Ein rahmenspezifisches CSS-Stilattribut wirkt sich aber nur auf den Rahmen um das gesamte Frameset herum aus und hat keinerlei Auswirkung auf die Rahmen zwischen Frames.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>&lt;FRAMESET cols="150,*" border="0"&gt;...&lt;/FRAMESET&gt;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+				</tr>
+				<tr>
+					<td><p>Eine beliebiger Integerwert. Die Einstellung Null entfernt den Rahmen vollst&auml;ndig. Obgleich dieser Wert eigentlich die genaue Pixelbreite von Rahmen im Frameset darstellt, gilt dies nicht f&uuml;r alle Betriebssysteme bzw. Browser absolut.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Standardwert</span></td>
+				</tr>
+				<tr>
+					<td><p>Siehe die entsprechende Beschreibung.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectmodelreference"><span class="title">Objektmodellreferenz</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>[window.]document.getElementById(<span class="replaceable">elementID)</span>.border</pre>
+						</span></td>
+				</tr>
+			</table>
+		</div><div id="bordercolor">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">bordercolor</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">3</span> IE <span class="emphasis">4</span> HTML <span class="emphasis">nicht zutreffend</span>&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">bordercolor="<span class="replaceable">colorTripletOrName</span>"</p>
+					</td><td valign="top" nowrap class="requirements">Optional&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Bestimmt die dargestellte Farbe f&uuml;r alle sichtbaren Rahmen in einem Frameset. Die <span class="literal">bordercolor</span>-Einstellung des &auml;u&szlig;ersten <span class="literal">frameset</span>-Elements kann durch das <span class="literal">bordercolor</span>-Attribut eines verschachtelten <span class="literal">frameset</span>-Elements (nur f&uuml;r die Frames des verschachtelten Framesets) oder eines individuellen <span class="literal">frame</span>-Elements au&szlig;er Kraft gesetzt werden. Farbkonflikte benachbarter Frames werden von den Browsern unterschiedlich gehandhabt. Testen Sie die Farbkombinationen gr&uuml;ndlich, bevor Sie mehrere Rahmenfarben verwenden.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>&lt;FRAMESET cols="150,*" bordercolor="salmon"&gt;...&lt;/FRAMESET&gt;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+				</tr>
+				<tr>
+					<td><p>Ein hexadezimales Triplett oder ein unverschl&uuml;sselter Farbname. Einzelheiten zu den g&uuml;ltigen unverschl&uuml;sselten Farbnamen finden Sie in Anhang A.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Standardwert</span></td>
+				</tr>
+				<tr>
+					<td><p>Vorgabe des Browsers, normalerweise ein Grauton mit Schwarz oder Blau f&uuml;r den 3D-Effekt.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectmodelreference"><span class="title">Objektmodellreferenz</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>[window.]document.getElementById(<span class="replaceable">elementID)</span>.borderColor</pre>
+						</span></td>
+				</tr>
+			</table>
+		</div><div id="cols">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">cols</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">2</span> IE <span class="emphasis">3</span> HTML <span class="emphasis">4</span>&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">cols="<span class="replaceable">columnLengthsList</span>"</p>
+					</td><td valign="top" nowrap class="requirements">Optional&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Definiert die Gr&ouml;&szlig;e oder die Proportionen der Spaltenanordnung von Frames in einem Frameset. Wenn mit dem <span class="literal">frameset</span>-Element Frames in mehreren Spalten erstellt werden sollen, m&uuml;ssen Sie dem Attribut <span class="literal">cols</span> eine Liste mit Werten zuweisen (einen Wert pro Spalte).</p><p>Die Spaltengr&ouml;&szlig;e kann auf drei Arten eingestellt werden:</p><p>Verwenden Sie eine absolute Pixelgr&ouml;&szlig;e, wenn die Breite des Frames unabh&auml;ngig von der Gr&ouml;&szlig;e des Browserfensters konstant bleiben soll. Dies ist besonders dann n&uuml;tzlich, wenn in dem Frame ein Objekt mit fester Breite angezeigt werden soll, etwa ein Bild. Verwenden Sie eine Angabe in Prozent, wenn die Breite des Frames einen bestimmten Anteil der Breite des gesamten Framesets einnehmen soll, unabh&auml;ngig von den Abmessungen des Browserfensters. Wenn Sie f&uuml;r das Attribut <span class="literal">cols</span> nur Prozentwerte angeben, sollten diese Werte insgesamt 100&#160;% betragen. Ist dies nicht der Fall, sorgt der Browser f&uuml;r die passenden Spaltenbreiten. Sie k&ouml;nnen das Stellvertreterzeichen (Sternchen) verwenden, um die Breite eines bestimmten Frames vom Browser berechnen zu lassen, wenn f&uuml;r alle anderen Frames des Framesets feste oder prozentuale Werte angegeben sind. Die Werte im Attributstring m&uuml;ssen durch Kommas getrennt werden.</p><p>Sie k&ouml;nnen im Attributstring alle drei Werttypen nebeneinander verwenden. Angenommen, Sie haben ein Frameset mit drei Spalten. Wenn die Breite der linken Spalte genau 150 Pixel betragen und die mittlere Spalte 50&#160;% der Gesamtbreite des Framesets beanspruchen soll, richten Sie die Werte wie folgt ein:</p><p>Die genaue Breite der rechten und mittleren Spalte h&auml;ngt nun jeweils von der Breite des Browserfensters ab. In diesem Beispiel betr&auml;gt die Breite des rechten Frames ungef&auml;hr die halbe Breite des Framesets minus der f&uuml;r den linken Frame reservierten 150 Pixel.</p><p>Sie k&ouml;nnen eine unsichtbare Spalte auf der rechten Seite definieren. F&uuml;r unsichtbare Spalten sollten Sie Prozentwerte verwenden, die zusammen 100&#160;% betragen. F&uuml;r die letzte Spalte sollten Sie ein Stellvertreterzeichen (Sternchen) angeben.</p><p>Um ein gleichm&auml;&szlig;iges Frame-Raster zu erstellen, m&uuml;ssen Sie sowohl dem <span class="literal">cols</span>- als auch dem <span class="literal">rows</span>-Attribut des <span class="literal">frameset</span>-Elements einen Wert zuweisen. F&uuml;r ungleichm&auml;&szlig;ige Anordnungen m&uuml;ssen die <span class="literal">frameset</span>-Elemente verschachtelt werden; siehe die entsprechende Beschreibung des <span class="literal">frameset</span>-Elements weiter oben.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>&lt;FRAMESET cols="25%,50%,25%"&gt;...&lt;/FRAMESET&gt;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+				</tr>
+				<tr>
+					<td><p>Durch Kommas getrennte Liste mit Pixelwerten, Prozentwerten oder dem Stellvertreterzeichen (<span class="literal">*</span>). Internet Explorer 4 f&uuml;r den Macintosh zeigt bei einigen Kombinationen mit dem Stellvertreterzeichen ein falsches Verhalten.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Standardwert</span></td>
+				</tr>
+				<tr>
+					<td><p><span class="literal">100%</span></p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectmodelreference"><span class="title">Objektmodellreferenz</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>[window.]document.getElementById(<span class="replaceable">elementID)</span>.cols</pre>
+						</span></td>
+				</tr>
+			</table>
+		</div><div id="frameborder">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">frameborder</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">3</span> IE <span class="emphasis">3</span> HTML <span class="emphasis">nicht zutreffend</span>&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">frameborder="<span class="replaceable">borderSwitch</span>"</p>
+					</td><td valign="top" nowrap class="requirements">Optional&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Bestimmt, ob bei allen Frames eines Framesets Rahmen angezeigt werden (zur Trennung der Rahmenkanten). Das <span class="literal">frameborder</span>-Attribut eines <span class="literal">frame</span>-Elements kann die entsprechende Einstellung des <span class="literal">frameset</span>-Elements au&szlig;er Kraft setzen, doch bei manchen Frame-Layouts ist das Entfernen von Frames aus Frame-Untergruppen schlecht m&ouml;glich. Sie sollten das Attribut des <span class="literal">frameset</span>-Elements nur mit Vorsicht &uuml;berschreiben und das resultierende Verhalten in allen Browsern und auf allen Betriebssystemplattformen testen.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>&lt;FRAMESET cols="25%,50%,25%" frameborder="no"&gt;...&lt;/FRAMESET&gt;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+				</tr>
+				<tr>
+					<td><p>Die Ein/Aus-Werte f&uuml;r dieses Attribut sind vom Browser abh&auml;ngig. Navigator verwendet <span class="literal">yes</span> und <span class="literal">no</span>. Internet Explorer 4 und sp&auml;ter akzeptiert sowohl <span class="literal">yes</span> | <span class="literal">no</span> als auch <span class="literal">1</span> | <span class="literal">0</span>. Die beste Kompatibilit&auml;t erreichen Sie mit den Werten <span class="literal">yes</span>/<span class="literal">no</span>.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Standardwert</span></td>
+				</tr>
+				<tr>
+					<td><p><span class="literal">yes</span></p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectmodelreference"><span class="title">Objektmodellreferenz</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>[window.]document.getElementById(<span class="replaceable">elementID)</span>.frameBorder</pre>
+						</span></td>
+				</tr>
+			</table>
+		</div><div id="framespacing">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">framespacing</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">nicht zutreffend</span> IE <span class="emphasis">3</span> HTML <span class="emphasis">nicht zutreffend</span>&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">framespacing="<span class="replaceable">pixelLength</span>"</p>
+					</td><td valign="top" nowrap class="requirements">Optional&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Das IE-Attribut <span class="literal">framespacing</span> ist eine &auml;ltere Version des Attributs <span class="literal">border</span>. Das &auml;ltere Attribut wird in aktuellen IE-Versionen aus Gr&uuml;nden der R&uuml;ckw&auml;rtskompatibilit&auml;t unterst&uuml;tzt. Das Verhalten des Attributs <span class="literal">framespacing</span> ist bei allen Betriebssystemversionen des IE in etwa gleich: Bei der Einstellung 10 Pixel werden zwischen den Frames Rahmen dargestellt, die f&uuml;r Windows und Macintosh im Wesentlichen gleich sind. Bei ausschlie&szlig;licher Verwendung mit dem Internet Explorer bietet das Attribut <span class="literal">framespacing</span> eine genauere M&ouml;glichkeit, Rahmen zu erzeugen, die auch auf verschiedenen Betriebssystemen gleich aussehen.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>&lt;FRAMESET cols="25%,50%,25%" framespacing="7"&gt;...&lt;/FRAMESET&gt;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+				</tr>
+				<tr>
+					<td><p>Ein positiver Integerwert. Anders als beim Attribut <span class="literal">border</span> wird bei der Einstellung Null der Rahmen jedoch nicht entfernt. Um den Rahmen ganz auszublenden, m&uuml;ssen Sie das Attribut <span class="literal">frameborder</span> verwenden.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Standardwert</span></td>
+				</tr>
+				<tr>
+					<td><p><span class="literal">2</span></p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectmodelreference"><span class="title">Objektmodellreferenz</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>[window.]document.getElementById(<span class="replaceable">elementID)</span>.frameSpacing</pre>
+						</span></td>
+				</tr>
+			</table>
+		</div>
+		<div id="rows">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">rows</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">2</span> IE <span class="emphasis">3</span> HTML <span class="emphasis">4</span>&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">rows="<span class="replaceable">rowLengthsList</span>"</p>
+					</td><td valign="top" nowrap class="requirements">Optional&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Definiert die Gr&ouml;&szlig;e bzw. Proportionen der Zeilenanordnung von Frames in einem Frameset. Wenn mit dem <span class="literal">frameset</span>-Element Frames in mehreren Zeilen erstellt werden sollen, m&uuml;ssen Sie dem Attribut <span class="literal">rows</span> eine Liste mit Werten zuweisen (einen Wert pro Zeile).</p><p>Die Zeilengr&ouml;&szlig;e kann auf drei Arten eingestellt werden:</p><p>Verwenden Sie eine absolute Pixelgr&ouml;&szlig;e, wenn die H&ouml;he einer Framezeile unabh&auml;ngig von der Gr&ouml;&szlig;e des Browserfensters konstant bleiben soll. Dies ist besonders dann n&uuml;tzlich, wenn in dem Frame ein Objekt mit fester H&ouml;he angezeigt werden soll, etwa ein Bild. Verwenden Sie eine Angabe in Prozent, wenn die H&ouml;he des Frames einen bestimmten Anteil an der H&ouml;he des gesamten Framesets betragen soll, unabh&auml;ngig von den Abmessungen des Browserfensters. Wenn Sie f&uuml;r das Attribut <span class="literal">rows</span> nur Prozentwerte angeben, m&uuml;ssen diese ingesamt 100&#160;% betragen. Sollte dies nicht der Fall sein, sorgt der Browser f&uuml;r die passenden Zeilenh&ouml;hen. Sie k&ouml;nnen das Stellvertreterzeichen (Sternchen) verwenden, um die H&ouml;he einer bestimmten Zeile vom Browser berechnen zu lassen, wenn f&uuml;r alle anderen Zeilen des Framesets feste oder prozentuale Werte angegeben sind. Die Werte im Attributstring m&uuml;ssen durch Kommas getrennt werden.</p><p>Sie k&ouml;nnen im Attributstring alle drei Werttypen nebeneinander verwenden. Angenommen, Sie haben ein Frameset mit drei Zeilen. Wenn die unterste Zeile f&uuml;r eine Navigationsleiste genau 80 Pixel hoch sein und die mittlere Zeile 50&#160;% der Gesamth&ouml;he des Framesets beanspruchen soll, richten Sie die Werte wie folgt ein:</p><p>Die genaue H&ouml;he des oberen und mittleren Frames h&auml;ngt jeweils von der H&ouml;he des Browserfensters ab. In diesem Beispiel betr&auml;gt die H&ouml;he des oberen Frames ungef&auml;hr die halbe H&ouml;he des Framesets minus der f&uuml;r die untere Zeile reservierten 80 Pixel.</p><p>Sie k&ouml;nnen eine unsichtbare Zeile unten im Frameset definieren. F&uuml;r unsichtbare Zeilen sollten Sie Prozentwerte verwenden, die zusammen 100&#160;% betragen. F&uuml;r die letzte Zeile sollten Sie ein Stellvertreterzeichen (Sternchen) angeben.</p><p>Um ein gleichm&auml;&szlig;iges Frameraster zu erstellen, m&uuml;ssen Sie sowohl dem <span class="literal">cols</span>- als auch dem <span class="literal">rows</span>-Attribut des <span class="literal">frameset</span>-Elements einen Wert zuweisen. F&uuml;r ungleichm&auml;&szlig;ige Anordnungen m&uuml;ssen die <span class="literal">frameset</span>-Elemente verschachtelt werden; siehe die entsprechende Beschreibung des <span class="literal">frameset</span>-Elements weiter oben.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>&lt;FRAMESET rows="25%,50%,25%"&gt;...&lt;/FRAMESET&gt;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+				</tr>
+				<tr>
+					<td><p>Durch Kommas getrennte Liste mit Pixelwerten, Prozentwerten oder dem Stellvertreterzeichen (<span class="literal">*</span>). Internet Explorer 4 f&uuml;r den Macintosh zeigt bei einigen Kombinationen mit dem Stellvertreterzeichen ein falsches Verhalten.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Standardwert</span></td>
+				</tr>
+				<tr>
+					<td><p><span class="literal">100%</span></p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectmodelreference"><span class="title">Objektmodellreferenz</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>[window.]document.getElementById(<span class="replaceable">elementID)</span>.rows</pre>
+						</span></td>
+				</tr>
+			</table>
+		</div>
+		<div id="style">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">style</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">4</span> IE <span class="emphasis">4</span> HTML <span class="emphasis">4</span>&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">style="<span class="replaceable">styleSheetProperties</span>"</p>
+					</td><td valign="top" nowrap class="requirements">Optional&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Mit diesem Attribut k&ouml;nnen Sie eine oder mehrere Eigenschaftenzuweisungen von Stylesheet-Regeln f&uuml;r das aktuelle Element einstellen. F&uuml;r die Zuweisung von Stilattributen k&ouml;nnen Sie die CSS- oder (nur Navigator 4) die JavaScript-Syntax verwenden. Setzen Sie das <span class="literal">style</span>-Attribut nur in Verbindung mit sichtbaren (darstellbaren) Elementen ein.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>&lt;SPAN style="color:green; font-size:18px"&gt;Big, green, and bold&lt;/SPAN&gt;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+				</tr>
+				<tr>
+					<td><p>Die gesamte Stylesheet-Regel f&uuml;r die CSS-Syntax ist in Anf&uuml;hrungszeichen eingeschlossen. Mehrere Stilattributeinstellungen werden durch Strichpunkte getrennt. Ausf&uuml;hrliche Informationen zu den Stylesheet-Attributen finden Sie in Kapitel 11.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Standardwert</span></td>
+				</tr>
+				<tr>
+					<td><p>Keiner.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectmodelreference"><span class="title">Objektmodellreferenz</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>[window.]document.getElementById(<span class="replaceable">elementID).</span>style</pre>
+						</span></td>
+				</tr>
+			</table>
+		</div>
+</body>
+</html>

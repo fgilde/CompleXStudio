@@ -1,0 +1,326 @@
+<html>
+<link rel="stylesheet" href="josh.css">
+<body bgcolor="#FFFFFF">
+
+		<div id="Beschreibung">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">options</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">2</span> IE <span class="emphasis">3</span> DOM <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Ein Array mit <span class="literal">option</span>-Elementen, die in einem <span class="literal">select</span>-Objekt verschachtelt sind.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectmodelreference"><span class="title">Objektmodellreferenz</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>[window.]document.<span class="replaceable">formName</span>.<span class="replaceable">selectName</span>.options
+[window.]document.forms[i].elements[i].options
+[window.]document.getElementById("<span class="replaceable">selectElementID</span>").options</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectspecificproperties"><span class="title">Objektspezifische Eigenschaften</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<table border="1"><tbody><tr><td><span class="literal">length</span></td>
+								</tr>
+							</tbody></table>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectspecificmethods"><span class="title">Objektspezifische Methoden</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<table border="1"><tbody><tr><td><span class="literal">add( )</span></td><td><span class="literal">item( )</span></td><td><span class="literal">namedItem( )</span></td><td><span class="literal">remove( )</span></td><td><span class="literal">tags( )</span></td><td><span class="literal">urns( )</span></td>
+								</tr>
+							</tbody></table>
+					</td>
+				</tr>
+			</table>
+		</div><div id="length">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">length</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">2</span> IE <span class="emphasis">3</span> DOM <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Schreibgesch&uuml;tzt</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Gibt die Anzahl von Elementen in der Sammlung zur&uuml;ck.</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>var howMany = document.forms[0].mySelect.options.length;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Eine ganze Zahl. </p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="add( )">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">add( )</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">nicht zutreffend</span> IE <span class="emphasis">4</span>  DOM <span class="emphasis">nicht zutreffend</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">add(<span class="replaceable">elementRef</span>[, <span class="replaceable">index</span>])</p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>F&uuml;gt der aktuellen Sammlung ein bereits (mit der <span class="literal">createElement( )</span>-Methode) erstelltes Element hinzu. Das Element muss vom Typ <span class="literal">option</span> sein. Standardm&auml;&szlig;ig wird das neue Element als letztes Element in die Sammlung aufgenommen, sofern Sie keinen Indexwert als zweiten Parameter angeben (in welchem Fall alle auf die betreffende Indexposition folgenden Elemente um eine Position nach hinten ger&uuml;ckt werden). Im folgenden Beispiel wird einem <span class="literal">select</span>-Objekt ein neues Element hinzugef&uuml;gt:
+</p>
+<span class="PROGRAMLISTING"><pre>var newElem = document.createElement(&quot;option&quot;);
+newElem.text = &quot;Freddy&quot;;
+newElem.value = &quot;Freddy Mercury&quot;;
+document.forms[1].rockers.options.add(newElem);</pre></span>
+							</td>
+						</tr>
+						<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Beachten Sie, dass zun&auml;chst ein generisches Objekt erstellt wird. Anschlie&szlig;end werden seine Eigenschaften mit Werten aufgef&uuml;llt, und das neue Element wird dem <span class="literal">selected</span>-Element hinzugef&uuml;gt.
+</p>
+							</td>
+						</tr>
+						<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Ein Beispiel f&uuml;r einen browser&uuml;bergreifenden und r&uuml;ckw&auml;rtskompatiblen Ansatz zur Durchf&uuml;hrung dieser Aufgabe finden Sie in der Beschreibung des <span class="literal">option</span>-Objekts. Unter der Methode <span class="literal">select.add( )</span> finden Sie ein entsprechendes W3C-DOM-Verfahren, das in Netscape 6 angewendet werden kann.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Parameter</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<ul><li><span class="literal"></span>Eine vollst&auml;ndige Elementobjektreferenz, die normalerweise von der <span class="literal">createElement( )</span>-Methode erstellt wird.
+</li><li><span class="literal"></span>Eine optionale ganze Zahl, die die Position in der Objektsammlung angibt, an der das neue Element platziert werden soll.
+</li></ul>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Zur&uuml;ckgegebener Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Keiner.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="item( )">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">item( )</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">4</span> DOM <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">item(<span class="replaceable">index</span>[, <span class="replaceable">subindex</span>]) item(<span class="replaceable">index</span>)</p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Gibt ein einzelnes Objekt oder eine Objektsammlung zur&uuml;ck, das bzw. die dem mit dem Indexwert (oder optional mit dem Index- und dem Subindexwert) &uuml;bereinstimmenden Element entspricht.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Parameter</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<ul><li><span class="literal"></span>Handelt es sich bei dem Parameter um eine auf Null basierende ganze Zahl, ist der zur&uuml;ckgegebene Wert ein einzelnes Element, das dem angegebenen Element in der Quellcodereihenfolge (verschachtelt im aktuellen Element) entspricht; handelt es sich bei dem Parameter eine Zeichenfolge, ist der zur&uuml;ckgegebene Wert eine Sammlung der Elemente, deren <span class="literal">id</span>-Eigenschaft mit der Zeichenfolge &uuml;bereinstimmt.
+</li><li><span class="literal"></span>Wenn Sie eine Zeichenfolge als ersten Parameter angeben (nur IE), k&ouml;nnen Sie den zweiten Parameter verwenden, um einen auf Null basierenden Index anzugeben, der das angegebene Element aus einer Sammlung abruft, deren <span class="literal">id</span>-Eigenschaft mit dem Zeichenfolgenwert des ersten Parameters &uuml;bereinstimmt.
+</li></ul>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Zur&uuml;ckgegebener Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Ein Objekt oder eine Objektsammlung (Array). Falls keine &Uuml;bereinstimmung mit den Parametern vorliegt, lautet der zur&uuml;ckgegebene Wert <span class="literal">null</span>.
+</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="namedItem( )">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">namedItem( )</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">6</span> DOM <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">namedItem("<span class="replaceable">ID</span>")</p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Gibt ein einzelnes <span class="literal">option</span>-Objekt zur&uuml;ck, das dem mit dem Wert der Parameterzeichenfolge &uuml;bereinstimmenden Element entspricht.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Parameter</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<ul><li><span class="literal"></span>Die Zeichenfolge, die denselben Wert wie das <span class="literal">id</span>-Attribut des gew&uuml;nschten Elements enth&auml;lt.
+</li></ul>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Zur&uuml;ckgegebener Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Ein <span class="literal">option</span>-Objekt. Falls keine &Uuml;bereinstimmung mit den Parametern vorliegt, lautet der zur&uuml;ckgegebene Wert <span class="literal">null</span>.
+</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="remove( )">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">remove( )</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">nicht zutreffend</span> IE <span class="emphasis">4</span>  DOM <span class="emphasis">nicht zutreffend</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">remove(<span class="replaceable">index</span>)</p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>L&ouml;scht ein Element aus der aktuellen Sammlung. Sie m&uuml;ssen lediglich den auf Null basierenden Indexwert des <span class="literal">option</span>-Elements angeben, das Sie aus der Sammlung eines <span class="literal">select</span>-Elements entfernen m&ouml;chten. Im folgenden Beispiel wird das erste Element aus einem <span class="literal">select</span>-Objekt gel&ouml;scht:
+</p>
+<span class="PROGRAMLISTING"><pre>document.forms[1].rockers.options.remove(0);</pre></span>
+							</td>
+						</tr>
+						<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>In Navigator unterscheidet sich der Vorgang zum Entfernen eines <span class="literal">option</span>-Elements vollst&auml;ndig von dieser Vorgehensweise. Zum L&ouml;schen eines Elements weisen Sie diesem in der Sammlung <span class="literal">null</span> zu. Die Navigator-Version des obigen IE-Beispiels sieht z. B. wie folgt aus:
+</p>
+<span class="PROGRAMLISTING"><pre>document.forms[1].rockers.options[0] = null;</pre></span>
+							</td>
+						</tr>
+						<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Unabh&auml;ngig von der browserspezifischen Vorgehensweise zum Entfernen einer Option aus dem <span class="literal">select</span>-Objekt wird die L&auml;nge des <span class="literal">options</span>-Arrays reduziert, um den Platz zu f&uuml;llen.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Parameter</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<ul><li><span class="literal"></span>Eine auf Null basierende ganze Zahl, die angibt, welches Element in der Sammlung gel&ouml;scht werden soll.
+</li></ul>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Zur&uuml;ckgegebener Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Keiner.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="tags( )">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">tags( )</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">nicht zutreffend</span> IE <span class="emphasis">4</span>  DOM <span class="emphasis">nicht zutreffend</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">tags("<span class="replaceable">tagName</span>")</p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Gibt eine Sammlung von Objekten zur&uuml;ck (aus allen in der aktuellen Sammlung verschachtelten Objekten), deren Tags mit dem <span class="replaceable">tagName</span>-Parameter &uuml;bereinstimmen. In allen IE-Sammlungen implementiert (siehe <span class="literal">all.tags( )</span>-Methode), f&uuml;r Sammlungen desselben Elementtyps jedoch &uuml;berfl&uuml;ssig.
+</p>
+							</td>
+						</tr>
+			</table>
+		</div><div id="urns( )">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">urns( )</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">nicht zutreffend</span> IE <span class="emphasis">5(Win)</span>  DOM <span class="emphasis">nicht zutreffend</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">urns(<span class="replaceable">URN</span>)</p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Siehe <span class="literal">all.urns( )</span>-Methode</p>
+							</td>
+						</tr>
+			</table>
+		</div>
+
+</body>
+</html>

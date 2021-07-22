@@ -1,0 +1,1138 @@
+<html>
+<link rel="stylesheet" href="josh.css">
+<body bgcolor="#FFFFFF">
+<div id="Beschreibung">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">&lt;A&gt;</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">alle</span> IE <span class="emphasis">alle</span>   HTML <span class="emphasis">alle</span>&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">&lt;A&gt;...&lt;/A&gt;</p>
+					</td><td valign="top" nowrap class="requirements">HTML-End-Tag: Erforderlich&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Das <span class="literal">a</span>-Element kann als Anker oder Hyperlink dienen, je nachdem, ob das Attribut <span class="literal">name</span> oder das Attribut <span class="literal">href</span> vorhanden ist. Als Anker definiert das Element eine Stelle in einem Dokument, auf die eine URL durch Anh&auml;ngen des Zeichens # und des Ankernamens verweisen kann (z.&#160;B. <span class="emphasis">http://www.megacorp.com/contents#a-c</span>). Unter Namen versteht man Bezeichner, die dem Attribut <span class="literal">name</span> zugewiesen sind (oder in neueren Browsern dem Attribut <span class="literal">id</span>). Als Anker definierter Inhalt hebt sich visuell nicht vom umgebenden <span class="literal">body</span>-Inhalt ab.</p><p>Wenn dem Attribut <span class="literal">href</span> eine URI zugewiesen wird, wandelt sich das Element in die Quelle eines Hyperlinks um. Die Aktivierung des Links f&uuml;hrt normalerweise zu der URI, die dem Attribut <span class="literal">href</span> zugewiesen ist (es k&ouml;nnen aber auch andere Medien in ein Plug-In geladen werden, ohne die Seite zu ver&auml;ndern). Solange in Stylesheets nicht anders festgelegt, heben sich Hyperlinks im Browser &uuml;blicherweise durch ein bestimmtes Aussehen ab, wie etwa Unterstreichung (oder Rahmen um ein Objekt) und eine andere Farbe als der aktuelle Inhalt. Attribute k&ouml;nnen f&uuml;r die folgenden drei Zust&auml;nde unterschiedliche Farben definieren: einen noch nicht besuchten Link, einen gerade vom Benutzer angeforderten Link und einen bereits besuchten Link (das verkn&uuml;pfte Dokument befindet sich momentan im Browser-Cache). Jetzt werden CSS-Pseudoklassen (<span class="literal">:link</span>, <span class="literal">:active</span>, <span class="literal">:visited</span> und ein neuer Zustand, <span class="literal">:hover</span>) Vorrang vor diesen Attributen einger&auml;umt. Ein <span class="literal">a</span>-Element kann sowohl als Anker als auch als Hyperlink fungieren, wenn beiden Attributen, <span class="literal">name</span> (oder <span class="literal">id</span>) und <span class="literal">href</span>, Werte zugewiesen sind.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>&lt;A name="anchor3" id="anchor3"&gt;Just an anchor named "anchor3."&lt;/A&gt;&lt;A href="#anchor3"&gt;A link to navigate to "anchor3" in the same document.&lt;/A&gt;&lt;A name="anchor3" id="anchor3" href="http://www.megacorp.com/index.html"&gt;Go from here (anchor 3) to home page.&lt;/A&gt;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectmodelreference"><span class="title">Objektmodellreferenz</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>[window.]document.links[i][window.]document.anchors[i][window.]document.getElementById(<span class="replaceable">elementID</span>)</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectmodelreference"><span class="title">Elementspezifische Attribute</span></td>
+</tr><tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+</tr><tr><td>
+        <table border="1">
+<tbody><tr><td>charset</td><td>coords</td><td>datafld</td><td>datasrc</td><td>href</td>
+								</tr>
+								<tr><td>hreflang</td><td>methods</td><td>name</td><td>rel</td><td>rev</td>
+								</tr>
+								<tr><td>shape</td><td>target</td><td>type</td><td>urn</td><td></td>
+								</tr>
+							</tbody></table>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectmodelreference"><span class="title">Elementspezifische Ereignisbehandlungsroutinenattribute</span></td>
+				</tr>
+				<tr>
+					<td><p>Keine. <span class="literal">a</span>-Elemente, die nur als Anker fungieren, besitzen in Navigator bis Version 4 keine Ereignisbehandlungsroutinen.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="accesskey">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">accesskey</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6 (siehe Text)</span> IE <span class="emphasis">4/5</span> HTML <span class="emphasis">4 (siehe Text)</span>&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">accesskey="<span class="replaceable">character</span>"</p>
+					</td><td valign="top" nowrap class="requirements">Optional&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Eine einzelne Buchstabentaste, durch die ein Element (in manchen Browsern) den Fokus erh&auml;lt oder ein Formularsteuerelement bzw. eine Link-Aktion aktiviert wird. Der Browser und das Betriebssystem bestimmen, ob zusammen mit der Buchstabentaste eine Zusatztaste (wie <span class="emphasis">Strg</span>, <span class="emphasis">Alt</span> oder <span class="emphasis">Befehl</span>) gedr&uuml;ckt werden muss, damit der Link aktiviert wird. In IE f&uuml;r Windows ab Version 4 und Netscape 6 muss gleichzeitig die <span class="emphasis">Alt</span>-Taste gedr&uuml;ckt werden, und bei der Buchstabentaste wird nicht zwischen Gro&szlig;- und Kleinschreibung unterschieden. In IE f&uuml;r den Macintosh ab Version 5 und der Macintosh-Version von Netscape 6 funktioniert die Zugriffstaste nur in Verbindung mit der <span class="emphasis">Ctrl</span>-Taste.</p><p>Obwohl das <span class="literal">accesskey</span>-Attribut hier als gemeinsames Attribut aufgef&uuml;hrt ist, wird es streng genommen nicht in allen Implementierungen unterst&uuml;tzt. HTML 4 und Netscape 6 erkennen dieses Attribut nur in Verbindung mit den folgenden Elementen: <span class="literal">a</span>, <span class="literal">area</span>, <span class="literal">button</span>, <span class="literal">input</span>, <span class="literal">label</span>, <span class="literal">legend</span> und <span class="literal">textarea</span>, IE 4 dar&uuml;ber hinaus f&uuml;r <span class="literal">applet</span>, <span class="literal">body</span>, <span class="literal">div</span>, <span class="literal">embed</span>, <span class="literal">isindex</span>, <span class="literal">marquee</span>, <span class="literal">object</span>, <span class="literal">select</span>, <span class="literal">span</span>, <span class="literal">table</span> und <span class="literal">td</span> (nicht jedoch f&uuml;r <span class="literal">label</span> und <span class="literal">legend</span>). IE 5 erkennt dieses Attribut in Verbindung mit allen darstellbaren Elementen, weist in diesem Zusammenhang jedoch eine Besonderheit auf: Au&szlig;er bei <span class="literal">input</span> und anderen formularbezogenen Elementen m&uuml;ssen sie einem Element f&uuml;r IE ab Version 5 au&szlig;erdem ein <span class="literal">tabindex</span>-Attribut mit einem beliebigen Wert zuweisen, damit der Benutzer in der Lage ist, ihm mithilfe der Schnellzugriffstaste den Fokus zu &uuml;bergeben.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>&lt;A href="http://www.megacorp.com/toc.html" accesskey="t"&gt;Table of Contents&lt;/A&gt;&lt;H2 class="subsection" accesskey="2" tabindex="0"&gt;Part Two&lt;/H2&gt;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+				</tr>
+				<tr>
+					<td><p>Ein einzelner Buchstabe des Dokumentsatzes.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Standardwert</span></td>
+				</tr>
+				<tr>
+					<td><p>Keiner.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectmodelreference"><span class="title">Objektmodellreferenz</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>[window.]document.links[i].accessKey[window.]document.anchors[i].accessKey[window.]document.<span class="replaceable">formName</span>.<span class="replaceable">elementName</span>.accessKey[window.]document.forms[i].elements[j].accessKey[window.]document.getElementById(<span class="replaceable">elementID).</span>accessKey</pre>
+						</span></td>
+				</tr>
+			</table>
+		</div>
+		<div id="accesskey">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">accesskey</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6 (siehe Text)</span> IE <span class="emphasis">4/5</span> HTML <span class="emphasis">4 (siehe Text)</span>&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">accesskey="<span class="replaceable">character</span>"</p>
+					</td><td valign="top" nowrap class="requirements">Optional&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Eine einzelne Buchstabentaste, durch die ein Element (in manchen Browsern) den Fokus erh&auml;lt oder ein Formularsteuerelement bzw. eine Link-Aktion aktiviert wird. Der Browser und das Betriebssystem bestimmen, ob zusammen mit der Buchstabentaste eine Zusatztaste (wie <span class="emphasis">Strg</span>, <span class="emphasis">Alt</span> oder <span class="emphasis">Befehl</span>) gedr&uuml;ckt werden muss, damit der Link aktiviert wird. In IE f&uuml;r Windows ab Version 4 und Netscape 6 muss gleichzeitig die <span class="emphasis">Alt</span>-Taste gedr&uuml;ckt werden, und bei der Buchstabentaste wird nicht zwischen Gro&szlig;- und Kleinschreibung unterschieden. In IE f&uuml;r den Macintosh ab Version 5 und der Macintosh-Version von Netscape 6 funktioniert die Zugriffstaste nur in Verbindung mit der <span class="emphasis">Ctrl</span>-Taste.</p><p>Obwohl das <span class="literal">accesskey</span>-Attribut hier als gemeinsames Attribut aufgef&uuml;hrt ist, wird es streng genommen nicht in allen Implementierungen unterst&uuml;tzt. HTML 4 und Netscape 6 erkennen dieses Attribut nur in Verbindung mit den folgenden Elementen: <span class="literal">a</span>, <span class="literal">area</span>, <span class="literal">button</span>, <span class="literal">input</span>, <span class="literal">label</span>, <span class="literal">legend</span> und <span class="literal">textarea</span>, IE 4 dar&uuml;ber hinaus f&uuml;r <span class="literal">applet</span>, <span class="literal">body</span>, <span class="literal">div</span>, <span class="literal">embed</span>, <span class="literal">isindex</span>, <span class="literal">marquee</span>, <span class="literal">object</span>, <span class="literal">select</span>, <span class="literal">span</span>, <span class="literal">table</span> und <span class="literal">td</span> (nicht jedoch f&uuml;r <span class="literal">label</span> und <span class="literal">legend</span>). IE 5 erkennt dieses Attribut in Verbindung mit allen darstellbaren Elementen, weist in diesem Zusammenhang jedoch eine Besonderheit auf: Au&szlig;er bei <span class="literal">input</span> und anderen formularbezogenen Elementen m&uuml;ssen sie einem Element f&uuml;r IE ab Version 5 au&szlig;erdem ein <span class="literal">tabindex</span>-Attribut mit einem beliebigen Wert zuweisen, damit der Benutzer in der Lage ist, ihm mithilfe der Schnellzugriffstaste den Fokus zu &uuml;bergeben.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>&lt;A href="http://www.megacorp.com/toc.html" accesskey="t"&gt;Table of Contents&lt;/A&gt;&lt;H2 class="subsection" accesskey="2" tabindex="0"&gt;Part Two&lt;/H2&gt;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+				</tr>
+				<tr>
+					<td><p>Ein einzelner Buchstabe des Dokumentsatzes.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Standardwert</span></td>
+				</tr>
+				<tr>
+					<td><p>Keiner.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectmodelreference"><span class="title">Objektmodellreferenz</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>[window.]document.links[i].accessKey[window.]document.anchors[i].accessKey[window.]document.<span class="replaceable">formName</span>.<span class="replaceable">elementName</span>.accessKey[window.]document.forms[i].elements[j].accessKey[window.]document.getElementById(<span class="replaceable">elementID).</span>accessKey</pre>
+						</span></td>
+				</tr>
+			</table>
+		</div>
+		<div id="charset">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">charset</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">nicht zutreffend</span>   HTML <span class="emphasis">4</span>&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">charset="<span class="replaceable">characterSet</span>"</p>
+					</td><td valign="top" nowrap class="requirements">Optional&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Zeichenkodierung des Inhalts am anderen Ende des Hyperlinks.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>&lt;A charset="csISO5427Cyrillic" href="moscow.html"&gt;Visit Moscow&lt;/A&gt;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+				</tr>
+				<tr>
+					<td><p>Alias (Gro&szlig;-/Kleinschreibung unwichtig) aus dem Zeichensatzregister (ftp://ftp.isi.edu/in-notes/iana/assignments/character-sets).</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Standardwert</span></td>
+				</tr>
+				<tr>
+					<td><p>Wird vom Browser bestimmt.  </p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="coords">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">coords</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">nicht zutreffend</span> IE <span class="emphasis">6</span>   HTML <span class="emphasis">4</span>&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">coords="<span class="replaceable">coord1, ... coordN</span>"</p>
+					</td><td valign="top" nowrap class="requirements">Optional&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Das Attribut <span class="literal">coords</span> wird zwar f&uuml;r das <span class="literal">a</span>-Element definiert, bezieht sich aber auf das <span class="literal">area</span>-Element f&uuml;r clientseitige Imagemaps. Das <span class="literal">area</span>-Element "erbt" viele Attribute und Verhalten vom <span class="literal">a</span>-Element. Weitere Informationen enth&auml;lt die Beschreibung des Elements <span class="literal">area</span>.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="datafld">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">datafld</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">nicht zutreffend</span> IE <span class="emphasis">4</span>   HTML <span class="emphasis">nicht zutreffend</span>&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">datafld="<span class="replaceable">columnName</span>"</p>
+					</td><td valign="top" nowrap class="requirements">Optional&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Wird in IE f&uuml;r die Datenbindung verwendet, um einem Hyperlink einen Spaltennamen einer Remote-Datenquelle anstelle eines <span class="literal">href</span>-Attributs zuzuweisen. Die Datenquellenspalte muss eine g&uuml;ltige URI (relativ oder absolut) enthalten. F&uuml;r das Element muss au&szlig;erdem das Attribut <span class="literal">datasrc</span> gesetzt sein. Funktioniert in IE 5/Mac nur bei Textdateien als Datenquellen.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>&lt;A datasrc="DBSRC3" datafld="newsURL"&gt;Late-Breaking News&lt;/A&gt;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+				</tr>
+				<tr>
+					<td><p>Bezeichner (Gro&szlig;-/Kleinschreibung beachten).</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Standardwert</span></td>
+				</tr>
+				<tr>
+					<td><p>Keiner.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectmodelreference"><span class="title">Objektmodellreferenz</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>[window.]document.links[i].dataFld[window.]document.getElementById(<span class="replaceable">elementID</span>).dataFld </pre>
+						</span></td>
+				</tr>
+			</table>
+		</div><div id="datasrc">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">datasrc</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">nicht zutreffend</span> IE <span class="emphasis">4</span>  HTML <span class="emphasis">nicht zutreffend</span>&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">datasrc="<span class="replaceable">dataSourceName</span>"</p>
+					</td><td valign="top" nowrap class="requirements">Optional&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Wird in IE f&uuml;r die Datenbindung verwendet, um den Bezeichner des <span class="literal">object</span>-Elements der Seite anzugeben, das das Datenquellenobjekt f&uuml;r den Remote-Datenzugriff l&auml;dt. Der Inhalt aus der Datenquelle, der in den Text des <span class="literal">a</span>-Elements eingef&uuml;gt werden soll, wird mit dem Attribut <span class="literal">datafld</span> spezifiziert. Funktioniert in IE 5/Mac nur mit Textdateien als Datenquellen.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>&lt;A datasrc="DBSRC3" datafld="newsURL"&gt;Late-Breaking News&lt;/A&gt;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+				</tr>
+				<tr>
+					<td><p>Bezeichner (Gro&szlig;-/Kleinschreibung beachten).</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Standardwert</span></td>
+				</tr>
+				<tr>
+					<td><p>Keiner.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectmodelreference"><span class="title">Objektmodellreferenz</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>[window.]document.links[i].dataSrc[window.]document.getElementById(<span class="replaceable">elementID</span>).dataSrc </pre>
+						</span></td>
+				</tr>
+			</table>
+		</div><div id="href">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">href</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">alle</span> IE <span class="emphasis">alle</span>  HTML <span class="emphasis">alle</span>&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">href="<span class="replaceable">URI</span>"</p>
+					</td><td valign="top" nowrap class="requirements">F&uuml;r Hyperlinks erforderlich&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Die Ziel-URI eines Hyperlinks. Wenn es sich bei der URI um ein HTML-Dokument handelt, wird dieses in Browsern in das aktuelle (Standard) oder ein anderes Fenster geladen (h&auml;ngt vom Attribut <span class="literal">target</span> ab). Bei einigen anderen Dateitypen werden die Zielinhalte an ein Plug-In &uuml;bergeben oder auf dem Client gespeichert. Ohne das Attribut <span class="literal">href</span> wird das Element im Browser nicht als anklickbarer Hyperlink identifiziert; stattdessen handelt es sich m&ouml;glicherweise nur um einen Anker (wenn das Attribut <span class="literal">name</span> oder <span class="literal">id</span> gesetzt ist).</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>&lt;A href="part1/chap3.html"&gt;Chapter 3&lt;/A&gt;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+				</tr>
+				<tr>
+					<td><p>Beliebige g&uuml;ltige URI, einschlie&szlig;lich absolute und relative URLs, Anker auf der gleichen Seite (mit vorangestelltem <span class="literal">#</span>) und <span class="literal">javascript:</span>-Pseudo-URL in skriptf&auml;higen Browsern zum Aufrufen einer Skriptanweisung.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Standardwert</span></td>
+				</tr>
+				<tr>
+					<td><p>Keiner.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectmodelreference"><span class="title">Objektmodellreferenz</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><p>In beiden Browsern lassen sich mit anderen Eigenschaften des Link-Objekts die Komponenten der URL (wie Protokoll und Hostname) extrahieren. Weitere Informationen finden Sie in der Beschreibung des Elements <span class="literal">a</span> in Kapitel 9. </p><span class="programlisting"><pre>[window.]document.links[i].href[window.]document.getElementById(<span class="replaceable">elementID</span>).href</pre>
+						</span></td>
+				</tr>
+			</table>
+		</div><div id="hreflang">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">hreflang</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">6</span>  HTML <span class="emphasis">4</span>&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">hreflang="<span class="replaceable">languageCode</span>"</p>
+					</td><td valign="top" nowrap class="requirements">Optional&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Der Sprachcode des Inhalts am Ziel eines Hyperlinks. Hierf&uuml;r muss auch das Attribut <span class="literal">href</span> gesetzt sein. Es handelt sich um ein Hilfsattribut, mit dem sich der Browser gegebenenfalls auf eine neue Sprache vorbereiten kann.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>&lt;A hreflang="HI" href="hindi/Chap3.html&gt;Chapter 3 (in Hindi)&lt;/A&gt;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+				</tr>
+				<tr>
+					<td><p>Sprachcode (Gro&szlig;-/Kleinschreibung unwichtig).</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Standardwert</span></td>
+				</tr>
+				<tr>
+					<td><p>Vorgabe des Browsers.  </p>
+					</td>
+				</tr>
+			</table>
+		</div>
+		<div id="id">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">id</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">4</span> IE <span class="emphasis">4</span> HTML <span class="emphasis">4</span>&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">id="<span class="replaceable">elementIdentifier</span>"</p>
+					</td><td valign="top" nowrap class="requirements">Optional&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Ein eindeutiger Bezeichner, mit dem das Element vom Rest des Dokuments unterschieden wird. Hiermit kann ein einzelnes Element mit einer Stilregel verkn&uuml;pft werden, die diesen Attributwert als ID-Selektor definiert. Einem Element kann eine ID zur Unterscheidung sowie als Klasse f&uuml;r eine Gruppe zugewiesen werden. Weitere Informationen enth&auml;lt Kapitel 3.</p><p>In IE ab Version 4 und Netscape 6 sind <span class="literal">id</span>-Attribute f&uuml;r nicht darstellbare Elemente zul&auml;ssig. Wenn Ihr Code jedoch validiert werden muss, sollten Sie daran denken, dass dies in W3C-HTML-4- und XHTML-DTDs nicht der Fall ist. Da alle W3C-DOM-Elemente &uuml;ber eine <span class="literal">id</span>-Eigenschaft verf&uuml;gen, ist es nur nat&uuml;rlich, auch nicht darstellbaren Elementen ein <span class="literal">id</span>-Attribut zuzuweisen, wenn sie in einem Skript referenziert werden m&uuml;ssen. Skriptverweise auf solche Elemente sind jedoch auch in anderer Form m&ouml;glich, z.&#160;B. mithilfe des von der Methode <span class="literal">document.getElementsByTagName( )</span> zur&uuml;ckgegebenen Arrays.</p><p>Wenn Sie <span class="literal">id</span>-Attributen Bezeichner zuweisen, k&ouml;nnen Sie Werte duplizieren, die bisher nur <span class="literal">name</span>-Attributen in Elementen zugewiesen wurden, die das <span class="literal">name</span>-Attribut aufweisen. Aktuelle Browser-Formularsteuerelemente erwarten jedoch noch immer <span class="literal">name</span>-Attribute f&uuml;r Namens-/Wertpaare, die zusammen mit dem Formular &uuml;bertragen werden sollen. Elemente, die als Anker fungieren, ben&ouml;tigen ebenfalls auch weiterhin Namensattribute. Achten Sie daher darauf, dem <span class="literal">id</span>-Attribut aller Elemente, die Sie im Skript referenzieren m&ouml;chten, einen Bezeichner zuzuweisen.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>&lt;H2 id="sect3Head"&gt;Section Three&lt;/H2&gt;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+				</tr>
+				<tr>
+					<td><p>Bezeichner (Gro&szlig;-/Kleinschreibung beachten).</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Standardwert</span></td>
+				</tr>
+				<tr>
+					<td><p>Keiner.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectmodelreference"><span class="title">Objektmodellreferenz</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>[window.]document.getElementById(<span class="replaceable">elementID).</span>id</pre>
+						</span></td>
+				</tr>
+			</table>
+		</div>
+		<div id="lang">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">lang</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">3</span> IE <span class="emphasis">4</span> HTML <span class="emphasis">4</span>&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">lang="<span class="replaceable">languageCode</span>"</p>
+					</td><td valign="top" nowrap class="requirements">Optional&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Die f&uuml;r die Attributwerte und Inhalte des Elements verwendete Sprache. Mithilfe dieser Informationen ist der Browser besser in der Lage, bestimmte Details wie Ligaturen (sofern von der betreffenden Schrift unterst&uuml;tzt oder in der geschriebenen Sprache erforderlich), Anf&uuml;hrungszeichen und Worttrennungen korrekt darzustellen. Andere Anwendungen und Suchmaschinen k&ouml;nnen anhand dieser Informationen W&ouml;rterb&uuml;cher f&uuml;r die Rechtschreibpr&uuml;fung ausw&auml;hlen und Indizes erstellen.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>&lt;SPAN lang="de"&gt;Deutsche Bundesbahn&lt;/SPAN&gt;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+				</tr>
+				<tr>
+					<td><p>Sprachcode, bei dem nicht zwischen Gro&szlig;- und Kleinschreibung unterschieden wird.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Standardwert</span></td>
+				</tr>
+				<tr>
+					<td><p>Vorgabe des Browsers.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectmodelreference"><span class="title">Objektmodellreferenz</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>[window.]document.getElementById(<span class="replaceable">elementID).</span>lang</pre>
+						</span></td>
+				</tr>
+			</table>
+		</div>
+		<div id="methods">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">methods</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">nicht zutreffend</span> IE <span class="emphasis">4</span>  HTML <span class="emphasis">nicht zutreffend</span>&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">methods="<span class="replaceable">http-method</span>"</p>
+					</td><td valign="top" nowrap class="requirements">Optional&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Hilfsattribut zur Beschreibung der Funktionalit&auml;t eines Hyperlink-Ziels. Diese Informationen k&ouml;nnen vom Browser dazu genutzt werden, f&uuml;r das Element spezielle Farben oder Bilder anzuzeigen, je nachdem, welche Funktion das Ziel f&uuml;r den Benutzer hat.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>&lt;A href="http://www.megacorp.com/cgi-bin/search?chap3" methods="get"&gt;Chapter 3&lt;/A&gt;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+				</tr>
+				<tr>
+					<td><p>Liste mit durch Kommas getrennten HTTP-Methoden.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Standardwert</span></td>
+				</tr>
+				<tr>
+					<td><p>Keiner.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectmodelreference"><span class="title">Objektmodellreferenz</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>[window.]document.links[i].Methods[window.]document.getElementById(<span class="replaceable">elementID</span>).Methods </pre>
+						</span></td>
+				</tr>
+			</table>
+		</div><div id="name">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">name</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">alle</span> IE <span class="emphasis">alle</span>  HTML <span class="emphasis">alle</span>&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">name="<span class="replaceable">elementIdentifier</span>"</p>
+					</td><td valign="top" nowrap class="requirements">F&uuml;r Anker erforderlich&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Der herk&ouml;mmliche Weg, eine Ankerposition in einem Dokument zu kennzeichnen. Andere Linkelemente k&ouml;nnen auf den Anker verweisen, indem im betreffenden <span class="literal">href</span>-Attribut an die URL das Zeichen <span class="literal">#</span> und der Bezeichner angeh&auml;ngt werden. Wird das Attribut <span class="literal">name</span> (bzw. <span class="literal">id</span>) f&uuml;r das <span class="literal">a</span>-Element weggelassen, kann das Element nicht als Anker verwendet werden. Dieses Attribut ist mit dem in neueren Browsern verwendeten Attribut <span class="literal">id</span> austauschbar. Da dieses Attribut in XHTML 1.0 als veraltet gilt, sollten Sie beide Attribute angeben (mit dem gleichen Bezeichner), um f&uuml;r Kompatibilit&auml;t mit allen Browsergenerationen zu sorgen. Falls die Attribute <span class="literal">name</span> und <span class="literal">href</span> im Element gesetzt sind, fungiert das Element sowohl als Anker als auch als Hyperlink.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>&lt;A id="sect3" name="sect3"&gt;Section III&lt;/A&gt;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+				</tr>
+				<tr>
+					<td><p>Bezeichner (Gro&szlig;-/Kleinschreibung beachten).</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Standardwert</span></td>
+				</tr>
+				<tr>
+					<td><p>Keiner.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectmodelreference"><span class="title">Objektmodellreferenz</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>[window.]document.links[i].name[window.]document.anchors[i].name[window.]document.getElementById(<span class="replaceable">elementID</span>).name</pre>
+						</span></td>
+				</tr>
+			</table>
+		</div><div id="rel">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">rel</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">3</span>  HTML <span class="emphasis">4</span>&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">rel="<span class="replaceable">linkTypes</span>"</p>
+					</td><td valign="top" nowrap class="requirements">Optional&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Definiert die Beziehung zwischen dem aktuellen Element und dem Hyperlink-Ziel. Dieses Element ist auch als <span class="emphasis">Forward Link</span> bekannt und nicht zu verwechseln mit dem Zieldokument, dessen Adresse mit dem Attribut <span class="literal">href</span> festgelegt wird. In der HTML 4-Empfehlung werden mehrere Hyperlinktypen definiert. Wie der Wert umgesetzt wird, ist durch den Browser bestimmt. Dieses Attribut hat bei IE 4 vor allem f&uuml;r das Element <span class="literal">link</span> Bedeutung, auch wenn noch gen&uuml;gend Freiraum f&uuml;r zuk&uuml;nftige Anwendungen besteht, um beispielsweise ein als Link fungierendes <span class="literal">a</span>-Element in einer statischen Navigationsleiste einer Schaltfl&auml;che zuzuweisen, die auf das n&auml;chste oder vorhergehende Dokument in einer Reihe verweist. Das Element muss das Attribut <span class="literal">href</span> enthalten, damit das Attribut <span class="literal">rel</span> in Kraft treten kann.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>&lt;A rel="next chapter" href="chapter3.html"&gt;Chapter 3&lt;/A&gt;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+				</tr>
+				<tr>
+					<td><p>Eine von der Gro&szlig;-/Kleinschreibung unabh&auml;ngige, durch Leerzeichen getrennte Liste der HTML 4-Standard-Hyperlinktypen, die auf das Element angewendet werden k&ouml;nnen. M&ouml;gliche Linktypen sind:</p><p>F&uuml;r IE 3 war zus&auml;tzlich ein fester Satz mit vier Werten definiert: <span class="literal">same</span> | <span class="literal">next</span> | <span class="literal">parent</span> | <span class="literal">previous</span>, aber nur <span class="literal">next</span> und <span class="literal">previous</span> werden nach wie vor in IE unterst&uuml;tzt.</p>
+						<table border="1"><tbody><tr><td><span class="literal">alternate</span></td><td><span class="literal">appendix</span></td><td><span class="literal">bookmark</span></td><td><span class="literal">chapter</span></td>
+								</tr>
+								<tr><td><span class="literal">contents</span></td><td><span class="literal">copyright</span></td><td><span class="literal">glossary</span></td><td><span class="literal">help</span></td>
+								</tr>
+								<tr><td><span class="literal">index</span></td><td><span class="literal">next</span></td><td><span class="literal">prev</span></td><td><span class="literal">section</span></td>
+								</tr>
+								<tr><td><span class="literal">start</span></td><td><span class="literal">stylesheet</span></td><td><span class="literal">subsection</span></td><td></td>
+								</tr>
+							</tbody></table>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Standardwert</span></td>
+				</tr>
+				<tr>
+					<td><p>Keiner.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectmodelreference"><span class="title">Objektmodellreferenz</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>[window.]document.links[i].rel[window.]document.getElementById(<span class="replaceable">elementID</span>)<span class="replaceable">.</span>rel </pre>
+						</span></td>
+				</tr>
+			</table>
+		</div><div id="rev">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">rev</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">3</span>  HTML <span class="emphasis">4</span>&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">rev="<span class="replaceable">linkTypes</span>"</p>
+					</td><td valign="top" nowrap class="requirements">Optional&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Eine umgekehrte Linkbeziehung. Wie beim Attribut <span class="literal">rel</span> sind die M&ouml;glichkeiten des Attributs <span class="literal">rev</span> vom Browser abh&auml;ngig, insbesondere von der Art und Weise, wie der Browser die verschiedenen in der HTML 4-Spezifikation verf&uuml;gbaren Linktypen interpretiert und darstellt. Angenommen, es gibt zwei Dokumente (A und B) mit Links, die auf das jeweils andere Dokument verweisen. In diesem Fall dr&uuml;ckt der <span class="literal">rev</span>-Wert in B die gleiche Beziehung zwischen den beiden Dokumenten aus wie das Attribut <span class="literal">rel</span> in A. Bis jetzt werden die Attribute <span class="literal">rel</span> und <span class="literal">rev</span> des <span class="literal">a</span>-Elements in Mainstream-Browsern fast nicht genutzt.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>&lt;A rev="previous" href="chapter2.html"&gt;Chapter 2&lt;/A&gt;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+				</tr>
+				<tr>
+					<td><p>Eine von der Gro&szlig;-/Kleinschreibung unabh&auml;ngige, durch Leerzeichen getrennte Liste der Standard-Hyperlinktypen, die auf das Element angewendet werden k&ouml;nnen. Die unterst&uuml;tzten Hyperlinktypen sind in der Beschreibung des Attributs <span class="literal">rel</span> aufgef&uuml;hrt.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Standardwert</span></td>
+				</tr>
+				<tr>
+					<td><p>Keiner.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectmodelreference"><span class="title">Objektmodellreferenz</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>[window.]document.links[i].rev[window.]document.getElementById(<span class="replaceable">elementID</span>).rev </pre>
+						</span></td>
+				</tr>
+			</table>
+		</div><div id="shape">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">shape</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">nicht zutreffend</span> IE <span class="emphasis">nicht zutreffend</span>  HTML <span class="emphasis">4</span>&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">shape="<span class="replaceable">shape</span>"</p>
+					</td><td valign="top" nowrap class="requirements">Optional&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Definiert die Form einer serverseitigen Imagemap, deren Koordinaten mit dem Attribut <span class="literal">coords</span> festgelegt werden. Weitere Informationen enth&auml;lt die Beschreibung des Elements <span class="literal">area</span>.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="target">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">target</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">alle</span> IE <span class="emphasis">alle</span>  HTML <span class="emphasis">alle</span>&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">target="<span class="replaceable">windowOrFrameName</span>"</p>
+					</td><td valign="top" nowrap class="requirements">Optional&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Wenn das Zieldokument nicht in das aktuelle Fenster oder den aktuellen Frame geladen werden soll, k&ouml;nnen Sie mit dem Attribut <span class="literal">target</span> das gew&uuml;nschte Ziel festlegen. Zielnamen m&uuml;ssen Frames und Fenstern als Bezeichner zugewiesen werden. Die Zuweisung von Zielnamen zu Frames erfolgt &uuml;ber die Attribute <span class="literal">name</span> und <span class="literal">id</span> des Elements <span class="literal">frame</span>, die Zuweisung zu neuen Fenstern &uuml;ber den zweiten Parameter der Skriptmethode <span class="literal">window.open( )</span>. Wird dieses Attribut weggelassen, ersetzt das Zieldokument das Dokument mit dem Hyperlink. Bei einem Bezeichner, der nicht einem vorhandenen Frame oder Fenster angeh&ouml;rt, wird f&uuml;r das Zieldokument ein neues Fenster ge&ouml;ffnet. Dieses Attribut kann nur angewendet werden, wenn f&uuml;r das Attribut <span class="literal">href</span> des Elements ein Wert definiert wurde.</p><p>Ein Link-Element kann nur ein Zieldokument und ein Ziel haben. Soll der Inhalt mehrerer Frames ge&auml;ndert werden, k&ouml;nnen Sie die Ereignisbehandlungsroutine <span class="literal">onclick</span> eines <span class="literal">a</span>-Elements oder eine <span class="literal">javascript:</span> Pseudo-URL einsetzen, um per Skript mehrere Dokumente zu laden. Setzen Sie die Eigenschaft <span class="literal">location.href</span> jedes Frames auf die gew&uuml;nschte URL.</p><p>Strikte DTDs f&uuml;r HTML 4 und XHTML unterst&uuml;tzen das Attribut <span class="literal">target</span> bei keinem Element, da Frames und Windows nicht mit reinem Document Markup gesteuert werden k&ouml;nnen. Da sich Frameset-Dokumente in der strikten Umgebung nicht validieren lassen, gibt es separate Frameset-DTDs f&uuml;r HTML 4 und XHTML. Wenn Ihre Dokumente mit diesen strikten DTDs validiert werden m&uuml;ssen und Sie Ziele verwenden m&ouml;chten, k&ouml;nnen Sie die <span class="literal">target</span>-Eigenschaften von Links, Imagemaps und Formularen nach dem Laden der Seite mithilfe von Skripts festlegen.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>&lt;A target="display" href="chap3.html#sec2"&gt;Section 3.2&lt;/A&gt;&lt;A target="_top" href="index.html"&gt;Start Over&lt;/A&gt;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+				</tr>
+				<tr>
+					<td><p>Bezeichner, bei dem zwischen Gro&szlig;- und Kleinschreibung unterschieden wird, wenn der Frame- oder Fenstername &uuml;ber die Attribute <span class="literal">name</span> und <span class="literal">id</span> des Zielelements zugewiesen wurde. Vier reservierte Zielnamen dienen als Konstanten:</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Standardwert</span></td>
+				</tr>
+				<tr>
+					<td><p><span class="literal">_self</span></p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectmodelreference"><span class="title">Objektmodellreferenz</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>[window.]document.links[i].target[window.]document.getElementById(<span class="replaceable">elementID).</span>target</pre>
+						</span></td>
+				</tr>
+			</table>
+		</div>
+		<div id="tabindex">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">tabindex</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">4</span> HTML <span class="emphasis">4</span>&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">tabindex="<span class="replaceable">integer</span>"</p>
+					</td><td valign="top" nowrap class="requirements">Optional&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Eine Zahl, die die Anordnung dieses Elements innerhalb der Tabulatorreihenfolge aller aktivierbaren Elemente im Dokument angibt. F&uuml;r die Tabulatorreihenfolge gelten sehr strenge Regeln. Elemente, deren <span class="literal">tabindex</span>-Eigenschaften Werte (nicht Null) zugewiesen sind, befinden sich in der Reihenfolge an erster Stelle, wenn ein Benutzer die Tabulatortaste auf einer Seite verwendet. Zun&auml;chst wird der Fokus an das Element mit dem niedrigsten <span class="literal">tabindex</span>-Wert und dann jeweils an das Element mit dem n&auml;chsth&ouml;heren Wert &uuml;bergeben, bis das Element mit dem h&ouml;chsten Wert erreicht ist. Hierbei spielt die Position des jeweiligen Elements in der Seite oder im Dokument keine Rolle. Wenn zwei Elemente denselben <span class="literal">tabindex</span>-Wert aufweisen, erhalten sie den Fokus in der Reihenfolge, in der sie im Dokument enthalten sind. Anschlie&szlig;end folgen all diejenigen Elemente, die entweder das Attribut <span class="literal">tabindex</span> nicht unterst&uuml;tzen oder bei denen dieses Attribut auf Null gesetzt ist. Diese Elemente werden in der Reihenfolge aktiviert, in der sie im Dokument angeordnet sind. Beachten Sie, dass die Tabulatorreihenfolge bei einem erneuten Laden der aktuellen Seite nicht notwendigerweise zur&uuml;ckgesetzt wird. Daher ist die Steuerung der Tabulatorreihenfolge vor allem dann sinnvoll, wenn die logische Abfolge Ihrer aktivierbaren Elemente nicht mit ihrer Quellcodereihenfolge &uuml;bereinstimmt, der Benutzer also beispielsweise in der Lage sein soll, die Felder einer Tabellenspalte der Reihe nach zu aktivieren anstatt zeilenweise von Feld zu Feld zu springen.</p><p>Bei HTML 4 und Netscape 6 ist das <span class="literal">tabindex</span>-Attribut auf folgende Elemente beschr&auml;nkt: <span class="literal">a</span>, <span class="literal">area</span>, <span class="literal">button</span>, <span class="literal">input</span>, <span class="literal">object</span>, <span class="literal">select</span> und <span class="literal">textarea</span>. IE 4 unterst&uuml;tzt es dar&uuml;ber hinaus f&uuml;r die Elemente <span class="literal">applet</span>, <span class="literal">body</span>, <span class="literal">div</span>, <span class="literal">embed</span>, <span class="literal">isindex</span>, <span class="literal">marquee</span>, <span class="literal">span</span>, <span class="literal">table</span> und <span class="literal">td</span>. IE 5 erkennt dieses Attribut in Verbindung mit allen darstellbaren Elementen. Ein negativer Wert entfernt ein Element (nur in IE) vollst&auml;ndig aus der Tabulatorreihenfolge.</p><p>Da Hyperlinks und Anker in der Mac-Version von IE 4 nicht &uuml;ber die Tabulatortaste zu erreichen sind, wird der <span class="literal">tabindex</span> bei <span class="literal">a</span>-Elementen in dieser Version ignoriert.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>&lt;A href="chapter3.html" tabindex="3"&gt;Chapter 3&lt;/A&gt;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+				</tr>
+				<tr>
+					<td><p>Eine ganze Zahl zwischen 0 und 32767. In IE bewirkt das Einstellen des <span class="literal">tabindex</span>-Attributs auf einen negativen Wert, dass das entsprechende Element in der Tabulatorreihenfolge &uuml;bersprungen wird.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Standardwert</span></td>
+				</tr>
+				<tr>
+					<td><p>Keiner.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectmodelreference"><span class="title">Objektmodellreferenz</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>[window.]document.getElementById(<span class="replaceable">elementID).</span>tabIndex</pre>
+						</span></td>
+				</tr>
+			</table>
+		</div>
+		<div id="type">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">type</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">6</span>  HTML <span class="emphasis">4</span>&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">type="<span class="replaceable">MIMEType</span>"</p>
+					</td><td valign="top" nowrap class="requirements">Optional&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Hilfsattribut mit Angaben &uuml;ber den Inhalt des Zieldokuments bzw. der Zielressource. Anhand dieser Informationen k&ouml;nnen Browser beispielsweise die Unterst&uuml;tzung f&uuml;r eine Ressource vorbereiten, f&uuml;r die ein Multimedia-Player oder ein Plug-In erforderlich ist.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>&lt;A type="video/mpeg" href="ski4.mpeg"&gt;View Devil's Ghost slope&lt;/A&gt;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+				</tr>
+				<tr>
+					<td><p>MIME-Typ (Gro&szlig;-/Kleinschreibung unwichtig). Ein Verzeichnis der registrierten MIME-Typen finden Sie unter ftp://ftp.isi.edu/in-notes/iana/assignments/media-types/.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Standardwert</span></td>
+				</tr>
+				<tr>
+					<td><p>Keiner.  </p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="urn">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">urn</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">nicht zutreffend</span> IE <span class="emphasis">4</span>  HTML <span class="emphasis">nicht zutreffend</span>&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">urn="<span class="replaceable">urn</span>"</p>
+					</td><td valign="top" nowrap class="requirements">Optional&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Uniform Resource Name (URN) des im Attribut <span class="literal">href</span> angegebenen Zieldokuments. Mit diesem Attribut soll in Zukunft das URN-Format von URIs unterst&uuml;tzt werden. Hierbei handelt es sich um eine neue Empfehlung, die bei IETF in der Diskussion ist (siehe RFC 2141). Obgleich in IE ab Version 4 unterst&uuml;tzt, ersetzt dieses Attribut <span class="literal">href</span> nicht.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>&lt;A urn="urn:foo:bar3" href="chapter3.html"&gt;Chapter 3&lt;/A&gt;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+				</tr>
+				<tr>
+					<td><p>G&uuml;ltiger URN-Wert im Format <span class="literal">"urn:</span><span class="replaceable">NamespaceID</span><span class="literal">:</span><span class="replaceable">NamespaceSpecificString</span><span class="literal">"</span>.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Standardwert</span></td>
+				</tr>
+				<tr>
+					<td><p>Keiner.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectmodelreference"><span class="title">Objektmodellreferenz</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>[window.]document.links[i].urn  [window.]document.getElementById(<span class="replaceable">elementID).</span>urn</pre>
+						</span></td>
+				</tr>
+			</table>
+		</div>
+</body>
+</html>

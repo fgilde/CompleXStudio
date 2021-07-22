@@ -1,0 +1,134 @@
+<html xmlns:un="http://usablenet.com/namespaces/508_rules">
+   <link rel="stylesheet" href="josh.css">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   
+      <title>Detailanzeige f&uuml;r Regel: Steuerelementen von Formularen explizite Beschriftungen zuordnen</title>
+      <!--
+  508/W3C Accessibility Suite OEM V2 for Macromedia Dreamweaver
+  (C) Copyright 2001-2005 UsableNet Inc. All rights reserved.
+  -->
+   </head>
+   <body bgcolor="#ffffff">
+      <div id="Beschreibung">
+         <table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+            <tr>
+               <td valign="top" nowrap="true" class="name">Steuerelementen von Formularen explizite Beschriftungen zuordnen</td>
+               <td valign="top" nowrap="true" class="compatibility">&nbsp;</td>
+            </tr>
+            <tr>
+               <td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+            </tr>
+            <tr>
+               <td valign="top" align="right" nowrap="true" colspan="2" class="requirements">WAI / WCAG 1.0 Priorit&auml;t 2 Checkpunkt 12.4</td>
+            </tr>
+            <tr>
+               <td colspan="2" class="clearseparation">&nbsp;</td>
+            </tr>
+            <tr>
+               <td colspan="2" class="clearseparation">&nbsp;</td>
+            </tr>
+            <tr>
+               <td valign="top" colspan="2" class="description"><b>Problembeschreibung</b><br>
+                  
+                  <p>
+                      Die Seite enth&auml;lt ein Formular, dessen Steuerelemente nicht explizit den LABEL-Elementen zugeordnet sind.
+                     
+                  </p>
+                  
+                        
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2" class="clearseparation">&nbsp;</td>
+            </tr>
+            <tr>
+               <td colspan="2" class="clearseparation">&nbsp;</td>
+            </tr>
+            <tr>
+               <td valign="top" colspan="2" class="description"><b>Probleml&ouml;sung</b>
+                  
+                           
+                  <p>
+                     Es werden drei Schritte ben&ouml;tigt, um eine Beschriftung mit einem Steuerelement zu verkn&uuml;pfen:
+                     
+                  </p>
+                  
+                           
+                  <ol>
+                       
+                                 
+                     <li>Weisen Sie einem Steuerelement mithilfe des Attributs <strong>ID</strong> einen eindeutigen Bezeichner zu.
+                     </li> 
+                       
+                                 
+                     <li>Erstellen Sie ein <strong>LABEL</strong>-Element mit der Text- bzw. Grafikbeschreibung, die Sie dem Steuerelement zuweisen m&ouml;chten.
+                     </li> 
+                     
+                                 
+                     <li>F&uuml;gen Sie zu diesem LABEL-Element das Attribut <strong>FOR</strong> mit der ID des Steuerelements als Wert hinzu.
+                     </li> 
+                     
+                              
+                  </ol>
+                  
+                  	 
+                  <p>Beispiel:</p>
+                  <pre>
+&lt;form action="submit" method="post"&gt;
+   &lt;label for="firstname"&gt;First name: &lt;/label&gt;
+   &lt;input type="text" id="firstname"&gt;
+   &lt;label for="lastname"&gt;Last name: &lt;/label&gt;
+   &lt;input type="text" id="lastname"&gt;
+&lt;/form&gt;
+</pre>
+                  
+                        </td>
+            </tr>
+            <tr>
+               <td colspan="2" class="clearseparation">&nbsp;</td>
+            </tr>
+            <tr>
+               <td colspan="2" class="clearseparation">&nbsp;</td>
+            </tr>
+            <tr>
+               <td valign="top" colspan="2" class="description"><b>Problemerkl&auml;rung</b><br>
+                  
+                           
+                  <p>
+                       Wenn ein Benutzer mit uneingeschr&auml;nkter Sehf&auml;higkeit mithilfe der Tabulatortaste ein Formular durchl&auml;uft, so kann er v&ouml;llig
+                     problemlos die Steuerelemente mit den danebenstehenden Beschriftungen verbinden. F&uuml;r einen Benutzer mit einem Bildschirmleseger&auml;t
+                     ist diese Information nicht ausreichend.  Er muss genau wissen, welche Beschriftung mit welchem Steuerelement verkn&uuml;pft ist.
+                     
+                  </p>
+                  
+                           
+                  <p>
+                       Diese Funktion kann am besten mithilfe des Elements <strong>LABEL</strong> erreicht werden. Dabei muss LABEL die eigentliche Beschriftung und das Steuerelement des Formulars enthalten, und dessen
+                     Attribut <strong>FOR</strong> muss die <strong>ID</strong> des Steuerelements aufweisen.
+                     
+                  </p>
+                  
+                           
+                  <p>
+                       Dabei k&ouml;nnen sowohl ein LABEL-Element als auch mehrere LABEL auf ein Steuerelement verweisen Allerdings wird diese Funktion
+                     noch nicht von allen Bildschirmleseger&auml;ten unterst&uuml;tzt, daher wird empfohlen, immer nur ein LABEL auf ein Steuerelement verweisen
+                     zu lassen.
+                     
+                  </p>
+                  
+                           
+                  <p>
+                       Eine solche Beschriftung kann aber auch bedingungslos mit einem Steuerelement verkn&uuml;pft werden: Geben Sie einfach sowohl
+                     die Beschriftung als auch das Steuerelement als Inhalte in das LABEL-Element ein. Aber auch wenn dieses Verfahren in den HTML
+                     4.01 Recommendation-Dateien empfohlen wird, so wird es doch noch nicht von allen Bildschirmleseger&auml;ten unterst&uuml;tzt.
+                     
+                  </p>
+                  
+                        
+               </td>
+            </tr>
+         </table>
+      </div>
+   </body>
+</html>

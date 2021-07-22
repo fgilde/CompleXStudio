@@ -1,0 +1,216 @@
+<html>
+<head>
+<title>XPath-Knotentypen</title>
+</head>
+<body bgcolor="#FFFFFF" text="#000000">
+<div id="Beschreibung">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME" colspan="2">XPath-Knotentypen</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description">
+
+    <p>
+<!--<primary>nodes</primary>
+  <secondary>types and (XPath)</secondary>--> <!--<primary>XPath</primary>
+  <secondary>node types</secondary>-->
+
+Es gibt sieben Knotentypen in XPath. An dieser Stelle soll nur das Referenzmaterial erl&auml;utert werden, weitere Information zu den verschiedenen Knotentypen erhalten Sie in der Beschreibung des <link linkend="xslt-CHP-3-SECT-1">XPath-Datenmodells</link>.</p>
+</td></tr>
+</table>
+</div>
+<div id="TheRootNode">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+Der Wurzelknoten</td>
+<td class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+      <p>
+<!--<primary>root node (XPath)</primary>-->
+
+Der Wurzelknoten ist die Wurzel des Baums. Im Gegensatz zu anderen Knoten besitzt er kein &uuml;bergeordnetes Element. Die ihm untergeordneten Elemente bilden den Elementknoten f&uuml;r das Dokument, zusammen mit etwaigen Kommentaren oder Verarbeitungsanweisungen, die au&szlig;erhalb des Dokumentelements erscheinen. Der Wurzelknoten hat keinen erweiterten Namen. </p>
+    </td>
+</tr>
+</table>
+</div>
+<div id="ElementNodes">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+Elementknoten</td>
+<td class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+<!--<?troff .hw namespace?>-->
+      <p>
+<!--<primary>element nodes (XPath)</primary>-->
+
+Jedes Element im urspr&uuml;nglichen XML-Dokument wird durch einen Elementknoten repr&auml;sentiert. Der erweiterte Name des Elements ist sein lokaler Name zusammen mit einem f&uuml;r das Element g&uuml;ltigen Namensraum. Auf die verschiedenen Teile des Elementnamens k&ouml;nnen Sie mit Hilfe der Funktionen <span class="LITERAL">name()</span>, <span class="LITERAL">local-name()</span> und <span class="LITERAL">namespace-uri()</span> zugreifen.<!--<?troff .ne 10?>--> Hier ein Element aus einem XML-Dokument:</p>
+      <span class="PROGRAMLISTING"><pre>
+&lt;xyz:report xmlns:xyz="http://www.xyz.com/"&gt;</pre></span>
+      <p>Die Werte f&uuml;r die drei Funktionen dieses Elementknotens sind folgende:</p>
+      <dl>
+<dt>
+<span class="LITERAL">
+name()
+</span>
+</dt>
+<dd>
+<span class="LITERAL">
+xyz:report
+</span>
+<P></p>
+<dt>
+<span class="LITERAL">
+local-name()
+</span>
+</dt>
+<dd>
+<span class="LITERAL">
+report
+</span>
+<P></p>
+<dt>
+<span class="LITERAL">
+namespace-uri()
+</span>
+</dt>
+<dd>
+<span class="LITERAL">
+http://www.xyz.com/
+</span>
+<P></p>
+</dl>
+</td>
+</tr>
+</table>
+</div>
+<div id="AttributeNodes">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+Attributknoten</td>
+<td class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+      <p>
+<!--<primary>attribute nodes (XPath)</primary>-->
+
+Attribute von Elementen in einem XML-Dokument werden zu XPath-Attributknoten. Ein Attribut besitzt, ebenso wie ein Elementknoten, einen erweiterten Namen. Die Attributknoten eines bestimmten Elementknotens sind die im XML-Element ausdr&uuml;cklich angegebenen Attribute sowie etwaige in der DTD definierte Attribute mit Vorgabewerten. </p>
+      <p>Von DOM (Document Object Model) aus gesehen ist ein Elementknoten der &uuml;bergeordnete Knoten seiner Attribute, obwohl die Attribute nicht Kinder des Elements sind. Anders ausgedr&uuml;ckt: werden alle Kinder eines Elementknotens ausgew&auml;hlt, so werden etwaige Attributknoten dieses Elements nicht ausgew&auml;hlt. </p>
+    </td>
+</tr>
+</table>
+</div>
+<div id="TextNodes">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+Textknoten</td>
+<td class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+      <p>
+<!--<primary>text nodes (XPath)</primary>-->
+
+Textknoten enthalten einfach den Text eines Elements. Die im urspr&uuml;nglichen Text im XML-Dokument enthaltenen Zeichen- und Entity-Referenzen werden aufgel&ouml;st, bevor der XPath-Textknoten erstellt wird. Entsprechend erscheinen auch vorhandene CDATA-Abschnitte als Textknoten. Sie k&ouml;nnen nicht wissen, ob ein bestimmter Teil eines Textknotens urspr&uuml;nglich eine Zeichen- oder Entity-Referenz oder ein CDATA-Abschnitt war. </p>
+    </td>
+</tr>
+</table>
+</div>
+<div id="CommentNodes">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+Kommentarknoten</td>
+<td class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+      <p>
+<!--<primary>comment nodes (XPath)</primary>-->
+
+Ein Kommentarknoten ist ebenfalls sehr einfach und enth&auml;lt Text. Jeder Kommentar im Ausgangsdokument (mit Ausnahme der Kommentare in der DTD) wird zu einem Kommentarknoten. Der Text des Kommentarknotens (der mit dem Knotentest <span class="LITERAL">text()</span> ausgegeben wird) umfasst alles im Kommentar au&szlig;er dem &ouml;ffnenden <span class="LITERAL">&lt;!--</span> und dem schlie&szlig;enden <span class="LITERAL">--&gt;</span>.</p>
+    </td>
+</tr>
+</table>
+</div>
+<div id="ProcessingInstructionNodes">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+Verarbeitungsanweisungsknoten</td>
+<td class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+      <p>
+<!--<primary>processing instruction nodes (XPath)</primary>-->
+
+Eine Verarbeitungsanweisung besteht aus zwei Teilen: einem Namen (der von der Funktion <span class="LITERAL">name()</span> geliefert wird) und einem String-Wert. Der String-Wert ist alles hinter dem Namen, einschlie&szlig;lich Leerraum, aber nicht einschlie&szlig;lich des abschlie&szlig;enden ?&gt;</span>.</p>
+    </td>
+</tr>
+</table>
+</div>
+<div id="NamespaceNodes">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+Namensraumknoten</td>
+<td class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+      <p>
+<!--<primary>namespace nodes (XPath)</primary>-->
+
+Namensraumknoten werden in XSLT-Stylesheets fast nie benutzt, denn sie existieren vorwiegend zum Nutzen des XSLT-Prozessors. Beachten Sie, dass die Deklaration eines Namensraums (z.&nbsp;B. <span class="LITERAL">xmlns:auth="http://www.authors.net"</span>), obwohl sie technisch gesehen in der XML-Quelle ein Attribut ist, zu einem Namensraumknoten und nicht zu einem Attributknoten wird. Namensraumknoten gibt es sowohl f&uuml;r die definierten Namensraumpr&auml;fixe als auch f&uuml;r etwaige Standardnamensr&auml;ume.
+
+
+
+
+</p>
+    </td>
+</tr>
+</table>
+</div>
+</body>
+</html>

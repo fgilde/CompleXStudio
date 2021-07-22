@@ -1,0 +1,177 @@
+<html>
+<head>
+<title>string()-Funktion</title>
+</head>
+<body bgcolor="#FFFFFF" text="#000000">
+<div id="Beschreibung">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">string()-Funktion</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description">
+Diese Funktion liefert den String-Wert des Arguments. </td></tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Eingaben</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+<p>Ein Objekt. Das Objekt wird wie unten beschrieben in einen String konvertiert. </p>
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Ausgabe</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<p>Ein String. Das Eingabeargument wird wie folgt in einen String konvertiert:</p>
+<ul>
+        <dd>Ist das Argument eine Knotenmenge, so wird der erste Knoten in der Knotenmenge in einen String konvertiert. (Der erste Knoten in der Knotenmenge ist derjenige, der in der Dokumentreihenfolge zuerst vorkommt.)</p>
+        </li>
+        <dd>Ist das Argument eine Zahl, so wird diese folgenderma&szlig;en konvertiert:</p>
+          <ul>
+            <dd>Der Wert <span class="LITERAL">NaN</span> wird in den String &quot;NaN&quot; konvertiert.</p>
+            </li>
+            <dd>Positiv Null wird in den String &quot;0&quot; konvertiert.</p>
+            </li>
+            <dd>Negativ Null wird in den String &quot;0&quot; konvertiert.</p>
+            </li>
+            <dd>Positiv unendlich wird in den String &quot;Infinity&quot; konvertiert.</p>
+            </li>
+            <dd>Negativ unendlich wird in den String &quot;-Infinity&quot; konvertiert.</p>
+            </li>
+            <dd>Eine Ganzzahl wird in einen String konvertiert, der diese Ganzzahl repr&auml;sentiert, ohne Dezimalkomma oder f&uuml;hrende Nullen. Ist die Ganzzahl negativ, wird ein Minuszeichen (<span class="LITERAL">-</span>) vorangestellt.</p>
+            </li>
+            <dd>Jede sonstige Zahl wird in einen String mit Dezimalpunkt konvertiert, mit mindestens einer Ziffer vor und hinter dem Dezimalpunkt. Ist die Zahl negativ, wird ein Minuszeichen (<span class="LITERAL">-</span>) vorangestellt. Es werden keine f&uuml;hrende Nullen vor dem Dezimalpunkt ausgegeben (mit Ausnahme der einen obligatorischen Ziffer vor dem Dezimalpunkt). Nach dem Dezimalpunkt werden nur so viele Ziffern ausgegeben, wie f&uuml;r eine Unterscheidung von anderen numerischen Werten notwendig ist, gem&auml;&szlig; Definition des IEEE-754-Standard (der Standard, der auch von den Java-Typen <span class="LITERAL">float</span> und <span class="LITERAL">double</span> verwendet wird).</p>
+            </li>
+          </ul>
+        </li>
+        <dd>Ist das Argument ein Boolescher Wert, wird der Wert <span class="LITERAL">true</span> durch den String &quot;true&quot; repr&auml;sentiert und der Wert <span class="LITERAL">false</span> durch den String &quot;false&quot;.</p>
+        </li>
+        <dd>Hat das Argument einen anderen Datentyp, wird es seinem Typ entsprechend in einen String konvertiert. Lesen Sie in der Dokumentation Ihres XSLT-Prozessors nach, welche weiteren Datentypen unterst&uuml;tzt werden, und wie sie in Strings konvertiert werden.</p>
+        </li>
+      </ul>
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Definition</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<p>XPath-Abschnitt 4.2, Zeichenkettenfunktionen.</p>
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Beispiel</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<p>Hier das XML-Dokument, mit dem die Funktion <span class="LITERAL">string()</span> erprobt werden soll:</p>
+<span class="PROGRAMLISTING"><pre>
+&lt;?xml version="1.0"?&gt;
+&lt;test&gt;
+  &lt;p&gt;This is a test XML document used by several 
+  of our sample stylesheets.&lt;/p&gt;
+  &lt;question&gt;
+    &lt;text&gt;When completed, the Eiffel Tower was the 
+    tallest building in the world.&lt;/text&gt;
+    &lt;true&gt;You're correct!  The Eiffel Tower was the 
+    world's tallest building until 1930.&lt;/true&gt;
+    &lt;false&gt;No, the Eiffel Tower was the world's 
+    tallest building for over 30 years.&lt;/false&gt;
+  &lt;/question&gt;
+  &lt;question&gt;
+    &lt;text&gt;New York's Empire State Building knocked 
+    the Eiffel Tower from its pedestal.&lt;/text&gt;
+    &lt;true&gt;No, that's not correct.&lt;/true&gt;
+    &lt;false&gt;Correct!  New York's Chrysler Building, 
+    completed in 1930, became the world's tallest.&lt;/false&gt;
+  &lt;/question&gt;
+&lt;/test&gt;</pre></span>
+<p>Die Funktion <span class="LITERAL">string()</span> wird mit einer Vielzahl von Argumenten getestet:</p>
+<span class="PROGRAMLISTING"><pre>
+&lt;?xml version="1.0"?&gt;
+&lt;xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform"&gt;
+
+  &lt;xsl:output method="text"/&gt;
+
+  &lt;xsl:variable name="newline"&gt;
+&lt;xsl:text&gt;
+&lt;/xsl:text&gt;
+  &lt;/xsl:variable&gt;
+
+  &lt;xsl:template match="/"&gt;
+    &lt;xsl:value-of select="$newline"/&gt;
+    &lt;xsl:text&gt;Tests of the string() function:&lt;/xsl:text&gt;
+
+<!--<?troff .Nd 10?>-->
+    &lt;xsl:value-of select="$newline"/&gt;
+    &lt;xsl:value-of select="$newline"/&gt;
+    &lt;xsl:text&gt;   string(count(/test))=&lt;/xsl:text&gt;
+    &lt;xsl:value-of select="string(count(/test))"/&gt;
+    &lt;xsl:value-of select="$newline"/&gt;
+    &lt;xsl:text&gt;   string(count(/test/question))=&lt;/xsl:text&gt;
+    &lt;xsl:value-of select="string(count(/test/question))"/&gt;
+    &lt;xsl:value-of select="$newline"/&gt;
+    &lt;xsl:text&gt;   string('4')=&lt;/xsl:text&gt;
+    &lt;xsl:value-of select="string('4')"/&gt;
+    &lt;xsl:value-of select="$newline"/&gt;
+    &lt;xsl:text&gt;   string(true())=&lt;/xsl:text&gt;
+    &lt;xsl:value-of select="string(true())"/&gt;
+    &lt;xsl:value-of select="$newline"/&gt;
+    &lt;xsl:text&gt;   string(false())=&lt;/xsl:text&gt;
+    &lt;xsl:value-of select="string(false())"/&gt;
+    &lt;xsl:value-of select="$newline"/&gt;
+    &lt;xsl:text&gt;   string(count(/test/question) &gt; 5)=&lt;/xsl:text&gt;
+    &lt;xsl:value-of select="string(count(/test/question) &gt; 5)"/&gt;
+    &lt;xsl:value-of select="$newline"/&gt;
+    &lt;xsl:value-of select="$newline"/&gt;
+    &lt;xsl:text&gt;Here are the string values of some &lt;text&gt; elements:&lt;/xsl:text&gt;
+    &lt;xsl:value-of select="$newline"/&gt;
+    &lt;xsl:for-each select="/test/question/text"&gt;
+      &lt;xsl:text&gt;   &lt;/xsl:text&gt;
+      &lt;xsl:value-of select="string(.)"/&gt;
+      &lt;xsl:value-of select="$newline"/&gt;
+    &lt;/xsl:for-each&gt;
+  &lt;/xsl:template&gt;
+
+&lt;/xsl:stylesheet&gt;</pre></span>
+<p>Hier die Ergebnisse der Transformation:</p>
+<span class="PROGRAMLISTING"><pre>
+
+Tests of the string() function:
+
+   string(count(/test))=1
+   string(count(/test/question))=2
+   string('4')=4
+   string(true())=true
+   string(false())=false
+   string(count(/test/question) &gt; 5)=false
+
+Here are the string values of some &lt;text&gt; elements:
+   When completed, the Eiffel Tower was the tallest building in the world.
+   New York's Empire State Building knocked the Eiffel Tower from its pedestal.
+</pre></span>
+</td>
+</tr>
+</table>
+</div>
+</body>
+</html>

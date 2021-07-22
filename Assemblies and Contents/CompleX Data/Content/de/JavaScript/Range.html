@@ -1,0 +1,1338 @@
+<html>
+<link rel="stylesheet" href="josh.css">
+<body bgcolor="#FFFFFF">
+
+		<div id="Beschreibung">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">Range</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">nicht zutreffend</span>  DOM <span class="emphasis">2</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Das <span class="literal">Range</span>-Objekt des W3C-DOMs &auml;hnelt vom Konzept her dem <span class="literal">TextRange</span>-Objekt von IE und repr&auml;sentiert eine Textzeichenfolge aus null oder mehr Zeichen, die in einem Dokument dargestellt werden. Ein aus null Zeichen bestehender Textbereich stellt einen Einf&uuml;gepunkt zwischen zwei Zeichen (oder vor dem ersten bzw. hinter dem letzen Zeichen des Dokuments) dar. Das <span class="literal">Range</span>-Objekt &uuml;berwacht automatisch die Node- und Zeichen-Offset-Referenzen f&uuml;r den Start- und den Endpunkt des Bereichs, sodass seine Methoden vorhandene Inhalte kopieren, Bereichsinhalte l&ouml;schen oder neue Inhalte (in Form von Nodes) in den vorhandenen Bereich einf&uuml;gen k&ouml;nnen, ohne die Integrit&auml;t des Dokumentbaums zu gef&auml;hrden. Das Nodemodell ist eine wichtige Voraussetzung f&uuml;r das <span class="literal">Range</span>-Objekt, doch mit den meisten damit verbundenen Problemen werden Sie als Skriptersteller gar nicht erst konfrontiert.
+</p>
+							</td>
+						</tr>
+						<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Ein <span class="literal">Range</span>-Objekt wird entweder mithilfe der Methode <span class="literal">document.createTextRange( )</span> erstellt oder mithilfe der Methode <span class="literal">window.getSelection( ).getRangeAt(0)</span> aus einer Textauswahl des Benutzers gebildet. Nachdem ein Textbereich erstellt wurde, verwenden Sie seine Methoden, um den Start- und Endpunkt zu definieren und so das gew&uuml;nschte Textsegment einzurichten. Anschlie&szlig;end k&ouml;nnen Sie verschiedene weitere Methoden auf den Bereich anwenden. Weitere Informationen sowie Beispiele f&uuml;r die Verwendung des <span class="literal">Range</span>-Objekts und die syntaktischen Unterschiede gegen&uuml;ber dem IE-Objekt <span class="literal">TextRange</span> finden Sie in Kapitel 5.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectmodelreference"><span class="title">Objektmodellreferenz</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>document.createRange( )</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectspecificproperties"><span class="title">Objektspezifische Eigenschaften</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<table border="1"><tbody><tr><td><span class="literal">collapsed</span></td><td><span class="literal">commonAncestorContainer</span></td><td><span class="literal">endContainer</span></td>
+								</tr>
+								<tr><td><span class="literal">endOffset</span></td><td><span class="literal">startContainer</span></td><td><span class="literal">startOffset</span></td>
+								</tr>
+							</tbody></table>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectspecificmethods"><span class="title">Objektspezifische Methoden</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<table border="1"><tbody><tr><td><span class="literal">cloneContents( )</span></td><td><span class="literal">cloneRange( )</span></td><td><span class="literal">collapse( )</span></td>
+								</tr>
+								<tr><td><span class="literal">compareBoundaryPoints( )</span></td><td><span class="literal">compareNode( )</span></td><td><span class="literal">comparePoint( )</span></td>
+								</tr>
+								<tr><td><span class="literal">createContextualFragment( )</span></td><td><span class="literal">deleteContents( )</span></td><td><span class="literal">detach( )</span></td>
+								</tr>
+								<tr><td><span class="literal">extractContents( )</span></td><td><span class="literal">insertNode( )</span></td><td><span class="literal">intersectsNode( )</span></td>
+								</tr>
+								<tr><td><span class="literal">isPointInRange( )</span></td><td><span class="literal">selectNode( )</span></td><td><span class="literal">selectNodeContents( )</span></td>
+								</tr>
+								<tr><td><span class="literal">setEnd( )</span></td><td><span class="literal">setEndAfter( )</span></td><td><span class="literal">setEndBefore( )</span></td>
+								</tr>
+								<tr><td><span class="literal">setStart( )</span></td><td><span class="literal">setStartAfter( )</span></td><td><span class="literal">setStartBefore( )</span></td>
+								</tr>
+								<tr><td><span class="literal">surroundContents( )</span></td><td><span class="literal">toString( )</span></td><td></td>
+								</tr>
+							</tbody></table>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectspecificeventhandlerproperties"><span class="title">Objektspezifische Ereignisbehandlungsroutineneigenschaften</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Keine. </p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="collapsed">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">collapsed</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">nicht zutreffend</span>  DOM <span class="emphasis">2</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Schreibgesch&uuml;tzt</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Gibt den Booleschen Wert <span class="literal">true</span> zur&uuml;ck, wenn die Positionen des Start- und Endpunkts des Bereichs identisch sind, der Bereich also keine Zeichen umfasst. Ein solcher Bereich kann sich an einer beliebigen Stelle innerhalb des Dokuments befinden.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>if (rng.collapsed) &#123;
+    // act on collapsed text range
+}</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Boolescher Wert: <span class="literal">true</span> | <span class="literal">false</span>.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Standardwert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Keiner.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="commonAncestorContainer">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">commonAncestorContainer</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">nicht zutreffend</span>  DOM <span class="emphasis">2</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Schreibgesch&uuml;tzt</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Gibt eine Referenz auf eine Node im Dokumentbaum zur&uuml;ck, die den n&auml;chst&auml;u&szlig;eren Container darstellt, der den Start- und Endpunkt des aktuellen Bereichs umfasst. Wenn sich der Start- und der Endpunkt in derselben Node befinden (z. B. in derselben Textnode), gibt die Eigenschaft <span class="literal">commonAncestorContainer</span> eine Referenz auf die Parent-Node dieser Node zur&uuml;ck. Da IE-<span class="literal">TextRange</span>-&Auml;quivalent ist <span class="literal">parentElement( )</span>.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>var containingElem = rng.commonAncestorContainer;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Referenz auf ein Nodeobjekt (im Allgemeinen ein Elementnodetyp).</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Standardwert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Keiner.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="endContainer">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">endContainer</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">nicht zutreffend</span>  DOM <span class="emphasis">2</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Schreibgesch&uuml;tzt</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Gibt eine Referenz auf eine Node im Dokumentbaum zur&uuml;ck, die den Endpunkt des aktuellen Bereichs enth&auml;lt.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>var containingElemRight = rng.endContainer;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Referenz auf ein Nodeobjekt.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Standardwert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Keiner.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="endOffset">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">endOffset</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">nicht zutreffend</span>  DOM <span class="emphasis">2</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Schreibgesch&uuml;tzt</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Gibt die Position des Endpunkts innerhalb der Node laut der Eigenschaft <span class="literal">endContainer</span> in Form einer Ganzzahl zur&uuml;ck, die die Anzahl der Zeichen oder Nodes angibt. Wenn es sich beim <span class="literal">endContainer</span> um eine Textnode handelt, z&auml;hlt die <span class="literal">endOffset</span>-Eigenschaft die Zeichen rechts neben dem ersten Zeichen dieser Textnode. Handelt es sich beim <span class="literal">endContainer</span> um eine Elementnode, z&auml;hlt die <span class="literal">endOffset</span>-Eigenschaft die Nodes zwischen dem Anfang des Inhalts der &uuml;bergeordneten Node und dem Endpunkt.
+</p>
+							</td>
+						</tr>
+						<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Nehmen wir als Beispiel den folgenden Dokumentabschnitt, der einen Textbereich in Fettschrift enth&auml;lt, dessen Start- und Endpunkt durch senkrechte Striche gekennzeichnet sind.
+</p>
+<span class="PROGRAMLISTING"><pre>&lt;&gt;One paragraph with |p<em>a</em>&lt;span&gt; <em>nested</em>&lt;/spa&gt;| element inside.&lt;/p&gt;n</pre></span>
+							</td>
+						</tr>
+						<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Beachten Sie, dass sich der Startpunkt innerhalb einer Textnode befindet, w&auml;hrend der Endpunkt gerade au&szlig;erhalb des End-Tags des <span class="literal">span</span>-Elements liegt. Die Eigenschaften des <span class="literal">Range</span>-Objekts melden die in der folgenden Tabelle dargestellten Werte:
+</p>
+							</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td>
+								<table border="1"><tbody><tr><th>Eigenschaft</th><th>Wert</th><th>Beschreibung</th></tr>
+										<tr><td><span class="literal">commonAncestorContainer</span></td><td><span class="literal">[object</span> <span class="literal">HTMLParagraphElement]</span></td><td>Das <span class="literal">p</span>-Element umfasst sowohl den Start- als auch den Endpunkt.
+</td>
+										</tr>
+										<tr><td><span class="literal">startContainer</span></td><td><span class="literal">[object Text]</span></td><td>Der Startpunkt befindet sich innerhalb einer Textnode.</td>
+										</tr>
+										<tr><td><span class="literal">startOffset</span></td><td><span class="literal">19</span></td><td>Der Startpunkt befindet sich beim 20. Zeichen (auf Null basierender Indexwert 19) nach dem Anfang seines Containers, der Textnode.
+</td>
+										</tr>
+										<tr><td><span class="literal">endContainer</span></td><td><span class="literal">[object</span> <span class="literal">HTMLParagraphElement]</span></td><td>Der Endpunkt ist als das Ende des <span class="literal">span</span>-Elements angegeben, wodurch das n&auml;chst&auml;u&szlig;ere <span class="literal">p</span>-Element zum Container des Endpunkts wird.
+</td>
+										</tr>
+										<tr><td><span class="literal">endOffset</span></td><td><span class="literal">2</span></td><td>Der Endpunkt liegt bei der 3. Node (auf Null basierender Indexwert 2) im Kontext seines <span class="literal">endContainer</span> <span class="literal">p</span>-Elements (erste Node ist eine Textnode, zweite Node ist das <span class="literal">span</span>-Element, Endpunkt liegt am Anfang der dritten Node des <span class="literal">p</span>-Elements).
+</td>
+										</tr>
+									</tbody></table>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>var rngEndOff = rng.endOffset;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Eine ganze Zahl.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Standardwert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Keiner.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="startContainer">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">startContainer</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">nicht zutreffend</span>  DOM <span class="emphasis">2</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Schreibgesch&uuml;tzt</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Gibt eine Referenz auf eine Node im Dokumentbaum zur&uuml;ck, die den Startpunkt des aktuellen Bereichs enth&auml;lt.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>var containingElemLeft = rng.startContainer;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Referenz auf ein Nodeobjekt.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Standardwert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Keiner.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="startOffset">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">startOffset</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">nicht zutreffend</span>  DOM <span class="emphasis">2</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Schreibgesch&uuml;tzt</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Gibt die Position des Startpunkts innerhalb der Node laut der Eigenschaft <span class="literal">startContainer</span> in Form einer Ganzzahl zur&uuml;ck, die die Anzahl der Zeichen oder Nodes angibt. Wenn es sich beim <span class="literal">startContainer</span> um eine Textnode handelt, z&auml;hlt die <span class="literal">startOffset</span>-Eigenschaft die Zeichen rechts neben dem ersten Zeichen dieser Textnode. Handelt es sich beim <span class="literal">startContainer</span> um eine Elementnode, z&auml;hlt die <span class="literal">startOffset</span>-Eigenschaft die Nodes zwischen dem Anfang des Inhalts der &uuml;bergeordneten Node und dem Startpunkt. Weitere Details finden Sie unter <span class="literal">endOffset</span>.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>var rngStartOff = rng.startOffset;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Eine ganze Zahl.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Standardwert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Keiner.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="cloneContents( )">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">cloneContents( )</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">7</span> IE <span class="emphasis">nicht zutreffend</span>  DOM <span class="emphasis">2</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Gibt eine <span class="literal">DocumentFragment</span>-Node zur&uuml;ck, die eine Kopie des Inhalts aus dem aktuellen Bereich enth&auml;lt. Im Rahmen des Klonvorgangs werden alle losen Nodes aufgel&ouml;st.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Parameter</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Keine.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Zur&uuml;ckgegebener Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Referenz auf eine Node eines Dokumentfragmenttyps.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="cloneRange( )">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">cloneRange( )</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">nicht zutreffend</span>  DOM <span class="emphasis">2</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Gibt ein <span class="literal">Range</span>-Objekt zur&uuml;ck, bei dem es sich um eine Kopie des aktuellen Bereichs einschlie&szlig;lich der Referenzen zu den verkn&uuml;pften Containern handelt. Mithilfe dieser Methode k&ouml;nnen Sie eine Kopie der Spezifikationen eines <span class="literal">Range</span>-Objekts beibehalten, w&auml;hrend Sie ein neues <span class="literal">Range</span>-Objekt erstellen. &Auml;hnelt der Methode <span class="literal">duplicate( )</span> des IE-<span class="literal">TextRange</span>-Objekts.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Parameter</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Keine.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Zur&uuml;ckgegebener Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Referenz auf ein <span class="literal">Range</span>-Objekt.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="collapse( )">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">collapse( )</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">nicht zutreffend</span>  DOM <span class="emphasis">2</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">collapse(<span class="replaceable">toStartFlag</span>)</p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Verk&uuml;rzt den aktuellen Bereich zu einem Einf&uuml;gepunkt (Start- und Endpunkt des Bereichs liegen in derselben Node beim selben Offset). Der Boolesche Parameter steuert, ob sich der Bereich zum Startpunkt (<span class="literal">true</span>) oder zum Endpunkt (<span class="literal">false</span>) des aktuellen Bereichs hin verk&uuml;rzt. Ein Skript, das sich durch ein Dokument arbeitet (indem es z. B. mit der <span class="literal">String.indexOf( )</span>-Methode nach der jeweils n&auml;chsten Instanz einer Zeichenfolge sucht), verk&uuml;rzt einen Bereich in der Regel zum Endpunkt hin, bevor es diesen dann an das Ende des Body-Texts verschiebt und die n&auml;chste <span class="literal">String.indexOf( )</span>-Suche durchf&uuml;hrt.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Parameter</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<ul><li><span class="literal"></span>Boolescher Wert, der steuert, ob sich der Bereich zum Startpunkt (<span class="literal">true</span>) oder zum Endpunkt (<span class="literal">false</span>) des aktuellen Bereichs hin verk&uuml;rzt.
+</li></ul>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Zur&uuml;ckgegebener Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Keiner.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="compareBoundaryPoints( )">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">compareBoundaryPoints( )</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">nicht zutreffend</span>  DOM <span class="emphasis">2</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">compareBoundaryPoints(<span class="replaceable">compareType</span>, <span class="replaceable">sourceRangeRef</span>)</p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Gibt einen ganzzahligen Code zur&uuml;ck, der die relative Positionierung eines Begrenzungspunkts des aktuellen Bereichs in Bezug auf einen Begrenzungspunkt eines anderen Textbereichs angibt. Im einfachsten Fall befinden sich beide Endpunkte (jeweils verschiedener Bereiche) im selben &uuml;bergeordneten Container. In einem solchen Fall bestimmt der erste Parameter, welche Endpunkte aus den beiden Bereichen verglichen werden. Verwenden Sie die f&uuml;r <span class="literal">Range</span>-Objekte &uuml;blichen Konstanten (siehe unten stehende Tabelle).
+</p>
+							</td>
+						</tr>
+						<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Wenn der erste der beiden miteinander verglichenen Begrenzungspunkte im Dokument vor dem zweiten Begrenzungspunkt liegt, wird der Wert -1 zur&uuml;ckgegeben, wenn der erste Begrenzungspunkt nach dem zweiten Begrenzungspunkt liegt, wird der Wert 1 zur&uuml;ckgegeben. Befinden sich beide Begrenzungspunkte an der gleichen Position, so lautet der R&uuml;ckgabewert 0. Diese Methode &auml;hnelt der <span class="literal">compareEndPoints( )</span>-Methode beim <span class="literal">TextRange</span>-Objekt von IE.
+</p>
+							</td>
+						</tr>
+						<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Die Situation kann jedoch noch wesentlich komplizierter werden. Wenn sich die miteinander zu vergleichenden Begrenzungspunkte n&auml;mlich in unterschiedlichen Container-Nodes befinden, wird das Ergebnis des Vergleichs ma&szlig;geblich von den Offsetwerten der Begrenzungspunkte in Bezug auf ihre jeweilige Container-Node beeinflusst. Aufgrund der vielen verschiedenen Ergebnisse, die angesichts der zahlreichen Beziehungen zwischen den verglichenen Begrenzungspunkten ermittelt werden k&ouml;nnen, muss Ihr Skript die Bereichsgrenzen genauestens analysieren, um sicherzustellen, dass der Vergleich die gew&uuml;nschte Abfolge wiedergibt. Andererseits ist es wesentlich leichter, einfach nach &Uuml;bereinstimmungen von Begrenzungspunkten zu suchen. Es kann sinnvoll sein, Vergleiche auf die Suche nach R&uuml;ckgabewerten von Null (oder anderer Werte) zu beschr&auml;nken, um eine bin&auml;re Bestimmung von Bereichsverh&auml;ltnissen zu erm&ouml;glichen.
+</p>
+							</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td>
+								<table border="1"><tbody><tr><th>Vergleichstyp</th><th>Beschreibung</th></tr>
+										<tr><td><span class="replaceable">rng</span><span class="literal">.START_TO_START</span></td><td>Vergleicht den Startpunkt des aktuellen Bereichs mit dem Startpunkt des Quellbereichs.
+</td>
+										</tr>
+										<tr><td><span class="replaceable">rng</span><span class="literal">.START_TO_END</span></td><td>Vergleicht den Startpunkt des aktuellen Bereichs mit dem Endpunkt des Quellbereichs.
+</td>
+										</tr>
+										<tr><td><span class="replaceable">rng</span><span class="literal">.END_TO_END</span></td><td>Vergleicht den Endpunkt des aktuellen Bereichs mit dem Endpunkt des Quellbereichs.
+</td>
+										</tr>
+										<tr><td><span class="replaceable">rng</span><span class="literal">.END_TO_START</span></td><td>Vergleicht den Endpunkt des aktuellen Bereichs mit dem Startpunkt des Quellbereichs.
+</td>
+										</tr>
+									</tbody></table>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Parameter</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<ul><li><span class="literal"></span>Integerwerte von <span class="literal">0</span> bis <span class="literal">3</span> entsprechend den Vergleichstypen. Die von Netscape 6 und 7 verwendeten ganzzahligen Werte stimmen nicht mit dem W3C-DOM-Standard &uuml;berein, doch die unverschl&uuml;sselten Konstanten (z. B. <span class="replaceable">rng</span><span class="literal">.START_TO_START</span> in der oben stehenden Tabelle) bewirken einen Vergleich des gew&uuml;nschten Typs.
+</li><li><span class="literal"></span>Referenz auf ein zweites, zuvor definiertes <span class="literal">Range</span>-Objekt, gegebenenfalls mithilfe der <span class="literal">cloneRange( )</span>-Methode gesichert.
+</li></ul>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Zur&uuml;ckgegebener Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Integerwerte <span class="literal">-1</span>, <span class="literal">0</span> oder <span class="literal">1</span>.
+</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="compareNode( )">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">compareNode( )</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6  </span>IE <span class="emphasis">nicht zutreffend</span>  DOM <span class="emphasis">nicht zutreffend</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">compareNode(<span class="replaceable">nodeReference</span>)</p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Eine nur in Netscape verf&uuml;gbare Methode, die die relative Position einer anderen Node in Bezug auf den aktuellen Bereich in Form eines ganzzahligen Codes zur&uuml;ckgibt. Die von der <span class="literal">compareNode( )</span>-Methode zur&uuml;ckgegebenen Werte k&ouml;nnen mithilfe der vier unverschl&uuml;sselten Konstanten, die zu jedem Netscape-<span class="literal">Range</span>-Objekt geh&ouml;ren, miteinander verglichen werden. Beachten Sie, dass sich die R&uuml;ckgabewerte auf die mit dem Parameter &uuml;bergebene Node und nicht auf die Node des aktuellen Bereichs beziehen.
+</p>
+							</td>
+						</tr>
+						<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Die R&uuml;ckgabewerte und Konstanten lauten wie folgt.</p>
+							</td>
+						</tr>
+						<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Beispiel:</p>
+							</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td>
+								<table border="1"><tbody><tr><th>Konstante</th><th>Wert</th><th>Beschreibung</th></tr>
+										<tr><td><span class="replaceable">rng</span><span class="literal">.NODE_BEFORE</span></td><td><span class="literal">0</span></td><td>Die gesamte Node liegt vor dem Bereich.</td>
+										</tr>
+										<tr><td><span class="replaceable">rng</span><span class="literal">.NODE_AFTER</span></td><td><span class="literal">1</span></td><td>Die gesamte Node liegt hinter dem Bereich.</td>
+										</tr>
+										<tr><td><span class="replaceable">rng</span><span class="literal">.NODE_BEFORE_AND_AFTER</span>
+</td><td><span class="literal">2</span></td><td>Die Node beginnt vor und endet hinter dem aktuellen Bereich.</td>
+										</tr>
+										<tr><td><span class="replaceable">rng</span><span class="literal">.NODE_INSIDE</span></td><td><span class="literal">3</span></td><td>Die Node befindet sich vollst&auml;ndig innerhalb des aktuellen Bereichs.</td>
+										</tr>
+									</tbody></table>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Parameter</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<ul><li><span class="literal"></span>Referenz auf eine beliebige Node im Dokumentbaum.</li></ul>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Zur&uuml;ckgegebener Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Integerwerte <span class="literal">0</span>, <span class="literal">1</span>, <span class="literal">2</span> oder <span class="literal">3</span>.
+</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="comparePoint( )">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">comparePoint( )</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6  </span>IE <span class="emphasis">nicht zutreffend</span>  DOM <span class="emphasis">nicht zutreffend</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">compareNode(<span class="replaceable">nodeReference</span>, <span class="replaceable">offset</span>)</p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Eine nur in Netscape verf&uuml;gbare Methode, die die relative Position einer anderen Node und den Offset innerhalb dieser Node in Bezug auf den aktuellen Bereich in Form eines ganzzahligen Codes zur&uuml;ckgibt. Beachten Sie, dass sich die R&uuml;ckgabewerte auf die mit den Parametern &uuml;bergebene Node (genauer gesagt, auf den durch den Offsetwert bezeichneten Punkt innerhalb dieser Node) und nicht auf die Node des aktuellen Bereichs beziehen.
+</p>
+							</td>
+						</tr>
+						<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Folgende R&uuml;ckgabewerte sind m&ouml;glich.</p>
+							</td>
+						</tr>
+						<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Beispiel:</p>
+							</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td>
+								<table border="1"><tbody><tr><th>Wert</th><th>Beschreibung</th></tr>
+										<tr><td><span class="literal">-1</span></td><td>Der Punkt liegt vor dem Startpunkt des Bereichs.</td>
+										</tr>
+										<tr><td><span class="literal">0</span></td><td>Der Punkt liegt innerhalb des Bereichs.</td>
+										</tr>
+										<tr><td><span class="literal">1</span></td><td>Der Punkt liegt hinter dem Endpunkt des Bereichs.</td>
+										</tr>
+									</tbody></table>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Parameter</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<ul><li><span class="literal"></span>Referenz auf eine beliebige Node im Dokumentbaum.</li><li><span class="literal"></span>Ganzzahliger Offsetwert, der entweder die Anzahl der verschachtelten Nodes innerhalb eines Elements oder die Anzahl der Zeichen innerhalb einer Textnode angibt.
+</li></ul>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Zur&uuml;ckgegebener Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Integerwerte <span class="literal">-1</span>, <span class="literal">0</span>, <span class="literal">1</span>.
+</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="createContextualFragment( )">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">createContextualFragment( )</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6  </span>IE <span class="emphasis">nicht zutreffend</span>  DOM <span class="emphasis">nicht zutreffend</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">createContextualFragment(<span class="replaceable">contentString</span>)</p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Die Methode <span class="literal">createContextualFragment( )</span> wurde urspr&uuml;nglich als Alternative zu der Hilfseigenschaft <span class="literal">innerHTML</span> entwickelt, da das W3C-DOM nur wenig Unterst&uuml;tzung f&uuml;r Inhaltszeichenfolgen bietet, die aus Tags bestehen. Diese Methode akzeptiert jede beliebige Zeichenfolge – einschlie&szlig;lich Inhalte mit Tags – als Parameter und gibt eine Node vom Typ <span class="literal">DocumentFragment</span> zur&uuml;ck, die direkt an den Dokumentbaum angeh&auml;ngt oder in ihn eingef&uuml;gt werden kann. Da die <span class="literal">innerHTML</span>-Eigenschaft sp&auml;ter im Mozilla-Browser implementiert wurde, ist diese Methode eigentlich &uuml;berfl&uuml;ssig, sie passt jedoch insgesamt besser in das grundlegende Nodemodell des W3C-DOM.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Parameter</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<ul><li><span class="literal"></span>Inhalt des Dokuments in Form einer Zeichenfolge, einschlie&szlig;lich der Tags und Attribute.</li></ul>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Zur&uuml;ckgegebener Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Referenz auf eine Dokumentfragmentnode au&szlig;erhalb des Dokumentbaums. Diese Node kann sodann dem Dokumentbaum hinzugef&uuml;gt werden.
+</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="deleteContents( )">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">deleteContents( )</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">nicht zutreffend</span>  DOM <span class="emphasis">2</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Entfernt den Inhalt des aktuellen Textbereichs aus dem Dokumentbaum. Wenn es sich bei dem Bereich um eine Elementnode handelt, deren Begrenzungspunkte beispielsweise mithilfe der <span class="literal">selectNode( )</span>-Methode festgelegt wurden, bewirkt die Anwendung der <span class="literal">deleteContents( )</span>-Methode auf diesen Bereich, dass die Node aus dem Dokumentbaum entfernt und der Bereich verk&uuml;rzt wird. Das <span class="literal">Range</span>-Objekt verbleibt im Arbeitsspeicher, jedoch ohne irgendwelchen Inhalt. Wenn Sie den Inhalt vor dem L&ouml;schen erfassen m&ouml;chten, verwenden Sie eine der anderen Methoden des <span class="literal">Range</span>-Objekts, z. B. die <span class="literal">cloneRange( )</span>- oder, sofern sie ordnungsgem&auml;&szlig; funktioniert, die <span class="literal">cloneContents( )</span>-Methode.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Parameter</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Keine.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Zur&uuml;ckgegebener Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Keiner.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="detach( )">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">detach( )</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">nicht zutreffend</span>  DOM <span class="emphasis">2</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Zerst&ouml;rt das aktuelle <span class="literal">Range</span>-Objekt und bewirkt, dass der Aufruf der meisten Methoden oder der Zugriff auf die Eigenschaften dieses Objekts eine <span class="literal">RangeException</span>-Ausnahme vom Typ <span class="literal">INVALID_STATE_ERR</span> erzeugt.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Parameter</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Keine.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Zur&uuml;ckgegebener Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Keiner.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="extractContents( )">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">extractContents( )</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">nicht zutreffend</span>  DOM <span class="emphasis">2</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Entfernt den Inhalt des aktuellen Bereichs aus dem Dokumentbaum und gibt ihn in Form einer <span class="literal">DocumentFragment</span>-Node zur&uuml;ck. Funktioniert in Netscape 6.2 bislang nur, wenn die Begrenzungspunkte des Bereichs mit der Methode <span class="literal">selectNodeContents( )</span> eingestellt wurden.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Parameter</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Keine.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Zur&uuml;ckgegebener Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Referenz auf eine Node eines Dokumentfragmenttyps.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="insertNode( )">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">insertNode( )</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">nicht zutreffend</span>  DOM <span class="emphasis">2</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">insertNode(<span class="replaceable">nodeReference</span>)</p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>F&uuml;gt eine Node am Anfang des aktuellen Textbereichs ein. Dies ist vor allem dann sinnvoll, wenn der Bereich bereits zu einer Texteinf&uuml;gemarke verk&uuml;rzt wurde. Die einzuf&uuml;gende Node kann entweder mit Hilfe der Methode <span class="literal">document.createElement( )</span> eigens erstellt oder von einer anderen Stelle des Dokumentbaums &uuml;bernommen werden. Im letzteren Fall wird die Node an ihrer urspr&uuml;nglichen Position entfernt und in den aktuellen Bereich eingef&uuml;gt. Wenn Sie eine Textnode unmittelbar neben einer vorhandenen Textnode einf&uuml;gen, enth&auml;lt das Dokument an dieser Stelle letztlich zwei benachbarte Textnodes. In diesem Fall k&ouml;nnen Sie die Textnodes konsolidieren, indem Sie auf ihren Parent-Container die Methode <span class="literal">normalize( )</span> anwenden.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Parameter</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<ul><li><span class="literal"></span>Referenz auf eine beliebige Text-, Element- oder Dokumentfragmentnode, die in den Bereich eingef&uuml;gt werden soll.
+</li></ul>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Zur&uuml;ckgegebener Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Keiner.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="intersectsNode( )">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">intersectsNode( )</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6  </span>IE <span class="emphasis">nicht zutreffend</span>  DOM <span class="emphasis">nicht zutreffend</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">intersectsNode(<span class="replaceable">nodeReference</span>)</p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Gibt den Booleschen Wert <span class="literal">true</span> zur&uuml;ck, wenn sich ein Teil des aktuellen Bereichs mit der im Parameter &uuml;bergebenen Text- oder Elementnode &uuml;berschneidet. Wenn Ihr Skript eine solche &Uuml;berschneidung erkennt, kann es mit der Methode <span class="literal">compareNode( )</span> weitere Informationen abrufen.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Parameter</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<ul><li><span class="literal"></span>Referenz auf eine beliebige Text- oder Elementnode im Dokumentbaum.</li></ul>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Zur&uuml;ckgegebener Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Boolescher Wert: <span class="literal">true</span> | <span class="literal">false</span>.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="isPointInRange( )">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">isPointInRange( )</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6  </span>IE <span class="emphasis">nicht zutreffend</span>  DOM <span class="emphasis">nicht zutreffend</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">isPointInRange(<span class="replaceable">nodeReference</span>, <span class="replaceable">offset</span>)</p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Gibt den Booleschen Wert <span class="literal">true</span> zur&uuml;ck, wenn der durch die Parameterwerte (eine Node im Dokumentbaum und eine Offset-Position innerhalb dieser Node) bezeichnete Punkt innerhalb des aktuellen Bereichs liegt.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Parameter</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<ul><li><span class="literal"></span>Referenz auf eine beliebige Text- oder Elementnode im Dokumentbaum.</li><li><span class="literal"></span>Ganzzahliger Offsetwert, der entweder die Anzahl der verschachtelten Nodes innerhalb eines Elements oder die Anzahl der Zeichen innerhalb einer Textnode angibt.
+</li></ul>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Zur&uuml;ckgegebener Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Boolescher Wert: <span class="literal">true</span> | <span class="literal">false</span>.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="selectNode( ), selectNodeContents( )">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">selectNode( ), selectNodeContents( )</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">nicht zutreffend</span>  DOM <span class="emphasis">2</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">selectNode(<span class="replaceable">nodeReference</span>) selectNodeContents(<span class="replaceable">nodeReference</span>)</p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Stellt die Begrenzungspunkte des Bereichs so ein, dass sie entweder eine Node oder nur ihren Inhalt umfassen. Obwohl der Methodenname dies vermuten lie&szlig;e, wird kein Bodytext im dargestellten Dokument markiert.
+</p>
+							</td>
+						</tr>
+						<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Die ausgew&auml;hlte Methode bestimmt die Art und Weise, in der die Eigenschaften <span class="literal">startContainer</span> und <span class="literal">endContainer</span> des Bereichs gef&uuml;llt werden. Das folgende Verfahren zeigt, was mit dem Bereich und seinen Eigenschaften geschieht, wenn Sie eine Elementnode und eine Textnode als Parameter an diese Methoden &uuml;bergeben. Das urspr&uuml;ngliche HTML-Segment sieht folgenderma&szlig;en aus:
+</p>
+<span class="PROGRAMLISTING"><pre>&lt;&gt;One paragraph with a &lt;span id=&quot;myspan&quot;&gt;nested&lt;/span&gt; element inside.&lt;/p&gt;p</pre></span>
+							</td>
+						</tr>
+						<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Wenn Sie mit der Methode <span class="literal">rng.selectNode(document.getElementByID("myspan"))</span> das Element <span class="literal">span</span> ausw&auml;hlen, wird der Bereich wie folgt eingestellt:
+</p>
+<span class="PROGRAMLISTING"><pre>&lt;&gt;One paragraph with a |&lt;span id=&quot;myspan&quot;&gt;p<em>nested</em>&lt;/spa&gt;| element inside.&lt;/p&gt;n</pre></span>
+							</td>
+						</tr>
+						<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Die Eigenschaften des <span class="literal">Range</span>-Objekts melden die folgenden Werte.
+</p>
+							</td>
+						</tr>
+						<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Wenn Sie mit der Methode <span class="literal">rng.selectNodeContents(document.getElementByID("myspan"))</span> den Inhalt des <span class="literal">span</span>-Elements ausw&auml;hlen, wird der Bereich wie folgt eingestellt:
+</p>
+<span class="PROGRAMLISTING"><pre>&lt;&gt;One paragraph with a &lt;span id=&quot;myspan&quot;&gt;|p<em>nested</em>&lt;/span&gt; element inside.&lt;/p&gt;|</pre></span>
+							</td>
+						</tr>
+						<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Die Eigenschaften des <span class="literal">Range</span>-Objekts melden die folgenden Werte.
+</p>
+							</td>
+						</tr>
+						<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Wenn Sie mit der Methode <span class="literal">selectNode(document.getElementByID("myspan").firstChild)</span> die Textnode innerhalb des <span class="literal">span</span>-Elements ausw&auml;hlen, wird der Bereich wie folgt eingestellt:
+</p>
+<span class="PROGRAMLISTING"><pre>&lt;&gt;One paragraph with a &lt;span id=&quot;myspan&quot;&gt;|p<em>nested</em>&lt;/span&gt; element inside.&lt;/p&gt;|</pre></span>
+							</td>
+						</tr>
+						<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Obwohl als Parameter eine andere Node (mit einem anderen Nodetyp) &uuml;bergeben wird, ist der ausgew&auml;hlte Bereich mit dem aus dem vorigen Beispiel identisch. Tats&auml;chlich melden die Eigenschaften des <span class="literal">Range</span>-Objekts aufgrund der Struktur des Nodebaums dieselben Werte.
+</p>
+							</td>
+						</tr>
+						<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Wenn Sie mit der Methode <span class="literal">rng.selectNodeContents(document.getElementByID("myspan")</span> den Inhalt der Textnode innerhalb des <span class="literal">span</span>-Elements ausw&auml;hlen, wird der Bereich wie folgt eingestellt:
+</p>
+<span class="PROGRAMLISTING"><pre>&lt;&gt;One paragraph with a &lt;span id=&quot;myspan&quot;&gt;||nested&lt;/span&gt; element inside.&lt;/p&gt;p</pre></span>
+							</td>
+						</tr>
+						<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Der Bereich wird also, wie die folgende Eigenschafts&uuml;bersicht zeigt, zu einem Einf&uuml;gepunkt am Anfang der Textnode verk&uuml;rzt (m&ouml;glicherweise ein Anwendungsfehler in Netscape 6), und die Textnode wird zum Container.
+</p>
+							</td>
+						</tr>
+						<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Im Allgemeinen ist es am praktischsten, die Elementnodes als Parameter an die verschiedenen Methoden zu &uuml;bergeben.
+</p>
+							</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td>
+								<table border="1"><tbody><tr><th>Eigenschaft</th><th>Wert</th><th>Beschreibung</th></tr>
+										<tr><td><span class="literal">startContainer</span></td><td><span class="literal">[objectHTMLParagraphElement]</span></td><td>Der Startpunkt liegt unmittelbar vor dem <span class="literal">span</span>-Element.</td>
+										</tr>
+										<tr><td><span class="literal">startOffset</span></td><td><span class="literal">1</span></td><td>Der Startpunkt liegt bei der 2. Node (auf Null basierender Indexwert 1) innerhalb des <span class="literal">p</span>-Elements.
+</td>
+										</tr>
+										<tr><td><span class="literal">endContainer</span></td><td><span class="literal">[object</span> <span class="literal">HTMLParagraphElement]</span></td><td>Der Endpunkt liegt unmittelbar hinter dem <span class="literal">span</span>-Element.</td>
+										</tr>
+										<tr><td><span class="literal">endOffset</span></td><td><span class="literal">2</span></td><td>Der Endpunkt liegt bei der 3. Node (auf Null basierender Indexwert 2) im Kontext seines <span class="literal">endContainer</span>-<span class="literal">p</span>-Elements.
+</td>
+										</tr>
+									</tbody></table>
+							</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td>
+								<table border="1"><tbody><tr><th>Eigenschaft</th><th>Wert</th><th>Beschreibung</th></tr>
+										<tr><td><span class="literal">startContainer</span></td><td><span class="literal">[object HTMLSpanElement]</span></td><td>Der Startpunkt liegt gerade innerhalb des <span class="literal">span</span>-Elements.</td>
+										</tr>
+										<tr><td><span class="literal">startOffset</span></td><td><span class="literal">0</span></td><td>Der Startpunkt liegt bei der 1. Node (auf Null basierender Indexwert 0) innerhalb des <span class="literal">span</span>-Elements.
+</td>
+										</tr>
+										<tr><td><span class="literal">endContainer</span></td><td><span class="literal">[object</span> <span class="literal">HTMLSpanElement]</span></td><td>Der Endpunkt liegt unmittelbar hinter dem Inhalt des <span class="literal">span</span>-Elements.
+</td>
+										</tr>
+										<tr><td><span class="literal">endOffset</span></td><td><span class="literal">1</span></td><td>Der Endpunkt liegt an der Position, an der sich die 2. Node (auf Null basierender Indexwert 1) im Kontext ihres <span class="literal">endContainer</span>-<span class="literal">span</span>-Elements befinden w&uuml;rde, wenn sie vorhanden w&auml;re.
+</td>
+										</tr>
+									</tbody></table>
+							</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td>
+								<table border="1"><tbody><tr><th>Eigenschaft</th><th>Wert</th><th>Beschreibung</th></tr>
+										<tr><td><span class="literal">startContainer</span></td><td><span class="literal">[object HTMLSpanElement]</span></td><td>Der Startpunkt liegt gerade innerhalb des <span class="literal">span</span>-Elements.</td>
+										</tr>
+										<tr><td><span class="literal">startOffset</span></td><td><span class="literal">0</span></td><td>Der Startpunkt liegt bei der 1. Node (auf Null basierender Indexwert 0) innerhalb des <span class="literal">span</span>-Elements.
+</td>
+										</tr>
+										<tr><td><span class="literal">endContainer</span></td><td><span class="literal">[object</span> <span class="literal">HTMLSpanElement]</span></td><td>Der Endpunkt liegt unmittelbar hinter dem Inhalt des <span class="literal">span</span>-Elements.
+</td>
+										</tr>
+										<tr><td><span class="literal">endOffset</span></td><td><span class="literal">1</span></td><td>Der Endpunkt liegt an der Position, an der sich die 2. Node (auf Null basierender Indexwert 1) im Kontext ihres <span class="literal">endContainer</span>-<span class="literal">span</span>-Elements befinden w&uuml;rde, wenn sie vorhanden w&auml;re.
+</td>
+										</tr>
+									</tbody></table>
+							</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td>
+								<table border="1"><tbody><tr><th>Eigenschaft</th><th>Wert</th><th>Beschreibung</th></tr>
+										<tr><td><span class="literal">startContainer</span></td><td><span class="literal">[object Text]</span></td><td>Der Startpunkt befindet sich Anfang der Textnode.</td>
+										</tr>
+										<tr><td><span class="literal">startOffset</span></td><td><span class="literal">0</span></td><td>Der Startpunkt befindet sich bei der 1. Position (auf Null basierender Indexwert 0) der Textnode.
+</td>
+										</tr>
+										<tr><td><span class="literal">endContainer</span></td><td><span class="literal">[object Text]</span></td><td>Der Endpunkt ist verk&uuml;rzt.</td>
+										</tr>
+										<tr><td><span class="literal">endOffset</span></td><td><span class="literal">0</span></td><td>Der Endpunkt ist verk&uuml;rzt.</td>
+										</tr>
+									</tbody></table>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Parameter</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<ul><li><span class="literal"></span>Referenz auf eine beliebige Text- oder Elementnode im Dokumentbaum.</li></ul>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Zur&uuml;ckgegebener Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Keiner.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="setEnd( ), setStart( )">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">setEnd( ), setStart( )</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">nicht zutreffend</span>  DOM <span class="emphasis">2</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">setEnd(<span class="replaceable">nodeReference</span>, <span class="replaceable">offset</span>) setStart(<span class="replaceable">nodeReference</span>, <span class="replaceable">offset</span>)</p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Legen die Positionen der einzelnen Begrenzungspunkte eines vorhandenen <span class="literal">Range</span>-Objekts im Dokumentbaum fest. &Auml;hnelt der Methode <span class="literal">setEndPoint( )</span> des IE-<span class="literal">TextRange</span>-Objekts. Die Zuordnung einer Position basiert auf einer Nodereferenz und einem Offsetwert in Bezug auf den Startpunkt und Typ der betreffenden Node. Wenn es sich bei der <span class="replaceable">nodeReference</span> um eine Elementnode handelt, wird der Offsetwert als Anzahl von Child-Nodes angegeben, und wenn es sich bei <span class="replaceable">nodeReference</span> um eine Textnode handelt, als Anzahl von Textzeichen. F&uuml;r das Festlegen eines Begrenzungspunkts am Rand einer Node sind die zugeh&ouml;rigen Methoden (<span class="literal">setEndAfter( )</span> und drei weitere) besser geeignet.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Parameter</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<ul><li><span class="literal"></span>Referenz auf eine beliebige Element- oder Textnode im Dokumentbaum.</li><li><span class="literal"></span>Ganzzahliger Offsetwert, der entweder die Anzahl der verschachtelten Nodes innerhalb eines Elements oder die Anzahl der Zeichen innerhalb einer Textnode angibt.
+</li></ul>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Zur&uuml;ckgegebener Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Keiner.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="setEndAfter( ), setEndBefore( ), setStartAfter( ), setStartBefore( )">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">setEndAfter( ), setEndBefore( ), setStartAfter( ), setStartBefore( )</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">nicht zutreffend</span>  DOM <span class="emphasis">2</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">setEndAfter(<span class="replaceable">nodeReference</span>) setEndBefore(<span class="replaceable">nodeReference</span>) setStartAfter(<span class="replaceable">nodeReference</span>) setStartBefore(<span class="replaceable">nodeReference</span>)</p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Legen die Positionen der einzelnen Begrenzungspunkte eines vorhandenen <span class="literal">Range</span>-Objekts im Dokumentbaum in Bezug auf die R&auml;nder einer Node fest. Bei diesen Methoden wird davon ausgegangen, dass Sie die Begrenzungspunkte eines Bereichs unmittelbar vor oder hinter einer vorhandenen Node platzieren und keinen Offset einstellen m&ouml;chten. Die Bereichsgrenzen m&uuml;ssen nicht symmetrisch sein, d. h. Sie k&ouml;nnen den Startpunkt in Bezug auf eine Node und den Endpunkt in Bezug auf eine vollkommen andere Node weiter hinten im Dokument angeben.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Parameter</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<ul><li><span class="literal"></span>Referenz auf eine beliebige Element- oder Textnode im Dokumentbaum.</li></ul>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Zur&uuml;ckgegebener Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Keiner.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="surroundContents( )">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">surroundContents( )</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">7</span> IE <span class="emphasis">nicht zutreffend</span>  DOM <span class="emphasis">2</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">surroundContents(<span class="replaceable">parentNodeReference</span>)</p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Schlie&szlig;t den aktuellen Bereich in einen neuen Container, in der Regel in eine mit der Methode <span class="literal">document.createElement( )</span> erstellte neue Elementnode, ein. Die Endpunkte des aktuellen Bereichs sollten innerhalb desselben Parent-Containers liegen, wenn Sie diese Methode anwenden m&ouml;chten.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Parameter</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<ul><li><span class="literal"></span>Referenz auf eine Node, die als Parent-Container f&uuml;r den Bereich verwendet werden soll.
+</li></ul>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Zur&uuml;ckgegebener Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Keiner.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="toString( )">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">toString( )</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">nicht zutreffend</span>  DOM <span class="emphasis">2</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Gibt eine Zeichenfolge mit dem im Bereich enthaltenen Body-Inhalt zur&uuml;ck. Der R&uuml;ckgabewert enth&auml;lt keine Tags oder Attribute.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Parameter</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Keine.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Zur&uuml;ckgegebener Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Zeichenfolge.</p>
+					</td>
+				</tr>
+			</table>
+		</div>
+
+</body>
+</html>

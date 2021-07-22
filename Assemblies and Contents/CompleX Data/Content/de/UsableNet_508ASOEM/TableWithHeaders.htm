@@ -1,0 +1,223 @@
+<html xmlns:un="http://usablenet.com/namespaces/508_rules">
+   <link rel="stylesheet" href="josh.css">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   
+      <title>Detailanzeige f&uuml;r Regel: Datentabellen sollten &uuml;ber &Uuml;berschriften verf&uuml;gen.</title>
+      <!--
+  508/W3C Accessibility Suite OEM V2 for Macromedia Dreamweaver
+  (C) Copyright 2001-2005 UsableNet Inc. All rights reserved.
+  -->
+   </head>
+   <body bgcolor="#ffffff">
+      <div id="Beschreibung">
+         <table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+            <tr>
+               <td valign="top" nowrap="true" class="name">Datentabellen sollten &uuml;ber &Uuml;berschriften verf&uuml;gen.</td>
+               <td valign="top" nowrap="true" class="compatibility">&nbsp;</td>
+            </tr>
+            <tr>
+               <td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+            </tr>
+            <tr>
+               <td valign="top" align="right" nowrap="true" colspan="2" class="requirements">
+                        Section 508 1194.22(g); 
+                        
+                          WAI
+                        
+                         / 
+                        
+                          WCAG
+                        
+                         1.0 checkpoint 5.1
+                      
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2" class="clearseparation">&nbsp;</td>
+            </tr>
+            <tr>
+               <td colspan="2" class="clearseparation">&nbsp;</td>
+            </tr>
+            <tr>
+               <td valign="top" colspan="2" class="description"><b>Problembeschreibung</b><br>
+                        
+                  <p>
+                             Die Seite enth&auml;lt eine Tabelle ohne spezifische
+                             &Uuml;berschriftzellen (d.&nbsp;h. ohne TH-Tags). Wenn in der
+                             Tabelle Daten angezeigt werden sollen, f&uuml;gen Sie ihr
+                             &Uuml;berschriften hinzu.
+                           
+                  </p>
+                      
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2" class="clearseparation">&nbsp;</td>
+            </tr>
+            <tr>
+               <td colspan="2" class="clearseparation">&nbsp;</td>
+            </tr>
+            <tr>
+               <td valign="top" colspan="2" class="description"><b>&Uuml;berpr&uuml;fung</b>
+                        
+                  <p>
+                             Wenn in der Tabelle Daten angezeigt werden, definieren Sie
+                             f&uuml;r jede Zeile und Spalte entsprechende
+                             &Uuml;berschriften.
+                           
+                  </p>
+                        
+                  <p>
+                             Die einfachste M&ouml;glichkeit zur Umsetzung dieser Vorgabe
+                             besteht darin, eine Tabellenzeile mit dem TH-Tag zu
+                             definieren und die erste Zelle jeder zweiten Reihe ebenfalls
+                             mit dem TH-Tag zu markieren.
+                           
+                  </p>
+                        
+                  <p>
+                             Ferner:
+                           
+                  </p>
+                        
+                  <ul>
+                             
+                     <li>
+                                  TH-Tags sollten ein ID-Attribut zur eindeutigen
+                                  Identifikation besitzen
+                                
+                     </li>
+                             
+                     <li>
+                                  TD-Tags sollten ein HEADERS-Attribut besitzen, das auf die
+                                  entsprechenden TH-Tags verweist.
+                                
+                     </li>
+                           
+                  </ul>
+                        
+                  <p>
+                             Das TH-Tag kann auch das Attribut SCOPE='col' oder
+                             SCOPE='row' enthalten, mit dem die &Uuml;berschrift auf die
+                             ganze Spalte bzw. Zeile verweist.
+                           
+                  </p>
+                        
+                  <p>
+                             Es empfiehlt sich m&ouml;glicherweise, das ABBR-Attribut im
+                             TH-Tag zu verwenden, um eine pr&auml;gnantere Beschreibung
+                             der &Uuml;berschrift anzugeben, die von bestimmten Browsern
+                             dann immer wiederholt wird.
+                           
+                  </p>
+                      
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2" class="clearseparation">&nbsp;</td>
+            </tr>
+            <tr>
+               <td colspan="2" class="clearseparation">&nbsp;</td>
+            </tr>
+            <tr>
+               <td valign="top" colspan="2" class="description"><b>Problemerkl&auml;rung</b><br>
+                        
+                  <p>
+                             Mit Tabellen k&ouml;nnen Daten angezeigt werden, z.&nbsp;B.
+                             Fahrpl&auml;ne, Vergleiche regionaler Vertriebszahlen oder
+                             eine Liste mit Kontaktadressen. Die Zellen in solchen
+                             Tabellen stehen miteinander in Bezug und m&uuml;ssen
+                             gew&ouml;hnlich als Gruppe behandelt werden. Tabellen
+                             k&ouml;nnen auch f&uuml;r das Layout von Grafiken und Text
+                             auf der Seite verwendet werden. Die Zellen in einer
+                             Layout-Tabelle sind normalerweise unabh&auml;ngig voneinander
+                             und k&ouml;nnen einzeln angezeigt werden.
+                           
+                  </p>
+                        
+                  <p>
+                             Datentabellen pr&auml;sentieren Daten &uuml;ber ein
+                             zweidimensionales Medium, das bestimmten Benutzern aber oft
+                             nicht zur Verf&uuml;gung steht. Betrachten Sie folgende
+                             Beispiele:
+                           
+                  </p>
+                        
+                  <ul>
+                             
+                     <li>
+                                  Ein textbasierter Browser kann m&ouml;glicherweise Zeilen
+                                  und Spalten nicht korrekt ausrichten, z.&nbsp;B. weil der
+                                  Text einer Zelle umgebrochen wird.
+                                
+                     </li>
+                             
+                     <li>
+                                  Ein Lesebrowser liest die Zelleninhalte nacheinander.
+                                
+                     </li>
+                             
+                     <li>
+                                  Auch ein Braille-Leser durchl&auml;uft die Zelleninhalte
+                                  nacheinander.
+                                
+                     </li>
+                             
+                     <li>
+                                  Ein Browser mit sehr kleiner Anzeige (PDA oder
+                                  Mobiltelefon) zeigt nur einen begrenzten Teil der Tabelle
+                                  an.
+                                
+                     </li>
+                           
+                  </ul>
+                        
+                  <p>
+                             In all diesen F&auml;llen muss sich der Benutzer den
+                             Zelleninhalt merken. (Auf welche Spalte und Zeile bezieht
+                             sich die Zelle?) Dies kann den Benutzer &uuml;berfordern,
+                             z.&nbsp;B. wenn die Tabelle sehr gro&szlig; ist, wenn der
+                             Benutzer unter Stress steht oder wenn er zu ungeduldig ist,
+                             nach den ben&ouml;tigten Informationen zu suchen.
+                           
+                  </p>
+                        
+                  <p>
+                             Bedenken Sie auch, dass die Benutzer in solchen F&auml;llen
+                             m&ouml;glicherweise nicht direkt von einer Tabellenzelle in
+                             eine andere wechseln k&ouml;nnen. Sie m&uuml;ssen sich
+                             eventuell nacheinander von einer Zelle zur jeweils
+                             benachbarten Zelle bewegen (innerhalb derselben Zeile zum
+                             Beispiel).
+                           
+                  </p>
+                        
+                  <p>
+                             Layout-Tabellen dagegen werden nicht zur &Uuml;bermittlung
+                             von Inhalten eingesetzt und m&uuml;ssen daher nicht
+                             zug&auml;nglich sein. Beachten Sie jedoch, dass das W3C die
+                             Verwendung von Stilen f&uuml;r das Seitenlayout empfiehlt.
+                             Weitere Informationen finden Sie unter
+                             http://www.w3.org/TR/WCAG10-CSS-TECHS/#style-alignment.
+                           
+                  </p>
+                        
+                  <p>
+                             Beachten Sie, dass Layout-Tabellen von Browsern ohne
+                             Grafikanzeige linearisiert werden. Das hei&szlig;t, der
+                             Inhalt der Zellen wird in der Reihenfolge angezeigt, in der
+                             diese in der HTML-Datei definiert sind. Wenn die Zellen also
+                             Schaltfl&auml;chen enthalten, werden diese
+                             m&ouml;glicherweise in einer verwirrenden Reihenfolge
+                             angezeigt. Eine detaillierte Beschreibung finden Sie unter
+                             http://www.jimthatcher.com/webcourse4.htm.
+                           
+                  </p>
+                      
+               </td>
+            </tr>
+         </table>
+      </div>
+   </body>
+</html>

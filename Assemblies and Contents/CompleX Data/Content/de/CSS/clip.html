@@ -1,0 +1,92 @@
+<html>
+<link rel="stylesheet" href="josh.css">
+<body bgcolor="#FFFFFF">
+
+		<div id="Beschreibung">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">clip</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">4</span> IE <span class="emphasis">4</span> CSS <span class="emphasis">2</span></td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Vererbt: Nein</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Definiert den Ausschneidebereich eines positionierbaren Elements. Der Ausschneidebereich ist der Teil der Elementebene, in dem Inhalt sichtbar ist. Die besten Ergebnisse beim Ausschneiden von Inhalten erzielen Sie, wenn Sie das betreffende Element mit einem <span class="literal">div</span>-Element umgeben, dessen Attribut <span class="literal">clip</span> auf den gew&uuml;nschten Bereich gesetzt ist. Das Ausschneiden funktioniert in Internet Explorer 4 f&uuml;r Macintosh u.&#160;U. nicht richtig; in Version 5 ist dieses Problem aber behoben. Wenn ein ausgeschnittenes Element in Navigator 4 unten auf einer Seite angezeigt wird, ist im Browserfenster u.&#160;U. kein Bildlauf m&ouml;glich, um die Unterseite des Ausschneidebereichs anzuzeigen.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="csssyntax"><span class="title">CSS-Syntax</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>clip: rect(<span class="replaceable">lengthTop</span> <span class="replaceable">lengthRight</span> <span class="replaceable">lengthBottom</span> <span class="replaceable">lengthLeft</span>) | auto</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+				</tr>
+				<tr>
+					<td><p>Die einzige Form, die das Attribut <span class="literal">clip</span> erkennt, ist <span class="literal">rect</span> (CSS2). Andere Formen k&ouml;nnen in Zukunft hinzukommen.</p><p>Beachten Sie beim Festlegen der L&auml;ngen f&uuml;r die Seiten des Rechtecks die Reihenfolge der Werte im Uhrzeigersinn: oben, rechts, unten, links. Weitere Informationen hierzu finden Sie in der Diskussion &uuml;ber L&auml;ngenwerte zu Beginn dieses Kapitels. Der Wert <span class="literal">auto</span> setzt den Ausschneidebereich auf den Block mit dem Inhalt (ein Block, der sich in IE4 auf die Breite des n&auml;chst&auml;u&szlig;eren Containers - wie das Element <span class="literal">body</span> - erstrecken kann).</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="initvalue"><span class="title">Anfangswert</span></td>
+				</tr>
+				<tr>
+					<td><p><span class="literal">auto</span></p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>&lt;span style="position: absolute; clip: rect(10px 110px 80px 10px)"&gt;&lt;img src="desk1.gif" height="90" width="120"&gt;&lt;/span&gt;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="appliesto"><span class="title">Gilt f&uuml;r</span></td>
+				</tr>
+				<tr>
+					<td><p>Blockebenen-, ersetzte und positionierte Elemente.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectmodelreference"><span class="title">Objektmodellreferenz</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>[window.]document.getElementById("<span class="replaceable">elementID</span>").style.clip</pre>
+						</span></td>
+				</tr>
+			</table>
+		</div>
+</body>
+</html>

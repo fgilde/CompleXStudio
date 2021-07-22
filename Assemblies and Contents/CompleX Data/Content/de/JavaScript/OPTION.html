@@ -1,0 +1,437 @@
+<html>
+<link rel="stylesheet" href="josh.css">
+<body bgcolor="#FFFFFF">
+
+		<div id="Beschreibung">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">option</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">2</span> IE <span class="emphasis">3</span> DOM <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Das <span class="literal">option</span>-Objekt spiegelt das <span class="literal">option</span>-Element wider, das innerhalb eines <span class="literal">select</span>-Elements verschachtelt sein muss. In Referenzen auf <span class="literal">option</span>-Objekte wird meistens das &uuml;bergeordnete <span class="literal">select</span>-Objekt verwendet, wobei das <span class="literal">option</span>-Objekt als Mitglied eines Arrays mit Optionen behandelt wird, die zu diesem <span class="literal">select</span>-Objekt geh&ouml;ren. Bei modernen Browsern k&ouml;nnen Sie ein <span class="literal">option</span>-Objekt auch direkt anhand seiner ID referenzieren. Die unter den gemeinsamen Eigenschaften weiter vorne in diesem Kapitel beschriebene <span class="literal">disabled</span>-Eigenschaft ist in IE ab Version 4 und Netscape 6 verf&uuml;gbar.
+</p>
+							</td>
+						</tr>
+						<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Sie k&ouml;nnen die Optionen in einem <span class="literal">select</span>-Objekt in Netscape ab Version 3 und Explorer ab Version 4 modifizieren und mit r&uuml;ckw&auml;rtskompatiblem Code versehen, der auch in den neuesten Browsern noch funktioniert. Wenn Sie bei dieser Modifizierung vorhandene Optionen durch eine andere Liste derselben L&auml;nge ersetzen, k&ouml;nnen Sie den Eigenschaften <span class="literal">text</span>, <span class="literal">value</span> und <span class="literal">selected</span> der einzelnen Optionen im <span class="literal">options</span>-Array des <span class="literal">select</span>-Objekts ganz einfach neue Werte zuweisen. Enth&auml;lt die neue Liste jedoch mehr oder weniger Optionen, ist es sinnvoller, alle vorhandenen <span class="literal">option</span>-Objekte zu entfernen und neue Objekte einzuf&uuml;gen. Mithilfe einer Konstruktorfunktion f&uuml;r ein neues <span class="literal">Option</span>-Objekt k&ouml;nnen Sie Objekte einzeln erstellen und ihnen anschlie&szlig;end die gew&uuml;nschten Positionen im <span class="literal">options</span>-Array zuordnen. Die Syntax f&uuml;r den Konstruktor lautet wie folgt:
+</p>
+<span class="PROGRAMLISTING"><pre>var newOpt = new Option(&quot;<var class="replaceable">text</var>&quot;, &quot;<var class="replaceable">value</var>&quot;, <var class="replaceable">isDefaultSelectedFlag</var>, 
+<var class="replaceable">isSelectedFlag</var>);</pre></span>
+							</td>
+						</tr>
+						<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Die folgende Funktion demonstriert das typische Verfahren beim Umschreiben der Optionsliste eines <span class="literal">select</span>-Objekts:
+</p>
+<span class="PROGRAMLISTING"><pre>function setSelect(selectElemObj) &#123;
+    // remove existing options
+    selectElemObj.options.length = 0;
+    // create and assign options, one by one
+    selectElemObj.options[0] = new Option(&quot;Hercule Poirot&quot;, &quot;poirot&quot;, false, false);
+    selectElemObj.options[1] = new Option(&quot;Miss Marple&quot;, &quot;marple&quot;, false, false);
+    ...
+}</pre></span>
+							</td>
+						</tr>
+						<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>In einer Produktionsumgebung w&uuml;rden die Werte f&uuml;r die Konstruktorparameter h&ouml;chstwahrscheinlich in Form eines Arrays mit Objekten an die Seite &uuml;bergeben, sodass die Zuweisung der neuen Optionen innerhalb einer <span class="literal">for</span>-Schleife durchgef&uuml;hrt werden kann. Weitere Ans&auml;tze zur Durchf&uuml;hrung dieser Aufgabe finden Sie in den Abhandlungen der Methoden <span class="literal">options.add( )</span> (nur IE) und <span class="literal">select.add( )</span> (nur IE ab Version 5 und Netscape 6).
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="htmlequivalent"><span class="title">HTML-&Auml;quivalent</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>&lt;option&gt;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectmodelreference"><span class="title">Objektmodellreferenz</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>[window.]document.<span class="replaceable">formName</span>.<span class="replaceable">selectName</span>.options[i]
+[window.]document.forms[i].elements[i].options[i]
+[window.]document.getElementById("<span class="replaceable">elementID</span>")</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectspecificproperties"><span class="title">Objektspezifische Eigenschaften</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<table border="1"><tbody><tr><td><span class="literal">defaultSelected</span></td><td><span class="literal">form</span></td><td><span class="literal">index</span></td><td><span class="literal">label</span></td><td><span class="literal">selected</span></td><td><span class="literal">text</span></td><td><span class="literal">value</span></td>
+								</tr>
+							</tbody></table>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectspecificmethods"><span class="title">Objektspezifische Methoden</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Keine. </p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectspecificeventhandlerproperties"><span class="title">Objektspezifische Ereignisbehandlungsroutineneigenschaften</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Keine. </p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="defaultSelected">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">defaultSelected</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">2</span> IE <span class="emphasis">3</span> DOM <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Lesen/Schreiben</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Legt fest, ob das <span class="literal">selected</span>-Attribut im Tag eines Elements gesetzt ist. Sie k&ouml;nnen die aktuelle <span class="literal">selected</span>-Eigenschaft mit <span class="literal">defaultSelected</span> vergleichen, um festzustellen, ob sich der Status des <span class="literal">select</span>-Steuerelements seit dem Laden des Dokuments ge&auml;ndert hat. Eine &Auml;nderung dieser Eigenschaft hat keinen Einfluss auf den aktuellen <span class="literal">selected</span>-Status.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>var listItem = document.forms[0].selector.options[2];
+if (listItem.selected != listItem.defaultSelected) &#123;
+    // process for changed state
+}</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Boolescher Wert: <span class="literal">true</span> | <span class="literal">false</span>.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Standardwert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Wird durch das HTML-Tag-Attribut festgelegt. </p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="form">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">form</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">4</span> DOM <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Schreibgesch&uuml;tzt</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Gibt eine Referenz auf das <span class="literal">form</span>-Objekt zur&uuml;ck, das das <span class="literal">select</span>-Element und seine Optionen enth&auml;lt.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>var theForm = document.getElementById("myOption3").form;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p><span class="literal">form</span>-Objektreferenz.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Standardwert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Keiner. </p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="index">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">index</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">3</span> DOM <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Schreibgesch&uuml;tzt</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Gibt den ganzzahligen, auf Null basierenden Indexwert des aktuellen <span class="literal">option</span>-Objekts innerhalb der Sammlung mit den Optionen des <span class="literal">select</span>-Elements zur&uuml;ck. Die Eigenschaft <span class="literal">selectedIndex</span> des <span class="literal">select</span>-Objekts gibt den Indexwert der Option zur&uuml;ck, die derzeit ausgew&auml;hlt ist.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>var whichItem = document.getElementById("myOption3").index;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Eine ganze Zahl.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Standardwert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Keiner. </p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="label">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">label</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">5(Mac)/6(Win)</span> DOM <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Lesen/Schreiben</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Spiegelt das <span class="literal">label</span>-Attribut des <span class="literal">option</span>-Elements wider. Diese Eigenschaft ist f&uuml;r den Einsatz in hierarchischen Men&uuml;s gedacht, funktioniert jedoch nur in IE 5/Mac, wo sie denselben Wert zur&uuml;ckgibt wie die Eigenschaft <span class="literal">text</span>.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Zeichenfolge.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Standardwert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Keiner.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="selected">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">selected</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">2</span> IE <span class="emphasis">3</span> DOM <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Lesen/Schreiben</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Bestimmt, ob die Listenoption vom Benutzer ausgew&auml;hlt wurde, d. h. ob der dazugeh&ouml;rige Wert mit dem Formular abgeschickt wird. &Uuml;ber Skripts kann der Wert so ge&auml;ndert werden, dass Elemente algorithmisch ausgew&auml;hlt werden. Wenn Sie feststellen m&ouml;chten, welche Option ausgew&auml;hlt ist, k&ouml;nnen Sie die Eigenschaft <span class="literal">selectedIndex</span> des <span class="literal">select</span>-Objekts verwenden. Diese Methode ist effizienter, als alle Optionen zu durchlaufen, um zu &uuml;berpr&uuml;fen, f&uuml;r welche Optionen die <span class="literal">selected</span>-Eigenschaft auf <span class="literal">true</span> gesetzt ist. Eine Ausnahme liegt vor, wenn das <span class="literal">select</span>-Element f&uuml;r die Mehrfachauswahl eingerichtet ist. In diesem Fall m&uuml;ssen Sie alle Optionen durchlaufen, um die ausgew&auml;hlten Optionen ausfindig zu machen.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>document.forms[0].selectList.options[3].selected = true;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Boolescher Wert: <span class="literal">true</span> | <span class="literal">false</span>.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Standardwert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p><span class="literal">false</span></p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="text">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">text</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">2</span> IE <span class="emphasis">3</span> DOM <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Lesen/Schreiben</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Stellt den mit dem <span class="literal">option</span>-Element verkn&uuml;pften Text bereit. Dieser Text befindet sich zwischen dem Start- und dem End-Tag und wird im <span class="literal">select</span>-Element auf dem Bildschirm angezeigt. Mit Hilfe der Eigenschaft <span class="literal">value</span> kann ein verborgener Wert, der mit dem Listenelement verkn&uuml;pft ist, gespeichert, abgerufen und ge&auml;ndert werden.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>var list = document.forms[0].selectList;
+var listItemText = list.options[list.selectedIndex].text;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Zeichenfolge.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Standardwert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Keiner. </p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="value">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">value</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">4</span> IE <span class="emphasis">4</span> DOM <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Lesen/Schreiben</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Stellt den dem <span class="literal">option</span>-Element zugewiesenen Wert bereit. Ist f&uuml;r das <span class="literal">option</span>-Element ein <span class="literal">value</span>-Attribut oder eine <span class="literal">value</span>-Eigenschaft definiert, so wird dieser Wert f&uuml;r die Eigenschaft <span class="literal">value</span> zur&uuml;ckgegeben. Andernfalls gibt die Eigenschaft eine leere Zeichenfolge zur&uuml;ck.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>var itemValue = document.forms[0].selectList.options[2]value;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Zeichenfolge.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Standardwert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Keiner. </p>
+					</td>
+				</tr>
+			</table>
+		</div>
+
+</body>
+</html>

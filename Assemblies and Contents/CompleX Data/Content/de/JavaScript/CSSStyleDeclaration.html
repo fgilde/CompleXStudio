@@ -1,0 +1,90 @@
+<html>
+<link rel="stylesheet" href="josh.css">
+<body bgcolor="#FFFFFF">
+
+		<div id="Beschreibung">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">CSSStyleDeclaration</td><td valign="top" nowrap class="compatibility"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Siehe style.</p>
+							</td>
+						</tr>
+			</table>
+		</div>
+
+<div id="setExpression( )">
+
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">setExpression( )</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">nicht zutreffend</span> IE <span class="emphasis">5(Win)</span> DOM <span class="emphasis">nicht zutreffend</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">setExpression("<span class="replaceable">propertyName</span>", "<span class="replaceable">expression</span>", ["<span class="replaceable">scriptLanguage</span>"])</p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Weist einer Eigenschaft eines Elementobjekts einen Skriptausdruck zu, durch den der Wert dieser Eigenschaft dynamisch berechnet wird. Diese Methode funktioniert in Verbindung mit Eigenschaften von Elementobjekten und, falls erforderlich, ihren <span class="literal">style</span>-Objekten. Der Ausdruck wird bei den meisten benutzerbezogenen Ereignissen automatisch neu ausgewertet, Sie k&ouml;nnen die erneute Auswertung jedoch auch jederzeit mithilfe der Methode <span class="literal">recalc( )</span> erzwingen.</p>
+							</td>
+						</tr>
+						<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Die Zuweisung eines Ausdrucks zu einem Elementattribut kann an die Stelle bestimmter Ereignisbehandlungen treten, zum Beispiel wenn es darum geht, die relativen Positionen der einzelnen Elemente zueinander beim Vergr&ouml;&szlig;ern oder Verkleinern des Browserfensters beizubehalten. Wenn Sie beispielsweise erreichen m&ouml;chten, dass ein Element stets horizontal zentriert im Browserfenster dargestellt wird, k&ouml;nnen Sie mithilfe eines der folgenden Verfahren einen Ausdruck auf die Eigenschaft <span class="literal">style.left</span> dieses Elements anwenden. Das erste Beispiel veranschaulicht die Syntax (auch f&uuml;r IE f&uuml;r Windows ab Version 5), mit der Sie dem Element einen Ausdruck als Inline-Attribut zuweisen k&ouml;nnen:</p>
+							</td>
+						</tr>
+						<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Sie k&ouml;nnen jedoch auch eine Funktion verwenden, die beim Laden aufgerufen wird und die folgende Anweisung enth&auml;lt:</p>
+							</td>
+						</tr>
+						<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>In beiden F&auml;llen berechnet derselbe Ausdruck die Koordinatenposition der linken Kante des Elements in Bezug auf die derzeit sichtbare Breite des <span class="literal">body</span>-Elements. Da dieser Ausdruck von der Eigenschaft <span class="literal">dimension</span> eines <span class="literal">body</span>-Elements abh&auml;ngig ist, wei&szlig; der Browser, dass jeder Ausdruck, der von einer durch das Vergr&ouml;&szlig;ern oder Verkleinern des Fensters verursachten &Auml;nderung der Gr&ouml;&szlig;e des Body-Elements betroffen sein k&ouml;nnte, neu berechnet werden muss.</p>
+							</td>
+						</tr>
+						<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Stellen Sie sicher, dass der Ergebniswert des zugewiesenen Ausdrucks den f&uuml;r das einzustellende Attribut geeigneten Datentyp aufweist. Isolieren und testen Sie den Ausdruck also, bevor Sie ihn der Methode <span class="literal">setExpression( )</span> zuweisen. Auf diese Weise k&ouml;nnen Sie sich das sp&auml;tere Debuggen um einiges erleichtern.</p>
+							</td>
+						</tr>
+						<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Wenn ein Attribut den Wert, der ihm mit einem Ausdruck zugewiesen wurde, dauerhaft beibehalten soll, k&ouml;nnen Sie mit der Methode <span class="literal">removeExpression( )</span> jede erneute Berechnung des Attributwerts unterbinden.</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Parameter</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<ul><li><span class="literal"></span>Der Name des vom Ausdruck gesteuerten Attributs in Form eines von der Gro&szlig;-/Kleinschreibung abh&auml;ngigen Eigenschaftsnamens (z.&#160;B. der Eigenschaftsname <span class="literal">className</span> anstelle des entsprechenden Attributnamens <span class="literal">class</span>).</li><li><span class="literal"></span>Eine Zeichenfolge mit dem auszuwertenden Skriptausdruck. Da der Ausdruck einen Wert ergeben muss, der f&uuml;r die im ersten Parameter angegebene Eigenschaft geeignet ist, sind mehrere durch Strichpunkte getrennte Anweisungen nicht zul&auml;ssig. Verweise auf andere Elemente sollten in Form vollst&auml;ndiger Referenzen angegeben werden. &Auml;ltere Implementierungen k&ouml;nnen Referenzen, die Arrays enthalten, m&ouml;glicherweise nicht korrekt verarbeiten.</li><li><span class="literal"></span>Eine von drei Konstantenzeichenfolgen: <span class="literal">JScript</span> | <span class="literal">JavaScript</span> | <span class="literal">VBScript</span>. Der Standardwert ist <span class="literal">JScript</span>.</li></ul>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Zur&uuml;ckgegebener Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Keiner.</p>
+					</td>
+				</tr>
+			</table>
+		</div>
+</body>
+</html>

@@ -1,0 +1,409 @@
+<html>
+
+<link rel="stylesheet" href="../HTML/josh.css"><head>
+
+
+<title>session</title>
+</head>
+<body bgcolor="#FFFFFF" text="#000000">
+<div id="Beschreibung">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">session</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Variablenname:</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+<p><span class="LITERAL">session</span></p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Schnittstellenname:</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+<p><span class="LITERAL">javax.servlet.http.HttpSession</span></p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Erweitert:</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+<p>Keine</p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Implementiert von:</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+<p>Interne containerabh&auml;ngige Klasse</p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">JSP-Seitentyp:</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+<p>Verf&uuml;gbar in regul&auml;ren JSP-Seiten und Fehlerseiten, es sei denn, das Attribut <span class="LITERAL">session</span> der Direktive <span class="LITERAL">page</span> ist auf <span class="LITERAL">false</span> eingestellt.
+</p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Beschreibung</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+<p>Der Variablen <span class="LITERAL">session</span> wird ein Verweis auf das Objekt <span class="LITERAL">HttpSession</span> zugewiesen, das die aktuelle Clientsitzung darstellt. Informationen, die als <span class="LITERAL">HttpSession</span>-Attribute gespeichert sind, entsprechen den Objekten in der JSP-Sitzungsebene.
+</p>
+
+<p>Standardm&auml;&szlig;ig bleibt eine Sitzung w&auml;hrend des Zeitraums aktiv, der im Bereitstellungsdeskriptor der Webanwendung angegeben ist, und zwar auch bei mehreren Seitenanforderungen des Benutzers. Der Container kann eine Sitzung mit mehreren Methoden verwalten, wie beispielsweise mit Cookies oder durch Umschreiben von URLs.
+</p>
+</td>
+</tr>
+</table>
+</div>
+<div id="getAttribute">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">getAttribute()</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"> </td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="usage"><span class="LITERAL">public Object getAttribute(String name)</span></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+Gibt das <span class="LITERAL">Object</span> zur&uuml;ck, das dem angegebenen Namen in dieser Sitzung zugeordnet ist. Wenn das Objekt nicht gefunden wird, lautet die R&uuml;ckgabe <span class="LITERAL">null</span>.
+</p></td>
+</tr>
+</table>
+</div>
+<div id="getAttributeNames">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">getAttributeNames()</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"> </td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="usage"><span class="LITERAL">public java.util.Enumeration getAttributeNames()</span></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+Gibt eine <span class="LITERAL">Enumeration</span> mit <span class="LITERAL">String</span>-Objekten zur&uuml;ck, die die Namen aller Objekte in dieser Sitzung enth&auml;lt.
+</p></td>
+</tr>
+</table>
+</div>
+<div id="getCreationTime">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">getCreationTime()</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"> </td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="usage"><span class="LITERAL">public long getCreationTime()</span></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+Gibt den Erstellungszeitpunkt dieser Sitzung zur&uuml;ck, und zwar gemessen in Millisekunden seit der Epoche (1. Januar 1970, 00:00:00 GMT).
+</p></td>
+</tr>
+</table>
+</div>
+<div id="getId">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">getId()</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"> </td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="usage"><span class="LITERAL">public String getId()</span></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+Gibt einen <span class="LITERAL">String</span> mit der eindeutigen ID zur&uuml;ck, die dieser Sitzung zugewiesen ist.
+</p></td>
+</tr>
+</table>
+</div>
+<div id="getLastAccessedTime">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">getLastAccessedTime()</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"> </td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="usage"><span class="LITERAL">public long getLastAccessedTime()</span></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+Gibt den letzten Zeitpunkt zur&uuml;ck, zu dem der Client bei dieser Sitzung eine Anforderung gesendet hat, und zwar in Millisekunden seit der Epoche (1. Januar 1970, 00:00:00 GMT).
+</p></td>
+</tr>
+</table>
+</div>
+<div id="getMaxInactiveInterval">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">getMaxInactiveInterval()</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"> </td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="usage"><span class="LITERAL">public int getMaxInactiveInterval()</span></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+Gibt in Sekunden den l&auml;ngsten Zeitraum zur&uuml;ck, in dem der Servlet-Container diese Sitzung zwischen Clientzugriffen als aktiv beibeh&auml;lt.
+</p></td>
+</tr>
+</table>
+</div>
+<div id="invalidate">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">invalidate()</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"> </td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="usage"><span class="LITERAL">public void invalidate()</span></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+Hebt diese Sitzung auf und l&ouml;st die Bindung aller Objekte, die mit der Sitzung verbunden sind. Dabei werden die Methoden <span class="LITERAL">valueUnbound()</span> von allen Objekten in der Sitzung aufgerufen, die die Schnittstelle <span class="LITERAL">HttpSessionBindingListener</span> implementieren.
+</p></td>
+</tr>
+</table>
+</div>
+<div id="isNew">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">isNew()</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"> </td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="usage"><span class="LITERAL">public boolean isNew()</span></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+Gibt <span class="LITERAL">true</span> zur&uuml;ck, wenn vom Client noch keine Anforderung f&uuml;r diese Sitzung empfangen wurde.
+</p></td>
+</tr>
+</table>
+</div>
+<div id="removeAttribute">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">removeAttribute()</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"> </td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="usage"><span class="LITERAL">public void removeAttribute(String name)</span></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+Entfernt das gebundene Objekt mit dem angegebenen Namen aus dieser Sitzung.
+</p></td>
+</tr>
+</table>
+</div>
+<div id="setAttribute">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">setAttribute()</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"> </td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="usage"><span class="LITERAL">public void setAttribute(String name, Object attribute)</span></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+Weist das angegebene Objekt dieser Sitzung zu, wobei der angegebene Name verwendet wird.
+</p></td>
+</tr>
+</table>
+</div>
+<div id="setMaxInactiveInterval">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">setMaxInactiveInterval()</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"> </td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="usage"><span class="LITERAL">public void setMaxInactiveInterval(int interval)</span></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+Gibt in Sekunden den Zeitraum an, der zwischen Clientanforderungen auftreten kann, bevor der Servlet-Container die Sitzung aufhebt.
+</p></td>
+</tr>
+</table>
+</div>
+
+
+<div id="getSessionContext">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">getSessionContext()</td>
+<td valign="top" class="COMPATIBILITY">Veraltet</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"> </td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="usage"><span class="LITERAL">public HttpSessionContext getSessionContext()</span></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+Ab der Servlet 2.1-API ist diese Methode ersatzlos gestrichen.
+</p></td>
+</tr>
+</table>
+</div>
+<div id="getValue">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">getValue()</td>
+<td valign="top" class="COMPATIBILITY">Veraltet</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"> </td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="usage"><span class="LITERAL">public Object getValue(String name)</span></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+Ab der Servlet 2.2-API wird diese Methode durch <span class="LITERAL">getAttribute(String)</span> ersetzt.
+</p></td>
+</tr>
+</table>
+</div>
+<div id="getValueNames">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">getValueNames()</td>
+<td valign="top" class="COMPATIBILITY">Veraltet</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"> </td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="usage"><span class="LITERAL">public String[] getValueNames()</span></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+Ab der Servlet 2.2-API wird diese Methode durch <span class="LITERAL">getAttributeNames()</span> ersetzt.
+</p></td>
+</tr>
+</table>
+</div>
+<div id="putValue">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">putValue()</td>
+<td valign="top" class="COMPATIBILITY">Veraltet</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"> </td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="usage"><span class="LITERAL">public void putValue(String name, Object value)</span></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+Ab der Servlet 2.2-API wird diese Methode durch <span class="LITERAL">setAttribute(String, Object)</span> ersetzt.
+</p></td>
+</tr>
+</table>
+</div>
+<div id="removeValue">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">removeValue()</td>
+<td valign="top" class="COMPATIBILITY">Veraltet</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"> </td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="usage"><span class="LITERAL">public void removeValue(String name)</span></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+Ab der Servlet 2.2-API wird diese Methode durch <span class="LITERAL">setAttribute(String, Object)</span> ersetzt.
+</p></td>
+</tr>
+</table>
+</div>
+</body>
+</html>

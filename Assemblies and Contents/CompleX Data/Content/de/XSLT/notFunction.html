@@ -1,0 +1,173 @@
+<html>
+<head>
+<title>not()-Funktion</title>
+</head>
+<body bgcolor="#FFFFFF" text="#000000">
+<div id="Beschreibung">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">not()-Funktion</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description">
+Diese Funktion liefert die Negation ihres Arguments. Ist das Argument kein Boolescher Wert, wird es in einen Booleschen Wert konvertiert, und zwar gem&auml;&szlig; der Regeln, die in der Beschreibung der Funktion <span class="LITERAL">boolean()</span> erl&auml;utert werden.</td></tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Eingaben</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<p>Ein Boolescher Wert oder, allgemeiner gesagt, ein XPath-Ausdruck, der einen Booleschen Wert ergibt.</p>
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Ausgabe</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<p>
+<span class="LITERAL">false</span>, wenn der Eingabeparameter <span class="LITERAL">true</span> ist und <span class="LITERAL">true</span>, wenn der Eingabeparameter <span class="LITERAL">false</span> ist.</p>
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Definition</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<p>XPath-Abschnitt 4.3, Boolesche Funktionen</p>
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Beispiel</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<p>Um die Funktion <span class="LITERAL">not()</span> zu veranschaulichen, werden dasselbe Stylesheet und dasselbe XML-Dokument wie in der Beschreibung der Funktion <span class="LITERAL">boolean()</span> verwendet. Hier das XML-Dokument:</p>
+<span class="PROGRAMLISTING"><pre>
+&lt;?xml version="1.0"?&gt;
+&lt;test&gt;
+&lt;p&gt;This is a test XML document used by several 
+of our sample stylesheets.&lt;/p&gt;
+&lt;question&gt;
+&lt;text&gt;When completed, the Eiffel Tower was the 
+tallest building in the world.&lt;/text&gt;
+&lt;true&gt;Yes!  The Eiffel Tower was the world's 
+tallest building until 1932, when
+New York's Empire State Building opened. &lt;/true&gt;
+&lt;false&gt;No, the Eiffel Tower was the world's 
+tallest building for over 30 years.&lt;/false&gt;
+&lt;/question&gt;
+&lt;/test&gt;</pre></span>
+<p>Dieses Dokument wird mit dem folgenden Stylesheet verarbeitet, das die Funktion <span class="LITERAL">not()</span> dazu verwendet, alle <span class="LITERAL">boolean()</span>-Funktionsaufrufe umzukehren:</p>
+<span class="PROGRAMLISTING"><pre>
+&lt;?xml version="1.0"?&gt;
+&lt;xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform"&gt;
+
+  &lt;xsl:output method="text"/&gt;
+
+  &lt;xsl:variable name="newline"&gt;
+&lt;xsl:text&gt;
+&lt;/xsl:text&gt;
+  &lt;/xsl:variable&gt;
+
+  &lt;xsl:template match="/"&gt;
+    &lt;xsl:value-of select="$newline"/&gt;
+    &lt;xsl:text&gt;Tests of the not() function:&lt;/xsl:text&gt;
+
+    &lt;xsl:value-of select="$newline"/&gt;
+    &lt;xsl:value-of select="$newline"/&gt;
+    &lt;xsl:choose&gt;
+      &lt;xsl:when test="not(boolean(true()))"&gt;
+        &lt;xsl:text&gt;   "not(boolean(true()))"   returned true!&lt;/xsl:text&gt;
+      &lt;/xsl:when&gt;
+      &lt;xsl:otherwise&gt;
+        &lt;xsl:text&gt;   "not(boolean(true()))"   returned false!&lt;/xsl:text&gt;
+      &lt;/xsl:otherwise&gt;
+    &lt;/xsl:choose&gt;
+
+    &lt;xsl:value-of select="$newline"/&gt;
+    &lt;xsl:choose&gt;
+      &lt;xsl:when test="not(boolean(true))"&gt;
+        &lt;xsl:text&gt;   "not(boolean(true))"     returned true!&lt;/xsl:text&gt;
+      &lt;/xsl:when&gt;
+      &lt;xsl:otherwise&gt;
+        &lt;xsl:text&gt;   "not(boolean(true))"     returned false!&lt;/xsl:text&gt;
+      &lt;/xsl:otherwise&gt;
+    &lt;/xsl:choose&gt;
+
+    &lt;xsl:value-of select="$newline"/&gt;
+    &lt;xsl:choose&gt;
+      &lt;xsl:when test="not(boolean('false'))"&gt;
+        &lt;xsl:text&gt;   "not(boolean('false'))"  returned true!&lt;/xsl:text&gt;
+      &lt;/xsl:when&gt;
+      &lt;xsl:otherwise&gt;
+        &lt;xsl:text&gt;   "not(boolean('false'))"  returned false!&lt;/xsl:text&gt;
+      &lt;/xsl:otherwise&gt;
+    &lt;/xsl:choose&gt;
+
+    &lt;xsl:value-of select="$newline"/&gt;
+    &lt;xsl:choose&gt;
+      &lt;xsl:when test="not(boolean('7'))"&gt;
+        &lt;xsl:text&gt;   "not(boolean('7'))"      returned true!&lt;/xsl:text&gt;
+      &lt;/xsl:when&gt;
+      &lt;xsl:otherwise&gt;
+        &lt;xsl:text&gt;   "not(boolean('7'))"      returned false!&lt;/xsl:text&gt;
+      &lt;/xsl:otherwise&gt;
+    &lt;/xsl:choose&gt;
+
+    &lt;xsl:value-of select="$newline"/&gt;
+    &lt;xsl:choose&gt;
+      &lt;xsl:when test="not(boolean(/true))"&gt;
+        &lt;xsl:text&gt;   "not(boolean(/true))"    returned true!&lt;/xsl:text&gt;
+      &lt;/xsl:when&gt;
+      &lt;xsl:otherwise&gt;
+        &lt;xsl:text&gt;   "not(boolean(/true))"    returned false!&lt;/xsl:text&gt;
+      &lt;/xsl:otherwise&gt;
+    &lt;/xsl:choose&gt;
+
+    &lt;xsl:value-of select="$newline"/&gt;
+    &lt;xsl:choose&gt;
+      &lt;xsl:when test="not(boolean(//true))"&gt;
+        &lt;xsl:text&gt;   "not(boolean(//true))"   returned true!&lt;/xsl:text&gt;
+      &lt;/xsl:when&gt;
+      &lt;xsl:otherwise&gt;
+        &lt;xsl:text&gt;   "not(boolean(//true))"   returned false!&lt;/xsl:text&gt;
+      &lt;/xsl:otherwise&gt;
+    &lt;/xsl:choose&gt;
+  &lt;/xsl:template&gt;
+
+&lt;/xsl:stylesheet&gt;</pre></span>
+<p>Hier die Ergebnisse:</p>
+<span class="PROGRAMLISTING"><pre>
+
+Tests of the not() function:
+
+   "not(boolean(true()))"   returned false!
+   "not(boolean(true))"     returned true!
+   "not(boolean('false'))"  returned false!
+   "not(boolean('7'))"      returned false!
+   "not(boolean(/true))"    returned true!
+   "not(boolean(//true))"   returned false!
+</pre></span>
+<p>Wie erwartet, sind diese Ergebnisse das genau Gegenteil der Ergebnisse, die beim Testen der Funktion <span class="LITERAL">boolean()</span> entstanden sind.</p>
+</td>
+</tr>
+</table>
+</div>
+</body>
+</html>

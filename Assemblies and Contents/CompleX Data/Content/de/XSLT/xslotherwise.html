@@ -1,0 +1,200 @@
+<html>
+<head>
+<title>&lt;xsl:otherwise&gt;</title>
+</head>
+<body bgcolor="#FFFFFF" text="#000000">
+<div id="Beschreibung">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">&lt;xsl:otherwise&gt;</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description">
+Diese Anweisung definiert den <span class="LITERAL">else</span>- oder <span class="LITERAL">default</span>-Fall in einem <span class="LITERAL">&lt;xsl:choose&gt;</span>-Element. Dieses Element kommt immer innerhalb eines <span class="LITERAL">&lt;xsl:choose&gt;</span>-Elements vor und muss immer als Letztes erscheinen.</td></tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Kategorie</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<p>Untergeordnete Anweisung (<span class="LITERAL">&lt;xsl:otherwise&gt;</span> kommt immer als Teil eines <span class="LITERAL">&lt;xsl:choose&gt;</span>-Elements vor)</p>
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Obligatorische Attribute</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<p>Keine</p>
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Optionale Attribute</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<p>Keine</p>
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Inhalt</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<p>Eine Vorlage.</p>
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">&Uuml;bergeordnetes Element</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<p><span class="LITERAL">&lt;xsl:choose&gt;</span></p>
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Definition</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<p>XSLT-Abschnitt 9.2, Bedingte Verarbeitung mit <span class="LITERAL">xsl:choose</span></p>
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Beispiel</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<p>Als Beispiel wird ein <span class="LITERAL">&lt;xsl:choose&gt;</span>-Element verwendet, das einen Satz an Werten f&uuml;r die Hintergrundfarbe einer Zelle in einer HTML-Tabelle durchschreitet. Als Eingabe dient das folgende XML-Dokument:</p>
+<span class="PROGRAMLISTING"><pre>
+&lt;?xml version="1.0"?&gt;
+&lt;list xml:lang="en"&gt;
+  &lt;title&gt;Albums I've bought recently:&lt;/title&gt;
+  &lt;listitem&gt;The Sacred Art of Dub&lt;/listitem&gt;
+  &lt;listitem&gt;Only the Poor Man Feel It&lt;/listitem&gt;
+  &lt;listitem&gt;Excitable Boy&lt;/listitem&gt;
+  &lt;listitem xml:lang="sw"&gt;Aki Special&lt;/listitem&gt;
+  &lt;listitem xml:lang="en-gb"&gt;Combat Rock&lt;/listitem&gt;
+  &lt;listitem xml:lang="zu"&gt;Talking Timbuktu&lt;/listitem&gt;
+  &lt;listitem xml:lang="jz"&gt;The Birth of the Cool&lt;/listitem&gt;
+&lt;/list&gt;</pre></span>
+<p>Es folgt das Stylesheet, das <span class="LITERAL">&lt;xsl:choose&gt;</span> innerhalb eines <span class="LITERAL">&lt;xsl:attribute&gt;</span>-Elements verwendet, um den korrekten Wert f&uuml;r das Attribut <span class="LITERAL">bgcolor</span> zu bestimmen. Das Stylesheet enth&auml;lt ein <span class="LITERAL">&lt;xsl:otherwise&gt;</span>-Element, das f&uuml;r jedes vierte <span class="LITERAL">&lt;listitem&gt;</span> im Ausgangsdokument den Wert <span class="LITERAL">whitesmoke</span> erzeugt.</p>
+<span class="PROGRAMLISTING"><pre>
+&lt;?xml version="1.0"?&gt;
+&lt;xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform"&gt;
+
+  &lt;xsl:output method="html"/&gt;
+
+  &lt;xsl:template match="/"&gt;
+    &lt;html&gt;
+      &lt;head&gt;
+        &lt;title&gt;
+          &lt;xsl:value-of select="list/title"/&gt;
+        &lt;/title&gt;
+      &lt;/head&gt;
+      &lt;body&gt;
+        &lt;h1&gt;&lt;xsl:value-of select="list/title"/&gt;&lt;/h1&gt;
+        &lt;table border="1"&gt;
+          &lt;xsl:for-each select="list/listitem"&gt;
+            &lt;tr&gt;
+              &lt;td&gt;
+                &lt;xsl:attribute name="bgcolor"&gt;
+                  &lt;xsl:choose&gt;
+                    &lt;xsl:when test="@bgcolor"&gt;
+                      &lt;xsl:value-of select="@bgcolor"/&gt;
+                    &lt;/xsl:when&gt;
+                    &lt;xsl:when test="position() mod 4 = 0"&gt;
+                      &lt;xsl:text&gt;papayawhip&lt;/xsl:text&gt;
+                    &lt;/xsl:when&gt;
+                    &lt;xsl:when test="position() mod 4 = 1"&gt;
+                      &lt;xsl:text&gt;mintcream&lt;/xsl:text&gt;
+                    &lt;/xsl:when&gt;
+                    &lt;xsl:when test="position() mod 4 = 2"&gt;
+                      &lt;xsl:text&gt;lavender&lt;/xsl:text&gt;
+                    &lt;/xsl:when&gt;
+                    &lt;xsl:otherwise&gt;
+                      &lt;xsl:text&gt;whitesmoke&lt;/xsl:text&gt;
+                    &lt;/xsl:otherwise&gt;
+                  &lt;/xsl:choose&gt;
+                &lt;/xsl:attribute&gt;
+                &lt;xsl:value-of select="."/&gt;
+              &lt;/td&gt;
+            &lt;/tr&gt;
+          &lt;/xsl:for-each&gt;
+        &lt;/table&gt;
+      &lt;/body&gt;
+    &lt;/html&gt;
+  &lt;/xsl:template&gt;
+
+&lt;/xsl:stylesheet&gt;</pre></span>
+<p>Unten sehen Sie das generierte HTML-Dokument. Beachten Sie, dass jede vierte Zeile die Hintergrundfarbe <span class="LITERAL">whitesmoke</span> besitzt. Dieser Wert wurde durch das <span class="LITERAL">&lt;xsl:otherwise&gt;</span>-Element erzeugt. </p>
+<span class="PROGRAMLISTING"><pre>
+&lt;html&gt;
+&lt;head&gt;
+&lt;META http-equiv="Content-Type" content="text/html; charset=UTF-8"&gt;
+&lt;title&gt;Albums I've bought recently:&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;h1&gt;Albums I've bought recently:&lt;/h1&gt;
+&lt;table border="1"&gt;
+&lt;tr&gt;
+&lt;td bgcolor="mintcream"&gt;The Sacred Art of Dub&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td bgcolor="lavender"&gt;Only the Poor Man Feel It&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td bgcolor="whitesmoke"&gt;Excitable Boy&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td bgcolor="papayawhip"&gt;Aki Special&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td bgcolor="mintcream"&gt;Combat Rock&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td bgcolor="lavender"&gt;Talking Timbuktu&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td bgcolor="whitesmoke"&gt;The Birth of the Cool&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/table&gt;
+&lt;/body&gt;
+&lt;/html&gt;</pre></span>
+
+<!--<?troff .Nd 10?>-->
+
+<p>Wie das HTML-Dokument in einem Browser angezeigt wird, sehen Sie in <link linkend="xslt-appa-a7">Abbildung A-7</link>.</p>
+<figure label="A-7" id="xslt-appa-a7">
+        <p class="TITLE">Dokument-Cycling unter verschiedenen Hintergrundfarben</p>
+        <graphic depth="249" width="455" fileref="figs/xslt.aa07.gif"/></figure>
+</td>
+</tr>
+</table>
+</div>
+</body>
+</html>

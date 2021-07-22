@@ -1,0 +1,188 @@
+<html>
+<head>
+<title>system-property()-Funktion</title>
+</head>
+<body bgcolor="#FFFFFF" text="#000000">
+<div id="Beschreibung">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">system-property()-Funktion</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description">
+Diese Funktion gibt den Wert der im Argument genannten Systemeigenschaft zur&uuml;ck.</td></tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Beschreibung</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<p>
+  Gem&auml;&szlig; der Definition m&uuml;ssen alle XSLT-Prozessoren die folgenden drei Systemeigenschaften unterst&uuml;tzen:
+</p>
+<dl>
+<dt>
+<span class="LITERAL">
+xsl:version
+</span>
+</dt>
+<dd>
+Eine Gleitpunkzahl, die die vom XSLT-Prozessor implementierte XSLT-Version repr&auml;sentiert. Momentan ist <span class="LITERAL">
+1.0
+</span> die einzige von XSLT-Prozessoren unterst&uuml;tzte offizielle XSLT-Version.
+<P></p>
+<dt>
+<span class="LITERAL">
+xsl:vendor
+</span>
+</dt>
+<dd>
+Ein String, der den Hersteller des XSLT-Prozessors bezeichnet.
+<P></p>
+<dt>
+<span class="LITERAL">
+xsl:vendor-url
+</span>
+</dt>
+<dd>
+Ein String mit der URL, die den XSLT-Prozessor-Hersteller identifiziert. Dieser String entspricht in der Regel der Websiteadresse des Herstellers.
+<P></p>
+</dl>
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Eingaben</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<!--<?troff .hw vendor?>-->
+<p>  
+Die XSLT-1.0-Spezifikation definiert drei Eigenschaften: <span class="LITERAL">xsl:version</span>, <span class="LITERAL">xsl:vendor</span> und <span class="LITERAL">xsl:vendor-url</span>. Diese Eigenschaften m&uuml;ssen von allen XSLT-Prozessoren unterst&uuml;tzt werden. Von bestimmten Prozessoren m&ouml;gen auch noch andere Eigenschaften unterst&uuml;tzt werden, schlagen Sie dies in der Dokumentation Ihres XSLT-Prozessors nach.</p>
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Ausgabe</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<p>Der Wert der abgefragten Eigenschaft. </p>
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Definition</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<p>XSLT-Abschnitt 12.4, Diverse zus&auml;tzliche Funktionen </p>
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Beispiel</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<p>Es folgt ein Stylesheet, das verschiedene Eigenschaften des XSLT-Prozessors abfragt.</p>
+<span class="PROGRAMLISTING"><pre>
+&lt;?xml version="1.0"?&gt;
+&lt;xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform"&gt;
+  
+  &lt;xsl:output method="text"/&gt;
+
+  &lt;xsl:variable name="newline"&gt;
+&lt;xsl:text&gt;
+&lt;/xsl:text&gt;
+  &lt;/xsl:variable&gt;
+
+  &lt;xsl:template match="/"&gt;
+    &lt;xsl:text&gt;xsl:version = "&lt;/xsl:text&gt;
+    &lt;xsl:value-of select="system-property('xsl:version')"/&gt;
+    &lt;xsl:text&gt;"&lt;/xsl:text&gt;&lt;xsl:value-of select="$newline"/&gt;
+    &lt;xsl:text&gt;xsl:vendor = "&lt;/xsl:text&gt;
+    &lt;xsl:value-of select="system-property('xsl:vendor')"/&gt;
+    &lt;xsl:text&gt;"&lt;/xsl:text&gt;&lt;xsl:value-of select="$newline"/&gt;
+    &lt;xsl:text&gt;xsl:vendor-url = "&lt;/xsl:text&gt;
+<!--<?troff .Nd 10?>-->
+    &lt;xsl:value-of select="system-property('xsl:vendor-url')"/&gt;
+    &lt;xsl:text&gt;"&lt;/xsl:text&gt;&lt;xsl:value-of select="$newline"/&gt;
+  &lt;/xsl:template&gt;
+
+&lt;/xsl:stylesheet&gt;</pre></span>
+
+<p>Das Stylesheet wird &uuml;ber den XSLT-Prozessor Xalan anhand des folgenden Befehls auf ein XML-Dokument angewendet:</p>
+
+<span class="PROGRAMLISTING"><pre>
+java org.apache.xalan.xslt.Process -in test1.xml -xsl systemproperties.xsl</pre></span>
+
+<p>Die Ergebnisse sind wie folgt:</p>
+<span class="PROGRAMLISTING"><pre>
+xsl:version = "1"
+xsl:vendor = "Apache Software Foundation"
+xsl:vendor-url = "http://xml.apache.org/xalan"
+</pre></span>
+
+<p>Der folgende Befehl erzeugt die Ergebnisse &uuml;ber Michael Kays XSLT-Prozessor Saxon:</p>
+
+<span class="PROGRAMLISTING"><pre>
+java com.icl.saxon.StyleSheet test1.xml systemproperties.xsl</pre></span>
+
+<p>Hier die Ergebnisse:</p>
+
+<span class="PROGRAMLISTING"><pre>
+xsl:version = "1"                                                      
+xsl:vendor = "SAXON 6.4.3 from Michael Kay"                     
+xsl:vendor-url = "http://saxon.sourceforge.net"</pre></span>
+
+<p>Auch Oracles XML-Parser wurde getestet:</p>
+
+<span class="PROGRAMLISTING"><pre>
+java oracle.xml.parser.v2.oraxsl test1.xml systemproperties.xsl</pre></span>
+
+<p>Hier die Ergebnisse:</p>
+<span class="PROGRAMLISTING"><pre>
+xsl:version = "1"
+xsl:vendor = "Oracle Corporation."
+xsl:vendor-url = "http://www.oracle.com"</pre></span>
+<p>Hier der Befehl f&uuml;r James Clarks XSLT-Prozessor XT:</p> 
+
+<span class="PROGRAMLISTING"><pre>
+java com.jclark.xsl.sax.Driver test1.xml systemproperties.xsl</pre></span>
+
+<p>Hier die Ergebnisse:</p>
+<span class="PROGRAMLISTING"><pre>
+xsl:version = "1"
+xsl:vendor = "James Clark"
+xsl:vendor-url = "http://www.jclark.com/"
+</pre></span>
+<p>Schlie&szlig;lich und endlich Microsofts XSLT-Prozessor:</p>
+
+<span class="PROGRAMLISTING"><pre>msxsl test1.xml systemproperties.xsl</pre></span> <!--<?troff .Nd 10?>-->
+<p>Hier die Ergebnisse:</p>
+<span class="PROGRAMLISTING"><pre>
+xsl:version = "1"
+xsl:vendor = "Microsoft"
+xsl:vendor-url = "http://www.microsoft.com"</pre></span>
+
+</td>
+</tr>
+</table>
+</div>
+</body>
+</html>

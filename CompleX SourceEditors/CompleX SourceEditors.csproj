@@ -1,0 +1,344 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{17C70355-C3E8-4B87-BEF4-1D7299B969F9}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CompleX_SourceEditors</RootNamespace>
+    <AssemblyName>CompleX SourceEditors</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation />
+    <TargetFrameworkProfile />
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\bin\Debug\Modules\ISourceEdit\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\bin\Release\Modules\ISourceEdit\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Common.Library">
+      <HintPath>..\Assemblies and Contents\Common.Library.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Composite">
+      <HintPath>..\Assemblies and Contents\CompositeWPF\Microsoft.Practices.Composite.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Composite.Presentation">
+      <HintPath>..\Assemblies and Contents\CompositeWPF\Microsoft.Practices.Composite.Presentation.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsFormsIntegration" />
+    <Reference Include="XSL.Library.RegularExpressions">
+      <HintPath>..\Assemblies and Contents\XSL.Library.RegularExpressions.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\SolutionInfo.cs">
+      <Link>Properties\SolutionInfo.cs</Link>
+    </Compile>
+    <Compile Include="CodeEditor\CompletionData\BaseCompletionData.cs" />
+    <Compile Include="CodeEditor\FoldingStrategies\BraceFoldingStrategy.cs" />
+    <Compile Include="CodeEditor\BracketPair.cs" />
+    <Compile Include="CodeEditor\CodeEditor.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CodeEditor\CodeEditor.Designer.cs">
+      <DependentUpon>CodeEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CodeEditor\CodeEditorControl.xaml.cs">
+      <DependentUpon>CodeEditorControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CodeEditor\CompletionData\CompletionData.cs" />
+    <Compile Include="CodeEditor\FoldingStrategies\MultiFoldingStrategy.cs" />
+    <Compile Include="CodeEditor\FoldingStrategies\RegionFoldingStrategy.cs" />
+    <Compile Include="CodeEditor\FoldingStrategies\SelectionFoldingStrategy.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Texts.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Texts.resx</DependentUpon>
+    </Compile>
+    <Compile Include="XSLEditor\FindReplaceDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="XSLEditor\FindReplaceDialog.Designer.cs">
+      <DependentUpon>FindReplaceDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XSLEditor\IntellisenseMgr.cs" />
+    <Compile Include="XSLEditor\RegularlyExpressYourself.cs" />
+    <Compile Include="XSLEditor\Transform\TransformDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="XSLEditor\Transform\TransformDialog.Designer.cs">
+      <DependentUpon>TransformDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XSLEditor\Transform\TransformResults.cs" />
+    <Compile Include="XSLEditor\Transform\TransformSettings.cs" />
+    <Compile Include="XSLEditor\Transform\TransformUtility.cs" />
+    <Compile Include="XSLEditor\Transform\XSLTemplateParams.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="XSLEditor\Transform\XSLTemplateParams.Designer.cs">
+      <DependentUpon>XSLTemplateParams.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XSLEditor\XSLEditor.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="XSLEditor\XSLEditor.designer.cs">
+      <DependentUpon>XSLEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XSLEditor\XSLEntities.cs" />
+    <Compile Include="XSLEditor\XSLRichTextBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="XSLEditor\XslSyntaxSettings.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CompleX Inserters\CompleX Inserters.csproj">
+      <Project>{F1DE0BF4-BCCF-47C0-A6F9-BF4310FFF62F}</Project>
+      <Name>CompleX Inserters</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CompleX Library\CompleX Library.csproj">
+      <Project>{268EA5A6-4530-4550-B90D-0CB13834266A}</Project>
+      <Name>CompleX Library</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CompleX Settings\CompleX Settings.csproj">
+      <Project>{38140D21-82E5-4958-937B-B90DE9178E84}</Project>
+      <Name>CompleX Settings</Name>
+      <Private>False</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\CompleX Types\CompleX Types.csproj">
+      <Project>{A6AC02F5-2519-418D-AC9B-0D750CFED944}</Project>
+      <Name>CompleX Types</Name>
+      <Private>False</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\CompleX\CompleX Editor.csproj">
+      <Project>{01AACE3D-EA5F-4FC6-A8E1-F3AC880FB4CD}</Project>
+      <Name>CompleX Editor</Name>
+      <Private>False</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\ICSharpCode.AvalonEdit\ICSharpCode.AvalonEdit.csproj">
+      <Project>{6C55B776-26D4-4DB3-A6AB-87E783B2F3D1}</Project>
+      <Name>ICSharpCode.AvalonEdit</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="CodeEditor\CodeEditor.resx">
+      <DependentUpon>CodeEditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Texts.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Texts.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XSLEditor\FindReplaceDialog.resx">
+      <DependentUpon>FindReplaceDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XSLEditor\Transform\TransformDialog.resx">
+      <DependentUpon>TransformDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XSLEditor\Transform\XSLTemplateParams.resx">
+      <DependentUpon>XSLTemplateParams.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XSLEditor\XSLEditor.resx">
+      <DependentUpon>XSLEditor.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="XSLEditor\ClassDiagram.cd" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="__Resources\1.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="__Resources\binoc.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="__Resources\copy.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="__Resources\cut.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="__Resources\debug.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="__Resources\find in doc.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="__Resources\find_arr.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="__Resources\find_doc.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="__Resources\find_doc.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="__Resources\intellisense.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="__Resources\JOB1.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="__Resources\JOB11.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="__Resources\KEY04.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="__Resources\networking.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="__Resources\NEW16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="__Resources\new.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="__Resources\NewXSLTemplate.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="__Resources\OBJECT.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="__Resources\open.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="__Resources\open.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="__Resources\PAD_ILL.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="__Resources\paste.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="__Resources\pen.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="__Resources\print2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="__Resources\Print Preview.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="__Resources\print.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="__Resources\refresh.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="__Resources\run.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="__Resources\save.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="__Resources\saveas2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="__Resources\Tasks.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="__Resources\tick.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="__Resources\wordwrap.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="__Resources\xsl2.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="__Resources\xsl.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="__Resources\xsl2.ico" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Page Include="CodeEditor\CodeEditorControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\event.png" />
+    <None Include="Resources\property.png" />
+    <None Include="Resources\tag.png" />
+    <None Include="Resources\hyperlink_16.png" />
+    <None Include="Resources\javascript.png" />
+    <None Include="Resources\color.png" />
+    <None Include="Resources\func.png" />
+    <None Include="Resources\ImgOpenWindowsFolder.png" />
+    <None Include="Resources\exportieren.png" />
+    <None Include="Resources\html16.png" />
+    <Content Include="__Resources\Delete.png" />
+    <Content Include="__Resources\Redo.png" />
+    <Content Include="__Resources\Undo.png" />
+    <Content Include="__Resources\WordWrap.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

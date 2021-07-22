@@ -1,0 +1,102 @@
+<html>
+<link rel="stylesheet" href="josh.css">
+<body bgcolor="#FFFFFF">
+
+		<div id="Beschreibung">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">border-width</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">4</span> IE <span class="emphasis">4</span> CSS <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Vererbt: Nein</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Ein Kurzattribut, mit dem mehrere R&auml;nder auf die gleiche oder unterschiedliche Breiten gesetzt werden k&ouml;nnen. Sie k&ouml;nnen bis zu vier durch Leerzeichen getrennte Breitenwerte definieren. Die Anzahl der Werte bestimmt, welchen Seiten die jeweilige Breite zugewiesen wird.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="csssyntax"><span class="title">CSS-Syntax</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>border-width: thin | medium | thick | <span class="replaceable">length</span> {1,4}</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+				</tr>
+				<tr>
+					<td><p>Drei Konstanten &#8211; <span class="literal">thin</span> | <span class="literal">medium</span> | <span class="literal">thick</span> &#8211; erm&ouml;glichen es dem Browser, exakt zu definieren, wie viele Pixel zur Darstellung des Rahmens verwendet werden sollen. Noch pr&auml;ziser l&auml;sst sich dies mit L&auml;ngenwerten definieren (siehe hierzu die Diskussion &uuml;ber L&auml;ngenwerte zu Beginn dieses Kapitels).</p><p>Dieses Attribut akzeptiert einen, zwei, drei oder vier durch Leerzeichen getrennte <span class="replaceable">borderWidth</span>-Werte, je nachdem, wie viele bzw. welche Rahmenseiten Sie mit einer bestimmten Breite versehen wollen. Die Wertanzahl und -positionen werden wie folgt interpretiert:</p>
+						<table border="1"><tbody><tr><th>Anzahl der Werte</th><th>Effekt</th></tr>
+								<tr><td>1</td><td>Alle vier Rahmenseiten werden auf den Wert gesetzt.</td>
+								</tr>
+								<tr><td>2</td><td>Obere und untere Rahmenseite werden auf den ersten Wert gesetzt, rechte und linke Rahmenseite auf den zweiten Wert.</td>
+								</tr>
+								<tr><td>3</td><td>Obere Rahmenseite wird auf den ersten Wert gesetzt, linke und rechte Rahmenseite auf den zweiten, untere Rahmenseite auf den dritten Wert.</td>
+								</tr>
+								<tr><td>4</td><td>Obere, rechte, untere und linke Rahmenseite werden auf den jeweiligen Wert gesetzt.</td>
+								</tr>
+							</tbody></table>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="initvalue"><span class="title">Anfangswert</span></td>
+				</tr>
+				<tr>
+					<td><p><span class="literal">medium</span> (IE und NN 6); <span class="literal">0</span> (NN 4)</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>h1 {border-style: ridge; border-width: 3px 5px 3px}div {border-style: solid double; border-width: 4px}</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="appliesto"><span class="title">Gilt f&uuml;r</span></td>
+				</tr>
+				<tr>
+					<td><p>Alle Elemente (in IE 4 und 5 f&uuml;r Windows jedoch nur f&uuml;r Block- und ersetzte Elemente).</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectmodelreference"><span class="title">Objektmodellreferenz</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>[window.]document.getElementById("<span class="replaceable">elementID</span>").style.borderWidth</pre>
+						</span></td>
+				</tr>
+			</table>
+		</div>
+</body>
+</html>

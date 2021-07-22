@@ -1,0 +1,142 @@
+<html xmlns:un="http://usablenet.com/namespaces/508_rules">
+   <link rel="stylesheet" href="josh.css">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   
+      <title>Detailanzeige f&uuml;r Regel: Logische Ereignisbehandler spezifizieren</title>
+      <!--
+  508/W3C Accessibility Suite OEM V2 for Macromedia Dreamweaver
+  (C) Copyright 2001-2005 UsableNet Inc. All rights reserved.
+  -->
+   </head>
+   <body bgcolor="#ffffff">
+      <div id="Beschreibung">
+         <table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+            <tr>
+               <td valign="top" nowrap="true" class="name">Logische Ereignisbehandler spezifizieren</td>
+               <td valign="top" nowrap="true" class="compatibility">&nbsp;</td>
+            </tr>
+            <tr>
+               <td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+            </tr>
+            <tr>
+               <td valign="top" align="right" nowrap="true" colspan="2" class="requirements">WAI / WCAG 1.0 Priorit&auml;t 2 Checkpunkt 9.3</td>
+            </tr>
+            <tr>
+               <td colspan="2" class="clearseparation">&nbsp;</td>
+            </tr>
+            <tr>
+               <td colspan="2" class="clearseparation">&nbsp;</td>
+            </tr>
+            <tr>
+               <td valign="top" colspan="2" class="description"><b>Problembeschreibung</b><br>
+                  
+                           
+                  <p>
+                     Die Seiten enth&auml;lt die Elemente BUTTON, INPUT, SELECT bzw. TEXTAREA, die ger&auml;teabh&auml;ngige Ereignisbehandler angeben (d. h.
+                     die Ereignisse behandeln, die mithilfe spezieller Eingabeger&auml;te generiert werden).
+                     	 
+                  </p>
+                  
+                        
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2" class="clearseparation">&nbsp;</td>
+            </tr>
+            <tr>
+               <td colspan="2" class="clearseparation">&nbsp;</td>
+            </tr>
+            <tr>
+               <td valign="top" colspan="2" class="description"><b>Probleml&ouml;sung</b>
+                  
+                           
+                  <p>
+                     Es ist normalerweise am besten, die in Formularen verwendeten Ereignisbehandler wie folgt zu ersetzen:
+                     	 
+                  </p>
+                  
+                  <ul>
+                     
+                     <li> Im Fall von INPUT ("type=submit", "type=reset" bzw. "type=image") oder BUTTON l&ouml;schen Sie Ereignisbehandler wie ONCLICK,
+                        ONDBLCLICK, ONKEYPRESS, ONKEYDOWN, ONKEYUP, ONMOUSEDOWN oder ONMOUSEUP und f&uuml;gen Sie f&uuml;r das gesamte Formular <strong>ONRESET</strong> (bei "type=reset") oder <strong>ONSUBMIT</strong> hinzu.
+                        
+                     </li>
+                     
+                     <li> Bei Kontrollk&auml;stchen und Optionsschaltern sollten Sie Behandler wie ONCLICK, ONDBLCLICK, ONKEYPRESS, ONKEYDOWN, ONKEYUP,
+                        ONMOUSEDOWN und ONMOUSEUP l&ouml;schen und zu den Codes der Kontrollk&auml;stchen und Optionsschaltern <strong>ONCHANGE</strong> hinzuf&uuml;gen.
+                        
+                     </li>
+                     
+                     <li> Bei Textfeldern ersetzen Sie Behandler wie ONCLICK, ONDBLCLICK, ONMOUSEDOWN und ONMOUSEUP durch <strong>ONFOCUS</strong>.
+                        
+                     </li>
+                     
+                     <li> Bei SELECT-Listen ersetzen Sie Behandler wie ONCLICK, ONDBLCLICK, ONMOUSEDOWN und ONMOUSEUP durch <strong>ONCHANGE</strong>.
+                        
+                     </li>
+                     
+                  </ul>
+                  
+                        
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2" class="clearseparation">&nbsp;</td>
+            </tr>
+            <tr>
+               <td colspan="2" class="clearseparation">&nbsp;</td>
+            </tr>
+            <tr>
+               <td valign="top" colspan="2" class="description"><b>Problemerkl&auml;rung</b><br>
+                  
+                           
+                  <p>
+                     Die auf einer Webseite bereitgestellte Benutzerschnittstelle sollte von jedem Benutzer erkannt und bedient werden k&ouml;nnen,
+                     und zwar unabh&auml;ngig von physischen, kognitiven oder technischen Unzul&auml;nglichkeiten. Insbesondere muss sie ger&auml;teunabh&auml;ngig
+                     sein, auf Seiten mit Formularen ist dies eine notwendige Voraussetzung.
+                     	 
+                  </p>
+                        
+                  <p>
+                             Gem&auml;&szlig; der Definition des W3C/WAI (siehe <strong>Web Content Accessibility Guidelines 1.0</strong>
+                     [http://www.w3.org/TR/WCAG10/wai-pageauth.html#gl-interim-accessibility#device-independent]
+                     ) bedeutet "ger&auml;teunabh&auml;ngig", Benutzer in der Lage sein m&uuml;ssen, unter Verwendung der unterst&uuml;tzten Ein- und Ausgabeger&auml;te
+                     ihrer Wahl und entsprechend ihren Bed&uuml;rfnissen mit einer Website umzugehen. Eingabeger&auml;te k&ouml;nnen Zeigeger&auml;te, Tastaturen,
+                     Blindenschrift-Ger&auml;te, Kopfst&auml;be, Mikrophone o. &auml;. sein. Bei Ausgabeger&auml;ten kann es sich um Monitore, Sprachgeneratoren, Blindenschrift-Ger&auml;te
+                     o. &auml;. hendeln.
+                           
+                  </p>
+                         
+                        
+                  <p>
+                             Beachten Sie hierbei, dass "ger&auml;teunabh&auml;ngige Unterst&uuml;tzung" nicht bedeutet, dass ein Browser jedes Ein- oder Ausgabeger&auml;t
+                     unterst&uuml;tzen muss. Es sollten vielmehr mehrere Ein- und Ausgabeverfahren f&uuml;r die unterst&uuml;tzten Ger&auml;te vorhanden sein. Wenn
+                     also ein Browser beispielsweise die Eingabe mit der Tastatur und der Maus unterst&uuml;tzt, dann sollte der Benutzer auch alle
+                     Funktionen verwenden k&ouml;nnen, die beide Ger&auml;te anbieten.
+                           
+                  </p>
+                         
+                        
+                  <p>
+                             Ger&auml;teunabh&auml;ngiger Zugang bedeutet, dass ein Besucher bei der Arbeit mit dem Browser oder einem Dokument seine bevorzugten
+                     Ein- und Ausgabeger&auml;ten verwenden kann. Wenn also beispielsweise ein Steuerelement eines Fomulars nur mithilfe der Maus oder
+                     eines anderen Zeigeger&auml;ts aktiviert werden kann, so kann ein Benutzer mit Sehbehinderung, Spracheingabe oder nur mit Tastatur
+                     dieses Formular nicht verwenden. Dieses Formular ist also ein Beispiel f&uuml;r Ger&auml;teabh&auml;ngigkeit, da es nur mithilfe der Maus
+                     verwerden kann.
+                           
+                  </p>
+                         
+                        
+                  <p>
+                             Allgemein gilt, dass Seiten, die eine Interaktion &uuml;ber eine Tastatureingabe erm&ouml;glichen, auch &uuml;ber sprachgesteuerte
+                     Eingabeger&auml;te oder eine Befehlszeilen-Schnittstelle zug&auml;nglich sind.
+                           
+                  </p>
+                        
+               </td>
+            </tr>
+         </table>
+      </div>
+   </body>
+</html>

@@ -1,0 +1,1229 @@
+<html>
+<head>
+<title>
+Command-Objekt</title></head>
+<body bgcolor="#FFFFFF" text="#000000">
+<div id="Beschreibung">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">Command-Objekt</td>
+<td valign="top" class="COMPATIBILITY">(Versionen 2.0, 2.1, 2.5 und 2.6)</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description">
+<synopsis>Dim object As ADODB.Command</synopsis>
+
+
+
+<p>Das Objekt Command f&uuml;hrt an einer angegebenen Datenquelle eine SQL-Anweisung, Abfrage oder gespeicherte Prozedur aus. Es kann die Struktur der Datenquelle ver&auml;ndern, gro&szlig;e Batch-Operationen ausf&uuml;hren oder Datens&auml;tze ausw&auml;hlen, die in einem Objekt Recordset zur&uuml;ckgegeben werden sollen. </p>
+
+</td></tr>
+</table>
+</div>
+<div id="Command.ActiveConnection">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+Eigenschaft Command.ActiveConnection</td>
+<td class="COMPATIBILITY">(Versionen 2.0, 2.1, 2.5 und 2.6)</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2"><span class="replaceable">Command</span>.ActiveConnection = <span class="replaceable">ConnectionString</span><br>Set <span class="replaceable">Command</span>.ActiveConnection = <span class="replaceable">ConnectionObject</span></td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+
+
+<p>Die Eigenschaft ActiveConnection gibt das Objekt Connection f&uuml;r das aktuelle Objekt Command an.</p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Datentyp</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>String oder Variante (mit dem aktuellen Objekt Connection)</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Beschreibung</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Die Eigenschaft ActiveConnection kann entweder auf einen String gesetzt werden, der einen Verbindungsstring darstellt, oder auf eine Variante, die ein ge&ouml;ffnetes Connection-Objekt darstellt.</p>
+
+
+<p>Die Eigenschaft ActiveConnection kann entweder auf einen String oder einen Verweis auf ein Connection-Objekt gesetzt werden. Bei Verwendung eines Stringwerts sollte es sich um einen g&uuml;ltigen Verbindungsstring handeln, der an die Eigenschaft ConnectionString eines Connection-Objekts &uuml;bergeben werden kann. Die Eigenschaft ActiveConnection muss vor der Ausf&uuml;hrung eines Command-Objekts gesetzt werden. Bevor sie gesetzt wird, weist die Eigenschaft ActiveConnection standardm&auml;&szlig;ig eine <span class="LITERAL">Null</span>-Objektreferenz als Wert auf.</p>
+
+
+<p>Wenn Sie die Eigenschaft ActiveConnection auf ein geschlossenes Connection-Objekt setzen, generiert ADO einen Fehler. Setzen Sie die Eigenschaft auf <span class="LITERAL">Nothing</span>, so trennt ADO die Zuordnung zwischen dem Command- und dem Connection-Objekt und gibt s&auml;mtliche der Datenquelle zugewiesene Ressourcen frei. Wenn die Eigenschaft ActiveConnection entweder auf <span class="LITERAL">Nothing</span> oder ein anderes Connection-Objekt gesetzt ist, gehen die vom Datenprovider gelieferten Parameter-Objekte in der Kollektionsklasse Parameters von Command verloren. Parameter-Objekte, die der Kollektionsklasse Parameters manuell hinzugef&uuml;gt wurden, gehen jedoch nicht verloren.</p>
+
+
+<p>Wenn Sie das dem Objekt Command zugeordnete Connection-Objekt schlie&szlig;en, wird die Eigenschaft ActiveConnection des Objekts Command automatisch auf <span class="LITERAL">Nothing</span> gesetzt.</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Siehe auch</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Eigenschaft Connection.ConnectionString</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+<div id="Command.Cancel">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+Methode Command.Cancel</td>
+<td class="COMPATIBILITY">(Versionen 2.0, 2.1, 2.5 und 2.6)</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2"><br><span class="replaceable">Command</span>.Cancel</td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+
+
+<p>Die Methode Cancel bricht den in Ausf&uuml;hrung befindlichen asynchronen Befehl ab.</p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Beschreibung</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Die Methode Cancel bricht einen in Ausf&uuml;hrung befindlichen, asynchronen Befehl ab, der mit der Methode Execute und der Option <span class="LITERAL">adAsyncExecute</span> initiiert wurde.</p>
+
+
+<p>Wenn die Methode Cancel f&uuml;r einen Befehl aufgerufen wird, der nicht mit gesetzter Option <span class="LITERAL">adAsyncExecute</span> aufgerufen wurde, tritt ein Fehler auf.</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Siehe auch</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Methode Command.Execute</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+<div id="Command.CommandStream">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+Eigenschaft Command.CommandStream</td>
+<td class="COMPATIBILITY">(Version 2.6)</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2"><br><span class="replaceable">Command</span>.CommandStream = <span class="replaceable">Stream</span></td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+
+
+<p>Die Eigenschaft CommandStream setzt oder liefert den f&uuml;r den Datenprovider spezifischen Stream, der als Eingabe f&uuml;r Command verwendet wird, so wie die Eigenschaft CommandText den Befehl f&uuml;r die Eingabe bestimmt.</p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Datentyp</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Variante</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Beschreibung</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Die Eigenschaft CommandStream dient zum Festlegen des Streams, der als Eingabe f&uuml;r Command verwendet wird. Ist diese Eigenschaft gesetzt, erh&auml;lt die Eigenschaft CommandText einen leeren String (&quot;) als Wert. Analog dazu erh&auml;lt die Eigenschaft CommandStream den Wert <span class="LITERAL">Nothing</span>, wenn CommandText gesetzt ist.</p>
+
+
+<p>Wenn Sie mit einem Command-Objekt, dessen Quelle ein Stream ist, ein Recordset-Objekt erzeugen, ergibt der Abruf der Eigenschaft Source des Objekts Recordset einen leeren String (&quot;), da sie den Wert der Eigenschaft CommandText des Objekts Command zur&uuml;ckgibt.</p>
+
+
+<p>Wenn die Eigenschaft CommandStream gesetzt ist, m&uuml;ssen Sie f&uuml;r die Eigenschaft CommandType einen der Enumerationswerte <span class="LITERAL">adCmdText</span> oder <span class="LITERAL">adCmdUnknown</span> verwenden.</p>
+
+
+<p>Das Format des Streams, der auf die Eigenschaft CommandStream gesetzt wird, ist ebenso wie das Verhalten der Methoden Command.Parameters.Refresh und Command.Prepare abh&auml;ngig vom Datenprovider.</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Siehe auch</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Eigenschaft Command.CommandText, Eigenschaft Comand.CommandDialect, Enumeration CommandTypeEnum, Recordset.Source</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+<div id="Command.CommandText">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+Eigenschaft Command.CommandText</td>
+<td class="COMPATIBILITY">(Versionen 2.0, 2.1, 2.5 und 2.6)</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2"><br><span class="replaceable">Command</span>.CommandText = <span class="replaceable">CommandText</span></td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+
+
+<p>Die Eigenschaft CommandText setzt oder liefert g&uuml;ltige SQL-Anweisungen, Tabellennamen, gespeicherte Prozedurnamen, entsprechende URLs oder einen beliebigen anderen f&uuml;r den Datenprovider erkennbaren Befehlstext.</p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Datentyp</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>String</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Beschreibung</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Die Eigenschaft CommandText enth&auml;lt einen Stringwert, der standardm&auml;&szlig;ig einen leeren String (&quot;) enth&auml;lt. Dieser String kann auf eine SQL-Anweisung, einen Tabellennamen, einen gespeicherten Prozeduraufruf, eine entsprechende URL oder einen beliebigen anderen f&uuml;r den Datenprovider erkennbaren Befehlstext gesetzt sein.</p>
+
+
+<p>Mit der Eigenschaft CommandType wird ADO mitgeteilt, welche Art von Information in der Eigenschaft CommandText gespeichert ist. Wenn die Eigenschaft CommandType auf <span class="LITERAL">adCmdText</span> gesetzt ist, weist dies den Provider darauf hin, dass die Eigenschaft CommandText einen Textbefehl als Wert enth&auml;lt, der f&uuml;r den Provider verst&auml;ndlich ist. In der Regel - aber nicht unbedingt - handelt es sich hierbei um eine SQL-Anweisung.</p>
+
+
+<p>Wenn Sie die Eigenschaft CommandText setzen, bereitet ADO die angegebene Abfrage beim ersten Aufruf einer der Methoden Execute oder Open vor, sofern die Eigenschaft Prepared des Command-Objekts auf <span class="LITERAL">True</span> gesetzt und das Objekt an eine ge&ouml;ffnete Verbindung gebunden ist.</p>
+
+
+<p>Je nach dem Wert der Eigenschaft CommandType kann ADO den Wert von CommandText &auml;ndern. Der Wert der Eigenschaft CommandText kann jederzeit abgerufen werden.</p>
+
+
+<p>Ist die Eigenschaft CommandStream auf einen Wert gesetzt, erh&auml;lt die Eigenschaft CommandText automatisch einen leeren String (&quot;) als Wert.</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Siehe auch</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Command.CommandStream, Eigenschaft Command.CommandType, Eigenschaft Command.Dialect, Eigenschaft Command.Prepared</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+<div id="Command.CommandTimeout">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+Eigenschaft Command.CommandTimeout</td>
+<td class="COMPATIBILITY">(Versionen 2.0, 2.1, 2.5 und 2.6)</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2"><br><span class="replaceable">Command</span>.CommlandTimeout = <span class="replaceable">Seconds</span></td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+
+
+<p>Die Eigenschaft CommandTimeout gibt in Sekunden an, wie lange bei der Ausf&uuml;hrung eines asynchronen Befehls gewartet wird, bevor ADO einen Fehler generiert.</p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Datentyp</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Long</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Beschreibung</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>F&uuml;r die Eigenschaft CommandTimeout besteht Lese- und Schreibberechtigung. Mit ihr k&ouml;nnen Sie festlegen, wie lange ADO auf die Ausf&uuml;hrung eines Befehls wartet. Die Einstellung der Eigenschaft CommandTimeout wird in Sekunden wiedergegeben. Ihr Wert betr&auml;gt standardm&auml;&szlig;ig 30. Eine Einstellung dieser Eigenschaft auf Null w&uuml;rde ADO erlauben, unbegrenzt auf die Ausf&uuml;hrung eines angegebenen Befehls zu warten. Bei einer Zeit&uuml;berschreitung eines Befehls wird ein Fehler generiert.</p>
+
+
+<p>Die Eigenschaft CommandTimeout des Objekts Command h&auml;ngt nicht mit der Eigenschaft CommandTimeout des Objekts Connection zusammen.</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Hinweis</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Nicht alle Provider unterst&uuml;tzen die Eigenschaft CommandTimeout. Schlagen Sie diesbez&uuml;glich in der Dokumentation zu Ihrem Datenprovider nach. Beim Entwickeln einer Anwendung mit ADO bietet es sich an, die F&auml;higkeiten des vorgesehenen Datenproviders zu &uuml;berpr&uuml;fen und, noch bevor Sie den Gro&szlig;teil des Codes geschrieben haben und es dann zu sp&auml;t ist, festzustellen, ob er Ihre Anforderungen erf&uuml;llt.</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Siehe auch</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Methode Command.Execute, Eigenschaft Connection.CommandTimeout</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+<div id="Command.CommandType">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+Eigenschaft Command.CommandType</td>
+<td class="COMPATIBILITY">(Versionen 2.0, 2.1, 2.5 und 2.6)</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2"><br><span class="replaceable">Command</span>.CommandType = <span class="replaceable">CommandTypeEnum</span></td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+
+
+<p>Die Eigenschaft CommandType gibt den aktuellen Typ des Command-Objekts an.</p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Datentyp</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>CommandTypeEnum</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Beschreibung</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Die Eigenschaft CommandType gibt an, welchen Command-Objekttyp Sie verwenden. Der Wert dieser Eigenschaft kann auf einen der Enumerationswerte f&uuml;r CommandTypeEnum gesetzt werden. Handelt es sich bei der Quelle des Objekts Command um einen Stream (mit der Eigenschaft Command.CommandStream festgelegt), muss die Eigenschaft CommandType entweder auf <span class="LITERAL">adCmdText</span> oder <span class="LITERAL">adCmdUnknown</span> gesetzt werden.</p>
+
+
+<p>Dar&uuml;ber hinaus kann der Wert ExecuteOptionEnum von <span class="LITERAL">adExecuteNoRecords</span> zur Verbesserung der Leistung mit den Konstanten <span class="LITERAL">adCmdText</span> oder <span class="LITERAL">adCmdStoredProc</span> kombiniert werden. Dieser Wert kann nicht mit der Methode Open des Objekts Recordset verwendet werden.</p>
+
+
+<p>Wenn Ihnen der aktuelle Command-Objekttyp bekannt ist, setzen Sie diese Eigenschaft manuell. Dadurch verhindern Sie, dass ADO den Typ ermittelt, und vermeiden somit unerw&uuml;nschte Verz&ouml;gerungen. Eine falsch gesetzte Eigenschaft f&uuml;hrt beim Aufruf der Methode Execute zu einem Fehler.</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Siehe auch</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Command.CommandStream, Eigenschaft Command.CommandText, Enumeration CommandTypeEnum</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+<div id="Command.CreateParameter">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+Methode Command.CreateParameter</td>
+<td class="COMPATIBILITY">(Versionen 2.0, 2.1, 2.5 und 2.6)</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2"><br>Set <span class="replaceable">parameter = command</span>.CreateParameter(<span class="replaceable">Name, Type, Direction, Size, Value</span>)</td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+
+
+<p>Die Methode CreateParameter erzeugt auf der Grundlage der gelieferten Informationen einen neuen Parameter und gibt diesen zur&uuml;ck.</p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Argumente</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<dl>
+<dt><span class="replaceable">Name</span> (String)</dt>
+<dd><p>Optional. Enth&auml;lt den gew&uuml;nschten Namen des neuen Parameters. Dieses Argument ist der Eigenschaft Parameter.Name zugeordnet.</p></dd>
+
+</dl>
+
+
+<dl>
+<dt><span class="replaceable">Type</span> (DataTypeEnum)</dt>
+<dd><p>Optional. Gibt den gew&uuml;nschten Datentyp des neuen Parameters an. Dieses Argument ist der Eigenschaft Parameter.Type zugeordnet. Der Standardwert ist <span class="LITERAL">adEmpty</span>.</p></dd>
+
+</dl>
+
+
+<dl>
+<dt><span class="replaceable">Direction</span> (ParameterDirectionEnum)</dt>
+<dd><p>Optional. Gibt die gew&uuml;nschte Richtung des neuen Parameters an. Dieses Argument ist der Eigenschaft Parameter.Direction zugeordnet. Der Standardwert ist <span class="LITERAL">adParamImput</span>.</p></dd>
+
+</dl>
+
+
+<dl>
+<dt><span class="replaceable">Size</span> (Long)</dt>
+<dd><p>Optional. Gibt die maximale L&auml;nge des neu erstellten Parameters in Zeichen oder Byte an, sofern der Parameter Type auf einen Datentyp mit variabler L&auml;nge gesetzt ist.  Dieses Argument ist der Eigenschaft Parameter.Size zugeordnet.</p></dd>
+
+</dl>
+
+
+<dl>
+<dt><span class="replaceable">Value</span> (Variante)</dt>
+<dd><p>Optional. Dient zum Initialisieren des Werts des neu erzeugten Parameter-Objekts. Dieses Argument ist der Eigenschaft Parameter.Value zugeordnet.</p></dd>
+
+</dl>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">R&uuml;ckgabewerte</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Objekt Parameter</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Beschreibung</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Mit der Methode CreateParameter des Objekts Command k&ouml;nnen Sie ein neues Objekt Parameter mit den von Ihnen angegebenen Informationen, einschlie&szlig;lich Name, Typ, Richtung, Gr&ouml;&szlig;e und Wert, erzeugen. Wenn Sie mit dieser Methode ein neues Parameter-Objekt erzeugen, wird der Parameter der Kollektion Parameters des gew&auml;hlten Objekts Command nicht automatisch hinzugef&uuml;gt. Hierf&uuml;r m&uuml;ssen Sie die Methode Append der Eigenschaft Command.Parameters verwenden.</p>
+
+
+<p>Beim Zuweisen von Datentypen variabler L&auml;nge m&uuml;ssen Sie die Eigenschaft Size zur Vermeidung von Fehlern entweder direkt beim Erzeugen oder zu einem anderen Zeitpunkt vor dem Anh&auml;ngen an die Kollektion Parameters setzen.</p>
+
+
+<p>Wenn die Eigenschaft Type entweder auf <span class="LITERAL">adNumeric</span> oder <span class="LITERAL">adDecimal</span> gesetzt ist, m&uuml;ssen f&uuml;r eine vollst&auml;ndige Angabe des Datentyps des Parameters die Eigenschaften Parameter.NumericScale und Parameter.Precision gesetzt werden. So bedeutet beispielsweise NumericScale mit dem Wert <span class="LITERAL">3</span>, dass drei Stellen nach dem Komma angegeben werden, und Precision mit dem Wert <span class="LITERAL">5</span> steht f&uuml;r eine insgesamt f&uuml;nfstellige Zahl.</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Siehe auch</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Enumeration DataTypeEnum, Enumeration ParameterDirectionEnum, Eigenschaft Parameter.Direction, Eigenschaft Parameter.Name, Eigenschaft Parameter.NumericScale, Eigenschaft Parameter.Precision, Eigenschaft Parameter.Size, Eigenschaft Parameter.Type, Eigenschaft Parameter.Value</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+<div id="Command.Dialect">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+Eigenschaft Command.Dialect</td>
+<td class="COMPATIBILITY">(Version 2.6)</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2"><br>Command.<span class="replaceable">Dialect</span> = <span class="replaceable">GUID</span></td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+
+
+<p>Die Eigenschaft Dialect wird mit den Eigenschaften CommandText und CommandStream zum Angeben der providerspezifischen Syntax der Quelle von Command verwendet.</p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Datentyp</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>String</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Beschreibung</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Der Standardwert f&uuml;r die Eigenschaft Dialect ist <span class="LITERAL">{C8B521FB-5CF3-11CE-ADE5-00AA0044773D}</span>, der ADO mitteilt, dass der Provider zu ermitteln versucht, wie die in einer der Eigenschaften CommandStream oder CommandText angegebene Quelle von Command zu interpretieren ist.</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Hinweis</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Als was die g&uuml;ltigen Werte der Eigenschaft Dialect in Abh&auml;ngigkeit von dem Wert in der Eigenschaft CommandStream oder CommandText anzugeben sind, entnehmen Sie der Dokumentation zu Ihrem Datenprovider.</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Siehe auch</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Eigenschaft Command.CommandStream, Eigenschaft Command.CommandText</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+<div id="Command.Execute">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+Methode Command.Execute</td>
+<td class="COMPATIBILITY">(Versionen 2.0, 2.1, 2.5 und 2.6)</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2"><br>Set <span class="replaceable">recordset = command</span>.Execute(<span class="replaceable">RecordsAffected, Parameters, Options</span>)<br>Set <span class="replaceable">stream = command</span>.Execute(<span class="replaceable">RecordsAffected, Parameters, Options</span>)<br><span class="replaceable">command</span>.Execute <span class="replaceable">RecordsAffected, Parameters, Options</span></td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+
+
+<p>Die Methode Execute f&uuml;hrt eine mit dem Wert der Eigenschaft Command.CommandText angegebene SQL-Anweisung, Abfrage oder gespeicherte Prozedur aus. </p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Argumente</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<dl>
+<dt><span class="replaceable">RecordsAffected</span> (Long)</dt>
+<dd><p>Optional. Vom Datenprovider mit der Anzahl der Datens&auml;tze aufgef&uuml;llt, die von der Aktion, SQL-Anweisung, Abfrage oder gespeicherten Prozedur betroffen sind (Befehle, die ein Ergebnis liefern, f&uuml;llen diesen Parameter nicht auf). </p></dd>
+
+</dl>
+
+
+<dl>
+<dt><span class="replaceable">Parameters</span> (Varianten-Array)</dt>
+<dd><p>Optional. Enth&auml;lt die an die SQL-Anweisung, Abfrage oder gespeicherte Prozedur zu &uuml;bergebenden Werte f&uuml;r die enthaltenen Parameter.</p></dd>
+
+</dl>
+
+
+<dl>
+<dt><span class="replaceable">Options</span> (Long)</dt>
+<dd><p>Optional. Ein oder mehrere CommandTypeEnum- und ExecuteOptionEnum-Werte, die bestimmen, wie der Datenprovider den Befehl behandeln muss.   Der Standardwert ist <span class="LITERAL">-1</span> (ohne gesetzte Optionen). Die CommandTypeEnum-Werte k&ouml;nnen auch mit der Eigenschaft Command.CommandType gesetzt werden.</p></dd>
+
+</dl>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">R&uuml;ckgabewerte</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<simplelist>
+
+<member>Objekt Recordset</member>
+
+</simplelist>
+
+
+<simplelist>
+
+<member>Objekt Stream</member>
+
+</simplelist>
+
+
+<simplelist>
+
+<member>Nothing</member>
+
+</simplelist>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Beschreibung</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Die Methode Execute f&uuml;hrt an einer Datenquelle eine SQL-Anweisung, Abfrage oder gespeicherte Prozedur aus. Der Befehl, der ausgef&uuml;hrt wird, h&auml;ngt von dem Wert der Eigenschaft Command.CommandText ab. Von dem Parameter Options der Methode Execute h&auml;ngt wiederum ab, wie CommandText von ADO ausgewertet wird.</p>
+
+
+<p>Wenn der Wert von CommandText bewirkt, dass die Methode Execute Datens&auml;tze aus der Datenquelle ausliest, werden diese Datens&auml;tze von der Methode Execute in der Form eines Recordset-Objekts zur&uuml;ckgegeben. Bei einem von der Methode Command.Execute zur&uuml;ckgegebenen Recordset-Objekt handelt es sich stets um einen schreibgesch&uuml;tzten Forward-only-Cursor.</p>
+
+
+<p>Enth&auml;lt der Parameter Options der Methode Execute die Werte <span class="LITERAL">adAsyncExecute</span>, <span class="LITERAL">adAsyncFetch</span> oder <span class="LITERAL">adAsyncFetchNonBlocking</span>, werden die Vorg&auml;nge im Hintergrund des Anwendungsflusses fortgesetzt. W&auml;hrend diese Vorg&auml;nge weiter laufen, kann die Methode Command.Cancel aufgerufen werden, um alle anstehenden asynchronen Vorg&auml;nge abzubrechen.</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Siehe auch</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Methode Command.Cancel, Eigenschaft Command.CommadText, Eigenschaft Command.CommandType, Enumeration CommandTypeEnum, Enumeration ExecuteOptionEnum, Enumeration ExecuteOptionEnum</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+<div id="Command.Name">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+Eigenschaft Command.Name</td>
+<td class="COMPATIBILITY">(Versionen 2.0, 2.1, 2.5 und 2.6)</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2"><br><span class="replaceable">command</span>.Name = <span class="replaceable">Name</span></td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+
+
+<p>Die Eigenschaft Name gibt den Namen des aktuellen Connection-Objekts an.</p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Datentyp</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>String</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Beschreibung</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>F&uuml;r die Eigenschaft Name f&uuml;r das Command-Objekt besteht sowohl Lese- als auch Schreibberechtigung. Mit ihr weisen Sie dem entsprechenden Command-Objekt einen Namen zu oder rufen ein Command-Objekt aus der Kollektion Commands ab. </p>
+
+
+<p>Innerhalb von Kollektionen m&uuml;ssen Namen nicht eindeutig sein.</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+<div id="Command.NamedParameters">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+Eigenschaft Command.NamedParameters</td>
+<td class="COMPATIBILITY">(Version 2.6)</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2"><br><span class="replaceable">command</span>.NamedParameters = <span class="replaceable">Boolean</span></td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+
+
+<p>Die Eigenschaft NamedParameters gibt an, ob der Datenprovider die Parameter des Command-Objekts mit Hilfe von Parametern oder in der Reihenfolge ihres Auftretens zuordnen soll.</p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Datentyp</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Boolean</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Beschreibung</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Wenn die Eigenschaft NamedParameters auf <span class="LITERAL">True</span> gesetzt ist, werden die Namenseigenschaften jedes Parameter-Objekts in den aktuellen Command-Objekten der Kollektion Parameters an den Datenprovider &uuml;bergeben, so dass sie zur Zuordnung zwischen Parametern und Werten in einer der Eigenschaften CommandText oder CommandStream eingesetzt werden k&ouml;nnen.</p>
+
+
+<p>Wenn diese Eigenschaft auf <span class="LITERAL">False</span> gesetzt ist, werden die Parameter nicht nach Namen, sondern nach der Reihenfolge ihres Auftretens zugeordnet.</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Siehe auch</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Eigenschaft Command.CommandText, Eigenschaft Command.CommandStream, Kollektion Parameters</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+<div id="Command.Parameters">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+Kollektion Command.Parameters </td>
+<td class="COMPATIBILITY">(Versionen 2.0, 2.1, 2.5 und 2.6)</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2"><br>Set <span class="replaceable">parameters</span> = <span class="replaceable">command</span>.Parameters</td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+
+
+<p>Die Kollektion Parameters gibt eine Parametersammlung f&uuml;r das angegebene Command-Objekt zur&uuml;ck.</p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Datentyp</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Parameter (Kollektionsobjekt)</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Gilt f&uuml;r</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Objekt Command</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Beschreibung</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Die Eigenschaft Parameters des Objekts Command ist schreibgesch&uuml;tzt. Sie gibt einen Verweis auf das Kollektionsobjekt Parameters zur&uuml;ck, das entweder keine oder zahlreiche die Parameter f&uuml;r den angegebenen Befehl darstellende Parameter-Objekte enthalten kann.</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+<div id="Command.Prepared">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+Eigenschaft Command.Prepared </td>
+<td class="COMPATIBILITY">(Versionen 2.0, 2.1, 2.5 und 2.6)</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2"><br><span class="replaceable">command</span>.Prepared = <span class="replaceable">Boolean</span></td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+
+
+<p>Die Eigenschaft Prepared bestimmt, ob f&uuml;r das aktuelle Command-Objekt vor dessen Ausf&uuml;hrung eine Vorbereitungsanweisung erzeugt werden soll.</p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Datentyp</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Boolean</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Beschreibung</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Weist die Eigenschaft Prepared den Wert <span class="LITERAL">True</span> auf, dann wird die mit der Eigenschaft CommandText des Objekts Command definierte Abfrage vor ihrer ersten Ausf&uuml;hrung kompiliert und gespeichert (vorbereitet). Danach greift die Anweisung Execute f&uuml;r jede Ausf&uuml;hrung auf die bereits kompilierte Version der Abfrage zur&uuml;ck. Der erste Aufruf von Execute f&auml;llt daher zwar etwas langsamer aus, alle nachfolgenden jedoch schneller.</p>
+
+
+<p>Weist die Eigenschaft Prepared den Wert <span class="LITERAL">False</span> auf, dann wird die Abfrage nicht kompiliert. Stattdessen wird sie direkt vom Command-Objekt durchgef&uuml;hrt.</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Hinweis</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Nicht alle Provider unterst&uuml;tzen die Eigenschaft Prepared. Bei einigen Providern wird ein Fehler generiert, sobald Sie die Eigenschaft Prepared auf <span class="LITERAL">True</span> setzen. Andere wiederum melden keinen Fehler und ersetzen den Wert der Eigenschaft Prepared automatisch mit <span class="LITERAL">False</span>.</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+<div id="Command.Properties">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+Kollektion Command.Properties </td>
+<td class="COMPATIBILITY">(Versionen 2.0, 2.1, 2.5 und 2.6)</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2"><br>Set <span class="replaceable">properties</span> = <span class="replaceable">command</span>.Properties</td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+
+
+<p>Die Eigenschaft Properties gibt eine Kollektionsklasse Properties mit Eigenschaften zur&uuml;ck, die sich speziell auf das Command-Objekt des aktuell verwendeten Providers beziehen. </p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Datentyp</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Eigenschaften (Kollektionsobjekt)</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Gilt f&uuml;r</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Objekt Command</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Beschreibung</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Die Kollektionsklasse Properties enth&auml;lt f&uuml;r jede spezifisch auf das Command-Objekt des Datenproviders zutreffende Eigenschaft eine Instanz der Klasse Property.</p>
+
+
+<p>Die Kollektion Properties des Objekts Command wird erst ausgef&uuml;llt, wenn die Eigenschaft ActiveConnection des Objekts Command auf ein ge&ouml;ffnetes Connection-Objekt oder einen g&uuml;ltigen Verbindungsstringwert gesetzt wird.</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Siehe auch</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Eigenschaft Command.ActiveConnection</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+<div id="Command.State">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+Eigenschaft Command.State </td>
+<td class="COMPATIBILITY">(Versionen 2.0, 2.1, 2.5 und 2.6)</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2"><br><span class="replaceable">state</span> = <span class="replaceable">command</span>.State</td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+
+
+<p>Mit der Eigenschaft Status k&ouml;nnen Sie bei Verwendung von Stapelaktualisierungen oder Bulk-Operationen den Status des aktuellen Datensatzes ermitteln.</p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Datentyp</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>RecordStatusEnum</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Beschreibung</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Die Eigenschaft Type dient zum &Uuml;berpr&uuml;fen der bei einer Stapelaktualisierung vorgenommenen &Auml;nderungen von Datens&auml;tzen. Dar&uuml;ber hinaus bietet sie die M&ouml;glichkeit, den Status der Datens&auml;tze zu &uuml;berpr&uuml;fen, die bei Bulk-Operationen Fehler erzeugt haben. Dies kann beispielsweise beim Aufruf der Methoden Delete, Resync, UpdateBatch oder CancelBatch oder dann geschehen, wenn eine Filter-Eigenschaft auf ein Lesezeichen-Array gesetzt ist. </p>
+
+
+<p>Die Eigenschaft Type gibt eine Summe einer oder mehrerer RecordStatusEnum-Enumerationen zur&uuml;ck.</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Siehe auch</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Recordset.CancelBatch, Methode Recordset.Delete, Eigenschaft Recordset.Filter, Methode Recordset.Resync, Recordset.UpdateBatch, Enumeration RecordStatusEnum, Enumeration ObjectStateEnum</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+</body>
+</html>

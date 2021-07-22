@@ -1,0 +1,257 @@
+<tag name="cfinput" bind="value" endtag="no">
+<tagformat nlbeforetag="1" nlaftertag="1"/>
+<tagdialog file="cfinput.htm" />
+
+   <attributes>
+      <attrib name="type" type="enumerated">
+         <attriboption value="text"/>
+         <attriboption value="radio"/>
+         <attriboption value="checkbox"/>
+         <attriboption value="password"/>
+		 <attriboption value="button"/>
+		 <attriboption value="file"/>
+		 <attriboption value="hidden"/>
+		 <attriboption value="image"/>
+		 <attriboption value="reset"/>
+		 <attriboption value="submit"/>
+		 <attriboption value="datefield"/>
+      </attrib>
+
+	  <attrib name="bind" type="text"/>
+	  <attrib name="name"  type="text"/>
+	  <attrib name="label" type="text"/>
+      <attrib name="message" type="text"/>
+	  <attrib name="tooltip" type="text"/>
+
+	  <attrib name="passthrough" type="text"/>
+
+      <attrib name="notab" type="enumerated">
+         <attriboption value="yes"/>
+         <attriboption value="no"/>
+      </attrib>
+	  <attrib name="visible" type="enumerated">
+         <attriboption value="yes"/>
+         <attriboption value="no"/>
+      </attrib>
+
+	  <attrib name="range" type="text"/>
+      <attrib name="pattern" type="text"/>
+ 	  <attrib name="onvalidate" type="text"/>
+	  <attrib name="mask" type="text"/>
+	  <attrib name="validateat" type="enumerated">
+	  	 <attriboption value="onsubmit"/>
+         <attriboption value="onserver"/>
+		 <attriboption value="onblur"/>
+      </attrib>
+	  <attrib name="validate" type="enumerated">
+          <attriboption value="" />
+		  <attriboption value="boolean" />
+		  <attriboption value="creditcard" />
+          <attriboption value="date" />
+		  <attriboption value="email" />
+          <attriboption value="eurodate" />
+		  <attriboption value="float" />
+		  <attriboption value="guid" />
+		  <attriboption value="integer" />
+		  <attriboption value="maxlength" />
+		  <attriboption value="noblanks" />
+		  <attriboption value="range" />
+		  <attriboption value="regular_expression" />
+		  <attriboption value="social_security_number"/>
+		  <attriboption value="submitonce"/>
+          <attriboption value="time" />
+          <attriboption value="telephone" />
+		  <attriboption value="url" />
+		  <attriboption value="usdate" />
+		  <attriboption value="uuid" />
+          <attriboption value="zipcode" />
+      </attrib>
+	  <attrib name="required" type="enumerated">
+         <attriboption value="yes"/>
+         <attriboption value="no"/>
+      </attrib>
+
+      <attrib name="checked" type="enumerated">
+         <attriboption value="yes"/>
+         <attriboption value="no"/>
+      </attrib>
+
+	  <attrib name="firstdayofweek" type="enumerated">
+          <attriboption value="" />
+		  <attriboption value="0" />
+		  <attriboption value="1" />
+          <attriboption value="2" />
+		  <attriboption value="3" />
+          <attriboption value="4" />
+		  <attriboption value="5" />
+		  <attriboption value="6" />
+      </attrib>
+	  <attrib name="daynames" type="text"/>
+	  <attrib name="monthnames" type="text"/>
+
+	  <attrib name="onerror" type="text"/>
+
+		<attrib name="disabled" type="flag"/>
+		<attrib name="class" type="cssstyle"/>
+		<attrib name="id" type="cssid"/>
+		<attrib name="style" type="style"/>
+		<attrib name="accesskey"/>
+		<attrib name="tabindex"/>
+		<attrib name="title"/>
+		<attrib name="dir" type="enumerated">
+		<attriboption value="ltr" caption="left-to-right"/>
+		<attriboption value="rtl" caption="right-to-left"/>
+			</attrib>
+		<attrib name="lang" type="enumerated">
+		<attriboption value="af" caption="af afrikaans"/>
+		<attriboption value="sq" caption="sq albanian"/>
+		<attriboption value="ar" caption="ar arabic (needs subtype)"/>
+		<attriboption value="eu" caption="eu basque"/>
+		<attriboption value="br" caption="br breton"/>
+		<attriboption value="bg" caption="bg bulgarian"/>
+		<attriboption value="be" caption="be belarusian"/>
+		<attriboption value="ca" caption="ca catalan"/>
+		<attriboption value="zh" caption="zh chinese (needs subtype)"/>
+		<attriboption value="hr" caption="hr croatian"/>
+		<attriboption value="cs" caption="cs czech"/>
+		<attriboption value="da" caption="da danish"/>
+		<attriboption value="nl" caption="nl dutch (standard)"/>
+		<attriboption value="en" caption="en english"/>
+		<attriboption value="et" caption="et estonian"/>
+		<attriboption value="fo" caption="fo faeroese"/>
+		<attriboption value="fa" caption="fa farsi"/>
+		<attriboption value="fi" caption="fi finnish"/>
+		<attriboption value="fr" caption="fr french (standard)"/>
+		<attriboption value="gd" caption="gd gaelic (scotland)"/>
+		<attriboption value="de" caption="de german (standard)"/>
+		<attriboption value="el" caption="el greek"/>
+		<attriboption value="he" caption="he hebrew"/>
+		<attriboption value="hi" caption="hi hindi"/>
+		<attriboption value="hu" caption="hu hungarian"/>
+		<attriboption value="is" caption="is icelandic"/>
+		<attriboption value="id" caption="id indonesian"/>
+		<attriboption value="it" caption="it italian (standard)"/>
+		<attriboption value="ja" caption="ja japanese"/>
+		<attriboption value="ko" caption="ko korean"/>
+		<attriboption value="lv" caption="lv latvian"/>
+		<attriboption value="lt" caption="lt lithuanian"/>
+		<attriboption value="mk" caption="mk macedonian"/>
+		<attriboption value="ms" caption="ms malaysian"/>
+		<attriboption value="mt" caption="mt maltese"/>
+		<attriboption value="no" caption="no norwegian (bokmal/nynorsk)"/>
+		<attriboption value="pl" caption="pl polish"/>
+		<attriboption value="pt" caption="pt portuguese (standard)"/>
+		<attriboption value="rm" caption="rm rhaeto-romanic"/>
+		<attriboption value="ro" caption="ro romanian"/>
+		<attriboption value="ru" caption="ru russian"/>
+		<attriboption value="sz" caption="sz sami (lappish)"/>
+		<attriboption value="sr" caption="sr serbian (cyrillic/latin)"/>
+		<attriboption value="tn" caption="tn setswana"/>
+		<attriboption value="sk" caption="sk slovak"/>
+		<attriboption value="sl" caption="sl slovenian"/>
+		<attriboption value="es" caption="es spanish (spain)"/>
+		<attriboption value="sx" caption="sx sutu"/>
+		<attriboption value="sv" caption="sv swedish"/>
+		<attriboption value="th" caption="th thai"/>
+		<attriboption value="ts" caption="ts tsonga"/>
+		<attriboption value="tr" caption="tr turkish"/>
+		<attriboption value="uk" caption="uk ukrainian"/>
+		<attriboption value="ur" caption="ur urdu"/>
+		<attriboption value="vi" caption="vi vietnamese"/>
+		<attriboption value="xh" caption="xh xhosa"/>
+		<attriboption value="yi" caption="yi yiddish"/>
+		<attriboption value="zu" caption="zu zulu"/>
+			</attrib>
+		<attrib name="onfocus" casesensitive="yes"/>
+		<attrib name="onblur" casesensitive="yes"/>
+		<attrib name="onselect" casesensitive="yes"/>
+		<attrib name="onchange" casesensitive="yes"/>
+		<attrib name="onclick" casesensitive="yes"/>
+		<attrib name="ondblclick" casesensitive="yes"/>
+		<attrib name="onmousedown" casesensitive="yes"/>
+		<attrib name="onmouseup" casesensitive="yes"/>
+		<attrib name="onmouseover" casesensitive="yes"/>
+		<attrib name="onmousemove" casesensitive="yes"/>
+		<attrib name="onmouseout" casesensitive="yes"/>
+		<attrib name="onkeypress" casesensitive="yes"/>
+		<attrib name="onkeydown" casesensitive="yes"/>
+		<attrib name="onkeyup" casesensitive="yes"/>
+		<attrib name="value"/>
+		<attrib name="size"/>
+		<attrib name="maxlength"/>
+		<attrib name="readonly"/>
+		<attrib name="src" type="relativepath"/>
+		<attrib name="alt"/>
+		<attrib name="align" type="enumerated">
+		<attriboption value="left" caption="left"/>
+		<attriboption value="right" caption="right"/>
+		<attriboption value="top" caption="top"/>
+		<attriboption value="middle" caption="middle"/>
+		<attriboption value="bottom" caption="bottom"/>
+		<attriboption value="texttop" caption="texttop (nn, msie)"/>
+		<attriboption value="absmiddle" caption="absmiddle (nn, msie)"/>
+		<attriboption value="baseline" caption="baseline (nn, msie)"/>
+		<attriboption value="absbottom" caption="absbottom (nn, msie)"/>
+			</attrib>
+		<attrib name="usemap"/>
+		<attrib name="width" type="width:src"/>
+		<attrib name="height" type="height:src"/>
+		<attrib name="hspace"/>
+		<attrib name="vspace"/>
+		<attrib name="border"/>
+		<attrib name="accept" type="enumerated">
+		<attriboption value="text/html" caption="text/html"/>
+		<attriboption value="text/plain" caption="text/plain"/>
+		<attriboption value="application/msword" caption="application/msword"/>
+		<attriboption value="application/msexcel" caption="application/msexcel"/>
+		<attriboption value="application/postscript" caption="application/postscript"/>
+		<attriboption value="application/x-zip-compressed" caption="application/x-zip-compressed"/>
+		<attriboption value="application/pdf" caption="application/pdf"/>
+		<attriboption value="application/rtf" caption="application/rtf"/>
+		<attriboption value="video/x-msvideo" caption="video/x-msvideo"/>
+		<attriboption value="video/quicktime" caption="video/quicktime"/>
+		<attriboption value="video/x-mpeg2" caption="video/x-mpeg2"/>
+		<attriboption value="audio/x-pn/realaudio" caption="audio/x-pn/realaudio"/>
+		<attriboption value="audio/x-mpeg" caption="audio/x-mpeg"/>
+		<attriboption value="audio/x-waw" caption="audio/x-waw"/>
+		<attriboption value="audio/x-aiff" caption="audio/x-aiff"/>
+		<attriboption value="audio/basic" caption="audio/basic"/>
+		<attriboption value="image/tiff" caption="image/tiff"/>
+		<attriboption value="image/jpeg" caption="image/jpeg"/>
+		<attriboption value="image/gif" caption="image/gif"/>
+		<attriboption value="image/x-png" caption="image/x-png"/>
+		<attriboption value="image/x-photo-cd" caption="image/x-photo-cd"/>
+		<attriboption value="image/x-ms-bmp" caption="image/x-ms-bmp"/>
+		<attriboption value="image/x-rgb" caption="image/x-rgb"/>
+		<attriboption value="image/x-portable-pixmap" caption="image/x-portable-pixmap"/>
+		<attriboption value="image/x-portable-greymap" caption="image/x-portable-greymap"/>
+		<attriboption value="image/x-portablebitmap" caption="image/x-portablebitmap"/>
+			</attrib>
+
+		<event name="onfocus"/>
+			<event name="onblur"/>
+			<event name="onselect"/>
+			<event name="onchange"/>
+			<event name="onclick"/>
+			<event name="ondblclick"/>
+			<event name="onmousedown"/>
+			<event name="onmouseup"/>
+			<event name="onmouseover"/>
+			<event name="onmousemove"/>
+			<event name="onmouseout"/>
+			<event name="onkeypress"/>
+			<event name="onkeydown"/>
+			<event name="onkeyup"/>
+   </attributes>
+
+   <attribcategories>
+      <attribgroup name="general" elements="name,type,value"/>
+      <attribgroup name="appearance" elements="height,width,size,maxlength"/>
+      <attribgroup name="special" elements="validate,range,required,message,checked,notab,tabindex,onvalidate,pattern,passthrough,bind,label,mask,validateat,src,daynames,monthnames,firstdayofweek"/>
+ 	  <attribgroup name="events" elements="onerror,onvalidate,onkeyup,onkeydown,onmouseup,onmousedown,onchange,onclick"/>
+      <attribgroup name="misc" elements=""/>
+   </attribcategories>
+
+
+</tag>
+

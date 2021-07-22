@@ -1,0 +1,92 @@
+<html>
+<link rel="stylesheet" href="josh.css">
+<body bgcolor="#FFFFFF">
+
+		<div id="Beschreibung">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">overflow</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">4</span> CSS <span class="emphasis">2</span></td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Vererbt: Nein</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Bestimmt, wie das Element Inhalt behandelt, dessen Abmessungen bei der Darstellung die angegebene H&ouml;he und/oder Breite des Containers &uuml;berschreiten. Au&szlig;er bei manchen Inhaltstypen, die eine feste Breite erfordern (z.&#160;B. ein Element vom Typ <span class="literal">pre</span>), muss ein Element standardm&auml;&szlig;ig den Wert des Attributs <span class="literal">width</span> ber&uuml;cksichtigen und einen eventuellen H&ouml;hen&uuml;berlauf entsprechend handhaben. Um Kompatibilit&auml;t zwischen unterschiedlichen Browsern zu gew&auml;hrleisten wird davon abgeraten, die Eigenschaft <span class="literal">overflow</span> zur Steuerung der Bildlaufleistenanzeige dem <span class="literal">body</span>-Element zuzuordnen. Sie sollten Ihren &Uuml;berlaufcode in IE f&uuml;r Windows (in den r&uuml;ckw&auml;rts- und standardkompatiblen Modi), IE f&uuml;r Macintosh und Netscape 6 gr&uuml;ndlich testen.</p><p>Bei der Einstellung <span class="literal">visible</span> wird der umgebende Block erweitert, sodass die volle Breite (falls fest) und H&ouml;he des Inhalts angezeigt werden. Falls f&uuml;r das Element Rahmen, R&auml;nder und Auff&uuml;llungen vorhanden sind, bleiben diese um den erweiterten Inhaltsblock erhalten. Wenn f&uuml;r das Element H&ouml;he und Breite sowie ein Hintergrundbild oder Hintergrundfarbe angegeben sind und der Inhalt die festgelegte Gr&ouml;&szlig;e &uuml;berschreitet, ergibt sich je nach Browserfamilie ein anderes Verhalten. In IE f&uuml;r Windows wird die H&ouml;he des Hintergrunds vergr&ouml;&szlig;ert, um Platz f&uuml;r den Inhalt zu schaffen; der darauf folgende Inhalt wird nach unten verschoben. In IE f&uuml;r Macintosh und Netscape 6 wird zwar das Hintergrundrechteck auf die angegebene Gr&ouml;&szlig;e beschr&auml;nkt, doch der Inhalt l&auml;uft &uuml;ber das Rechteck hinaus und &uuml;berschneidet sich mit dem darauf folgenden Inhalt. Da dies der Standardwert f&uuml;r die Stileigenschaft <span class="literal">overflow</span> ist, empfiehlt es sich, einen anderen <span class="literal">overflow</span>-Wert (oder ein Ausschneiderechteck f&uuml;r ein positioniertes Element) anzugeben, wenn Sie die Gr&ouml;&szlig;e eines Elements begrenzen.</p><p>Bei der Einstellung <span class="literal">hidden</span> wird der Block auf die festgelegte H&ouml;he und Breite begrenzt, wobei Inhalte unter Umst&auml;nden abgeschnitten werden. Rahmen und Auff&uuml;llungen bleiben erhalten, R&auml;nder k&ouml;nnen allerdings entlang der Kanten verloren gehen. Bei diesem Wert werden keine Bildlaufleisten angezeigt.</p><p>Bei der Einstellung <span class="literal">scroll</span> erscheinen im Rechteck des Inhaltsblock in der Regel horizontale und vertikale Bildlaufleisten, egal, ob sie ben&ouml;tigt werden oder nicht. Diese Bildlaufleisten werden erst dann aktiv, wenn der Inhalt tats&auml;chlich einen Bildlauf erfordert.</p><p>Bei der Einstellung <span class="literal">auto</span> werden Bildlaufleisten nur dann dargestellt, wenn dies f&uuml;r den Blockinhalt notwendig ist. In der Praxis blenden Browser eine vertikale Bildlaufleiste nur dann ein, wenn es sich bei dem Inhalt um Text handelt, der sich an die festgelegte Breite des Containers anpassen kann.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="csssyntax"><span class="title">CSS-Syntax</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>overflow: <span class="replaceable">overFlowType</span></pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+				</tr>
+				<tr>
+					<td><p>Eine der folgenden Konstanten: <span class="literal">auto</span> | <span class="literal">hidden</span> | <span class="literal">scroll</span> | <span class="literal">visible</span>.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="initvalue"><span class="title">Anfangswert</span></td>
+				</tr>
+				<tr>
+					<td><p><span class="literal">visible</span></p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>div.aside {position: absolute; top: 200px; left: 10px; height: 100px;width: 150px; overflow: scroll}</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="appliesto"><span class="title">Gilt f&uuml;r</span></td>
+				</tr>
+				<tr>
+					<td><p>Blockebenen-, ersetzte und positionierte Elemente.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectmodelreference"><span class="title">Objektmodellreferenz</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>[window.]document.getElementById("<span class="replaceable">elementID</span>").style.overflow</pre>
+						</span></td>
+				</tr>
+			</table>
+		</div>
+</body>
+</html>

@@ -1,0 +1,268 @@
+<html>
+
+<link rel="stylesheet" href="../HTML/josh.css"><head>
+
+
+<title>out</title>
+</head>
+<body bgcolor="#FFFFFF" text="#000000">
+<div id="Beschreibung">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">out</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Variablenname:</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+<p><span class="LITERAL">out</span></p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Klassenname:</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+<p><span class="LITERAL">javax.servlet.jsp.JspWriter</span></p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Erweitert:</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+<p><span class="LITERAL">java.io.Writer</span></p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Implementiert:</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+<p>Keine</p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Implementiert von:</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+<p>Eine konkrete Unterklasse dieser abstrakten Klasse ist als interne containerabh&auml;ngige Klasse verf&uuml;gbar.
+</p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">JSP-Seitentyp:</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+<p>Verf&uuml;gbar in regul&auml;ren JSP-Seiten und Fehlerseiten</p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Beschreibung</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+<p>Der Webcontainer weist die Variable <span class="LITERAL">out</span> einer konkreten Unterklasse der abstrakten Klasse <span class="LITERAL">JspWriter</span> zu. <span class="LITERAL">JspWriter</span> emuliert einige Funktionen der Klassen <span class="LITERAL">java.io.BufferedWriter</span> und <span class="LITERAL">java.io.PrintWriter</span>. Der Unterschied zu den Druckmethoden liegt darin, dass bei JspWriter eine Ausnahme <span class="LITERAL">java.io.IOException</span> ausgel&ouml;st wird (bei <span class="LITERAL">PrintWriter</span> nicht der Fall).
+</p>
+
+<p>Wenn das Attribut <span class="LITERAL">autoflush</span> der Direktive <span class="LITERAL">page</span> auf <span class="LITERAL">true</span> eingestellt ist, bewirken alle E/A-Vorg&auml;nge dieser Klasse automatisch, dass der Puffer geleert wird, wenn er voll ist. Wenn <span class="LITERAL">autoflush</span> auf <span class="LITERAL">false</span> eingestellt ist, l&ouml;sen alle E/A-Vorg&auml;nge dieser Klasse eine Ausnahme <span class="LITERAL">IOException</span> aus, wenn der Puffer voll ist.
+</p>
+</td>
+</tr>
+</table>
+</div>
+<div id="JspWriter">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">JspWriter()</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="usage"><span class="LITERAL">protected JspWriter(int bufferSize, boolean autoFlush)</span></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+Erstellt eine Instanz, die mindestens die angegebene Puffergr&ouml;&szlig;e und das Verhalten zum automatischen Leeren enth&auml;lt.
+</p></td>
+</tr>
+</table>
+</div>
+<div id="clear">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">clear()</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="usage"><span class="LITERAL">public abstract void clear() throws java.io.IOException</span></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+L&ouml;scht den Inhalt des Puffers. Wenn der Puffer bereits geleert wurde, wird eine Ausnahme <span class="LITERAL">IOException</span> ausgel&ouml;st, die darauf hinweist, dass bestimmte Daten bereits unwiderruflich in den Client-Antwortdatenstrom geschrieben wurden.
+</p></td>
+</tr>
+</table>
+</div>
+<div id="clearBuffer">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">clearBuffer()</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="usage"><span class="LITERAL">public abstract void clearBuffer() throws java.io.IOException</span></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+L&ouml;scht den aktuellen Inhalt des Puffers. Im Gegensatz zu <span class="LITERAL">clear()</span> l&ouml;st diese Methode keine Ausnahme <span class="LITERAL">IOException</span> aus, wenn der Puffer bereits geleert wurde. Sie l&ouml;scht lediglich den aktuellen Inhalt aus dem Puffer und liefert eine R&uuml;ckgabe.
+</p></td>
+</tr>
+</table>
+</div>
+<div id="close">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">close()</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="usage"><span class="LITERAL">public abstract void close() throws java.io.IOException</span></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+Schlie&szlig;t das Objekt <span class="LITERAL">JspWriter</span> nach dem Leeren. Wenn <span class="LITERAL">flush()</span> oder <span class="LITERAL">write()</span> nach <span class="LITERAL">close()</span> aufgerufen werden, wird eine Ausnahme <span class="LITERAL">IOException</span> ausgel&ouml;st. Wenn <span class="LITERAL">close()</span> f&uuml;r ein bereits geschlossenes Objekt <span class="LITERAL">JspWriter</span> aufgerufen wird, wird dies ignoriert.
+</p></td>
+</tr>
+</table>
+</div>
+<div id="flush">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">flush()</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="usage"><span class="LITERAL">public abstract void flush() throws java.io.IOException</span></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+Leert den aktuellen Inhalt des Puffers in das zugrundeliegende Schreibobjekt und leert dann das zugrundeliegende Schreibobjekt. Dies bedeutet, dass der gepufferte Inhalt sofort an den Client geliefert wird.
+</p></td>
+</tr>
+</table>
+</div>
+<div id="getBufferSize">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">getBufferSize()</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="usage"><span class="LITERAL">public int getBufferSize()</span></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+Gibt die Gr&ouml;&szlig;e des Puffers in Byte zur&uuml;ck. Wenn der Puffer leer ist, lautet die R&uuml;ckgabe <span class="LITERAL">0</span>.
+</p></td>
+</tr>
+</table>
+</div>
+<div id="getRemaining">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">getRemaining()</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="usage"><span class="LITERAL">public abstract int getRemaining()</span></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+Gibt die Anzahl der nicht verwendeten Byte im Puffer zur&uuml;ck.
+</p></td>
+</tr>
+</table>
+</div>
+<div id="isAutoFlush">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">isAutoFlush()</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="usage"><span class="LITERAL">public boolean isAutoFlush()</span></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+Gibt <span class="LITERAL">true</span> zur&uuml;ck, wenn dieses <span class="LITERAL">JspWriter</span>-Objekt so eingestellt ist, dass der Puffer automatisch geleert wird. Andernfalls lautet die R&uuml;ckgabe <span class="LITERAL">false</span>.
+</p></td>
+</tr>
+</table>
+</div>
+</body>
+</html>

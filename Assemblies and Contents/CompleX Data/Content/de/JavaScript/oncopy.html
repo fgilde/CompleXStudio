@@ -1,0 +1,36 @@
+<html>
+<link rel="stylesheet" href="josh.css">
+<body bgcolor="#FFFFFF">
+
+		<div id="Beschreibung">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">oncopy</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">nicht zutreffend</span> IE <span class="emphasis">5(Win)</span> DOM <span class="emphasis">nicht zutreffend</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Aufw&auml;rtsverbreitung: Ja; Abbruch m&ouml;glich: Ja</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Wird ausgel&ouml;st, nachdem der Benutzer (&uuml;ber das Men&uuml; <span class="emphasis">Bearbeiten</span>, eine Tastenkombination oder ein Kontextmen&uuml;) den Befehl <span class="emphasis">Kopieren</span> aufgerufen hat, um den ausgew&auml;hlten Inhalt in die Zwischenablage zu kopieren. Mithilfe einer Ereignisbehandlungsroutinenfunktion f&uuml;r dieses Ereignis k&ouml;nnen Sie den Kopiervorgang erweitern und beispielsweise zus&auml;tzliche Daten Ihrer Wahl in das <span class="literal">clipboardData</span>-Objekt &uuml;bernehmen (die sich mit der Ereignisbehandlungsroutine <span class="literal">onpaste</span> lesen und je nach Bedarf einsetzen lassen).</p>
+							</td>
+						</tr>
+						<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Wenn Sie dem Benutzer den Zugriff auf einen <span class="emphasis">Kopieren</span>-Men&uuml;befehl f&uuml;r ein ansonsten nicht bearbeitbares Element erm&ouml;glichen m&ouml;chten, stellen Sie in der Ereignisbehandlungsroutine <span class="literal">onbeforecopy</span> desselben Objekts, f&uuml;r das Sie auch die Ereignisbehandlungsroutine <span class="literal">oncopy</span> definiert haben, die Eigenschaft <span class="literal">event.returnValue</span> auf <span class="literal">false</span> ein. M&ouml;chten Sie hingegen verhindern, dass der Benutzer Body-Inhalte kopiert, setzen Sie die Eigenschaft <span class="literal">event.returnValue</span> in der Ereignisbehandlungsroutine <span class="literal">oncopy</span> auf <span class="literal">false</span>. Denken Sie jedoch daran, dass diese Taktik keinen zuverl&auml;ssigen Schutz vor Benutzern bietet, die Ihre gesch&auml;tzten Inhalte gezielt zu kopieren versuchen.</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="typicaltargets"><span class="title">Typische Ziele</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Dargestellte Elemente mit Ausnahme von Formularsteuerelementen.</p>
+					</td>
+				</tr>
+			</table>
+		</div>
+</body>
+</html>

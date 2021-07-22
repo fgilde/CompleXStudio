@@ -1,0 +1,160 @@
+<html>
+<link rel="stylesheet" href="../HTML/josh.css">
+<head>
+
+
+<title>&lt;jsp:useBean&gt;</title>
+</head>
+<body bgcolor="#FFFFFF" text="#000000">
+<div id="Beschreibung">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">&lt;jsp:useBean&gt;</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description">
+<p>Die Aktion <span class="LITERAL">&lt;jsp:useBean&gt;</span> assoziiert ein Java-Bean mit einem Namen in einer der JSP-Ebenen und stellt ihn als Skriptvariable zur Verf&uuml;gung. Zun&auml;chst wird versucht, ein Bean mit dem angegebenen Namen auf der angegebenen Ebene zu finden. Wenn dies nicht erfolgreich ist, wird eine neue Instanz der angegebenen Klasse erstellt.
+</p>
+
+<p>Von den optionalen Attributen muss mindestens <span class="LITERAL">class</span> oder <span class="LITERAL">type</span> angegeben werden. Wenn beide Attribute angegeben werden, muss <span class="LITERAL">class</span> dem Attribut <span class="LITERAL">type</span> zugewiesen werden k&ouml;nnen. Das Attribut <span class="LITERAL">beanName</span> muss mit dem Attribut <span class="LITERAL">type</span> kombiniert werden; es kann nicht mit dem Attribut <span class="LITERAL">class</span> eingesetzt werden.
+</p>
+
+<p>Die Aktion wird in folgenden Schritten verarbeitet:</p>
+
+<ol><li>
+<p>Es wird versucht, auf Grundlage der Attributwerte f&uuml;r <span class="LITERAL">id</span> und <span class="LITERAL">scope</span> ein Objekt zu finden.
+</p>
+</li><li>
+<p>Es wird eine Variable in einer Skriptsprache mit der festgelegten <span class="LITERAL">id</span> der angegebenen Attribute <span class="LITERAL">type</span> oder <span class="LITERAL">class</span> definiert.
+</p>
+</li><li>
+<p>Wenn das Objekt gefunden wird, wird der Wert der Variablen mit einem Verweis auf das gefundene Objekt initialisiert, und zwar unter Verwendung des angegebenen Wertes f&uuml;r <span class="LITERAL">type</span>. Damit ist die Aktionsverarbeitung abgeschlossen. Wenn der Body des Aktionselements nicht leer ist, wird er ignoriert.
+</p>
+</li><li>
+<p>Wenn das Objekt nicht in der angegebenen Ebene gefunden wird und weder <span class="LITERAL">class</span> noch <span class="LITERAL">beanName</span> angegeben ist, wird eine Ausnahme <span class="LITERAL">InstantiationException</span> verursacht. Damit ist die Aktionsverarbeitung abgeschlossen.
+</p>
+</li><li>
+<p>Wenn das Objekt nicht in der angegebenen Ebene gefunden wird und das Attribut <span class="LITERAL">class</span> eine nicht abstrakte Klasse mit einem &ouml;ffentlichen Konstruktor ohne Argumente angibt, wird eine neue Instanz der Klasse erstellt und mit der Skriptvariablen und dem angegebenen Namen in der angegebenen Ebene assoziiert. Anschlie&szlig;end wird Schritt 7 ausgef&uuml;hrt.
+</p>
+
+<p>Wenn das Objekt nicht gefunden wird und die angegebene Klasse die Voraussetzungen nicht erf&uuml;llt, wird eine Ausnahme <span class="LITERAL">InstantiationException</span> verursacht. Damit ist die Aktionsverarbeitung abgeschlossen.
+</p>
+</li><li>
+<p>Wenn das Objekt nicht in der angegebenen Ebene gefunden wird und das Attribut <span class="LITERAL">beanName</span> angegeben ist, wird die Methode <span class="LITERAL">instantiate()</span> der Klasse <span class="LITERAL">java.beans.Beans</span> aufgerufen, und zwar mit dem Objekt <span class="LITERAL">ClassLoader</span> der Instanz der JSP-Implementierungsklasse und dem Argument <span class="LITERAL">beanName</span>. Wenn die Methode erfolgreich ist, wird der neue Objektverweis mit der Skriptvariablen und dem angegebenen Namen in der angegebenen Ebene assoziiert. Anschlie&szlig;end wird Schritt 7 ausgef&uuml;hrt.
+</p>
+</li><li>
+<p>Wenn der Body des Aktionselements nicht leer ist, wird der Body verarbeitet. Die Skriptvariable wird initialisiert und ist in der Body-Ebene verf&uuml;gbar. Der Body-Text wird normal verarbeitet: Wenn Vorlagentext vorhanden ist, wird er an die Antwort weitergeleitet, Skriptlets und Aktions-Tags werden ausgewertet.
+</p>
+
+<p>Ein nicht leerer Body wird h&auml;ufig verwendet, um die Initialisierung der erstellten Instanz abzuschlie&szlig;en. In solchen F&auml;llen enth&auml;lt der Body normalerweise <span class="LITERAL">&lt;jsp:setProperty&gt;</span>-Aktionen und Skriptlets. Damit ist die Aktionsverarbeitung abgeschlossen.
+</p>
+</li></ol>
+<p>Beispiel:</p>
+
+<span class="PROGRAMLISTING"><pre>&lt;jsp:useBean id=&quot;clock&quot; class=&quot;java.util.Date&quot; /&gt;</pre></span>
+
+</td></tr>
+</table>
+</div>
+
+<div id="beanName">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">beanName</td>
+<td valign="top" class="COMPATIBILITY"><span class="LITERAL">String</span></td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="usage">Wert zur Anforderungszeit akzeptiert: ja</td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+Optional. Der Bean-Name, der von der Methode <span class="LITERAL">instantiate()</span> der Klasse <span class="LITERAL">Beans</span> im Paket <span class="LITERAL">java.beans</span> erwartet wird.
+</p></td>
+</tr>
+</table>
+</div>
+<div id="class">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">class</td>
+<td valign="top" class="COMPATIBILITY"><span class="LITERAL">String</span></td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="usage">Wert zur Anforderungszeit akzeptiert: nein</td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+Optional. Der vollst&auml;ndige Klassenname f&uuml;r das Bean.
+</p></td>
+</tr>
+</table>
+</div>
+<div id="id">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">id</td>
+<td valign="top" class="COMPATIBILITY"><span class="LITERAL">String</span></td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="usage">Wert zur Anforderungszeit akzeptiert: nein</td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+Obligatorisch. Der Name, der dem Bean in der angegebenen Ebene zugewiesen werden soll, und der Name der Skriptvariablen.
+</p></td>
+</tr>
+</table>
+</div>
+<div id="scope">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">scope</td>
+<td valign="top" class="COMPATIBILITY"><span class="LITERAL">String</span></td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="usage">Wert zur Anforderungszeit akzeptiert: nein</td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+Optional. Die Ebene f&uuml;r das Bean: <span class="LITERAL">page</span>, <span class="LITERAL">request</span>, <span class="LITERAL">session</span> oder <span class="LITERAL">application</span>. Die Standardeinstellung ist <span class="LITERAL">page</span>.
+</p></td>
+</tr>
+</table>
+</div>
+<div id="type">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">type</td>
+<td valign="top" class="COMPATIBILITY"><span class="LITERAL">String</span></td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="usage">Wert zur Anforderungszeit akzeptiert: nein</td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+Optional. Der vollst&auml;ndige Typenname f&uuml;r das Bean (das hei&szlig;t eine &uuml;bergeordnete Klasse oder eine Schnittstelle, die von der Bean-Klasse implementiert wird).
+</p></td>
+</tr>
+</table>
+</div>
+</body>
+</html>

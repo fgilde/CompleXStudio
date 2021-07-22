@@ -1,0 +1,220 @@
+<html xmlns:un="http://usablenet.com/namespaces/508_rules">
+   <link rel="stylesheet" href="josh.css">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   
+      <title>Detailanzeige f&uuml;r Regel: AREA mit g&uuml;ltigem ALT-Attribut</title>
+      <!--
+  508/W3C Accessibility Suite OEM V2 for Macromedia Dreamweaver
+  (C) Copyright 2001-2005 UsableNet Inc. All rights reserved.
+  -->
+   </head>
+   <body bgcolor="#ffffff">
+      <div id="Beschreibung">
+         <table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+            <tr>
+               <td valign="top" nowrap="true" class="name">AREA mit g&uuml;ltigem ALT-Attribut</td>
+               <td valign="top" nowrap="true" class="compatibility">&nbsp;</td>
+            </tr>
+            <tr>
+               <td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+            </tr>
+            <tr>
+               <td valign="top" align="right" nowrap="true" colspan="2" class="requirements">
+                        Section 508 1194.22(a); 
+                        
+                          WAI
+                        
+                         / 
+                        
+                          WCAG
+                        
+                         1.0 checkpoint 1.1
+                      
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2" class="clearseparation">&nbsp;</td>
+            </tr>
+            <tr>
+               <td colspan="2" class="clearseparation">&nbsp;</td>
+            </tr>
+            <tr>
+               <td valign="top" colspan="2" class="description"><b>Problembeschreibung</b><br>
+                        
+                  <p>
+                             Die Imagemap in diesem Dokument enth&auml;lt keine
+                             AREA-Elemente mit g&uuml;ltigen Textbeschreibungen. Eine
+                             g&uuml;ltige Beschreibung ist eine Zeichenfolge im
+                             ALT-Attribut, bei der es sich nicht um folgende Zeichenfolgen
+                             handeln darf:
+                           
+                  </p>
+                        
+                  <ul>
+                             
+                     <li>
+                                  eine leere Zeichenfolge ("")
+                                
+                     </li>
+                             
+                     <li>
+                                  ein oder mehrere Leerzeichen (" ")
+                                
+                     </li>
+                             
+                     <li>
+                                  Den Namen der Grafikdatei
+                                
+                     </li>
+                             
+                     <li>
+                                  die Gr&ouml;&szlig;e der Grafikdatei
+                                
+                     </li>
+                             
+                     <li>
+                                  eine Zeichenfolge mit mehr als 150 Zeichen (dies ist eine
+                                  Empfehlung und keine Anforderung gem&auml;&szlig; WCAG 1.0
+                                  oder 508)
+                                
+                     </li>
+                           
+                  </ul>
+                      
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2" class="clearseparation">&nbsp;</td>
+            </tr>
+            <tr>
+               <td colspan="2" class="clearseparation">&nbsp;</td>
+            </tr>
+            <tr>
+               <td valign="top" colspan="2" class="description"><b>Probleml&ouml;sung</b>
+                        
+                  <p>
+                             F&uuml;gen Sie dem AREA-Tag das ALT-Attribut unter
+                             Ber&uuml;cksichtigung folgender Gesichtspunkte hinzu:
+                           
+                  </p>
+                        
+                  <ul>
+                             
+                     <li>
+                                  Die Beschreibung sollte das Verweisziel enthalten und den
+                                  Grund, warum der Benutzer dem Hyperlink folgen sollte.
+                                
+                     </li>
+                             
+                     <li>
+                                  Beschreiben Sie nicht die Verfahren wie "hier klicken",
+                                  sondern beschreiben Sie das Ziel des Hyperlinks und dessen
+                                  Funktion f&uuml;r den Benutzer.
+                                
+                     </li>
+                             
+                     <li>
+                                  ALT-Beschreibungen werden von Browsern nicht interpretiert
+                                  und d&uuml;rfen keine HTML-Tags enthalten. Eingebettete
+                                  Tags verwirren sowohl Benutzer als auch manche
+                                  Suchmaschinen.
+                                
+                     </li>
+                             
+                     <li>
+                                  Zu lange ALT-Beschreibungen werden vom Browser
+                                  m&ouml;glicherweise abgeschnitten und erh&ouml;hen die
+                                  Downloadzeit der Seite. Als Faustregel haben sich maximal
+                                  10 W&ouml;rter bzw. 64 Zeichen bew&auml;hrt.
+                                
+                     </li>
+                           
+                  </ul>
+                      
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2" class="clearseparation">&nbsp;</td>
+            </tr>
+            <tr>
+               <td colspan="2" class="clearseparation">&nbsp;</td>
+            </tr>
+            <tr>
+               <td valign="top" colspan="2" class="description"><b>Problemerkl&auml;rung</b><br>
+                        
+                  <p>
+                             Mit ALT-Attributen werden Text&auml;quivalente f&uuml;r
+                             Imagemaps bereitgestellt. Dies ist wichtig, da Imagemaps
+                             grafische Informationen enthalten, die entscheidend f&uuml;r
+                             die Navigation sind.
+                           
+                  </p>
+                        
+                  <p>
+                             Im ALT-Attribut sollten die entsprechenden Bereiche der
+                             Imagemap beschrieben werden, damit auch Benutzer, die
+                             Grafiken im Browser deaktiviert haben, alle
+                             Navigationsoptionen der Seite verwenden k&ouml;nnen. Ohne
+                             ALT-Beschreibungen k&ouml;nnten Benutzer nicht mithilfe der
+                             Imagemap navigieren.
+                           
+                  </p>
+                        
+                  <p>
+                       Jedes AREA-Element der Imagemap sollte &uuml;ber ein eigenes
+                       ALT-Attribut verf&uuml;gen. Beispiel (nach einem Tutorial unter
+                       http://www.jimthatcher.com/webcourse2.htm):
+                     <pre>
+  &lt;IMG src="map.gif" alt="Navigation" usemap="#navigation"&gt;
+  &lt;MAP name="Navigation"&gt; &lt;AREA coords="1,1,40,100"
+  alt="Startseite" href="../index.html"&gt; &lt;AREA
+  coords="1,100,40,180" alt="Produkte" href="products.html"&gt;
+  &lt;/MAP&gt;
+</pre>
+                           </p>
+                        
+                  <p>
+                             Wie bei allen Hyperlinks sollte der Verweistext auch ohne
+                             Zusammenhang Sinn ergeben. Ein guter Verweistext sollte nicht
+                             zu allgemein sein. Verwenden Sie nicht "hier klicken". Diese
+                             Anweisung ist nicht nur ger&auml;teabh&auml;ngig (sie
+                             impliziert ein Zeigeger&auml;t), sondern vermittelt auch
+                             keinerlei Informationen dar&uuml;ber, auf welche Inhalte der
+                             Hyperlink verweist. Statt "hier klicken" sollte der Text das
+                             Verweisziel beschreiben, z.&nbsp;B. "weitere Informationen
+                             &uuml;ber Seel&ouml;wen" oder "Textversion dieser Seite".
+                           
+                  </p>
+                        
+                  <p>
+                             Seit der Einf&uuml;hrung von Browsern f&uuml;r PDAs und
+                             andere Handger&auml;te, die nur Text unterst&uuml;tzen, sind
+                             die ALT-Beschreibungen wichtiger denn je geworden. Bedenken
+                             Sie, dass viele Benutzer aus verschiedenen Gr&uuml;nden
+                             Nur-Text-Browser mit Bildschirmleseger&auml;ten oder
+                             Sprachsteuerung verwenden. Dazu geh&ouml;ren Benutzer, die
+                             Sehbehinderungen haben, &uuml;ber ein Telefon auf das
+                             Internet zugreifen oder einen sprachgesteuerten Browser im
+                             Auto verwenden.
+                           
+                  </p>
+                        
+                  <p>
+                             Bis die Benutzeroberfl&auml;chen Text&auml;quivalente
+                             f&uuml;r clientbasierte Hyperlinks in Imagemaps
+                             interpretieren k&ouml;nnen, machen Sie Ihre Seite auch
+                             f&uuml;r Benutzer mit deaktivierten Grafiken zug&auml;nglich,
+                             indem Sie redundante Textlinks f&uuml;r alle aktiven Bereiche
+                             einer Client-Imagemap einf&uuml;gen. Durch Einf&uuml;gen der
+                             ALT-Beschreibung f&uuml;r AREA-Elemente ist Ihre Seite jedoch
+                             bereits mit diesen neuen Browsern kompatibel.
+                           
+                  </p>
+                      
+               </td>
+            </tr>
+         </table>
+      </div>
+   </body>
+</html>

@@ -1,0 +1,4948 @@
+<html>
+<head>
+<title>Recordset-Objekt</title>
+</head>
+<body bgcolor="#FFFFFF" text="#000000">
+<div id="Beschreibung">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">Recordset-Objekt </td>
+<td valign="top" class="COMPATIBILITY">(Versionen 2.0, 2.1, 2.5, 2.6)</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description">
+<synopsis>Dim <span class="replaceable">recordset</span> As ADODB.Recordset</synopsis>
+
+
+<p>Das Objekt Recordset  (Datensatzgruppe) repr&auml;sentiert entweder alle Zeilen aus einer vollst&auml;ndigen Tabelle oder die Datens&auml;tze, die von einem ausgef&uuml;hrten Befehl zur&uuml;ckgegeben worden sind.</p>
+
+</td></tr>
+</table>
+</div>
+<div id="Recordset.AbsolutePage">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+Eigenschaft Recordset.AbsolutePage </td>
+<td class="COMPATIBILITY">(Versionen 2.0, 2.1, 2.5, 2.6)</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2"><br><span class="replaceable">absolutepage</span> = <span class="replaceable">recordset</span>.AbsolutePage</td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+
+
+<p>Die Eigenschaft AbsolutePage liefert oder setzt einen Wert, der die aktuelle Seite in der Datensatzgruppe bezeichnet.</p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Datentyp</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Long</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Beschreibung</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Indem Sie die Eigenschaft AbsolutePage einstellen, weisen Sie ADO an, den Datensatzzeiger auf den ersten Datensatz der angegebenen Seite zu setzen. Die Eigenschaft AbsolutePage l&auml;sst sich auf eine Zahl zwischen <span class="LITERAL">1</span> und der von der Eigenschaft PageCount zur&uuml;ckgegebenen Zahl einstellen, n&auml;mlich der Gesamtzahl logischer Seiten. Die Gr&ouml;&szlig;e jeder Seite wird von der Eigenschaft PageSize bestimmt.</p>
+
+
+<p>Indem Sie die Eigenschaft AbsolutePage auslesen, k&ouml;nnen Sie feststellen, auf welcher logischen Seite sich der Datensatzzeiger befindet. Die Eigenschaft AbsolutePage liefert einen Wert vom Typ Long  und bezeichnet die aktuelle Seite oder einen PositionEnum-Wert.</p>
+
+
+<p>Wenn beim Lesen der Eigenschaft AbsolutePage der Datensatzzeiger auf die BOF-Marke zeigt, wird der Wert <span class="LITERAL">adPosBOF</span> (-2) zur&uuml;ckgegeben. Befindet sich der Datensatzzeiger auf der EOF-Marke, wird der Wert <span class="LITERAL">adPosEOF</span> (-3) zur&uuml;ckgegeben. Wenn die Datensatzgruppe leer ist, die Position des Datensatzzeigers unbekannt ist oder der Datenprovider die Eigenschaft AbsolutePage nicht unterst&uuml;tzt, so wird der Wert <span class="LITERAL">adPosUnknown</span> (-1) zur&uuml;ckgegeben.</p>
+
+
+<p>Die Eigenschaft AbsolutePage ist 1-basiert, das bedeutet, dass ein Wert von 1 die erste Seite in der Datensatzgruppe bezeichnet.</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Hinweis</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Nicht alle Provider unterst&uuml;tzen die Eigenschaft AbsolutePage.</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Siehe auch</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>CursorOptionEnum-Enumeration, PositionEnum-Enumeration, Recordset.Count-Eigenschaft, Recordset.Filter-Eigenschaft, Recordset.PageSize-Eigenschaft, Recordset.Supports-Methode</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+<div id="Recordset.AbsolutePosition">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+Eigenschaft Recordset.AbsolutePosition </td>
+<td class="COMPATIBILITY">(Versionen 2.0, 2.1, 2.5, 2.6)</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2"><br>absoluteposition = recordset.AbsolutePosition</td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+
+
+<p>Die Eigenschaft AbsolutePosition liefert oder setzt einen Wert, der die aktuelle Datensatzposition in der Datensatzgruppe bezeichnet.</p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Datentyp</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Long</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Beschreibung</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Indem Sie die Eigenschaft AbsolutePosition setzen, weisen Sie ADO an, den Datensatzzeiger auf den Datensatz mit der angegebenen Nummer zu verlagern. Die Eigenschaft AbsolutePosition l&auml;sst sich auf eine Zahl zwischen 1 und der von der Eigenschaft RecordCount zur&uuml;ckgegebenen Zahl einstellen, n&auml;mlich der Gesamtzahl der Datens&auml;tze in der Datensatzgruppe.</p>
+
+
+<p>Wenn Sie die Eigenschaft AbsolutePosition setzen, wird von ADO eine neue Gruppe an Datens&auml;tzen in den Cache-Speicher geladen, von denen der erste der von Ihnen angegebene ist. Wie viele Datens&auml;tze in den Cache geladen werden, wird durch die Eigenschaft CacheSize bestimmt.</p>
+
+
+<p>Indem Sie die Eigenschaft AbsolutePosition auslesen, k&ouml;nnen Sie feststellen, auf welcher Position sich der Datensatzzeiger befindet, und zwar als Long- oder PositionEnum-Wert.</p>
+
+
+<p>Wenn beim Lesen der Eigenschaft AbsolutePosition der Datensatzzeiger auf die BOF-Marke zeigt, wird der Wert<span class="LITERAL">adPosBOF</span> (-2) zur&uuml;ckgegeben. Und befindet sich der Datensatzzeiger auf der EOF-Marke, wird der Wert <span class="LITERAL">adPosEOF</span> (-3) zur&uuml;ckgegeben. Wenn die Datensatzgruppe leer ist, die Position des Datensatzzeigers unbekannt ist oder der Datenprovider die Eigenschaft AbsolutePosition nicht unterst&uuml;tzt, so wird der Wert <span class="LITERAL">adPosUnknown</span> (-1) zur&uuml;ckgegeben.</p>
+
+
+<p>Beachten Sie, dass sich die absolute Position &auml;ndern kann, falls einer der vorherigen Datens&auml;tze gel&ouml;scht wird oder auch nur ben&ouml;tigt wird. Es empfiehlt sich die Verwendung von Lesezeichen, um die Datensatzposition zu verfolgen.</p>
+
+
+<p>Die Eigenschaft AbsolutePosition ist 1-basiert, das bedeutet, dass ein Wert von 1 den ersten Datensatz in der Gruppe bezeichnet.</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Hinweis</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Nicht alle Provider unterst&uuml;tzen die Eigenschaft AbsolutePosition.</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Siehe auch</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>CursorOptionEnum-Enumeration, PositionEnum-Enumeration, Recordset.CacheSize-Eigenschaft, Recordset.RecordCount-Eigenschaft, Recordset.Supports-Methode</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+<div id="Recordset.ActiveCommand">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+Eigenschaft Recordset.ActiveCommand</td>
+<td class="COMPATIBILITY">(Versionen 2.0, 2.1, 2.5, 2.6)</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2"><br><span class="replaceable">activecommand = recordset</span>.ActiveCommand</td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+
+
+<p>Die Eigenschaft ActiveCommand gibt das Command-Objekt zur&uuml;ck, das zum Auff&uuml;llen eines Recordset-Objekts verwendet worden ist.</p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Datentyp</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Variant (mit Command-Objekt)</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Beschreibung</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Die schreibgesch&uuml;tzte Eigenschaft ActiveCommand wird f&uuml;r die Ausgabe des Command-Objekts verwendet, das zum Auff&uuml;llen eines Recordset-Objekts verwendet worden ist.</p>
+
+
+<p>Wenn kein Command-Objekt zum Auff&uuml;llen des Recordset-Objekts verwendet worden ist, wird ein Verweis auf ein <span class="LITERAL">Null</span>-Objekt zur&uuml;ckgegeben.</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+<div id="Recordset.ActiveConnection">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+Eigenschaft Recordset.ActiveConnection </td>
+<td class="COMPATIBILITY">(Versionen 2.0, 2.1, 2.5, 2.6)</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2"><br>Set <span class="replaceable">recordset</span>.ActiveConnection = <span class="replaceable">connection</span><br>recordset.ActiveConnection = connectionstring</td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+
+
+<p>Die Eigenschaft ActiveConnection gibt das Connection-Objekt f&uuml;r das aktuelle Command-Objekt an.</p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Datentyp</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>String oder Variant (mit dem aktuellen Connection-Objekt)</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Beschreibung</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Die Eigenschaft ActiveConnection kann entweder einen String oder einen Verweis auf ein Connection-Objekt zur&uuml;ckgeben. Die Eigenschaft ActiveConnection kann nicht gelesen werden, wenn das Objekt Recordset ge&ouml;ffnet ist oder wenn das Objekt Recordset mit einem Command-Objekt erstellt worden ist (und die Eigenschaft Source auf das Objekt Command  gesetzt worden ist). Ansonsten kann die Eigenschaft ActiveConnection immer auf einen String oder auf einen Verweis auf ein Connection-Objekt gesetzt werden. Bei Verwendung eines String-Werts sollte es sich um einen g&uuml;ltigen Verbindungs-String handeln, der an die Eigenschaft ConnectionString eines Connection-Objekts &uuml;bergeben werden kann. Die Eigenschaft ActiveConnection muss gesetzt werden, bevor Sie ein Recordset-Objekt &ouml;ffnen. Bevor sie gesetzt wird, weist die Eigenschaft ActiveConnection standardm&auml;&szlig;ig einen <span class="LITERAL">Null</span>-Objektverweis als Wert auf.</p>
+
+
+<p>Wenn Sie ActiveConnection als Parameter f&uuml;r die Methode Open des Objekts Recordset angeben, wird die Eigenschaft ActiveConnection auf denselben Wert zugreifen. Wenn Sie ein Recordset-Objekt &ouml;ffnen, bei dem als Wert f&uuml;r die Eigenschaft Source ein Command-Objekt verwendet wird, so wird die ActiveConnection-Eigenschaft des Objekts Recordset auf den Wert der ActiveConnection-Eigenschaft des Objekts Command zugreifen.</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Siehe auch</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Conection.ConnectionString-Eigenschaft, Recordset.Open-Methode, Recordset.Source-Eigenschaft</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+<div id="Recordset.AddNew">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+Methode Recordset.AddNew </td>
+<td class="COMPATIBILITY">(Versionen 2.0, 2.1, 2.5, 2.6)</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2"><br><span class="replaceable">recordset</span>.AddNew <span class="replaceable">Fields, Values</span></td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+
+
+<p>Die Methode AddNew erstellt einen neuen Datensatz innerhalb des aktuellen Recordset-Objekts (das auf den angegebenen Wert gesetzt ist).</p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Argumente</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<dl>
+<dt><span class="replaceable">Fields</span></dt>
+<dd><p>Als optionalen ersten Parameter an die Methode AddNew geben Sie entweder eine Variante oder ein Varianten-Array ein. Dieses Objekt repr&auml;sentiert den Namen des Felds bzw. des Arrays an Feldern, f&uuml;r die Sie Werte initialisieren wollen. Ist dieser Parameter ein Varianten-Array, so muss der n&auml;chste Parameter, <span class="replaceable">Values</span>, ebenfalls ein Varianten-Array derselben Dimension sein.</p></dd>
+
+</dl>
+
+
+<dl>
+<dt><span class="replaceable">Values</span></dt>
+<dd><p>Der optionale zweite Parameter arbeitet mit dem ersten Parameter, <span class="replaceable">Fields</span>, zusammen. Dieser Parameter ist ebenfalls eine Variante oder ein Varianten-Array und legt die Werte der Felder fest, die Sie im ersten Parameter hinzugef&uuml;gt haben. Wichtig: Wenn dieser Parameter ein Varianten-Array enth&auml;lt, so m&uuml;ssen auch die Fields-Parameter ein Array der gleichen Dimension bilden. Zudem muss jede Ordinalposition beider Arrays die Felder und Werte einander korrekt zuordnen.</p></dd>
+
+</dl>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Beschreibung</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Die Methode AddNew ist ein Mitglied des Objekts Recordset. Sie hat die Aufgabe, zur durch das Objekt Recordset definierten Gruppe einen neuen Datensatz hinzuzuf&uuml;gen. Dabei haben Sie die Wahl, entweder einen einzelnen Feldnamen und Initialisierungswert anzugeben oder eine ganze Liste an Feldern, und zwar in der Form eines Varianten-Arrays, zusammen mit einem korrespondierenden Varianten-Array an Werten, die diesen Feldern entsprechen.</p>
+
+
+<p>Nach dem Aufruf der Methode AddNew k&ouml;nnen Sie entweder die Methode Update aufrufen oder erneut die Methode AddNew, um den aktuellen Datensatz in das Recordset-Objekt einzuf&uuml;gen. Wenn Sie die Methode AddNew vor der Methode Update aufrufen, ruft ADO die Methode Update automatisch auf, und macht dann mit dem AddNew-Methodenaufruf weiter. Durch einfaches Hinzuf&uuml;gen des Datensatzes zum Recordset-Objekt ist nicht garantiert, dass sich der neue Datensatz schon in der Datenquelle befindet. Das h&auml;ngt vom Aktualisierungsmodus des Recordset-Objekts ab.</p>
+
+
+<p>Ist das Objekt Recordset auf unmittelbaren Aktualisierungsmodus gesetzt und Sie geben beim AddNew-Aufruf keine Parameter an, werden die &Auml;nderungen unmittelbar nach dem anschlie&szlig;enden Aufruf von Update bzw. AddNew vorgenommen. Geben Sie beim Aufruf der Methode AddNew hingegen Parameter an, so werden die Werte bis zum n&auml;chsten Aufruf von Update lokal zwischengespeichert. In der Zeit zwischen dem Aufruf von AddNew und Update wird die Eigenschaft EditMode auf <span class="LITERAL">adEditAdd</span> gesetzt und wird erst dann wieder auf <span class="LITERAL">adEditNone</span> zur&uuml;ckgesetzt, wenn die Aktualisierung abgeschlossen ist.</p>
+
+
+<p>Ist das Objekt Recordset auf Batch-Aktualisierungsmodus gesetzt, werden die &Auml;nderungen nur ausgef&uuml;hrt, wenn die Methode UpdateBatch des Recordset-Objekts aufgerufen wird. In diesem Modus werden die &Auml;nderungen lokal zwischengespeichert, wenn die Methode AddNew keine Parameter umfasst. Dadurch wird auch die Eigenschaft EditMode auf <span class="LITERAL">adEditAdd</span> gesetzt. Die &Auml;nderungen werden an den Provider gesendet &ndash; aber immer noch nicht in die Datenquelle geschrieben &ndash;, wenn die Methode Update aufgerufen wird, wobei wiederum die Eigenschaft EditMode auf <span class="LITERAL">adEditNone</span> gesetzt wird. Wenn Sie hingegen die Methode AddNew mit Parametern aufrufen, werden die &Auml;nderungen unmittelbar an den Provider gesendet, damit sie beim n&auml;chsten Aufruf von UpdateBatch in die Datenquelle geschrieben werden.</p>
+
+
+<p>Unterst&uuml;tzt Ihr Recordset-Objekt Lesezeichen, wird der neue Datensatz am Ende Ihrer Datensatzgruppe eingef&uuml;gt und ist jederzeit zug&auml;nglich. Unterst&uuml;tzt Ihr Recordset-Objekt jedoch keine Lesezeichen, ist es durchaus m&ouml;glich, dass Sie auf den Datensatz nicht mehr zugreifen k&ouml;nnen, nachdem Sie ihn verlassen haben; Sie sollten sich also niemals darauf verlassen, dass er da ist. Verwenden Sie stattdessen die Methode Requery des Objekts Recordset, damit Ihre Anwendung das Feld finden kann.</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Siehe auch</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>EditModeEnum-Enumeration, Recordset.EditMode-Eigenschaft, Recordset.Requery-Methode, Recordset.Update-Methode, Recordset.UpdateBatch-Methode</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+<div id="Recordset.BOF">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+Eigenschaften Recordset.BOF/Recordset.EOF</td>
+<td class="COMPATIBILITY">(Versionen 2.0, 2.1, 2.5, 2.6)</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2"><br><span class="REPLACEABLE">Boolean = recordset</span>.BOF<br><span class="replaceable">Boolean = recordset</span>.EOF</td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+
+
+<p>Die Eigenschaft BOF (Beginning of File) bedeutet, dass sich der Datensatzzeiger vor dem ersten Datensatz in der Gruppe befindet. Die Eigenschaft EOF (End of File) bedeutet, dass sich der Datensatzzeiger direkt hinter dem letzten Datensatz in der Gruppe befindet.</p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Datentyp</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Boolean</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Beschreibung</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Die Eigenschaften BOF und EOF sind beide schreibgesch&uuml;tzt.</p>
+
+
+<p>Ist sowohl die Eigenschaft BOF als auch EOF <span class="LITERAL">True</span>, so ist die aktuelle Datensatzgruppe leer. Beim Verwenden einer Move-Methode (Move, MovePrevious, MoveFirst, MoveNext oder MovePrevious) wird ein Fehler erzeugt.</p>
+
+
+<p>Ist sowohl die Eigenschaft BOF als auch EOF <span class="LITERAL">False</span>, so zeigt der Datensatzzeiger auf irgendeinen Datensatz innerhalb der Datensatzgruppe. In diesem Fall lassen sich die Move-Methoden problemlos einsetzen.</p>
+
+
+<p>Ist die Eigenschaft BOF <span class="LITERAL">True</span> und die Eigenschaft EOF <span class="LITERAL">False</span>, so zeigt der Datensatzzeiger auf die Position direkt vor dem ersten Datensatz innerhalb der Gruppe. In diesem Fall k&ouml;nnen Sie die Methode MovePrevious oder die Methode Move mit einer negativen Zahl verwenden, ohne einen Fehler zu erzeugen.</p>
+
+
+<p>Ist die Eigenschaft EOF <span class="LITERAL">True</span> und die Eigenschaft BOF <span class="LITERAL">False</span>, so zeigt der Datensatzzeiger auf die Position direkt hinter dem letzten Datensatz in der Gruppe. In diesem Fall k&ouml;nnen Sie die Methode MoveFirst oder die Methode Move mit einer positiven Zahl verwenden, ohne einen Fehler zu erzeugen.</p>
+
+
+<p>Wenn Sie den letzten Datensatz in der Gruppe l&ouml;schen, bleiben die Eigenschaften BOF und EOF auf <span class="LITERAL">False</span> gesetzt, bis Sie den Datensatzzeiger verlagern.</p>
+
+
+<p>Wird durch Aufruf sowohl von MoveFirst als auch von MoveLast kein Datensatz gefunden, so werden die Eigenschaften EOF und BOF beide auf <span class="LITERAL">True</span> gesetzt.</p>
+
+
+<p>Kann weder MovePrevious noch Move  &ndash; mit einem Wert kleiner Null &ndash; einen Datensatz finden, wird die Eigenschaft BOF auf <span class="LITERAL">True</span> gesetzt.</p>
+
+
+<p>Kann weder MoveNext noch Move  &ndash; mit einem Wert gr&ouml;&szlig;er Null &ndash; einen Datensatz finden, wird die Eigenschaft EOF auf <span class="LITERAL">True</span> gesetzt.</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Siehe auch</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Recordset.Move-Methode, Recordset.MoveFirst-Methode, Recordset.MoveLast-Methode, Recordset.MoveNext-Methode, Recordset.MovePrevious-Methode, Recordset.Open-Methode</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+<div id="Recordset.Bookmark">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+Eigenschaft Recordset.Bookmark</td>
+<td class="COMPATIBILITY">(Versionen 2.0, 2.1, 2.5, 2.6)</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2"><br><span class="replaceable">bookmark = recordset</span>.Bookmark</td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+
+
+<p>Die Eigenschaft Bookmark gibt einen eindeutigen Bezeichner f&uuml;r den aktuellen Datensatz in der Gruppe zur&uuml;ck. Indem die Eigenschaft Bookmark auf einen zuvor gelesenen Wert gesetzt wird, kann der Datensatzzeiger wieder auf den urspr&uuml;nglichen Datensatz gesetzt werden.</p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Datentyp</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Variant</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Beschreibung</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Die Eigenschaft Bookmark  ist nur f&uuml;r Datensatzgruppen verf&uuml;gbar, die Lesezeichen unterst&uuml;tzen. Lesezeichen werden zum Speichern der Position des aktuellen Datensatzes verwendet und sp&auml;ter dazu, den aktuellen Datensatz wieder auf das angegebene Lesezeichen zu setzen.</p>
+
+
+<p>Lesezeichen werden innerhalb von Recordset-Objekten, die Klons voneinander sind, austauschbar verwendet, aber nicht mit anderen Recordset-Objekten, selbst wenn diese aus derselben Quelle erstellt worden sind.</p>
+
+
+<p>Der R&uuml;ckgabewert der Eigenschaft Bookmark ist nicht lesbar und sollte in Vergleichen nicht verwendet werden, da zwei Lesezeichen auf denselben Datensatz nicht unbedingt identisch sind.</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Hinweis</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Nicht alle Provider unterst&uuml;tzen die Eigenschaft Bookmark.</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Siehe auch</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>CursorOptionEnum-Enumeration, Recordset.Supports-Methode</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+<div id="Recordset.CacheSize">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+Eigenschaft Recordset.CacheSize </td>
+<td class="COMPATIBILITY">(Versionen 2.0, 2.1, 2.5, 2.6)</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2"><br><span class="replaceable">recordset</span>.CacheSize = <span class="replaceable">cachesize</span></td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+
+
+<p>Die Eigenschaft CacheSize gibt an, wie viele Datens&auml;tze von ADO im lokalen System zwischengespeichert werden.</p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Datentyp</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Long</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Beschreibung</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Die Eigenschaft CacheSize setzt oder liest die Anzahl an Datens&auml;tzen, die von ADO jeweils im lokalen Arbeitsspeicher gespeichert werden. Der Wert von CacheSize muss mindestens 1 betragen, ansonsten tritt ein Fehler auf. Der Standardwert der Eigenschaft CacheSize ist 1.</p>
+
+
+<p>Wird eine Datensatzgruppe das erste Mal ge&ouml;ffnet, wird die von der Eigenschaft CacheSize festgelegte Anzahl an Datens&auml;tzen gelesen. Sobald der Datensatzzeiger auf einen Datensatz verlagert wird, der hinter dieser Zahl liegt, wird der n&auml;chste Satz an Datens&auml;tzen zur&uuml;ckgegeben, von denen der erste der n&auml;chste Datensatz in der Datensatzgruppe ist. Wenn weniger Datens&auml;tze verf&uuml;gbar sind, fordert CacheSize nur diese an.</p>
+
+
+<p>Die Eigenschaft CacheSize l&auml;sst sich f&uuml;r eine Datensatzgruppe jederzeit &auml;ndern, allerdings &auml;ndert sich die in den Cache gelesene Anzahl and Datens&auml;tzen erst, wenn der Zeiger auf einen Datensatz au&szlig;erhalb des aktuellen Cache gesetzt wird.</p>
+
+
+<p>Die Werte innerhalb des Cache spiegeln nicht die &Auml;nderungen wider, die von anderen Anwendern vorgenommen worden sind. Um dies zu erreichen, verwenden Sie die Methode Resync.</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Siehe auch</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Recordset.Resync-Methode</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+<div id="Recordset.Cancel">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+Methode Recordset.Cancel </td>
+<td class="COMPATIBILITY">(Versionen 2.0, 2.1, 2.5, 2.6)</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2"><br>recordset.Cancel</td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+
+
+<p>Die Methode Cancel bricht eine asynchrone Operation f&uuml;r das Objekt Recordset ab.</p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Beschreibung</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Die Methode Cancel k&ouml;nnen Sie aufrufen, um eine asynchrone Operation des von der Methode Open aufgerufen Recordset-Objekts abzubrechen.</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Siehe auch</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Recordset.Open-Methode</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+<div id="Recordset.CancelBatch">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+Methode Recordset.CancelBatch </td>
+<td class="COMPATIBILITY">(Versionen 2.0, 2.1, 2.5, 2.6)</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2"><br><span class="replaceable">recordset</span>.CancelBatch <span class="replaceable">AffectRecords</span></td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+
+
+<p>Die Methode CancelBatch bricht die gerade anstehende Batch-Aktualisierung der aktuellen Datensatzgruppe ab.</p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Argumente</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<dl>
+<dt><span class="replaceable">AffectRecords</span> (AffectEnum)</dt>
+<dd><p>Optional. Dieses Argument ist ein Enumerator mit dem Wert <span class="LITERAL">adAffectCurrent</span>, <span class="LITERAL">adAffectGroup</span> oder <span class="LITERAL">adAffectAll</span>.</p>
+
+
+<p>Wenn <span class="LITERAL">adAffectCurrent</span> als Wert von <span class="replaceable">AffectRecords</span> &uuml;bergeben wird, wirkt sich der Aufruf der Methode CancelBatch nur auf eine anstehende Batch-Aktualisierung des aktuellen Datensatzes in der Gruppe aus.</p>
+
+
+<p>Wenn <span class="LITERAL">adAffectGroup</span> als Wert von <span class="replaceable">AffectRecords</span> &uuml;bergeben wird, wirkt sich der Aufruf der Methode CancelBatch nur auf die anstehenden Datens&auml;tze aus, die durch die Eigenschaft Filter des akutellen Recordset-Objekts festgelegt worden sind. Diese Eigenschaft muss bereits f&uuml;r die Methode CancelBatch gesetzt worden sein, damit sie mit dem Parameter <span class="replaceable">adAffectGroup</span> aufgerufen werden kann.</p>
+
+
+<p>Wenn <span class="LITERAL">adAffectAll</span> als Wert von <span class="replaceable">AffectRecords</span> &uuml;bergeben wird, sind alle anstehenden Datens&auml;tze im aktuellen Recordset-Objekt (einschlie&szlig;lich der durch die Filter-Eigenschaft verborgenen) von der Methode CancelBatch betroffen.</p></dd>
+
+</dl>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Beschreibung</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Mit der Methode CancelBatch k&ouml;nnen Sie beliebige oder alle anstehenden Aktualisierungen im aktuellen Recordset-Objekt vom Batch-Aktualisierungsmodus ausschlie&szlig;en. Wird die Methode jedoch im unmittelbaren Aktualisierungsmodus aufgerufen, so wird ein Fehler erzeugt.</p>
+
+
+<p>Die Methode CancelUpdate wird durch die Methode CancelBatch aufgerufen und entfernt etwaige durch das Batch vorgenommene Aktualisierungen oder neu hinzugef&uuml;gte Datens&auml;tze. Aus diesem Grund kann die aktuelle Datensatzposition ung&uuml;ltig sein, und es empfiehlt sich, dass Sie den Zeiger auf eine verl&auml;ssliche Datensatzposition verlagern, und zwar entweder durch ein g&uuml;ltiges Lesezeichen oder durch eine Methode wie MoveFirst.</p>
+
+
+<p>Tritt w&auml;hrend des CancelBatch-Aufrufs ein Laufzeitfehler auf, so entstehen Konflikte mit allen Datens&auml;tzen, die von der aktuellen Datensatzgruppe angefordert worden sind. Sind nur einige wenige Datens&auml;tze vom Konflikt betroffen, so wird die Errors-Kollektion entsprechend aufgef&uuml;llt und es entsteht kein Laufzeitfehler.</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Hinweis</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Nicht alle Provider unterst&uuml;tzen die Eigenschaft CancelBatch.</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Siehe auch</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>CursorOptionEnum-Enumeration, Recordset.CancelUpdate-Methode, Recordset.Filter-Property, AffectEnum-Enumeration, Recordset.Supports-Methode</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+<div id="Recordset.CancelUpdate">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+Methode Recordset.CancelUpdate </td>
+<td class="COMPATIBILITY">(Versionen 2.0, 2.1, 2.5, 2.6)</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2"><br><span class="replaceable">recordset</span>.CancelUpdate</td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+
+
+<p>Die Methode CancelUpdate nimmt alle &Auml;nderungen der aktuellen Batch-Aktualisierung zur&uuml;ck, die seit dem letzten Aufruf der Methoden AddNew oder Update vorgenommen worden sind.</p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Beschreibung</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Die Methode CancelUpdate des Recordset-Objekts nimmt &Auml;nderungen zur&uuml;ck, die seit dem Aufruf von Update oder Recordset am Datensatz vorgenommen worden sind. Au&szlig;erdem nimmt sie die mit AddNew durchgef&uuml;hrte Erstellung neuer Datens&auml;tze zur&uuml;ck.</p>
+
+
+<p>Die Methode CancelUpdate kann nur vor der Update-Methode f&uuml;r den aktuellen Datensatz aufgerufen werden. Die einzige andere M&ouml;glichkeit, &Auml;nderungen an einem Datensatz zur&uuml;ckzunehmen, haben Sie durch das Transaktionsmanagement mit den Recordset-Methoden BeginTrans und RollbackTrans.</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Siehe auch</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Recordset.AddNew-Methode, Recordset.Update-Methode</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+<div id="Recordset.Clone">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+Methode Recordset.Clone </td>
+<td class="COMPATIBILITY">(Versionen 2.0, 2.1, 2.5, 2.6)</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2"><br>Set <span class="replaceable">cloned_recordset = original_recordset</span>.Clone</td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+
+
+<p>Die Methode Clone des Recordset-Objekts gibt einen Klon der aktuellen Datensatzgruppe zur&uuml;ck.</p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">R&uuml;ckgabewerte</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Recordset-Objekt</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Beschreibung</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Die Methode Clone des Objekts Recordset erstellt ein exaktes Duplikat des urspr&uuml;nglichen Recordset-Objekts. Verwenden Sie diese Methode, wenn Sie zu einem bestimmten Zeitpunkt innerhalb derselben Datensatzgruppe auf mehr als einen Datensatz zugreifen wollen. Das ist effizienter als das Erstellen eines neuen Recordset-Objekts f&uuml;r dieselbe Datensatzgruppe.</p>
+
+
+<p>Beim Erstellen eines Klons wird seine Datensatzposition auf den ersten Datensatz in der Gruppe gesetzt.</p>
+
+
+<p>Nur Datensatzgruppen, die Lesezeichen unterst&uuml;tzen, k&ouml;nnen geklont werden. Lesezeichen einer Datensatzgruppe sind auch f&uuml;r die Klons dieser Datensatzgruppe g&uuml;ltig, und umgekehrt. Durch das Schlie&szlig;en eines Klons wird die urspr&uuml;ngliche Datensatzgruppe nicht geschlossen, und umgekehrt.</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Siehe auch</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>LockTypeEnum-Enumeration</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+<div id="Recordset.Close">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+Methode Recordset.Close</td>
+<td class="COMPATIBILITY">(Versionen 2.0, 2.1, 2.5, 2.6)</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2"><br><span class="replaceable">recordset</span>.Close</td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+
+
+<p>Die Methode Close schlie&szlig;t ein Recordset-Objekt.</p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Beschreibung</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Die Methode Close schlie&szlig;t entweder ein Connection- oder ein Recordset-Objekt. Wenn Sie diese Methode f&uuml;r eines der beiden Objekttypen aufrufen, werden alle von der Verbindung bzw. der Datensatzgruppe abh&auml;ngigen Objekte ebenfalls geschlossen. Die Methode Close wird beispielsweise eingesetzt, um Systemressourcen freizusetzen ohne die Ressource aus dem Speicher zu l&ouml;schen. Nachdem Sie ein Connection- oder Recordset-Objekt geschlossen haben, k&ouml;nnen Sie es wieder neu &ouml;ffnen. Um das Objekt vollst&auml;ndig aus dem Speicher zu entfernen, setzen Sie es auf <span class="LITERAL">Nothing</span>.</p>
+
+
+<p>Wenn Sie die Close-Methode des Objekts Connection aufrufen, werden alle angeschlossenen Recordset-Objekte geschlossen, aber das angeschlossene Command-Objekt bleibt erhalten. Dabei wird die Eigenschaft ActiveConnection auf <span class="LITERAL">Nothing</span> gesetzt und die Parameters-Kollektion des Command-Objekts wird bereinigt. Sie k&ouml;nnen weiterhin mit Hilfe der Methode Open eine Verbindung zu einer Datenquelle herstellen.</p>
+
+
+<p>Wenn Sie ein Connection-Objekt schlie&szlig;en, an das ge&ouml;ffnete Recordset-Objekte angeschlossen sind, werden etwaige anstehende &Auml;nderungen am Recordset-Objekt zur&uuml;ckgerollt. Wird die Methode Close des Connection-Objekts aufgerufen, w&auml;hrend eine Transaktion gerade verarbeitet wird, wird ein Fehler erzeugt. Wenn ein Connection-Objekt die Verbindung verliert, w&auml;hrend eine Transaktion im Gange ist, wird die Transaktion automatisch zur&uuml;ckgerollt.</p>
+
+
+<p>Wenn Sie die Methode Close auf das Recordset-Objekt anwenden, wird ein exklusiver Zugriff auf die Daten wieder aufgehoben und etwaige verbundene Daten werden freigegeben. Sie k&ouml;nnen die Open-Methode sp&auml;ter wieder auf dieses Recordset-Objekt anwenden.</p>
+
+
+<p>Befindet sich Ihre Datenquelle im unmittelbaren Aktualisierungsmodus und die Close-Methode wird w&auml;hrend eines Bearbeitungsvorgangs aufgerufen, entsteht ein Fehler. Um einen solchen Fehler zu vermeiden, rufen Sie entweder die Methode Update oder die Methode CancelUpdate auf. Wenn Sie sich im Batch-Aktualisierungsmodus befinden, gehen die Daten seit dem letzten UpdateBatch verloren.</p>
+
+
+<p>Haben Sie ein Recordset-Objekt geklont, dessen Close-Methode Sie aufgerufen haben, so wird das geklonte Recordset-Objekt nicht geschlossen, und umgekehrt.</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Siehe auch</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Recordset.ActiveConnection-Eigenschaft, Recordset.CancelUpdate-Methode, Recordset.Open-Methode, Recordset.Update-Methode</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+<div id="Recordset.CompareBookmarks">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+Methode Recordset.CompareBookmarks</td>
+<td class="COMPATIBILITY">(Versionen 2.0, 2.1, 2.5, 2.6)</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2"><br><span class="replaceable">result = recordset</span>.CompareBookmarks (<span class="replaceable">Bookmark1, Bookmark2</span>)</td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+
+
+<p>Die Methode CompareBookmarks bestimmt die Position von zwei Bookmarks in einer Datensatzgruppe. Die Position wird als relative Position zueinander bestimmt.</p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Argumente</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<dl>
+<dt><span class="replaceable">Bookmark1</span> (Variante)</dt>
+<dd><p>Dieses Argument bezeichnet ein Lesezeichen auf die erste zu vergleichende Zeile.</p></dd>
+
+</dl>
+
+
+<dl>
+<dt><span class="replaceable">Bookmark2</span> (Variante)</dt>
+<dd><p>Dieses Argument bezeichnet ein Lesezeichen auf die zweite zu vergleichende Zeile.</p></dd>
+
+</dl>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">R&uuml;ckgabewerte</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>CompareEnum</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Beschreibung</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Die Methode CompareBookmark gibt einen Wert zur&uuml;ck, der anzeigt, welches von zwei &uuml;bergebenen Lesezeichen innerhalb der Ordinalposition zuerst kommt. Lesezeichen sind eindeutig f&uuml;r Zeilen innerhalb einer Datensatzgruppe und ihren Klonen. Der Vergleich von Lesezeichen aus verschiedenen Datensatzgruppen (die nicht durch Klonen erzeugt wurden) liefert keine zuverl&auml;ssigen Ergebnisse.</p>
+
+
+<p>Sie erhalten das Lesezeichen der aktuellen Zeile, indem Sie die Eigenschaft Bookmark lesen.</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Siehe auch</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>CompareEnum-Enumeration, Recordset.Bookmark-Eigenschaft, Recordset.Clone-Methode</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+<div id="Recordset.CursorLocation">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+Eigenschaft Recordset.CursorLocation</td>
+<td class="COMPATIBILITY">(Versionen 2.0, 2.1, 2.5, 2.6)</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2"><br><span class="replaceable">recordset</span>.CursorLocation = <span class="replaceable">cursorlocation</span></td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+
+
+<p>Die Eigenschaft CursorLocation gibt die Adresse des Cursordienstes an.</p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Datentyp</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>CursorLocationEnum (Long)</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Beschreibung</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Der Wert der Eigenschaft CursorLocation kann auf einen der in <link linkend="ado-APP-E">Anhang E</link> aufgef&uuml;hrten g&uuml;ltigen CursorLocationEnum-Werte gesetzt werden.</p>
+
+
+<p>Bei geschlossenen Recordset-Objekten besteht f&uuml;r die Eigenschaft CursorLocation  Lese- und Schreibberechtigung, bei ge&ouml;ffneten Recorset-Objekten darf dieser Wert nur gelesen werden.</p>
+
+
+<p>Eine von der Methode Execute zur&uuml;ckgegebene Datensatzgruppe erbt den Wert f&uuml;r die Cursorposition aus dem Originalobjekt. Recordset-Objekte erben diesen Wert automatisch von dem Connection-Objekt, das sie eingerichtet hat.</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Siehe auch</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Command.Object-Methode, Connection.Execute-Methode, CursorLocationEnum-Enumeration, Recordset.Open-Methode</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+<div id="Recordset.CursorType">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+Eigenschaft Recordset.CursorType</td>
+<td class="COMPATIBILITY">(Versionen 2.0, 2.1, 2.5, 2.6)</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2"><br><span class="replaceable">recordset</span>.CursorLocation = <span class="replaceable">cursorlocation</span></td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+
+
+<p>Die Eigenschaft CursorType bezeichnet den f&uuml;r die aktuelle Datensatzgruppe zu verwendenden Cursortyp.</p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Datentyp</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>CursorTypeEnum (Long)</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Beschreibung</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Die Eigenschaft CursorType bezeichnet den Cursortyp, der verwendet werden soll, wenn die aktuelle Datensatzgruppe ge&ouml;ffnet wird. F&uuml;r diese Eigenschaft besteht Lese- und Schreibberechtigung, wenn das Objekt Recordset geschlossen ist. In ge&ouml;ffnetem Zustand ist es schreibgesch&uuml;tzt. Als Wert f&uuml;r die Eigenschaft CursorType ist eine der in <link linkend="ado-APP-E">Anhang E</link> aufgef&uuml;hrten CursorType-Enumerationen zul&auml;ssig.</p>
+
+
+<p>Unterst&uuml;tzt der aktuelle Datenprovider den gew&auml;hlten Cursortyp nicht, so &auml;ndert sich der Wert der Eigenschaft CursorType, wenn das Objekt Recordset ge&ouml;ffnet wird. Dieser Wert kann bei Bedarf von der Anwendung gelesen werden. Wird dann das Recordset-Objekt wieder geschlossen, wird der urspr&uuml;nglich gew&auml;hlte Wert wieder an die Eigenschaft CursorType &uuml;bergeben.</p>
+
+
+<p>Anhand der Methode Supports des Recordset-Objekts k&ouml;nnen Sie feststellen, welche Funktionalit&auml;t vom gew&auml;hlten Cursortyp unterst&uuml;tzt wird. (Weitere Informationen &uuml;ber Cursortypen erhalten Sie in <link linkend="ado-CHP-5">Kapitel&nbsp;5</link>.)</p>
+
+
+<p>Der dynamische Cursor (Dynamic) unterst&uuml;tzt die von der Methode Supports beschriebene adMovePrevious-Funktionalit&auml;t. Der Vorw&auml;rtscursor (Forward Only) unterst&uuml;tzt keine der Funktionalit&auml;ten, die die Supports-Methode beschreibt. Der Schl&uuml;sselcursor (Keyset) und der statische Cursor (Static) unterst&uuml;tzten die von der Methode Supports beschriebenen Funktionalit&auml;ten adBookmark, adHoldRecords, adMovePrevious und adResync functionality.</p>
+
+
+<p>Der Vorw&auml;rtscursor unterst&uuml;tzt keine Lesezeichen, da die Funktionalit&auml;t f&uuml;r das Zur&uuml;ckspringen auf einen Datensatz mit Lesezeichen fehlt. Der statische und der Schl&uuml;sselcursor unterst&uuml;tzen Lesezeichen &uuml;ber ADO, und der dynamisch Cursor unterst&uuml;tzt Lesezeichen &uuml;ber den Datenprovider (falls dieser sie unterst&uuml;tzt).</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Hinweis</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Wurde die Eigenschaft CursorLocation auf <span class="LITERAL">adUseClient</span> gesetzt, kann nur der CursorType-Wert <span class="LITERAL">adOpenStatic</span> verwendet werden.</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Siehe auch</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Connection.CursorLocation-Eigenschaft, CursorTypeEnum-Enumeration, Recordset.CursorLocation-Eigenschaft, Recordset.Open-Methode, Recordset.Supports-Methode</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+<div id="Recordset.DataMember">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+Eigenschaft Recordset.DataMember</td>
+<td class="COMPATIBILITY">RDM-Eigenschaft (Versionen 2.0, 2.1, 2.5, 2.6)</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2"><br><span class="replaceable">recordset</span>.DataMember = <span class="replaceable">datamember</span><br><span class="replaceable">recordset</span>.DataSource = <span class="replaceable">datasource</span></td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+
+
+<p>Die Eigenschaft DataMember bezeichnet das Objekt in der von der Eigenschaft DataSource angegebenen Datenquelle, mit dem das Recordset-Objekt erstellt werden soll.</p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Datentyp</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<simplelist>
+
+<member>String (Eigenschaft DataMember)</member>
+
+<member>DataSource (Eigenschaft DataSource)</member>
+
+</simplelist>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Beschreibung</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Die Eigenschaften DataMember und DataSource werden immer zusammen verwendet.</p>
+
+
+<p>Die Eigenschaft DataSource bezeichnet die Datenquelle, in der sich das durch DataMember angegebene Objekt befindet.</p>
+
+
+<p>Die Eigenschaft DataMember gibt an, welches Objekt innerhalb der Datenquelle zur Erstellung des Recordset-Objekts verwendet werden soll.</p>
+
+
+<p>Das Recordset-Objekt muss geschlossen werden, wenn die Eigenschaft DataMember gesetzt wird. Es entsteht auch ein Fehler, wenn die Eigenschaft DataSource vor der Eigenschaft DataMember gesetzt wird.</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+<div id="Recordset.Delete">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+Methode Recordset.Delete</td>
+<td class="COMPATIBILITY">(Versionen 2.0, 2.1, 2.5, 2.6)</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2"><br><span class="replaceable">recordset</span>.Delete <span class="replaceable">AffectRecords</span></td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+
+
+<p>Die Methode Delete l&ouml;scht bestimmte Datens&auml;tze innerhalb einer Datensatzgruppe.</p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Argumente</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<dl>
+<dt><span class="replaceable">AffectRecords</span> (Affect Enum)</dt>
+<dd><p>Optional. Dieses Argument bezeichnet entweder den Wert <span class="LITERAL">adAffectCurrent</span> oder den Wert <span class="LITERAL">adAffectGroup</span>.</p>
+
+
+<p>Wenn <span class="LITERAL">adAffectCurrent</span> als Wert von <span class="replaceable">AffectRecords</span> &uuml;bergeben wird, wirkt sich der Aufruf der Methode CancelBatch nur auf eine anstehende Batch-Aktualisierung des aktuellen Datensatzes in der Gruppe aus.</p>
+
+
+<p>Wenn <span class="LITERAL">adAffectGroup</span> als Wert von <span class="replaceable">AffectRecords</span> &uuml;bergeben wird, wirkt sich der Aufruf der Methode CancelBatch nur auf die anstehenden Datens&auml;tze aus, die durch die Eigenschaft Filter des akutellen Recordset-Objekts festgelegt worden sind. Diese Eigenschaft muss bereits f&uuml;r die Methode CancelBatch gesetzt worden sein, damit sie mit dem Parameter <span class="replaceable">adAffectGroup</span> aufgerufen werden kann.</p></dd>
+
+
+</dl>
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Beschreibung</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Die Methode Delete l&ouml;scht einen Datensatz oder eine Gruppe von Datens&auml;tzen, die mit dem Recordset-Objekt verwendet werden. Die Methode Delete entfernt ein bestimmtes Parameter-Objekt aus der Parameter-Kollektion, wenn es darin verwendet wird.</p>
+
+
+<p>Wenn Sie die Methode Delete mit dem Recordset-Objekt zusammen verwenden, werden die zu l&ouml;schenden Datens&auml;tze nur f&uuml;r das L&ouml;schen markiert. Gestattet die betreffende Datensatzgruppe keine L&ouml;schung, entsteht ein Fehler. Im unmittelbaren Aktualisierungsmodus wird die L&ouml;schung sofort durchgef&uuml;hrt. Im Batch-Aktualisierungsmodus jedoch werden die Datens&auml;tze f&uuml;r das L&ouml;schen markiert und zwischengespeichert, bis die Methode UpdateBatch aufgerufen wird. Die gel&ouml;schten Datens&auml;tze k&ouml;nnen mit Hilfe der Eigenschaft Filter angezeigt werden.</p>
+
+
+<p>Nachdem Sie einen Datensatz gel&ouml;scht haben, steht die aktuelle Datensatzposition immer noch auf diesem Datensatz. Sobald Sie den Cursor verlagern, kann auf die Datens&auml;tze nicht mehr zugegriffen werden, und beim Versuch, einen gel&ouml;schten Datensatz zu lesen, entsteht ein Fehler. Wenn Sie Transaktionsmanagement mit BeginTrans verwenden, k&ouml;nnen Sie eine L&ouml;schung von Datens&auml;tzen mit der Methode RollbackTrans r&uuml;ckg&auml;ngig machen. Im Batch-Aktualisierungsmodus haben Sie au&szlig;erdem die M&ouml;glichkeit, eine L&ouml;schung aufzuheben, indem Sie die Methode CancelBatch anwenden.</p>
+
+
+<p>Wenn Sie versuchen, einen Datensatz zu l&ouml;schen, der bereits von einem anderen Anwender gel&ouml;scht worden ist, so entsteht kein Laufzeitfehler, aber die Errors-Kollektion wird mit Warnungen gef&uuml;llt. Ein Laufzeitfehler tritt nur auf, wenn alle angeforderten Datens&auml;tze, die gel&ouml;scht werden sollen, aus irgendeinem Grund einen Konflikt aufweisen. Um herauszufinden, welche Datens&auml;tze Konflikte aufweisen, verwenden Sie die Eigenschaft Filter mit dem Wert <span class="LITERAL">adFilterAffectedRecords</span> und der Eigenschaft Status.</p>
+
+
+<p>Die Methode Delete ist nur f&uuml;r die Parameters-Kollektion des Command-Objekts zul&auml;ssig. Den Namen des aus der Kollektion zu l&ouml;schenden Parameters geben Sie in Form eines Strings an.</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Hinweis</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Nicht alle Provider unterst&uuml;tzen die Methode Delete.</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Siehe auch</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>AffectEnum-Enumeration, Connection.RollbackTrans-Methode, CursorOptionEnum-Enumeration, Recordset.CancelBatch-Methode, Recordset.Filter-Eigenschaft, Recordset.Status-Eigenschaft, Recordset.Supports-Methode</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+<div id="Recordset.EditMode">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+Eigenschaft Recordset.EditMode</td>
+<td class="COMPATIBILITY">(Versionen 2.0, 2.1, 2.5, 2.6)</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2"><br><span class="replaceable">recordset</span>.EditMode = <span class="replaceable">editmode</span></td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+
+
+<p>Die Eigenschaft EditMode bezeichnet den aktuellen Bearbeitungsstatus eines bestimmten Datensatzes.</p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Datentyp</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>EditModeEnum (Long)</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Beschreibung</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Mit der Eigenschaft EditMode legen Sie fest, ob der aktuelle Datensatz ge&auml;ndert wird, wenn ein Bearbeitungsvorgang unterbrochen worden ist. Anhand dieser Information k&ouml;nnen Sie bestimmen, ob Sie die Methode Update oder die Methode CancelUpdate aufrufen m&uuml;ssen.</p>
+
+
+<p>Als Wert f&uuml;r die Eigenschaft EditMode ist eine der in <link linkend="ado-APP-E">Anhang E</link> aufgef&uuml;hrten EditModeEnum-Enumerationen zul&auml;ssig.</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Siehe auch</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>EditModeEnum-Enumeration, Recordset.AddNew-Methode, Recordset.CancelUpdate-Methode, Recordset.Update-Methode</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+<div id="Recordset.EndOfRecordset">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+Ereignis Recordset.EndOfRecordset</td>
+<td class="COMPATIBILITY">(Versionen 2.0, 2.1, 2.5, 2.6)</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2"><br>EndOfRecordset(<span class="replaceable">fMoreData</span> As Boolean, _<br>               <span class="replaceable">adStatus</span> As ADODB.EventStatusEnum, _<br>               ByVal <span class="replaceable">pRecordset</span> As ADODB.Recordset)</td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+
+
+<p>Das Ereignis EndOfRecordset wird aufgerufen, wenn versucht wurde, den Datensatzzeiger hinter das Ende der Datensatzgruppe zu verlagern.</p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Argumente</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<dl>
+<dt><span class="replaceable">fMoreData</span></dt>
+<dd><p>Um das aktuelle Ereignis ung&uuml;ltig zu machen, kann ein Wert vom Typ VARIANT_BOOL auf <span class="LITERAL">True</span> gesetzt werden, wenn von der Anwendung weitere Daten hinzugef&uuml;gt wurden. Anders ausgedr&uuml;ckt: wenn dieses Ereignis ausgel&ouml;st wird, ist es ein Anzeichen daf&uuml;r, dass der Datensatzzeiger aus der Datensatzgruppe hinausgesetzt wurde. Zu diesem Zeitpunkt k&ouml;nnen Sie weitere Datens&auml;tze an die Gruppe anh&auml;ngen und den Parameter <span class="replaceable">fMoreData</span> auf <span class="LITERAL">True</span> setzen, damit die Operation erneut versucht werden kann.</p></dd>
+
+</dl>
+
+
+<dl>
+<dt><span class="replaceable">adStatus</span></dt>
+<dd><p>Dieses Argument ist ein EventStatusEnum-Wert, der den Status der aktuellen Operation darstellt. Der Parameter <span class="replaceable">adStatus</span> wird auf <span class="LITERAL">adStatusOK</span> gesetzt, wenn die Operation, die dieses Ereignis verursacht hat, erfolgreich war. Wird der Parameter <span class="replaceable">adStatus</span> auf <span class="LITERAL">adStatusCantDeny</span> gesetzt, kann das Ereignis keinen Abbruch der Operation fordern. Wenn Sie den Parameter <span class="replaceable">adStatus</span> auf <span class="LITERAL">adStatusUnwantedEvent</span> setzen, wird dieses Ereignis nicht mehr aufgerufen.</p></dd>
+
+</dl>
+
+
+<dl>
+<dt><span class="replaceable">pRecordset</span></dt>
+<dd><p>Dieses Argument bezeichnet das Recordset-Objekt, das dieses Ereignis ausgel&ouml;st hat.</p></dd>
+
+</dl>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Siehe auch</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>EventStatusEnum-Enumeration, Recordset.MoveNext-Methode</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+<div id="Recordset.EOF">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+Eigenschaft Recordset.EOF</td>
+<td class="COMPATIBILITY">(Versionen 2.0, 2.1, 2.5, 2.6)</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2"><synopsis/></td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+<p>Siehe Recordset.BOF-Eigenschaft.</p></td>
+</tr>
+</table>
+</div>
+<div id="Recordset.FetchComplete">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+Ereignis Recordset.FetchComplete</td>
+<td class="COMPATIBILITY">(Versionen 2.0, 2.1, 2.5, 2.6)</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2"><br>FetchComplete(ByVal <span class="replaceable">pError</span> As ADODB.Error, _<br>              <span class="replaceable">adStatus</span> As ADODB.EventStatusEnum, _<br>              ByVal <span class="replaceable">pRecordset</span> As ADODB.Recordset)</td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+
+
+<p>Das Ereignis FetchComplete wird aufgerufen, wenn eine lang andauernde asynchrone Operation (Fetch) abgeschlossen ist und alle Datens&auml;tze zur&uuml;ckgegeben worden sind.</p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Argumente</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<dl>
+<dt><span class="replaceable">pError</span></dt>
+<dd><p>Dieses Argument ist ein Error-Objekt mit Detailangaben &uuml;ber einen aufgetretenen Fehler, sofern der Parameter <span class="replaceable">adStatus</span> auf <span class="LITERAL">adStatusErrorsOccurred</span> gesetzt ist.</p></dd>
+
+</dl>
+
+
+<dl>
+<dt><span class="replaceable">adStatus</span></dt>
+<dd><p>Dieses Argument ist ein EventStatusEnum-Wert, der den Status der aktuellen Operation darstellt. Wenn der Parameter <span class="replaceable">adStatus</span> auf <span class="LITERAL">adStatusOK</span> gesetzt ist, bedeutet dies, dass die Operation erfolgreich verlaufen ist. Weist der Parameter <span class="replaceable">adStatus</span> den Wert <span class="LITERAL">adStatusErrorsOccurred</span> auf, so ist die Operation fehlgeschlagen, und das Objekt <span class="replaceable">pError</span> enth&auml;lt genaue Auskunft &uuml;ber den Fehler. Indem Sie den Parameter <span class="replaceable">adStatus</span> auf <span class="LITERAL">adStatusUnwantedEvent</span> setzen, wird dieses Ereignis nicht mehr aufgerufen.</p></dd>
+
+</dl>
+
+
+<dl>
+<dt><span class="replaceable">pRecordset</span></dt>
+<dd><p>Dieses Argument bezeichnet das Recordset-Objekt, das dieses Ereignis ausgel&ouml;st hat.</p></dd>
+
+</dl>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Siehe auch</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>EventStatusEnum-Enumeration</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+<div id="Recordset.FetchProgress">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+Ereignis Recordset.EndOfRecordset</td>
+<td class="COMPATIBILITY">(Versionen 2.0, 2.1, 2.5, 2.6)</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2"><br>FetchProgress(ByVal <span class="replaceable">Progress</span> As Long, _<br>              ByVal <span class="replaceable">MaxProgress</span> As Long, _<br>              <span class="replaceable">adStatus</span> As ADODB.EventStatusEnum, _<br>              ByVal <span class="replaceable">pRecordset</span> As ADODB.Recordset)</td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+
+
+<p>Das Ereignis FetchProgress wird w&auml;hrend einer lang andauernden asynchronen Operation (Fetch) aufgerufen, um zu berichten, wie weit die Operation fortgeschritten ist.</p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Argumente</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<dl>
+<dt><span class="replaceable">Progress</span></dt>
+<dd><p>Dieses Argument ist ein Long-Wert, der die Anzahl der bisher abgerufenen Datens&auml;tze beschreibt.</p></dd>
+
+</dl>
+
+
+<dl>
+<dt><span class="replaceable">MaxProgress</span></dt>
+<dd><p>Dieses Argument ist ein Long-Wert, der die maximal zu erwartende Anzahl an Datens&auml;tzen beschreibt.</p></dd>
+
+</dl>
+
+
+<dl>
+<dt><span class="replaceable">adStatus</span></dt>
+<dd><p>Dieses Argument ist ein EventStatusEnum-Wert, der den Status der aktuellen Operation darstellt. Der Parameter <span class="replaceable">adStatus</span> wird auf <span class="LITERAL">adStatusOK</span> gesetzt, wenn die Operation, die dieses Ereignis verursacht hat, erfolgreich war. Wird der Parameter <span class="replaceable">adStatus</span> auf <span class="LITERAL">adStatusCantDeny</span> gesetzt, kann das Ereignis keinen Abbruch der Operation fordern. Wenn Sie den Parameter <span class="replaceable">adStatus</span> auf <span class="LITERAL">adStatusUnwantedEvent</span> setzen, wird dieses Ereignis nicht mehr aufgerufen.</p></dd>
+
+</dl>
+
+
+<dl>
+<dt><span class="replaceable">pRecordset</span></dt>
+<dd><p>Dieses Argument bezeichnet das Recordset-Objekt, das dieses Ereignis ausgel&ouml;st hat.</p></dd>
+
+</dl>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Siehe auch</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>EventStatusEnum-Enumeration, Recordset.FetchProgress-Ereignis</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+<div id="Recordset.FieldChangeComplete">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+Ereignis Recordset.FieldChangeComplete</td>
+<td class="COMPATIBILITY">(Versions 2.5, 2.6)</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2"><br>FieldChangeComplete(ByVal <span class="replaceable">cFields</span> As Long, _<br>                    ByVal<span class="replaceable"> Fields</span> As Variant, _<br>                    ByVal <span class="replaceable">pError</span> As ADODB.Error, _<br>                    <span class="replaceable">adStatus</span> As ADODB.EventStatusEnum, _<br>                    ByVal <span class="replaceable">pRecordset</span> As ADODB.Recordset)</td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+
+
+<p>Das Ereignis FetchChangeComplete wird aufgerufen, nachdem eine Operation einen oder mehrere Werte des Objekts Field ge&auml;ndert hat.</p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Argumente</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<dl>
+<dt><span class="replaceable">cFields</span> (Long)</dt>
+<dd><p>Dieses Argument bezeichnet die Anzahl an Field-Objekten innerhalb des Fields-Parameters.</p></dd>
+
+</dl>
+
+
+<dl>
+<dt><span class="replaceable">Fields</span> (Varianten-Array)</dt>
+<dd><p>Dieses Argument enth&auml;lt die Field-Objekte, die auf eine &Auml;nderung warten.</p></dd>
+
+</dl>
+
+
+<dl>
+<dt><span class="replaceable">pError</span> (Error)</dt>
+<dd><p>Dieses Argument enth&auml;lt Detailangaben &uuml;ber einen aufgetretenen Fehler, sofern der Parameter <span class="replaceable">adStatus</span> auf <span class="LITERAL">adStatusErrorsOccurred</span> gesetzt ist.</p></dd>
+
+</dl>
+
+
+<dl>
+<dt><span class="replaceable">adStatus</span> (EventStatusEnum)</dt>
+<dd><p>Dieses Argument bezeichnet den Status der aktuellen Operation. Wenn der Parameter <span class="replaceable">adStatus</span> auf <span class="LITERAL">adStatusOK</span> gesetzt ist, bedeutet dies, dass die Operation erfolgreich verlaufen ist. Weist der Parameter <span class="replaceable">adStatus</span> den Wert <span class="LITERAL">adStatusErrorsOccurred</span> auf, so ist die Operation fehlgeschlagen, und das Objekt <span class="replaceable">pError</span> enth&auml;lt genaue Auskunft &uuml;ber den Fehler. Ist der Parameter <span class="replaceable">adStatus</span> auf <span class="LITERAL">adStatusCancel</span> gesetzt, so wurde die Operation vor ihrem Abschluss von der Anwendung abgebrochen. Wenn Sie den Parameter <span class="replaceable">adStatus</span> auf <span class="LITERAL">adStatusUnwantedEvent</span> setzen, wird dieses Ereignis nicht mehr aufgerufen.</p></dd>
+
+</dl>
+
+
+<dl>
+<dt><span class="replaceable">pRecordset</span></dt>
+<dd><p>Dieses Argument repr&auml;sentiert das Recordset-Objekt, das dieses Ereignis ausgel&ouml;st hat.</p></dd>
+
+</dl>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Siehe auch</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>EventStatusEnum-Enumeration, Recordset.WillChangeField-Ereignis, Recordset.Value, Recordset.Update</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+<div id="Recordset.Fields">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+Kollektion Recordset.Fields</td>
+<td class="COMPATIBILITY">(Versionen 2.0, 2.1, 2.5, 2.6)</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2"><br>record.Fields</td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+
+
+<p>Die Field-Kollektion enth&auml;lt mehrere Field-Objekte f&uuml;r das aktuelle Recordset-Objekt, eines f&uuml;r jede Spalte in der Datensatzgruppe.</p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Datentyp</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Fields (Kollektionsobjekt)</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Beschreibung</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Die Fields-Kollektion eines Recordset-Objekts kann vor dem &Ouml;ffnen eines Recordset-Objekts aufgef&uuml;llt werden. Dazu rufen Sie die Methode Refresh der Fields-Kollektion auf.</p>
+
+
+<p>Field-Objekte k&ouml;nnen zur Kollektion entweder durch Aufruf der Methode Field.Append hinzugef&uuml;gt werden oder durch Verweis auf ein Field-Objekt &uuml;ber einen Namen, der nicht bereits Teil der Kollektion ist. Durch Aufruf der Methode Field.Update wird das Feld zur Kollektion hinzugef&uuml;gt; wenn m&ouml;glich innerhalb der Datenquelle. Bis zu diesem Zeitpunkt gibt die Eigenschaft Field.Status den Wert <span class="LITERAL">adFieldPendingInsert</span> zur&uuml;ck.</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Siehe auch</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Field.Append-Methode, Field.Refresh-Methode, Field.Update-Methode</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+<div id="Recordset.Filter">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+Eigenschaft Recordset.Filter</td>
+<td class="COMPATIBILITY">(Versionen 2.0, 2.1, 2.5, 2.6)</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2"><br>recordset.CancelBatch AffectRecords</td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+
+
+<p>Die Eigenschaft Filter filtert eine Auswahl an Datens&auml;tzen innerhalb des aktuellen Recordset-Objekts.</p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Datentyp</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Variant</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Beschreibung</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Wenn Sie die Eigenschaft Filter setzen, wird der Cursortyp auf die aktuell gefilterte Datensatzgruppe ge&auml;ndert. In diesem Fall sind die Eigenschaften AbsolutePosition, AbsolutePage, RecordCount und PageCount betroffen, da der Datensatz zum aktuellen Datensatz wird, der die von der Eigenschaft Filter vorgeschriebenen Anforderungen erf&uuml;llt..</p>
+
+
+<p>F&uuml;r die Eigenschaft Filter sind drei Arten von Werten zul&auml;ssig:</p>
+
+
+<ul><li><p>Ein Satz an Klauseln, die mit dem Schl&uuml;sselwort AND oder OR verbunden sind.</p></li></ul>
+<ul><li><p>Ein Array an Lesezeichenwerten.</p></li></ul>
+<ul><li><p>Ein FilterGroupEnum-Enumerationswert.</p></li></ul>
+<p>Klauseln &auml;hneln den WHERE-Klauseln in SQL-Anweisungen. Sie bestehen aus einem Feldnamen, einem Operator und einem Wert. Mehrere Klauseln lassen sich mit den Schl&uuml;sselw&ouml;rtern AND und OR gruppieren und verbinden. Der Name eines Felds in einer Klausel muss innerhalb der aktuellen Datensatzgruppe zul&auml;ssig sein, und wenn er Leerzeichen enth&auml;lt, muss er in eckige Klammern gesetzt werden ([Telefon gesch&auml;ftlich]). Innerhalb einer Klausel ist einer der folgenden Operatoren zul&auml;ssig: <span class="LITERAL">&lt;</span>, <span class="LITERAL">&gt;</span>, <span class="LITERAL">&lt;=</span>, <span class="LITERAL">&gt;=</span>, <span class="LITERAL">&lt;&gt;</span>, <span class="LITERAL">=</span> oder <span class="LITERAL">LIKE</span>. Der Wert innerhalb einer Klausel ist &auml;hnlich wie die Daten innerhalb des angegebenen Felds. F&uuml;r die Darstellung von Zahlen sind Dezimalzeichen, Dollarzeichen und die Exponentialschreibweise zul&auml;ssig. Datumsangaben werden von Doppelkreuzzeichen (<span class="LITERAL">#</span>) (<span class="LITERAL">#06/20/1973#</span>) eingeschlossen und Strings von halben Anf&uuml;hrungszeichen (<span class="LITERAL">'Jason T.
+Roff'</span>).</p>
+
+
+<p>Wenn Sie das Schl&uuml;sselwort LIKE als Operator verwenden, sind als Platzhalter nur das Sternchen (*) und das Prozentzeichen (%) zul&auml;ssig, wobei sich eins der beiden Zeichen am Ende des Werts befinden muss (Jason* oder *as*).</p>
+
+
+<p>Wenn Sie die Eigenschaft Filter auf ein Array aus Lesezeichen setzen, m&uuml;ssen die Lesezeichen innerhalb der Datensatzgruppe eindeutig sein, d.&nbsp;h. auf verschiedene Datens&auml;tze zeigen.</p>
+
+
+<p>Wenn Sie den Filter auf eine FilterGroupEnum-Enumeration setzen, w&auml;hlen eine der in <link linkend="ado-APP-E-TABLE-25">Tabelle&nbsp;E-25</link> aufgelisteten Konstanten aus.</p>
+
+
+<p>Die Filter-Eigenschaft kann wegen eines Datensatzes, der von einem anderen Anwender gel&ouml;scht worden ist, fehlschlagen. Dabei tritt kein Laufzeitfehler auf, aber die Errors-Kollektion wird mit Warnungen gef&uuml;llt. Ein Laufzeitfehler tritt nur auf, wenn alle angeforderten Datens&auml;tze, die gefiltert werden sollen, aus irgendeinem Grund einen Konflikt aufweisen. Mit Hilfe der Eigenschaft Status k&ouml;nnen Sie herausfinden, welche Datens&auml;tze Konflikte aufweisen.</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Siehe auch</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>AffectEnum-Enumeration, FilterGroupEnum-Enumeration, Recordset.AbsolutePage-Eigenschaft, Recordset.AbsolutePosition-Eigenschaft, Recordset.CancelBatch-Methode, Recordset.Delete-Eigenschaft, Recordset.PageCount-Eigenschaft, Recordset.RecordCount-Eigenschaft, Recordset.Resync-Methode, Recordset.UpdateBatch-Methode</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+<div id="Recordset.Find">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+Methode Recordset.Find</td>
+<td class="COMPATIBILITY">(Versionen 2.0, 2.1, 2.5, 2.6)</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2"><br><span class="replaceable">recordset</span>.Find (<span class="replaceable">Criteria, SkipRows, SearchDirections, Start</span>)</td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+
+
+<p>Die Methode Find verlagert den Datensatzzeiger auf eine Zeile innerhalb der aktuellen Datensatzgruppe, die dem einspaltigen Suchkriterium entspricht.</p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Argumente</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<dl>
+<dt><span class="replaceable">Criteria</span> (String)</dt>
+<dd><p>Dieses Argument erlaubt die Angabe eines Suchkriteriums, das sich auf eine einzige Spalte bezieht, und zwar in der Form <span class="LITERAL">'Column</span> <span class="LITERAL">Operator</span> <span class="LITERAL">Value'</span>. Column steht f&uuml;r den Namen einer Spalte im Recordset-Objekt. Zul&auml;ssige Operatoren sind <span class="LITERAL">&gt;</span>, <span class="LITERAL">&lt;</span>, <span class="LITERAL">=</span>, <span class="LITERAL">&gt;=</span>, <span class="LITERAL">&lt;=</span>, <span class="LITERAL">&lt;&gt;</span> und <span class="LITERAL">LIKE</span>. Der Wert kann als String, Gleitzahl oder Datum angegeben werden. Strings werden durch einzelne Strings oder Nummernzeichen (<span class="LITERAL">#</span>) getrennt und Datumsangaben durch Nummernzeichen (<span class="LITERAL">#</span>). Wenn Sie den Operator <span class="LITERAL">LIKE</span> verwenden, k&ouml;nnen am Ende des Werts oder am Anfang und am Ende Sternchen (<span class="LITERAL">*</span>) verwendet werden ('<span class="LITERAL">*jr*'</span>, <span class="LITERAL">'jr*'</span>). Wird nur am Anfang ein Sternchen angebeben, entsteht ein Fehler.</p></dd>
+
+</dl>
+
+
+<dl>
+<dt><span class="replaceable">SkipRows</span> (Long)</dt>
+<dd><p>Optional. Dieses Argument gibt an, wie viele Zeilen auszulassen sind, bevor die Datensatzgruppe nach einer &Uuml;bereinstimmung mit dem Argument <span class="replaceable">Criteria</span> durchsucht werden soll. Der Standardwert ist 0, damit beginnt die Suche ab der aktuellen Zeile.</p></dd>
+
+</dl>
+
+
+<dl>
+<dt><span class="replaceable">SearchDirection</span> (SearchDirectionEnum)</dt>
+<dd><p>Optional. Dieses Argument legt fest, ob die Datensatzgruppe vorw&auml;rts oder r&uuml;ckw&auml;rts durchsucht werden soll. Wird keine &Uuml;bereinstimmung gefunden und es wird eine Vorw&auml;rtssuche ausgef&uuml;hrt, so zeigt der Datensatzzeiger auf die EOF-Marke. Wird eine R&uuml;ckw&auml;rtssuche ausgef&uuml;hrt und es wird keine &Uuml;bereinstimmung gefunden, zeigt der Datensatzzeiger auf die BOF-Marke. Standardm&auml;&szlig;ig wird eine Vorw&auml;rtssuche ausgef&uuml;hrt.</p></dd>
+
+</dl>
+
+
+<dl>
+<dt><span class="replaceable">Start</span> (Variante)</dt>
+<dd><p>Optional. Dieses Argument bestimmt eine Startposition f&uuml;r die Suche in der Form eines Lesezeichens. Der Standardwert f&uuml;r dieses Argument ist die aktuelle Zeile.</p></dd>
+
+</dl>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Beschreibung</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Wird vor dem Aufruf der Methode Find kein aktueller Datensatz bestimmt, so entsteht ein Fehler. Es ist eine gute Angewohnheit, zuerst die Methode MoveFirst und erst danach die Methode Find aufzurufen.</p>
+
+
+<p>Die Methode Find funktioniert nur f&uuml;r Suchkriterien, die sich auf eine einzige Spalte beziehen.</p>
+
+
+<p>Nicht alle Provider unterst&uuml;tzen Lesezeichen und k&ouml;nnen daher keine R&uuml;ckw&auml;rtssuche vornehmen. Mit der Methode Supports finden Sie heraus, ob Ihr aktueller Datenprovider die Find-Operation, die Sie verwenden wollen, auch unterst&uuml;tzt.</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Siehe auch</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>CursorOptionEnum-Enumeration, Recordset.MoveFirst-Methode, Recordset.Supports-Methode, SearchDirectionEnum-Enumeration</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+<div id="Recordset.GetRows">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+Methode Recordset.GetRows </td>
+<td class="COMPATIBILITY">(Versionen 2.0, 2.1, 2.5, 2.6)</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2"><br>Set <span class="replaceable">record_array = recordset</span>.GetRows(<span class="replaceable">Rows, Start, Fields</span>)</td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+
+
+<p>Die GetRows-Methode des Recordset-Objekts gibt mehrere Datens&auml;tze aus einem ge&ouml;ffneten Recordset-Objekt zur&uuml;ck, und zwar in Form eines Arrays.</p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Argumente</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<dl>
+<dt><span class="replaceable">Rows</span> (Long)</dt>
+<dd><p>Optional. Dieses Argument gibt an, wie viele Datens&auml;tze abzurufen sind. Der Standardwert ist <span class="LITERAL">adGetRowsRest</span> (mit dem Wert -1).</p></dd>
+
+</dl>
+
+
+<dl>
+<dt><span class="replaceable">Start</span> (String oder Variante)</dt>
+<dd><p>Optional. Dieses Argument liefert ein Lesezeichen, das bestimmt, wo die Methode GetRows beginnen soll.</p></dd>
+
+</dl>
+
+
+<dl>
+<dt><span class="replaceable">Fields</span> (Variante)</dt>
+<dd><p>Optional. Dieses Argument gibt an, welche Felder von der Methode GetRows zur&uuml;ckgegeben werden sollen. Es repr&auml;sentiert den Namen eines einzelnen Felds, die Ordinalzahl eines einzelnen Felds, ein Array an Feldnamen oder ein Array an Feldordinalzahlen.</p></dd>
+
+</dl>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">R&uuml;ckgabewerte</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<simplelist>
+
+<member>Variant (zweidimensionales Array)</member>
+
+</simplelist>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Beschreibung</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Die Methode GetRows des Recordset-Objekts schreibt mehrere Datens&auml;tze aus einer Datensatzgruppe in ein zweidimensionales Array. Die Datens&auml;tze werden in Form eines Varianten-Arrays zur&uuml;ckgegeben, dessen Dimensionen von ADO automatisch gesetzt werden. Der erste Index ist das Feld, der zweite die Datensatznummer. Die zur&uuml;ckgegebenen Daten sind schreibgesch&uuml;tzt.</p>
+
+
+<p>&Uuml;ber das erste Argument k&ouml;nnen Sie festlegen, wie viele Datens&auml;tze zur&uuml;ckgegeben werden sollen. Ist dieser Wert gr&ouml;&szlig;er als die Anzahl an Datens&auml;tzen, werden nur die verbleibenden Datens&auml;tze zur&uuml;ckgegeben.</p>
+
+
+<p>Unterst&uuml;tzt das gew&auml;hlte Recordset-Objekt Lesezeichen, k&ouml;nnen Sie die Startposition auch &uuml;ber den Wert der Eigenschaft Bookmark f&uuml;r den betreffenden Datensatz angeben.</p>
+
+
+<p>Nach Aufruf von GetRows wird der Datensatzzeiger auf den n&auml;chsten ungelesenen Datensatz gesetzt. Sind keine weiteren Datens&auml;tze vorhanden, nimmt die Eigenschaft EOF den Wert <span class="LITERAL">True</span> an.</p>
+
+
+<p>Das letzte Argument, <span class="replaceable">Fields</span>, kann ein einzelnes Feld repr&auml;sentieren oder eine Gruppe von Feldern und bildet den R&uuml;ckgabewert der Methode GetRows. Der Wert wird als Name eines einzelnen Felds, als Ordinalzahl eines einzelnen Felds, als Array an Feldnamen oder als Array an Feldordinalzahlen zur&uuml;ckgegeben.</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Hinweis</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Nicht alle Provider unterst&uuml;tzen die Methode GetRows.</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Siehe auch</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>BookmarkEnum-Enumeration, CursorOptionEnum-Enumeration, GetRowsOptionEnum-Enumeration, Recordset.Bookmark-Eigenschaft, Recordset.EOF-Eigenschaft, Recordset.Supports-Methode</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+<div id="Recordset.GetString">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+Methode Recordset.GetString </td>
+<td class="COMPATIBILITY">(Versionen 2.0, 2.1, 2.5, 2.6)</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2"><br>Set <span class="replaceable">Variant = recordset</span>.GetString(<span class="replaceable">StringFormat, NumRows, ColumnDelimiter</span>, _<br>                                  <span class="replaceable">RowDelimiter, NullExpr</span>)</td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+
+
+<p>Die Methode GetString gibt das gesamte Recordset-Objekt als String zur&uuml;ck.</p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Argumente</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<dl>
+<dt><span class="replaceable">StringFormat</span> (StringFormatEnum)</dt>
+<dd><p>Dieses Argument bezeichnet das Format der zur&uuml;ckgegebenen Datensatzgruppe als String-Format.</p></dd>
+
+</dl>
+
+
+<dl>
+<dt><span class="replaceable">NumRows</span></dt>
+<dd><p>Optional. Dieses Argument bezeichnet die Anzahl der in einen String zu konvertierenden Anzahl an Zeilen. Fehlt dieses Argument oder ist sein Wert gr&ouml;&szlig;er als die Gesamtzahl an Datens&auml;tzen im Recordset-Objekt, werden alle Datens&auml;tze konvertiert.</p></dd>
+
+</dl>
+
+
+<dl>
+<dt><span class="replaceable">ColumnDelimeter</span></dt>
+<dd><p>Optional. Dieses Argument wird nur verwendet, wenn der Parameter <span class="replaceable">StringFormat</span> auf <span class="LITERAL">adClipString</span> gesetzt ist. Es bezeichnet das Trennzeichen zwischen den Spalten. Das Standardtrennzeichen ist das Tabulatorzeichen.</p></dd>
+
+</dl>
+
+
+<dl>
+<dt><span class="replaceable">RowDelimeter</span></dt>
+<dd><p>Optional. Dieses Argument wird nur verwendet, wenn der Parameter <span class="replaceable">StringFormat</span> auf <span class="LITERAL">adClipString</span> gesetzt ist. Es bezeichnet das Trennzeichen zwischen den Zeilen. Standard ist das Zeilenumbruchzeichen (CR).</p></dd>
+
+</dl>
+
+
+<dl>
+<dt><span class="replaceable">NullExpr</span></dt>
+<dd><p>Optional. Dieses Argument wird nur verwendet, wenn der Parameter <span class="replaceable">StringFormat</span> auf <span class="LITERAL">adClipString</span> gesetzt ist. Es bezeichnet den String, der anstelle des <span class="LITERAL">Null</span>-Zeichens ausgegeben wird. Standard ist ein leerer String.</p></dd>
+
+</dl>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">R&uuml;ckgabewerte</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Variant</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Beschreibung</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Die Methode GetString konvertiert den Inhalt des Recordset-Objekts in einen String-Wert.</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Siehe auch</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>StringFormatEnum-Enumeration</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+<div id="Recordset.Index">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+Eigenschaft Recordset.Index</td>
+<td class="COMPATIBILITY">(Versionen 2.1, 2.5, 2.6)</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2"><br>recordset.Index = index</td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+
+
+<p>Die Eigenschaft Index setzt den aktuellen Index einer bestimmten Datensatzgruppe.</p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Datentyp</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>String</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Beschreibung</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>F&uuml;r die Eigenschaft Index besteht sowohl Lese- als auch Schreibberechtigung. Sie kann jedoch nicht innerhalb eines WillRecordsetChange- oder eines RecordsetChangeComplete-Ereignisses oder w&auml;hrend einer asynchronen Ausf&uuml;hrung gesetzt werden.</p>
+
+
+<p>Die Eigenschaft Index wird mit der Methode Seek zusammen verwendet, um die der Tabelle zugrunde liegende indizierte Struktur zu nutzen (im Gegensatz zur Methode Find, die sequentiell arbeitet).</p>
+
+
+<p>Es ist m&ouml;glich, dass sich beim Setzen des Index die Position des Datensatzzeigers &auml;ndert (d.&nbsp;h. es wird der Wert der Eigenschaft AbsolutePosition ge&auml;ndert). Au&szlig;erdem treten die folgenden Ereignisse auf: WillRecordsetChange, RecordsetChangeComplete, WillMove und MoveComplete.</p>
+
+
+<p>Ist die Eigenschaft LockType auf <span class="LITERAL">adLockPessimistic</span> oder <span class="LITERAL">adLockOptimistic</span> gesetzt, wird die Methode UpdateBatch aufgerufen und gegebenenfalls anzuwendende Filter werden freigegeben. Zudem wird der Datensatzzeiger auf den ersten Datensatz in der indizierten Datensatzgruppe verlagert.</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Hinweis</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Nicht alle Provider unterst&uuml;tzten Indexe und somit auch nicht die Eigenschaft Index.</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Siehe auch</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>CursorOptionEnum-Enumeration, Recordset.MoveComplete-Ereignis, Recordset.RecordsetChangeComplete-Ereignis, Recordset.Seek-Methode, Recordset.UpdateBatch-Methode, Recordset.WillMove-Ereignis, Recordset.WillRecordsetChange-Ereignis, Recordset.Supports-Methode</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+<div id="Recordset.LockType">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+Eigenschaft Recordset.LockType </td>
+<td class="COMPATIBILITY">(Versionen 2.0, 2.1, 2.5, 2.6)</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2"><br><span class="replaceable">locktype = recordset</span>.LockType</td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+
+
+<p>Die Eigenschaft LockType bezeichnet die Art von Sperren, die auf Datens&auml;tze gesetzt werden, wenn sie bearbeitet werden.</p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Datentyp</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>LockTypeEnum (Long)</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Beschreibung</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>F&uuml;r die Eigenschaft LockType besteht Lese- und Schreibberechtigung, wenn das Recordset-Objekt geschlossen ist. Ist es ge&ouml;ffnet, ist LockType schreibgesch&uuml;tzt. Die Eigenschaft LockType kann einen der in <link linkend="ado-APP-E-TABLE-29">Tabelle E-29</link> aufgef&uuml;hrten Werte annehmen.</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Hinweis</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Manche Provider unterst&uuml;tzen bestimmte Arten der Datensatzsperre nicht. In diesem Fall ist es m&ouml;glich, dass der Datenprovider automatisch einen anderen Sperrmechanismus verwendet. Welche Funktionalit&auml;ten bei Ihrem Datenprovider verf&uuml;gbar sind, finden Sie anhand der Eigenschaft Supports heraus.</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Siehe auch</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>LockTypeEnum-Enumeration, Recordset.Open-Methode, Recordset.Supports-Methode, Recordset.Update-Methode</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+<div id="Recordset.MarshalOptions">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+Eigenschaft Recordset.MarshalOptions </td>
+<td class="COMPATIBILITY">(Versionen 2.0, 2.1, 2.5, 2.6)</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2"><br><span class="replaceable">recordset</span>.MarshalOptions = <span class="replaceable">marshaloptions</span></td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+
+
+<p>Die Eigenschaft MarshalOptions zeigt an, welche Datens&auml;tze an den Server zur&uuml;ckbeordert werden.</p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Datentyp</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>MarshalOptionsEnum (Long)</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Beschreibung</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Die Eigenschaft MarshalOptions nimmt einen der in <link linkend="ado-APP-E">Anhang E</link> angef&uuml;hrten MarshalOptionsEnum-Enumerationswerte an.</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Siehe auch</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>MarshalOptionsEnum-Enumeration</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+<div id="Recordset.MaxRecords">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+Eigenschaft Recordset.MaxRecords </td>
+<td class="COMPATIBILITY">(Versionen 2.0, 2.1, 2.5, 2.6)</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2"><br><span class="replaceable">recordset</span>.MaxRecords = <span class="replaceable">maxrecords</span></td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+
+
+<p>Die Eigenschaft MaxRecords gibt an, wie viele Datens&auml;tze bei einer Abfrage maximal an die Datensatzgruppe zur&uuml;ckzugeben sind.</p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Datentyp</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Long</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Beschreibung</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>F&uuml;r die Eigenschaft MaxRecords besteht Lese- und Schreibberechtigung, wenn das Recordset-Objekt ge&ouml;ffnet ist. Ist es geschlossen, ist MaxRecords schreibgesch&uuml;tzt. Ein Wert von 0 (Standard) bedeutet, dass alle aus einer Abfrage resultierenden g&uuml;ltigen Datens&auml;tze zur&uuml;ckgegeben werden.</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+<div id="Recordset.Move">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+Methode Recordset.Move </td>
+<td class="COMPATIBILITY">(Versionen 2.0, 2.1, 2.5, 2.6)</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2"><br><span class="replaceable">recordset</span>.Move <span class="replaceable">NumRecords, Start</span></td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+
+
+<p>Die Methode Move des Recordset-Objekts verlagert die Position des Datensatzzeigers innerhalb des angegebenen Recordset-Objekts.</p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Argumente</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<dl>
+<dt><span class="replaceable">NumRecords</span> (Long)</dt>
+<dd><p>Dieses Argument gibt an, um wie viele Datens&auml;tze der Zeiger verlagert werden soll.</p></dd>
+
+</dl>
+
+
+<dl>
+<dt><span class="replaceable">Start</span> (String oder Variante)</dt>
+<dd><p>Optional. Dieses Argument repr&auml;sentiert das Lesezeichen, von dem aus der Datensatzzeiger verlagert werden soll.</p></dd>
+
+</dl>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Beschreibung</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Die Methode Move des Recordset-Objekts verlagert den Datensatzzeiger um eine bestimmte Anzahl an Datens&auml;tzen. Ist das Argument <span class="replaceable">NumRecords</span> kleiner als Null, wird der Zeiger um die gew&uuml;nschte Anzahl zur&uuml;ckverlagert. Ist das Argument <span class="replaceable">NumRecords</span> gr&ouml;&szlig;er als Null, so wird der Zeiger um die gew&uuml;nschte Anzahl nach vorne verlagert.</p>
+
+
+<p>Unterst&uuml;tzt das aktuelle Recordset-Objekt Lesezeichen, so k&ouml;nnen Sie mit dem Argument Start eine Anfangsposition bestimmen, ab der der Datensatzzeiger verlagert werden soll. Das Argument Start sollte auf ein g&uuml;ltiges Lesezeichen innerhalb des aktuellen Recordset-Objekts gesetzt werden, so dass der Zeiger von diesem Punkt aus um die gew&uuml;nschte Anzahl an Datens&auml;tzen verlagert wird. Wird kein Lesezeichen verwendet, so wird der Datensatzzeiger vom aktuellen Datensatz aus verlagert.</p>
+
+
+<p>Beim Versuch, den Zeiger auf einen Punkt vor dem ersten Datensatz zu verlagern, wird er vor den ersten Datensatz verlagert, n&auml;mlich auf die BOF-Marke. Und beim Versuch, den Zeiger hinter den letzten Datensatz zu verlagern, wird hinter den letzten Datensatz, n&auml;mlich auf die EOF-Marke, verlagert. Wird versucht, anhand der Methode Move den Zeiger jenseits der BOF- bzw. EOF-Marke zu verlagern, wird ein Fehler erzeugt.</p>
+
+
+<p>Haben Sie die Eigenschaft CacheSize so eingestellt, dass Datens&auml;tze vom Datenprovider lokal zwischengespeichert werden, und Sie geben einen NumRecords-Wert an, der au&szlig;erhalb des Caches liegt, so ist ADO gezwungen, eine neue Gruppe an Datens&auml;tzen vom Provider abzurufen. Wie viele Datens&auml;tze jeweils abgerufen werden, ist abh&auml;ngig von der Eigenschaft CacheSize. Dasselbe passiert, wenn Sie einen lokalen Cache verwenden und das Start-Argument angeben. Der erste der zu empfangenden Datens&auml;tze ist der gew&uuml;nschte Zieldatensatz.</p>
+
+
+<p>Auch wenn das Recordset-Objekt eine R&uuml;ckw&auml;rtsverlagerung nicht erlaubt, k&ouml;nnen Sie einen negativen NumRecords-Wert angeben, solange er innerhalb des aktuellen Cache liegt. Liegt die so definierte Position jedoch vor dem aktuellen Cache, entsteht ein Fehler.</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Hinweis</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Nicht alle Provider unterst&uuml;tzen die Methode Move.</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Siehe auch</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>BookmarkEnum-Enumeration, Recordset.Bookmark-Eigenschaft, Recordset.CacheSize-Eigenschaft</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+<div id="Recordset.MoveComplete">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+Ereignis Recordset.MoveComplete </td>
+<td class="COMPATIBILITY">(Versionen 2.0, 2.1, 2.5, 2.6)</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2"><br>MoveComplete(ByVal <span class="replaceable">adReason</span> As ADODB.EventReasonEnum, _<br>             ByVal <span class="replaceable">pError</span> As ADODB.Error, _<br>             <span class="replaceable">adStatus</span> As ADODB.EventStatusEnum, _<br>             ByVal <span class="replaceable">pRecordset</span> As ADODB.Recordset)</td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+
+
+<p>Das Ereignis MoveComplete wird aufgerufen, nachdem eine Operation die Position des Datensatzzeigers innerhalb des Recordset-Objekts ge&auml;ndert hat.</p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Argumente</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<dl>
+<dt><span class="replaceable">adReason</span> (EventReasonEnum)</dt>
+<dd><p>Dieses Argument gibt den Grund f&uuml;r dieses Ereignis an. F&uuml;r diesen Parameter sind folgende Werte zul&auml;ssig: <span class="LITERAL">adRsnMoveFirst</span>, <span class="LITERAL">adRsnMoveLast</span>, <span class="LITERAL">adRsnMoveNext</span>, <span class="LITERAL">adRsnMovePrevious</span>, <span class="LITERAL">adRsnMove</span> und <span class="LITERAL">adRsnRequery</span>.</p></dd>
+
+</dl>
+
+
+<dl>
+<dt><span class="replaceable">pError</span> (Fehler)</dt>
+<dd><p>Dieses Argument enth&auml;lt Detailangaben &uuml;ber einen aufgetretenen Fehler, sofern der Parameter <span class="replaceable">adStatus</span> auf <span class="LITERAL">adStatusErrorsOccurred</span> gesetzt ist.</p></dd>
+
+</dl>
+
+
+<dl>
+<dt><span class="replaceable">adStatus</span> (EventStatusEnum)</dt>
+<dd><p>Dieses Argument gibt den Status der aktuellen Operation an. Wenn der Parameter <span class="replaceable">adStatus</span> auf <span class="LITERAL">adStatusOK</span> gesetzt ist, bedeutet dies, dass die Operation erfolgreich verlaufen ist. Weist der Parameter <span class="replaceable">adStatus</span> den Wert <span class="LITERAL">adStatusErrorsOccurred</span> auf, so ist die Operation fehlgeschlagen, und das Objekt <span class="replaceable">pError</span> enth&auml;lt genaue Auskunft &uuml;ber den Fehler. Ist der Parameter <span class="replaceable">adStatus</span> auf <span class="LITERAL">adStatusCancel</span> gesetzt, so wurde die Operation vor ihrem Abschluss von der Anwendung abgebrochen. Wenn Sie den Parameter <span class="replaceable">adStatus</span> auf <span class="LITERAL">adStatusUnwantedEvent</span> setzen, wird dieses Ereignis nicht mehr aufgerufen.</p></dd>
+
+</dl>
+
+
+<dl>
+<dt><span class="replaceable">pRecordset</span></dt>
+<dd><p>Dieses Argument repr&auml;sentiert das Recordset-Objekt, das dieses Ereignis ausgel&ouml;st hat.</p></dd>
+
+</dl>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Siehe auch</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>EventReasonEnum-Enumeration, EventStatusEnum-Enumeration, Recordset.AbsolutePage-Eigenschaft, Recordset.AbsolutePosition-Eigenschaft, Recordset.AddNew-Methode, Recordset.Bookmark-Methode, Recordset.Filter-Eigenschaft, Recordset.Index-Eigenschaft, Recordset.Open-Methode, Recordset.Move-Methode, Recordset.MoveFirst-Methode, Recordset.MoveLast-Methode, Recordset.MoveNext-Methode, Recordset.MovePrevious-Methode, Recordset.Requery-Methode, Recordset.WillMove-Ereignis</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+<div id="Recordset.MoveFirst">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+Methode Recordset.MoveFirst </td>
+<td class="COMPATIBILITY">RMF-Methode (Versionen 2.0, 2.1, 2.5, 2.6)</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2"><br><span class="replaceable">recordset</span>.MoveFirst<br><span class="replaceable">recordset</span>.MoveLast<br><span class="replaceable">recordset</span>.MoveNext<br><span class="replaceable">recordset</span>.MovePrevious</td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+
+
+<p>Die Methoden MoveFirst, MoveLast, MoveNext und MovePrevious des Recordset-Objekts verlagern den Datensatzzeiger auf den ersten, letzten, n&auml;chsten bzw. vorherigen Zeiger und machen den betreffenden Datensatz zum aktuellen Datensatz.</p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Beschreibung</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Die Methoden MoveFirst, MoveLast, MoveNext und MovePrevious des Recordset-Objekts erm&ouml;glichen Ihnen eine freie Navigation durch das ge&ouml;ffnete Recordset-Objekt.</p>
+
+
+<p>Die Methode MoveFirst verlagert den Zeiger auf den ersten Datensatz in der Datensatzgruppe und macht diesen Datensatz zum aktuellen.</p>
+
+
+<p>Die Methode MoveLast verlagert den Zeiger auf den letzten Datensatz in der Datensatzgruppe und macht diesen Datensatz zum aktuellen. Diese Methode l&auml;sst sich nur einsetzen, wenn das Recordset-Objekt Lesezeichen unterst&uuml;tzt. Falls nicht, wird beim Versuch die Methode zu benutzen, ein Fehler erzeugt.</p>
+
+
+<p>Die Methode MoveNext verlagert den Zeiger auf den n&auml;chsten Datensatz in der Gruppe und macht diesen Datensatz zum aktuellen. Ist der vor dem Aufruf von MoveNext aktuelle Datensatz der letzte in der Datensatzgruppe, so wird der Zeiger hinter den letzten Datensatz verlagert und die Eigenschaft EOF auf <span class="LITERAL">True</span> gesetzt. Beim Versuch, den Zeiger hinter die EOF-Marke zu verlagern, entsteht ein Fehler.</p>
+
+
+<p>Die Methode MovePrevious verlagert den Zeiger zu dem Datensatz, der direkt vor dem aktuellen liegt. Dieser Datensatz wird zum aktuellen Datensatz gemacht. F&uuml;r diese Methode muss die Datensatzgruppe entweder Lesezeichen oder die M&ouml;glichkeit zur R&uuml;ckw&auml;rtsverlagerung unterst&uuml;tzen, sonst wird ein Fehler erzeugt. Wenn der &ndash; vor dem Aufruf der Methode MovePrevious &ndash; aktuelle Datensatz der erste Datensatz in der Gruppe ist, so wird der Zeiger direkt davor platziert und die Eigenschaft BOF wird auf <span class="LITERAL">True</span> gesetzt. Der Versuch, den Zeiger vor den Anfang der Datensatzgruppe zu verlagern, erzeugt einen Fehler.</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Hinweis</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Nicht alle Provider unterst&uuml;tzen die Methoden MoveFirst und MovePrevious.</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Siehe auch</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>CursorOptionEnum-Enumeration, Recordset.BOF-Eigenschaft, Recordset.EOF-Eigenschaft, Recordset.Supports-Methode</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+<div id="Recordset.NextRecordset">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+Methode Recordset.NextRecordset </td>
+<td class="COMPATIBILITY">(Versionen 2.0, 2.1, 2.5, 2.6)</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2"><br>Set <span class="replaceable">resulting_recordset = recordset</span>.NextRecordset(<span class="replaceable">RecordsAffected</span>)</td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+
+
+<p>Die Methode NextRecordset des Recordset-Objekts gibt die jeweils n&auml;chste Datensatzgruppe zur&uuml;ck, wobei eine Reihe von Befehlen durchschritten werden:</p>
+
+
+<span class="PROGRAMLISTING"><pre>recordset.MoveFirst</pre></span>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Argumente</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<dl>
+<dt><span class="replaceable">RecordsAffected</span> (Long)</dt>
+<dd><p>Dieses Argument wird vom Datenprovider auf die Anzahl der Datens&auml;tze gesetzt, die von der aktuellen Operation beeinflusst wurden.   </p></dd>
+
+</dl>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Beschreibung</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Mit der Methode NextRecordset des Recordset-Objekts rufen Sie die n&auml;chste Datensatzgruppe aus einer Anweisung ab, die sich aus mehreren Befehlen (meist SQL-Anweisungen) zusammensetzt, oder aus einer gespeicherten Prozedur, die mehrere Ergebnisse zur&uuml;ckgibt. Hier ein Beispiel f&uuml;r eine solche zusammengesetzte Anweisung:</p>
+
+
+<span class="PROGRAMLISTING"><pre>SELECT * FROM upstairs; SELECT * FROM downstairs</pre></span>
+
+
+<p>Die urspr&uuml;nglich mit der Methode Execute oder Open erstellte Datensatzgruppe gibt ein Recordset-Objekt zur&uuml;ck, das nur auf der ersten SQL-Anweisung in dieser zusammengesetzten Anweisung basiert. F&uuml;r jede weitere Datensatzgruppe m&uuml;ssen Sie NextRecordset aufrufen. Wird das Recordset-Objekt geschlossen, bevor alle Befehle abgearbeitet worden sind, werden diese verbleibenden Befehle &uuml;berhaupt nicht ausgef&uuml;hrt.</p>
+
+
+<p>Die Methode NextRecordset gibt so lange Datensatzgruppen zur&uuml;ck, bis keine mehr in der Liste sind. Wird eine Anweisung, die Datens&auml;tze zur&uuml;ckgibt, erfolgreich ausgef&uuml;hrt, aber das Ergebnis ist null Datens&auml;tze, so werden die Recordset-Eigenschaften EOF und BOF beide auf <span class="LITERAL">True</span> gesetzt. Wird hingegen eine Anweisung, die keine Datens&auml;tze zur&uuml;ckgibt, erfolgreich ausgef&uuml;hrt, so sollte das Recordset-Objekt nicht auf <span class="LITERAL">Nothing</span> gesetzt werden und die Eigenschaft EOF  sollte <span class="LITERAL">True</span> sein.</p>
+
+
+<p>Sind keine Befehle der zusammengesetzten Anweisung mehr &uuml;brig, wird das zur&uuml;ckgegebene Recordset-Objekt auf <span class="LITERAL">Nothing</span> gesetzt.</p>
+
+
+<p>Wenn Sie sich im unmittelbaren Aktualisierungsmodus befinden und Datens&auml;tze bearbeiten, m&uuml;ssen Sie die Methode Update oder CancelUpdate aufrufen, bevor Sie die n&auml;chste Datensatzgruppe anfordern. Andernfalls wird ein Fehler erzeugt.</p>
+
+
+<p>Parameter f&uuml;r zusammengesetzte Anweisungen werden wie die Parameter einer regul&auml;ren Anweisung &uuml;bergeben. Alle Parameter m&uuml;ssen in der Parameter-Kollektion eingetragen sein, und zwar in der Reihenfolge der verschiedenen Befehle. Au&szlig;erdem m&uuml;ssen Sie alle Ergebnisse einer Datensatzgruppe lesen, bevor Sie Ausgabeparameterwerte lesen.</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Siehe auch</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Recordset.Update-Methode, Recordset.CancelUpdate-Methode, Recordset.BOF-Eigenschaft, Recordset.EOF-Eigenschaft</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+<div id="Recordset.Open">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+Methode Recordset.Open</td>
+<td class="COMPATIBILITY">(Versionen 2.0, 2.1, 2.5, 2.6)</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2"><br>recordset.Open <span class="replaceable">Source, ActiveConnection, CursorType, LockType, Options</span></td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+
+
+<p>Die Methode Open &ouml;ffnet einen Cursor innerhalb eines Recordset-Objekts.</p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Argumente</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<dl>
+<dt><span class="replaceable">Source</span> (Variante)</dt>
+<dd><p>Optional. Dieses Argument bezeichnet die eigentlichen Daten, die zum &Ouml;ffnen des Recordset-Objekts verwendet werden. Dabei kann es sich um ein Command-Objekt handeln, um eine SQL-Anweisung, einen Tabellennamen, eine gespeicherte Prozedur, eine URL, einen Dateinamen oder um ein Stream-Objekt, das ein zuvor persistent gespeichertes Recordset-Objekt enth&auml;lt.</p></dd>
+
+</dl>
+
+
+<dl>
+<dt><span class="replaceable">ActiveConnection</span> (Variante)</dt>
+<dd><p>Optional. Dieses Argument bezeichnet entweder ein ge&ouml;ffnetes Connection-Objekt oder einen Verbindungsstring, der zu verwenden ist, wenn das Recordset-Objekt sein eigenes Connection-Objekt erstellt.</p></dd>
+
+</dl>
+
+
+<dl>
+<dt><span class="replaceable">CursorType</span> (CursorTypeEnum)</dt>
+<dd><p>Optional. Dieses Argument bezeichnet den Cursortyp, der beim &Ouml;ffnen des Recordset-Objekts verwendet werden soll. Standard ist der Wert <span class="LITERAL">adLockReadOnly</span>.</p></dd>
+
+</dl>
+
+
+<dl>
+<dt><span class="replaceable">LockType</span> (LockTypeEnum)</dt>
+<dd><p>Optional. Dieses Argument legt fest, welche Art von Sperre beim &Ouml;ffnen des Recordset-Objekts verwendet werden soll. Standard ist der Enumerationswert <span class="LITERAL">adLockReadOnly</span>.</p></dd>
+
+</dl>
+
+
+<dl>
+<dt><span class="replaceable">Options</span> (Long -- CommandTypeEnum und ExecuteOptionEnum)</dt>
+<dd><p>Optional. Dieses Argument bestimmt, welcher Datentyp vom Argument Source anzugeben ist. Au&szlig;erdem kann es festlegen, dass das Recordset-Objekt asynchron ge&ouml;ffnet werden soll. Wenn die Quelle f&uuml;r das Recordset-Objekt nicht ein Command-Objekt ist, ist der Standard f&uuml;r das Argument Options der Wert <span class="LITERAL">adCmdFile</span>.</p></dd>
+
+</dl>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Beschreibung</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Die Argumente Source, ActiveConnection, CursorType und LockType haben &uuml;bereinstimmende Eigenschaften innerhalb eines Recordset-Objekts. Werden die Argumente beim Aufruf der Methode Open weggelassen, so werden die einzelnen Werte aus den entsprechenden Eigenschaften bezogen. Wurde jedoch f&uuml;r ein bestimmtes Argument ein Wert angegeben, &uuml;berschreibt dieser Wert den in der Eigenschaft gespeicherten.</p>
+
+
+<p>Als Quelle f&uuml;r ein Recordset-Objekt gibt es folgende M&ouml;glichkeiten:</p>
+
+
+<ul><li><p>Command-Objekt</p></li></ul>
+<ul><li><p>SQL-Anweisung</p></li></ul>
+<ul><li><p>Gespeicherte Prozedur</p></li></ul>
+<ul><li><p>Tabelle</p></li></ul>
+<ul><li><p>URL</p></li></ul>
+<ul><li><p>Datei</p></li></ul>
+<ul><li><p>Stream-Objekt (mit einem zuvor persistent gespeicherten Recordset-Objekt als Inhalt)</p></li></ul>
+<p>Wenn etwas anderes als ein Command-Objekt verwendet wird, um eine Datensatzgruppe zu &ouml;ffnen, legen Sie die Datenquelle mit Hilfe des Arguments Options fest. Wenn Sie das nicht machen, muss ADO den Datenprovider wiederholt kontaktieren, um die zu &ouml;ffnende Datenart zu bestimmen.</p>
+
+
+<p>Wenn Sie als Quelle f&uuml;r das Recordset-Objekt eine Datei angeben, so k&ouml;nnen Sie den vollst&auml;ndigen Pfad, einen relativen Pfad oder sogar eine URL (<systemitem role="url">http://www.domain.com</systemitem>) angeben.</p>
+
+
+<p>Das Argument ActiveConnection wird nur verwendet, wenn Sie nicht ein Command-Objekt angeben. Tats&auml;chlich ist es sogar schreibgesch&uuml;tzt, wenn f&uuml;r die Eigenschaft Source ein g&uuml;ltiges Command-Objekt angegeben worden ist.</p>
+
+
+<p>Im Argument ActiveConnection kann entweder ein ge&ouml;ffnetes Connection-Objekt angegeben werden oder ein Verbindungs-String, der zum &Ouml;ffnen eines neuen Connection-Objekts f&uuml;r das Recordset-Objekt verwendet wird.</p>
+
+
+<p>Es ist m&ouml;glich, den Wert der Eigenschaft ActiveConnection auch nach dem &Ouml;ffnen eines Recordset-Objekts zu &auml;ndern, wenn Sie die Aktualisierungen an der Datengruppe noch an eine andere Datenquelle senden wollen. Allerdings werden die verbleibenden Argumente und die entsprechenden Eigenschaften schreibgesch&uuml;tzt, nachdem das Recordset-Objekt ge&ouml;ffnet worden ist.</p>
+
+
+<p>Eine Datensatzgruppe l&auml;sst sich auch asynchron &ouml;ffnen, indem Sie aus der Enumeration ExecuteOptionEnum den Wert <span class="LITERAL">adAsyncFetch</span> hinzuf&uuml;gen.</p>
+
+
+<p>Wird eine Datensatzgruppe ge&ouml;ffnet, die leer ist, ist sowohl die Eigenschaft BOF als auch die Eigenschaft EOF auf <span class="LITERAL">True</span> gesetzt. Sie schlie&szlig;en das Recordset-Objekt, indem Sie die Methode Close aufrufen. Dadurch wird das Recordset-Objekt nicht aus dem Speicher entfernt, da Sie ein Recordset-Objekt wieder &ouml;ffnen k&ouml;nnen. Um ein Recordset-Objekt aus dem Speicher zu entfernen, setzen Sie das Objekt auf <span class="LITERAL">Nothing</span>.</p>
+
+
+<p>Wenn Sie ein Recordset-Objekt mit einem Stream-Objekt &ouml;ffnen, wird die Datensatzgruppe automatisch synchron ge&ouml;ffnet, und zwar unabh&auml;ngig davon, was im ExecuteOptionEnum-Wert angegeben worden ist. Sie sollten zudem keine weiteren Argumente f&uuml;r die Methode Open angeben, wenn Sie ein Recordset-Objekt aus einem Stream-Objekt &ouml;ffnen.</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Siehe auch</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>CommandTypeEnum-Enumeration, CursorTypeEnum-Enumeration, ExecuteOptionEnum, LockTypeEnum-Enumeration, Recordset.ActiveConnection-Eigenschaft, Recordset.BOF-Eigenschaft, Recordset.Close-Methode, Recordset.CursorType-Eigenschaft, Recordset.EOF-Eigenschaft, Recordset.LockType-Eigenschaft, Recordset.Source-Eigenschaft</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+<div id="Recordset.PageCount">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+Eigenschaft Recordset.PageCount </td>
+<td class="COMPATIBILITY">(Versionen 2.0, 2.1, 2.5, 2.6)</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2"><br><span class="replaceable">pagecount = recordset</span>.PageCount</td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+
+
+<p>Die Eigenschaft PageCount gibt die Anzahl der logischen Seiten im aktuellen Recordset-Objekt zur&uuml;ck.</p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Datentyp</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Long</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Beschreibung</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Die Eigenschaft PageCount gibt einen Wert zur&uuml;ck, der anzeigt, wie viele logische Seiten an Daten in der Datensatzgruppe enthalten sind. Eine Seite errechnet sich aus der Anzahl an Datens&auml;tzen in der Datensatzgruppe geteilt durch die Anzahl an Datens&auml;tzen pro Seite (die von der Eigenschaft PageSize bestimmt wird).</p>
+
+
+<p>Umfasst die letzte Seite weniger Datens&auml;tzen als in der Eigenschaft PageSize angegeben, so wird diese Seite dennoch als Seite in der Eigenschaft PageCount gez&auml;hlt.</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">R&uuml;ckgabewerte</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Unterst&uuml;tzt das Recordset-Objekt die Eigenschaft PageCount nicht, so ist der R&uuml;ckgabewert -1. Das bedeutet, dass die Anzahl an Seiten nicht ermittelt werden konnte.</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Siehe auch</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Recordset.AbsolutePage-Eigenschaft, Recordset.PageSize-Eigenschaft</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+<div id="Recordset.PageSize">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+Eigenschaft Recordset.PageSize </td>
+<td class="COMPATIBILITY">(Versionen 2.0, 2.1, 2.5, 2.6)</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2"><br><span class="replaceable">pagesize = recordset</span>.PageSize</td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+
+
+<p>Die Eigenschaft PageSize bezeichnet die Anzahl an Datens&auml;tzen auf einer logischen Seite.</p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Datentyp</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Long</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Beschreibung</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Die Eigenschaft PageSize bestimmt, wie viele Datens&auml;tze zu einer logischen Seite in der Datensatzgruppe geh&ouml;ren. Der Standardwert ist 10. Diese Eigenschaft kann jederzeit gesetzt werden und wird mit der Eigenschaft AbsolutePage zusammen verwendet, um den Zeiger auf den ersten Datensatz einer bestimmten Seite zu setzen.</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Siehe auch</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Recordset.AbsolutePage-Eigenschaft, Recordset.PageCount-Eigenschaft </p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+<div id="Recordset.Properties">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+Kollektion Recordset.Properties </td>
+<td class="COMPATIBILITY">(Versionen 2.0, 2.1, 2.5, 2.6)</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2"><br>Set <span class="replaceable">properties = recordset</span>.Properties</td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+
+
+<p>Die Properties-Kollektion enth&auml;lt Zeichen, die f&uuml;r das Objekt Recordset und den zurzeit verwendeten Provider spezifisch sind.</p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Datentyp</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Properties (Collection-Objekt)</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Beschreibung</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Die Kollektionsklasse Properties enth&auml;lt zu jeder f&uuml;r das Objekt Recordset des Datenproviders spezifischen Eigenschaft eine Property-Klasseninstanz.</p>
+
+
+<p>Die Properties-Kollektion des Objekts Command wird erst aufgef&uuml;llt, wenn die Eigenschaft ActiveConnection des Objekts Command auf ein ge&ouml;ffnetes Connection-Objekt oder einen g&uuml;ltigen Verbindungs-String gesetzt wird.</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Siehe auch</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Command.ActiveConnection-Eigenschaft </p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+<div id="Recordset.RecordChangeComplete">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+Ereignis Recordset.RecordChangeComplete </td>
+<td class="COMPATIBILITY">(Versionen 2.0, 2.1, 2.5, 2.6)</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2"><br>RecordChangeComplete(ByVal <span class="replaceable">adReason</span> As ADODB.EventReasonEnum, _<br>                     ByVal <span class="replaceable">cRecords</span> As Long, _<br>                     ByVal <span class="replaceable">pError</span> As ADODB.Error, _<br>                     <span class="replaceable">adStatus</span> As ADODB.EventStatusEnum, _<br>                     ByVal <span class="replaceable">pRecordset</span> As ADODB.Recordset)</td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+
+
+<p>Das Ereignis RecordChangeComplete wird aufgerufen, nachdem eine Operation einen oder mehrere Datens&auml;tze im Recordset-Objekt ge&auml;ndert hat.</p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Argumente</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<dl>
+<dt><span class="replaceable">adReason</span> (EventReasonEnum)</dt>
+<dd><p>Dieses Argument gibt den Grund f&uuml;r dieses Ereignis an. F&uuml;r diesen Parameter sind folgende Werte zul&auml;ssig: <span class="LITERAL">adRsnAddNew</span>, <span class="LITERAL">adRsnDelete</span>, <span class="LITERAL">adRsnUpdate</span>, <span class="LITERAL">adRsnUndoUpdate</span>, <span class="LITERAL">adRsnUndoAddNew</span>, <span class="LITERAL">adRsnUndoDelete</span> und <span class="LITERAL">adRsnFirstChange</span>.</p></dd>
+
+</dl>
+
+
+<dl>
+<dt><span class="replaceable">cRecords</span> (Long)</dt>
+<dd><p>Dieses Argument gibt an, wie viele Datens&auml;tze von der Operation betroffen sind, die dieses Ereignis verursacht.</p></dd>
+
+</dl>
+
+
+<dl>
+<dt><span class="replaceable">pError</span> (Fehler)</dt>
+<dd><p>Dieses Argument enth&auml;lt Detailangaben &uuml;ber einen aufgetretenen Fehler, sofern der Parameter <span class="replaceable">adStatus</span> auf <span class="LITERAL">adStatusErrorsOccurred</span> gesetzt ist.</p></dd>
+
+</dl>
+
+
+<dl>
+<dt><span class="replaceable">adStatus</span>(EventStatusEnum)</dt>
+<dd><p>Dieses Argument gibt den Status der aktuellen Operation an. Wenn der Parameter <span class="replaceable">adStatus</span> auf <span class="LITERAL">adStatusOK</span> gesetzt ist, bedeutet dies, dass die Operation erfolgreich verlaufen ist. Weist der Parameter <span class="replaceable">adStatus</span> den Wert <span class="LITERAL">adStatusErrorsOccurred</span> auf, so ist die Operation fehlgeschlagen, und das Objekt <span class="replaceable">pError</span> enth&auml;lt genaue Auskunft &uuml;ber den Fehler. Ist der Parameter <span class="replaceable">adStatus</span> auf <span class="LITERAL">adStatusCancel</span> gesetzt, so wurde die Operation vor ihrem Abschluss von der Anwendung abgebrochen. Wenn Sie den Parameter <span class="replaceable">adStatus</span> auf <span class="LITERAL">adStatusUnwantedEvent</span> setzen, wird dieses Ereignis nicht mehr aufgerufen.</p></dd>
+
+</dl>
+
+
+<dl>
+<dt><span class="replaceable">pRecordset</span></dt>
+<dd><p>Dieses Argument bezeichnet das Recordset-Objekt, das dieses Ereignis ausgel&ouml;st hat.</p></dd>
+
+</dl>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Siehe auch</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>EventReasonEnum-Enumeration, EventStatusEnum-Enumeration, Recordset.AddNew-Methode, Recordset.CancelBatch-Methode, Recordset.CancelUpdate-Methode, Recordset.Delete-Methode, Recordset.WillChangeRecord-Ereignis, Recordset.Update-Methode, Recordset.UpdateBatch-Methode</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+<div id="Recordset.RecordsetChangeComplete">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+Ereignis Recordset.RecordsetChangeComplete </td>
+<td class="COMPATIBILITY">(Versionen 2.0, 2.1, 2.5, 2.6)</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2"><br>RecordsetChangeComplete(ByVal <span class="replaceable">adReason</span> As ADODB.EventReasonEnum, _<br>                        ByVal <span class="replaceable">pError</span> As ADODB.Error, _<br>                        <span class="replaceable">adStatus</span> As ADODB.EventStatusEnum, _<br>                        ByVal <span class="replaceable">pRecordset</span> As ADODB.Recordset)</td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+
+
+<p>Das Ereignis RecordsetChangeComplete wird aufgerufen, nachdem eine Operation das Recordset-Objekt ge&auml;ndert hat.</p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Argumente</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<dl>
+<dt><span class="replaceable">adReason</span> (EventReasonEnum)</dt>
+<dd><p>Dieses Argument gibt den Grund f&uuml;r dieses Ereignis an. F&uuml;r diesen Parameter sind folgende Werte zul&auml;ssig: <span class="LITERAL">adRsnReQuery</span>, <span class="LITERAL">adRsnReSynch</span>, <span class="LITERAL">adRsnClose</span> und <span class="LITERAL">adRsnOpen</span>.</p></dd>
+
+</dl>
+
+
+<dl>
+<dt><span class="replaceable">pError</span> (Fehler)</dt>
+<dd><p>Dieses Argument enth&auml;lt Detailangaben &uuml;ber einen aufgetretenen Fehler, sofern der Parameter <span class="replaceable">adStatus</span> auf <span class="LITERAL">adStatusErrorsOccurred</span> gesetzt ist.</p></dd>
+
+</dl>
+
+
+<dl>
+<dt><span class="replaceable">adStatus</span> (EventReasonEnum)</dt>
+<dd><p>Dieses Argument gibt den Status der aktuellen Operation an. Wenn der Parameter <span class="replaceable">adStatus</span> auf <span class="LITERAL">adStatusOK</span> gesetzt ist, bedeutet dies, dass die Operation erfolgreich verlaufen ist. Weist der Parameter <span class="replaceable">adStatus</span> den Wert <span class="LITERAL">adStatusErrorsOccurred</span> auf, so ist die Operation fehlgeschlagen, und das Objekt <span class="replaceable">pError</span> enth&auml;lt genaue Auskunft &uuml;ber den Fehler. Ist der Parameter <span class="replaceable">adStatus</span> auf <span class="LITERAL">adStatusCancel</span> gesetzt, so wurde die Operation vor ihrem Abschluss von der Anwendung abgebrochen. Wenn Sie den Parameter <span class="replaceable">adStatus</span> auf <span class="LITERAL">adStatusUnwantedEvent</span> setzen, wird dieses Ereignis nicht mehr aufgerufen.</p></dd>
+
+</dl>
+
+
+<dl>
+<dt><span class="replaceable">pRecordset</span></dt>
+<dd><p>Dieses Argument bezeichnet das Recordset-Objekt, das dieses Ereignis ausgel&ouml;st hat.</p></dd>
+
+</dl>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Siehe auch</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>EventReasonEnum-Enumeration, EventStatusEnum-Enumeration, Recordset.Open-Methode, Recordset.Requery-Methode, Recordset.WillChangeRecordset-Ereignis</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+<div id="Recordset.RecordCount">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+Eigenschaft Recordset.RecordCount </td>
+<td class="COMPATIBILITY">(Versionen 2.0, 2.1, 2.5, 2.6)</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2"><br><span class="replaceable">recordcount = recordset</span>.RecordCount</td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+
+
+<p>Die Eigenschaft RecordCount gibt die Anzahl an Datens&auml;tzen im aktuellen Recordset-Objekt zur&uuml;ck.</p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Datentyp</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Long</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Beschreibung</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Wenn der Provider oder der Cursor die Eigenschaft RecordCount nicht unterst&uuml;tzen oder wenn die Anzahl an Datens&auml;tzen von ADO nicht ermittelt werden kann, wird -1 zur&uuml;ckgegeben.</p>
+
+
+<p>Beim statischen und beim Schl&uuml;sselcursor (Static und Keyset) wird immer die tats&auml;chliche Anzahl an Datens&auml;tzen zur&uuml;ckgegeben, aber beim Vorw&auml;rtscursor (Forward Only) wird immer der Wert -1 zur&uuml;ckgegeben. Dynamische Cursor k&ouml;nnen, je nach Datenquelle, entweder den Wert -1 oder die tats&auml;chliche Anzahl an Datens&auml;tzen zur&uuml;ckgeben.</p>
+
+
+<p>Aus Effizienzgr&uuml;nden meldet die Eigenschaft RecordCount die Anzahl an Datens&auml;tzen in einer Datensatzgruppe nur, wenn das aktuelle Recordset-Objekt die angen&auml;herte Positionierung (Methode Supports, adApproxPosition) oder Lesezeichen (Methode Supports, adBookmark) unterst&uuml;tzt. Andernfalls w&uuml;rde diese Eigenschaften relativ viele Systemressourcen beanspruchen, da ADO alle Datens&auml;tze laden muss, um sie zu z&auml;hlen.</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+<div id="Recordset.Requery">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+Methode Recordset.Requery</td>
+<td class="COMPATIBILITY">(Versionen 2.0, 2.1, 2.5, 2.6)</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2"><br><span class="replaceable">recordset</span>.Requery</td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Beschreibung</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Um eine Aktualisierung der Datensatzgruppe zu veranlassen, f&uuml;hrt die Methode Requery des Recordset-Objekts den Befehl erneut aus, der die Datensatzgruppe urspr&uuml;nglich erstellt hat. Diese Methode hat denselben Effekt wie der Aufruf der Methode Close kombiniert mit dem anschlie&szlig;enden Aufruf der Methode Open.</p>
+
+
+<p>Wenn Sie einen neuen Datensatz hinzuf&uuml;gen oder einen vorhandenen bearbeiten und die Methode Requery aufrufen, wird ein Fehler erzeugt.</p>
+
+
+<p>Wenn Sie Eigenschaften &auml;ndern wollen, die schreibgesch&uuml;tzt sind, solange ein Recordset-Objekt ge&ouml;ffnet ist (CursorType, LockType usw.), m&uuml;ssen Sie das Recordset-Objekt ausdr&uuml;cklich schlie&szlig;en und erneut &ouml;ffnen. Dazu rufen Sie die Methode Close auf, &auml;ndern die Eigenschaften und rufen dann erneut die Methode Open auf.</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Siehe auch</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>ExecuteOptionEnum</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+<div id="Recordset.Resync">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+Methode Recordset.Resync</td>
+<td class="COMPATIBILITY">(Versionen 2.0, 2.1, 2.5, 2.6)</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2"><br><span class="replaceable">recordset</span>.Resync <span class="replaceable">AffectRecords</span></td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+
+
+<p>Die Methode Resync des Recordset-Objekts aktualisiert die Daten in der Datensatzgruppe aus den zugrunde liegenden Daten in der Datenquelle.</p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Argumente</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<dl>
+<dt><span class="replaceable">AffectRecords</span> (AffectEnum)</dt>
+<dd><p>Optional. Dieses Argument ist ein Enumerator vom Typ AffectEnum mit dem Wert <span class="LITERAL">adAffectCurrent</span> (1), <span class="LITERAL">adAffectGroup</span> (2) oder <span class="LITERAL">adAffectAll</span> (3, der Standard).</p>
+
+
+<p>Wenn <span class="LITERAL">adAffectCurrent</span> als Wert von <span class="replaceable">AffectRecords</span> &uuml;bergeben wird, wirkt sich der Aufruf der Methode Resync nur auf eine anstehende Batch-Aktualisierung des aktuellen Datensatzes in der Gruppe aus.</p>
+
+
+<p>Wenn <span class="LITERAL">adAffectGroup</span> als Wert von <span class="replaceable">AffectRecords</span> &uuml;bergeben wird, wirkt sich der Aufruf der Methode Resync nur auf die anstehenden Datens&auml;tze aus, die durch die Eigenschaft Filter des aktuellen Recordset-Objekts festgelegt worden sind. Diese Eigenschaft muss bereits f&uuml;r die Methode Resync gesetzt worden sein, damit sie mit dem Parameter <span class="LITERAL">adAffectGroup</span> aufgerufen werden kann.</p>
+
+
+<p>Wenn <span class="LITERAL">adAffectAll</span> als Wert von <span class="replaceable">AffectRecords</span> &uuml;bergeben wird, sind alle anstehenden Datens&auml;tze im aktuellen Recordset-Objekt (einschlie&szlig;lich der durch die Filter-Eigenschaft verborgenen) von der Methode Resync betroffen.</p></dd>
+
+</dl>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Beschreibung</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Die Methode Resync des Recordset-Objekts dient der Neusynchronisierung der Datens&auml;tze in der aktuellen Datensatzgruppe anhand der Datens&auml;tze in der zugrunde liegenden Datenquelle. Dies ist sehr n&uuml;tzlich, wenn Sie mit einem statischen oder Vorw&auml;rtscursor arbeiten und &uuml;berpr&uuml;fen wollen, ob seit Ihrem Abruf jemand die Datens&auml;tze in der Datenquelle ge&auml;ndert hat.</p>
+
+
+<p>Dabei &ouml;ffnet die Methode Resync keine Datens&auml;tze, die neu zur Datenquelle hinzugef&uuml;gt worden sind, sondern aktualisiert nur diejenigen Datens&auml;tze, die Sie bereits geladen haben. Die Resync-Methode aktualisiert also nur vorhandene Datens&auml;tze und f&uuml;hrt nicht etwa den Befehl erneut aus, der die Datensatzgruppe urspr&uuml;nglich zusammengestellt hat.</p>
+
+
+<p>Wenn die Methode Resync  einen Datensatz lesen will, der bereits von einem anderen Anwender gel&ouml;scht worden ist, entsteht kein Laufzeitfehler, aber die Errors-Kollektion wird mit Warnungen gef&uuml;llt. Ein Laufzeitfehler tritt nur auf, wenn alle angeforderten Datens&auml;tze, die aktualisiert werden sollen, aus irgendeinem Grund einen Konflikt aufweisen. Um herauszufinden, welche Datens&auml;tze Konflikte aufweisen, verwenden Sie die Eigenschaft Filter mit dem Wert <span class="LITERAL">adFilterAffectedRecords</span> und der Eigenschaft Status.</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Hinweis</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Nicht alle Provider unterst&uuml;tzen die Methode Resync.</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Siehe auch</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>ADCPROP_UPDATERESYNC_ENUM-Enumeration, AffectEnum-Enumeration, CursorOptionEnum-Enumeration, Recordset.Supports-Methode, ResyncEnum-Enumeration</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+<div id="Recordset.Save">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+Methode Recordset.Save </td>
+<td class="COMPATIBILITY">(Versionen 2.0, 2.1, 2.5, 2.6)</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2"><br>recordset.Save <span class="replaceable">Destination, PersistFormat</span></td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+
+
+<p>Die Methode Save speichert das aktuelle Recordset-Objekt in eine Datei oder in ein Stream-Objekt.</p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Argumente</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<dl>
+<dt><span class="replaceable">Destination</span> (Variante)</dt>
+<dd><p>Optional. In diesem Argument geben Sie entweder den Namen der Datei an, die erstellt werden soll, oder den Namen des Stream-Objekts, das das Recordset-Objekt aufnehmen soll.</p></dd>
+
+</dl>
+
+
+<dl>
+<dt><span class="replaceable">PersistFormat</span> (PersistFormatEnum)</dt>
+<dd><p>Optional. Dieses Argument bezeichnet das Format des Recordset-Objekts, wenn es gespeichert wird. Standard ist <span class="LITERAL">ADTG</span>, allerdings kann auch <span class="LITERAL">XML</span> verwendet werden.</p></dd>
+
+</dl>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Beschreibung</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Die Methode Save muss f&uuml;r ein ge&ouml;ffnetes Recordset-Objekt aufgerufen werden. Beim ersten Aufruf von Save k&ouml;nnen Sie das Argument Destination  (Ziel) benennen, doch sollten nachfolgende Aufrufe ohne dieses Argument ausgegeben werden. Wird f&uuml;r dasselbe Recordset derselbe Zielname zweimal verwendet, entsteht ein Fehler. Werden hingegen zwei verschiedenen Zielnamen verwendet, werden zwei Dateien angelegt, die beide ge&ouml;ffnet bleiben, bis die Methode Close aufgerufen wird. Wenn Sie beim ersten Aufruf von Save kein Ziel angeben, wird eine Datei erstellt, die den Namen der Quelle f&uuml;r das Recordset-Objekt tr&auml;gt.</p>
+
+
+<p>Speichern Sie eine Datensatzgruppe mit einem Filter, werden nur die sichtbaren Datens&auml;tze gespeichert. Speichern Sie eine hierarchische Datensatzgruppe, werden die aktuelle (untergeordnete) Datensatzgruppe sowie deren untergeordnete Gruppen sowie die ihr &uuml;bergeordnete Gruppe gespeichert. Speichern Sie eine untergeordnete Datensatzgruppe, werden nur diese Gruppe und die ihr untergeordneten Gruppen gespeichert.</p>
+
+
+<p>Wird die Methode Save aufgerufen, w&auml;hrend eine asynchrone Operation f&uuml;r das Recordset-Objekt im Gange ist, wird zun&auml;chst diese Operation abgeschlossen und erst danach das Recordset-Objekt gespeichert. Nachdem ein Recordset-Objekt persistent gespeichert worden ist, zeigt der Datensatzzeiger auf den ersten Datensatz in der Gruppe.</p>
+
+
+<p>Bessere Ergebnisse erzielen Sie, indem Sie die Eigenschaft CursorLocation auf den Client setzen. Unterst&uuml;tzt der Datenprovider die zum Speichern des Recordset-Objekts notwendige Funktionalit&auml;t nicht, so wird das der Cursordienst &uuml;bernehmen. Wenn Sie den Server als Cursoradresse verwenden, k&ouml;nnen Sie normalerweise nur in einer einzigen Tabelle Datens&auml;tze hinzuf&uuml;gen, l&ouml;schen oder aktualisieren. Au&szlig;erdem ist in diesem Fall die Methode Resync nicht verf&uuml;gbar.</p>
+
+
+<p>Microsoft warnt davor, hierarchische Datensatzgruppen im XML-Format zu speichern, denn man kann eine Datensatzgruppe nicht speichern, wenn sie anstehende Aktualisierungen enth&auml;lt oder wenn es sich um ein parametrisiertes hierarchisches Recordset-Objekt handelt.</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Siehe auch</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>PersistFormatEnum-Enumeration, Recordset.Close-Methode, Recordset.CursorLocation-Eigenschaft, Recordset.Filter-Eigenschaft, Recordset.Source-Eigenschaft</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+<div id="Recordset.Seek">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+Methode Recordset.Seek </td>
+<td class="COMPATIBILITY">(Versionen 2.1, 2.5, 2.6)</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2"><br><span class="replaceable">recordset</span>.Seek <span class="replaceable">KeyValues, SeekOptions</span></td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+
+
+<p>Die Methode Seek &auml;ndert schnell den Datensatzzeiger auf den Datensatz im Recordset-Objekt, der dem angegebenen Index entspricht.</p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Argumente</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<dl>
+<dt><span class="replaceable">KeyValues</span> (Variante)</dt>
+<dd><p>Dieses Argument bezeichnet die Werte, die zusammen mit dem Wert Recordset.Index f&uuml;r die Suche nach einem Datensatz verwendet werden.</p></dd>
+
+</dl>
+
+
+<dl>
+<dt><span class="replaceable">SeekOptions</span> (SeekEnum)</dt>
+<dd><p>Dieses Argument bezeichnet die Art des Vergleichs, der f&uuml;r die Suche nach einem Datensatz verwendet wird.</p></dd>
+
+</dl>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Beschreibung</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Die Methode Seek wird zusammen mit der Eigenschaft Index des Recordset-Objekts verwendet. Sie k&ouml;nnen sie nur einsetzen, wenn die aktuelle Datensatzgruppe Indexe unterst&uuml;tzt. Um zu &uuml;berpr&uuml;fen, ob das der Fall ist, rufen Sie die Methode Recordset.Supports (adSeek) auf.</p>
+
+
+<p>Die Eigenschaft Index gibt an, welcher Index mit der Methode Seek verwendet wird. Der erste Parameter, ein Varianten-Array, sollte f&uuml;r jede Spalte des aktuell verwendeten Index einen Wert enthalten.</p>
+
+
+<p>Wird kein Datensatz gefunden, wird der Datensatzzeiger auf die EOF-Marke gesetzt.</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Hinweise</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Die Methode Seek kann nur auf serverseitigen Clients verwendet werden, die mit dem CommandTypeEnum-Enumerationswert <span class="replaceable">adCmdTableDirect</span> ge&ouml;ffnet werden.</p>
+
+
+<p>Nicht alle Provider unterst&uuml;tzen die Methode Seek.</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Siehe auch</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>CommandTypeEnum-Enumeration, CursorOptionEnum-Enumeration, Recordset.EOF-Eigenschaft, Recordset.Index-Eigenschaft, SeekEnum-Enumeration, Recordset.Supports-Methode</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+<div id="Recordset.Sort">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+Eigenschaft Recordset.Sort </td>
+<td class="COMPATIBILITY">(Versionen 2.0, 2.1, 2.5, 2.6)</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2"><br><span class="replaceable">recordset</span>.Sort = <span class="replaceable">sortstring</span></td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+
+
+<p>Die Eigenschaft Sort sortiert eine Datensatzgruppe nach einem oder mehreren Feldern.</p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Datentyp</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>String</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Beschreibung</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Mit Hilfe der Eigenschaft Sort k&ouml;nnen Sie festlegen, dass eine Datensatzgruppe nach einem oder auch mehreren Feldern sortiert wird, und zwar in aufsteigender oder absteigender Reihenfolge. Die Eigenschaft Sort akzeptiert einen String-Wert, der eine Sortierklausel einer SQL-Anweisung darstellt. Die angegebenen Feldnamen werden durch Kommas getrennt, wobei hinter jedem Feldnamen entweder das Schl&uuml;sselwort ASC (f&uuml;r aufsteigende Reihenfolge) oder DESC (f&uuml;r absteigende Reihenfolge) steht. Ist keines dieser beiden Schl&uuml;sselw&ouml;rter angegeben, wird der Standard ASC verwendet.</p>
+
+
+<p>Wenn Sie f&uuml;r die Eigenschaft Sort einen leeren String-Wert (&quot;) angeben, wird die Sortierung der Datensatzgruppe aufgehoben und die Standardreihenfolge wieder hergestellt.</p>
+
+
+<p>Der Sort-Wert &quot;Firma ASC, Kontakt DESC&quot; beispielsweise sortiert die Datensatzgruppe nach Firma, und zwar in aufsteigender Reihenfolge und dann nach Kontakt, in absteigender Reihenfolge.</p>
+
+
+<p>Die Eigenschaft Sort ordnet die Daten innerhalb der Datensatzgruppe nicht neu an, sondern erstellt einen tempor&auml;ren Index f&uuml;r jedes Feld, das noch keinen Index besitzt, wenn die Eigenschaft CursorLocation auf <span class="LITERAL">adUseClient</span> gesetzt ist.</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Hinweis</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Nicht alle Provider unterst&uuml;tzen die Eigenschaft Sort.</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Siehe auch</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Recordset.CursorLocation-Eigenschaft</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+<div id="Recordset.Source">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+Eigenschaft Recordset.Source </td>
+<td class="COMPATIBILITY">(Versionen 2.0, 2.1, 2.5, 2.6)</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2"><br><span class="replaceable">recordset</span>.Source <span class="replaceable">source</span></td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+
+
+<p>Die Eigenschaft Source gibt die Datenquelle zur&uuml;ck, aus der das Recordset-Objekt gespeist wird.</p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Datentyp</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<simplelist>
+
+<member>String (Let, Get)</member>
+
+<member>Command (Set)</member>
+
+</simplelist>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Beschreibung</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Die Eigenschaft Source eines Recordset-Objekts gibt an, woher die Daten einer Datensatzgruppe stammen. F&uuml;r diese Eigenschaft besteht bei geschlossenem Recordset-Objekt sowohl Lese- als auch Schreibberechtigung, bei ge&ouml;ffnetem Objekt ist sie schreibgesch&uuml;tzt.</p>
+
+
+<p>F&uuml;r die Eigenschaft Source des Recordset-Objekts sind folgende Arten von Werten zul&auml;ssig:</p>
+
+
+<ul><li><p>Command-Objekt-Variable</p></li></ul>
+<ul><li><p>SQL-Anweisung</p></li></ul>
+<ul><li><p>Gespeicherte Prozedur</p></li></ul>
+<ul><li><p>Tabelle</p></li></ul>
+<ul><li><p>Datei oder URL</p></li></ul>
+<p>Ist die Eigenschaft Source auf ein Command-Objekt gesetzt, bezieht die ActiveConnection-Eigenschaft des Recordset-Objekts seinen Wert von der ActiveConnection-Eigenschaft des Command-Objekts. Allerdings wird beim Lesen der Eigenschaft Source kein Command-Objekt zur&uuml;ckgegeben, sondern die Eigenschaft CommandText des zugeh&ouml;rigen Command-Objekts, dessen Source-Eigenschaft Sie &uuml;bernehmen.</p>
+
+
+<p>Ist die Eigenschaft Source auf eine SQL-Anweisung, eine gespeicherte Prozedur oder eine Tabelle gesetzt, sollten Sie dies doch besser im Argument Options der Methode Open angeben, da dadurch die Performance des Recordset-Objekts verbessert wird.</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Siehe auch</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Recordset.Open-Methode</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+<div id="Recordset.State">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+Eigenschaft Recordset.State </td>
+<td class="COMPATIBILITY">(Versionen 2.0, 2.1, 2.5, 2.6)</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2"><br><span class="replaceable">state = recordset</span>.State</td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+
+
+<p>Die Eigenschaft State gibt den aktuellen Zustand des Recordset-Objekts an.</p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Datentyp</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>ObjectStateEnum</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Beschreibung</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Die schreibgesch&uuml;tzte Eigenschaft State gibt an, ob das aktuelle Recordset-Objekt ge&ouml;ffnet oder geschlossen ist.</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Siehe auch</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>ObjectStateEnum-Enumeration</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+<div id="Recordset.Status">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+Eigenschaft Recordset.Status </td>
+<td class="COMPATIBILITY">(Versionen 2.0, 2.1, 2.5, 2.6)</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2"><br><span class="replaceable">status = recordset</span>.Status</td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+
+
+<p>Die Eigenschaft Status gibt den Status des aktuellen Datensatzes im Verh&auml;ltnis zu Bulk-Operationen an.</p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Datentyp</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>RecordStatusEnum</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Beschreibung</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Die Eigenschaft Status kann auf einen oder mehrere der in <link linkend="ado-APP-E">Anhang E</link> aufgef&uuml;hrten RecordStatusEnum-Enumerationswerte gesetzt werden.</p>
+
+
+<p>Diese Eigenschaft zeigt anstehende &Auml;nderungen an Datens&auml;tzen an, die bei einer Batch-Operation aktualisiert worden sind.</p>
+
+
+<p>Zudem zeigt diese Eigenschaft gegebenenfalls an, warum die folgenden Funktionen fehlgeschlagen sind: Resync, UpdateBatch, CancelBatch und Filter (Einstellung entspricht einem Array an Lesezeichen).</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Siehe auch</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Recordset.CancelBatch-Methode, Recordset.Filter-Eigenschaft, Recordset.Resync-Methode, Recordset.UpdateBatch-Methode, RecordStatusEnum-Enumeration</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+<div id="Recordset.StayInSync">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+Eigenschaft Recordset.StayInSync </td>
+<td class="COMPATIBILITY">(Versionen 2.0, 2.1, 2.5, 2.6)</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2"><br><span class="replaceable">recordset</span>.Resync <span class="replaceable">AffectRecords</span></td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+
+
+<p>Wird in hierarchischen Datensatzgruppen der Datensatzzeiger auf eine andere, &uuml;bergeordnete Zeile verlagert, so bestimmt die Eigenschaft StayInSync, ob die Verweise auf Kapiteldatensatzgruppen sich entsprechend &auml;ndern oder ob sie erhalten bleiben.</p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Datentyp</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Boolean</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Beschreibung</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>F&uuml;r die Eigenschaft StayInSync besteht sowohl Lese- als auch Schreibberechtigung. Der Standardwert f&uuml;r diesen Eigenschaft ist <span class="LITERAL">True</span>.</p>
+
+
+<p>Die Eigenschaft StayInSync ist f&uuml;r hierarchische Datensatzgruppen relevant. Wird ihr Wert auf <span class="LITERAL">True</span> gesetzt, &auml;ndern sich die Verweise auf Kapiteldatensatzgruppen, wenn die &uuml;bergeordnete Datensatzgruppe ge&auml;ndert wird.</p>
+
+
+<p>Wird der Wert der Eigenschaft StayInSync hingegen auf <span class="LITERAL">False</span> gesetzt, zeigen die Verweise auf Kapiteldatensatzgruppen weiterhin auf die zuvor &uuml;bergeordnete Datensatzgruppe, wenn sich durch ein Verlagern des Datensatzzeigers die &uuml;bergeordnete Datensatzgruppe &auml;ndert.</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+<div id="Recordset.Supports">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+Methode Recordset.Supports </td>
+<td class="COMPATIBILITY">(Versionen 2.0, 2.1, 2.5, 2.6)</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2"><br>Set <span class="replaceable">boolean = recordset</span>.Supports(<span class="replaceable">CursorOptions</span>)</td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+
+
+<p>Die Methode Supports untersucht, ob der aktuelle Datenprovider die angegebene Funktionalit&auml;t unterst&uuml;tzt.</p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Argumente</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<dl>
+<dt><span class="replaceable">CursorOptions</span> (Long)</dt>
+<dd><p>Dieses Argument repr&auml;sentiert die Funktionalit&auml;t, die untersucht wird. Sie kann einen oder mehrere der in <link linkend="ado-APP-E">Anhang E</link> aufgef&uuml;hrten CursorOptionEnum-Werte annehmen.</p></dd>
+
+</dl>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">R&uuml;ckgabewerte</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Boolean</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Beschreibung</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Die Methode Supports des Recordset-Objekts untersucht, ob das Recordset-Objekt bestimmte Funktionalit&auml;ten unterst&uuml;tzt.</p>
+
+
+<p>Nachdem die CursorOptionEnum-Werte hinzugef&uuml;gt und als einziges Argument an die Funktion Supports &uuml;bergeben wurden, zeigt der R&uuml;ckgabewert an, ob alle der abgefragten Funktionalit&auml;ten unterst&uuml;tzt werden.</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Siehe auch</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>CursorOptionEnum-Enumeration</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+<div id="Recordset.Update">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+Methode Recordset.Update </td>
+<td class="COMPATIBILITY">(Versionen 2.0, 2.1, 2.5, 2.6)</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2"><br><span class="replaceable">recordset</span>.Update <span class="replaceable">Fields, Values</span></td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+
+
+<p>Die Methode Update des Recordset-Objekts speichert die &Auml;nderungen, die seit dem Aufruf von AddNew an Feldern des aktuellen Datensatzes vorgenommenen wurden.</p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Argumente</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<dl>
+<dt><span class="replaceable">Fields</span> (Variante oder Varianten-Array)</dt>
+<dd><p>Dieses Argument kann das Feld, die Ordinalposition, ein Array an Feldern oder ein Array an Ordinalpositionen beinhalten und so festlegen, welche Felder im aktuellen Datensatz aktualisiert werden sollen. Das Argument <span class="replaceable">Fields</span> muss denselben Datentyp und dieselbe Array-Dimension besitzen wie das Argument <span class="replaceable">Values</span>.</p></dd>
+
+</dl>
+
+
+<dl>
+<dt><span class="replaceable">Values</span> (Variante oder Varianten-Array)</dt>
+<dd><p>Optional. Dieses Argument enth&auml;lt den oder die Werte f&uuml;r das oder die im Argument <span class="replaceable">Fields</span> beschriebenen Felder. Das Argument <span class="replaceable">Values</span> muss denselben Datentyp und dieselbe Array-Dimension besitzen wie das Argument <span class="replaceable">Fields</span>.</p></dd>
+
+</dl>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Beschreibung</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Der aktuelle Datensatz bleibt auch nach dem Aufruf der Methode Update der aktuelle Datensatz.</p>
+
+
+<p>Wenn Sie f&uuml;r das Argument <span class="replaceable">Fields</span> ein Array an Feldnamen angeben, muss an das Argument <span class="replaceable">Values</span> ein Array mit denselben Dimensionen &uuml;bergeben werden. Dieses enth&auml;lt die Werte f&uuml;r jedes im Fields-Array aufgelistete Feld. Andernfalls wird ein Fehler erzeugt.</p>
+
+
+<p>Wenn Sie den Zeiger auf einen anderen Datensatz verlagern, w&auml;hrend Sie einen Datensatz &auml;ndern, so wird dieser gespeichert (durch einen automatischen Aufruf der Methode Update), bevor die Zeigerposition ge&auml;ndert wird. Auch wenn Sie zudem den aktuellen Datensatz &auml;ndern und die Methode UpdateBatch aufrufen, wird die Methode Update automatisch aufgerufen.</p>
+
+
+<p>Umgekehrt macht die Methode CancelUpdate am aktuellen Datensatz vorgenommene &Auml;nderungen wieder r&uuml;ckg&auml;ngig.</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Hinweis</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Nicht alle Provider unterst&uuml;tzen die Methode Update.</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Siehe auch</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>CursorOptionEnum-Enumeration, Recordset.Supports-Methode</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+<div id="Recordset.UpdateBatch">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+Methode Recordset.UpdateBatch </td>
+<td class="COMPATIBILITY">(Versionen 2.0, 2.1, 2.5, 2.6)</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2"><br><span class="replaceable">recordset</span>.UpdateBatch <span class="replaceable">AffectRecords</span></td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+
+
+<p>Die Methode UpdateBatch des Recordset-Objekts speichert alle anstehenden Batch-Aktualisierungen.</p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Argumente</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<dl>
+<dt><span class="replaceable">AffectRecords</span> (AffectEnum)</dt>
+<dd><p>Dieses optionale Argument ist ein Enumerator vom Typ AffectEnum mit dem Wert <span class="LITERAL">adAffectCurrent</span> (1), <span class="LITERAL">adAffectGroup</span> (2) oder <span class="LITERAL">adAffectAll</span> (3, der Standard).</p>
+
+
+<p>Wenn <span class="LITERAL">adAffectCurrent</span> als Wert von <span class="replaceable">AffectRecords</span> &uuml;bergeben wird, wirkt sich der Aufruf der Methode UpdateBatch nur auf eine anstehende Batch-Aktualisierung des aktuellen Datensatzes in der Gruppe aus.</p>
+
+
+<p>Wenn <span class="LITERAL">adAffectGroup</span> als Wert von <span class="replaceable">AffectRecords</span> &uuml;bergeben wird, wirkt sich der Aufruf der Methode UpdateBatch nur auf die anstehenden Datens&auml;tze aus, die durch die Eigenschaft Filter des aktuellen Recordset-Objekts festgelegt worden sind. Diese Eigenschaft muss bereits f&uuml;r die Methode UpdateBatch gesetzt worden sein, damit sie mit dem Parameter <span class="LITERAL">adAffectGroup</span> aufgerufen werden kann.</p>
+
+
+<p>Wenn <span class="LITERAL">adAffectAll</span> als Wert von <span class="replaceable">AffectRecords</span> &uuml;bergeben wird, sind alle anstehenden Datens&auml;tze im aktuellen Recordset-Objekt (einschlie&szlig;lich der durch die Filter-Eigenschaft verborgenen) von der Methode UpdateBatch betroffen.</p>
+</dd>
+
+</dl>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Beschreibung</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Die Methode UpdateBatch &uuml;bermittelt alle anstehenden Batch-Aktualisierungen zur Datenquelle. Diese Methode ist nur f&uuml;r den Batch-Aktualisierungsmodus verf&uuml;gbar, der wiederum nur mit einem statischen oder Schl&uuml;sselcursor verwendet werden sollte.</p>
+
+
+<p>Es ist m&ouml;glich, zwischengespeicherte Feldwerte mehrmals zu aktualisieren, bevor die &Auml;nderungen der anstehenden Batch-Aktualisierungen festgeschrieben werden. Wird die Methode UpdateBatch aufgerufen, solange der Bearbeitungsmodus aktiviert ist, wird die Methode Update automatisch aufgerufen.</p>
+
+
+<p>Wenn Sie versuchen, einen Datensatz zu aktualisieren, der bereits von einem anderen Anwender gel&ouml;scht worden ist, so entsteht kein Laufzeitfehler, aber die Errors-Kollektion wird mit Warnungen gef&uuml;llt. Ein Laufzeitfehler tritt nur auf, wenn alle angeforderten Datens&auml;tze, die aktualisiert werden sollen, aus irgendeinem Grund einen Konflikt aufweisen. Um herauszufinden, welche Datens&auml;tze Konflikte aufweisen, verwenden Sie die Eigenschaft Filter mit dem Wert <span class="LITERAL">adFilterAffectedRecords</span> und der Eigenschaft Status.</p>
+
+
+<p>Umgekehrt bricht die Methode CancelBatch alle anstehenden Batch-Aktualsierungen ab.</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Hinweis</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Nicht alle Provider unterst&uuml;tzen die Methode UpdateBatch.</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Siehe auch</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>AffectEnum-Enumeration, Recordset.Supports-Methode, CursorOptionEnum-Enumeration</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+<div id="Recordset.WillChangeField">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+Ereignis Recordset.WillChangeField </td>
+<td class="COMPATIBILITY">(Versionen 2.0, 2.1, 2.5, 2.6)</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2"><br>WillChangeField(ByVal <span class="replaceable">cFields</span> As Long, _<br>                ByVal <span class="replaceable">Fields</span> As Variant, _<br>                <span class="replaceable">adStatus</span> As ADODB.EventStatusEnum, _<br>                ByVal <span class="replaceable">pRecordset</span> As ADODB.Recordset)</td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+
+
+<p>Das Ereignis WillChangeField wird aufgerufen, bevor eine Operation einen oder mehrere Werte des Objekts Field &auml;ndert.</p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Argumente</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<dl>
+<dt><span class="replaceable">cFields</span> (Recordset-Objekt)</dt>
+<dd><p>Dieses Argument repr&auml;sentiert die Datensatzgruppe, die aktualisiert werden soll.</p></dd>
+
+</dl>
+
+
+<dl>
+<dt><span class="replaceable">Fields</span> (Varianten-Array)</dt>
+<dd><p>Dieses Argument enth&auml;lt die Field-Objekte, die auf eine &Auml;nderung warten.</p></dd>
+
+</dl>
+
+
+<dl>
+<dt><span class="replaceable">adStatus</span>(EventStatusEnum)</dt>
+<dd><p>Dieses Argument gibt den Status der aktuellen Operation an. Der Parameter <span class="replaceable">adStatus</span> wird auf <span class="LITERAL">adStatusOK</span> gesetzt, wenn die Operation, die dieses Ereignis verursacht hat, erfolgreich war. Wird der Parameter <span class="replaceable">adStatus</span> auf <span class="LITERAL">adStatusCantDeny</span> gesetzt, kann das Ereignis keinen Abbruch der Operation fordern. Wenn Sie den Parameter <span class="replaceable">adStatus</span> auf <span class="LITERAL">adStatusUnwantedEvent</span> setzen, wird dieses Ereignis nicht mehr aufgerufen. Ist der Parameter <span class="replaceable">adStatus</span> auf <span class="LITERAL">adStatusCancel</span> gesetzt, erfolgt eine Abbruchanforderung f&uuml;r diese Operation.</p></dd>
+
+</dl>
+
+
+<dl>
+<dt><span class="replaceable">pRecordset</span></dt>
+<dd><p>Dieses Argument repr&auml;sentiert das Recordset-Objekt, das dieses Ereignis ausgel&ouml;st hat.</p></dd>
+
+</dl>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Siehe auch</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>EventStatusEnum-Enumeration, Recordset.FieldChangeComplete-Ereignis, Recordset.Update-Methode, Recordset.Value-Eigenschaft</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+<div id="Recordset.WillChangeRecord">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+Ereignis Recordset.WillChangeRecord </td>
+<td class="COMPATIBILITY">(Versionen 2.0, 2.1, 2.5, 2.6)</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2"><br>WillChangeRecord(ByVal <span class="replaceable">adReason</span> As ADODB.EventReasonEnum, _<br>                 ByVal <span class="replaceable">cRecords</span> As Long, _<br>                 <span class="replaceable">adStatus</span> As ADODB.EventStatusEnum, _<br>                 ByVal <span class="replaceable">pRecordset</span> As ADODB.Recordset)</td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+
+
+<p>Das Ereignis WillChangeRecord wird aufgerufen, bevor eine Operation einen oder mehrere Datens&auml;tze im Recordset-Objekt &auml;ndert.</p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Argumente</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<dl>
+<dt><span class="replaceable">adReason</span>(EventStatusEnum)</dt>
+<dd><p>Dieses Argument gibt den Grund f&uuml;r dieses Ereignis an. F&uuml;r diesen Parameter sind folgende Werte zul&auml;ssig: <span class="LITERAL">adRsnAddNew</span>, <span class="LITERAL">adRsnDelete</span>, <span class="LITERAL">adRsnUpdate</span>, <span class="LITERAL">adRsnUndoUpdate</span>, <span class="LITERAL">adRsnUndoAddNew</span>, <span class="LITERAL">adRsnUndoDelete</span> und <span class="LITERAL">adRsnFirstChange</span>.</p></dd>
+
+</dl>
+
+
+<dl>
+<dt><span class="replaceable">cRecords</span> (Long)</dt>
+<dd><p>Dieses Argument gibt an, wie viele Datens&auml;tze von der Operation betroffen sind, die dieses Ereignis verursacht.</p></dd>
+
+</dl>
+
+
+<dl>
+<dt><span class="replaceable">adStatus</span>(EventStatusEnum)</dt>
+<dd><p>Dieses Argument gibt den Status der aktuellen Operation an. Der Parameter <span class="replaceable">adStatus</span> wird auf <span class="LITERAL">adStatusOK</span> gesetzt, wenn die Operation, die dieses Ereignis verursacht hat, erfolgreich war. Wird der Parameter <span class="replaceable">adStatus</span> auf <span class="LITERAL">adStatusCantDeny</span> gesetzt, kann das Ereignis keinen Abbruch der Operation fordern. Wenn Sie den Parameter <span class="replaceable">adStatus</span> auf <span class="LITERAL">adStatusUnwantedEvent</span> setzen, wird dieses Ereignis nicht mehr aufgerufen. Ist der Parameter <span class="replaceable">adStatus</span> auf <span class="LITERAL">adStatusCancel</span> gesetzt, erfolgt eine Abbruchanforderung f&uuml;r diese Operation.</p></dd>
+
+</dl>
+
+
+<dl>
+<dt><span class="replaceable">pRecordset</span></dt>
+<dd><p>Dieses Argument repr&auml;sentiert das Recordset-Objekt, das dieses Ereignis ausgel&ouml;st hat.</p></dd>
+
+</dl>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Siehe auch</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>EventReasonEnum-Enumeration, EventStatusEnum-Enumeration, Recordset.AddNew-Methode, Recordset.CancelBatch-Methode, Recordset.CancelUpdate-Methode, Recordset.Delete-Methode, Recordset.RecordChangeComplete-Ereignis, Recordset.Update-Methode, Recordset.UpdateBatch-Methode</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+<div id="Recordset.WillChangeRecordset">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+Ereignis Recordset.WillChangeRecordset </td>
+<td class="COMPATIBILITY">(Versionen 2.0, 2.1, 2.5, 2.6)</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2"><br>WillChangeRecordset(ByVal <span class="replaceable">adReason</span> As ADODB.EventReasonEnum, _<br>                    <span class="replaceable">adStatus</span> As ADODB.EventStatusEnum, _<br>                    ByVal <span class="replaceable">pRecordset</span> As ADODB.Recordset)</td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+
+
+<p>Das Ereignis WillChangeRecordset wird aufgerufen, bevor eine Operation das Recordset-Objekt &auml;ndert.</p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Argumente</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<dl>
+<dt><span class="replaceable">adReason</span> (EventReasonEnum)</dt>
+<dd><p>Dieses Argument gibt den Grund f&uuml;r dieses Ereignis an. F&uuml;r diesen Parameter sind folgende Werte zul&auml;ssig: <span class="LITERAL">adRsnReQuery</span>, <span class="LITERAL">adRsnReSynch</span>, <span class="LITERAL">adRsnClose</span> und <span class="LITERAL">adRsnOpen</span>.</p></dd>
+
+</dl>
+
+
+<dl>
+<dt><span class="replaceable">adStatus</span> (EventReasonEnum)</dt>
+<dd><p>Dieses Argument gibt den Status der aktuellen Operation an. Der Parameter <span class="replaceable">adStatus</span> wird auf <span class="LITERAL">adStatusOK</span> gesetzt, wenn die Operation, die dieses Ereignis verursacht hat, erfolgreich war. Wird der Parameter <span class="replaceable">adStatus</span> auf <span class="LITERAL">adStatusCantDeny</span> gesetzt, kann das Ereignis keinen Abbruch der Operation fordern. Wenn Sie den Parameter <span class="replaceable">adStatus</span> auf <span class="LITERAL">adStatusUnwantedEvent</span> setzen, wird dieses Ereignis nicht mehr aufgerufen. Ist der Parameter <span class="replaceable">adStatus</span> auf <span class="LITERAL">adStatusCancel</span> gesetzt, erfolgt eine Abbruchanforderung f&uuml;r diese Operation.</p></dd>
+
+</dl>
+
+
+<dl>
+<dt><span class="replaceable">pRecordset</span></dt>
+<dd><p>Dieses Argument repr&auml;sentiert das Recordset-Objekt, das dieses Ereignis ausgel&ouml;st hat.</p></dd>
+
+</dl>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Siehe auch</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>EventReasonEnum-Enumeration, EventStatusEnum-Enumeration, RecordsetChangeComplete-Ereignis, Recordset.Requery, Recordset.Open</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+<div id="Recordset.WillMove">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+Ereignis Recordset.WillMove </td>
+<td class="COMPATIBILITY">(Versionen 2.0, 2.1, 2.5, 2.6)</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2"><br>WillMove(ByVal <span class="replaceable">adReason</span> As ADODB.EventReasonEnum, _<br>         <span class="replaceable">adStatus</span> As ADODB.EventStatusEnum, _<br>         ByVal <span class="replaceable">pRecordset</span> As ADODB.Recordset)</td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+
+
+<p>Das Ereignis WillMove wird aufgerufen, bevor eine Operation die Position des Datensatzzeigers innerhalb des Recordset-Objekts &auml;ndert.</p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Argumente</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<dl>
+<dt><span class="replaceable">adReason</span> (EventReasonEnum)</dt>
+<dd><p>Dieses Argument gibt den Grund f&uuml;r dieses Ereignis an. F&uuml;r diesen Parameter sind folgende Werte zul&auml;ssig: <span class="LITERAL">adRsnMoveFirst</span>, <span class="LITERAL">adRsnMoveLast</span>, <span class="LITERAL">adRsnMoveNext</span>, <span class="LITERAL">adRsnMovePrevious</span>, <span class="LITERAL">adRsnMove</span>, <span class="LITERAL">adRsnRequery</span>.</p></dd>
+
+</dl>
+
+
+<dl>
+<dt><span class="replaceable">adStatus</span></dt>
+<dd><p>Dieses Argument enth&auml;lt einen EventStatusEnum-Wert, der den Status der aktuellen Operation darstellt. Der Parameter <span class="replaceable">adStatus</span> wird auf <span class="LITERAL">adStatusOK</span> gesetzt, wenn die Operation, die dieses Ereignis verursacht hat, erfolgreich war. Wird der Parameter <span class="replaceable">adStatus</span> auf <span class="LITERAL">adStatusCantDeny</span> gesetzt, kann das Ereignis keinen Abbruch der Operation fordern. Wenn Sie den Parameter <span class="replaceable">adStatus</span> auf <span class="LITERAL">adStatusUnwantedEvent</span> setzen, wird dieses Ereignis nicht mehr aufgerufen. Ist der Parameter <span class="replaceable">adStatus</span> auf <span class="LITERAL">adStatusCancel</span> gesetzt, erfolgt eine Abbruchanforderung f&uuml;r diese Operation.</p></dd>
+
+</dl>
+
+
+<dl>
+<dt><span class="replaceable">pRecordset</span></dt>
+<dd><p>Dieses Argument repr&auml;sentiert das Recordset-Objekt, das dieses Ereignis ausgel&ouml;st hat.</p></dd>
+
+</dl>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Siehe auch</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>EventReasonEnum-Enumeration, EventStatusEnum-Enumeration, Recordset.AbsolutePage-Eigenschaft, Recordset.AbsolutePosition-Eigenschaft, Recordset.AddNew-Methode, Recordset.Bookmark-Methode, Recordset.Filter-Eigenschaft, Recordset.Index-Eigenschaft, Recordset.Move-Methode, Recordset.MoveFirst-Methode, Recordset.MoveLast-Methode, Recordset.MoveNext-Methode, Recordset.MovePrevious-Methode, Recordset.Open-Methode, Recordset.Requery-Methode, Recordset.WillMove-Ereignis</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+</body>
+</html>

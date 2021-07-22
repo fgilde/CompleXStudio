@@ -1,0 +1,198 @@
+<html>
+<link rel="stylesheet" href="josh.css">
+<body bgcolor="#FFFFFF">
+
+		<div id="Beschreibung">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">DOMException</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">nicht zutreffend</span>  DOM <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Einige Operationen mit W3C-DOM-Objekten k&ouml;nnen, wenn etwas schief geht, Fehler verursachen, oder, wie es im Jargon von JavaScript 1.5 hei&szlig;t, Ausnahmen zur&uuml;ckgeben. Das W3C-DOM definiert ein Objekt, das eine Codenummer &uuml;bermittelt, die auf eine wohldefinierte (wenngleich knappe) Liste der Ausnahmen verweist. Wenn Sie beispielsweise versuchen, eine Textnode als Child-Objekt an eine andere Textnode anzuh&auml;ngen, gibt die <span class="literal">appendChild( )</span>-Methode einer solchen Operation eine Ausnahme mit der Codenummer 3 zur&uuml;ck. Diese Nummer entspricht der Ausnahme, die auf einen Versuch hinweist, in einer DOM-Hierarchie eine unzul&auml;ssige oder logisch unm&ouml;gliche Aktion auszuf&uuml;hren (eine Textnode kann keine Child-Nodes haben).
+</p>
+							</td>
+						</tr>
+						<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Die &Uuml;bermittlung der vom DOM erzeugten Ausnahmemeldung an einen Skriptersteller ist Aufgabe der Hostumgebung, nicht des DOM. Da JavaScript 1.5 bereits &uuml;ber einen Ausnahmebehandlungsmechanismus verf&uuml;gt, kam die Aufgabe, das <span class="literal">DOMException</span>-System mit der JavaScript-Ausnahmebehandlung zu vereinen, zun&auml;chst Netscape zu, wie dies in Netscape 6 implementiert ist. Der neue Mechanismus erm&ouml;glicht die Verarbeitung verschiedener Fehlerobjekttypen durch die Ausnahmebehandlung, sodass das urspr&uuml;ngliche System nicht nur nicht beeintr&auml;chtigt, sondern der Mechanismus im Gegenteil auf das gesamte W3C-DOM-<span class="literal">DOMException</span>-Objekt und sogar auf einige Netscape-spezifische Fehler ausgedeht wurde. Die Verarbeitung der verschiedenen Arten von Ausnahmen findet nach wie vor im <span class="literal">catch</span>-Block einer <span class="literal">try</span>/<span class="literal">catch</span>-Konstruktion statt, und alle Informationen bez&uuml;glich der Ausnahme werden wie bisher als Objekt &uuml;ber einen einzigen Parameter an den <span class="literal">catch</span>-Block &uuml;bermittelt.
+</p>
+							</td>
+						</tr>
+						<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Das DOM-Ausnahmeobjekt von Netscape (das das W3C-<span class="literal">DOMException</span>-Objekt beinhaltet) erreicht den <span class="literal">catch</span>-Block mit einer l&auml;ngeren Liste zugeordneter Eigenschaften und Methoden als eine auf andere Ursachen zur&uuml;ckzuf&uuml;hrende Ausnahme (z. B. der Versuch, eine nicht initialisierte JavaScript-Variable zu verwenden). Das wesentliche Unterscheidungsmerkmal eines <span class="literal">DOMException</span>-Objekts, das den anderen Typen fehlt, ist die <span class="literal">code</span>-Eigenschaft. Dar&uuml;ber hinaus gibt jeder Codewert zwischen 1 und 15 einen Ausnahmetyp an, der der formalen DOM-Spezifikation bis Level 2 bekannt ist. Diese Liste wird in Zukunft mit Sicherheit um zus&auml;tzliche Typen erweitert. Netscape verwendet f&uuml;r seine Liste der browserspezifischen Ausnahmen die Codenummern ab 1000.
+</p>
+							</td>
+						</tr>
+						<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Wenn Sie echte W3C-DOM-Ausnahmen auf ihrem eigenen Ausf&uuml;hrungspfad verarbeiten m&ouml;chten, k&ouml;nnen Sie eine Konstruktion &auml;hnlich der folgenden verwenden (die ein Anwachsen der <span class="literal">DOMException</span>-Liste in k&uuml;nftigen Versionen auf bis zu 999 Eintr&auml;ge erm&ouml;glicht):
+</p>
+<span class="PROGRAMLISTING"><pre>try {
+    // your DOM-related statement goes here
+}
+catch(e) {
+    if (typeof e.code == &quot;number&quot;) {
+        if (e.code&lt; 1000) {
+            // process DOMException object here
+        } else {
+            // process Netscape DOM exception object here
+        }
+    } else {
+        // process language or other exceptions here
+    }
+} </pre></span>
+							</td>
+						</tr>
+						<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Nat&uuml;rlich ist es &auml;u&szlig;erst unwahrscheinlich, dass Detailinformationen zu Ausnahmefehlern dem Benutzer von Nutzen sein werden, f&uuml;r Sie als Entwickler sind sie jedoch von unsch&auml;tzbarem Wert. Weitere Informationen zur Ausnahmebehandlung finden Sie in der Abhandlung des <span class="literal">error</span>-Objekts in Kapitel 12.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectmodelreference"><span class="title">Objektmodellreferenz</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre><span class="replaceable">errorObjectReference</span></pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectspecificproperties"><span class="title">Objektspezifische Eigenschaften</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p><span class="literal">code</span></p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectspecificmethods"><span class="title">Objektspezifische Methoden</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Keine. </p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectspecificeventhandlerproperties"><span class="title">Objektspezifische Ereignisbehandlungsroutineneigenschaften</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Keine. </p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="code">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">code</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">nicht zutreffend</span>  DOM <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Schreibgesch&uuml;tzt</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Stellt eine ganze Zahl bereit, die einem der definierten DOM-Fehlertypen entspricht. Die folgende Tabelle enth&auml;lt eine &Uuml;bersicht &uuml;ber die Codewerte und ihre &auml;quivalenten Konstanten mit Hinweisen zu m&ouml;glichen Ursachen f&uuml;r die jeweiligen Ausnahmefehler.
+</p>
+							</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td>
+								<table border="1"><tbody><tr><th>Code</th><th>Konstante</th><th>Wahrscheinlichste Ursache</th></tr>
+										<tr><td><span class="literal">1</span></td><td><span class="literal">INDEX_SIZE_ERR</span></td><td>Ein ganzzahliger Offset-Parameter liegt au&szlig;erhalb des Bereichs des Zielobjekts.</td>
+										</tr>
+										<tr><td><span class="literal">2</span></td><td><span class="literal">DOMSTRING_SIZE_ERR</span></td><td>Ein Eigenschaftszeichenfolgenwert ist zu gro&szlig; f&uuml;r die Hostsprache.</td>
+										</tr>
+										<tr><td><span class="literal">3</span></td><td><span class="literal">HIERARCHY_REQUEST_ERR</span></td><td>Versuch, ein Child an eine Node anzuh&auml;ngen, die keine Child-Objekte aufnehmen kann.</td>
+										</tr>
+										<tr><td><span class="literal">4</span></td><td><span class="literal">WRONG_DOCUMENT_ERR</span></td><td>Versuch, eine von einem anderen Dokument erstellte Node einzuf&uuml;gen (ohne das hierf&uuml;r erforderliche Verfahren).
+</td>
+										</tr>
+										<tr><td><span class="literal">5</span></td><td><span class="literal">INVALID_CHARACTER_ERR</span></td><td>Versuch, einen Bezeichner mit einem unzul&auml;ssigen Zeichen zuzuweisen.</td>
+										</tr>
+										<tr><td><span class="literal">6</span></td><td><span class="literal">NO_DATA_ALLOWED_ERR</span></td><td>Versuch, Daten einer Node zuzuweisen, die keine Daten aufnehmen kann.</td>
+										</tr>
+										<tr><td><span class="literal">7</span></td><td><span class="literal">NO_MODIFICATION_ALLOWED_ERR</span></td><td>Versuch, einer schreibgesch&uuml;tzten Eigenschaft einen Wert zuzuweisen.</td>
+										</tr>
+										<tr><td><span class="literal">8</span></td><td><span class="literal">NOT_FOUND_ERR</span></td><td>Methodenparameterverweis auf eine im Bereich des Objekts nicht vorhandene Node.
+</td>
+										</tr>
+										<tr><td><span class="literal">9</span></td><td><span class="literal">NOT_SUPPORTED_ERR</span></td><td>Versuch, eine nur in XML zul&auml;ssige Methode in einem HTML-Dokument aufzurufen.</td>
+										</tr>
+										<tr><td><span class="literal">10</span></td><td><span class="literal">INUSE_ATTRIBUTE_ERR</span></td><td>&Uuml;bergabe eines Methodenparameters an eine <span class="literal">Attr</span>-Node, die bereits zu einem anderen Element geh&ouml;rt (ohne die <span class="literal">Attr</span>-Node zuvor zu klonen).
+</td>
+										</tr>
+										<tr><td><span class="literal">11</span></td><td><span class="literal">INVALID_STATE_ERR</span></td><td>Referenz auf eine Node, die weder gelesen noch geschrieben werden kann.</td>
+										</tr>
+										<tr><td><span class="literal">12</span></td><td><span class="literal">SYNTAX_ERR</span></td><td>Tippfehler.</td>
+										</tr>
+										<tr><td><span class="literal">13</span></td><td><span class="literal">INVALID_MODIFICATION_ERR</span></td><td>Versuch, den Typ einer Node zu &auml;ndern.</td>
+										</tr>
+										<tr><td><span class="literal">14</span></td><td><span class="literal">NAMESPACE_ERR</span></td><td>Falscher oder fehlerhaft gebildeter Name.</td>
+										</tr>
+										<tr><td><span class="literal">15</span></td><td><span class="literal">INVALID_ACCESS_ERR</span></td><td>Unzul&auml;ssiger Zugriff.</td>
+										</tr>
+									</tbody></table>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>if (e.code == e.INVALID_CHARACTER_ERR) {
+    // process for an illegal identifier character
+}</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Integerwert</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Standardwert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Abh&auml;ngig vom Fehler.</p>
+					</td>
+				</tr>
+			</table>
+		</div>
+
+</body>
+</html>

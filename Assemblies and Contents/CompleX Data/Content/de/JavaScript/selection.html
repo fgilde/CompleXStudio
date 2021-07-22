@@ -1,0 +1,977 @@
+<html>
+<link rel="stylesheet" href="josh.css">
+<body bgcolor="#FFFFFF">
+
+		<div id="Beschreibung">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">selection</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">4(Win)</span> DOM <span class="emphasis">nicht zutreffend</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Das <span class="literal">selection</span>-Objekt stellt null oder mehr Zeichen dar, die entweder explizit vom Benutzer oder automatisch durch ein Skript in einem Dokument ausgew&auml;hlt wurden. Die Objekte sind in IE und Navigator sehr unterschiedliche Entit&auml;ten (beachten Sie die unten stehenden Kompatibilit&auml;tsbeurteilungen der Eigenschaften und Methoden) mit jeweils eigenen Skriptzugriffsmechanismen.
+</p>
+							</td>
+						</tr>
+						<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>In IE f&uuml;r Windows erstellen Sie mithilfe der Eigenschaft <span class="literal">document.selection</span> ein <span class="literal">selection</span>-Objekt, das seinerseits ein <span class="literal">selection</span>-Objekt zur&uuml;ckgibt. Anschlie&szlig;end erzeugen Sie mithilfe der <span class="literal">createRange( )</span>-Methode des <span class="literal">selection</span>-Objekts ein <span class="literal">TextRange</span>-Objekt, das auf dem <span class="literal">selection</span>-Objekt basiert und anhand dessen Sie wesentliche Aktionen mit dem Inhalt des <span class="literal">selection</span>-Objekts ausf&uuml;hren k&ouml;nnen. Verwenden Sie die <span class="literal">TextRange</span>-Eigenschaften und -Methoden, um mit dem Inhalt zu interagieren. Wenn Sie ein <span class="literal">TextRange</span>-Objekt in einen sichtbar ausgew&auml;hlten Textbereich in der Seite umwandeln m&ouml;chten, verwenden Sie die <span class="literal">select( )</span>-Methode des <span class="literal">TextRange</span>-Objekts. Diese enge Verkn&uuml;pfung mit dem <span class="literal">TextRange</span>-Objekt bedeutet, dass das <span class="literal">selection</span>-Objekt von IE derzeit noch auf Win32-Versionen beschr&auml;nkt ist. Das IE-Auswahlobjekt kann Text enthalten, das in einem <span class="literal">input</span>-Element (vom Typ Text) oder einem <span class="literal">textarea</span>-Element ausgew&auml;hlt wurde.
+</p>
+							</td>
+						</tr>
+						<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>In IE f&uuml;r den Macintosh gibt es so etwas wie ein eigenst&auml;ndiges <span class="literal">selection</span>-Objekt nicht. Stattdessen implementiert IE/Mac die <span class="literal">document.getSelection( )</span>-Methode von Navigator 4, die eine Zeichenfolge mit dem Inhalt des ausgew&auml;hlten Textbereichs zur&uuml;ckgibt.
+</p>
+							</td>
+						</tr>
+						<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Navigator 4 erm&ouml;glicht den Skriptzugriff auf den in einem Dokument ausgew&auml;hlten Text mithilfe der Methode <span class="literal">document.getSelection( )</span>. Diese Methode wird in Netscape 6 nicht mehr unterst&uuml;tzt und erzeugt beim Versuch, sie aufzurufen, eine Warnmeldung (weniger schwer wiegend als ein Fehler) in der JavaScript-Konsole. An ihrer Stelle implementiert Netscape 6 ein robustes <span class="literal">selection</span>-Objekt mit einer langen Liste von Eigenschaften und Methoden f&uuml;r die Interaktion. Die meisten dieser Funktionen wurden in Netscape 6.2 eingef&uuml;hrt, darunter das Verfahren zum Erstellen eines <span class="literal">selection</span>-Objekts: die Methode <span class="literal">window.getSelection( )</span>. Beachten Sie, dass viele Eigenschaften und Methoden des <span class="literal">selection</span>-Objekts von Netscape 6 Analogien zur <span class="literal">Range</span>-Objektspezifikation aufweisen. Tats&auml;chlich ist es das <span class="literal">Range</span>-Objekt, das es einem Skript erm&ouml;glicht, sogar unzusammenh&auml;ngende Textbereiche in der Seite auszuw&auml;hlen: Erstellen Sie ein <span class="literal">Range</span>-Objekt in der gew&uuml;nschten Gr&ouml;&szlig;e, und f&uuml;gen Sie dieses <span class="literal">Range</span>-Objekt mithilfe der Methode <span class="literal">addRange( )</span> des <span class="literal">selection</span>-Objekts dem bereits markierten Text hinzu. In Netscape 6 kann Text (wie beim <span class="literal">Range</span>-Objekt) nur im Body-Inhalt und nicht in bearbeitbaren Textfeldern ausgew&auml;hlt werden.
+</p>
+							</td>
+						</tr>
+						<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Beachten Sie, dass die aktuelle Textauswahl in &auml;lteren Browsern (einschlie&szlig;lich IE 5 f&uuml;r den Mac) aufgehoben wird, wenn der Benutzer auf eine Schaltfl&auml;che klickt. Daher m&uuml;ssen in diesen Browsern alle Skriptaktionen, die eine Auswahl beinhalten, &uuml;ber <span class="literal">onselect</span>-oder <span class="literal">onmouseup</span>-Ereignisse oder solche Funktionen ausgel&ouml;st werden, die von einem Timer aufgerufen werden (siehe hierzu die Beschreibung der <span class="literal">window.setTimeout( )</span>-Methode in Kapitel 12). In neueren Browsern bleibt ausgew&auml;hlter Text auch beim Klicken auf eine Schaltfl&auml;che ausgew&auml;hlt.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectmodelreference"><span class="title">Objektmodellreferenz</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<ul><li><span class="literal"></span><span class="literal">document.selection</span></li><li><span class="literal"></span><span class="literal">window.getSelection( )</span></li></ul>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectspecificproperties"><span class="title">Objektspezifische Eigenschaften</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<table border="1"><tbody><tr><td><span class="literal">anchorNode</span></td><td><span class="literal">anchorOffset</span></td><td><span class="literal">focusNode</span></td><td><span class="literal">focusOffset</span></td>
+								</tr>
+								<tr><td><span class="literal">isCollapsed</span></td><td><span class="literal">rangeCount</span></td><td><span class="literal">type</span></td><td><span class="literal">typeDetail</span></td>
+								</tr>
+							</tbody></table>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectspecificmethods"><span class="title">Objektspezifische Methoden</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<table border="1"><tbody><tr><td><span class="literal">addRange( )</span></td><td><span class="literal">clear( )</span></td><td><span class="literal">collapse( )</span></td>
+								</tr>
+								<tr><td><span class="literal">collapseToEnd( )</span></td><td><span class="literal">collapseToStart( )</span></td><td><span class="literal">containsNode( )</span></td>
+								</tr>
+								<tr><td><span class="literal">createRange( )</span></td><td><span class="literal">createRangeCollection( )</span></td><td><span class="literal">deleteFromDocument( )</span></td>
+								</tr>
+								<tr><td><span class="literal">empty( )</span></td><td><span class="literal">extend( )</span></td><td><span class="literal">getRangeAt( )</span></td>
+								</tr>
+								<tr><td><span class="literal">removeAllRanges( )</span></td><td><span class="literal">removeRange( )</span></td><td><span class="literal">selectAllChildren( )</span></td>
+								</tr>
+								<tr><td><span class="literal">selectionLanguageChange( )</span></td><td><span class="literal">toString( )</span></td><td></td>
+								</tr>
+							</tbody></table>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectspecificeventhandlerproperties"><span class="title">Objektspezifische Ereignisbehandlungsroutineneigenschaften</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Keine. </p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="anchorNode, focusNode">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">anchorNode, focusNode</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6  </span>IE <span class="emphasis">nicht zutreffend</span>  DOM <span class="emphasis">nicht zutreffend</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Schreibgesch&uuml;tzt</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Geben eine Referenz auf die Node zur&uuml;ck, in der der Benutzer die Auswahl gestartet (<span class="literal">anchor</span>) und beendet hat (<span class="literal">focus</span>). In aller Regel handelt es sich bei diesen Nodes um Textnodes. Wenn die Auswahl mithilfe der Methode <span class="literal">addRange( )</span> festgelegt oder erweitert wird, weisen diese Eigenschaften auf die Node-Begrenzungspunkte des zuletzt hinzugef&uuml;gten Bereichs.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>var anchor = selectionRef.anchorNode;
+if (anchor.nodeType == 3 &amp;&amp; anchor.parentNode.tagName == "td") &#123;
+    // process selection start inside a table cell
+}</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Referenz auf eine Node im Dokumentbaum oder <span class="literal">null</span>, wenn keine Auswahl getroffen wurde.
+</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Standardwert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p><span class="literal">null</span> </p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="anchorOffset, focusOffset">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">anchorOffset, focusOffset</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6  </span>IE <span class="emphasis">nicht zutreffend</span>  DOM <span class="emphasis">nicht zutreffend</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Schreibgesch&uuml;tzt</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Geben einen ganzzahligen Wert zur&uuml;ck, der die Anzahl der Zeichen oder Nodes ab dem Anfang der Anker- oder Fokusnode des ausgew&auml;hlten Bereichs angibt (siehe Eigenschaften <span class="literal">anchorNode</span> und <span class="literal">focusNode</span>). Bei einer Textnode wird der Offset in Anzahl von Zeichen, bei einer Elementnode in Anzahl von Nodes angegeben. Diese Funktionsweise &auml;hnelt der der Offset-Eigenschaften eines <span class="literal">Range</span>-Objekts. In der Regel geben diese Werte die Anzahl der Zeichen innerhalb einer Textnode an. Wenn die Auswahl mithilfe der Methode <span class="literal">addRange( )</span> festgelegt oder erweitert wird, weisen diese Eigenschaften auf die Offsets der Node-Begrenzungspunkte des zuletzt hinzugef&uuml;gten Bereichs.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>var selStartOffset = selectionRef.anchorOffset;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Eine ganze Zahl.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Standardwert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p><span class="literal">0</span> </p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="isCollapsed">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">isCollapsed</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6  </span>IE <span class="emphasis">nicht zutreffend</span>  DOM <span class="emphasis">nicht zutreffend</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Schreibgesch&uuml;tzt</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Gibt den Booleschen Wert <span class="literal">true</span> zur&uuml;ck, wenn die Anker- und Fokusbegrenzungen einer Auswahl identisch sind.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>if (selectionRef.isCollapsed) &#123;
+    // selection is an insertion point
+}</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Boolescher Wert: <span class="literal">true</span> | <span class="literal">false</span>.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Standardwert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p><span class="literal">true</span> </p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="rangeCount">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">rangeCount</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6  </span>IE <span class="emphasis">nicht zutreffend</span>  DOM <span class="emphasis">nicht zutreffend</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Schreibgesch&uuml;tzt</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Geben einen ganzzahligen Wert zur&uuml;ck, der die Anzahl der <span class="literal">Range</span>-Objekte innerhalb der Auswahl zur&uuml;ckgibt. In Netscape 6 kann es sich hierbei auch um unzusammenh&auml;ngende Bereiche handeln. Eine manuelle Auswahl des Benutzers enth&auml;lt immer genau ein <span class="literal">Range</span>-Objekt, mithilfe der <span class="literal">addRange( )</span>-Methode k&ouml;nnen jedoch weitere unzusammenh&auml;ngende Bereiche an die Auswahl angeh&auml;ngt werden. Verwenden Sie zum Untersuchen der Eigenschaften der einzelnen ausgew&auml;hlten Abschnitte die Methode <span class="literal">getRangeAt( )</span>.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>var howMany = selectionRef.rangeCount;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Eine ganze Zahl.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Standardwert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p><span class="literal">0</span> </p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="type">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">type</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">nicht zutreffend</span> IE <span class="emphasis">4(Win)</span>  DOM <span class="emphasis">nicht zutreffend</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Schreibgesch&uuml;tzt</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Legt fest, ob das aktuelle <span class="literal">selection</span>-Objekt ein oder mehrere ausgew&auml;hlte Zeichen enth&auml;lt, oder ob es sich lediglich um einen Einf&uuml;gepunkt handelt.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>if (document.selection.type == "Text") &#123;
+    ...
+}</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Eine der folgenden drei Konstanten (als Zeichenfolge): <span class="literal">None</span> | <span class="literal">Text</span> | <span class="literal">Control</span>. Der letzte Wert ist nur m&ouml;glich, wenn die HTML-Bearbeitung aktiviert ist und die Steuerung von Auswahlbereichen unterst&uuml;tzt wird.
+</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Standardwert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p><span class="literal">Keiner.</span> </p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="typeDetail">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">typeDetail</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">nicht zutreffend</span> IE <span class="emphasis">5.5(Win)</span>  DOM <span class="emphasis">nicht zutreffend</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Schreibgesch&uuml;tzt</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Diese Eigenschaft wird als Platzhalter f&uuml;r andere Anwendungen bereitgestellt, die die IE-Browserkomponente m&ouml;glicherweise nutzen. Eine solche Anwendung kann bei Bedarf weitere Informationen zum Typ der Auswahl bereitstellen.
+</p>
+							</td>
+						</tr>
+			</table>
+		</div><div id="addRange( )">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">addRange( )</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6  </span>IE <span class="emphasis">nicht zutreffend</span>  DOM <span class="emphasis">nicht zutreffend</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">addRange(<span class="replaceable">RangeReference</span>)</p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Wandelt ein <span class="literal">Range</span>-Objekt in eine sichtbar auf der Seite markierte Auswahl um. Sie k&ouml;nnen so viele unzusammenh&auml;ngende Bereiche in die Auswahl aufnehmen, wie Ihre Anwendung erfordert. Mit jedem Bereich, den Sie hinzuf&uuml;gen, erh&ouml;ht sich der Wert der Eigenschaft <span class="literal">rangeCount</span> des <span class="literal">selection</span>-Objekts. Die in einer Auswahl enthaltenen Bereiche k&ouml;nnen sich auch &uuml;berschneiden.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Parameter</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<ul><li><span class="literal"></span>Referenz auf ein <span class="literal">Range</span>-Objekt mit Begrenzungen, die mithilfe der <span class="literal">Range</span>-Objektmethoden festgelegt wurden.
+</li></ul>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Zur&uuml;ckgegebener Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Keiner.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="clear( )">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">clear( )</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">nicht zutreffend</span> IE <span class="emphasis">4(Win)</span>  DOM <span class="emphasis">nicht zutreffend</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>L&ouml;scht den Inhalt der aktuellen Auswahl in einem Dokument. Die Ereignisbehandlungsroutine im folgenden Tag l&ouml;scht z. B. den markierten Text des <span class="literal">p</span>-Elements zwei Sekunden nachdem der Benutzer mit der Auswahl beginnt:
+</p>
+<span class="PROGRAMLISTING"><pre>&lt;p onselectstart=&quot;setTimeout('document.selection.clear( )',2000);&gt;&quot;</pre></span>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Parameter</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Keine.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Zur&uuml;ckgegebener Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Keiner.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="collapse( )">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">collapse( )</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6  </span>IE <span class="emphasis">nicht zutreffend</span>  DOM <span class="emphasis">nicht zutreffend</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">collapse(<span class="replaceable">nodeReference</span>, <span class="replaceable">offset</span>)</p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Verkleinert die aktuelle Auswahl auf eine durch die beiden Parameter angegebenen Position. Die bisher markierte Auswahl wird wieder in der normalen Weise dargestellt.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Parameter</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<ul><li><span class="literal"></span>Referenz auf eine Text- oder Elementnode im Dokumentbaum, in der der Begrenzungspunkt der verkleinerten Auswahl verschoben werden soll.
+</li><li><span class="literal"></span>Die Anzahl der Zeichen oder Nodes innerhalb der <span class="replaceable">nodeReference</span>-Node in Form einer ganzen Zahl, die die Zielposition der verkleinerten Auswahl angibt. Der Wert bezieht sich auf den Anfang der Node. Bei Textnodes ist der Wert in Zeichen, bei Elementnodes in Nodes angegeben.
+</li></ul>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Zur&uuml;ckgegebener Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Keiner.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="collapseToEnd( ), collapseToStart( )">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">collapseToEnd( ), collapseToStart( )</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6  </span>IE <span class="emphasis">nicht zutreffend</span>  DOM <span class="emphasis">nicht zutreffend</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Verk&uuml;rzt die aktuelle Auswahl auf eine Position am Anfang (<span class="literal">collapseToStart( )</span>) oder am Ende (<span class="literal">collapseToEnd( )</span>) des <span class="literal">selection</span>-Objekts. Die bisher markierte Auswahl wird wieder in der normalen Weise dargestellt. Wenn die Auswahl aus mehreren Bereichen besteht, werden als Start- und Endpunkt f&uuml;r diese Methoden die &auml;u&szlig;ersten R&auml;nder der kombinierten Auswahl verwendet. Nach dem Verk&uuml;rzen enth&auml;lt die Auswahl nur noch einen Bereich.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Parameter</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Keine.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Zur&uuml;ckgegebener Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Keine.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="containsNode( )">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">containsNode( )</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6  </span>IE <span class="emphasis">nicht zutreffend</span>  DOM <span class="emphasis">nicht zutreffend</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">containsNode(<span class="replaceable">nodeReference</span>, <span class="replaceable">entirelyFlag</span>)</p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Gibt den Booleschen Wert <span class="literal">true</span> zur&uuml;ck, wenn das aktuelle Auswahlobjekt eine als Parameter &uuml;bergebene Node enth&auml;lt. Mithilfe des zweiten Parameters sollten Sie angeben k&ouml;nnen, was der Begriff "enthalten" genau bedeuten soll, doch das Verhalten der Methode scheint nicht wirklich diesem Zweck zu entsprechen. Sie k&ouml;nnen die Genauigkeit der Auswahl gew&auml;hrleisten, indem Sie als zweiten Parameter den Wert <span class="literal">null</span> &uuml;bergeben. In diesem Fall wird nur eine Auswahl ber&uuml;cksichtigt, in der die Node vollst&auml;ndig enthalten ist.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Parameter</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<ul><li><span class="literal"></span>Referenz auf eine beliebige adressierbare Text- oder Elementnode im Dokumentbaum.
+</li><li><span class="literal"></span>Boolescher Wert oder <span class="literal">null</span>. Offenbar bewirkt der Wert <span class="literal">true</span>, dass die Methode bereits den Wert <span class="literal">true</span> zur&uuml;ckgibt, wenn die Auswahl nur einen Teil der Node enth&auml;lt.
+</li></ul>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Zur&uuml;ckgegebener Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Boolescher Wert: <span class="literal">true</span> | <span class="literal">false</span>.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="createRange( )">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">createRange( )</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">nicht zutreffend</span> IE <span class="emphasis">4(Win)</span>  DOM <span class="emphasis">nicht zutreffend</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Erstellt ein <span class="literal">TextRange</span>-Objekt aus dem aktuellen <span class="literal">selection</span>-Objekt. Nach einer Anweisung wie der Folgenden:
+</p>
+<span class="PROGRAMLISTING"><pre>var myRange = document.selection.createRange( );</pre></span>
+							</td>
+						</tr>
+						<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>kann der Inhalt des ausgew&auml;hlten Textes durch ein Skript bearbeitet werden.</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Parameter</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Keine.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Zur&uuml;ckgegebener Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p><span class="literal">TextRange</span>-Objekt.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="createRangeCollection( )">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">createRangeCollection( )</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">nicht zutreffend</span> IE <span class="emphasis">5.5(Win)</span>  DOM <span class="emphasis">nicht zutreffend</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Erstellt ein <span class="literal">TextRange</span>-Sammlungsobjekt. Dieser Methode muss die Annahme zugrunde liegen, dass IE in Zukunft Auswahlen aus mehreren unzusammenh&auml;ngenden Bereichen unterst&uuml;tzen wird.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Parameter</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Keine.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Zur&uuml;ckgegebener Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p><span class="literal">TextRange</span>-Sammlungsobjekt.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="deleteFromDocument( )">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">deleteFromDocument( )</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6  </span>IE <span class="emphasis">nicht zutreffend</span>  DOM <span class="emphasis">nicht zutreffend</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Entfernt die aktuelle Auswahl aus dem Dokumentbaum. Die Nodehierarchie passt sich automatisch anhand derselben Regeln an, die auch f&uuml;r die Methode <span class="literal">Range.deleteContents( )</span> gelten.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Parameter</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Keine.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Zur&uuml;ckgegebener Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Keiner.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="empty( )">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">empty( )</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">nicht zutreffend</span> IE <span class="emphasis">4(Win)</span>  DOM <span class="emphasis">nicht zutreffend</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Hebt die aktuelle Auswahl auf und setzt die <span class="literal">type</span>-Eigenschaft des <span class="literal">selection</span>-Objekts auf <span class="literal">None</span>. Der zuvor ausgew&auml;hlte Inhalt wird dabei nicht ge&auml;ndert.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Parameter</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Keine. </p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Zur&uuml;ckgegebener Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Keiner.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="extend( )">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">extend( )</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6  </span>IE <span class="emphasis">nicht zutreffend</span>  DOM <span class="emphasis">nicht zutreffend</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">extend(<span class="replaceable">nodeReference</span>, <span class="replaceable">offset</span>)</p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Verschiebt den Endpunkt (Fokus) der Auswahl an die durch den Offsetwert bezeichnete Position in der angegebenen Node im Dokumentbaum. Der Startpunkt (Anker) wird bei dieser Methode nicht verschoben.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Parameter</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<ul><li><span class="literal"></span>Referenz auf eine Text- oder Elementnode im Dokumentbaum, in der der Fokus (Endpunkt) der Auswahl verschoben werden soll.
+</li><li><span class="literal"></span>Die Anzahl der Zeichen oder Nodes innerhalb der <span class="replaceable">nodeReference</span>-Node in Form einer ganzen Zahl, die die Zielposition der verkleinerten Auswahl angibt. Der Wert bezieht sich auf den Anfang der Node. Bei Textnodes ist der Wert in Zeichen, bei Elementnodes in Nodes angegeben.
+</li></ul>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Zur&uuml;ckgegebener Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Keiner.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="getRangeAt( )">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">getRangeAt( )</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6  </span>IE <span class="emphasis">nicht zutreffend</span>  DOM <span class="emphasis">nicht zutreffend</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">getRangeAt(<span class="replaceable">rangeIndex</span>)</p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Gibt eine Referenz auf den Bereich innerhalb eines <span class="literal">selection</span>-Objekts zur&uuml;ck, dessen auf Null basierender numerischer Index mit dem &uuml;bergebenen Parameter &uuml;bereinstimmt. Bei zusammenh&auml;ngenden Auswahlbereichen sollte der Parameter den Wert Null aufweisen. Bei unzusammenh&auml;ngenden Auswahlbereichen hingegen k&ouml;nnen Sie mithilfe der Methode <span class="literal">getRangeAt( )</span> die einzelnen Bereiche abrufen, die der Auswahl in den verschiedenen Bearbeitungsschritten als <span class="literal">Range</span>-Objekt hinzugef&uuml;gt wurden. Verwenden Sie die <span class="literal">selection.rangeCount</span>-Eigenschaft, um die Anzahl der im <span class="literal">selection</span>-Objekt enthaltenen <span class="literal">Range</span>-Objekte zu ermitteln. Der Aufruf der Methode hat keinen Einfluss auf die Reihenfolge der Bereiche innerhalb der Auswahl.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Parameter</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<ul><li><span class="literal"></span>Ein auf Null basierender ganzzahliger Indexwert.</li></ul>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Zur&uuml;ckgegebener Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p><span class="literal">Range</span>-Objektreferenz</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="removeAllRanges( )">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">removeAllRanges( )</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6  </span>IE <span class="emphasis">nicht zutreffend</span>  DOM <span class="emphasis">nicht zutreffend</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Entfernt alle <span class="literal">Range</span>-Objekte aus der aktuellen Auswahl (jedoch nicht aus dem Dokumentbaum). Die Auswahl wird verkleinert und der Wert der Eigenschaft <span class="literal">rangeCount</span> auf Null gesetzt.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Parameter</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Keine.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Zur&uuml;ckgegebener Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Keiner.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="removeRange( )">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">removeRange( )</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6  </span>IE <span class="emphasis">nicht zutreffend</span>  DOM <span class="emphasis">nicht zutreffend</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">removeRange(<span class="replaceable">rangeReference</span>)</p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Entfernt ein einzelnes <span class="literal">Range</span>-Objekt aus der aktuellen Auswahl (jedoch nicht aus dem Dokumentbaum). Wenn Ihre Auswahl mehrere Bereiche umfasst, k&ouml;nnen Sie mithilfe des folgenden Verfahrens die einzelnen <span class="literal">Range</span>-Objekte der Reihe nach auf ein bestimmtes Kriterium hin untersuchen und die gew&uuml;nschten Objekte l&ouml;schen:
+</p>
+<span class="PROGRAMLISTING"><pre>var oneRange;
+var sel = window.getSelection( );
+for (var i = 0; i&lt; sel.rangeCount; i++) &#123;
+    oneRange = sel.getRangeAt(i);
+    if (oneRange. <var class="replaceable">someProperty</var> == <var class="replaceable">someDiscerningValue</var>) &#123;
+        sel.removeRange(oneRange);
+    }
+}</pre></span>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Parameter</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<ul><li><span class="literal"></span>Referenz auf eines der <span class="literal">Range</span>-Objekte, die zuvor der aktuellen Auswahl hinzugef&uuml;gt wurden.
+</li></ul>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Zur&uuml;ckgegebener Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Keiner.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="selectAllChildren( )">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">selectAllChildren( )</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6  </span>IE <span class="emphasis">nicht zutreffend</span>  DOM <span class="emphasis">nicht zutreffend</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">selectAllChildren(<span class="replaceable">elementNodeReference</span>)</p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Bewirkt, dass das <span class="literal">selection</span>-Objekt die als Parameter &uuml;bergebene Elementnode sowie s&auml;mtliche ihrer Child-Nodes umfasst. Diese Methode ist auch eine k&uuml;rzere Alternative zum Ausw&auml;hlen einer Elementnode mithilfe eines Skripts. Wenn Sie diese Methode auf eine Elementnode anwenden, wird diese durch die Anker- und die Focus-Node gebildet. Wenn Sie eine Referenz auf eine Textnode &uuml;bergeben, wird die daraus resultierende Auswahl vor dem ersten Zeichen der Textnode verkleinert. Wenn Sie diese Methode auf eine vorhandene Auswahl anwenden, werden alle Bereiche durch den neuen Bereich ersetzt, der das Element umfasst.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Parameter</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<ul><li><span class="literal"></span>Referenz auf eine Elementnode im Dokumentbaum, die zur Auswahl erkl&auml;rt wird.
+</li></ul>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Zur&uuml;ckgegebener Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Keiner.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="selectionLanguageChange( )">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">selectionLanguageChange( )</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6  </span>IE <span class="emphasis">nicht zutreffend</span>  DOM <span class="emphasis">nicht zutreffend</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">selectionLanguageChange(<span class="replaceable">RTLFlag</span>)</p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Steuert den Cursor auf Bidi-Ebene (bidirektional).</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Parameter</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<ul><li><span class="literal"></span>Boolescher Wert: <span class="literal">true</span> f&uuml;r rechts nach links, <span class="literal">false</span> f&uuml;r links nach rechts.
+</li></ul>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Zur&uuml;ckgegebener Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Keiner.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="toString( )">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">toString( )</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6  </span>IE <span class="emphasis">nicht zutreffend</span>  DOM <span class="emphasis">nicht zutreffend</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Gibt eine Zeichenfolge zur&uuml;ck, die nur den Body-Inhalt der Auswahl enth&auml;lt. Tags und Attribute werden ignoriert.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Parameter</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Keine.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Zur&uuml;ckgegebener Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Zeichenfolgenwert.</p>
+					</td>
+				</tr>
+			</table>
+		</div>
+
+</body>
+</html>

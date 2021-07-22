@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding = "utf-8"?>
+<snippet xmlns:MMString="http://www.macromedia.com/schemes/dat/string/" MMString:name = "Snippets/JavaScript/cookies/readCookie_csn/snippet/name/Read" MMString:description = "Snippets/JavaScript/cookies/readCookie_csn/snippet/description/A" preview="code" type="block">
+
+<insertText location="beforeSelection">
+<![CDATA[// Example:
+// alert( readCookie("myCookie") );
+function readCookie(name)
+{
+  var cookieValue = "";
+  var search = name + "=";
+  if(document.cookie.length > 0)
+  { 
+    offset = document.cookie.indexOf(search);
+    if (offset != -1)
+    { 
+      offset += search.length;
+      end = document.cookie.indexOf(";", offset);
+      if (end == -1) end = document.cookie.length;
+      cookieValue = unescape(document.cookie.substring(offset, end))
+    }
+  }
+  return cookieValue;
+}
+]]>
+</insertText>
+<insertText location="afterSelection"><![CDATA[]]>
+</insertText>
+</snippet>

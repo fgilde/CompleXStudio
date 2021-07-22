@@ -1,0 +1,623 @@
+<html>
+<head>
+<title>
+GLOBAL.ASA</title></head>
+<body bgcolor="#FFFFFF" text="#000000">
+<div id="Beschreibung">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">GLOBAL.ASA</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description">
+
+
+<p>Die Datei <filename>GLOBAL.ASA</filename><!--<primary>Session
+object</primary><secondary>OnStart and OnEnd
+events</secondary><tertiary>GLOBAL.ASA file
+for</tertiary>--> <!--<primary>Application
+object</primary><secondary>OnStart and OnEnd
+events</secondary><tertiary>GLOBAL.ASA file
+for</tertiary>--> <!--<primary>OnStart
+event</primary><secondary>GLOBAL.ASA file</secondary>--> <!--<primary>GLOBAL.ASA file</primary>--> ist der Ort, an dem Sie Objekte, Variablen und Ereignisprozeduren deklarieren (insbesondere f&uuml;r die Ereignisprozeduren OnStart und OnEnd der Objekte Application und Session), die sitzungs- oder anwendungsweite G&uuml;ltigkeit haben. F&uuml;r jedes virtuelle Verzeichnis bzw. jede ASP-Anwendung kann nur eine <filename>GLOBAL.ASA</filename>-Datei vorhanden sein. Gehen wir beispielsweise von einer ASP-Suchanwendung aus, die aus allen Skripts im virtuellen Verzeichnis <filename>/Search</filename> besteht. Das virtuelle Verzeichnis darf nur eine <filename>GLOBAL.ASA</filename>-Datei enthalten, und diese muss sich am Stamm des Verzeichnisses (<filename>/Search</filename> befinden). Eine etwaige weitere <filename>GLOBAL.ASA</filename>-Datei in einem beliebigen Unterverzeichnis von <filename>/Search</filename> wird von <filename>ASP.DLL</filename> ignoriert.</p>
+
+
+
+
+<p>Die Datei <filename>GLOBAL.ASA</filename> kann nicht-anzeigbaren Inhalt aufweisen. Derartige Inhalte werden von <filename>ASP.DLL</filename> ignoriert. Nicht mit dem Tag <span class="LITERAL">&lt;SCRIPT&gt;</span> umschlossene Skripts sowie die Instantiierung von Serverkomponenten, die keine sitzungs- oder anwendungsweiten G&uuml;ltigkeitsbereiche unterst&uuml;tzen, erzeugen Fehler. Diese Datei muss <filename>GLOBAL.ASA</filename> hei&szlig;en und darf an keinem anderen Ort als am Stamm des virtuellen Verzeichnisses gespeichert sein, aus dem die ASP-Anwendung besteht. Wie auch andere Skripts k&ouml;nnen Sie in der Datei <filename>GLOBAL.ASA</filename> jede beliebige unterst&uuml;tzte Skriptsprache verwenden und in derselben Sprache geschriebene Ereignisprozeduren mit einem Satz der Tags <span class="LITERAL">&lt;SCRIPT&gt;...&lt;/SCRIPT&gt;</span> zusammenfassen.</p>
+
+
+
+
+<p>Im Abschnitt &quot;Datei <filename>GLOBAL.ASA</filename>&quot; in diesem Kapitel werden die folgenden Themen behandelt:</p>
+
+
+
+
+<ul><dd><p>	Ereignisse des Objekts Application und anwendungsweite G&uuml;ltigkeit</p></dd><dd><p>	Ereignisse des Objekts Session und sitzungsweite G&uuml;ltigkeit</p></dd><dd><p>	Deklarationen der Typbibliothek</p></dd></ul>
+</td></tr>
+</table>
+</div>
+<div id="GLOBALASACommentsTroubleshooting">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+GLOBAL.ASA: Anmerkungen/Fehlerbehebung</td>
+<td class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2">&nbsp;</td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+
+<p><!--<primary>comments and
+troubleshooting</primary><secondary>GLOBAL.ASA
+file</secondary>-->Wenn Sie die Datei <filename>GLOBAL.ASA</filename> f&uuml;r eine Anwendung &auml;ndern, schlie&szlig;t der Webserver zun&auml;chst alle ausstehenden Anforderungen f&uuml;r diese Anwendung ab, bevor er die Datei <filename>GLOBAL.ASA</filename> neu kompiliert. Laut Microsoft wird die Datei nach der Verarbeitung der aktuellen Anforderungen neu kompiliert, und neue Sitzungen, die in der aktuellen Anwendung gestartet werden, l&ouml;sen die Verarbeitung des Codes der Datei <filename>GLOBAL.ASA</filename> aus. W&auml;hrend dieser Neukompilierung ignoriert der Server neue Skript-Anforderungen in der Anwendung. Tats&auml;chlich aber funktioniert dies mit Personal Web Server, IIS 3.0 und IIS 4.0 leider &uuml;berhaupt nicht. Sie sind gezwungen, das System neu zu starten, bevor die neue Datei <filename>GLOBAL.ASA</filename> verarbeitet wird!</p>
+
+
+
+
+<p>Auf Sitzungen, die w&auml;hrenddessen aktiv bleiben, wirken sich Ihre &Auml;nderungen an <filename>GLOBAL.ASA</filename> nicht aus. Nach der Neukompilierung der Datei <filename>GLOBAL.ASA</filename> durch den Webserver werden alle aktiven Sitzungen gel&ouml;scht und die Ereignisprozeduren Session_OnEnd und Application_OnEnd in der (neuen) Datei <filename>GLOBAL.ASA</filename> aufgerufen. Zum Starten neuer Sitzungen m&uuml;ssen die Benutzer neue Anforderungen an die Anwendung senden. Alle neuen Sitzungen beginnen mit der Verarbeitung der neuen Datei <filename>GLOBAL.ASA</filename>.</p>
+
+
+
+
+<p>Wenn Sie eigene <filename>GLOBAL.ASA</filename>-Dateien schreiben, beachten Sie unbedingt, dass eine &Auml;nderung des Codes in der Datei durch eine Server-Side Include-Datei keine Neukompilierung der Datei <filename>GLOBAL.ASA</filename> durch den Webserver zur Folge hat. Sie m&uuml;ssen die Datei <filename>GLOBAL.ASA</filename> erst neu speichern (selbst wenn sie nicht ver&auml;ndert wurde!), um eine Neukompilierung auszul&ouml;sen.</p>
+
+
+
+
+<p>Die Datei <filename>GLOBAL.ASA</filename> kann Prozeduren und Funktionen enthalten. Allerdings k&ouml;nnen diese Prozeduren nur von den Ereignisprozeduren Session_OnStart, Session_OnEnd, Application_OnStart und Application_OnEnd aufgerufen werden (die alle an keinem anderen Ort als in der Datei <filename>GLOBAL.ASA</filename> gespeichert sein d&uuml;rfen). Falls Sie diese Funktionen bzw. Prozeduren in anderen Dateien Ihrer Anwendung verwenden m&ouml;chten, bietet sich eine Server-Side Include-Datei an, die das aufzurufende Skript enth&auml;lt.</p>
+
+
+
+
+<p>Schlie&szlig;lich ist auch darauf zu achten, die Datei <filename>GLOBAL.ASA</filename>, wie jedes andere Skript in Ihrer Webanwendung, mit Windows NT-Sicherheitsfunktionen zu sch&uuml;tzen. Anderenfalls haben Clients einen ungehinderten Zugriff auf die Datei. Angesichts der Tatsache, dass eine <filename>GLOBAL.ASA</filename>-Datei h&auml;ufig sicherheitsbezogenen Code f&uuml;r die Anwendung enth&auml;lt, ist diese Warnung &auml;u&szlig;erst wichtig.</p>
+</td>
+</tr>
+</table>
+</div>
+<div id="ApplicationObjectEventsandApplicationScope">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+Ereignisse des Objekts Application und anwendungsweite G&uuml;ltigkeit</td>
+<td class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2"><span class="PROGRAMLISTING"><pre>&lt;SCRIPT LANGUAGE=<var class="replaceable">strLangEngine</var> RUNAT = SERVER&gt;
+Sub Application_OnStart
+      Event procedure code...
+End Sub
+
+Sub Application_OnEnd
+      Event procedure code...
+End Sub
+&lt;/SCRIPT&gt;</pre></span></td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+<span class="PROGRAMLISTING"><pre>&lt;SCRIPT LANGUAGE=<var class="replaceable">strLangEngine</var> RUNAT = SERVER&gt;
+Sub Application_OnStart
+      Event procedure code...
+End Sub
+
+Sub Application_OnEnd
+      Event procedure code...
+End Sub
+&lt;/SCRIPT&gt;</pre></span>
+
+
+
+
+<p><!--<primary>Application object</primary><secondary>OnStart and OnEnd events</secondary><tertiary>GLOBAL.ASA file for</tertiary>--> <!--<primary>GLOBAL.ASA file</primary><secondary>Application object events and scope</secondary>-->Die Datei <filename>GLOBAL.ASA</filename> kann Ereignisprozedur-Code f&uuml;r die zwei Ereignisse des Objekts Application enthalten. Dabei handelt es sich um die Ereignisse: OnStart und OnEnd. Diese Ereignisse werden ausgel&ouml;st, wenn der erste Client eine Seite aus Ihrer Anwendung anfordert bzw. zum Abschluss der letzten Benutzersitzung in Ihrer Anwendung.  Diese Ereignisse werden in <link linkend="ch04-40130">Kapitel 4</link> ausf&uuml;hrlich behandelt. In diesem Kapitel sollen einige der dort behandelten Themen wiederholt und im Hinblick auf die Datei <filename>GLOBAL.ASA</filename> und ihre Verwendung betrachtet werden.</p>
+
+
+
+
+<p>Wie bereits im Kapitel &quot;Application-Objekt&quot; ausgef&uuml;hrt, besteht eine ASP-Anwendung aus allen in einem virtuellen Verzeichnis und dessen Unterverzeichnissen befindlichen Dateien. Variablen oder Objekte mit anwendungsweiter G&uuml;ltigkeit besitzen f&uuml;r jeden aktuellen Benutzer der Anwendung dieselben Werte, und jeder Benutzer kann die Werte einer anwendungsweiten Variable bzw. eines anwendungsweiten Objekts &auml;ndern.  Eine solche &Auml;nderung wirkt sich f&uuml;r <em>alle</em> nachfolgenden Benutzer gleicherma&szlig;en auf den Wert aus.</p>
+
+
+
+
+</td>
+</tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td></tr>
+<tr>
+<td colspan="2" class="DESCRIPTIONTITLE">Parameter</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+
+
+<dl>
+<dt><var class="replaceable">strLangEngine</var></dt>
+<dd><p>Ein String, dessen Wert den Namen einer g&uuml;ltigen serverseitigen Skripting-Engine darstellt. Bei IIS-Webservern ist dies standardm&auml;&szlig;ig VBScript, es k&ouml;nnen aber auch JScript, PerlScript, Python, REXX oder beliebige andere Skripting-Engines verwendet werden, die den IIS-Skriptkontext unterst&uuml;tzen.</p></dd>
+
+</dl>
+
+
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="DESCRIPTIONTITLE">Beispiel</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+
+
+<span class="PROGRAMLISTING"><pre>[Excerpt from GLOBAL.ASA]
+
+&lt;OBJECT RUNAT=Server 
+SCOPE=Application
+ID=AppInfo1 
+PROGID="MSWC.MyInfo"&gt;
+&lt;/OBJECT&gt;
+
+&lt;SCRIPT LANGUAGE = "VBScript" RUNAT="Server"&gt;
+Sub Application_OnStart
+
+    Dim objCounters
+    Dim gdatAppStartDate
+
+    ' The following object variable will hold a Counters
+    ' component.
+    Set objCounters = Server.CreateObject("MSWC.Counters")
+    
+    ' The following application-level variable will
+    ' hold the start date of the application.
+    gdatAppStartDate = Date( )
+
+End Sub
+
+Sub Application_OnEnd
+
+    ' The following code destroys the application-scoped
+    ' Counters component.
+    Set objCounters = Nothing
+    
+    ' The following clears the application-level variable.
+    gdatAppStartDate = "
+
+    ' NOTE: This code is not strictly necessary in this
+    ' instance as this object and variable will be released
+    ' from memory by the web server itself when the application
+    ' ends. This example simply demonstrates how these event
+    ' procedures work. For suggestions for the Application
+    ' object's use, see the following and <link linkend="ch04-40130">Chapter 4</link>.
+
+End Sub
+
+&lt;/SCRIPT&gt;</pre></span>
+
+
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="DESCRIPTIONTITLE">Hinweis</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+
+
+<p>Einige Hinweise zur Datei <filename>GLOBAL.ASA</filename> im Allgemeinen und zu den Ereignisprozeduren von Application im Einzelnen sollten Sie sich merken. Erstens: Es gibt keinen Grund, unbedingt eine <filename>GLOBAL.ASA</filename>-Datei zu f&uuml;hren. Ihre ASP-Anwendung funktioniert auch vollkommen normal ohne sie. Der Verzicht auf eine <filename>GLOBAL.ASA</filename>-Datei beg&uuml;nstigt sogar die Geschwindigkeit des Zugriffs auf die erste angeforderte Seite in Ihrer ASP-Anwendung, da es auf jeden Fall langsamer ist, zuerst die Datei <filename>GLOBAL.ASA</filename> und dann das angeforderte Skript, anstatt einfach nur das angeforderte Skript auszuf&uuml;hren.</p>
+
+
+
+
+<p>Zweitens: Wenn Sie eine <filename>GLOBAL.ASA</filename>-Datei f&uuml;hren, besteht nicht wirklich die Notwendigkeit, eine eigene Application_OnEnd-Ereignisprozedur zu schreiben, da der Webserver am Ende der Anwendung von sich aus den von anwendungsweiten Objekten und Variablen belegten Speicher freigibt. Wenn Sie jedoch spezifische Informationen &uuml;ber die Laufzeit einer Anwendung speichern m&ouml;chten (z. B. in einer Datenbank), k&ouml;nnten Sie Code hierf&uuml;r in die Ereignisprozedur Application_OnEnd einf&uuml;gen. So k&ouml;nnten Sie beispielsweise eine anwendungsweite Seitenz&auml;hler-Variable erzeugen und ihren Wert bei Anwendungsende in einer Textdatei erfassen, so dass er f&uuml;r die n&auml;chste Anforderung der Dateien aus der Anwendung und den n&auml;chsten Start der Anwendung zur Verf&uuml;gung steht. (F&uuml;r diesen Vorgang gibt es allerdings bessere M&ouml;glichkeiten.)</p>
+
+
+
+
+<p>Weitere Hinweise zu den Ereignisprozeduren des Objekts Application finden Sie in <link linkend="ch04-40130">Kapitel 4</link>.<filename/> </p>
+
+
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+<div id="SessionObjectEventsandSessionScope">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+Ereignisse des Objekts Session und sitzungsweite G&uuml;ltigkeit</td>
+<td class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2"><span class="PROGRAMLISTING"><pre>&lt;SCRIPT LANGUAGE=strLangEngine RUNAT = SERVER&gt;
+Sub Session_OnStart
+      Event procedure code...
+End Sub
+
+Sub Session_OnEnd
+      Event procedure code...
+End Sub
+&lt;/SCRIPT&gt;</pre></span></td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+<span class="PROGRAMLISTING"><pre>&lt;SCRIPT LANGUAGE=strLangEngine RUNAT = SERVER&gt;
+Sub Session_OnStart
+      Event procedure code...
+End Sub
+
+Sub Session_OnEnd
+      Event procedure code...
+End Sub
+&lt;/SCRIPT&gt;</pre></span>
+
+
+
+
+<p><!--<primary>Session object</primary><secondary>OnStart and OnEnd events</secondary><tertiary>GLOBAL.ASA file for</tertiary>--> <!--<primary>GLOBAL.ASA file</primary><secondary>Session object events and scope</secondary>-->Die Datei <filename>GLOBAL.ASA</filename> kann Ereignisprozedur-Code f&uuml;r die zwei Ereignisse des Objekts Session enthalten. Dabei handelt es sich um die Ereignisse: OnStart und OnEnd. Diese Ereignisse werden ausgel&ouml;st, wenn ein Client zum ersten Mal eine Seite aus Ihrer Anwendung anfordert bzw. zum Abschluss der Benutzersitzung (standardm&auml;&szlig;ig 20 Minuten nach der letzten Anforderung des Benutzers). Diese Ereignisse werden in <link linkend="ch10-1-fm2xml">Kapitel 10</link> ausf&uuml;hrlich behandelt. In diesem Kapitel sollen einige der dort behandelten Themen wiederholt und im Hinblick auf die Datei <filename>GLOBAL.ASA</filename> und ihre Verwendung betrachtet werden.</p>
+
+
+
+
+</td>
+</tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td></tr>
+<tr>
+<td colspan="2" class="DESCRIPTIONTITLE">Parameter</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+
+
+<dl>
+<dt><var class="replaceable">strLangEngine</var></dt>
+<dd><p>Ein String, dessen Wert den Namen einer g&uuml;ltigen serverseitigen Skripting-Engine darstellt. Bei IIS-Webservern ist dies standardm&auml;&szlig;ig VBScript, es k&ouml;nnen aber auch JScript, PerlScript, Python, REXX oder beliebige andere Skripting-Engines verwendet werden, die den IIS-Skriptkontext unterst&uuml;tzen.</p></dd>
+
+</dl>
+
+
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="DESCRIPTIONTITLE">Beispiel</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+
+
+<span class="PROGRAMLISTING"><pre>[Excerpt from GLOBAL.ASA]
+
+&lt;OBJECT RUNAT=Server 
+SCOPE=Session
+ID=Tool1 
+PROGID="MSWC.Tools"&gt;
+&lt;/OBJECT&gt;
+
+&lt;SCRIPT LANGUAGE = "VBScript" RUNAT="Server"&gt;
+Sub Session_OnStart
+
+    Dim strLogonUser
+    Dim StrUserSecurity
+
+    ' The following session-level variables will hold
+    ' the user's logon name and security clearance.
+    strLogonUser = Request.ServerVariables("USER_LOGON")
+    strUserSecurity = "PUBLIC"
+
+End Sub
+
+Sub Session_OnEnd
+
+    ' The following code destroys the session-scoped
+    ' Tools component.
+    Set Tool1 = Nothing
+    
+    ' The following clears the session-level variables.
+    strLogonUser = "
+    strUserSecurity = "
+
+    ' NOTE: This code is not strictly necessary in this
+    ' instance as this object and variable will be released
+    ' from memory by the web server itself when the session
+    ' ends. This example simply demonstrates how these event
+    ' procedures work. For suggestions for the Application
+    ' object's use, see later in this chapter and <link linkend="ch10-1-fm2xml">Chapter 10</link>.
+
+End Sub
+
+&lt;/SCRIPT&gt;</pre></span>
+
+
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="DESCRIPTIONTITLE">Hinweis</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+
+
+<p>Weitere Hinweise zu den Ereignisprozeduren des Objekts Session finden Sie in <link linkend="ch10-1-fm2xml">Kapitel 10</link>.<filename/> </p>
+
+
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+<div id="TypeLibraryDeclarations">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+Deklarationen der Typbibliothek</td>
+<td class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2"><span class="PROGRAMLISTING"><pre>&lt;!-- METADATA TYPE="TypeLibrary"
+FILE="<var class="replaceable">FileName</var>"
+UUID="<var class="replaceable">TypeLibraryUUID</var>"
+VERSION="<var class="replaceable">MajorVersionNumber</var>.<var class="replaceable">MinorVersionNumber</var>"
+LCID="<var class="replaceable">LocaleID</var>"
+--&gt;</pre></span></td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+<span class="PROGRAMLISTING"><pre>&lt;!-- METADATA TYPE="TypeLibrary"
+FILE="<var class="replaceable">FileName</var>"
+UUID="<var class="replaceable">TypeLibraryUUID</var>"
+VERSION="<var class="replaceable">MajorVersionNumber</var>.<var class="replaceable">MinorVersionNumber</var>"
+LCID="<var class="replaceable">LocaleID</var>"
+--&gt;</pre></span>
+
+
+
+
+<p><!--<primary>type library declarations</primary>--> <!--<primary>GLOBAL.ASA file</primary><secondary>type library declarations</secondary>-->Typbibliotheken sind Zubeh&ouml;rdateien, die Informationen &uuml;ber die Eigenschaften und Methoden von <!--<primary>COM objects</primary><secondary>type libraries</secondary>-->COM-Objekten enthalten. Diese Dateien beschreiben sowohl die von den Objekten verwendeten Konstanten als auch den Datentyp zul&auml;ssiger Eigenschaftswerte. Durch den Einsatz einer Typbibliothek erhalten Sie von Ihrer Anwendung genauere Meldungen &uuml;ber <!--<primary>errors</primary><secondary>reporting with type
+libraries</secondary>-->Fehler in der Verwendung des Objekts, auf das sich die jeweilige Typbibliothek bezieht. Eine solche Bibliothek erm&ouml;glicht Ihnen au&szlig;erdem, in der DLL des Objekts definierte Konstanten zu verwenden.  Der Code von Objekten wird dadurch mitunter sehr viel weniger kompliziert und wesentlich leichter lesbar und kann wiederverwendet werden, ohne dass Sie Server-Side Includes erzeugen m&uuml;ssen, die bei mehreren Objekte oft schwer zu pflegen sind. </p>
+
+
+
+
+<p><!--<primary>application-level
+scope</primary><secondary>corresponding type
+libraries</secondary>--> <!--<primary>session-level
+scope</primary><secondary>corresponding type
+libraries</secondary>-->Wie Sie bereits wissen, k&ouml;nnen Sie anwendungsweite und sitzungsweite Objekte in der Datei <filename>GLOBAL.ASA</filename> instantiieren. Ist f&uuml;r eines dieser Objekte eine entsprechende Typbibliothek vorhanden, k&ouml;nnen Sie deren Verwendung in der Datei <filename>GLOBAL.ASA</filename> der Anwendung deklarieren.</p>
+
+
+
+
+</td>
+</tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td></tr>
+<tr>
+<td colspan="2" class="DESCRIPTIONTITLE">Parameter</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+
+
+<dl>
+<dt><var class="replaceable">Dateiname</var></dt>
+<dd><p>Der vollst&auml;ndige physische (nicht virtuelle) Pfad und Dateiname der Typbibliotheksdatei f&uuml;r das betreffende Objekt. Wenn Sie sowohl den Parameter <var class="replaceable">Dateiname</var> als auch <var class="replaceable">Typbib-UUID</var> in die<span class="LITERAL">TypeLibrary</span>-Deklaration aufnehmen, identifiziert der Webserver die Typbibliothek anhand ihres Dateinamens. Sie m&uuml;ssen einen der Parameter <var class="replaceable">Dateiname</var> oder <var class="replaceable">Typbib-UUID</var> angeben.</p></dd>
+
+
+
+
+<dt><var class="replaceable">Typbib-UUID</var></dt>
+<dd><p>Die UUID (Universally Unique Identification Number) der Typbibliothek. Diese unterscheidet sich von der UUID f&uuml;r das COM-Objekt und ist in der Registrierung als Unterschl&uuml;ssel von <span class="LITERAL">HKEY_CLASSES_ROOT\TypeLib</span> definiert. Wenn Sie sowohl den Parameter <var class="replaceable">Dateiname</var> als auch <var class="replaceable">Typbib-UUID</var> in die<span class="LITERAL">TypeLibrary</span>-Deklaration aufnehmen, identifiziert der Webserver die Typbibliothek anhand ihres Dateinamens. Sie m&uuml;ssen einen der Parameter <var class="replaceable">Dateiname</var> oder <var class="replaceable">Typbib-UUID</var> angeben.</p></dd>
+
+
+
+
+<dt><var class="replaceable">Hauptversionsnummer</var></dt>
+<dd><p>Die Hauptversionsnummer der Typbibliothek. Ist dieser optionale Parameter angegeben und der Webserver kann die Datei mit der richtigen Hauptversionsnummer nicht finden, erzeugt er einen Fehler. Wenn Sie eine <var class="replaceable">Hauptversionsnummer</var> angeben, m&uuml;ssen Sie auch den Parameter <var class="replaceable">Nebenversionsnummer</var> angeben.</p></dd>
+
+
+
+
+<dt><var class="replaceable">Nebenversionsnummer</var></dt>
+<dd><p>Die Nebenversionsnummer der Typbibliothek. Ist dieser optionale Parameter angegeben und der Webserver kann die Datei mit der richtigen Nebenversionsnummer nicht finden, erzeugt er einen Fehler. Wenn Sie eine <var class="replaceable">Nebenversionsnummer</var> angeben, m&uuml;ssen Sie auch den Parameter <var class="replaceable">Hauptversionsnummer</var> angeben.</p></dd>
+
+
+
+
+<dt><var class="replaceable">SprachumgID</var></dt>
+<dd><p>Jede Typbibliothek kann unterschiedliche Sprachumgebungen unterst&uuml;tzen. Der Parameter <var class="replaceable">SprachumgID</var> stellt die f&uuml;r die betreffende Typbibliothek zu verwendende Sprachumgebung dar. Kann diese Sprachumgebung in der Typbibliothek nicht gefunden werden, so generiert der Webserver einen Fehler. Wie der Parameter <span class="LITERAL">VERSION</span> der Deklaration <span class="LITERAL">TypeLibrary</span> ist auch dieser Parameter optional.</p></dd>
+
+</dl>
+
+
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="DESCRIPTIONTITLE">Beispiel</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+
+
+<span class="PROGRAMLISTING"><pre>[Excerpt from GLOBAL.ASA]
+
+&lt;!-- METADATA TYPE="TypeLibrary"
+FILE="Report.LIB"
+VERSION="1.5"
+LCID="1306"
+--&gt;</pre></span>
+
+
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="DESCRIPTIONTITLE">Hinweis</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+
+
+<p>Mit diesem Code wird die Verwendung von Version 1.5 der Typbibliothek des COM-Objekts Report deklariert. Die Sprachumgebungskennung (LCID) ist diejenige f&uuml;r Franz&ouml;sisch. Wenn Version 1.5 der Typbibliothek dieses COM-Objekts nicht gefunden werden kann oder die Typbibliothek die Sprachumgebung mit der LCID 1306 (Franz&ouml;sisch) nicht unterst&uuml;tzt, generiert der Code einen Fehler.</p>
+
+
+
+
+<p>Wenn Sie in einer ASP-Anwendung mit einer Typbibliothek arbeiten, verwenden Sie eigentlich eine in einem Wrapper eingeschlossene Version der Typbibliothek. IIS erzeugt diesen Wrapper f&uuml;r Ihre Typbibliothek im Hintergrund.</p>
+
+
+
+
+<p>F&uuml;r den guten Kodierstiel empfiehlt Microsoft, die Deklarationen der Typbibliothek in den Anfangsbereich der Datei <filename>GLOBAL.ASA</filename> zu stellen. Allerdings konnte der Autor keine Auswirkungen einer anderweitigen Platzierung der Deklarationen in der Datei feststellen. Au&szlig;erdem muss die <span class="LITERAL">TypeLibrary</span>-Deklaration nicht au&szlig;erhalb der <span class="LITERAL">&lt;SCRIPT&gt;</span>-Tags platziert werden.</p>
+
+
+
+
+<p>Eines der Probleme, die der Einsatz von Typbibliotheken aus mehreren COM-Objekten in einer ASP-Anwendung aufwirft (besonders dann, wenn die COM-Objekte von unterschiedlichen Programmierern stammen), ist die Konstantenredundanz innerhalb des Objekts.  Indem Sie beim Verweisen auf Konstanten den Namen des COM-Objekts selbst als Pr&auml;fix f&uuml;r den jeweiligen Konstantennamen verwenden, l&auml;sst sich diese Redundanz vermeiden. So k&ouml;nnen Sie beispielsweise auf die Konstante <span class="LITERAL">adStoredProcedure</span> der ADODB-Typbibliothek mit <span class="LITERAL">ADODB.adStoredProcedure</span> verweisen.</p>
+
+
+
+
+<p>Falls Sie die Typbibliothek falsch deklarieren, kann der <!--<primary>web servers</primary><secondary>type
+library declaration errors</secondary>--> <!--<primary>errors</primary><secondary>type library
+declarations</secondary>-->Webserver einen der in nachfolgender Tabelle aufgef&uuml;hrten Fehler ausgeben:</p>
+
+
+
+
+<table border="1">
+
+
+
+<thead>
+<tr valign="top">
+<td>
+<p>Fehlercode</p></td>
+<td>
+<p>Beschreibung</p></td>
+</tr>
+
+
+
+</thead>
+
+
+
+<tbody>
+<tr valign="top">
+<td>
+<p>ASP 0222</p></td>
+<td>
+<p>Eine ung&uuml;ltige Deklaration einer Typbibliothek. </p></td>
+</tr>
+
+
+
+<tr valign="top">
+<td>
+<p>ASP 0223</p></td>
+<td>
+<p>Die Typbibliothek ist nicht vorhanden. Diesen Fehler erhalten Sie, wenn beispielsweise die im <span class="LITERAL">METADATA</span>-Tag angegebene Typbibliothek nicht vorhanden ist.</p></td>
+</tr>
+
+
+
+<tr valign="top">
+<td>
+<p>ASP 0224</p></td>
+<td>
+<p>Die deklarierte Typbibliothek wurde zwar gefunden, konnte aber aus einem unbekannten Grund nicht geladen werden.</p></td>
+</tr>
+
+
+
+<tr valign="top">
+<td>
+<p>ASP 0225</p></td>
+<td>
+<p>Der Webserver kann aus irgendeinem Grund keinen Wrapper f&uuml;r die im <span class="LITERAL">METADATA</span>-Tag deklarierte Typbibliothek erzeugen.<filename/>    </p></td>
+</tr>
+
+
+
+</tbody>
+
+</table>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+</body>
+</html>

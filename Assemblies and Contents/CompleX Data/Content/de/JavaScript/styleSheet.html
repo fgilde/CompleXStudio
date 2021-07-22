@@ -1,0 +1,1000 @@
+<html>
+<link rel="stylesheet" href="josh.css">
+<body bgcolor="#FFFFFF">
+
+		<div id="Beschreibung">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">styleSheet</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">4</span> DOM <span class="emphasis">2</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Das <span class="literal">styleSheet</span>-Objekt stellt ein Stylesheet dar, das ggf. als <span class="literal">style</span>-Element erstellt oder mit einem <span class="literal">link</span>-Element bzw. einer <span class="literal">@import</span>-Anweisung in ein <span class="literal">style</span>-Element importiert wurde. Dieses Objekt unterscheidet sich vom <span class="literal">style</span>-Elementobjekt, das das HTML-Element <span class="literal">style</span> und seine Attribute exakt widerspiegelt. Die <span class="literal">document.styleSheets[ ]</span>-Sammlung enth&auml;lt null oder mehr <span class="literal">styleSheet</span>-Objekte. Die gemeinsam genutzte Eigenschaft <span class="literal">disabled</span> ist in allen unterst&uuml;tzenden Browsern verf&uuml;gbar und erleichtert das Aktivieren und Deaktivieren eines kompletten Stylesheets durch einfaches Zuordnen eines Booleschen Wertes.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectmodelreference"><span class="title">Objektmodellreferenz</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>[window.]document.styleSheets[i]</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectspecificproperties"><span class="title">Objektspezifische Eigenschaften</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<table border="1"><tbody><tr><td><span class="literal">cssRules[ ]</span></td><td><span class="literal">cssText</span></td><td><span class="literal">href</span></td><td><span class="literal">imports[ ]</span></td><td><span class="literal">media</span></td>
+								</tr>
+								<tr><td><span class="literal">ownerNode</span></td><td><span class="literal">ownerRule</span></td><td><span class="literal">owningElement</span></td><td><span class="literal">pages[ ]</span></td><td><span class="literal">parentStyleSheet</span></td>
+								</tr>
+								<tr><td><span class="literal">readOnly</span></td><td><span class="literal">rules[ ]</span></td><td><span class="literal">title</span></td><td><span class="literal">type</span></td><td></td>
+								</tr>
+							</tbody></table>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectspecificmethods"><span class="title">Objektspezifische Methoden</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<table border="1"><tbody><tr><td>a<span class="literal">ddImport( )</span></td><td><span class="literal">addRule( )</span></td><td><span class="literal">deleteRule( )</span></td><td><span class="literal">insertRule( )</span></td><td><span class="literal">removeRule( )</span></td>
+								</tr>
+							</tbody></table>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectspecificeventhandlerproperties"><span class="title">Objektspezifische Ereignisbehandlungsroutineneigenschaften</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Keine. </p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="cssRules[ ]">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">cssRules[ ]</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">5(Mac)</span> DOM <span class="emphasis">2</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Schreibgesch&uuml;tzt</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Gibt eine Sammlung mit <span class="literal">cssRule</span>-Objekten zur&uuml;ck, die im aktuellen <span class="literal">styleSheet</span>-Objekt verschachtelt sind. Das IE-&Auml;quivalent ist die Eigenschaft <span class="literal">rules</span>. Eine Beschreibung der Eigenschaften und Methoden dieses Sammlungsobjekts finden Sie in der Abhandlung des <span class="literal">cssRules</span>-Objekts weiter vorne in diesem Kapitel. Eine Beschreibung der in dieser Sammlung enthaltenen Objekte finden Sie im Abschnitt &uuml;ber das <span class="literal">cssRule</span>-Objekt weiter vorne in diesem Kapitel.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>var allCSSRules = document.styleSheets[0].cssRules;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Referenz auf ein <span class="literal">CSSRules</span>-Sammlungsobjekt.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Standardwert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Array mit der L&auml;nge Null. </p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="cssText">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">cssText</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">nicht zutreffend</span> IE <span class="emphasis">5</span>  DOM <span class="emphasis">nicht zutreffend</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Lesen/Schreiben</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Enth&auml;lt eine Zeichenfolge mit dem gesamten Text aller im Stylesheet definierten Regeln. Dies ist vor allem dann hilfreich, wenn Sie den gesamten Regelsatz durch einen neuen ersetzen m&ouml;chten. Wenn Sie den Text einer einzelnen Regel in IE abrufen m&ouml;chten, greifen Sie auf die Eigenschaft <span class="literal">cssText</span> des gew&uuml;nschten <span class="literal">rule</span>-Objekts zu, das Sie &uuml;ber die Eigenschaft <span class="literal">rules[i].cssText</span> des <span class="literal">styleSheet</span>-Objekts erhalten haben. In Netscape 6 k&ouml;nnen Sie die <span class="literal">cssRules[i].cssText</span>-Eigenschaft verwenden.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>var allCSSText = document.styleSheets[0].cssText;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Zeichenfolge.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Standardwert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Leere Zeichenfolge. </p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="href">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">href</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">4</span> DOM <span class="emphasis">2</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Lesen/Schreiben</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Dies ist die durch das <span class="literal">href</span>-Attribut eines <span class="literal">link</span>-Elements f&uuml;r den Import eines Stylesheets angegebene URL. In IE f&uuml;r Windows kann dieser Wert gelesen und geschrieben, in Netscape 6 und IE/Mac hingegen nur gelesen werden.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>document.styleSheets[1].href = "css/altStyles.css";</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Zeichenfolge mit einer vollst&auml;ndigen oder relativen URL.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Standardwert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Keiner.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="imports[ ]">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">imports[ ]</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">nicht zutreffend</span> IE <span class="emphasis">4</span>  DOM <span class="emphasis">nicht zutreffend</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Schreibgesch&uuml;tzt</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Gibt eine Sammlung (Array) mit <span class="literal">styleSheet</span>-Objekten zur&uuml;ck, die mittels der <span class="literal">@import</span>-Regel in ein explizites <span class="literal">styleSheet</span>-Objekt importiert wurden. Weitere Informationen finden Sie in der Abhandlung der <span class="literal">imports</span>-Sammlung weiter vorne in diesem Kapitel. Bei Netscape 6 m&uuml;ssen Sie alle <span class="literal">cssRule</span>-Objekte eines <span class="literal">styleSheet</span>-Objekts einzeln untersuchen, um diejenigen zu ermitteln, deren <span class="literal">type</span>-Eigenschaft den Wert <span class="literal">3</span> aufweist (entspricht der Konstante <span class="literal">IMPORT_RULE</span> des <span class="literal">cssRule</span>-Objekts).
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>var allImportRules = document.styleSheets[0].imports;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Referenz auf ein <span class="literal">imports</span>-Sammlungsobjekt.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Standardwert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Array mit der L&auml;nge Null. </p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="media">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">media</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">4</span> DOM <span class="emphasis">2</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Lesen/Schreiben</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Gibt das gew&uuml;nschte Ausgabeger&auml;t f&uuml;r den vom Stylesheet gesteuerten Inhalte an und spiegelt somit das <span class="literal">media</span>-Attribut der <span class="literal">link</span>- und <span class="literal">style</span>-Elemente wider. Mit dem Attribut <span class="literal">media</span> k&ouml;nnen Browser in der Zukunft Inhalte an bestimmte Ger&auml;tetypen, wie z. B. Handheld-Computer, sprachf&auml;hige Digitalisierger&auml;te oder Fernsehger&auml;te, anpassen. Diese Eigenschaft ist in IE 4 f&uuml;r den Macintosh nicht verf&uuml;gbar.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>if (document.styleSheets[2].media == "print") &#123;
+    // process for print output
+}</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Einer der folgenden Konstantenwerte in Form einer Zeichenfolge: <span class="literal">all</span> | <span class="literal">print</span> | <span class="literal">screen</span>.
+</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Standardwert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p><span class="literal">all</span></p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="ownerNode">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">ownerNode</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">nicht zutreffend</span>  DOM <span class="emphasis">2</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Schreibgesch&uuml;tzt</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Gibt eine Referenz auf die Node im Dokumentbaum zur&uuml;ck, die das <span class="literal">styleSheet</span>-Objekt enth&auml;lt. Bei dieser Node handelt es sich je nach der Art und Weise, in der das Stylesheet im Dokument definiert ist, entweder um ein <span class="literal">style</span>- oder um ein <span class="literal">link</span>-Element. Die &auml;quivalente IE-Eigenschaft (Windows und Mac) ist <span class="literal">owningElement</span>. IE f&uuml;r den Macintosh stellt eine zus&auml;tzliche Eigenschaft namens <span class="literal">owningNode</span> bereit, bei der es sich h&ouml;chstwahrscheinlich um eine falsche Implementierung der W3C-DOM-Eigenschaft <span class="literal">ownerNode</span> handelt.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>var mama = document.styleSheets[2].ownerNode;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Objektreferenz.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Standardwert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Keiner.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="ownerRule">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">ownerRule</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">nicht zutreffend</span>  DOM <span class="emphasis">2</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Schreibgesch&uuml;tzt</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Gibt bei einem <span class="literal">styleSheet</span>-Objekt, das mittels einer <span class="literal">@import</span>-Regel in das Dokument aufgenommen wurde, eine Referenz auf das betreffende <span class="literal">@import</span>-Regelobjekt (ein W3C-DOM-<span class="literal">CSSImportRule</span>-Objekt) zur&uuml;ck. Informationen zu den Eigenschaften und Methoden eines <span class="literal">CSSImportRule</span>-Objekts finden Sie in der Abhandlung des <span class="literal">cssRule</span>-Objekts weiter vorne in diesem Kapitel. Bei anderen Stylesheet-Typen gibt die Eigenschaft den Wert <span class="literal">null</span> zur&uuml;ck.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>var hostRule = document.styleSheets[2].ownerRule;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Objektreferenz oder <span class="literal">null</span>.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Standardwert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p><span class="literal">null</span></p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="owningElement">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">owningElement</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">nicht zutreffend</span> IE <span class="emphasis">4</span>  DOM <span class="emphasis">nicht zutreffend</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Schreibgesch&uuml;tzt</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Gibt eine Referenz auf das <span class="literal">style</span>- oder <span class="literal">link</span>-Elementobjekt zur&uuml;ck, mit dem das aktuelle <span class="literal">styleSheet</span>-Objekt definiert wird. Jedes Dokument enth&auml;lt eine Sammlung von Stylesheets, die mit den <span class="literal">style</span>- und <span class="literal">link</span>-Elementen erstellt wurden. Die vergleichbare Netscape 6-Eigenschaft ist <span class="literal">ownerNode</span>.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>var firstStyleID = document.styleSheets[0].owningElement.id;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Elementobjektreferenz.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Standardwert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Keiner.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="pages[ ]">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">pages[ ]</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">nicht zutreffend</span> IE <span class="emphasis">5.5(Win)</span> DOM <span class="emphasis">nicht zutreffend</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Schreibgesch&uuml;tzt</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Gibt eine Sammlung (Array) mit <span class="literal">page</span>-Objekten (<span class="literal">@page</span>-Regeln) zur&uuml;ck, die in einem <span class="literal">styleSheet</span>-Objekt verschachtelt sind. Bei Netscape 6 m&uuml;ssen Sie alle <span class="literal">cssRule</span>-Objekte eines <span class="literal">styleSheet</span>-Objekts einzeln untersuchen, um diejenigen zu ermitteln, deren <span class="literal">type</span>-Eigenschaft den Wert <span class="literal">6</span> aufweist (entspricht der Konstante <span class="literal">PAGE_RULE</span> des <span class="literal">cssRule</span>-Objekts). Weitere Informationen finden Sie unter <span class="literal">page</span>-Objekt.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>var allPageRules = document.styleSheets[0].pages;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Referenz auf ein <span class="literal">pages</span>-Sammlungsobjekt.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Standardwert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Array mit der L&auml;nge Null. </p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="parentStyleSheet">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">parentStyleSheet</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">4</span> DOM <span class="emphasis">2</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Schreibgesch&uuml;tzt</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Bei einem <span class="literal">styleSheet</span>-Objekt, das durch Einbinden einer <span class="literal">@page</span>-Regel erstellt wurde, gibt die Eigenschaft <span class="literal">parentStyleSheet</span> eine Referenz auf das als <span class="literal">link</span>- oder <span class="literal">style</span>-Element erstellte <span class="literal">styleSheet</span>-Objekt zur&uuml;ck, das das aktuelle Stylesheet importiert hat. Bei einem Stylesheet, das nicht importiert wurde, gibt die Eigenschaft den Wert <span class="literal">null</span> zur&uuml;ck.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>var myMaker = document.styleSheets[0].parentStyleSheet;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Referenz auf ein <span class="literal">styleSheet</span>-Objekt.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Standardwert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p><span class="literal">null</span> </p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="readOnly">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">readOnly</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">nicht zutreffend</span> IE <span class="emphasis">4</span>  DOM <span class="emphasis">nicht zutreffend</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Schreibgesch&uuml;tzt</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Legt fest, ob das Stylesheet unter Skriptkontrolle ge&auml;ndert werden kann. &Uuml;ber ein <span class="literal">link</span>-Element oder eine <span class="literal">@import</span>-Regel importierte Stylesheets k&ouml;nnen nicht ge&auml;ndert werden und geben daher <span class="literal">true</span> zur&uuml;ck.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Boolescher Wert: <span class="literal">true</span> | <span class="literal">false</span>.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Standardwert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p><span class="literal">false</span></p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="rules[ ]">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">rules[ ]</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">nicht zutreffend</span> IE <span class="emphasis">4</span>  DOM <span class="emphasis">nicht zutreffend</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Schreibgesch&uuml;tzt</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Gibt eine Sammlung mit <span class="literal">rule</span>-Objekten zur&uuml;ck, die im aktuellen <span class="literal">styleSheet</span>-Objekt verschachtelt sind. Das in Netscape 6 und IE 5/Mac implementierte W3C-DOM-&Auml;quivalent ist die Eigenschaft <span class="literal">cssRules</span>. Eine Beschreibung der Eigenschaften und Methoden dieses Sammlungsobjekts finden Sie in der Abhandlung des <span class="literal">cssRules</span>-Objekts weiter vorne in diesem Kapitel. Eine Beschreibung der in dieser Sammlung enthaltenen Objekte finden Sie im Abschnitt &uuml;ber das <span class="literal">cssRule</span>-Objekt weiter vorne in diesem Kapitel.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>var allrules = document.styleSheets[0].rules;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Referenz auf ein <span class="literal">rules</span>-Sammlungsobjekt.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Standardwert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Array mit der L&auml;nge Null. </p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="title">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">title</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">4</span> DOM <span class="emphasis">2</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Lesen/Schreiben</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Legt das <span class="literal">title</span>-Attribut des <span class="literal">style</span> oder <span class="literal">link</span>-Elements offen, das das aktuelle <span class="literal">styleSheet</span>-Objekt besitzt. Da sich das Attribut nicht auf Elemente der Benutzeroberfl&auml;che bezieht (die Elemente werden nicht dargestellt und bieten daher auch keine QuickInfo), kann es dem <span class="literal">styleSheet</span>-Objekt unter Skriptkontrolle andere Zeichenfolgeninformationen &uuml;bermitteln.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>if (document.styleSheets[2].title == "corpStyleWindows") &#123;
+    // process for the designated style
+}</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Zeichenfolgenwert.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Standardwert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Leere Zeichenfolge.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="type">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">type</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">4</span> DOM <span class="emphasis">2</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Schreibgesch&uuml;tzt</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Gibt den durch das <span class="literal">type</span>-Attribut des <span class="literal">style</span>- oder <span class="literal">link</span>-Elements festgelegten MIME-Typ des Stylesheets zur&uuml;ck.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>if (document.styleSheets[0].type == "text/css") &#123;
+    ...
+}</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Zeichenfolge (<span class="literal">text/css</span> bei typischen CSS-Stylesheets).</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Standardwert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Keiner. </p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="addImport( )">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">addImport( )</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">nicht zutreffend</span> IE <span class="emphasis">4</span>  DOM <span class="emphasis">nicht zutreffend</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">addImport(<span class="replaceable">url</span>, [<span class="replaceable">index</span>])</p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>F&uuml;gt einem <span class="literal">styleSheet</span>-Objekt eine externe Stylesheet-Spezifikation hinzu.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Parameter</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<ul><li><span class="literal"></span>Vollst&auml;ndige oder relative URL der Stylesheet-Datei (<span class="emphasis">.css</span>-Datei).
+</li><li><span class="literal"></span>Eine optionale ganze Zahl, die die Position in der Objektsammlung angibt, an der das neue Element platziert werden soll.
+</li></ul>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Zur&uuml;ckgegebener Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Eine ganze Zahl f&uuml;r die Indexposition innerhalb der <span class="literal">styleSheets[ ]</span>-Sammlung, an der das Stylesheet hinzugef&uuml;gt wurde (wenn Sie den zweiten Parameter weglassen und die Endposition vom Browser ermitteln lassen).
+</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="addRule( )">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">addRule( )</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">nicht zutreffend</span> IE <span class="emphasis">4</span>  DOM <span class="emphasis">nicht zutreffend</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">addRule("<span class="replaceable">selector</span>", "<span class="replaceable">style</span>"[, <span class="replaceable">index</span>])</p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>F&uuml;gt eine neue Regel f&uuml;r ein Stylesheet hinzu. Mit Hilfe dieser Methode k&ouml;nnen Sie einem vorhandenen <span class="literal">styleSheet</span>-Objekt eine Regel hinzuf&uuml;gen:
+</p>
+<span class="PROGRAMLISTING"><pre>document.styleSheets[1].addRule(&quot;p b&quot;,&quot;color:red&quot;);</pre></span>
+							</td>
+						</tr>
+						<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Sie k&ouml;nnen einen bereits im <span class="literal">styleSheet</span>-Objekt vorhandenen Selektor duplizieren und so eine Regel f&uuml;r diesen Elementselektor &uuml;berschreiben. Die einzige Einschr&auml;nkung hierbei ist, dass eine Regel zum Konvertieren einer regul&auml;ren Stilregel in eine, die ein positionierbares Element erstellt (und umgekehrt), nicht &uuml;berschrieben werden darf. Die neue Regel unterliegt denselben Kaskadierungsregeln wie alle anderen Stylesheet-Regeln auch (dazu geh&ouml;rt auch die Quellcodeposition der Regel in Bezug auf die anderen Regeln in demselben Selektor). Daher kann eine neue Regel in einem <span class="literal">styleSheet</span>-Objekt nie einen Stil au&szlig;er Kraft setzen, der in der <span class="literal">style</span>-Eigenschaft eines Elements definiert ist.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Parameter</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<ul><li><span class="literal"></span>Der Stilregel-Selektor als Zeichenfolge.</li><li><span class="literal"></span>Ein oder mehrere Stilattribut-/Wertpaare (<span class="replaceable">attribute:value</span>). Mehrere Paare werden dabei wie in der normalen Stylesheet-Definition durch Strichpunkte von einander getrennt.
+</li><li><span class="literal"></span>Eine optionale ganze Zahl, die die Position in der Objektsammlung angibt, an der das neue Element platziert werden soll.
+</li></ul>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Zur&uuml;ckgegebener Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>In &auml;lteren Versionen von IE wurde kein Wert zur&uuml;ckgegeben. Bei neueren Versionen gibt IE f&uuml;r Windows den Wert <span class="literal">-1</span>, IE f&uuml;r Macintosh hingegen den Wert <span class="literal">null</span> zur&uuml;ck. In k&uuml;nftigen Versionen wird m&ouml;glicherweise eine ganze Zahl zur&uuml;ckgegeben, die der Indexposition der neuen Regel entspricht.
+</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="deleteRule( )">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">deleteRule( )</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">5(Mac)</span> DOM <span class="emphasis">2</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">deleteRule(<span class="replaceable">index</span>)</p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Entfernt eine Regel aus dem <span class="literal">styleSheet</span>-Objekt. Der ganzzahlige Indexparameterwert weist auf den auf Null basierenden Eintrag im <span class="literal">cssRules</span>-Array, der gel&ouml;scht werden soll. Beachten Sie, dass IE 5 f&uuml;r Macintosh f&uuml;r dieselbe Operation sowohl die Microsoft-Methode <span class="literal">removeRule( )</span> als auch die W3C-DOM-Methode <span class="literal">deleteRule( )</span> implementiert.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Parameter</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<ul><li><span class="literal"></span>Eine auf Null basierende ganze Zahl, die angibt, welche Regel in der <span class="literal">cssRules</span>-Sammlung gel&ouml;scht werden soll.
+</li></ul>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Zur&uuml;ckgegebener Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Keiner.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="insertRule( )">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">insertRule( )</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">5(Mac)</span> DOM <span class="emphasis">2</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">insertRule("<span class="replaceable">ruleText</span>", <span class="replaceable">index</span>)</p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>F&uuml;gt eine neue Regel f&uuml;r ein Stylesheet hinzu. Mithilfe dieser Methode k&ouml;nnen Sie einem vorhandenen W3C-DOM-<span class="literal">styleSheet</span>-Objekt in einem Skript eine Regel hinzuf&uuml;gen:
+</p>
+<span class="PROGRAMLISTING"><pre>document.styleSheets[1].insertRule(&quot;p b &#123;color:red}&quot;, 0);</pre></span>
+							</td>
+						</tr>
+						<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Sie k&ouml;nnen einen bereits im <span class="literal">styleSheet</span>-Objekt vorhandenen Selektor duplizieren und so eine Regel f&uuml;r diesen Elementselektor &uuml;berschreiben. Die einzige Einschr&auml;nkung hierbei ist, dass eine Regel zum Konvertieren einer regul&auml;ren Stilregel in eine, die ein positionierbares Element erstellt (und umgekehrt), nicht &uuml;berschrieben werden darf. Die neue Regel unterliegt denselben Kaskadierungsregeln wie alle anderen Stylesheet-Regeln auch (dazu geh&ouml;rt auch die Quellcodeposition der Regel in Bezug auf die anderen Regeln in demselben Selektor). Daher kann eine neue Regel in einem <span class="literal">styleSheet</span>-Objekt nie einen Stil au&szlig;er Kraft setzen, der in der <span class="literal">style</span>-Eigenschaft eines Elements definiert ist. Beachten Sie, dass IE 5 f&uuml;r den Macintosh sowohl die W3C-DOM-Methode <span class="literal">insertRule( )</span> als auch die Microsoft-Methode <span class="literal">addRule( )</span> implementiert, die beide dieselbe Aufgabe ausf&uuml;hren.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Parameter</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<ul><li><span class="literal"></span>Der gesamte Stilregelselektor als Zeichenfolge in genau demselben Format, in dem er in einem Stilelement zugewiesen wird. <span class="replaceable">selector</span>
+<span class="literal">&#123;</span><span class="replaceable">attribute</span><span class="literal">:</span><span class="replaceable">value</span><span class="literal">;</span>
+<span class="replaceable">attribute</span><span class="literal">:</span><span class="replaceable">value</span><span class="literal">;</span>...<span class="literal">}</span>.
+</li><li><span class="literal"></span>Eine auf Null basierende ganze Zahl, die angibt, wo in der <span class="literal">cssRules</span>-Sammlung die neue Regel platziert werden soll.
+</li></ul>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Zur&uuml;ckgegebener Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Ganze Zahl, die die Indexposition der neuen Regel angibt.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="removeRule( )">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">removeRule( )</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">nicht zutreffend</span> IE <span class="emphasis">4</span>  DOM <span class="emphasis">nicht zutreffend</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">removeRule(<span class="replaceable">index</span>)</p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Entfernt eine Regel aus dem <span class="literal">styleSheet</span>-Objekt. Der ganzzahlige Indexparameterwert weist auf den auf Null basierenden Eintrag im <span class="literal">rules</span>-Array, der gel&ouml;scht werden soll.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Parameter</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<ul><li><span class="literal"></span>Eine auf Null basierende ganze Zahl, die angibt, welche Regel in der <span class="literal">rules</span>-Sammlung gel&ouml;scht werden soll.
+</li></ul>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Zur&uuml;ckgegebener Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Keiner.</p>
+					</td>
+				</tr>
+			</table>
+		</div>
+
+<div id="disabled">
+
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">disabled</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">4</span> DOM <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements"><span class="emphasis">Lesen/Schreiben</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Legt fest, ob das Element f&uuml;r eine Benutzerinteraktion verf&uuml;gbar ist. Wenn die Eigenschaft auf <span class="literal">true</span> gesetzt ist, kann das Element weder den Fokus erhalten noch durch den Benutzer ge&auml;ndert werden und wird in der Seite in der Regel grau hinterlegt dargestellt. In IE f&uuml;r Windows ab Version 5.5 ist diese Eigenschaft f&uuml;r alle HTML-Elementobjekte verf&uuml;gbar. In IE 4 und IE 5 gilt sie nur f&uuml;r Formularsteuerelemente, w&auml;hrend Netscape ab Version 6 die Eigenschaft f&uuml;r Formularsteuerelemente und das <span class="literal">style</span>-Elementobjekt erkennt. Das Namens-/Wertpaar eines deaktivierten Formularsteuerelements wird nicht zusammen mit dem Formular &uuml;bermittelt.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>document.getElementById("myButton").disabled = true;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Boolescher Wert: <span class="literal">true</span> | <span class="literal">false</span>.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Standardwert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p><span class="literal">false</span></p>
+					</td>
+				</tr>
+			</table>
+		</div>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<html>
+<link rel="stylesheet" href="josh.css">
+<body bgcolor="#FFFFFF">
+
+		<div id="Beschreibung">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">onblur</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">2 </span>IE <span class="emphasis">3 </span>DOM <span class="emphasis">2</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Aufw&auml;rtsverbreitung: Nein; Abbruch m&ouml;glich: Nein</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Wird ausgel&ouml;st, nachdem das aktuelle Element den Fokus verloren hat (weil der Fokus an ein anderes Element &uuml;bergeben wurde) oder die Methode <span class="literal">blur( )</span> des aktuellen Elements aufgerufen wurde. Das Ereignis <span class="literal">onblur</span> wird vor dem <span class="literal">onfocus</span>-Ereignis im anderen Element ausgel&ouml;st.</p>
+							</td>
+						</tr>
+						<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Es wird dringend empfohlen, das <span class="literal">onblur</span>-Ereignis nicht in Texteingabefeldern zu verwenden, um die Formularvalidierung zu starten, vor allem nicht, wenn die Validierungsroutine im Falle eines Fehlers ein Dialogfeld mit einer Warnmeldung einblendet. Eine Interaktion zwischen dem <span class="literal">onblur</span>- und dem <span class="literal">onfocus</span>-Ereignis in Verbindung mit dem Ein- und Ausblenden eines Alarmdialogfelds kann in eine Endlosschleife f&uuml;hren. Verwenden Sie stattdessen das Ereignis <span class="literal">onchange</span>.</p>
+							</td>
+						</tr>
+						<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>W&auml;hrend das <span class="literal">onblur</span>-Ereignis f&uuml;r Formularsteuerelemente und <span class="literal">window</span>-Objekte bereits seit der Anfangszeit der skriptf&auml;higen Browser unterst&uuml;tzt wird, k&ouml;nnen moderne Browser dieses Ereignis auch in praktisch allen anderen dargestellten Elementen ausl&ouml;sen, deren <span class="literal">tabindex</span>-Attribut gesetzt ist. Beachten Sie, dass IE f&uuml;r Windows das <span class="literal">onblur</span>-Ereignis in <span class="literal">window</span>-Objekten offenbar nicht ausl&ouml;st.</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="typicaltargets"><span class="title">Typische Ziele</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>In allen Browsern <span class="literal">input</span>-Objekte (der Typen Text und Kennwort) sowie <span class="literal">textarea</span>-, <span class="literal">select</span>- und <span class="literal">window</span>-Objekte, in IE ab Version 5 und Netscape 6 au&szlig;erdem alle dargestellten Elemente, deren <span class="literal">tabindex</span>-Attribut ein Wert zugewiesen ist.</p>
+					</td>
+				</tr>
+			</table>
+		</div>
+</body>
+</html>

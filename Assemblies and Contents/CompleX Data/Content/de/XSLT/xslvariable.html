@@ -1,0 +1,218 @@
+<html>
+<head>
+<title>&lt;xsl:variable&gt;</title>
+</head>
+<body bgcolor="#FFFFFF" text="#000000">
+<div id="Beschreibung">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">&lt;xsl:variable&gt;</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description">
+Diese Anweisung definiert eine Variable. Ist <span class="LITERAL">&lt;xsl:variable&gt;</span> das oberste Element der Elementstruktur, so handelt es sich um eine globale Variable, die im gesamten Stylesheet verf&uuml;gbar ist. Andernfalls ist die Variable lokal und existiert nur in dem Element, in dem <span class="LITERAL">&lt;xsl:variable&gt;</span> vorkommt. Es gibt zwei Methoden, um den Wert der Variable zu definieren:  Sie kann im Attribut <span class="LITERAL">select</span> angegeben oder &uuml;ber eine XSLT-Vorlage im Element <span class="LITERAL">&lt;xsl:variable&gt;</span> definiert werden. Wenn keine dieser Methoden verwendet wird, ist der wert der Variablen ein leerer String.</td></tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Kategorie</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<p>Entweder ein Element der obersten Ebene oder eine Anweisung</p>
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Obligatorische Attribute</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<dl>
+<dt>
+name
+</dt>
+<dd>
+Ein Attribut, das den Namen f&uuml;r diese Variable angibt.
+<P></p>
+</dl>
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Optionale Attribute</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<dl>
+<dt>
+select
+</dt>
+<dd>
+Ein XPath-Ausdruck, der den Wert dieser Variablen definiert.
+<P></p>
+</dl>
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Inhalt</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<p>Das Element <span class="LITERAL">&lt;xsl:variable&gt;</span> kann leer sein oder eine XSLT-Vorlage enthalten. Enth&auml;lt es eine XSLT-Vorlage, wird der Wert des Attributs <span class="LITERAL">select</span> ignoriert.</p>
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">&Uuml;bergeordnetes Element</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<p>
+<span class="LITERAL">&lt;xsl:stylesheet&gt;</span> als oberstes Element oder in einer Vorlage.</p>
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Definition</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<p>XSLT-Abschnitt 11, Variablen und Parameter </p>
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Beispiel</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<p>Es folgt ein Stylesheet, das eine Reihe von Variablen definiert:</p>
+<span class="PROGRAMLISTING"><pre>
+&lt;?xml version="1.0"?&gt;
+&lt;xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform"&gt;
+
+  &lt;xsl:output method="text"/&gt;
+
+  &lt;xsl:variable name="newline"&gt;
+&lt;xsl:text&gt;
+&lt;/xsl:text&gt;
+  &lt;/xsl:variable&gt;
+
+  &lt;xsl:variable name="favoriteNumber" select="23"/&gt;
+  &lt;xsl:variable name="favoriteColor" select="'blue'"/&gt;
+  &lt;xsl:variable name="complicatedVariable"&gt;
+    &lt;xsl:choose&gt;
+      &lt;xsl:when test="count(//listitem) &gt; 10"&gt;
+        &lt;xsl:text&gt;really long list&lt;/xsl:text&gt;
+      &lt;/xsl:when&gt;
+      &lt;xsl:when test="count(//listitem) &gt; 5"&gt;
+        &lt;xsl:text&gt;moderately long list&lt;/xsl:text&gt;
+      &lt;/xsl:when&gt;
+      &lt;xsl:otherwise&gt;
+        &lt;xsl:text&gt;fairly short list&lt;/xsl:text&gt;
+      &lt;/xsl:otherwise&gt;
+    &lt;/xsl:choose&gt;
+  &lt;/xsl:variable&gt;
+
+  &lt;xsl:template match="/"&gt;
+    &lt;xsl:text&gt;Hello!  Your favorite number is &lt;/xsl:text&gt;
+    &lt;xsl:value-of select="$favoriteNumber"/&gt;
+    &lt;xsl:text&gt;.&lt;/xsl:text&gt;
+    &lt;xsl:value-of select="$newline"/&gt;
+    &lt;xsl:text&gt;Your favorite color is &lt;/xsl:text&gt;
+    &lt;xsl:value-of select="$favoriteColor"/&gt;
+    &lt;xsl:text&gt;.&lt;/xsl:text&gt;
+    &lt;xsl:value-of select="$newline"/&gt;
+    &lt;xsl:value-of select="$newline"/&gt;
+    &lt;xsl:text&gt;Here is a &lt;/xsl:text&gt;
+    &lt;xsl:value-of select="$complicatedVariable"/&gt;
+    &lt;xsl:text&gt;:&lt;/xsl:text&gt;
+    &lt;xsl:value-of select="$newline"/&gt;
+    &lt;xsl:variable name="listitems" select="list/listitem"/&gt;
+    &lt;xsl:call-template name="processListitems"&gt;
+      &lt;xsl:with-param name="items" select="$listitems"/&gt;
+    &lt;/xsl:call-template&gt;
+  &lt;/xsl:template&gt;
+
+  &lt;xsl:template name="processListitems"&gt;
+    &lt;xsl:param name="items"/&gt;
+    &lt;xsl:variable name="favoriteColor"&gt;
+      &lt;xsl:text&gt;chartreuse&lt;/xsl:text&gt;
+    &lt;/xsl:variable&gt;
+    
+    &lt;xsl:text&gt;    (Your favorite color is now &lt;/xsl:text&gt;
+    &lt;xsl:value-of select="$favoriteColor"/&gt;
+    &lt;xsl:text&gt;.)&lt;/xsl:text&gt;
+    &lt;xsl:value-of select="$newline"/&gt;
+    &lt;xsl:for-each select="$items"&gt;
+      &lt;xsl:value-of select="position()"/&gt;
+      &lt;xsl:text&gt;.  &lt;/xsl:text&gt;
+      &lt;xsl:value-of select="."/&gt;
+      &lt;xsl:value-of select="$newline"/&gt;
+    &lt;/xsl:for-each&gt;
+  &lt;/xsl:template&gt;
+
+&lt;/xsl:stylesheet&gt;</pre></span>
+<p>Zur Umwandlung des nachfolgenden Dokuments wird das Beispiel-Stylesheet verwendet:</p>
+<span class="PROGRAMLISTING"><pre>
+&lt;?xml version="1.0"?&gt;
+&lt;list xml:lang="en"&gt;
+  &lt;title&gt;Albums I've bought recently:&lt;/title&gt;
+  &lt;listitem&gt;The Sacred Art of Dub&lt;/listitem&gt;
+  &lt;listitem&gt;Only the Poor Man Feel It&lt;/listitem&gt;
+  &lt;listitem&gt;Excitable Boy&lt;/listitem&gt;
+  &lt;listitem xml:lang="sw"&gt;Aki Special&lt;/listitem&gt;
+  &lt;listitem xml:lang="en-gb"&gt;Combat Rock&lt;/listitem&gt;
+  &lt;listitem xml:lang="zu"&gt;Talking Timbuktu&lt;/listitem&gt;
+  &lt;listitem xml:lang="jz"&gt;The Birth of the Cool&lt;/listitem&gt;
+&lt;/list&gt;</pre></span> <!--<?troff .Nd 10?>-->
+<p>Hier die Ergebnisse der Transformation:</p>
+<span class="PROGRAMLISTING"><pre>
+Hello!  Your favorite number is 23.
+Your favorite color is blue.
+
+Here is a moderately long list:
+    (Your favorite color is now chartreuse.)
+1.  The Sacred Art of Dub
+2.  Only the Poor Man Feel It
+3.  Excitable Boy
+4.  Aki Special
+5.  Combat Rock
+6.  Talking Timbuktu
+7.  The Birth of the Cool</pre></span>
+<p>Es gibt mehrere Punkte im Stylesheet, die erw&auml;hnenswert sind. Beachten Sie zun&auml;chst, dass beim Definieren der Werte f&uuml;r die ersten beiden Variablen (<span class="LITERAL">favoriteNumber</span> und <span class="LITERAL">favoriteColor</span>), der String &quot;blue&quot; zwar genannt werden musste, die Nummer <span class="LITERAL">23</span> aber nicht. Wird <span class="LITERAL">blue</span> nicht ausdr&uuml;cklich genannt, geht der XSLT-Prozessor davon aus, dass alle <span class="LITERAL">&lt;blue&gt;</span>-Elemente im aktuellen Kontext gemeint sind. <span class="LITERAL">23</span> muss nicht genannt werden, da XML-Elementnamen nicht mit einer Zahl beginnen d&uuml;rfen. Es empfiehlt sich, Literale immer zu nennen, auch diejenigen, die sich als Elementnamen nicht eignen, denn es besteht eine gute Chance, dass Sie diesen Vorgang irgenwann vergessen. </p>
+<p>Beachten Sie auch, dass zwei Variablen mit dem Namen <span class="LITERAL">favoriteColor</span> existieren. Die eine ist eine globale Variable, da <span class="LITERAL">&lt;xsl:stylesheet&gt;</span> das &uuml;bergeordnete Element ist, die andere ist eine lokale Variable, da sie im Element <span class="LITERAL">&lt;xsl:template&gt;</span> definiert worden ist. Wenn in der Vorlage <span class="LITERAL">match="/"</span> auf <span class="LITERAL">favoriteColor</span> zugegriffen wird, hat die Variable einen anderen Wert als wenn innerhalb von <span class="LITERAL">name="processListitems"</span> auf sie zugegriffen wird. Es ist unzul&auml;ssig, auf einer Ebene zwei Variablen mit demselben Namen zu verwenden. Es ist ebenfalls unzul&auml;ssig, auf einer Ebene ein <span class="LITERAL">&lt;xsl:variable&gt;</span>- und ein <span class="LITERAL">&lt;xsl:param&gt;</span>-Element mit demselben Namen zu definieren. </p>
+<p>Es ist eine &uuml;bliche Methode, eine <span class="LITERAL">&lt;xsl:variable&gt;</span> mit Hilfe eines <span class="LITERAL">&lt;xsl:choose&gt;</span>-Elements zu initialisieren. Dieses Verfahren entspricht dem folgenden prozeduralalen Programmkonstrukt:</p>
+<span class="PROGRAMLISTING"><pre>
+String complicatedVariable;
+if (count(listitems) &gt; 10)
+  complicatedVariable = "really long list";
+else if (count(listitems)) &gt; 5)
+  complicatedVariable = "moderately long list";
+else
+  complicatedVariable = "fairly short list";</pre></span>
+<p>Zuletzt sei erw&auml;hnt, dass eine Variable jeden der XPath- oder XSLT-Variablentypen besitzen kann, einschlie&szlig;lich einer Knotenmenge. Wird die Vorlage <span class="LITERAL">processListitems</span> aufgerufen, so wird als Parameter an diese Vorlage eine Variable mit der Knotenmenge aller <span class="LITERAL">&lt;listitem&gt;</span>-Elemente im Dokument &uuml;bergeben. Innerhalb der Vorlage <span class="LITERAL">processListitems</span> kann die Variable (die technisch gesehen nun ein Parameter ist) innerhalb eines <span class="LITERAL">&lt;xsl:for-each&gt;</span>-Elements verwendet werden. </p>
+</td>
+</tr>
+</table>
+</div>
+</body>
+</html>

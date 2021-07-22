@@ -1,0 +1,91 @@
+<html>
+<link rel="stylesheet" href="josh.css">
+<body bgcolor="#FFFFFF">
+
+		<div id="Beschreibung">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">elevation</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">nicht zutreffend</span> IE <span class="emphasis">nicht zutreffend</span> CSS <span class="emphasis">2</span></td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Vererbt: Ja</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Bei einem Zuh&ouml;rer im Zentrum eines kreisf&ouml;rmigen Klangraums (wie ein Kino mit Surround-Sound) legt <span class="literal">elevation</span> den vertikalen Winkel zur Klangquelle fest (beispielsweise bei einem sprachf&auml;higen Browser). Siehe auch das Attribut <span class="literal">azimuth</span>.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="csssyntax"><span class="title">CSS-Syntax</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>elevation: <span class="replaceable">angle</span> | <span class="replaceable">angleConstant</span></pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+				</tr>
+				<tr>
+					<td><p>Ein individueller Winkel (in Grad) oder eine der f&uuml;nf Konstanten. Ein Winkel ist ein beliebiger Wert im Bereich -90 bis +90 (einschlie&szlig;lich) plus der Zeichenfolge "deg" wie in <span class="literal">90deg</span>. Beim Wert <span class="literal">0deg</span> befindet sich die Quelle auf der gleichen H&ouml;he wie das Ohr des Zuh&ouml;rers. Um einen Winkel oberhalb des Ohrs des Zuh&ouml;rers einzustellen, muss der Wert positiv sein (<span class="literal">45deg</span>); ein Winkel unterhalb wird durch einen negativen Wert beschrieben (<span class="literal">-45deg</span>). Optional k&ouml;nnen Sie einen <span class="replaceable">angleConstant</span>-Wert aus einer umfangreichen Bibliothek von H&ouml;henwerten w&auml;hlen.</p><p>Zusammen mit dem Attribut <span class="literal">azimuth</span> lassen sich Klangquellen an jedem Punkt eines sph&auml;rischen Klangraums positionieren.</p>
+						<table border="1"><tbody><tr><th>Wert</th><th>Entspricht</th></tr>
+								<tr><td>above</td><td><span class="literal">90deg</span> (direkt oberhalb)</td>
+								</tr>
+								<tr><td>below</td><td>-<span class="literal">90deg</span> (direkt unterhalb)</td>
+								</tr>
+								<tr><td>higher</td><td>+10 Grad von der aktuellen Richtung</td>
+								</tr>
+								<tr><td>level</td><td><span class="literal">0deg</span> (auf gleicher H&ouml;he mit dem Zuh&ouml;rer)</td>
+								</tr>
+								<tr><td>lower</td><td>-10 Grad von der aktuellen Richtung</td>
+								</tr>
+							</tbody></table>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="initvalue"><span class="title">Anfangswert</span></td>
+				</tr>
+				<tr>
+					<td><p><span class="literal">level</span></p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>h1 {elevation: -45deg}p.heavenly {elevation: above}</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="appliesto"><span class="title">Gilt f&uuml;r</span></td>
+				</tr>
+				<tr>
+					<td><p>Alle Elemente. </p>
+					</td>
+				</tr>
+			</table>
+		</div>
+</body>
+</html>

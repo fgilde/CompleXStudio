@@ -1,0 +1,704 @@
+<html>
+
+<link rel="stylesheet" href="../HTML/josh.css"><head>
+
+
+<title>response</title>
+</head>
+<body bgcolor="#FFFFFF" text="#000000">
+<div id="Beschreibung">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">response</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Variablenname:</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+<p><span class="LITERAL">response</span></p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Schnittstellenname:</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+<p><span class="LITERAL">javax.servlet.http.HttpServletResponse</span></p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Erweitert:</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+<p><span class="LITERAL">javax.servlet.ServletResponse</span></p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Implementiert von:</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+<p>Interne containerabh&auml;ngige Klasse</p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">JSP-Seitentyp:</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+<p>Verf&uuml;gbar in regul&auml;ren JSP-Seiten und Fehlerseiten</p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Beschreibung</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+<p>Der Variablen <span class="LITERAL">response</span> wird ein Verweis auf eine interne containerabh&auml;ngige Klasse zugewiesen, die eine protokollabh&auml;ngige Schnittstelle implementiert, die wiederum die Schnittstelle <span class="LITERAL">javax.servlet.ServletResponse</span> erweitert. Da JSP 1.1 nur das HTTP-Protokoll unterst&uuml;tzt, implementiert die Klasse immer die Schnittstelle <span class="LITERAL">javax.servlet.http.HttpServletResponse</span>. Die Methodenbeschreibungen in diesem Abschnitt enthalten die Methoden von beiden Schnittstellen.
+</p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Konstanten</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+<span class="PROGRAMLISTING"><pre>public static final int SC_CONTINUE = 100;
+public static final int SC_SWITCHING_PROTOCOLS = 101;
+public static final int SC_OK = 200;
+public static final int SC_CREATED = 201;
+public static final int SC_ACCEPTED = 202;
+public static final int SC_NON_AUTHORITATIVE_INFORMATION = 203;
+public static final int SC_NO_CONTENT = 204;
+public static final int SC_RESET_CONTENT = 205;
+public static final int SC_PARTIAL_CONTENT = 206;
+public static final int SC_MULTIPLE_CHOICES = 300;
+public static final int SC_MOVED_PERMANENTLY = 301;
+public static final int SC_MOVED_TEMPORARILY = 302;
+public static final int SC_SEE_OTHER = 303;
+public static final int SC_NOT_MODIFIED = 304;
+public static final int SC_USE_PROXY = 305;
+public static final int SC_TEMPORARY_REDIRECT = 307;
+public static final int SC_BAD_REQUEST = 400;
+public static final int SC_UNAUTHORIZED = 401;
+public static final int SC_PAYMENT_REQUIRED = 402;
+public static final int SC_FORBIDDEN = 403;
+public static final int SC_NOT_FOUND = 404;
+public static final int SC_METHOD_NOT_ALLOWED = 405;
+public static final int SC_NOT_ACCEPTABLE = 406;
+public static final int SC_PROXY_AUTHENTICATION_REQUIRED = 407;
+public static final int SC_REQUEST_TIMEOUT = 408;
+public static final int SC_CONFLICT = 409;
+public static final int SC_GONE = 410;
+public static final int SC_LENGTH_REQUIRED = 411;
+public static final int SC_PRECONDITION_FAILED = 412;
+public static final int SC_REQUEST_ENTITY_TOO_LARGE = 413;
+public static final int SC_REQUEST_URI_TOO_LONG = 414;
+public static final int SC_UNSUPPORTED_MEDIA_TYPE = 415;
+public static final int SC_REQUESTED_RANGE_NOT_SATISFIABLE = 416;
+public static final int SC_EXPECTATION_FAILED = 417;
+public static final int SC_INTERNAL_SERVER_ERROR = 500;
+public static final int SC_NOT_IMPLEMENTED = 501;
+public static final int SC_BAD_GATEWAY = 502;
+public static final int SC_SERVICE_UNAVAILABLE = 503;
+public static final int SC_GATEWAY_TIMEOUT = 504;
+public static final int SC_HTTP_VERSION_NOT_SUPPORTED = 505;</pre></span>
+</td>
+</tr>
+</table>
+</div>
+<div id="addCookie">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">addCookie()</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"> </td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="usage"><span class="LITERAL">public void addCookie(Cookie cookie)</span></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+F&uuml;gt der Antwort den angegebenen Cookie hinzu.
+</p></td>
+</tr>
+</table>
+</div>
+<div id="addDateHeader">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">addDateHeader()</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"> </td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="usage"><span class="LITERAL">public void addDateHeader(String headername, long date)</span></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+F&uuml;gt einen Antwort-Header mit dem angegebenen Namen und Datumswert hinzu. Das Datum wird in Millisekunden seit der Epoche angegeben (1. Januar 1970, 00:00:00 GMT).
+</p></td>
+</tr>
+</table>
+</div>
+<div id="addHeader">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">addHeader()</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"> </td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="usage"><span class="LITERAL">public void addHeader(String headername, String value)</span></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+F&uuml;gt einen Antwort-Header mit dem angegebenen Namen und Wert hinzu.
+</p></td>
+</tr>
+</table>
+</div>
+<div id="addIntHeader">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">addIntHeader()</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"> </td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="usage"><span class="LITERAL">public void addIntHeader(String headername, int value)</span></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+F&uuml;gt einen Antwort-Header mit dem angegebenen Namen und Ganzzahlwert hinzu.
+</p></td>
+</tr>
+</table>
+</div>
+<div id="containsHeader">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">containsHeader()</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"> </td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="usage"><span class="LITERAL">public boolean containsHeader(String name)</span></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+Gibt einen <span class="LITERAL">boolean</span>-Wert zur&uuml;ck, der angibt, ob der benannte Antwort-Header bereits eingestellt wurde.
+</p></td>
+</tr>
+</table>
+</div>
+<div id="encodeRedirectURL">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">encodeRedirectURL()</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"> </td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="usage"><span class="LITERAL">public String encodeRedirectURL(String url)</span></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+Kodiert die angegebene URL zur Verwendung in der Methode <span class="LITERAL">sendRedirect()</span>. Zu diesem Zweck wird die Sitzungs-ID in die URL eingeschlossen. Wenn die Kodierung (das Umschreiben der URL) nicht erforderlich ist, wird die URL unver&auml;ndert zur&uuml;ckgegeben.
+</p></td>
+</tr>
+</table>
+</div>
+<div id="encodeURL">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">encodeURL()</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"> </td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="usage"><span class="LITERAL">public String encodeURL(String url)</span></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+Kodiert die angegebene URL zur Verwendung in einem Verweiselement (beispielsweise <span class="LITERAL">&lt;a&gt;</span>). Zu diesem Zweck wird die Sitzungs-ID in die URL eingeschlossen. Wenn die Kodierung (das Umschreiben der URL) nicht erforderlich ist, wird die URL unver&auml;ndert zur&uuml;ckgegeben.
+</p></td>
+</tr>
+</table>
+</div>
+<div id="flushBuffer">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">flushBuffer()</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"> </td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="usage"><span class="LITERAL">public void flushBuffer() throws IOException</span></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+Bewirkt, dass der Inhalt im Antwortbody-Puffer in den Client geschrieben wird.
+</p></td>
+</tr>
+</table>
+</div>
+<div id="getBufferSize">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">getBufferSize()</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"> </td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="usage"><span class="LITERAL">public int getBufferSize()</span></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+Gibt die tats&auml;chliche Puffergr&ouml;&szlig;e, die f&uuml;r die Antwort verwendet wird, in Byte zur&uuml;ck. Wenn kein Puffer verwendet wird, lautet die R&uuml;ckgabe <span class="LITERAL">0</span>.
+</p></td>
+</tr>
+</table>
+</div>
+<div id="getCharacterEncoding">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">getCharacterEncoding()</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"> </td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="usage"><span class="LITERAL">public String getCharacterEncoding()</span></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+Gibt den Namen des Zeichensatzes zur&uuml;ck, der f&uuml;r den in dieser Antwort gesendeten MIME-Body verwendet wird.
+</p></td>
+</tr>
+</table>
+</div>
+<div id="getLocale">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">getLocale()</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"> </td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="usage"><span class="LITERAL">public Locale getLocale()</span></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+Gibt das Gebietsschema zur&uuml;ck, das der Antwort zugewiesen ist. Dies ist entweder ein Gebietsschema-Objekt <span class="LITERAL">Locale</span> f&uuml;r das Standardgebietsschema des Servers oder das Gebietsschema-Objekt <span class="LITERAL">Locale</span>, das mit <span class="LITERAL">setLocale()</span> festgelegt ist.
+</p></td>
+</tr>
+</table>
+</div>
+<div id="getOutputStream">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">getOutputStream()</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"> </td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="usage"><span class="LITERAL">public ServletOutputStream getOutputStream() throws IOException</span></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+Gibt ein Objekt <span class="LITERAL">ServletOutputStream</span> zur&uuml;ck, das zum Schreiben von Bin&auml;rdaten in die Antwort geeignet ist. Diese Methode sollte nicht in einer JSP-Seite verwendet werden, da JSP-Seiten f&uuml;r Textdaten vorgesehen sind.
+</p></td>
+</tr>
+</table>
+</div>
+<div id="getWriter">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">getWriter()</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"> </td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="usage"><span class="LITERAL">public PrintWriter getWriter throws IOException</span></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+Gibt ein Objekt <span class="LITERAL">PrintWriter</span> zur&uuml;ck, das Zeichentext an den Client senden kann. Diese Methode sollte nicht in einer JSP-Seite verwendet werden, da sie Konflikte mit dem Schreibmechanismus des Containers verursachen kann. Verwenden Sie stattdessen die Methode <span class="LITERAL">PageContext</span>, um das aktuelle Objekt <span class="LITERAL">JspWriter</span> abzurufen.
+</p></td>
+</tr>
+</table>
+</div>
+<div id="isCommitted">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">isCommitted()</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"> </td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="usage"><span class="LITERAL">public boolean isCommitted()</span></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+Gibt einen <span class="LITERAL">boolean</span>-Wert zur&uuml;ck, der angibt, ob die Antwort &uuml;bernommen wurde.
+</p></td>
+</tr>
+</table>
+</div>
+<div id="reset">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">reset()</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"> </td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="usage"><span class="LITERAL">public void reset()</span></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+L&ouml;scht alle Daten aus dem Puffer sowie den Statuscode und Header. Wenn die Antwort &uuml;bernommen wurde, verursacht diese Methode eine Ausnahme <span class="LITERAL">IllegalStateException</span>.
+</p></td>
+</tr>
+</table>
+</div>
+<div id="sendError">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">sendError()</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"> </td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="usage"><span class="LITERAL">public void sendError(int status) throws IOException</span></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+Sendet eine Fehlerantwort mit dem angegebenen Status an den Client. Wenn die Antwort bereits &uuml;bernommen wurde, verursacht diese Methode eine Ausnahme <span class="LITERAL">IllegalStateException</span>. Nach Verwendung dieser Methode sollten Sie die &uuml;bernommene Antwort ber&uuml;cksichtigen und keinen Schreibvorgang vornehmen.
+</p></td>
+</tr>
+</table>
+</div>
+<div id="sendError">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">sendError()</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"> </td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="usage"><span class="LITERAL">public void sendError(int status, String message) throws IOException</span></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+Sendet eine Fehlerantwort mit dem angegebenen Status und einer Beschreibung an den Client. Wenn die Antwort bereits &uuml;bernommen wurde, verursacht diese Methode eine Ausnahme <span class="LITERAL">IllegalStateException</span>. Nach Verwendung dieser Methode sollten Sie die &uuml;bernommene Antwort ber&uuml;cksichtigen und keinen Schreibvorgang vornehmen.
+</p></td>
+</tr>
+</table>
+</div>
+<div id="sendRedirect">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">sendRedirect()</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"> </td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="usage"><span class="LITERAL">public void sendRedirect(String location) throws IOException</span></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+Sendet eine tempor&auml;re Umleitungsantwort an den Client. Dazu wird die angegebene Umleitungs-URL verwendet. Diese Methode kann relative URLs akzeptieren. Der Servlet-Container konvertiert die relative URL in eine absolute URL, bevor die Antwort an den Client gesendet wird. Wenn die Antwort bereits &uuml;bernommen wurde, verursacht diese Methode eine Ausnahme <span class="LITERAL">IllegalStateException</span>. Nach Verwendung dieser Methode sollten Sie die &uuml;bernommene Antwort ber&uuml;cksichtigen und keinen Schreibvorgang vornehmen.
+</p></td>
+</tr>
+</table>
+</div>
+<div id="setBufferSize">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">setBufferSize()</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"> </td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="usage"><span class="LITERAL">public void setBufferSize(int size)</span></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+Legt die bevorzugte Puffergr&ouml;&szlig;e f&uuml;r den Body der Antwort in Byte fest. Der Servlet-Container verwendet einen Puffer, dessen Gr&ouml;&szlig;e mindestens der angeforderten Gr&ouml;&szlig;e entspricht. Die tats&auml;chlich verwendete Puffergr&ouml;&szlig;e kann mit der Methode <span class="LITERAL">getBufferSize()</span> ermittelt werden.
+</p></td>
+</tr>
+</table>
+</div>
+<div id="setContentLength">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">setContentLength()</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"> </td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="usage"><span class="LITERAL">public void setContentLength(int length)</span></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+Stellt die L&auml;nge f&uuml;r den Inhalt-Body in der Antwort in Byte ein. In HTTP-Servlets wird mit dieser Methode der HTTP-Header <span class="LITERAL">Content-Length</span> eingestellt. Diese Methode sollte nicht in einer JSP-Seite verwendet werden, da sie Konflikte mit dem Schreibmechanismus des Containers verursachen kann.
+</p></td>
+</tr>
+</table>
+</div>
+<div id="setContentType">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">setContentType()</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"> </td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="usage"><span class="LITERAL">public void setContentType(String type)</span></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+Stellt den Inhaltstyp der Antwort ein, die an den Client gesendet wird.
+</p></td>
+</tr>
+</table>
+</div>
+<div id="setDateHeader">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">setDateHeader()</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"> </td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="usage"><span class="LITERAL">public void setDateHeader(String headername, long date)</span></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+Stellt einen Antwort-Header mit dem angegebenen Namen und Datumswert ein. Das Datum wird in Millisekunden seit der Epoche angegeben (1. Januar 1970, 00:00:00 GMT). Wenn der Header bereits eingestellt ist, wird der bisherige Wert mit dem neuen Wert &uuml;berschrieben.
+</p></td>
+</tr>
+</table>
+</div>
+<div id="setHeader">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">setHeader()</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"> </td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="usage"><span class="LITERAL">public void setHeader(String headername, String value)</span></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+Stellt einen Antwort-Header mit dem angegebenen Namen und Wert ein. Wenn der Header bereits eingestellt ist, wird der bisherige Wert mit dem neuen Wert &uuml;berschrieben.
+</p></td>
+</tr>
+</table>
+</div>
+<div id="setIntHeader">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">setIntHeader()</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"> </td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="usage"><span class="LITERAL">public void setIntHeader(String headername, int value)</span></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+Stellt einen Antwort-Header mit dem angegebenen Namen und Ganzzahlwert ein. Wenn der Header bereits eingestellt ist, wird der bisherige Wert mit dem neuen Wert &uuml;berschrieben.
+</p></td>
+</tr>
+</table>
+</div>
+<div id="setLocale">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">setLocale()</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"> </td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="usage"><span class="LITERAL">public void setLocale(Locale locale)</span></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+Stellt das Gebietsschema der Antwort ein, wobei die Header wie erforderlich eingestellt werden (einschlie&szlig;lich des Zeichensatzes f&uuml;r den Header <span class="LITERAL">Content-Type</span>).
+</p></td>
+</tr>
+</table>
+</div>
+<div id="setStatus">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">setStatus()</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"> </td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="usage"><span class="LITERAL">public void setStatus(int statuscode)</span></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+Stellt den Statuscode f&uuml;r diese Antwort ein. Im Gegensatz zur Methode <span class="LITERAL">sendError()</span> stellt diese Methode nur den Statuscode ein, sie f&uuml;gt keinen Body hinzu und bewirkt nicht, dass die Antwort &uuml;bernommen wird.
+</p></td>
+</tr>
+</table>
+</div>
+
+
+<div id="encodeRedirectUrl">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">encodeRedirectUrl()</td>
+<td valign="top" class="COMPATIBILITY">Veraltet</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"> </td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="usage"><span class="LITERAL">public String encodeRedirectUrl(String url)</span></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+Ab der Servlet 2.1-API sollte stattdessen <span class="LITERAL">encodeRedirectURL(String</span> <span class="LITERAL">url)</span> verwendet werden.
+</p></td>
+</tr>
+</table>
+</div>
+<div id="encodeUrl">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">encodeUrl()</td>
+<td valign="top" class="COMPATIBILITY">Veraltet</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"> </td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="usage"><span class="LITERAL">public String encodeUrl(String url)</span></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+Ab der Servlet 2.1-API sollte stattdessen <span class="LITERAL">encodeURL(String url)</span> verwendet werden.
+</p></td>
+</tr>
+</table>
+</div>
+<div id="setStatus">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">setStatus()</td>
+<td valign="top" class="COMPATIBILITY">Veraltet</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"> </td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="usage"><span class="LITERAL">public void setStatus(int statuscode, String message)</span></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+Ab der Servlet 2.1-API sollten Sie <span class="LITERAL">setStatus(int)</span> verwenden, um einen Statuscode einzustellen, und <span class="LITERAL">sendError(int,</span> <span class="LITERAL">String)</span>, um einen Fehler mit einer Beschreibung zu senden. Diese Methode wird nicht mehr verwendet, da die Bedeutung des Meldungsparameters nicht eindeutig war.
+</p></td>
+</tr>
+</table>
+</div>
+</body>
+</html>

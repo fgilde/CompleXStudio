@@ -1,0 +1,459 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<link rel="stylesheet" href="../HTML/josh.css">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>TagSupport-Klasse</title>
+</head>
+
+<body>
+<div id="Beschreibung">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME"> TagSupport-Klasse</td>
+<td class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="DESCRIPTIONTITLE">Klassenname:</td>
+</tr>
+<tr>
+<td colspan="2" class="description"><p>
+<span class="LITERAL">javax.servlet.jsp.tagext.TagSupport</span>
+</p></td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="DESCRIPTIONTITLE">Erweitert:</td>
+</tr>
+<tr>
+<td colspan="2" class="description"><p>
+Keine
+</p></td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="DESCRIPTIONTITLE">Implementiert:</td>
+</tr>
+<tr>
+<td colspan="2" class="description"><p>
+<span class="LITERAL">Tag</span>, <span class="LITERAL">java.io.Serializable</span>
+</p></td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="DESCRIPTIONTITLE">Implementiert von:</td>
+</tr>
+<tr>
+<td colspan="2" class="description"><p>
+Interne containerabh&auml;ngige Klasse. Die meisten Container verwenden die Verweisimplementierung der Klasse (im Apache Jakarta-Projekt entwickelt).
+</p></td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="DESCRIPTIONTITLE">Beschreibung</td>
+</tr>
+<tr>
+<td colspan="2" class="description"><p>
+<span class="LITERAL">TagSupport</span> ist eine Supportklasse, die Standardimplementierungen f&uuml;r alle Schnittstellenmethoden <span class="LITERAL">Tag</span> bereitstellt. Sie dient als &uuml;bergeordnete Klasse f&uuml;r Tag-Prozeduren, die keinen Zugriff auf den Body-Inhalt der entsprechenden benutzerdefinierten Aktionselemente ben&ouml;tigen.
+</p></td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="DESCRIPTIONTITLE">Beispiel</td>
+</tr>
+<tr>
+<td colspan="2" class="description"><p>
+Ein Beispiel f&uuml;r eine benutzerdefinierte Aktion, die als einfache Tag-Prozedur implementiert werden kann (das hei&szlig;t durch Implementieren der Schnittstelle <span class="LITERAL">Tag</span>), ist eine Aktion, die der HTTP-Antwort einen Cookie hinzuf&uuml;gt. Als Beispiel wird diese Aktion <span class="LITERAL">&lt;ora:addCookie&gt;</span> genannt. Die Tag-Prozedurklasse hei&szlig;t <span class="LITERAL">com.ora.jsp.tags.generic.AddCookieTag</span> und erweitert die Klasse <span class="LITERAL">TagSupport</span>, damit die meisten Methodenimplementierungen der Schnittstelle <span class="LITERAL">Tag</span> &uuml;bernommen werden:
+</p>
+<span class="PROGRAMLISTING"><pre>package com.ora.jsp.tags.generic;
+
+import javax.servlet.http.*;
+import javax.servlet.jsp.*;
+import javax.servlet.jsp.tagext.*;
+import com.ora.jsp.util.*;
+
+public class AddCookieTag extends TagSupport {</pre></span>
+<p>
+Die Aktion <span class="LITERAL">&lt;ora:addCookie&gt;</span> hat die beiden obligatorischen Attribute <span class="LITERAL">name</span> und <span class="LITERAL">value</span> sowie das optionale Attribut <span class="LITERAL">maxAge</span>. Jedes Attribut wird von einer Instanzenvariable und einer Standardmethode zum Einstellen von Eigenschaften dargestellt:
+</p>
+<span class="PROGRAMLISTING"><pre>    private String name;
+    private String value;
+    private String maxAgeString;
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setValue(String value) {
+        this.value = value;
+    }
+
+    public void setMaxAge(String maxAgeString) {
+        this.maxAgeString = maxAgeString;
+    }</pre></span>
+<p>
+Alle Methoden zum Einstellen legen die entsprechenden Instanzenvariablen fest.
+</p>
+<p>
+Die benutzerdefinierte Aktion hat den Zweck, ein neues Objekt <span class="LITERAL">javax.servlet.Cookie</span> mit den von den Attributen angegebenen Werten f&uuml;r <span class="LITERAL">name</span>, <span class="LITERAL">value</span> und <span class="LITERAL">maxAge</span> zu erstellen und den Cookie der Antwort hinzuzuf&uuml;gen. Dazu setzt die Tag-Prozedurklasse die Methode <span class="LITERAL">doEndTag()</span> au&szlig;er Kraft:
+</p>
+<span class="PROGRAMLISTING"><pre>    public int doEndTag() throws JspException {
+        int maxAge = -1;
+        if (maxAgeString != null) {
+            try {
+                maxAge = Integer.valueOf(maxAgeString).
+                  intValue();
+            }
+            catch (NumberFormatException e) {
+                throw new JspException(&quot;Invalid maxAge: &quot; + 
+                    e.getMessage());
+            }
+        }
+        sendCookie(name, value, maxAge,
+            (HttpServletResponse) pageContext.getResponse());
+        return EVAL_PAGE;
+    }
+
+    private void sendCookie(String name, String value, 
+      int maxAge,
+        HttpServletResponse res) {
+        Cookie cookie = new Cookie(name, value);
+        cookie.setMaxAge(maxAge);
+        res.addCookie(cookie);
+    }</pre></span>
+<p>
+Das Attribut <span class="LITERAL">maxAge</span> ist optional. Deshalb wird getestet, ob das Attribut eingestellt ist, bevor der entsprechende <span class="LITERAL">String</span>-Wert in einen <span class="LITERAL">int</span>-Wert konvertiert wird. F&uuml;r die Variablen <span class="LITERAL">name</span> und <span class="LITERAL">value</span> sind solche Tests nicht erforderlich, da der Webcontainer &uuml;berpr&uuml;ft, ob alle obligatorischen Attribute in der benutzerdefinierten Aktion eingestellt sind. Wenn ein obligatorisches Attribut nicht eingestellt ist, verweigert der Webcontainer die Verarbeitung der Seite. So ist stets gew&auml;hrleistet, dass Variablen f&uuml;r obligatorische Attribute einen Wert haben. In der TLD-Datei der Bibliothek ist festgelegt, ob ein Attribut obligatorisch ist oder nicht.
+</p>
+<p>
+Die Tag-Prozedurklasse sollte auch die Methode <span class="LITERAL">release()</span> implementieren, damit alle erworbenen Verweise auf Objekte freigegeben werden:
+</p>
+<span class="PROGRAMLISTING"><pre>public void release() {
+    name = null;
+    value = null;
+    maxAgeString = null;
+    super.release();
+}</pre></span>
+<p>
+Die Methode <span class="LITERAL">release()</span> wird aufgerufen, wenn die Tag-Prozedur nicht mehr ben&ouml;tigt wird. Die Klasse <span class="LITERAL">AddCookieTag</span> stellt alle ihre Eigenschaften auf <span class="LITERAL">null</span> ein und ruft <span class="LITERAL">super.release()</span> auf, damit die Klasse <span class="LITERAL">TagSupport</span> auch ihre Eigenschaften auf <span class="LITERAL">null</span> einstellt. Damit k&ouml;nnen alle Eigenschaftsobjekte in den Papierkorb &uuml;berf&uuml;hrt werden.
+</p>
+<p>
+Eine <span class="LITERAL">TagSupport</span>-Methode, die zwar in diesem Beispiel nicht erforderlich ist, aber in anderen Situationen n&uuml;tzlich sein kann, ist die Methode <span class="LITERAL">findAncestorWithClass()</span>. Sie kann von einer Tag-Prozedur verwendet werden, um das &uuml;bergeordnete Element eines verschachtelten Aktionselements zu ermitteln. Die verschachtelte Tag-Prozedur kann dann Methoden aufrufen, die von der &uuml;bergeordneten Tag-Prozedurklasse implementiert werden, um Informationen vom &uuml;bergeordneten Element abzurufen oder an das &uuml;bergeordnete Element zu senden. Beispielsweise k&ouml;nnen die <span class="LITERAL">&lt;jsp:param&gt;</span>-Elemente bereitgestellt werden, die im Body von standardm&auml;&szlig;igen JSP-Aktionselementen <span class="LITERAL">&lt;jsp:forward&gt;</span> und <span class="LITERAL">&lt;jsp:include&gt;</span> verschachtelt sind. Eine entsprechende benutzerdefinierte Aktion f&uuml;r ein verschachteltes Parameterelement kann mit einer Tag-Prozedur implementiert werden, die die Methode <span class="LITERAL">findAncestorWithClass()</span> verwendet, wie im Folgenden gezeigt:
+</p>
+<span class="PROGRAMLISTING"><pre>import javax.servlet.jsp.*;
+import javax.servlet.jsp.tagext.*;
+public class ParamTag extends TagSupport {
+    private String name;
+    private String value;
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setValue(String value) {
+        this.value = value;
+    }
+
+    public int doEndTag() throws JspException {
+        Tag parent = findAncestorWithClass(this, 
+          ParamParent.class);
+        if (parent == null) {
+            throw new JspException(&quot;The param action is not &quot; +
+                &quot;enclosed by a supported action type&quot;);
+        }
+        ParamParent paramParent = (ParamParent) parent;
+        paramParent.setParam(name, URLEncoder.
+          encode(value));
+        return EVAL_PAGE;
+    }
+}</pre></span> </td>
+</tr>
+</table>
+</div>
+<div id="TagSupport">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">TagSupport()</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"> </td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="usage"><span class="LITERAL">public TagSupport()</span></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+Erstellt eine neue Instanz mit dem angegebenen Namen und Wert.
+</p></td>
+</tr>
+</table>
+</div>
+<div id="doEndTag">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">doEndTag()</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"> </td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="usage"><span class="LITERAL">public int doEndTag() throws JspException</span></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+Gibt <span class="LITERAL">EVAL_PAGE</span> zur&uuml;ck.
+</p></td>
+</tr>
+</table>
+</div>
+<div id="doStartTag">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">doStartTag()</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"> </td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="usage"><span class="LITERAL">public int doStartTag() throws JspException</span></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+Gibt <span class="LITERAL">SKIP_BODY</span> zur&uuml;ck.
+</p></td>
+</tr>
+</table>
+</div>
+<div id="findAncestorWithClass">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">findAncestorWithClass()</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"> </td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="usage"><span class="LITERAL">public static final Tag findAncestorWithClass(Tag from, Class class)</span></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+Gibt die Instanz der angegebenen Klasse zur&uuml;ck. Dazu wird f&uuml;r jedes &uuml;bergeordnete Element in einer verschachtelten Struktur von Tag-Prozeduren (entsprechend verschachtelten Aktionselementen) nach einer &Uuml;bereinstimmung gesucht, wobei mit der angegebenen <span class="LITERAL">Tag</span>-Instanz begonnen wird. Wenn keine &Uuml;bereinstimmung gefunden wird, lautet die R&uuml;ckgabe <span class="LITERAL">null</span>.
+</p></td>
+</tr>
+</table>
+</div>
+<div id="getId">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">getId()</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"> </td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="usage"><span class="LITERAL">public String getId()</span></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+Gibt den Wert des Attributs <span class="LITERAL">id</span> zur&uuml;ck. Wenn das Attribut nicht eingestellt ist, lautet die R&uuml;ckgabe <span class="LITERAL">null</span>.
+</p></td>
+</tr>
+</table>
+</div>
+<div id="getParent">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">getParent()</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"> </td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="usage"><span class="LITERAL">public Tag getParent()</span></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+Gibt das &uuml;bergeordnete Element dieser <span class="LITERAL">Tag</span>-Instanz zur&uuml;ck (das Aktionselement, das das Aktionselement enth&auml;lt, das dieser <span class="LITERAL">Tag</span>-Instanz entspricht). Wenn die Instanz kein &uuml;bergeordnetes Element hat (und sich deshalb auf der obersten Ebene in der JSP-Seite befindet), lautet die R&uuml;ckgabe <span class="LITERAL">null</span>.
+</p></td>
+</tr>
+</table>
+</div>
+<div id="getValue">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">getValue()</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"> </td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="usage"><span class="LITERAL">public Object getValue(String k)</span></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+Gibt den Wert des angegebenen Attributs zur&uuml;ck, der mit der Methode <span class="LITERAL">setValue()</span> festgelegt wurde. Wenn der Wert nicht gefunden wird, lautet die R&uuml;ckgabe <span class="LITERAL">null</span>.
+</p></td>
+</tr>
+</table>
+</div>
+<div id="getValues">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">getValues()</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"> </td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="usage"><span class="LITERAL">public java.util.Enumeration getValues()</span></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+Gibt eine <span class="LITERAL">Enumeration</span> aller Attributnamen f&uuml;r die Werte zur&uuml;ck, die mit der Methode <span class="LITERAL">setValue()</span> eingestellt wurden.
+</p></td>
+</tr>
+</table>
+</div>
+<div id="release">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">release()</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"> </td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="usage"><span class="LITERAL">public void release()</span></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+Entfernt die Verweise auf alle Objekte, die in dieser Instanz enthalten sind.
+</p></td>
+</tr>
+</table>
+</div>
+<div id="removeValue">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">removeValue()</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"> </td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="usage"><span class="LITERAL">public void removeValue(String k)</span></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+Entfernt einen Wert, der mit der Methode <span class="LITERAL">setValue()</span> festgelegt wurde.
+</p></td>
+</tr>
+</table>
+</div>
+<div id="setPageContext">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">setPageContext()</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"> </td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="usage"><span class="LITERAL">public void setPageContext(PageContext pageContext)</span></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+Speichert einen Verweis auf das aktuelle Objekt <span class="LITERAL">PageContext</span>.
+</p></td>
+</tr>
+</table>
+</div>
+<div id="setId">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">setId()</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"> </td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="usage"><span class="LITERAL">public void setId(String id)</span></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+Stellt den Wert des Attributs <span class="LITERAL">id</span> ein.
+</p></td>
+</tr>
+</table>
+</div>
+<div id="setParent">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">setParent()</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"> </td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="usage"><span class="LITERAL">public void setParent(Tag t)</span></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+Speichert einen Verweis auf das &uuml;bergeordnete Element f&uuml;r diese Instanz.
+</p></td>
+</tr>
+</table>
+</div>
+<div id="setValue">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">setValue()</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"> </td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="usage"><span class="LITERAL">public void setValue(String k, Object o)</span></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+Speichert das angegebene Attribut mit dem angegebenen Wert. Unterklassen k&ouml;nnen diese Methode zum Speichern von Attributwerten als Alternative zu Instanzenvariablen verwenden.
+</p></td>
+</tr>
+</table>
+</div>
+</body>
+</html>

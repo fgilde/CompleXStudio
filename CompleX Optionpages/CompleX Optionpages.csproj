@@ -1,0 +1,310 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{973B6785-0168-4C00-874F-4992D2A33326}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CompleX_Optionpages</RootNamespace>
+    <AssemblyName>CompleX Optionpages</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation />
+    <TargetFrameworkProfile />
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\bin\Debug\Modules\ISettingsPage\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>none</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\bin\Release\Modules\ISettingsPage\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DevExpress.Pdf.v21.1.Core, Version=21.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Office.v21.1.Core, Version=21.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.RichEdit.v21.1.Core, Version=21.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.RichEdit.v21.1.Export, Version=21.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Printing.v21.1.Core, Version=21.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Data.v21.1, Version=21.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Data.Desktop.v21.1, Version=21.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Utils.v21.1, Version=21.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraEditors.v21.1, Version=21.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraPrinting.v21.1, Version=21.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraGrid.v21.1, Version=21.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraLayout.v21.1, Version=21.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraNavBar.v21.1, Version=21.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraVerticalGrid.v21.1, Version=21.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Design" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\SolutionInfo.cs">
+      <Link>Properties\SolutionInfo.cs</Link>
+    </Compile>
+    <Compile Include="BaseOptionPage.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="BaseOptionPage.Designer.cs">
+      <DependentUpon>BaseOptionPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BaseWizardOptionPage.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="BaseWizardOptionPage.Designer.cs">
+      <DependentUpon>BaseWizardOptionPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ExternalToolOptionPage.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ExternalToolOptionPage.Designer.cs">
+      <DependentUpon>ExternalToolOptionPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FileAssociationOptionPage.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="FileAssociationOptionPage.Designer.cs">
+      <DependentUpon>FileAssociationOptionPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FtpOptionPage.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="FtpOptionPage.Designer.cs">
+      <DependentUpon>FtpOptionPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GeneralOptionPage.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GeneralOptionPage.Designer.cs">
+      <DependentUpon>GeneralOptionPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MessageLogOptionPage.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MessageLogOptionPage.Designer.cs">
+      <DependentUpon>MessageLogOptionPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Images.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Images.resx</DependentUpon>
+    </Compile>
+    <Compile Include="ThemeOptionPage.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ThemeOptionPage.Designer.cs">
+      <DependentUpon>ThemeOptionPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ToolBoxOptionPage.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ToolBoxOptionPage.Designer.cs">
+      <DependentUpon>ToolBoxOptionPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ToolsOptionPage.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ToolsOptionPage.Designer.cs">
+      <DependentUpon>ToolsOptionPage.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CompleX Library\CompleX Library.csproj">
+      <Project>{268EA5A6-4530-4550-B90D-0CB13834266A}</Project>
+      <Name>CompleX Library</Name>
+      <Private>False</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\CompleX Settings\CompleX Settings.csproj">
+      <Project>{38140D21-82E5-4958-937B-B90DE9178E84}</Project>
+      <Name>CompleX Settings</Name>
+      <Private>False</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\CompleX Types\CompleX Types.csproj">
+      <Project>{A6AC02F5-2519-418D-AC9B-0D750CFED944}</Project>
+      <Name>CompleX Types</Name>
+      <Private>False</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\CompleX\CompleX Editor.csproj">
+      <Project>{01AACE3D-EA5F-4FC6-A8E1-F3AC880FB4CD}</Project>
+      <Name>CompleX Editor</Name>
+      <Private>False</Private>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="BaseOptionPage.resx">
+      <DependentUpon>BaseOptionPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ExternalToolOptionPage.de.resx">
+      <DependentUpon>ExternalToolOptionPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ExternalToolOptionPage.resx">
+      <DependentUpon>ExternalToolOptionPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FileAssociationOptionPage.de.resx">
+      <DependentUpon>FileAssociationOptionPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FileAssociationOptionPage.resx">
+      <DependentUpon>FileAssociationOptionPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FtpOptionPage.de.resx">
+      <DependentUpon>FtpOptionPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FtpOptionPage.resx">
+      <DependentUpon>FtpOptionPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GeneralOptionPage.de.resx">
+      <DependentUpon>GeneralOptionPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GeneralOptionPage.resx">
+      <DependentUpon>GeneralOptionPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Images.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Images.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MessageLogOptionPage.de.resx">
+      <DependentUpon>MessageLogOptionPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MessageLogOptionPage.resx">
+      <DependentUpon>MessageLogOptionPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="ThemeOptionPage.de.resx">
+      <DependentUpon>ThemeOptionPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ThemeOptionPage.resx">
+      <DependentUpon>ThemeOptionPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ToolBoxOptionPage.de.resx">
+      <DependentUpon>ToolBoxOptionPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ToolBoxOptionPage.resx">
+      <DependentUpon>ToolBoxOptionPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ToolsOptionPage.de.resx">
+      <DependentUpon>ToolsOptionPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ToolsOptionPage.resx">
+      <DependentUpon>ToolsOptionPage.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\einstellungen.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\werkzeuge.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\verbindungsstatus_aktiv.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\einstellungen_16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\werkzeuge_16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\verbindungseinstellungen_16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\verbindungsstatus_aktiv_16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\löschen_16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\plus16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\minus16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\datenebenen_bearbeiten_16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\2_datenebenen_vergleich_16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\abweichungsanalyse_16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\anhang_16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dateiEinstellungen_16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\anhang_loeschen_16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\anfangswert_16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Img26.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\KRD_Editor_16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\liste_16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bestaetigen_16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\aktualisieren_16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\speichern_16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ftp.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

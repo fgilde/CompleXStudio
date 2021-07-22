@@ -1,0 +1,175 @@
+<html>
+<link rel="stylesheet" href="../HTML/josh.css">
+<head>
+
+
+<title>config</title>
+</head>
+<body bgcolor="#FFFFFF" text="#000000">
+<div id="Beschreibung">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">config</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Variablenname:</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+<p><span class="LITERAL">config</span></p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Schnittstellenname:</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+<p><span class="LITERAL">javax.servlet.ServletConfig</span></p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Erweitert:</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+<p>Keine</p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Implementiert von:</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+<p>Interne containerabh&auml;ngige Klasse</p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">JSP-Seitentyp:</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+<p>Verf&uuml;gbar in regul&auml;ren JSP-Seiten und Fehlerseiten</p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Beschreibung</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+<p>Eine Instanz von <span class="LITERAL">ServletConfig</span> wird von einem Webcontainer verwendet, um w&auml;hrend der Initialisierung Informationen an ein Servlet oder eine JSP-Seite zu &uuml;bermitteln. Die Konfigurationsinformationen enthalten Initialisierungsparameter (die im Bereitstellungsdeskriptor der Webanwendung definiert sind) und das Objekt <span class="LITERAL">ServletContext</span>, das die Webanwendung darstellt, zu der das Servlet oder die JSP-Seite geh&ouml;rt.
+</p>
+</td>
+</tr>
+</table>
+</div>
+<div id="getInitParameter">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">getInitParameter()</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="usage"><span class="LITERAL">public String getInitParameter(String name)</span></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+Gibt einen <span class="LITERAL">String</span> mit dem Wert des angegebenen Initialisierungsparameters f&uuml;r das Servlet oder die JSP-Seite zur&uuml;ck. Wenn der Parameter nicht vorhanden ist, wird <span class="LITERAL">null</span> zur&uuml;ckgegeben.
+</p></td>
+</tr>
+</table>
+</div>
+<div id="getInitParameterNames">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">getInitParameterNames()</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="usage"><span class="LITERAL">public java.util.Enumeration getInitParameterNames()</span></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+Gibt die Namen der Initialisierungsparameter f&uuml;r das Servlet oder die JSP-Seite als <span class="LITERAL">Enumeration</span> von <span class="LITERAL">String</span>-Objekten zur&uuml;ck. Wenn das Servlet keine Initialisierungsparameter enth&auml;lt, wird eine leere <span class="LITERAL">Enumeration</span> zur&uuml;ckgegeben.
+</p></td>
+</tr>
+</table>
+</div>
+<div id="getServletContext">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">getServletContext()</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="usage"><span class="LITERAL">public ServletContext getServletContext()</span></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+Gibt einen Verweis auf das Objekt <span class="LITERAL">ServletContext</span> zur&uuml;ck, zu dem das Servlet oder die JSP-Seite geh&ouml;rt.
+</p></td>
+</tr>
+</table>
+</div>
+<div id="getServletName">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">getServletName()</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="usage"><span class="LITERAL">public String getServletName()</span></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+Gibt den Namen dieser Servlet-Instanz oder JSP-Seite zur&uuml;ck. Der Name kann im Bereitstellungsdeskriptor der Webanwendung zugewiesen werden. Bei einer nicht registrierten (und deshalb unbenannten) Servlet-Instanz oder JSP-Seite wird der Name der Servlet-Klasse zur&uuml;ckgegeben.
+</p></td>
+</tr>
+</table>
+</div>
+</body>
+</html>

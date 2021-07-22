@@ -1,0 +1,267 @@
+<html>
+<head>
+<title>format-number()-Funktion</title>
+</head>
+<body bgcolor="#FFFFFF" text="#000000">
+<div id="Beschreibung">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">format-number()-Funktion</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description">
+Diese Funktion akzeptiert eine Zahl und formatiert sie als String. </td></tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Eingaben</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<p>Die zu formatierende Zahl. Au&szlig;erdem ist eine Eingabe des Formatierungsmusters in Form eines Strings erforderlich. Das dritte Argument ist optional und bezeichnet den Namen eines Dezimalformats; fehlt das dritte Argument, wird das Standarddezimalformat verwendet. </p>
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Ausgabe</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<p>Die nach den Regeln in den anderen Argumenten formatierte Zahl. Im zweiten Argument sind die folgenden Symbole zul&auml;ssig:</p>
+<dl>
+<dt>
+<span class="LITERAL">
+#
+</span>
+</dt>
+<dd>
+Dieses Symbol steht f&uuml;r eine Ziffer. Nachfolgende oder f&uuml;hrende Nullen werden nicht angezeigt. Wird etwa die Zahl <span class="LITERAL">
+4.0
+</span> gem&auml;&szlig; dem String &quot; #.## &quot; formatiert, wird der String &quot; 4 &quot; zur&uuml;ckgegeben.
+<P></p>
+<dt>
+<span class="LITERAL">
+0
+</span>
+</dt>
+<dd>
+Steht ebenfalls f&uuml;r eine Ziffer. Im Gegensatz zu dem Symbol <span class="LITERAL">
+#
+</span>, werden bei Verwendung von <span class="LITERAL">
+0
+</span> auch die Nullen angezeigt. Wird etwa die Zahl <span class="LITERAL"> 4.1 </span> gem&auml;&szlig; dem String &quot; #.00 &quot; formatiert, wird der String &quot; 4.10 &quot; zur&uuml;ckgegeben.
+<P></p>
+<dt>
+<span class="LITERAL">
+.
+</span>
+</dt>
+<dd>
+Dieses Symbol steht f&uuml;r das Dezimalzeichen.
+<P></p>
+<dt>
+<span class="LITERAL">
+-
+</span>
+</dt>
+<dd>
+Dieses Symbol repr&auml;sentiert das Minuszeichen.
+<P></p>
+<dt>
+<span class="LITERAL">
+,
+</span>
+</dt>
+<dd>
+Das Tausendertrennzeichen.
+<P></p>
+<dt>
+<span class="LITERAL">
+;
+</span>
+</dt>
+<dd>
+Dient als Trennzeichen zwischen dem Muster f&uuml;r positive Zahlen und dem Muster f&uuml;r negative Zahlen.
+<P></p>
+<dt>
+<span class="LITERAL">
+%
+</span>
+</dt>
+<dd>
+Dieses Symbol bewirkt, dass eine Zahl als Prozentwert angezeigt werden soll. Der Wert wird mit 100 multipliziert und dann als Prozentwert angezeigt. Wird etwa die Zahl <span class="LITERAL"> .76 </span> gem&auml;&szlig; dem String &quot; ##% &quot; formatiert, wird der String &quot; 76% &quot; zur&uuml;ckgegeben.
+<P></p>
+<dt>
+<span class="LITERAL">
+\u2030
+</span>
+</dt>
+<dd>
+Das Unicode-Zeichen f&uuml;r das Promillezeichen (pro Tausend). Der Wert wird mit 1000 multipliziert und dann als Promillewert angezeigt. Wird etwa die Zahl <span class="LITERAL">
+.768
+</span> gem&auml;&szlig; dem String &quot; ###\u2030 &quot; formatiert, wird der String &quot; 768 <graphic depth="23" width="18" fileref="figs/U2030.gif" align="absmiddle"/>&quot; zur&uuml;ckgegeben.
+<P></p>
+</dl>
+<p>Wird das dritte Argument angegeben, muss es dem Namen eines <span class="LITERAL">&lt;xsl:decimal-format&gt;</span>-Elements entsprechen. Das Element <span class="LITERAL">&lt;xsl:decimal-format&gt;</span> erlaubt die Definition des Dezimalzeichens und des Tausendertrennzeichens sowie des Unendlichkeitszeichens und weiterer Formatierungsoptionen. Weitere Informationen finden Sie unter <xref linkend="decimal-format-element">&lt;xsl:decimal-format&gt;</xref>.</p>
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Definition</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<p>XSLT-Abschnitt 12.3, Zahlenformatierung.</p>
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Beispiel</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<p>Das folgende Stylesheet verwendet die Funktion <span class="LITERAL">format-number()</span> in verschiedener Weise:</p>
+<span class="PROGRAMLISTING"><pre>
+&lt;?xml version="1.0" encoding="ISO-8859-1" ?&gt;
+&lt;xsl:stylesheet version="1.0" 
+  xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+  xmlns:months="Lookup table for month names"&gt;
+
+  &lt;xsl:output method="text"/&gt;
+
+  &lt;months:name sequence="01"&gt;January&lt;/months:name&gt;
+  &lt;months:name sequence="02"&gt;February&lt;/months:name&gt;
+  &lt;months:name sequence="03"&gt;March&lt;/months:name&gt;
+  &lt;months:name sequence="04"&gt;April&lt;/months:name&gt;
+
+  &lt;xsl:variable name="newline"&gt;
+&lt;xsl:text&gt;
+&lt;/xsl:text&gt;
+  &lt;/xsl:variable&gt;
+
+<!--<?troff .Nd 10?>-->
+  &lt;xsl:decimal-format name="f1"
+    decimal-separator=":"
+    grouping-separator="/"/&gt;
+
+  &lt;xsl:decimal-format name="f2"
+    infinity="Really, really big"
+    NaN="[not a number]"/&gt;
+
+  &lt;xsl:template match="/"&gt;
+    &lt;xsl:value-of select="$newline"/&gt;
+    &lt;xsl:text&gt;Tests of the format-number() function:&lt;/xsl:text&gt;
+
+    &lt;xsl:value-of select="$newline"/&gt;
+    &lt;xsl:value-of select="$newline"/&gt;
+    &lt;xsl:text&gt;   format-number(528.3, '#.#;-#.#')=&lt;/xsl:text&gt;
+    &lt;xsl:value-of select="format-number(528.3, '#.#;-#.#')"/&gt;
+    &lt;xsl:value-of select="$newline"/&gt;
+    &lt;xsl:text&gt;   format-number(528.3, '0,000.00;-0,000.00')=&lt;/xsl:text&gt;
+    &lt;xsl:value-of select="format-number(528.3, '0,000.00;-0,000.00')"/&gt;
+    &lt;xsl:value-of select="$newline"/&gt;
+    &lt;xsl:text&gt;   format-number(-23528.3, '$#,###.00;($#,###.00)')=&lt;/xsl:text&gt;
+    &lt;xsl:value-of select="format-number(-23528.3, '$#,###.00;($#,###.00)')"/&gt;
+    &lt;xsl:value-of select="$newline"/&gt;
+    &lt;xsl:text&gt;   format-number(1528.3, '#/###:00', 'f1')=&lt;/xsl:text&gt;
+    &lt;xsl:value-of select="format-number(1528.3, '#/###:00;-#/###:00', 'f1')"/&gt;
+    &lt;xsl:value-of select="$newline"/&gt;
+    &lt;xsl:text&gt;   format-number(1 div 0, '###,###.00', 'f2')=&lt;/xsl:text&gt;
+    &lt;xsl:value-of select="format-number(1 div 0, '###,###.00', 'f2')"/&gt;
+    &lt;xsl:value-of select="$newline"/&gt;
+    &lt;xsl:text&gt;   format-number(blue div orange, '#.##', 'f2')=&lt;/xsl:text&gt;
+    &lt;xsl:value-of select="format-number(blue div orange, '#.##', 'f2')"/&gt;
+    &lt;xsl:value-of select="$newline"/&gt;
+    &lt;xsl:value-of select="$newline"/&gt;
+    &lt;xsl:for-each select="report/month"&gt;
+      &lt;xsl:text&gt;   &lt;/xsl:text&gt;
+      &lt;xsl:value-of 
+        select="document('')/*/months:name[@sequence=current()/@sequence]"/&gt;
+      &lt;xsl:text&gt; - &lt;/xsl:text&gt;
+      &lt;xsl:value-of select="format-number(miles-flown, '##,###')"/&gt;
+      &lt;xsl:text&gt; miles flown, &lt;/xsl:text&gt;
+      &lt;xsl:value-of select="format-number(miles-earned, '##,###')"/&gt;
+      &lt;xsl:text&gt; miles earned.&lt;/xsl:text&gt;
+      &lt;xsl:value-of select="$newline"/&gt;
+      &lt;xsl:text&gt;     (&lt;/xsl:text&gt;
+      &lt;xsl:value-of 
+        select="format-number(miles-flown div sum(//miles-flown), '##%')"/&gt;
+      &lt;xsl:text&gt; of all miles flown, &lt;/xsl:text&gt;
+      &lt;xsl:value-of 
+        select="format-number(miles-earned div sum(//miles-earned), '##%')"/&gt;
+      &lt;xsl:text&gt; of all miles earned.)&lt;/xsl:text&gt;
+      &lt;xsl:value-of select="$newline"/&gt;
+      &lt;xsl:value-of select="$newline"/&gt;
+    &lt;/xsl:for-each&gt; 
+    &lt;xsl:text&gt;   Total miles flown: &lt;/xsl:text&gt;
+    &lt;xsl:value-of select="format-number(sum(//miles-flown), '##,###')"/&gt;
+    &lt;xsl:text&gt;, total miles earned: &lt;/xsl:text&gt;
+    &lt;xsl:value-of select="format-number(sum(//miles-earned), '##,###')"/&gt;
+  &lt;/xsl:template&gt;
+
+&lt;/xsl:stylesheet&gt;</pre></span>
+<p>Das Stylesheet wird auf das folgende XML-Dokument angewendet:</p>
+<span class="PROGRAMLISTING"><pre>
+&lt;?xml version="1.0"?&gt;
+&lt;report&gt;
+  &lt;title&gt;Miles Flown in 2001&lt;/title&gt;
+  &lt;month sequence="01"&gt;
+    &lt;miles-flown&gt;12379&lt;/miles-flown&gt;
+    &lt;miles-earned&gt;35215&lt;/miles-earned&gt;
+  &lt;/month&gt;
+  &lt;month sequence="02"&gt;
+    &lt;miles-flown&gt;32857&lt;/miles-flown&gt;
+    &lt;miles-earned&gt;92731&lt;/miles-earned&gt;
+  &lt;/month&gt;
+  &lt;month sequence="03"&gt;
+    &lt;miles-flown&gt;19920&lt;/miles-flown&gt;
+    &lt;miles-earned&gt;76725&lt;/miles-earned&gt;
+  &lt;/month&gt;
+  &lt;month sequence="04"&gt;
+    &lt;miles-flown&gt;18903&lt;/miles-flown&gt;
+    &lt;miles-earned&gt;31781&lt;/miles-earned&gt;
+  &lt;/month&gt;
+&lt;/report&gt;</pre></span>
+<p>Hier die Ergebnisse, die entstehen, wenn dieses Stylesheet ausgef&uuml;hrt wird:</p>
+<span class="PROGRAMLISTING"><pre>
+
+Tests of the format-number() function:
+
+   format-number(528.3, '#.#;-#.#')=528.3
+   format-number(528.3, '0,000.00;-0,000.00')=0,528.30
+   format-number(-23528.3, '$#,###.00;($#,###.00)')=($23,528.30)
+   format-number(1528.3, '#/###:00', 'f1')=1/528:30
+   format-number(1 div 0, '###,###.00', 'f2')=Really, really big
+   format-number(blue div orange, '#.##', 'f2')=[not a number]
+
+   January - 12,379 miles flown, 35,215 miles earned.
+     (15% of all miles flown, 15% of all miles earned.)
+
+   February - 32,857 miles flown, 92,731 miles earned.
+     (39% of all miles flown, 39% of all miles earned.)
+
+   March - 19,920 miles flown, 76,725 miles earned.
+     (24% of all miles flown, 32% of all miles earned.)
+
+   April - 18,903 miles flown, 31,781 miles earned.
+     (22% of all miles flown, 13% of all miles earned.)
+
+   Total miles flown: 84,059, total miles earned: 236,452</pre></span>
+<p>Die ersten paar Beispiele veranschaulichen einige der komplizierteren Formatierungsoptionen, in Verbindung mit Verweisen auf die <span class="LITERAL">&lt;xsl:decimal-format&gt;</span>-Elemente im Stylesheet. Der letzte Abschnitt entspricht eher dem typischen Einsatzgebiet der Funktion <span class="LITERAL">format-number</span>: dem Formatieren von Werten, die aus einem XML-Dokument ausgew&auml;hlt oder berechnet wurden. </p>
+</td>
+</tr>
+</table>
+</div>
+</body>
+</html>

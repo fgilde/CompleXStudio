@@ -1,0 +1,135 @@
+<html xmlns:un="http://usablenet.com/namespaces/508_rules">
+   <link rel="stylesheet" href="josh.css">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   
+      <title>Detailanzeige f&uuml;r Regel: Dynamische Inhalte m&uuml;ssen zug&auml;nglich bleiben</title>
+      <!--
+  508/W3C Accessibility Suite OEM V2 for Macromedia Dreamweaver
+  (C) Copyright 2001-2005 UsableNet Inc. All rights reserved.
+  -->
+   </head>
+   <body bgcolor="#ffffff">
+      <div id="Beschreibung">
+         <table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+            <tr>
+               <td valign="top" nowrap="true" class="name">Dynamische Inhalte m&uuml;ssen zug&auml;nglich bleiben</td>
+               <td valign="top" nowrap="true" class="compatibility">&nbsp;</td>
+            </tr>
+            <tr>
+               <td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+            </tr>
+            <tr>
+               <td valign="top" align="right" nowrap="true" colspan="2" class="requirements">WAI / WCAG 1.0 Priorit&auml;t 2 Checkpunkt 6.5</td>
+            </tr>
+            <tr>
+               <td colspan="2" class="clearseparation">&nbsp;</td>
+            </tr>
+            <tr>
+               <td colspan="2" class="clearseparation">&nbsp;</td>
+            </tr>
+            <tr>
+               <td valign="top" colspan="2" class="description"><b>Problembeschreibung</b><br>
+                  
+                           
+                  <p>
+                     Die Seite verwendet Skripts, welche die Inhalts- bzw. Navigationsoptionen des Dokuments beeinflussen. Solche Skripts sollten
+                     die Seite derart ver&auml;ndern, dass assistive Techniken diese &auml;nderungen erkennen und dem Besucher der Website vermitteln k&ouml;nnen.
+                     	 
+                  </p>
+                  
+                        
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2" class="clearseparation">&nbsp;</td>
+            </tr>
+            <tr>
+               <td colspan="2" class="clearseparation">&nbsp;</td>
+            </tr>
+            <tr>
+               <td valign="top" colspan="2" class="description"><b>&Uuml;berpr&uuml;fung</b>
+                  
+                           
+                  <p>
+                     &uuml;berpr&uuml;fen Sie, ob die auf dieser Seite verwendeten Skripts neue Inhalte oder Navigationsoptionen erstellen. Dies kann man
+                     einfach dadurch testen, dass man die Ausf&uuml;hrung von Skripts im Browser deaktiviert und dann die Seite anzeigt.
+                     	 
+                  </p>
+                      
+                  
+                  <p>
+                     Wenn einige Skripts doch neue Inhalte oder Navigationsoptionen hinzuf&uuml;gen, sollte man am besten andere Wege suchen, um die
+                     gew&uuml;nschten Effekte zu erzielen.
+                     
+                  </p>
+                  
+                  <p>
+                     Wie w&uuml;rde beispielsweise ein serverseitiges Skript (und das Formular) den gleichen Effekt erzielen? Kann die Seite die gesamten
+                     Inhalte darstellen, wenn der Browser keine Skripte unterst&uuml;tzt (z. B. durch das Definieren mehrerer Ebenen)?
+                     
+                  </p>
+                  
+                  <p>
+                     Wenn alle Inhalte mithilfe von Ebenen definiert werden und das Skript einige Ebenen nur dann anzeigt, wenn bestimmte Bedingungen
+                     erf&uuml;llt sind, dann werden bei Browsern die keine Skripts unterst&uuml;tzen alle Ebenen in der Reihenfolge angezeigt, in der sie
+                     in der HTML-Datei definiert wurden. In einem solchen Fall stellt man am besten sicher, dass diese Darstellungsm&ouml;glichkeit
+                     effizient genug ist (beispielsweise durch einen geeigneten Kontext f&uuml;r jede dieser Ebenen).
+                     
+                  </p>
+                        
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2" class="clearseparation">&nbsp;</td>
+            </tr>
+            <tr>
+               <td colspan="2" class="clearseparation">&nbsp;</td>
+            </tr>
+            <tr>
+               <td valign="top" colspan="2" class="description"><b>Problemerkl&auml;rung</b><br>
+                  
+                           
+                  <p>
+                     Im besten Fall sollte man neue Inhalte oder Navigationsoptionen nicht mithilfe von Skripts erstellen, da Besucher mit Browsern,
+                     die solche Skripts nicht unterst&uuml;tzen, die Inhalte dieser Optionen nicht darstellen k&ouml;nnen.
+                     	 
+                  </p>
+                  
+                  
+                  <p>
+                     Das W3C meint hierzu sinngem&auml;&szlig; (<strong>HTML Techniques for Web Content Accessibility Guidelines 1.0</strong>
+                     [http://www.w3.org/TR/WCAG10-HTML-TECHS/#scripts-gt]
+                     ):
+                     
+                  </p>
+                  
+                  <blockquote>
+                     Entwickler von Webseiten m&uuml;ssen sicherstellen, dass die Seiten auch bei deaktivierten Skripts bzw. bei Verwendung von Browsern,
+                     die keine Skripts unterst&uuml;tzen, zug&auml;nglich bleiben. 
+                     
+                     
+                     <ul>
+                           
+                        <li>
+                               Erstellen Sie die Inhalte nicht nebenbei auf dem Client. Falls der Browser eines Benutzers keine Skripts unterst&uuml;tzt,
+                           werden keine Inhalte erstellt bzw. angezeigt. Allerdings gibt es hier einen Unterschied zum Anzeigen bzw. Verbergen vorhandenen
+                           Inhalts mithilfe mehrerer Stylesheets oder Skripte: Denn wenn es kein Skript gibt, dann wird der Inhalt immer angezeigt. Dies
+                           schlie&szlig;t auch das Erstellen von Seiten nebenbei auf dem Server und und dann das Herunterladen auf den Client nicht aus. 
+                        </li>
+                           
+                        <li>Vermeiden Sie die Erstellung von Hyperlinks, die "JavaScript" als URI verwenden. Falls ein Benutzer keine Skripts verwendet,
+                           k&ouml;nnen sie auch nicht verlinkt werden, da der Browser den Inhalt des Hyperlinks nicht erstellen kann. 
+                        </li>
+                        
+                     </ul>
+                     
+                  </blockquote>
+                  
+                        
+               </td>
+            </tr>
+         </table>
+      </div>
+   </body>
+</html>

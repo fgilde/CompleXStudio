@@ -1,0 +1,36 @@
+<html>
+<link rel="stylesheet" href="josh.css">
+<body bgcolor="#FFFFFF">
+
+		<div id="Beschreibung">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">onbeforeactivate</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">nicht zutreffend</span> IE <span class="emphasis">6(Win)</span> DOM <span class="emphasis">nicht zutreffend</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Aufw&auml;rtsverbreitung: Ja; Abbruch m&ouml;glich: Manchmal</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Wird ausgel&ouml;st, unmittelbar bevor ein Objekt zum aktiven Objekt wird. Ein Objekt, das den Fokus erh&auml;lt, wird automatisch aktiv, ein dargestelltes Element kann jedoch auch das aktive Element sein, wenn es nicht den Fokus hat. Es kann jeweils immer nur ein Element aktiv sein. Weitere Informationen finden Sie in der Abhandlung der Methode <span class="literal">setActive( )</span> im Abschnitt &uuml;ber die gemeinsamen Objekte in Kapitel 9. Wenn ein Element den Fokus erhalten hat, werden die entsprechenden Ereignisse in der folgenden Reihenfolge ausgel&ouml;st: <span class="literal">onbeforeactivate</span>, <span class="literal">onactivate</span> und <span class="literal">onfocus</span>.</p>
+							</td>
+						</tr>
+						<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Wenn Sie das Ereignis <span class="literal">onbeforeactivate</span> abbrechen, wird das Element weder aktiv noch erh&auml;lt es den Fokus, sofern die geplante Fokusaktion aufgrund eine expliziten Benutzeraktion (Bet&auml;tigen der Maustaste oder der Tabulatortaste) auftritt. Wenn einem Element dem der Fokus verwehrt wird, geht dieser an ein anderes Element &uuml;ber: an das n&auml;chste aktivierbare Element in der Tabulatorreihenfolge (wenn der Benutzer mit der Tabulatortaste zum blockierten Element wechselt) oder an das n&auml;chst&auml;u&szlig;ere aktivierbare Parent-Element im Dokumentbaum (wenn der Benutzer auf das blockierte Element klickt). Die Aktivierung eines Elements oder Zuweisung des Fokus an ein Element mithilfe der Methode <span class="literal">setActive( )</span> bzw. <span class="literal">focus( )</span> kann nicht durch Abbrechen dieses Ereignisses blockiert werden.</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="typicaltargets"><span class="title">Typische Ziele</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Alle dargestellten Elemente sowie die Objekte <span class="literal">document</span> und <span class="literal">window</span>.</p>
+					</td>
+				</tr>
+			</table>
+		</div>
+</body>
+</html>

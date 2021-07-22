@@ -1,0 +1,142 @@
+<html>
+<head>
+<title>generate-id()-Funktion</title>
+</head>
+<body bgcolor="#FFFFFF" text="#000000">
+<div id="Beschreibung">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">generate-id()-Funktion</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description">
+Diese Funktion generiert eine eindeutige ID (mit g&uuml;ltigem XML-Namen) f&uuml;r einen bestimmten Knoten. Wird keine Knotenmenge angegeben, erzeugt die Funktion <span class="LITERAL">generate-id()</span> eine ID f&uuml;r den Kontextknoten.</td></tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Eingaben</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<p>Eine optionale Knotenmenge. Wird keine Knotenmenge angegeben, erzeugt diese Funktion eine ID f&uuml;r den Kontextknoten. Ist die Knotenmenge leer, gibt <span class="LITERAL">generate-id()</span> einen leeren String zur&uuml;ck. </p>
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Ausgabe</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<p>Eine eindeutige ID oder ein leerer String, wenn eine leere Knotenmenge angegeben wird. Es ist wichtig, einiges &uuml;ber die Funktion <span class="LITERAL">generate-id()</span> zu wissen:</p>
+<ul>
+        <dd>F&uuml;r eine gegebene Transformation muss der XSLT-Prozessor jedes Mal, wenn Sie <span class="LITERAL">generate-id()</span> f&uuml;r einen bestimmten Knoten aufrufen, dieselbe ID zur&uuml;ckgeben. Die ID darf sich nicht &auml;ndern, w&auml;hrend Sie eine Transformation ausf&uuml;hren. Wenn Sie den XSLT-Prozessor morgen anweisen, Ihr Dokument mit diesem Stylesheet zu transformieren, gibt es keine Garantie, dass die Funktion <span class="LITERAL">generate-id()</span> noch einmal dieselbe ID erzeugt. Auch morgen werden alle <span class="LITERAL">generate-id()</span>-Aufrufe dieselbe ID generieren, doch muss diese ID nicht mit der heute erzeugten &uuml;bereinstimmen.</p>
+        </li>
+        <dd>Die Funktion <span class="LITERAL">generate-id()</span> muss nicht pr&uuml;fen, ob die generierte ID mit einer ID &uuml;bereinstimmt, die sich bereits im Dokument befindet. Anders ausgedr&uuml;ckt: wenn ein Element im Dokument ein Attribut des Typs <span class="LITERAL">ID</span> mit dem Wert <span class="LITERAL">sdk3829a</span> besitzt, besteht die vage M&ouml;glichkeit, dass eine von <span class="LITERAL">generate-id()</span> zur&uuml;ckgegebene ID ebenfalls den Wert <span class="LITERAL">sdk3829a</span> hat. Es ist relativ unwahrscheinlich, aber es k&ouml;nnte durchaus passieren.</p>
+        </li>
+        <dd>Wenn Sie <span class="LITERAL">generate-id()</span> auf zwei verschiedene Knoten anwenden, m&uuml;ssen die beiden erzeugten IDs unterschiedlich sein.</p>
+        </li>
+        <dd>Wird der Funktion <span class="LITERAL">generate-id()</span> als Argument eine Knotenmenge gegeben, gibt sie eine ID f&uuml;r den Knoten in der Knotenmenge zur&uuml;ck, der in der Dokumentreihenfolge zuerst vorkommt. </p>
+        </li>
+        <dd>Wenn die Knotenmenge, die Sie and die Funktion &uuml;bergeben, leer ist (die Funktion <span class="LITERAL">generate-id(fleeber)</span> wird aufgerufen, aber im aktuellen Kontext kommen keine <span class="LITERAL">&lt;fleeber&gt;</span>-Elemente vor), gibt <span class="LITERAL">generate-id()</span> einen leeren String zur&uuml;ck.</p>
+        </li>
+      </ul>
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Definition</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<p>XSLT-Abschnitt 12.4, Diverse zus&auml;tzliche Funktionen</p>
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Beispiel</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<p>Es folgt ein einfaches Stylesheet, das die Funktion <span class="LITERAL">document('')</span> verwendet, um auf alle seine eigenen <span class="LITERAL">&lt;xsl:text&gt;</span>-Knoten zuzugreifen. Anschlie&szlig;end wird mit Hilfe der Funktion <span class="LITERAL">generate-id()</span> eine eindeutige ID f&uuml;r jeden dieser Knoten generiert. Anschlie&szlig;end wird die Funktion <span class="LITERAL">generate-id()</span> erneut aufgerufen, um zu zeigen, dass die Funktion f&uuml;r einen bestimmten Knoten immer dieselbe ID erzeugt. Hier das Stylesheet:</p>
+<span class="PROGRAMLISTING"><pre>
+&lt;?xml version="1.0"?&gt;
+&lt;xsl:stylesheet version="1.0" 
+  xmlns:xsl="http://www.w3.org/1999/XSL/Transform"&gt;
+
+  &lt;xsl:output method="text"/&gt;
+
+  &lt;xsl:variable name="newline"&gt;
+&lt;xsl:text&gt;
+&lt;/xsl:text&gt;
+  &lt;/xsl:variable&gt;
+
+  &lt;xsl:template match="/"&gt;
+    &lt;xsl:value-of select="$newline"/&gt;
+    &lt;xsl:text&gt;A test of the generate-id() function:&lt;/xsl:text&gt;
+
+    &lt;xsl:value-of select="$newline"/&gt;
+    &lt;xsl:value-of select="$newline"/&gt;
+    &lt;xsl:for-each select="document('')//xsl:text"&gt;
+      &lt;xsl:text&gt;Node name: &lt;/xsl:text&gt;
+      &lt;xsl:value-of select="name()"/&gt;
+      &lt;xsl:text&gt; - generated id: &lt;/xsl:text&gt;
+      &lt;xsl:value-of select="generate-id()"/&gt;
+      &lt;xsl:value-of select="$newline"/&gt;
+    &lt;/xsl:for-each&gt;
+    &lt;xsl:value-of select="$newline"/&gt;
+    &lt;xsl:value-of select="$newline"/&gt;
+    &lt;xsl:text&gt;Now we'll try it again...&lt;/xsl:text&gt;
+    &lt;xsl:value-of select="$newline"/&gt;
+    &lt;xsl:value-of select="$newline"/&gt;
+    &lt;xsl:for-each select="document('')//xsl:text"&gt;
+      &lt;xsl:text&gt;Node name: &lt;/xsl:text&gt;
+      &lt;xsl:value-of select="name()"/&gt;
+      &lt;xsl:text&gt; - generated id: &lt;/xsl:text&gt;
+      &lt;xsl:value-of select="generate-id()"/&gt;
+      &lt;xsl:value-of select="$newline"/&gt;
+    &lt;/xsl:for-each&gt;
+  &lt;/xsl:template&gt;
+
+&lt;/xsl:stylesheet&gt;</pre></span>
+<p>Das Stylesheet erzeugt die folgenden Ergebnisse:</p>
+<span class="PROGRAMLISTING"><pre>
+
+A test of the generate-id() function:
+
+Node name: xsl:text - generated id: NC
+Node name: xsl:text - generated id: N16
+Node name: xsl:text - generated id: N22
+Node name: xsl:text - generated id: N28
+Node name: xsl:text - generated id: N38
+Node name: xsl:text - generated id: N44
+Node name: xsl:text - generated id: N4A
+
+
+Now we'll try it again...
+
+Node name: xsl:text - generated id: NC
+Node name: xsl:text - generated id: N16
+Node name: xsl:text - generated id: N22
+Node name: xsl:text - generated id: N28
+Node name: xsl:text - generated id: N38
+Node name: xsl:text - generated id: N44
+Node name: xsl:text - generated id: N4A
+</pre></span>
+<p>Die jeweils erzeugten IDs sind dieselben. </p>
+</td>
+</tr>
+</table>
+</div>
+</body>
+</html>

@@ -1,0 +1,119 @@
+<html>
+<link rel="stylesheet" href="josh.css">
+<body bgcolor="#FFFFFF">
+
+		<div id="Beschreibung">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">&lt;!DOCTYPE&gt;</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">alle</span> IE <span class="emphasis">alle</span> HTML <span class="emphasis">3.2</span>&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">&lt;!DOCTYPE...&gt;</p>
+					</td><td valign="top" nowrap class="requirements">HTML-End-Tag: Unzul&auml;ssig&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p><span class="literal">DOCTYPE</span> ist kein HTML-Element, sondern ein Kommentar im Format der Standard Generalized Markup Language (SGML) (wie auch so genannte HTML-Kommentare im Stil <span class="literal">&lt;!-- ... --&gt;</span>). Dieses Element muss das erste Element in einem Dokument sein (au&szlig;er wie unten f&uuml;r XHTML-Dokumente angegeben) und immer vor dem <span class="literal">&lt;HTML&gt;</span>-Tag-Element stehen. Es teilt dem Browser die Document Type Definition (DTD) mit, die vom HTML-Quellcode befolgt wird. Alle Browser verf&uuml;gen &uuml;ber einen Standarddokumententyp, der bestimmt, welche Elemente und Elementattribute vom Browser unterst&uuml;tzt werden (und f&uuml;r deren Unterst&uuml;tzung der Browser die erforderliche interne Programmierung besitzt, egal wie problematisch sie auch sein mag). Wenn Sie einen Dokumententyp f&uuml;r eine modernere DTP angeben, bedeutet dies nicht, dass ein &auml;lterer Browser auf einmal Elemente und Attribute unterst&uuml;tzen kann, f&uuml;r die er nicht kodiert ist. Umgekehrt dazu wird ein Browser bei Angabe einer restriktiven DTD nicht daran gehindert, r&uuml;ckw&auml;rtskompatible oder propriet&auml;re Elemente und Attribute zu erkennen und zu unterst&uuml;tzen.</p><p>Ein <span class="literal">DOCTYPE</span>-Element enth&auml;lt mehrere unbeschriftete Attributwerte, die Einzelheiten wie den Namen des &auml;u&szlig;ersten Dokument-Tags (<span class="literal">html</span> f&uuml;r unsere Zwecke), die f&uuml;r die DTD verantwortliche Organisation, die Adresse der eigentlichen DTD-Datei (<span class="emphasis">Systembezeichner</span> genannt), einen Namen f&uuml;r die Definition (ggf. einschlie&szlig;lich Versionsnummer) usw. angeben. Der folgende <span class="literal">DOCTYPE</span> bezieht sich beispielsweise auf eine HTML 4.01 DTD mit allen veralteten Elemente und Attributen:</p><p>Im n&auml;chsten Beispiel wird die XHTML 1.1 DTD referenziert, die weder veraltete Elemente noch Frames enth&auml;lt:</p><p>Dar&uuml;ber hinaus sollten Sie bei Angabe einer XHTML DTD auch eines der folgenden Anweisungs-Tags zur SGML-Verarbeitung vor der <span class="literal">DOCTYPE</span>-Deklaration einf&uuml;gen:</p><p>Letztere Version enth&auml;lt eine Einstellung f&uuml;r die Zeichensatzkodierung, die als Alternative auch in einem <span class="literal">&lt;META&gt;</span>-Tag angegeben werden kann. F&uuml;r die HTML- und XHTML-Validatoren des W3C wird empfohlen, dass die Zeichenkodierung in einem Dokument auf eine dieser Methoden angegeben wird.</p><p>In den meisten F&auml;llen dienen <span class="literal">DOCTYPE</span>-Elemente zur Erleichterung der Validierung des HTML-Quellcodes vor der Ver&ouml;ffentlichung im Web. Manche moderne Browser verhalten sich jedoch etwas anders, je nach dem Inhalt des <span class="literal">DOCTYPE</span>-Kommentars am Anfang des Dokuments. Sowohl IE 6 als auch Netscape 6 laufen in einem von zwei Modi, abh&auml;ngig davon, was in den <span class="literal">DOCTYPE</span>-Attributwerten angegeben ist. Ein Modus sorgt f&uuml;r R&uuml;ckw&auml;rtskompatibilit&auml;t mit Implementierungen, die vor den W3C-Standards entwickelt wurden und von diesen abweichen; der andere Modus bewirkt, dass sich der Browser entsprechend der W3C-Empfehlungen verh&auml;lt. Die Unterschiede zwischen diesen beiden Modi liegen vor allem in den Layoutdetails, die in modernen CSS- und DOM-Spezifikationen sorgf&auml;ltiger definiert sind. Bei einfachen Layouts sind meist keine Unterschiede festzustellen. Wenn sich Ihre Seiten aber auf Stylesheets oder Hintergr&uuml;nde f&uuml;r Tabellen, die Ausrichtung von Formularsteuerelement en (vor allem in Tabellen), die genaue Steuerung der Schriftgr&ouml;&szlig;e oder des Abstands und - in IE - die pixelgenaue CSS-Positionierung im Bezug auf die Kanten des Dokuments und die Gr&ouml;&szlig;e positionierter Elemente st&uuml;tzen, m&uuml;ssen Sie auf die <span class="literal">DOCTYPE</span>-Details in Ihren Dokumenten achten.</p><p>Es ist aus Platzgr&uuml;nden unm&ouml;glich, an dieser Stelle auf alle Kompatibilit&auml;tsdetails einzugehen, doch im Folgenden finden Sie einige allgemeinere Empfehlungen, die Ihnen helfen d&uuml;rften. Wenn Sie mit den Layouts Ihrer aktuellen Seiten und Vorlagen zufrieden sind, sollten Sie auch weiterhin <span class="literal">DOCTYPE</span>-Einstellungen f&uuml;r den r&uuml;ckw&auml;rtskompatiblen Modus verwenden (von den Mozilla-Ingenieuren "Quirks-Modus" genannt; bei Microsoft gibt es f&uuml;r diesen Modus keinen besonderen Namen). Wenn Sie jedoch neue Inhalte erstellen, insbesondere f&uuml;r neuere Browser (Version 6 oder sp&auml;ter), sollten Sie die Einstellungen f&uuml;r den "strikten" (Navigator) bzw. "standardkompatiblen" (IE) Modus w&auml;hlen.</p><p>Die Anzahl von <span class="literal">DOCTYPE</span>-Attributwerten, die heute in Gebrauch sind, ist schier un&uuml;berschaubar, und die Regeln, die bestimmen, durch welche Attribute ein Browser in einen bestimmten Modus versetzt wird, unterscheiden sich oft von einem Browser zum anderen. Nachfolgend einige gel&auml;ufige <span class="literal">DOCTYPE</span>-Tags, die Browser der Version 6 unabh&auml;ngig vom Hersteller in den r&uuml;ckw&auml;rtskompatiblen Modus versetzen:</p><p>Beachten Sie in diesem Zusammenhang bitte Folgendes. Erstens werden in allen diesen Beispielen HTML-DTDs deklariert, die maximal HTML 4.01 entsprechen, und keine ist f&uuml;r XHTML vorgesehen. Zweitens enth&auml;lt keines dieser Beispiele eine Systembezeichner-URI f&uuml;r eine Referenz-<span class="emphasis">.dtd</span>-Datei. Wenn Sie das <span class="literal">DOCTYPE</span>-Element ganz weglassen, verwendet der Browser das Gegenst&uuml;ck der alten internen DTDs.</p><p>Nachfolgend einige gel&auml;ufige <span class="literal">DOCTYPE</span>-Tags, die Browser der Version 6 in den modernen, standardbasierten Modus versetzen:</p><p>Alle DTDs vom Typ HTML 4.x/Strict und XHTML aktivieren den standardkompatiblen Modus, mit oder ohne URLs. Wenn Sie bei DTDs vom Typ HTML 4.x Transitional und Frameset die URL angeben, wird der standardkompatible Modus aufgerufen.</p><p>Weitere Informationen zu den Auswirkungen, die die DTD-Angabe auf die DOM- und CSS-Merkmale der neuesten Browser hat, enthalten Kapitel 9 (Eigenschaften <span class="literal">client</span> und <span class="literal">offset</span>, <span class="literal">body</span>-Objekt und Eigenschaft <span class="literal">document.compatMode</span>) und Kapitel 10 (Attribute <span class="literal">height</span> und <span class="literal">width</span>). Aus Anhang E geht hervor, welche HTML 4-Elemente und -Attribute zu Validierungszwecken von den g&auml;ngigsten HTML 4.01- und XHTML 1.0-DTDs unterst&uuml;tzt werden.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectmodelreference"><span class="title">Objektmodellreferenz</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>[window.]document.firstChild</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectmodelreference"><span class="title">Elementspezifische Attribute</span></td>
+				</tr>
+				<tr>
+					<td><p>Attribute sind unbeschriftet.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectmodelreference"><span class="title">Elementspezifische Ereignisbehandlungsroutinenattribute</span></td>
+				</tr>
+				<tr>
+					<td><p>Keine.</p>
+					</td>
+				</tr>
+			</table>
+		</div>
+		<div id="lang">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">lang</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">3</span> IE <span class="emphasis">4</span> HTML <span class="emphasis">4</span>&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">lang="<span class="replaceable">languageCode</span>"</p>
+					</td><td valign="top" nowrap class="requirements">Optional&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Die f&uuml;r die Attributwerte und Inhalte des Elements verwendete Sprache. Mithilfe dieser Informationen ist der Browser besser in der Lage, bestimmte Details wie Ligaturen (sofern von der betreffenden Schrift unterst&uuml;tzt oder in der geschriebenen Sprache erforderlich), Anf&uuml;hrungszeichen und Worttrennungen korrekt darzustellen. Andere Anwendungen und Suchmaschinen k&ouml;nnen anhand dieser Informationen W&ouml;rterb&uuml;cher f&uuml;r die Rechtschreibpr&uuml;fung ausw&auml;hlen und Indizes erstellen.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>&lt;SPAN lang="de"&gt;Deutsche Bundesbahn&lt;/SPAN&gt;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+				</tr>
+				<tr>
+					<td><p>Sprachcode, bei dem nicht zwischen Gro&szlig;- und Kleinschreibung unterschieden wird.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Standardwert</span></td>
+				</tr>
+				<tr>
+					<td><p>Vorgabe des Browsers.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectmodelreference"><span class="title">Objektmodellreferenz</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>[window.]document.getElementById(<span class="replaceable">elementID).</span>lang</pre>
+						</span></td>
+				</tr>
+			</table>
+		</div>
+</body>
+</html>

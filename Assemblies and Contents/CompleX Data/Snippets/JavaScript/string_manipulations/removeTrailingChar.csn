@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding = "utf-8"?>
+
+<snippet xmlns:MMString="http://www.macromedia.com/schemes/dat/string/" MMString:name = "Snippets/JavaScript/string_manipulations/removeTrailingChar_csn/snippet/name/Remove" MMString:description = "Snippets/JavaScript/string_manipulations/removeTrailingChar_csn/snippet/description/Removes" preview="code" type="block">
+
+
+<insertText location="beforeSelection">
+
+<![CDATA[function removeTrailingWhitespace(inputString) 
+{
+  if (typeof inputString == "string")
+  {
+    for (var i=inputString.length-1; i >= 0; i--)
+    {
+      if (inputString.charAt(i).search(/\S/) != -1)
+      {
+        inputString = inputString.substring(0, i+1);
+        break;
+      }
+    }
+  }
+  return inputString;
+}
+]]>
+
+</insertText>
+
+<insertText location="afterSelection"><![CDATA[]]>
+
+</insertText>
+
+</snippet>

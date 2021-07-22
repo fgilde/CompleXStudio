@@ -1,0 +1,1124 @@
+<html>
+<link rel="stylesheet" href="josh.css">
+<body bgcolor="#FFFFFF">
+
+		<div id="Beschreibung">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">select</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">2</span> IE <span class="emphasis">3</span> DOM <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Das <span class="literal">select</span>-Objekt spiegelt das <span class="literal">select</span>-Element wider. Dieses Element ist ein Formularsteuerelement, das <span class="literal">option</span>-Elemente enth&auml;lt. Beachten Sie, dass die Eigenschaften <span class="literal">innerHTML</span> und <span class="literal">innerText</span> in der Macintosh-Version von Internet Explorer 4 nicht zur Verf&uuml;gung stehen. Die gemeinsam genutzte Eigenschaft <span class="literal">disabled</span> ist in Netscape 6 verf&uuml;gbar.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="htmlequivalent"><span class="title">HTML-&Auml;quivalent</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>&lt;select&gt;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectmodelreference"><span class="title">Objektmodellreferenz</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>[window.]document.<span class="replaceable">formName</span>.<span class="replaceable">selectName</span>
+[window.]document.forms[i].elements[i]
+[window.]document.getElementById("<span class="replaceable">elementID</span>")</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectspecificproperties"><span class="title">Objektspezifische Eigenschaften</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<table border="1"><tbody><tr><td><span class="literal">dataFld</span></td><td><span class="literal">dataSrc</span></td><td><span class="literal">form</span></td><td><span class="literal">length</span></td><td><span class="literal">multiple</span></td><td><span class="literal">name</span></td>
+								</tr>
+								<tr><td><span class="literal">options[ ]</span></td><td><span class="literal">selectedIndex</span></td><td><span class="literal">size</span></td><td><span class="literal">type</span></td><td><span class="literal">value</span></td><td></td>
+								</tr>
+							</tbody></table>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectspecificmethods"><span class="title">Objektspezifische Methoden</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<table border="1"><tbody><tr><td><span class="literal">add( )</span></td><td><span class="literal">item( )</span></td><td><span class="literal">namedItem( )</span></td><td><span class="literal">remove( )</span></td>
+								</tr>
+							</tbody></table>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectspecificeventhandlerproperties"><span class="title">Objektspezifische Ereignisbehandlungsroutineneigenschaften</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<table border="1"><tbody><th>Behandlungsroutine</th><th>NN</th><th>IE</th><th>DOM</th><tr><td>onblur</td><td>2</td><td>4</td><td>--</td>
+								</tr>
+								<tr><td>onchange</td><td>2</td><td>4</td><td>--</td>
+								</tr>
+								<tr><td>onfocus</td><td>2</td><td>4</td><td>--</td>
+								</tr>
+							</tbody></table>
+					</td>
+				</tr>
+			</table>
+		</div>
+		<div id="accessKey">
+							<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+								<tr><td valign="top" class="name">accessKey</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">nicht zutreffend</span> IE <span class="emphasis">4</span> DOM <span class="emphasis">1</span></td>
+								</tr>
+								<tr>
+									<td valign="top" nowrap class="usage"><p class="literal"></p>
+									</td><td valign="top" nowrap class="requirements"><span class="emphasis">Lesen/Schreiben</span></td>
+								</tr>
+								<tr>
+									<td valign="top" colspan="2" class="description"><p>Dies ist eine einzelne Buchstabentaste, durch die ein Element (in manchen Browsern) den Fokus erh&auml;lt oder ein Formularsteuerelement bzw. eine Link-Aktion aktiviert wird. Der Browser und das Betriebssystem bestimmen, ob zusammen mit der Buchstabentaste eine Zusatztaste (wie <span class="emphasis">Strg</span>, <span class="emphasis">Alt</span> oder <span class="emphasis">Befehl</span>) gedr&uuml;ckt werden muss, damit der Link aktiviert wird. In IE f&uuml;r Windows ab Version 5 und Netscape 6 muss gleichzeitig die <span class="emphasis">Alt</span>-Taste gedr&uuml;ckt werden, und bei der Buchstabentaste wird nicht zwischen Gro&szlig;- und Kleinschreibung unterschieden. In IE f&uuml;r den Macintosh ab Version 5 und der Macintosh-Version von Netscape 6 funktioniert die Zugriffstaste nur in Verbindung mit der <span class="emphasis">Ctrl</span>-Taste.
+				</p>
+											</td>
+										</tr>
+										<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+										</tr>
+										<tr>
+											<td colspan="2"><p>Obwohl sie hier als gemeinsame Eigenschaft aufgef&uuml;hrt, wird sie streng genommen nicht in allen Implementierungen unterst&uuml;tzt. Netscape 6 (per W3C-DOM) erkennt diese Eigenschaft nur in Verbindung mit den folgenden Elementen: <span class="literal">a</span>, <span class="literal">area</span>, <span class="literal">button</span>, <span class="literal">input</span>, <span class="literal">label</span>, <span class="literal">legend</span> und <span class="literal">textarea</span>, IE 4 dar&uuml;ber hinaus f&uuml;r <span class="literal">applet</span>, <span class="literal">body</span>, <span class="literal">div</span>, <span class="literal">embed</span>, <span class="literal">isindex</span>, <span class="literal">marquee</span>, <span class="literal">object</span>, <span class="literal">select</span>, <span class="literal">span</span>, <span class="literal">table</span> und <span class="literal">td</span> (nicht jedoch f&uuml;r <span class="literal">label</span> und <span class="literal">legend</span>). IE 5 erkennt dieses Attribut in Verbindung mit allen darstellbaren Elementen, weist in diesem Zusammenhang jedoch eine Besonderheit auf: Au&szlig;er bei <span class="literal">input</span> und anderen formularbezogenen Elementen m&uuml;ssen Sie einem Element f&uuml;r IE ab Version 5 au&szlig;erdem ein <span class="literal">tabindex</span>-Attribut mit einem beliebigen Wert oder einen beliebigen <span class="literal">tabIndex</span>-Eigenschaftswert zuweisen, damit der Benutzer in der Lage ist, ihm mithilfe der Schnellzugriffstaste den Fokus zu &uuml;bergeben. In Netscape 7 hat eine &Auml;nderung des Eigenschaftswerts in einem Skript bisher keine Auswirkung auf das Verhalten der Benutzeroberfl&auml;che.
+				</p>
+											</td>
+										</tr>
+								<tr>
+									<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+								</tr>
+								<tr>
+									<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+								</tr>
+								<tr>
+									<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+								</tr>
+								<tr>
+									<td><span class="programlisting"><pre>document.links[3].accessKey = "n";</pre>
+										</span></td>
+								</tr>
+								<tr>
+									<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+								</tr>
+								<tr>
+									<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+								</tr>
+								<tr>
+									<td colspan="2"><p>Einzelnes alphanumerisches Zeichen (oder ein Satzzeichen).</p>
+									</td>
+								</tr>
+								<tr>
+									<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+								</tr>
+								<tr>
+									<td valign="top" nowrap colspan="2" class="default"><span class="title">Standardwert</span></td>
+								</tr>
+								<tr>
+									<td colspan="2"><p>Leere Zeichenfolge. </p>
+									</td>
+								</tr>
+							</table>
+		</div>
+		<div id="blur( )">
+					<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+						<tr><td valign="top" class="name">blur( )</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">2</span> IE <span class="emphasis">3</span> DOM <span class="emphasis">1</span></td>
+						</tr>
+						<tr>
+							<td valign="top" nowrap class="usage"><p class="literal"></p>
+							</td><td valign="top" nowrap class="requirements"></td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="description"><p>Entfernt den Fokus vom aktuellen Objekt und l&ouml;st damit das <span class="literal">onblur</span>-Ereignis des Objekts aus. Beachten Sie, dass die Palette der Elemente, die Fokus und Blur (Ereignisse und Methoden) unterst&uuml;tzen, in allen Browsern mit Ausnahme der neuesten Versionen von IE eingeschr&auml;nkt ist (weitere Informationen finden Sie in der Abhandlung des Attributs <span class="literal">tabindex</span> in Kapitel 8). Am zuverl&auml;ssigsten im Hinblick auf die R&uuml;ckw&auml;rtskompatibilit&auml;t funktioniert die Methode <span class="literal">blur( )</span> in Verbindung mit eindeutig fokusf&auml;higen Elementen wie Text-<span class="literal">input</span>- und <span class="literal">textarea</span>-Elementen. Die Zuweisung des Attributs <span class="literal">onfocus="this.blur( );"</span> zu einem Text-<span class="literal">input</span>-Element ist beispielsweise eine simple, aber effektive und r&uuml;ckw&auml;rtskompatible M&ouml;glichkeit, ein Feld f&uuml;r Browser zu deaktivieren, die keine eigene Funktion zum Deaktivieren von Elementen aufweisen.
+		</p>
+									</td>
+								</tr>
+								<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+								</tr>
+								<tr>
+									<td colspan="2"><p>Verwenden Sie die Methoden <span class="literal">blur( )</span> und <span class="literal">focus( )</span> vorsichtig in ein- und derselben Seite, da hierbei durch eingeblendete Warndialogfelder versehentlich Blur- und Fokus-Endlosschleifen ausgel&ouml;st werden k&ouml;nnen. Denken Sie au&szlig;erdem daran, dass der Aufruf der Methode <span class="literal">blur( )</span> eines Objekts bewirkt, dass ein anderes Objekt (m&ouml;glicherweise das <span class="literal">window</span>-Objekt) ein <span class="literal">onfocus</span>-Ereignis empf&auml;ngt.
+		</p>
+									</td>
+								</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="parameters"><span class="title">Parameter</span></td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Keine.</p>
+							</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="returnedvalue"><span class="title">Zur&uuml;ckgegebener Wert</span></td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Keiner.</p>
+							</td>
+						</tr>
+					</table>
+		</div>
+		<div id="dataFld">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">dataFld</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">nicht zutreffend</span> IE <span class="emphasis">4</span>  DOM <span class="emphasis">nicht zutreffend</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Lesen/Schreiben</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Wird in IE f&uuml;r die Datenbindung verwendet, um den Spaltennamen einer Remote-Datenquelle der Eigenschaft <span class="literal">selectedIndex</span> des <span class="literal">select</span>-Objekts zuzuweisen. F&uuml;r das Element muss au&szlig;erdem das Attribut <span class="literal">datasrc</span> gesetzt sein. Wenn sowohl <span class="literal">dataFld</span> als auch <span class="literal">dataSrc</span> auf eine leere Zeichenfolge gesetzt wird, wird die Bindung zwischen dem Element und der Datenquelle unterbrochen. Funktioniert in IE 5/Mac nur mit Textdateien als Datenquellen.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>document.forms[0].mySelect.dataFld = "choice";</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Von der Gro&szlig;-/Kleinschreibung abh&auml;ngiger Bezeichner der Datenquellenspalte.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Standardwert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Keiner. </p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="dataSrc">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">dataSrc</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">nicht zutreffend</span> IE <span class="emphasis">4</span>  DOM <span class="emphasis">nicht zutreffend</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Lesen/Schreiben</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Wird in IE f&uuml;r die Datenbindung verwendet, um die ID des <span class="literal">object</span>-Elements der Seite anzugeben, das das Datenquellenobjekt f&uuml;r den Remote-Datenzugriff l&auml;dt. Wenn sowohl <span class="literal">dataFld</span> als auch <span class="literal">dataSrc</span> auf eine leere Zeichenfolge gesetzt wird, wird die Bindung zwischen dem Element und der Datenquelle unterbrochen. Funktioniert in IE 5/Mac nur mit Textdateien als Datenquellen.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>document.forms[0].mySelect.dataSrc = "DBSRC3";</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Von der Gro&szlig;-/Kleinschreibung abh&auml;ngiger Bezeichner der Datenquelle.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Standardwert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Keiner.</p>
+					</td>
+				</tr>
+			</table>
+		</div>
+		<div id="disabled">
+					<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+						<tr><td valign="top" class="name">disabled</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">4</span> DOM <span class="emphasis">1</span></td>
+						</tr>
+						<tr>
+							<td valign="top" nowrap class="usage"><p class="literal"></p>
+							</td><td valign="top" nowrap class="requirements"><span class="emphasis">Lesen/Schreiben</span></td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="description"><p>Legt fest, ob das Element f&uuml;r eine Benutzerinteraktion verf&uuml;gbar ist. Wenn die Eigenschaft auf <span class="literal">true</span> gesetzt ist, kann das Element weder den Fokus erhalten noch durch den Benutzer ge&auml;ndert werden und wird in der Seite in der Regel grau hinterlegt dargestellt. In IE f&uuml;r Windows ab Version 5.5 ist diese Eigenschaft f&uuml;r alle HTML-Elementobjekte verf&uuml;gbar. In IE 4 und IE 5 gilt sie nur f&uuml;r Formularsteuerelemente, w&auml;hrend Netscape ab Version 6 die Eigenschaft f&uuml;r Formularsteuerelemente und das <span class="literal">style</span>-Elementobjekt erkennt. Das Namens-/Wertpaar eines deaktivierten Formularsteuerelements wird nicht zusammen mit dem Formular &uuml;bermittelt.
+		</p>
+									</td>
+								</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td><span class="programlisting"><pre>document.getElementById("myButton").disabled = true;</pre>
+								</span></td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Boolescher Wert: <span class="literal">true</span> | <span class="literal">false</span>.</p>
+							</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td valign="top" nowrap colspan="2" class="default"><span class="title">Standardwert</span></td>
+						</tr>
+						<tr>
+							<td colspan="2"><p><span class="literal">false</span></p>
+							</td>
+						</tr>
+					</table>
+		</div>
+		<div id="focus( )">
+					<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+						<tr><td valign="top" class="name">focus( )</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">2</span> IE <span class="emphasis">3</span> DOM <span class="emphasis">1</span></td>
+						</tr>
+						<tr>
+							<td valign="top" nowrap class="usage"><p class="literal"></p>
+							</td><td valign="top" nowrap class="requirements"></td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="description"><p>&Uuml;bergibt den Fokus an das aktuelle Objekt und l&ouml;st damit das <span class="literal">onfocus</span>-Ereignis des Objekts aus. Beachten Sie, dass die Palette der Elemente, die Fokus und Blur (Ereignisse und Methoden) unterst&uuml;tzen, in allen Browsern mit Ausnahme der neuesten Versionen von IE eingeschr&auml;nkt ist (weitere Informationen finden Sie in der Abhandlung des Attributs <span class="literal">tabindex</span> in Kapitel 8). Am zuverl&auml;ssigsten im Hinblick auf die R&uuml;ckw&auml;rtskompatibilit&auml;t funktioniert die Methode <span class="literal">focus( )</span> in Verbindung mit eindeutig fokusf&auml;higen Elementen wie Text-<span class="literal">input</span>- und <span class="literal">textarea</span>-Elementen.
+		</p>
+									</td>
+								</tr>
+								<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+								</tr>
+								<tr>
+									<td colspan="2"><p>Um einem Textfeld den Fokus zuzuweisen und zugleich den in diesem Feld enthaltenen Text zu markieren, wenden Sie die Methoden <span class="literal">focus( )</span> und <span class="literal">select( )</span> nacheinander auf das Element an. Wenn dies unmittelbar nach einer Ver&auml;nderung im Fenster geschehen soll (z. B. nachdem ein Wardialogfeld geschlossen wurde), stellen Sie die beiden Methoden in eine separate Funktion und rufen Sie diese im Anschluss an die <span class="literal">alert( )</span>-Methode des Dialogfelds &uuml;ber die Methode <span class="literal">setTimeout( )</span> auf. Auf diese Weise k&ouml;nnen Sie gew&auml;hrleisten, dass IE/Windows die Anweisungen in der richtigen Reihenfolge ausf&uuml;hrt.
+		</p>
+									</td>
+								</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="parameters"><span class="title">Parameter</span></td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Keine. </p>
+							</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="returnedvalue"><span class="title">Zur&uuml;ckgegebener Wert</span></td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Keiner.</p>
+							</td>
+						</tr>
+					</table>
+		</div>
+		<div id="form">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">form</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">2</span> IE <span class="emphasis">3</span> DOM <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Schreibgesch&uuml;tzt</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Gibt eine Referenz auf das <span class="literal">form</span>-Element zur&uuml;ck, das das aktuelle Element enth&auml;lt. W&auml;hrend der Verarbeitung eines von diesem Element stammenden Ereignisses hat die Ereignisbehandlungsroutinenfunktion automatisch Zugriff auf das <span class="literal">select</span>-Element (als <span class="literal">target</span>- oder <span class="literal">srcElement</span>-Eigenschaft des Ereignisobjekts). Durch Lesen der <span class="literal">form</span>-Eigenschaft kann das Skript problemlos auf andere Steuerelemente innerhalb desselben Formulars zugreifen.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>var theForm = evt.srcElement.form;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p><span class="literal">form</span>-Elementobjektreferenz</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Standardwert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Keiner. </p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="length">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">length</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">2</span> IE <span class="emphasis">3</span> DOM <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Lesen/Schreiben</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Die Anzahl der <span class="literal">option</span>-Objekte, die im <span class="literal">select</span>-Objekt verschachtelt sind. Der R&uuml;ckgabewert ist identisch mit der Eigenschaft <span class="literal">options.length</span> des <span class="literal">select</span>-Objekts und kann problemlos als Maximalwert f&uuml;r den Z&auml;hler in einer <span class="literal">for</span>-Schleife verwendet werden, die zum Durchlaufen der einzelnen verschachtelten <span class="literal">option</span>-Objekte dient. Laut W3C-DOM ist diese Eigenschaft schreibgesch&uuml;tzt. Da sie in Mainstream-Browsern jedoch seit geraumer Zeit gelesen und geschrieben werden kann, l&auml;sst sich dieser Wert auch weiterhin &auml;ndern. Im Gro&szlig;en und Ganzen sollte diese Eigenschaft, wenn &uuml;berhaupt, nur ge&auml;ndert werden, um ihren Wert auf Null zu setzen und somit alle Optionen aus dem <span class="literal">select</span>-Objekt zu entleeren. Wenn Sie Skripts f&uuml;r IE ab Version 5 oder Netscape 6 erstellen, sollten Sie stattdessen besser die Methoden <span class="literal">select.remove( )</span> und <span class="literal">select.add( )</span> verwenden, um das Kontingent der im <span class="literal">select</span>-Element verschachtelten <span class="literal">option</span>-Elemente zu modifizieren.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>document.forms[0].mySelect.length = 0;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Eine ganze Zahl.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Standardwert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Keiner. </p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="multiple">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">multiple</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">4</span> DOM <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Lesen/Schreiben</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Legt fest, ob der Browser das Element <span class="literal">select</span> als Listenfeld darstellen und Benutzern die M&ouml;glichkeit geben soll, mehrere Optionen auf einmal auszuw&auml;hlen. Standardm&auml;&szlig;ig ist die Eigenschaft <span class="literal">size</span> auf die Anzahl der verschachtelten <span class="literal">option</span>-Elemente gesetzt; diese Einstellung kann jedoch durch Festlegen eines anderen Werts f&uuml;r die Eigenschaft <span class="literal">size</span> au&szlig;er Kraft gesetzt werden. Wenn Sie ein Listenfeld in ein Popupmen&uuml; umwandeln m&ouml;chten, setzen Sie die Eigenschaft <span class="literal">multiple</span> auf <span class="literal">false</span> und die Eigenschaft <span class="literal">size</span> auf <span class="literal">1</span>. Benutzer k&ouml;nnen aufeinander folgende Eintr&auml;ge ausw&auml;hlen, indem sie bei gedr&uuml;ckter <span class="emphasis">Umschalttaste</span> auf den ersten und den letzten Eintrag in der Gruppe klicken. Zum Ausw&auml;hlen nicht aufeinander folgender Eintr&auml;ge muss der Benutzer unter Windows die <span class="emphasis">Strg</span>-Taste bzw. auf dem Macintosh die <span class="emphasis">Befehlstaste</span> gedr&uuml;ckt halten und nacheinander auf die gew&uuml;nschten Eintr&auml;ge klicken. Die Eigenschaft <span class="literal">multiple</span> hat keine Auswirkungen, wenn <span class="literal">size</span> auf 1 gesetzt wurde, damit ein Popupmen&uuml; angezeigt wird.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>if (document.entryForm.list3.multiple) &#123;
+    ...
+}</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Boolescher Wert: <span class="literal">true</span> | <span class="literal">false</span>.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Standardwert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p><span class="literal">false</span></p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="name">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">name</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">2</span> IE <span class="emphasis">3</span> DOM <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Lesen/Schreiben</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Dies ist der dem Formularsteuerelement zugeordnete Bezeichner. Der Wert dieser Eigenschaft wird beim Senden des Formulars an den Server als eine H&auml;lfte des Namens-/Wertpaars &uuml;bertragen. Namen werden dem Benutzer nicht angezeigt, da die Beschriftungen f&uuml;r Steuerelemente, abh&auml;ngig von der Art des Steuerelements, &uuml;ber andere Wege zugewiesen werden. Namen von Formularsteuerelementen k&ouml;nnen auch durch Referenzen in Skripts mit den Objekten verkn&uuml;pft werden. Obwohl in modernen Standards das <span class="literal">id</span>-Attribut bevorzugt wird, setzen viele Browser beim &Uuml;bertragen des Wertes eines Steuerelements noch immer voraus, dass diesem ein <span class="literal">name</span>-Attribut zugeordnet ist.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>document.orderForm.payment.name = "credcard";</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Ein von der Gro&szlig;-/Kleinschreibung abh&auml;ngiger Bezeichner, der den Regeln der Bezeichnerbenennung folgt: Er darf keine Leerzeichen enthalten, nicht mit einer Ziffer beginnen und sollte keine Satzzeichen enthalten (mit Ausnahme des Unterstrichs).
+</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Standardwert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Keiner.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="options[ ]">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">options[ ]</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">2</span> IE <span class="emphasis">3</span> DOM <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Schreibgesch&uuml;tzt</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Gibt ein Array aller <span class="literal">option</span>-Objekte zur&uuml;ck, die im aktuellen Element enthalten sind. Elemente in diesem Array werden in der Quellcodereihenfolge (basierend auf Null) indiziert. Informationen zur Verwendung dieser Sammlung in einem r&uuml;ckw&auml;rtskompatiblen Verfahren zum Hinzuf&uuml;gen und Entfernen von <span class="literal">option</span>-Elementen in einem <span class="literal">select</span>-Element finden Sie in der Abhandlung des <span class="literal">options</span>-Objekts. Sie k&ouml;nnen diese Sammlung in <span class="literal">select</span>-Elementen durchlaufen, in denen eine Mehrfachauswahl m&ouml;glich ist.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>var selVals = new Array( );
+for (var i = 0; i &lt; document.forms[0].mySelect.length; i++) &#123;
+    if (document.forms[0].mySelect.options[i].selected) &#123;
+        selVals[selVals.length] = document.forms[0].mySelect.options[i].value;
+    }
+}</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Array mit <span class="literal">option</span>-Objekten.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Standardwert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Keiner.</p>
+					</td>
+				</tr>
+			</table>
+		</div>
+		<div id="recordNumber">
+					<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+						<tr><td valign="top" class="name">recordNumber</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">nicht zutreffend</span> IE <span class="emphasis">4</span> DOM <span class="emphasis">nicht zutreffend</span></td>
+						</tr>
+						<tr>
+							<td valign="top" nowrap class="usage"><p class="literal"></p>
+							</td><td valign="top" nowrap class="requirements"><span class="emphasis">Schreibgesch&uuml;tzt</span></td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="description"><p>Wird zur Datenbindung in IE verwendet und gibt eine ganze Zahl zur&uuml;ck, die den Datensatz in der Datenmenge repr&auml;sentiert, die das Element erzeugte (d. h. ein Element, dessen Inhalt &uuml;ber die Datenbindung eingef&uuml;gt wird). Werte f&uuml;r diese Eigenschaft k&ouml;nnen dazu verwendet werden, einen bestimmten Datensatz aus der Datenmenge eines Active Data Object (ADO) zu extrahieren (siehe Eigenschaft <span class="literal">recordset</span>). Obwohl diese Eigenschaft f&uuml;r alle IE-Elementobjekte definiert ist, geh&ouml;ren die anderen datenbindungsbezogenen Eigenschaften nur zu bestimmten Elementen.
+		</p>
+									</td>
+								</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td><span class="programlisting"><pre>&lt;script for="tableTemplate" event="onclick"&gt;
+		    myDataCollection.recordset.absoluteposition = this.recordNumber;
+		    ...
+		&lt;/script&gt;</pre>
+								</span></td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Eine ganze Zahl.</p>
+							</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td valign="top" nowrap colspan="2" class="default"><span class="title">Standardwert</span></td>
+						</tr>
+						<tr>
+							<td colspan="2"><p><span class="literal">null</span></p>
+							</td>
+						</tr>
+					</table>
+		</div>
+		<div id="selectedIndex">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">selectedIndex</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">2</span> IE <span class="emphasis">3</span> DOM <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Lesen/Schreiben</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Dies ist die auf Null basierende ganze Zahl der vom Benutzer ausgew&auml;hlten Option. Ist im <span class="literal">select</span>-Element eine Mehrfachauswahl m&ouml;glich, so gibt die Eigenschaft <span class="literal">selectedIndex</span> den Index des ersten ausgew&auml;hlten Elements zur&uuml;ck (siehe Eigenschaft <span class="literal">selected</span>). Sie k&ouml;nnen diese Eigenschaft f&uuml;r den Zugriff auf den Wert oder Text des ausgew&auml;hlten Elements verwenden (siehe Beispiel).
+</p>
+							</td>
+						</tr>
+						<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>In neueren Browsern gibt die Eigenschaft <span class="literal">selectedIndex</span> den Wert <span class="literal">-1</span> zur&uuml;ck, wenn keine Option ausgew&auml;hlt ist. In IE f&uuml;r Windows ab Version 5 kann dieser Wert auf <span class="literal">-1</span> gesetzt werden, um die Auswahl aller Elemente aufzuheben. In Netscape 6 bewirkt das Einstellen dieser Eigenschaft auf <span class="literal">-1</span> unter Umst&auml;nden kein Entleeren der angezeigten Option, die Auswahl aller Elemente in einem &uuml;bertragenen Formular wird jedoch zuverl&auml;ssig aufgehoben.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>var list = document.forms[0].selectList;
+var listText = list.options[list.selectedIndex].text;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Eine ganze Zahl.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Standardwert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Keiner. </p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="size">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">size</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">4</span> DOM <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Lesen/Schreiben</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Steuert die Anzahl der Zeilen, die in einem Listenfeld angezeigt werden, und spiegelt das <span class="literal">size</span>-Attribut des <span class="literal">select</span>-Elements wider. Wenn die Eigenschaft <span class="literal">multiple</span> auf <span class="literal">true</span> gesetzt ist, setzt sie eine <span class="literal">size</span>-Einstellung au&szlig;er Kraft, die weniger Zeilen angibt als Optionen in der Liste enthalten sind. Wenn Sie ein Listenfeld in ein Popupmen&uuml; umwandeln m&ouml;chten, setzen Sie die Eigenschaft <span class="literal">multiple</span> auf <span class="literal">false</span> und die Eigenschaft <span class="literal">size</span> auf <span class="literal">1</span>.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>document.forms[0].choices.size = 6;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Eine ganze Zahl.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Standardwert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Keiner. </p>
+					</td>
+				</tr>
+			</table>
+		</div>
+		<div id="tabIndex">
+					<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+						<tr><td valign="top" class="name">tabIndex</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">4</span> DOM <span class="emphasis">1</span></td>
+						</tr>
+						<tr>
+							<td valign="top" nowrap class="usage"><p class="literal"></p>
+							</td><td valign="top" nowrap class="requirements"><span class="emphasis">Lesen/Schreiben</span></td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="description"><p>Dies ist eine Zahl, die die Position dieses Elements innerhalb der Tabulatorreihenfolge aller aktivierbaren Elemente im Dokument angibt. F&uuml;r die Tabulatorreihenfolge gelten sehr strenge Regeln. Elemente, deren <span class="literal">tabIndex</span>-Eigenschaften Werte (nicht Null) zugewiesen wurden, befinden sich in der Reihenfolge an erster Stelle, wenn ein Benutzer die Tabulatortaste auf einer Seite verwendet. Der Fokus beginnt bei dem Element mit dem niedrigsten <span class="literal">tabIndex</span>-Wert und folgt der Reihenfolge bis zum h&ouml;chsten Wert, unabh&auml;ngig von der physischen Position eines Objekts auf der Seite oder in einem Dokument. Falls zwei Elemente die gleichen <span class="literal">tabIndex</span>-Werte aufweisen, erh&auml;lt das Element, das zuerst im Dokument erscheint, auch zuerst den Fokus. Dann kommen alle Elemente, die entweder die Eigenschaft <span class="literal">tabIndex</span> nicht unterst&uuml;tzen oder deren Wert auf Null gesetzt ist. Diese Elemente werden in der Reihenfolge aktiviert, in der sie im Dokument angeordnet sind.
+		</p>
+									</td>
+								</tr>
+								<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+								</tr>
+								<tr>
+									<td colspan="2"><p>Im W3C-DOM und in Netscape 6 ist die Eigenschaft <span class="literal">tabIndex</span> auf folgende Elementobjekte beschr&auml;nkt: <span class="literal">a</span>, <span class="literal">area</span>, <span class="literal">button</span>, <span class="literal">input</span>, <span class="literal">object</span>, <span class="literal">select</span> und <span class="literal">textarea</span>. IE 4 unterst&uuml;tzt es dar&uuml;ber hinaus f&uuml;r die Elemente <span class="literal">applet</span>, <span class="literal">body</span>, <span class="literal">div</span>, <span class="literal">embed</span>, <span class="literal">isindex</span>, <span class="literal">marquee</span>, <span class="literal">span</span>, <span class="literal">table</span> und <span class="literal">td</span>. IE 5 erkennt dieses Attribut in Verbindung mit allen darstellbaren Elementen. Ein negativer Wert entfernt ein Element (nur in IE) vollst&auml;ndig aus der Tabulatorreihenfolge.
+		</p>
+									</td>
+								</tr>
+								<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+								</tr>
+								<tr>
+									<td colspan="2"><p>Da Hyperlinks und Anker in der Mac-Version von IE 4 nicht &uuml;ber die Tabulatortaste zu erreichen sind, wird die Eigenschaft <span class="literal">tabIndex</span> bei <span class="literal">a</span>-Elementen in dieser Version ignoriert.
+		</p>
+									</td>
+								</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td><span class="programlisting"><pre>document.getElementById("link3").tabIndex = 6;</pre>
+								</span></td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Eine ganze Zahl.</p>
+							</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td valign="top" nowrap colspan="2" class="default"><span class="title">Standardwert</span></td>
+						</tr>
+						<tr>
+							<td colspan="2"><p><span class="literal">0</span> </p>
+							</td>
+						</tr>
+					</table>
+		</div>
+		<div id="type">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">type</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">3</span> IE <span class="emphasis">4</span> DOM <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Schreibgesch&uuml;tzt</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Gibt den Typ des Formularsteuerelements zur&uuml;ck. Ein <span class="literal">select</span>-Objekt hat zwei m&ouml;gliche Werte, die davon abh&auml;ngen, ob das Element als eine Multiple-Choice-Liste definiert ist. Der Wert wird ausschlie&szlig;lich in Kleinbuchstaben zur&uuml;ckgegeben. Es kann notwendig sein, alle Formularsteuerelemente bei der Suche nach bestimmten Typen zu durchlaufen, um eine Verarbeitung auszuf&uuml;hren (z. B. das Leeren aller Formularsteuerelemente des Typs "text", w&auml;hrend alle anderen Steuerelemente unber&uuml;hrt bleiben).
+</p>
+							</td>
+						</tr>
+						<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Beachten Sie, dass Navigator 4 den Typ eines <span class="literal">select</span>-Objekts f&auml;lschlicherweise als <span class="literal">select-multiple</span> meldet, wenn das <span class="literal">size</span>-Attribut des Elements auf einen Wert gr&ouml;&szlig;er als <span class="literal">1</span> gesetzt ist. Dies gilt auch dann, wenn das Attribut <span class="literal">multiple</span> nicht gesetzt ist. Dieser Fehler wurde in Navigator 6 behoben.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>if (document.forms[0].elements[3].type == "select-multiple") &#123;
+    ...
+}</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Eine der folgenden Konstanten als Zeichenfolge: <span class="literal">button</span> | <span class="literal">checkbox</span> | <span class="literal">file</span> | <span class="literal">hidden</span> | <span class="literal">image</span> | <span class="literal">password</span> | <span class="literal">radio</span> | <span class="literal">reset</span> | <span class="literal">select-multiple</span> | <span class="literal">select-one</span> | <span class="literal">submit</span> | <span class="literal">text</span> | <span class="literal">textarea</span>.
+</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Standardwert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>H&auml;ngt vom Wert f&uuml;r <span class="literal">multiple</span> ab. </p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="value">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">value</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">4</span> DOM <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Lesen/Schreiben</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Dies ist der aktuelle Wert des Formularsteuerelements, das mit dem Namens-/Wertpaar des Elements gesendet wird. Alle Werte sind Zeichenfolgen, k&ouml;nnen aber auch andere Arten von Daten darstellen, z. B. Boolesche und numerische Werte. Bei Browsern vor IE 4 und Netscape 6 musste ein Skript den Wert der ausgew&auml;hlten Option mithilfe der Eigenschaft <span class="literal">selectedIndex</span> des <span class="literal">select</span>-Objekts als Index in das <span class="literal">options</span>-Array laden und anschlie&szlig;end die <span class="literal">selected</span>-Eigenschaft der einzelnen <span class="literal">option</span>-Objekte untersuchen, um diejenigen mit dem Wert <span class="literal">true</span> zu ermitteln.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>if (document.forms[0].medium.value == "CD-ROM") &#123;
+    ...
+}</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Zeichenfolge.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Standardwert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Keiner.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="add( )">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">add( )</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">5</span> DOM <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">add(<span class="replaceable">newOptionElement</span>[, <span class="replaceable">positionIndex</span>]) add(<span class="replaceable">newOptionElement</span>, <span class="replaceable">optionElementReference</span>)</p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>F&uuml;gt dem aktuellen <span class="literal">select</span>-Element ein neues <span class="literal">option</span>-Element hinzu. Ungl&uuml;cklicherweise erwarten IE und Netscape 6 unterschiedliche Parameterwerte f&uuml;r diese Methode. W&auml;hrend alle Browser eine Referenz auf ein neu erstelltes <span class="literal">option</span>-Element erfordern (hierzu eignet sich der R&uuml;ckgabewert einer <span class="literal">document.createElement("option")</span>-Methode), ist der zweite Parameter vom jeweiligen Browser abh&auml;ngig. Bei IE ist der zweite Parameter optional und enth&auml;lt gegebenenfalls einen numerischen Indexwert f&uuml;r das vorhandene <span class="literal">option</span>-Element, vor dessen Position das neue <span class="literal">option</span>-Element eingef&uuml;gt wird. Wenn der zweite Parameter fehlt, wird das neue <span class="literal">option</span>-Element an die vorhandenen <span class="literal">option</span>-Elemente angeh&auml;ngt. Bei Netscape 6, der die W3C-DOM-Empfehlung aus dem noch nicht abgeschlossenen HTML-Modul implementiert, ist der zweite Parameter erforderlich. Bei diesem zweiten Parameter handelt es sich entweder um eine Referenz auf ein vorhandenes <span class="literal">option</span>-Element (das neue <span class="literal">option</span>-Element wird vor dem angegebenen <span class="literal">option</span>-Element eingef&uuml;gt) oder um den Wert <span class="literal">null</span> (das neue <span class="literal">option</span>-Element wird an die vorhandenen Optionen angeh&auml;ngt).
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Parameter</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<ul><li><span class="literal"></span>Referenz auf ein <span class="literal">option</span>-Element, das in der Regel mit der Methode <span class="literal">document.createElement( )</span> in einem Skript erstellt wurde.
+</li><li><span class="literal"></span>Optionaler ganzzahliger IE-Parameter, der das vorhandene verschachtelte <span class="literal">option</span>-Element angibt, vor dem das neue <span class="literal">option</span>-Element eingef&uuml;gt werden soll. Wenn dieser Parameter fehlt, wird das neue <span class="literal">option</span>-Element an das Ende der Optionsliste angeh&auml;ngt.
+</li><li><span class="literal"></span>Referenz auf ein <span class="literal">option</span>-Element, vor dem das neue <span class="literal">option</span>-Element eingef&uuml;gt werden soll. Wenn dieser Parameter den Wert <span class="literal">null</span> aufweist, wird das neue <span class="literal">option</span>-Element an das Ende der Optionsliste angeh&auml;ngt.
+</li></ul>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Zur&uuml;ckgegebener Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Keiner.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="item( )">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">item( )</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">nicht zutreffend</span> IE <span class="emphasis">5</span>  DOM <span class="emphasis">nicht zutreffend</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">item(<span class="replaceable">index</span>[, <span class="replaceable">subindex</span>])</p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Gibt ein einzelnes verschachteltes <span class="literal">options</span>-Objekt oder eine <span class="literal">option</span>-Sammlung zur&uuml;ck, das bzw. die dem mit dem Indexwert (oder optional mit dem Index- und dem Subindexwert) &uuml;bereinstimmenden Element entspricht.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Parameter</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<ul><li><span class="literal"></span>Handelt es sich bei dem Parameter um eine auf Null basierende ganze Zahl, ist der zur&uuml;ckgegebene Wert ein einzelnes Element, das dem Objekt mit der entsprechenden Nummer in der Quellcodereihenfolge (verschachtelt im aktuellen Element) entspricht. Handelt es sich bei dem Parameter um eine Zeichenfolge, ist der zur&uuml;ckgegebene Wert eine Sammlung der Elemente, deren <span class="literal">id</span>-Eigenschaft mit dieser Zeichenfolge &uuml;bereinstimmt.
+</li><li><span class="literal"></span>Wenn Sie eine Zeichenfolge als ersten Parameter angeben, k&ouml;nnen Sie den zweiten Parameter verwenden, um eine auf Null basierende ganze Zahl anzugeben, die ein entsprechendes Element aus einer Objektsammlung abruft, dessen <span class="literal">id</span>-Eigenschaft mit der Zeichenfolge des ersten Parameters &uuml;bereinstimmt.
+</li></ul>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Zur&uuml;ckgegebener Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Ein Objekt oder eine Objektsammlung (Array). Falls keine &Uuml;bereinstimmung mit den Parametern vorliegt, lautet der zur&uuml;ckgegebene Wert <span class="literal">null</span>.
+</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="namedItem( )">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">namedItem( )</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">nicht zutreffend</span> IE <span class="emphasis">6</span>  DOM <span class="emphasis">nicht zutreffend</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">namedItem("<span class="replaceable">ID</span>")</p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Gibt ein einzelnes verschachteltes <span class="literal">option</span>-Objekt oder eine Sammlung mit verschachtelten <span class="literal">option</span>-Objekten zur&uuml;ck, das bzw. die dem mit dem Wert der Parameterzeichenfolge &uuml;bereinstimmenden Element entspricht.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Parameter</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<ul><li><span class="literal"></span>Die Zeichenfolge, die denselben Wert wie das <span class="literal">id</span>-Attribut des gew&uuml;nschten Elements enth&auml;lt.
+</li></ul>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Zur&uuml;ckgegebener Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Ein <span class="literal">option</span>-Objekt oder eine Sammlung (Array) mit <span class="literal">option</span>-Objekten. Falls keine &Uuml;bereinstimmung mit den Parametern vorliegt, lautet der zur&uuml;ckgegebene Wert <span class="literal">null</span>.
+</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="remove( )">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">remove( )</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">5</span> DOM <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">remove(<span class="replaceable">positionIndex</span>)</p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Entfernt ein <span class="literal">option</span>-Element an der durch den Parameterwert bezeichneten auf Null basierenden Indexposition aus dem aktuellen <span class="literal">select</span>-Element. Anstatt die <span class="literal">length</span>-Eigenschaft des <span class="literal">select</span>-Objekts auf Null zu setzen, k&ouml;nnen Sie auch alle vorhandenen Optionen mit einer einfachen Schleifenkonstruktion entfernen:
+</p>
+<span class="PROGRAMLISTING"><pre>while (selectElemRef.length&gt; 0) &#123;
+    selectElemRef.remove(0);
+} </pre></span>
+							</td>
+						</tr>
+						<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>An dieser Stelle k&ouml;nnen Sie die Liste mithilfe der verschiedenen in den Abhandlungen der <span class="literal">add( )</span>-Methode und des <span class="literal">options</span>-Objekts beschriebenen Verfahren mit neuen Optionen auff&uuml;llen.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Parameter</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<ul><li><span class="literal"></span>Auf Null basierende ganze Zahl, die angibt, welches Element in der verschachtelten Optionsobjektsammlung gel&ouml;scht werden soll.
+</li></ul>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Zur&uuml;ckgegebener Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Keiner.</p>
+					</td>
+				</tr>
+			</table>
+		</div>
+
+</body>
+</html>

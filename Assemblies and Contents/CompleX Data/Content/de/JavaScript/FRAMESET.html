@@ -1,0 +1,418 @@
+<html>
+<link rel="stylesheet" href="josh.css">
+<body bgcolor="#FFFFFF">
+
+		<div id="Beschreibung">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">frameset</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">4</span>  DOM <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Das <span class="literal">frameset</span>-Objekt spiegelt das <span class="literal">frameset</span>-Element wider. Beachten Sie die Unterschiede zwischen dem (hier beschriebenen) <span class="literal">frameset</span>-Elementobjekt und dem <span class="literal">window</span>-Objekt, das durch ein Frameset erm&ouml;glicht wird. Die Eigenschaften und Methoden eines <span class="literal">frameset</span>-Elementobjekts spiegeln zumeist die mit dem HTML-Element und seinen Attributen verbundenen Aspekte wider. Der Inhalt eines <span class="literal">frameset</span>-Elements ist ein <span class="literal">window</span>-Element (in der W3C-DOM-Terminologie als Ansicht oder View bezeichnet), das von Anfang an skriptf&auml;hig ist und ein Dokument enth&auml;lt (wenngleich ohne darstellbare Elemente &uuml;ber die verschachtelten <span class="literal">frame</span>-Elemente hinaus). Verwenden Sie in Referenzen auf ein <span class="literal">frameset</span>-Elementobjekt dessen ID. Von einem Skript im Dokument eines Frames aus erreichen Sie das <span class="literal">frameset</span>-Elementobjekt beispielsweise mithilfe der folgenden Methode:
+</p>
+<span class="PROGRAMLISTING"><pre>parent.document.getElementById(&quot;myFrameset&quot;)</pre></span>
+							</td>
+						</tr>
+						<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Wenn Sie hingegen das Frameset-Fenster erreichen (und somit auf seine Skripts und Dokumente zugreifen) m&ouml;chten, w&uuml;rden Sie in diesem Skript eine der beiden folgenden Referenzen verwenden:
+</p>
+<span class="PROGRAMLISTING"><pre>parent
+top</pre></span>
+							</td>
+						</tr>
+						<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Wenn ein Skript eine Referenz auf das <span class="literal">frameset</span>-Elementobjekt verarbeitet, k&ouml;nnen Sie mithilfe der (in der Abhandlung der gemeinsamen Eigenschaften weiter vorne in diesem Kapitel beschriebenen) <span class="literal">ownerDocument</span>-Eigenschaft des Elements die Kluft zwischen dem Elementobjekt und seinem Inhalt &uuml;berwinden.
+</p>
+							</td>
+						</tr>
+						<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Referenzen auf die Frameset-Objekt in diesem Abschnitt funktionieren in der Windows 95-Version von Internet Explorer 4 nicht richtig. Au&szlig;erdem kann der Platzhalter <span class="replaceable">windowRef</span> auf <span class="literal">parent</span> oder <span class="literal">top</span> gesetzt werden, wenn sich die Referenz in einem Skript befindet, das in einem untergeordneten Frame enthalten ist.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="htmlequivalent"><span class="title">HTML-&Auml;quivalent</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>&lt;frameset&gt;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectmodelreference"><span class="title">Objektmodellreferenz</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>[<span class="replaceable">windowRef</span>.]document.getElementById("<span class="replaceable">framesetID</span>")</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectspecificproperties"><span class="title">Objektspezifische Eigenschaften</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<table border="1"><tbody><tr><td><span class="literal">border</span></td><td><span class="literal">borderColor</span></td><td><span class="literal">cols</span></td><td><span class="literal">frameBorder</span></td><td><span class="literal">frameSpacing</span></td><td><span class="literal">rows</span></td>
+								</tr>
+							</tbody></table>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectspecificmethods"><span class="title">Objektspezifische Methoden</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Keine. </p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectspecificeventhandlerproperties"><span class="title">Objektspezifische Ereignisbehandlungsroutineneigenschaften</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<table border="1"><tbody><th>Behandlungsroutine</th><th>IE Windows</th><th>IE Mac</th><th>NN</th><th>W3C-DOM</th><tr><td><span class="literal">onafterprint</span></td><td>5</td><td>--</td><td>--</td><td>--</td>
+								</tr>
+								<tr><td><span class="literal">onbeforeprint</span></td><td>5</td><td>--</td><td>--</td><td>--</td>
+								</tr>
+								<tr><td><span class="literal">onbeforeunload</span></td><td>4</td><td>--</td><td>--</td><td>--</td>
+								</tr>
+								<tr><td><span class="literal">onload</span></td><td>3</td><td>3.01</td><td>2</td><td>2</td>
+								</tr>
+								<tr><td>onresize</td><td>4</td><td>4</td><td>4</td><td>--</td>
+								</tr>
+								<tr><td><span class="literal">onunload</span></td><td>3</td><td>3.01</td><td>2</td><td>2</td>
+								</tr>
+							</tbody></table>
+					</td>
+				</tr>
+			</table>
+		</div><div id="border">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">border</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">nicht zutreffend</span> IE <span class="emphasis">4</span>  DOM <span class="emphasis">nicht zutreffend</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Lesen/Schreiben</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Der Abstand zwischen Frames in einem Frameset (in Pixeln). Nur das &auml;u&szlig;erste <span class="literal">frameset</span>-Element eines Systems von verschachtelten Framesets reagiert auf die Einstellung der <span class="literal">border</span>-Eigenschaft. Internet Explorer behandelt die Standardabst&auml;nde f&uuml;r Windows und Macintosh unterschiedlich, denken Sie also daran, dass gleiche Einstellungen auf verschiedenen Betriebssystemen unterschiedliche Ergebnisse haben k&ouml;nnen.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>top.document.getElementById("myFrameset").border = 4;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Eine beliebige ganze Zahl. Die Einstellung Null l&ouml;scht den Rahmen vollst&auml;ndig. Obwohl dieser Wert eigentlich die pr&auml;zise Pixelbreite von Rahmen in einem Frameset darstellt, gilt dies nicht f&uuml;r alle Betriebssysteme oder Browser.
+</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Standardwert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p><span class="literal">6</span> (IE Windows); <span class="literal">1</span> (IE Mac). </p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="borderColor">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">borderColor</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">nicht zutreffend</span> IE <span class="emphasis">4</span>  DOM <span class="emphasis">nicht zutreffend</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Lesen/Schreiben</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Die Farbe der Rahmen zwischen Frames in einem Frameset. Mit der Eigenschaft <span class="literal">borderColor</span> eines einzelnen Frames werden die Einstellungen im <span class="literal">frameset</span>-Objekt &uuml;berschrieben.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>parent.document.getElementById("myFrameset").borderColor = "salmon";</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Ein hexadezimales Triplett oder ein unverschl&uuml;sselter Farbname. Eine Einstellung ohne Wert wird als <span class="literal">"#000000"</span> (Schwarz) interpretiert. Einzelheiten zu den g&uuml;ltigen unverschl&uuml;sselten Farbnamen finden Sie in Anhang A.
+</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Standardwert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Variiert je nach Betriebssystem. </p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="cols">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">cols</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">4</span>  DOM <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Lesen/Schreiben</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Definiert die Gr&ouml;&szlig;e oder die Proportionen der Spaltenanordnung von Frames in einem Frameset. Die Spaltengr&ouml;&szlig;e kann auf drei Arten eingestellt werden:
+</p>
+							</td>
+						</tr>
+						<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Gehen Sie mit &auml;u&szlig;erster Sorgfalt vor, wenn Sie diese Eigenschaft in einem Skript &auml;ndern. Eine nachl&auml;ssige &Auml;nderung der Zusammenstellung eines Frameset kann Skripts unterbrechen, die zwischen Frames kommunizieren. Das Reduzieren der Spaltenanzahl kann Dokumente zerst&ouml;ren, deren Skripts oder Objekte Skripts in anderen Frames oder &uuml;bergeordneten Frames unterst&uuml;tzen. Am besten behalten Sie die Spaltenanzahl bei, aber verwenden Sie diese Eigenschaft zum Einstellen der Breiten von vorhandenen Framespalten. In den ersten Versionen von Netscape 6 werden &Auml;nderungen unter Umst&auml;nden nicht korrekt dargestellt. Wenn Sie in Ihren Skripts mit der <span class="literal">onresize</span>-Ereignisbehandlungsroutine des Framesets arbeiten, sollten Sie au&szlig;erdem auf m&ouml;glichst vielen Plattformen testen, ob das Ereignis durch skriptgesteuerte &Auml;nderungen dieser Eigenschaften tats&auml;chlich ausgel&ouml;st wird.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>parent.document.getElementById("framesetter").cols = "40%,60%";</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Eine durch Kommas getrennte Liste (als Zeichenfolge) von Pixeln, Prozentwerten oder das Stellvertreterzeichen (<span class="literal">*</span>). Internet Explorer 4 f&uuml;r den Macintosh zeigt bei einigen Kombinationen mit dem Stellvertreterzeichen ein falsches Verhalten.
+</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Standardwert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p><span class="literal">100%</span></p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="frameBorder">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">frameBorder</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">nicht zutreffend</span> IE <span class="emphasis">4</span>  DOM <span class="emphasis">nicht zutreffend</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Lesen/Schreiben</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Legt fest, ob Rahmen zwischen den Frames im Frameset anzeigt werden. Eine &Auml;nderung dieser Eigenschaft f&uuml;hrt nicht dazu, das die Rahmen in Internet Explorer f&uuml;r Windows dynamisch aus- bzw. eingeblendet werden.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>parent.document.getElementById("framesetter").frameBorder = "no";</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Internet Explorer 4 akzeptiert die Zeichenfolgen <span class="literal">1</span> (ein) und <span class="literal">0</span> (aus) sowie <span class="literal">yes</span> und <span class="literal">no</span>.
+</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Standardwert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p><span class="literal">yes</span></p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="frameSpacing">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">frameSpacing</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">nicht zutreffend</span> IE <span class="emphasis">4</span>  DOM <span class="emphasis">nicht zutreffend</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Lesen/Schreiben</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Die Menge des freien Raums zwischen Frames in einem Frameset (in Pixel). Eine &Auml;nderung dieser Eigenschaft f&uuml;hrt nicht dazu, das die Rahmenabst&auml;nde in Internet Explorer f&uuml;r Windows dynamisch angepasst werden.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>parent.document.getElementById("framesetter").frameSpacing = 5;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Eine ganze Zahl.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Standardwert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p><span class="literal">2</span></p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="rows">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">rows</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">4</span> DOM <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Lesen/Schreiben</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Definiert die Gr&ouml;&szlig;e oder die Proportionen der Zeilenanordnung von Frames in einem Frameset. Weitere Informationen zur Auswahl der verschiedenen Werte f&uuml;r die Eigenschaft <span class="literal">rows</span> finden Sie unter der Eigenschaft <span class="literal">cols</span>.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>document.getElementById("myFrameset").rows = "20%, 300, *";</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Eine durch Kommas getrennte Liste (als Zeichenfolge) von Pixeln, Prozentwerten oder das Stellvertreterzeichen (<span class="literal">*</span>).
+</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Standardwert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Keiner. </p>
+					</td>
+				</tr>
+			</table>
+		</div>
+
+</body>
+</html>

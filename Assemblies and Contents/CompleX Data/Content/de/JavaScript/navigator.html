@@ -1,0 +1,1191 @@
+<html>
+<link rel="stylesheet" href="josh.css">
+<body bgcolor="#FFFFFF">
+
+		<div id="Beschreibung">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">navigator</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">2</span>  IE <span class="emphasis">3</span>  DOM <span class="emphasis">nicht zutreffend</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Das <span class="literal">navigator</span>-Objekt entspricht der Browseranwendung, sodass der Browser au&szlig;erhalb des G&uuml;ltigkeitsbereichs des Dokumentobjektmodells liegt. Dennoch spielt das <span class="literal">navigator</span>-Objekt beim Scripting eine wichtige Rolle, da es dem Skript erm&ouml;glicht festzustellen, mit welchem Browser und welcher Browserversion das Skript ausgef&uuml;hrt wird. Neben einigen Schl&uuml;sseleigenschaften, die Navigator und Internet Explorer gemeinsam haben, erweitern beide Browser das Objekt um zus&auml;tzliche Eigenschaften, die generell f&uuml;r alle Browser geeignet w&auml;ren. IE verf&uuml;gt &uuml;ber ein identisches Objekt mit dem Objektnamen <span class="literal">clientInformation</span>, aus Gr&uuml;nden der browser&uuml;bergreifenden Kompatibilit&auml;t k&ouml;nnen Sie jedoch in allen Browsern die Objektreferenz <span class="literal">navigator</span> verwenden.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectmodelreference"><span class="title">Objektmodellreferenz</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<ul><li><span class="literal"></span><span class="literal">navigator</span></li><li><span class="literal"></span><span class="literal">[window.]navigator</span></li></ul>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectspecificproperties"><span class="title">Objektspezifische Eigenschaften</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<table border="1"><tbody><tr><td><span class="literal">appCodeName</span></td><td><span class="literal">appMinorVersion</span></td><td><span class="literal">appName</span></td><td><span class="literal">appVersion</span></td>
+								</tr>
+								<tr><td><span class="literal">browserLanguage</span></td><td><span class="literal">cookieEnabled</span></td><td><span class="literal">cpuClass</span></td><td><span class="literal">language</span></td>
+								</tr>
+								<tr><td><span class="literal">mimeTypes[ ]</span></td><td><span class="literal">onLine</span></td><td><span class="literal">oscpu</span></td><td><span class="literal">platform</span></td>
+								</tr>
+								<tr><td><span class="literal">plugins[ ]</span></td><td><span class="literal">product</span></td><td><span class="literal">productSub</span></td><td><span class="literal">securityPolicy</span></td>
+								</tr>
+								<tr><td><span class="literal">systemLanguage</span></td><td><span class="literal">userAgent</span></td><td><span class="literal">userLanguage</span></td><td><span class="literal">userProfile</span></td>
+								</tr>
+								<tr><td><span class="literal">vendor</span></td><td><span class="literal">vendorSub</span></td><td></td><td></td>
+								</tr>
+							</tbody></table>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectspecificmethods"><span class="title">Objektspezifische Methoden</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<table border="1"><tbody><tr><td><span class="literal">javaEnabled( )</span></td><td><span class="literal">preference( )</span></td><td><span class="literal">taintEnabled( )</span></td>
+								</tr>
+							</tbody></table>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectspecificeventhandlerproperties"><span class="title">Objektspezifische Ereignisbehandlungsroutineneigenschaften</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Keine. </p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="appCodeName">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">appCodeName</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">2</span>  IE <span class="emphasis">3</span>  DOM <span class="emphasis">nicht zutreffend</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Schreibgesch&uuml;tzt</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Gibt den Codenamen des Browsers zur&uuml;ck. Sowohl Navigator als auch Internet Explorer geben <span class="literal">Mozilla</span> zur&uuml;ck, den Codenamen f&uuml;r eine fr&uuml;here Navigator-Version (es handelt sich dabei um eine Kombination aus dem Freeware-Namen des Mosaic-Browsers und Godzilla). Das Mozilla-Zeichen ist zwar das Firmenmaskottchen von Netscape, der Codename <span class="literal">Mozilla</span> wird jedoch von allen Browsern (einschlie&szlig;lich IE) zur&uuml;ckgegeben, die auf lizenzierter Mosaic-Technologie basieren.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>var codeName = navigator.appCodeName;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p><span class="literal">Mozilla</span></p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Standardwert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p><span class="literal">Mozilla</span></p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="appMinorVersion">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">appMinorVersion</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">nicht zutreffend</span> IE <span class="emphasis">4</span>  DOM <span class="emphasis">nicht zutreffend</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Schreibgesch&uuml;tzt</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>In nachfolgenden Generationen des Internet Explorers gibt diese Eigenschaft verwirrende Werte zur&uuml;ck, von denen die meisten bei der Versionserkennung in der Regel nicht hilfreich sind. IE 5.x f&uuml;r Windows gibt den <span class="literal">appVersion</span>-Wert <span class="literal">4.0</span> zur&uuml;ck, wobei die <span class="literal">appMinorVersion</span>-Eigenschaft die erste Ziffer nach dem Dezimalpunkt meldet. In IE 6 f&uuml;r Windows gibt die <span class="literal">appMinorVersion</span>-Eigenschaft eine Zeichenfolge mit einem kryptischen Build- oder Patch-Code zur&uuml;ck, z. B. <span class="literal">;Q313675;</span>. Mit &auml;u&szlig;erster Vorsicht zu verwenden.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>var subVer = navigator.appMinorVersion;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Zeichenfolge.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Standardwert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Abh&auml;ngig von der Browserversion. </p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="appName">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">appName</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">2</span>  IE <span class="emphasis">3</span>  DOM <span class="emphasis">nicht zutreffend</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Schreibgesch&uuml;tzt</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Gibt den Modellnamen des Browsers zur&uuml;ck.</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>var isNav = navigator.appName == "Netscape";</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Zeichenfolgenwerte. NN: "Netscape"; IE: "Microsoft Internet Explorer". Manche anderen Browser geben diese Werte zur&uuml;ck, um den Anschein der Kompatibilit&auml;t mit einem der Mainstream-Browser zu erwecken.
+</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Standardwert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Abh&auml;ngig vom Browser. </p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="appVersion">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">appVersion</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">2</span>  IE <span class="emphasis">3</span>  DOM <span class="emphasis">nicht zutreffend</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Schreibgesch&uuml;tzt</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Gibt eine Versionsnummer der Browser-Engine sowie grundlegende Informationen zur Betriebssystemplattform zur&uuml;ck (eine Teilmenge der von <span class="literal">userAgent</span> zur&uuml;ckgegebenen Informationen). Im Folgenden finden Sie einige Beispiele f&uuml;r die zur&uuml;ckgegebenen Werte:
+</p>
+							</td>
+						</tr>
+						<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Internet Explorer:</p>
+<span class="PROGRAMLISTING"><pre>4.0 (compatible; MSIE 6.0; Windows 98; Q312461)
+4.0 (compatible; MSIE 5.0; Macintosh; I; PPC)</pre></span>
+							</td>
+						</tr>
+						<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Navigator:</p>
+<span class="PROGRAMLISTING"><pre>4.04 [en] (Win95; I)
+5.0 (Macintosh; en-US)</pre></span>
+							</td>
+						</tr>
+						<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Beachten Sie, dass die Versionsnummer am Anfang des R&uuml;ckgabewerts (bis zum ersten Leerzeichen) nicht die Version der eigentlichen Browseranwendung ist, sondern vielmehr die der zugrundeliegenden Engine. Somit geben die IE-Versionen 4 bis 6 (und m&ouml;glicherweise auch sp&auml;tere Versionen) die Engine-Version 4.0 zur&uuml;ck, w&auml;hrend Netscape 6 auf der Engine-Generation 5.0 basiert. Die Versionsinformationen f&uuml;r die Browseranwendung sind an anderer Stelle in den Eigenschaften <span class="literal">appVersion</span> und <span class="literal">userAgent</span> oder anderen <span class="literal">navigator</span>-Objekteigenschaften zu finden. Verwenden Sie das erste Wort des <span class="literal">appVersion</span>-Werts nicht zur Erkennung der Browserversion, um davon ausgehend zu ermitteln, welche DOM- oder JavaScript-Funktionen der jeweilige Browser unterst&uuml;tzt. In Browsern vor Version 4 spiegelte diese Eigenschaft die Anwendungsversion korrekt wider, dies ist jedoch nicht mehr der Fall.
+</p>
+							</td>
+						</tr>
+						<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Es mag zwar so scheinen, dass die genaue Version des Internet Explorers im Wert dieser Eigenschaft eingebettet ist (im Format <span class="literal">MSIE X.XX</span>), doch stimmt auch diese Angabe bei manchen Versionen nicht immer mit der tats&auml;chlichen Anwendungsversion &uuml;berein. Wenn Sie diesen Teil der Versionszeichenfolge untersuchen m&ouml;chten, verwenden Sie stattdessen die zuverl&auml;ssigere Eigenschaft <span class="literal">navigator.userAgent</span>.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>var isVer4Min = parseInt(navigator.appVersion) &gt;= 4;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Zeichenfolge.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Standardwert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Abh&auml;ngig vom Browser. </p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="browserLanguage">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">browserLanguage</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">nicht zutreffend</span> IE <span class="emphasis">4</span>  DOM <span class="emphasis">nicht zutreffend</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Schreibgesch&uuml;tzt</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Stellt die standardm&auml;&szlig;ig f&uuml;r den Browser verwendete Textsprache bereit. Das Navigator-&Auml;quivalent ist die Eigenschaft <span class="literal">navigator.language</span>.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>var browLangCode = navigator.browserLanguage;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Von der Gro&szlig;-/Kleinschreibung unabh&auml;ngiger Sprachencode als Zeichenfolge.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Standardwert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Vorgabe des Browsers. </p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="cookieEnabled">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">cookieEnabled</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6  </span>IE <span class="emphasis">4  </span>DOM <span class="emphasis">nicht zutreffend</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Schreibgesch&uuml;tzt</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Gibt an, ob der Browser das Lesen und Schreiben von Cookie-Daten zul&auml;sst.</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>if (cookieEnabled) &#123;
+    setCookieData(data);
+}</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Boolescher Wert: <span class="literal">true</span> | <span class="literal">false</span>.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Standardwert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Abh&auml;ngig von der Browservoreinstellung. </p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="cpuClass">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">cpuClass</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">nicht zutreffend</span> IE <span class="emphasis">4</span>  DOM <span class="emphasis">nicht zutreffend</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Schreibgesch&uuml;tzt</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Gibt eine Zeichenfolgenreferenz mit der CPU des Clientcomputers zur&uuml;ck. Die g&auml;ngigen Intel-Mikroprozessoren (einschlie&szlig;lich Pentium-CPUs und Macintosh-Systeme, die Windows-Emulatoren ausf&uuml;hren) geben <span class="literal">x86</span> zur&uuml;ck, w&auml;hrend der PowerPC Macintosh <span class="literal">PPC</span> zur&uuml;ckgibt. Dieser Wert gibt lediglich &uuml;ber die grundlegende Hardwareklasse Aufschluss, nicht &uuml;ber das Betriebssystem, spezifische CPU-Daten oder die Modellnummer.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>if (navigator.cpuClass == "PPC") &#123;
+    // statements specific to PowerPC clients
+}</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Zeichenfolge.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Standardwert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Abh&auml;ngig von der Clienthardware. </p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="language">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">language</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">4  </span>IE <span class="emphasis">nicht zutreffend</span>  DOM <span class="emphasis">nicht zutreffend</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Schreibgesch&uuml;tzt</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Gibt die Textsprache an, f&uuml;r die die Browserversion erstellt wurde. Die Sprache wird im ISO-639-Sprachcodeschema angegeben (z. B. <span class="literal">en-us</span>). Der Internet Explorer stellt diese Informationen &uuml;ber die Eigenschaft <span class="literal">navigator.browserLanguage</span> bereit.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>var mainLang = navigator.language;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Von der Gro&szlig;-/Kleinschreibung unabh&auml;ngiger Sprachencode als Zeichenfolge.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Standardwert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Vorgabe des Browsers.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="mimeTypes">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">mimeTypes</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">4</span> IE <span class="emphasis">5(Mac)</span>  DOM <span class="emphasis">nicht zutreffend</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Schreibgesch&uuml;tzt</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Gibt ein Array mit <span class="literal">mimeType</span>-Objekten zur&uuml;ck, die von den im Browser installierten Plug-Ins unterst&uuml;tzt werden. IE f&uuml;r Windows stellt diese Einstellung aus Gr&uuml;nden der Syntaxkompatiblit&auml;t bereit, gibt jedoch immer ein Array mit der L&auml;nge Null zur&uuml;ck. Siehe <span class="literal">mimeType</span>-Objekt.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>var videoPlugin = navigator.mimeTypes["video/mpeg"].enabledPlugin;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Array mit <span class="literal">mimeType</span>-Objekten.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Standardwert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Vorgabe des Browsers. </p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="onLine">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">onLine</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">nicht zutreffend</span> IE <span class="emphasis">4</span>  DOM <span class="emphasis">nicht zutreffend</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Schreibgesch&uuml;tzt</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Gibt an, ob der Browser f&uuml;r Online- oder Offlinebetrieb eingestellt ist (im Men&uuml; <span class="emphasis">Datei</span> des Internet Explorers). Bestimmte Seiten rufen Live-Serveraktionen auf, wenn sie im Onlinemodus geladen werden. Diese Aufrufe werden im Offlinemodus unterdr&uuml;ckt. Verwenden Sie diese Boolesche Eigenschaft, um bedingte Anweisungen zu erstellen.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>if (navigator.onLine) &#123;
+    document.write("&lt;applet ...&gt;");
+    ...
+}</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Boolescher Wert: <span class="literal">true</span> | <span class="literal">false</span>.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Standardwert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p><span class="literal">true</span> </p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="oscpu">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">oscpu</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6  </span>IE <span class="emphasis">nicht zutreffend</span>  DOM <span class="emphasis">nicht zutreffend</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Schreibgesch&uuml;tzt</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Gibt eine Zeichenfolge zur&uuml;ck, die Informationen zum Betriebssystem oder der CPU des Clientcomputers enth&auml;lt. Die Werte sind vom jeweiligen System abh&auml;ngig und k&ouml;nnen stark variieren. Windows-Clients lassen in zwei grobe Kategorien einteilen: NT- und Nicht-NT-Computer. Zu den Nicht-NT-Computern geh&ouml;ren Rechner mit den Betriebssystemen Windows 95, 98 und Me (mit den <span class="literal">oscpu</span>-Werten <span class="literal">Win95</span>, <span class="literal">Win98</span> und <span class="literal">Win 9x 4.90</span>). Die Kategorie der NT-Computer umfasst Rechner mit den Betriebssystemen Windows NT 4 (<span class="literal">WinNT4.0</span>) und Windows XP <span class="literal">Windows</span> <span class="literal">NT</span>
+<span class="literal">x.x</span>). Macintosh-Systeme melden den CPU-Typ und geben an, ob auf dem Rechner ein &auml;lteres Betriebssystem oder Mac OS X installiert ist (<span class="literal">PPC</span> bzw. <span class="literal">PPC Mac</span> <span class="literal">OS</span>
+<span class="literal">X</span>). Unix-Systeme melden sowohl das Betriebssystem als auch den CPU-Typ. Der <span class="literal">oscpu</span>-Wert ist auch im <span class="literal">userAgent</span>-Wert enthalten. In den entsprechenden IE-Eigenschaften <span class="literal">cpuClass</span> und <span class="literal">userAgent</span> werden diese Informationen in einem anderen Format angezeigt.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>if (navigator.oscpu.indexOf("Win") != -1) &#123;
+    document.write("You are running a Windows computer.");
+}</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Zeichenfolge.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Standardwert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Systemabh&auml;ngig.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="platform">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">platform</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">4</span>  IE <span class="emphasis">4</span>  DOM <span class="emphasis">nicht zutreffend</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Schreibgesch&uuml;tzt</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Gibt den Namen des Betriebssystems oder der Hardwareplattform des Browsers zur&uuml;ck. Bei Windows 95/NT lautet der Wert <span class="literal">Win32</span>; bei einem Macintosh mit PowerPC-CPU lautet der Wert <span class="literal">MacPPC</span>. Die zur&uuml;ckgegebenen Werte von Navigator und Internet Explorer stimmen zumindest bei den g&auml;ngigsten Plattformen, die getestet wurden, &uuml;berein. Wird diese Eigenschaft in einem bedingten Ausdruck verwendet, um die grundlegenden F&auml;higkeiten des Clients zu ermitteln, kann die Seitenausgabe f&uuml;r das Ger&auml;t u. U. optimiert werden.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>if (navigator.platform == "Win32") &#123;
+   document.write("&lt;link rel='stylesheet' type='text/css' href='css/stylePC.css'&gt;");
+}</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Zeichenfolge.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Standardwert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Systemabh&auml;ngig.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="plugins[ ]">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">plugins[ ]</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">3</span> IE <span class="emphasis">5(Mac)</span>  DOM <span class="emphasis">nicht zutreffend</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Schreibgesch&uuml;tzt</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Gibt eine Sammlung mit den vom Browser erkannten Plug-In-Objekten zur&uuml;ck, anhand der ein Skript feststellen kann, ob der Browser einen bestimmten externen Medientyp unterst&uuml;tzt. IE f&uuml;r Windows ab Version 4 implementiert diese Eigenschaft, allerdings nur als Funktionsattrappe, die stets ein Array mit der L&auml;nge Null zur&uuml;ckgibt. Siehe <span class="literal">mimeType</span>- und <span class="literal">plugin</span>-Objekt.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>var plugInCount = navigator.plugins.length;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Array mit <span class="literal">plugin</span>-Objektreferenzen.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Standardwert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Keiner.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="product, productSub">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">product, productSub</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6  </span>IE <span class="emphasis">nicht zutreffend</span>  DOM <span class="emphasis">nicht zutreffend</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Schreibgesch&uuml;tzt</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Geben eine Zeichenfolge zur&uuml;ck, die die dem Browser zugrundeliegende Software-Engine angibt. In Netscape 6 gibt die <span class="literal">product</span>-Eigenschaft den Wert <span class="literal">Gecko</span>, die <span class="literal">productSub</span>-Eigenschaft hingegen eine Buildnummer (in Form einer Zeichenfolge) zur&uuml;ck.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>var prod = navigator.product;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Zeichenfolge.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Standardwert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Browserabh&auml;ngig.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="securityPolicy">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">securityPolicy</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">4  </span>IE <span class="emphasis">nicht zutreffend</span>  DOM <span class="emphasis">nicht zutreffend</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Schreibgesch&uuml;tzt</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Gibt in Navigator 4 eine Zeichenfolge zur&uuml;ck, aus der die Verschl&uuml;sselungsstufe des Browsers hervorgeht (d. h. die interne oder externe Verschl&uuml;sselungsrichtlinie, der der Browser unterliegt). Seit der Lockerung der US-amerikanischen Exportgesetze im Hinblick auf die Bereitstellung verschl&uuml;sselter Inhalte implementiert Netscape 6 in allen Versionen einen gemeinsamen Verschl&uuml;sselungstyp. In Netscape 6 gibt diese Eigenschaft eine leere Zeichenfolge zur&uuml;ck.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Zeichenfolge.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Standardwert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Keiner.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="systemLanguage">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">systemLanguage</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">nicht zutreffend</span> IE <span class="emphasis">4</span>  DOM <span class="emphasis">nicht zutreffend</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Schreibgesch&uuml;tzt</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Gibt den Code f&uuml;r die vom Betriebssystem verwendete Standardtextsprache an. Wenn Sie &uuml;ber mehrsprachigen Inhalt verf&uuml;gen, k&ouml;nnen Sie den Inhalt mit Hilfe dieser Eigenschaft in bestimmten Sprachen einf&uuml;gen.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>if (navigator.systemLanguage == "nl") &#123;
+<span class="replaceable">// </span>document.write( ) some Dutch content
+}</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Sprachcode, bei dem nicht zwischen Gro&szlig;- und Kleinschreibung unterschieden wird.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Standardwert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Normalerweise die Standardeinstellung des Browsers (<span class="literal">en</span> f&uuml;r den englischsprachigen Internet Explorer in den USA).
+</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="userAgent">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">userAgent</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">2</span>  IE <span class="emphasis">3</span>  DOM <span class="emphasis">nicht zutreffend</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Schreibgesch&uuml;tzt</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Stellt Informationen zur Browsersoftware bereit, einschlie&szlig;lich Version, Betriebssystem und Marke. &Uuml;ber diese Eigenschaft k&ouml;nnen die umfassendsten Informationen zur Browseranwendung abgerufen werden. Die Eigenschaften <span class="literal">appVersion</span> und <span class="literal">appName</span> stellen lediglich Teile dieser Daten und nicht immer korrekte Informationen bereit. Das folgenden Beispiele zeigen typische R&uuml;ckgabedaten der Eigenschaft <span class="literal">userAgent</span> in IE und Navigator:
+</p>
+<span class="PROGRAMLISTING"><pre>Mozilla/4.0 (compatible; MSIE 6.0; Windows 98; Q312461)
+Mozilla/5.0 (Macintosh; U; PPC; en-US; rv:0.9.4) Gecko/20011022 Netscape6/6.2</pre></span>
+							</td>
+						</tr>
+						<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Beachten Sie, dass die L&auml;nge und Position dieser Daten je nach Browser, Version und Proxyserver unterschiedlich sein k&ouml;nnen. Daher sollten Sie die Methode <span class="literal">indexOf( )</span> verwenden, um festzustellen, ob eine bestimmte Zeichenfolge vorhanden ist. Wenn Sie lediglich die tats&auml;chliche Versionsnummer der IE-Anwendung extrahieren m&ouml;chten, verwenden Sie die folgende Funktion:
+</p>
+<span class="PROGRAMLISTING"><pre>function readIEVersion( ) &#123;
+    var ua = navigator.userAgent;
+    var IEOffset = ua.indexOf(&quot;MSIE &quot;);
+    return parseFloat(ua.substring(IEOffset + 5, ua.indexOf(&quot;;&quot;, IEOffset)));
+}</pre></span>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>if (navigator.userAgent.indexOf("MSIE") != -1) &#123;
+    var isIE = true;
+}</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Zeichenfolge.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Standardwert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Browserabh&auml;ngig. </p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="userLanguage">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">userLanguage</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">nicht zutreffend</span> IE <span class="emphasis">4</span>  DOM <span class="emphasis">nicht zutreffend</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Schreibgesch&uuml;tzt</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Die Standardtextsprache des Browsers basierend auf den Benutzerprofileinstellungen (sofern vorhanden) des Betriebssystems. F&uuml;r die Eigenschaft wird standardm&auml;&szlig;ig der Wert der Eigenschaft <span class="literal">browserLanguage</span> verwendet.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>var userLangCode = navigator.userLanguage;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Von der Gro&szlig;-/Kleinschreibung unabh&auml;ngiger Sprachencode als Zeichenfolge.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Standardwert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Vorgabe des Browsers. </p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="userProfile">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">userProfile</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">nicht zutreffend</span> IE <span class="emphasis">4</span>  DOM <span class="emphasis">nicht zutreffend</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Schreibgesch&uuml;tzt</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Die Eigenschaft <span class="literal">userProfile</span> ist ein Objekt, mit dem in einem Skript die Zugriffsberechtigung f&uuml;r pers&ouml;nliche Informationen angefordert werden kann, die im Benutzerprofil des Webseiten-Besuchers gespeichert sind (bei Win32-Versionen von Internet Explorer). Weitere Informationen finden Sie im Abschnitt zum <span class="literal">userProfile</span>-Objekt.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>navigator.userProfile.addReadRequest("vcard.displayname");
+navigator.userProfile.doReadRequest("3", "MegaCorp Customer Service");
+var custName = navigator.userProfile.getAttribute("vcard.displayname");
+navigator.userProfile.clearRequest( );
+if (custName) &#123;
+    ...
+}</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p><span class="literal">userProfile</span>-Objektreferenz.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Standardwert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Vorgabe des Browsers. </p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="vendor, vendorSub">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">vendor, vendorSub</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6  </span>IE <span class="emphasis">nicht zutreffend</span>  DOM <span class="emphasis">nicht zutreffend</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Schreibgesch&uuml;tzt</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Geben eine Zeichenfolge zur&uuml;ck, die das auf der Mozilla-Engine basierende Browserprodukt angibt. In Netscape 6 gibt die <span class="literal">vendor</span>-Eigenschaft den Wert <span class="literal">Netscape6</span>, in Netscape 7 hingegen einfach nur <span class="literal">Netscape</span> zur&uuml;ck. Die <span class="literal">vendorSub</span>-Eigenschaft gibt die genaue Versionsbezeichnung in Form einer Zeichenfolge zur&uuml;ck. Wenn Sie testen m&ouml;chten, ob eine bestimmte Mindestversion vorhanden ist, wandeln Sie den <span class="literal">navigator.vendorSub</span>-Wert in eine dezimale Gleitkommazahl um, bevor Sie den Ergebniswert mit Ihrer Mindestanforderung vergleichen.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>if (parseFloat(navigator.vendorSub, 10) &gt;= 6.2) &#123;
+    // OK, meets minimum NN requirement
+}</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Zeichenfolge.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Standardwert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Browserabh&auml;ngig.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="javaEnabled( )">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">javaEnabled( )</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">3  </span>IE <span class="emphasis">4  </span>DOM <span class="emphasis">nicht zutreffend</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Gibt an, ob Java im Browser aktiviert ist. In einem nicht skriptf&auml;higen Browser (oder einem skriptf&auml;higen Browser, der die Eigenschaft nicht unterst&uuml;tzt) ist diese Methode nicht von Nutzen, doch bei eingeschalteter Skriptfunktion gibt sie an, ob der Benutzer in den Browsereinstellungen Java deaktiviert hat.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Parameter</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Keine. </p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Zur&uuml;ckgegebener Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Boolescher Wert: <span class="literal">true</span> | <span class="literal">false</span>.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="preference( )">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">preference( )</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">4  </span>IE <span class="emphasis">nicht zutreffend</span>  DOM <span class="emphasis">nicht zutreffend</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">preference(<span class="replaceable">name</span>[, <span class="replaceable">value</span>])</p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Mit Hilfe von signierten Skripts k&ouml;nnen Sie in Navigator 4 auf eine Vielzahl von Benutzereinstellungen zugreifen. Dazu geh&ouml;ren auch sehr detaillierte Informationen, z. B., ob der Benutzer Bilder herunterl&auml;dt oder ob Stylesheets aktiviert sind. Die meisten dieser Einstellungen sind f&uuml;r Skripts gedacht, die von Netzwerkadministratoren in Firmen verwendet werden, um die Benutzereinstellungen der Mitarbeiter in unternehmensweiten Navigator-Installationen einzurichten und zu steuern. Weitere Informationen zu diesen Voreinstellungen finden Sie auf der Netscape-Entwicklerwebsite (http://developer.netscape.com/docs/manuals/communicator/preferences/). Netscape 6 gibt beim Aufruf dieser Methode selbst in signierten Skripts eine Sicherheitsausnahme zur&uuml;ck, in Netscape 7 hingegen kann sie in signierten Skripts eingesetzt werden.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Parameter</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<ul><li><span class="literal"></span>Der Einstellungsname als Zeichenfolge, z. B. <span class="literal">general.always_load_images</span>.
+</li><li><span class="literal"></span>Ein optionaler Wert zum Festlegen der jeweiligen Einstellung. </li></ul>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Zur&uuml;ckgegebener Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Einstellungswert in verschiedenen Datentypen.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="taintEnabled( )">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">taintEnabled( )</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">3  </span>IE <span class="emphasis">4  </span>DOM <span class="emphasis">nicht zutreffend</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Gibt zur&uuml;ck, ob Data Tainting im Browser aktiviert ist. Dieser Sicherheitsmechanismus wurde in Navigator nie vollst&auml;ndig implementiert. Aus Gr&uuml;nden der R&uuml;ckw&auml;rtskompatibilit&auml;t enthalten jedoch auch neuere Navigator-Versionen die Methode zum &Uuml;berpr&uuml;fen dieser Einstellung. Internet Explorer enth&auml;lt diese Methode aus Kompatibilit&auml;tsgr&uuml;nden ebenfalls, gibt jedoch immer <span class="literal">false</span> zur&uuml;ck.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Parameter</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Keine. </p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Zur&uuml;ckgegebener Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Boolescher Wert: <span class="literal">true</span> | <span class="literal">false</span>.</p>
+					</td>
+				</tr>
+			</table>
+		</div>
+
+</body>
+</html>

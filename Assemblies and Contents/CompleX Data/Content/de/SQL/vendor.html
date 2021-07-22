@@ -1,0 +1,1023 @@
+<html><head>
+<link rel="stylesheet" href="josh.css"></head><body bgcolor="#FFFFFF">
+<div id="Beschreibung">
+			<table width="100%" cellspacing="0" cellpadding="0" border="0">
+				<tr><td valign="top" class="name">Herstellerspezifische Erweiterungen</td><td valign="top" nowrap class="compatibility">&#160; </td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="Description"><p>Der folgende Abschnitt enth&auml;lt eine vollst&auml;ndige Aufstellung und Beschreibung der von den einzelnen Herstellern unterst&uuml;tzten Funktionen. Diese Funktionen sind herstellerspezifisch. Wenn zum Beispiel MySQL eine bestimmte Funktion unterst&uuml;tzt, hei&szlig;t das nicht, dass andere Hersteller dies auch tun. Die MySQL-Funktionen sind hier angegeben, um einen Eindruck von den M&ouml;glichkeiten der einzelnen Produkte zu vermitteln. Die genaue Syntax finden Sie in der Dokumentation des Herstellers.</p>
+					</td>
+				</tr>
+			</table>
+		</div>
+<div id="In Microsoft SQL Server unterst&uuml;tzte Funktionen">
+			<table width="100%" cellspacing="0" cellpadding="0" border="0" class="main">
+				<tr><td valign="top" class="name">In Microsoft SQL Server unterst&uuml;tzte Funktionen </td><td valign="top" nowrap class="compatibility">&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Tabelle 4.7 enth&auml;lt eine alphabetische Aufstellung der in Microsoft SQL Server unterst&uuml;tzten Funktionen.</p>
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<table border="1"><tbody><tr><th>Funktion</th><th>Beschreibung</th></tr>
+								<tr><td>abs(numeric_expression)</td><td>Gibt einen absoluten Wert zur&uuml;ck.</td>
+								</tr>
+								<tr><td>acos( float_expression)</td><td>Gibt den Winkel (im Bogenma&szlig;) zur&uuml;ck, dessen Kosinus das angegebene Argument ist.</td>
+								</tr>
+								<tr><td>app_name(  )</td><td>Gibt den von der Anwendung festgelegten Anwendungsnamen der aktuellen Sitzung zur&uuml;ck.</td>
+								</tr>
+								<tr><td>ascii(character_expression)</td><td>Konvertiert ein Zeichen in einen numerischen ASCII-Code.</td>
+								</tr>
+								<tr><td>asin( float_expression)</td><td>Gibt den Winkel (im Bogenma&szlig;) zur&uuml;ck, dessen Sinus das angegebene Argument ist.</td>
+								</tr>
+								<tr><td>atan( float_expression)</td><td>Gibt den Winkel (im Bogenma&szlig;) zur&uuml;ck, dessen Tangens das angegebene Argument ist.</td>
+								</tr>
+								<tr><td>atn2( float_expression, float_expression)</td><td>Gibt den Winkel (im Bogenma&szlig;) zur&uuml;ck, dessen Tangens zwischen den beiden angegebenen Argumenten liegt.</td>
+								</tr>
+								<tr><td>avg([ All| Distinct] Expression)</td><td>Berechnet den Durchschnittswert einer Spalte.</td>
+								</tr>
+								<tr><td>binary_checksum(* | expression [,...n])</td><td>Gibt eine bin&auml;re Pr&uuml;fsumme f&uuml;r die Liste von Ausdr&uuml;cken oder die Zeilen einer Tabelle zur&uuml;ck.</td>
+								</tr>
+								<tr><td>cast(Expression as Data Type)</td><td>Konvertiert einen zul&auml;ssigen SQL Server-Ausdruck in den angegebenen Datentyp.</td>
+								</tr>
+								<tr><td>ceiling(numeric_expression)</td><td>Gibt den kleinsten Integerwert zur&uuml;ck, der gr&ouml;&szlig;er oder gleich dem Argument ist.</td>
+								</tr>
+								<tr><td>char(integer_expression)</td><td>Konvertiert einen numerischen ASCII-Code in ein Zeichen.</td>
+								</tr>
+								<tr><td>charindex(expression1, expression2 [, start_location])</td><td>Gibt die Position des ersten Auftretens eines Substrings in einem String zur&uuml;ck.</td>
+								</tr>
+								<tr><td>checksum(* | expression [,...n])</td><td>Gibt einen Pr&uuml;fsummenwert (berechnet &uuml;ber die angegebenen Zeilenwerte oder Ausdr&uuml;cke) zur&uuml;ck.</td>
+								</tr>
+								<tr><td>checksum_agg([ALL | Distinct] expression)</td><td>Gibt die Pr&uuml;fsumme der Werte in der Gruppe zur&uuml;ck.</td>
+								</tr>
+								<tr><td>coalesce(expression [,...n])</td><td>Gibt das erste Nicht-NULL-Argument aus einer Liste von Argumenten zur&uuml;ck.</td>
+								</tr>
+								<tr><td>col_length(`table', `column')</td><td>Gibt die Spaltenl&auml;nge in Byte zur&uuml;ck.</td>
+								</tr>
+								<tr><td>col_name(table_id, column_id)</td><td>Gibt den Spaltennamen zur angegebenen Tabellen- und Spalten-ID zur&uuml;ck.</td>
+								</tr>
+								<tr><td>contains({column | }, `contains_search_condition'})</td><td>Durchsucht Spalten nach genauen oder ungenauen (unscharfen) &Uuml;bereinstimmungen mit <span class="emphasis">contains_seach_criteria</span>. Dies ist eine komplexe Funktion, die f&uuml;r die Volltextsuche verwendet wird. N&auml;heres dazu finden Sie in der Dokumentation des Herstellers.</td>
+								</tr>
+								<tr><td>containstable(table, column, contains_search_condition)</td><td>Gibt eine Tabelle mit genauen und ungenauen (unscharfen) &Uuml;bereinstimmungen mit <span class="emphasis">contains_search_condition</span> zur&uuml;ck. Dies ist eine komplexe Funktion, die f&uuml;r die Volltextsuche verwendet wird. N&auml;heres dazu finden Sie in der Dokumentation des Herstellers.</td>
+								</tr>
+								<tr><td>convert(data_type [(length)], expression [, style])</td><td>Konvertiert Daten von einem Datentyp in einen anderen.</td>
+								</tr>
+								<tr><td>cos(float_expression)</td><td>Gibt den Kosinus zur&uuml;ck.</td>
+								</tr>
+								<tr><td>cot(float_expression)</td><td>Gibt den Kotangens zur&uuml;ck.</td>
+								</tr>
+								<tr><td>count({[All | Distinct] expression]| *})</td><td>Z&auml;hlt die Zeilen.</td>
+								</tr>
+								<tr><td>count(*)</td><td>Berechnet die Anzahl der Zeilen, einschlie&szlig;lich derjenigen mit NULL-Werten.</td>
+								</tr>
+								<tr><td>count( DISTINCT expression )</td><td>Berechnet die Anzahl unterschiedlicher Nicht-NULL-Werte in einer Spalte oder einem Ausdruck. Jede Gruppe von Zeilen mit demselben Wert f&uuml;r <span class="emphasis">ausdruck</span> erh&ouml;ht das Ergebnis um 1.</td>
+								</tr>
+								<tr><td>count( expression )</td><td>Gibt die Anzahl der Zeilen mit Nicht-NULL-Werten in einer bestimmten Spalte oder einem bestimmten Ausdruck zur&uuml;ck.</td>
+								</tr>
+								<tr><td>count_big([All | Distinct] expression)</td><td>Wie <span class="emphasis">count</span>, gibt aber einen BIGINT-Wert zur&uuml;ck.</td>
+								</tr>
+								<tr><td>current_timestamp</td><td>Gibt das aktuelle Datum und die aktuelle Uhrzeit zur&uuml;ck.</td>
+								</tr>
+								<tr><td>current_user</td><td>Gibt den Benutzernamen in der aktuellen Datenbank der aktuellen Sitzung zur&uuml;ck.</td>
+								</tr>
+								<tr><td>datalength(expression)</td><td>Gibt die Anzahl der Byte in einem Zeichen- oder bin&auml;ren String zur&uuml;ck.</td>
+								</tr>
+								<tr><td>databasepropertyex(database, property)</td><td>Gibt die Datenbankoption oder -eigenschaft zur&uuml;ck.</td>
+								</tr>
+								<tr><td>dateadd(datepart, number, date)</td><td>F&uuml;gt einem DATETIME-Wert eine Anzahl von Datumsbestandteilen (z.&#160;B. Tage) hinzu.</td>
+								</tr>
+								<tr><td>datediff(datepart, startdate, enddate)</td><td>Berechnet die Differenz zwischen zwei DATETIME-Werten, die in bestimmten Datumsbestandteilen ausgedr&uuml;ckt sind.</td>
+								</tr>
+								<tr><td>datename(datepart, date)</td><td>Gibt den Namen eines Datumsbestandteils (z.&#160;B. Monat) eines DATETIME-Arguments zur&uuml;ck.</td>
+								</tr>
+								<tr><td>datepart(datepart, date)</td><td>Gibt den Wert eines Datumsbestandteils (z.&#160;B. Stunde) eines DATETIME-Arguments zur&uuml;ck.</td>
+								</tr>
+								<tr><td>day(date)</td><td>Gibt einen Integerwert zur&uuml;ck, der f&uuml;r den Tag des als Parameter &uuml;bergebenen Datums steht.</td>
+								</tr>
+								<tr><td>db_id(`[database_name]')</td><td>Gibt die Datenbank-ID und den angegebenen Namen zur&uuml;ck.</td>
+								</tr>
+								<tr><td>db_name(database_id)</td><td>Gibt den Namen der Datenbank zur&uuml;ck.</td>
+								</tr>
+								<tr><td>degrees(numeric_expression)</td><td>Konvertiert Bogenma&szlig; in Grad.</td>
+								</tr>
+								<tr><td>difference(character_expression, character_expression)</td><td>Vergleicht, wie zwei Argumente klingen, und gibt eine Zahl zwischen 0 und 4 zur&uuml;ck. Je h&ouml;her der Wert, desto besser die phonetische &Uuml;bereinstimmung.</td>
+								</tr>
+								<tr><td>exp(float_expression)</td><td>Gibt den Exponentialwert zur&uuml;ck.</td>
+								</tr>
+								<tr><td>floor(numeric_expression)</td><td>Gibt den gr&ouml;&szlig;ten Integerwert zur&uuml;ck, der kleiner oder gleich dem Argument ist.</td>
+								</tr>
+								<tr><td>file_id(`file_name')</td><td>Gibt die Datei-ID des logischen Dateinamens zur&uuml;ck.</td>
+								</tr>
+								<tr><td>file_name(file_id)</td><td>Gibt den logischen Dateinamen einer Datei-ID zur&uuml;ck.</td>
+								</tr>
+								<tr><td>filegroup_id(`filegroup_name')</td><td>Gibt die Dateigruppen-ID f&uuml;r den logischen Dateigruppennamen zur&uuml;ck.</td>
+								</tr>
+								<tr><td>filegroup_name(filegroup_id)</td><td>Gibt den logischen Dateigruppennamen f&uuml;r die Dateigruppen-ID zur&uuml;ck.</td>
+								</tr>
+								<tr><td>filegroupproperty(filegroup_name, property)</td><td>Gibt den Wert der Dateigruppeneigenschaft f&uuml;r die angegebene Eigenschaft zur&uuml;ck.</td>
+								</tr>
+								<tr><td>fileproperty(file, property)</td><td>Gibt den Wert der Dateieigenschaft f&uuml;r die angegebene Eigenschaft zur&uuml;ck.</td>
+								</tr>
+								<tr><td>fulltextcatalogproperty(catalog_name, property)</td><td>Gibt die Volltext-Katalogeigenschaften zur&uuml;ck.</td>
+								</tr>
+								<tr><td>fulltextserviceproperty(property)</td><td>Gibt die Eigenschaften der Volltext-Dienstebene zur&uuml;ck.</td>
+								</tr>
+								<tr><td>formatmessage(msg_number, param_value [,... n ])</td><td>Erstellt eine Meldung aus einer bestehenden Meldung in der Tabelle <span class="emphasis">SYSMESSAGES</span> (&auml;hnlich wie RAISERROR).</td>
+								</tr>
+								<tr><td>freetexttable(table { column |*}, `freetext_string' [, top_n_by_rank])</td><td>Wird f&uuml;r die Volltextsuche verwendet; gibt eine Tabelle mit Spalten zur&uuml;ck, die mit der Bedeutung, aber nicht genau mit dem Wert von <span class="emphasis">freetext_string</span> &uuml;bereinstimmen.</td>
+								</tr>
+								<tr><td>getdate(  )</td><td>Gibt das aktuelle Datum und die aktuelle Uhrzeit zur&uuml;ck.</td>
+								</tr>
+								<tr><td>getansinull([`database'])</td><td>Gibt die Standardeinstellung der NULL-Zul&auml;ssigkeit f&uuml;r neue Spalten zur&uuml;ck.</td>
+								</tr>
+								<tr><td>getutcdate(  )</td><td>Gibt das UTC-Datum (Universal Time Coordinate) zur&uuml;ck.</td>
+								</tr>
+								<tr><td>grouping(column_name)</td><td>Gibt 1 zur&uuml;ck, wenn die Zeile durch CUBE oder ROLLUP hinzugef&uuml;gt wurde, ansonsten 0.</td>
+								</tr>
+								<tr><td>host_id(  )</td><td>Gibt die Workstation-ID eines bestimmten Prozesses zur&uuml;ck.</td>
+								</tr>
+								<tr><td>host_name(  )</td><td>Gibt den Hostnamen des Prozesses zur&uuml;ck.</td>
+								</tr>
+								<tr><td>ident_incr(`table_or_view')</td><td>Gibt den Inkrementwert der Identit&auml;tsspalte zur&uuml;ck.</td>
+								</tr>
+								<tr><td>ident_seed(`table_or_view')</td><td>Gibt den Ausgangswert der Identit&auml;t zur&uuml;ck.</td>
+								</tr>
+								<tr><td>ident_current(`table_name')</td><td>Gibt den letzten Identit&auml;tswert zur&uuml;ck, der f&uuml;r die angegebene Tabelle erzeugt wurde.</td>
+								</tr>
+								<tr><td>identity(data_type [, seed, increment]) As column_name</td><td>Wird in <span class="emphasis">SELECT INTO</span>-Anweisungen verwendet, um eine Identit&auml;tsspalte in die Zieltabelle einzuf&uuml;gen.</td>
+								</tr>
+								<tr><td>index_col(`table', index_id, key_id)</td><td>Gibt den Namen der Indexspalte zu der angegebenen Tabellen-ID, Index-ID und Folgenummer der Spalte im Indexschl&uuml;ssel zur&uuml;ck.</td>
+								</tr>
+								<tr><td>indexproperty(table_id, index, property)</td><td>Gibt eine Indexeigenschaft (wie zum Beispiel Fillfactor) zur&uuml;ck.</td>
+								</tr>
+								<tr><td>isdate(expression)</td><td>&Uuml;berpr&uuml;ft, ob ein Zeichenstring in einen DATETIME-Wert konvertiert werden kann.</td>
+								</tr>
+								<tr><td>is_member({`group' | `role'})</td><td>Gibt TRUE oder FALSE (1 oder 0) zur&uuml;ck, je nachdem, ob der Benutzer ein Mitglied einer NT-Gruppe oder einer SQL Server-Rolle ist.</td>
+								</tr>
+								<tr><td>is_srvrolemember(`role' [,'login'])</td><td>Gibt TRUE oder FALSE (1 oder 0) zur&uuml;ck, je nachdem, ob der Benutzer ein Mitglied der angegebenen Serverrolle ist.</td>
+								</tr>
+								<tr><td>isnull(check_expression, replacement_value)</td><td>Gibt das erste Argument zur&uuml;ck, wenn es nicht NULL ist, ansonsten das zweite Argument.</td>
+								</tr>
+								<tr><td>isnumeric(expression)</td><td>Pr&uuml;ft, ob ein Zeichenstring in einen NUMERIC-Wert konvertiert werden kann.</td>
+								</tr>
+								<tr><td>left(character_expression, integer_expression)</td><td>Gibt einen Teil eines Zeichenausdrucks zur&uuml;ck, beginnend an Position <span class="emphasis">integer_express</span> von links.</td>
+								</tr>
+								<tr><td>len(string_expression)</td><td>Gibt die Anzahl der Zeichen im Ausdruck zur&uuml;ck.</td>
+								</tr>
+								<tr><td>log(float_expression)</td><td>Gibt den nat&uuml;rlichen Logarithmus zur&uuml;ck.</td>
+								</tr>
+								<tr><td>log10(float_expression)</td><td>Gibt den Logarithmus zur Basis 10 zur&uuml;ck.</td>
+								</tr>
+								<tr><td>lower(character_expression)</td><td>Konvertiert einen String in Kleinbuchstaben.</td>
+								</tr>
+								<tr><td>ltrim(character_expression)</td><td>Entfernt f&uuml;hrende Leerzeichen.</td>
+								</tr>
+								<tr><td>max([All | Distinct] expression)</td><td>Ermittelt den gr&ouml;&szlig;ten Wert in einer Spalte.</td>
+								</tr>
+								<tr><td>min([All | Distinct] expression)</td><td>Ermittelt den kleinsten Wert in einer Spalte.</td>
+								</tr>
+								<tr><td>month(date)</td><td>Gibt den Monatsbestandteil des angegebenen Datums zur&uuml;ck.</td>
+								</tr>
+								<tr><td>nchar(integer_expression)</td><td>Gibt das Unicode-Zeichen mit dem angegebenen ganzzahligen Code zur&uuml;ck.</td>
+								</tr>
+								<tr><td>newid(  )</td><td>Erstellt eine neue eindeutige Kennung vom Typ <span class="emphasis">uniqueidentifier</span>.</td>
+								</tr>
+								<tr><td>nullif(expression, expression)</td><td>Gibt NULL zur&uuml;ck, wenn die beiden angegebenen Ausdr&uuml;cke &auml;quivalent sind.</td>
+								</tr>
+								<tr><td>object_id(`object')</td><td>Gibt die Objekt-ID und den angegebenen Namen zur&uuml;ck.</td>
+								</tr>
+								<tr><td>object_name(object_id)</td><td>Gibt den Objektnamen und die angegebene ID zur&uuml;ck.</td>
+								</tr>
+								<tr><td>objectproperty(id, property)</td><td>Gibt die Eigenschaften von Objekten in der aktuellen Datenbank zur&uuml;ck.</td>
+								</tr>
+							</tbody></table>
+					</td>
+				</tr>
+			</table>
+		</div>
+<div id="In MySQL unterst&uuml;tzte Funktionen">
+			<table width="100%" cellspacing="0" cellpadding="0" border="0" class="main">
+				<tr><td valign="top" class="name">In MySQL unterst&uuml;tzte Funktionen</td><td valign="top" nowrap class="compatibility">&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Tabelle 4.8 enth&auml;lt eine alphabetische Aufstellung der von MySQL unterst&uuml;tzten Funktionen.</p>
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<table border="1"><tbody><tr><th>Funktion</th><th>Beschreibung</th></tr>
+								<tr><td>abs(X)</td><td>Gibt den absoluten Wert von <span class="emphasis">X</span> zur&uuml;ck.</td>
+								</tr>
+								<tr><td>acos(X)</td><td>Gibt den Arcuskosinus von <span class="emphasis">X</span> zur&uuml;ck, d.&#160;h. den Wert, dessen Kosinus <span class="emphasis">X</span> ist; gibt NULL zur&uuml;ck, wenn <span class="emphasis">X</span> nicht im Bereich -1 bis 1 liegt.</td>
+								</tr>
+								<tr><td>ascii(str)</td><td>Gibt den ASCII-Codewert des am weitesten links liegenden Zeichens des Strings <span class="emphasis">str</span> zur&uuml;ck; gibt 0 zur&uuml;ck, wenn <span class="emphasis">str</span> der leere String ist; gibt NULL zur&uuml;ck, wenn <span class="emphasis">str</span> NULL ist.</td>
+								</tr>
+								<tr><td>asin(X)</td><td>Gibt den Arcussinus von <span class="emphasis">X</span> zur&uuml;ck, d.&#160;h. den Wert, dessen Sinus <span class="emphasis">X</span> ist; gibt NULL zur&uuml;ck, wenn <span class="emphasis">X</span> nicht im Bereich -1 bis 1 liegt.</td>
+								</tr>
+								<tr><td>atan(X)</td><td>Gibt den Arcustangens von <span class="emphasis">X</span> zur&uuml;ck, d.&#160;h. den Wert, dessen Tangens <span class="emphasis">X</span> ist.</td>
+								</tr>
+								<tr><td>atan2(X,Y)</td><td>Gibt den Arcustangens der beiden Variablen <span class="emphasis">X</span> und <span class="emphasis">Y</span> zur&uuml;ck.</td>
+								</tr>
+								<tr><td>avg(expr)</td><td>Gibt den Durchschnittswert von <span class="emphasis">expr</span> zur&uuml;ck.</td>
+								</tr>
+								<tr><td>benchmark(count,expr)</td><td>Wertet den angegebenen Ausdruck (<span class="emphasis">expr</span>) so oft wie angegeben (<span class="emphasis">count</span>) aus. Kann verwendet werden, um zu bestimmen, wie schnell MySQL den Ausdruck verarbeitet. Der Ergebniswert ist immer 0.</td>
+								</tr>
+								<tr><td>binary</td><td>Konvertiert den folgenden String in einen Bin&auml;rstring.</td>
+								</tr>
+								<tr><td>bin(N)</td><td>Gibt eine Stringdarstellung des Bin&auml;rwerts von <span class="emphasis">N</span> zur&uuml;ck, wobei <span class="emphasis">N</span> eine Zahl vom Typ "long" (BIGINT) ist.</td>
+								</tr>
+								<tr><td>bit_count(N)</td><td>Gibt die Anzahl der in Argument <span class="emphasis">N</span> gesetzten Bits zur&uuml;ck.</td>
+								</tr>
+								<tr><td>bit_and(expr)</td><td>Gibt die bitweise UND-Verkn&uuml;pfung aller Bits im angegebenen Ausdruck zur&uuml;ck. Die Berechnung erfolgt mit 64-Bit-Genauigkeit (BIGINT).</td>
+								</tr>
+								<tr><td>bit_or(expr)</td><td>Gibt die bitweise ODER-Verkn&uuml;pfung aller Bits im angegebenen Ausdruck zur&uuml;ck. Die Berechnung erfolgt mit 64-Bit-Genauigkeit (BIGINT).</td>
+								</tr>
+								<tr><td><p>CASE value WHEN [compare-value] THEN result [WHEN [compare-value] THEN result ...] [ELSE result] END</p><p>CASE WHEN [condition] THEN result [WHEN [condition] THEN result ...] [ELSE result] END</p></td><td><p>Die erste Version gibt das Ergebnis von <span class="emphasis">value=compare-value</span> zur&uuml;ck. Die zweite Version gibt das Ergebnis f&uuml;r die erste wahre Bedingung zur&uuml;ck.</p><p>Wenn es keinen passenden Ergebniswert gibt, wird das Ergebnis nach ELSE zur&uuml;ckgegeben. Wenn es auch keinen ELSE-Zweig gibt, wird NULL zur&uuml;ckgegeben.</p></td>
+								</tr>
+								<tr><td>ceiling(X)</td><td>Gibt den kleinsten Integerwert zur&uuml;ck, der gr&ouml;&szlig;er oder gleich X ist.</td>
+								</tr>
+								<tr><td>char(N,...)</td><td>Interpretiert die Argumente als Integerwerte und gibt einen String zur&uuml;ck, der aus den Zeichen besteht, die sich aus den ASCII-Codewerten dieser Integerwerte ergeben. NULL-Werte werden &uuml;bersprungen.</td>
+								</tr>
+								<tr><td>coalesce(list)</td><td>Gibt das erste Nicht-NULL-Element in der Liste zur&uuml;ck.</td>
+								</tr>
+								<tr><td>concat(str1,str2,...)</td><td>Gibt den String zur&uuml;ck, der sich aus der Verkettung der Argumente ergibt.</td>
+								</tr>
+								<tr><td>concat_ws(separator, str1, str2,...)</td><td>Steht f&uuml;r CONCAT mit Trennzeichen und ist eine besondere Form von CONCAT( ). Das erste Argument ist das Trennzeichen f&uuml;r den Rest der Argumente. Das Trennzeichen und der Rest der Argumente k&ouml;nnen Strings sein. Wenn das Trennzeichen NULL ist, ist das Ergebnis auch NULL. Die Funktion &uuml;berspringt NULL-Werte und leere Strings nach dem Trennzeichenargument. Das Trennzeichen steht jeweils zwischen den zu verkettenden Strings.</td>
+								</tr>
+								<tr><td>connection_id(  )</td><td>Gibt die Verbindungs-ID (thread_id) f&uuml;r die Verbindung zur&uuml;ck. Jede Verbindung hat eine eigene eindeutige ID.</td>
+								</tr>
+								<tr><td>conv(N,from_base,to_base)</td><td>Konvertiert Zahlen zwischen unterschiedlichen Basen; gibt eine Stringdarstellung der Zahl <span class="emphasis">N</span> zur&uuml;ck, die von der Basis <span class="emphasis">from_base</span> in die Basis <span class="emphasis">to_base</span> konvertiert wurde; gibt NULL zur&uuml;ck, wenn eines der Argumente NULL ist.</td>
+								</tr>
+								<tr><td>cos(X)</td><td>Gibt den Kosinus von <span class="emphasis">X</span> zur&uuml;ck, wobei <span class="emphasis">X</span> im Bogenma&szlig; angegeben wird.</td>
+								</tr>
+								<tr><td>cot(X)</td><td>Gibt den Kotangens von <span class="emphasis">X</span> zur&uuml;ck.</td>
+								</tr>
+								<tr><td>count(DISTINCT expr,[expr...])</td><td>Gibt die Anzahl der unterschiedlichen Werte zur&uuml;ck.</td>
+								</tr>
+								<tr><td>count(expr)</td><td>Gibt die Anzahl der Nicht-NULL-Werte in den durch eine SELECT-Anweisung abgerufenen Zeilen zur&uuml;ck.</td>
+								</tr>
+								<tr><td>curdate(  )current_date</td><td>Gibt das heutige Datum als Wert im Format "JJJJ-MM-TT" oder "JJJJMMTT" zur&uuml;ck, je nachdem, ob die Funktion in einem String- oder einem numerischen Kontext aufgerufen wird.</td>
+								</tr>
+								<tr><td>curtime(  )current_time</td><td>Gibt die aktuelle Uhrzeit als Wert im Format "HH:MM:SS" oder "HHMMSS" zur&uuml;ck, je nachdem, ob die Funktion in einem String- oder einem numerischen Kontext verwendet wird.</td>
+								</tr>
+								<tr><td>database(  )</td><td>Gibt den Namen der aktuellen Datenbank zur&uuml;ck.</td>
+								</tr>
+								<tr>
+<td>
+<p>date_add(date,INTERVAL expr type)</p>
+
+
+<p>date_sub(date,INTERVAL expr type)</p>
+
+
+<p>adddate(date,INTERVAL expr type)</p>
+
+
+<p>subdate(date,INTERVAL expr type)</p>
+</td>
+<td>Diese Funktionen f&uuml;hren arithmetische Funktionen f&uuml;r Datumswerte durch. ADDDATE( ) und SUBDATE( ) sind Synonyme f&uuml;r DATE_ADD( ) und DATE_SUB( ). <span class="emphasis">date</span> ist ein DATETIME- oder DATE-Wert, der das Startdatum angibt. <span class="emphasis">expr</span> ist ein Ausdruck, der den zum Startdatum zu addierenden bzw. zu subtrahierenden Intervallwert angibt. <span class="emphasis">expr</span> kann mit einem &#8211; beginnen, um negative Intervalle anzuzeigen. <span class="emphasis">type</span> bestimmt, wie der Ausdruck interpretiert wird.</td>
+								</tr>
+								<tr><td>date_ format(date, format)</td><td>Formatiert den Datumswert entsprechend dem Formatstring.</td>
+								</tr>
+								<tr><td>dayname(date)</td><td>Gibt den Namen des Wochentags zum angegebenen Datum zur&uuml;ck.</td>
+								</tr>
+								<tr><td>dayofmonth(date)</td><td>Gibt den Tag des Monats zum angegebenen Datum im Bereich 1 bis 31 zur&uuml;ck.</td>
+								</tr>
+								<tr><td>dayofweek(date)</td><td>Gibt den Wochentagsindex f&uuml;r das Datum zur&uuml;ck (1 = Sonntag, 2 = Montag, . . . 7 = Samstag).</td>
+								</tr>
+								<tr><td>dayofyear(date)</td><td>Gibt den Tag des Jahres zum angegebenen Datum im Bereich 1 bis 366 zur&uuml;ck.</td>
+								</tr>
+								<tr><td>decode(crypt_str,pass_str)</td><td>Entschl&uuml;sselt den verschl&uuml;sselten String <span class="emphasis">crypt_str</span> mit <span class="emphasis">pass_str</span> als Kennwort. <span class="emphasis">crypt_str</span> sollte ein von ENCODE( ) zur&uuml;ckgegebener String sein.</td>
+								</tr>
+								<tr><td>degrees(X)</td><td>Gibt das Argument <span class="emphasis">X</span>, konvertiert von Bogenma&szlig; in Grad, zur&uuml;ck.</td>
+								</tr>
+								<tr><td>elt(N,str1,str2,str3,...)</td><td>Gibt <span class="emphasis">str1</span> zur&uuml;ck, wenn <span class="emphasis">N</span> = 1, <span class="emphasis">str2</span>, wenn <span class="emphasis">N</span> = 2 usw. Gibt NULL zur&uuml;ck, wenn <span class="emphasis">N</span> kleiner als 1 oder gr&ouml;&szlig;er als die Anzahl der Argumente ist. ELT( ) ist das Gegenst&uuml;ck zu FIELD( ).</td>
+								</tr>
+								<tr><td>encode(str,pass_str)</td><td>Verschl&uuml;sselt <span class="emphasis">str</span> mit <span class="emphasis">pass_str</span> als Kennwort. Um das Ergebnis zu verschl&uuml;sseln, verwenden Sie DECODE( ). Das Ergebnis ist ein bin&auml;rer String, der genauso lang ist wie der Ausgangsstring.</td>
+								</tr>
+								<tr><td>encrypt(str[,salt])</td><td>Verschl&uuml;sselt <span class="emphasis">str</span> mit dem Unix-Systemaufruf crypt( ). Das Argument <span class="emphasis">salt</span> sollte ein String mit zwei Zeichen sein.</td>
+								</tr>
+								<tr><td>exp(X)</td><td>Gibt den Wert von <span class="emphasis">e</span> (Basis nat&uuml;rlicher Logarithmen) hoch <span class="emphasis">X</span> zur&uuml;ck.</td>
+								</tr>
+								<tr><td>export_set(bits,on,off,[separator,[number_of_bits]])</td><td>Gibt einen String zur&uuml;ck, bei dem jedes Bit, das in <span class="emphasis">bits</span> gesetzt ist, einen <span class="emphasis">on</span>-String bekommt und jedes Bit, das in <span class="emphasis">bits</span> nicht gesetzt ist, einen <span class="emphasis">off</span>-String. Die einzelnen Strings werden durch das angegebene Trennzeichen <span class="emphasis">separator</span> voneinander getrennt (Standard ist ","), und es werden lediglich so viele wie in <span class="emphasis">number_of_bits</span> angegebene Bits (Standardwert ist 64) der <span class="emphasis">bits</span> verwendet.</td>
+								</tr>
+								<tr><td>field(str,str1,str2,str3,...)</td><td>Gibt den Index von <span class="emphasis">str</span> in der Liste <span class="emphasis">str1, str2, str3</span>, . . . zur&uuml;ck. Gibt 0 zur&uuml;ck, wenn <span class="emphasis">str</span> nicht gefunden wird. FIELD( ) ist das Gegenst&uuml;ck zu ELT( ).</td>
+								</tr>
+								<tr><td>find_in_set(str,strlist)</td><td>Gibt einen Wert zwischen 1 und <span class="emphasis">N</span> zur&uuml;ck, wenn sich der String <span class="emphasis">str</span> in der aus <span class="emphasis">N</span> Substrings bestehenden Liste <span class="emphasis">strlist</span> befindet. Eine Stringliste ist ein String, der aus Substrings besteht, die durch "," voneinander getrennt sind. Gibt 0 zur&uuml;ck, wenn <span class="emphasis">str</span> in <span class="emphasis">strlist</span> nicht enthalten ist oder wenn <span class="emphasis">strlist</span> der leere String ist. Gibt NULL zur&uuml;ck, wenn eines der beiden Argumente NULL ist. Diese Funktion f&uuml;hrt zu Fehlern, wenn das erste Argument ein "," enth&auml;lt.</td>
+								</tr>
+								<tr><td>floor(X)</td><td>Gibt den gr&ouml;&szlig;ten Integerwert zur&uuml;ck, der nicht gr&ouml;&szlig;er ist als <span class="emphasis">X</span>.</td>
+								</tr>
+								<tr><td>format(X,D)</td><td>Formatiert die Zahl X in einem Format wie "#,###,###.##", gerundet auf D Nachkommastellen. Wenn D 0 ist, hat das Ergebnis keine Nachkommastellen.</td>
+								</tr>
+								<tr><td>from_days(N)</td><td>Gibt zur Tagesnummer N einen DATE-Wert zur&uuml;ck. Sollte nicht f&uuml;r Werte vor der Einf&uuml;hrung des Gregorianischen Kalenders (1582) verwendet werden, da die dabei verloren gegangenen Tage die Funktion durcheinander bringen.</td>
+								</tr>
+								<tr><td>from_unixtime(unix_timestamp)</td><td>Gibt eine Darstellung des Arguments <span class="emphasis">unix_timestamp</span> als Wert im Format "JJJJ-MM-TT HH:MM:SS" oder "JJJJMMTTHHMMSS" zur&uuml;ck, je nachdem, ob die Funktion in einem String- oder einem numerischen Kontext verwendet wird.</td>
+								</tr>
+								<tr><td>from_unixtime(unix_timestamp,format)</td><td>Gibt eine Stringdarstellung von <span class="emphasis">unix_timestamp</span>, entsprechend dem String <span class="emphasis">format</span> formatiert, zur&uuml;ck. <span class="emphasis">format</span> kann dieselben Werte enthalten, die unter der Funktion DATE_FORMAT( ) beschrieben sind.</td>
+								</tr>
+								<tr><td>get_lock(str,timeout)</td><td>Versucht eine Sperre mit dem Namen <span class="emphasis">str</span> innerhalb von <span class="emphasis">timeout</span> Sekunden zu setzen. Gibt 1 zur&uuml;ck, wenn die Sperre gesetzt werden konnte, 0, wenn dies nicht in der vorgesehenen Zeit gelungen ist, und NULL, wenn ein Fehler auftritt.</td>
+								</tr>
+								<tr><td>greatest(X,Y,...)</td><td>Gibt das wertm&auml;&szlig;ig gr&ouml;&szlig;te der &uuml;bergebenen Argumente zur&uuml;ck.</td>
+								</tr>
+								<tr><td>hex(N)</td><td>Gibt eine Stringdarstellung des Hexadezimalwerts von <span class="emphasis">N</span> zur&uuml;ck, wobei <span class="emphasis">N</span> eine Zahl vom Typ "long" (BIGINT) ist. Entspricht CONV(N,10,16). Gibt NULL zur&uuml;ck, wenn <span class="emphasis">N</span> NULL ist.</td>
+								</tr>
+								<tr><td>interval(N,N1,N2,N3,...)</td><td>Gibt 0 zur&uuml;ck, wenn <span class="emphasis">N</span> &lt; <span class="emphasis">N1</span>, 1, wenn <span class="emphasis">N</span> &lt; <span class="emphasis">N2</span> usw. Alle Argumente werden als Integerwert behandelt. Damit die Funktion richtig funktioniert, muss <span class="emphasis">N1</span> &lt; <span class="emphasis">N2</span> &lt; <span class="emphasis">N3</span> &lt; . . . &lt; <span class="emphasis">Nn</span> sein.</td>
+								</tr>
+								<tr><td>hour(time)</td><td>Gibt die Stunde einer Zeitangabe im Bereich 0 bis 23 zur&uuml;ck.</td>
+								</tr>
+								<tr><td>if(expr1,expr2,expr3)</td><td>Wenn <span class="emphasis">expr1</span> TRUE ist (<span class="emphasis">expr1</span> &lt;&gt; und <span class="emphasis">expr1</span> &lt;&gt; NULL), dann gibt IF( ) <span class="emphasis">expr2</span> zur&uuml;ck, ansonsten <span class="emphasis">expr3</span> . IF( ) gibt je nach Verwendungskontext einen numerischen oder einen Stringwert zur&uuml;ck.</td>
+								</tr>
+								<tr><td>ifnull(expr1,expr2)</td><td>Wenn <span class="emphasis">expr1</span> nicht NULL ist, gibt IFNULL( ) <span class="emphasis">expr1</span> zur&uuml;ck, ansonsten <span class="emphasis">expr2</span>. IFNULL( ) gibt je nach Verwendungskontext einen numerischen oder einen Stringwert zur&uuml;ck.</td>
+								</tr>
+								<tr><td>isnull(expr)</td><td>Wenn <span class="emphasis">expr</span> NULL ist, gibt ISNULL( ) 1 zur&uuml;ck, ansonsten 0.</td>
+								</tr>
+								<tr><td>insert(str,pos,len,newstr)</td><td>Gibt den String <span class="emphasis">str</span> zur&uuml;ck. Der Substring, der an Position <span class="emphasis">pos</span> beginnt und 10 Zeichen lang ist, wird durch den String <span class="emphasis">newstr</span> ersetzt.</td>
+								</tr>
+								<tr><td>instr(str,substr)</td><td>Gibt die Position des ersten Auftretens des Substrings <span class="emphasis">substr</span> in String <span class="emphasis">str</span> zur&uuml;ck.</td>
+								</tr>
+								<tr><td>last_insert_id([expr])</td><td>Gibt den letzten automatisch erzeugten Wert zur&uuml;ck, der in eine AUTO_INCREMENT-Spalte eingef&uuml;gt wurde.</td>
+								</tr>
+								<tr><td>lcase(str)lower(str)</td><td>Gibt den String <span class="emphasis">str</span> zur&uuml;ck, bei dem alle Zeichen entsprechend der aktuellen Zeichensatzzuordnung (Standard ist ISO-8859-1 Latin1) in Kleinbuchstaben umgewandelt wurden.</td>
+								</tr>
+								<tr><td>least(X,Y,...)</td><td>Gibt bei zwei oder mehr Argumenten das wertm&auml;&szlig;ig kleinste Argument zur&uuml;ck.</td>
+								</tr>
+								<tr><td>left(str,len)</td><td>Gibt die ersten (von links gesehen) <span class="emphasis">len</span> Zeichen des Strings <span class="emphasis">str</span> zur&uuml;ck.</td>
+								</tr>
+								<tr><td>length(str)octet_length(str)char_length(str)character_length(str)</td><td>Diese Funktionen geben die L&auml;nge des Strings <span class="emphasis">str</span> zur&uuml;ck.</td>
+								</tr>
+								<tr><td>load_file(file_name)</td><td>Liest die Datei und gibt deren Inhalt als String zur&uuml;ck. Die Datei muss auf dem Server vorhanden sein; der Benutzer muss den vollst&auml;ndigen Pfadnamen f&uuml;r die Datei angeben und &uuml;ber die n&ouml;tigen Zugriffsrechte verf&uuml;gen.</td>
+								</tr>
+								<tr><td>locate(substr,str)position(substr IN str)</td><td>Gibt die Position des ersten Auftretens des Substrings <span class="emphasis">substr</span> in String <span class="emphasis">str</span> zur&uuml;ck. Gibt 0 zur&uuml;ck, wenn <span class="emphasis">substr</span> nicht in <span class="emphasis">str</span> enthalten ist.</td>
+								</tr>
+								<tr><td>locate(substr,str,pos)</td><td>Gibt die Position des ersten Auftretens des Substrings <span class="emphasis">substr</span> in String <span class="emphasis">str</span> beginnend bei Position <span class="emphasis">pos</span> zur&uuml;ck bzw. 0, wenn <span class="emphasis">substr</span> nicht in <span class="emphasis">str</span> enthalten ist.</td>
+								</tr>
+								<tr><td>log(X)</td><td>Gibt den nat&uuml;rlichen Logarithmus von <span class="emphasis">X</span> zur&uuml;ck.</td>
+								</tr>
+								<tr><td>log10(X)</td><td>Gibt den Logarithmus zur Basis 10 von <span class="emphasis">X</span> zur&uuml;ck.</td>
+								</tr>
+								<tr><td>lpad(str,len,padstr)</td><td>Gibt den String <span class="emphasis">str</span> zur&uuml;ck, der auf der linken Seite mit dem String <span class="emphasis">padstr</span> aufgef&uuml;llt wird, bis <span class="emphasis">str</span> 10 Zeichen lang ist.</td>
+								</tr>
+								<tr><td>ltrim(str)</td><td>Gibt den String <span class="emphasis">str</span> zur&uuml;ck, bei dem f&uuml;hrende Leerzeichen entfernt wurden.</td>
+								</tr>
+								<tr><td>make_set(bits,str1,str2, . . . )</td><td>Gibt eine Menge (einen String, der durch "," voneinander getrennte Zeichen enth&auml;lt) mit Strings zur&uuml;ck, deren entsprechende Bits in <span class="emphasis">bits</span> gesetzt sind. <span class="emphasis">str1</span> geh&ouml;rt zu Bit 0, <span class="emphasis">str2</span> zu Bit 1 usw. NULL-Strings in <span class="emphasis">str1</span>, <span class="emphasis">str2</span>, . . . werden nicht an das Ergebnis angeh&auml;ngt.</td>
+								</tr>
+								<tr><td>md5(string)</td><td>Berechnet eine MD5-Pr&uuml;fsumme f&uuml;r den String. Der Wert wird als 32-stellige Hexadezimalzahl zur&uuml;ckgegeben.</td>
+								</tr>
+								<tr><td>min(expr)max(expr)</td><td>Gibt den minimalen bzw. maximalen Wert von <span class="emphasis">expr</span> zur&uuml;ck. MIN( ) und MAX( ) k&ouml;nnen Stringargumente verarbeiten; in diesem Fall geben sie den minimalen oder maximalen Stringwert zur&uuml;ck.</td>
+								</tr>
+								<tr><td>minute(time)</td><td>Gibt den Minutenwert der Uhrzeit im Bereich 0 bis 59 zur&uuml;ck.</td>
+								</tr>
+								<tr><td>mod(N,M)</td><td>% Modulo (wie der %-Operator in C); gibt den Rest der Division von <span class="emphasis">N</span> durch <span class="emphasis">M</span> zur&uuml;ck.</td>
+								</tr>
+								<tr><td>month(date)</td><td>Gibt den Monat eines Datumswerts im Bereich 1 bis 12 zur&uuml;ck.</td>
+								</tr>
+								<tr><td>monthname(date)</td><td>Gibt den Namen des Monats eines Datums zur&uuml;ck.</td>
+								</tr>
+								<tr>
+								<td>
+
+								<p>now(  )</p>
+
+
+								<p>sysdate(  )</p>
+
+
+								<p>current_timestamp</p>
+</td>
+								<td>Gibt das aktuelle Datum und die aktuelle Uhrzeit als Wert im Format "JJJJ-MM-DD HH:MM:SS" oder "JJJJMMDDHHMMSS" zur&uuml;ck, je nachdem, ob die Funktion in einem String- oder einem numerischen Kontext verwendet wird.</td>
+								</tr>
+								<tr><td>nullif(expr1,expr2)</td><td>Wenn <span class="emphasis">expr1 = expr2</span> wahr ist, wird NULL zur&uuml;ckgegeben, ansonsten <span class="emphasis">expr1</span>.</td>
+								</tr>
+								<tr><td>oct(N)</td><td>Gibt eine Stringdarstellung des Oktalwerts von <span class="emphasis">N</span> zur&uuml;ck, wobei <span class="emphasis">N</span> eine Zahl vom Typ "long" ist. Entspricht CONV(N,10,8). Gibt NULL zur&uuml;ck, wenn <span class="emphasis">N</span> NULL ist.</td>
+								</tr>
+								<tr><td>ord(str)</td><td>Wenn das ganz links im String <span class="emphasis">str</span> stehende Zeichen ein Multibyte-Zeichen ist, wird der Code des Multibyte-Zeichens durch R&uuml;ckgabe des ASCII-Codewerts des Zeichens im Format<span class="literal">((erstes Byte des ASCII-Codes)*256+(zweites Byte des ASCII-Codes))[*256+drittes Byte des ASCII-Codes...] zur&uuml;ckgegeben.</span> Wenn das ganz links stehende Zeichen kein Multibyte-Zeichen ist, wird derselbe Wert zur&uuml;ckgegeben wie bei der Funktion ASCII( ).</td>
+								</tr>
+								<tr><td>password(str)</td><td>Berechnet einen Kennwortstring aus dem unverschl&uuml;sselten Kennwort <span class="emphasis">str</span>. Diese Funktion dient dem Verschl&uuml;sseln von MySQL-Kennw&ouml;rtern, die zur Speicherung in der <span class="emphasis">Password</span>-Spalte der Tabelle mit den Zugriffsrechten des Benutzers verwendet werden.</td>
+								</tr>
+								<tr><td>period_add(P,N)</td><td>F&uuml;gt der Periode P (im Format "JJMM" oder "JJJJMM") N Monate hinzu und gibt einen Wert im Format "JJJJMM" zur&uuml;ck. Beachten Sie, dass das Periodenargument P kein Datumswert ist.</td>
+								</tr>
+								<tr><td>period_diff(P1,P2)</td><td>Gibt die Anzahl der Monate zwischen den Perioden P1 und P2 zur&uuml;ck. P1 und P2 sollten das Format "JJMM" oder "JJJJMM" aufweisen. Beachten Sie, dass die Periodenargumente P1 und P2 keine Datumswerte sind.</td>
+								</tr>
+								<tr><td>pi(  )</td><td>Gibt den Wert von -&pi; zur&uuml;ck.</td>
+								</tr>
+								<tr><td>pow(X,Y)power(X,Y)</td><td>Gibt den Wert von <span class="emphasis">X</span> hoch <span class="emphasis">Y</span> zur&uuml;ck.</td>
+								</tr>
+								<tr><td>quarter(date)</td><td>Gibt das Quartal des Datums im Bereich 1 bis 4 zur&uuml;ck.</td>
+								</tr>
+								<tr><td>radians(X)</td><td>Gibt das Argument <span class="emphasis">X</span>, konvertiert von Grad in Bogenma&szlig;, zur&uuml;ck.</td>
+								</tr>
+								<tr><td>rand(  )rand(N)</td><td>Gibt eine zuf&auml;llige Flie&szlig;kommazahl im Bereich 0 bis 1.0 zur&uuml;ck.Wenn ein ganzzahliges Argument <span class="emphasis">N</span> angegeben ist, wird dieses als Startwert verwendet.</td>
+								</tr>
+								<tr><td>release_lock(str)</td><td>Gibt die Sperre des Strings <span class="emphasis">str</span> frei, die mit GET_LOCK( ) gesetzt wurde. Gibt 1 zur&uuml;ck, wenn die Sperre aufgehoben wurde, 0, wenn die Sperre nicht von diesem Thread gesetzt wurde (in diesem Fall wird die Sperre auch nicht aufgehoben), und NULL, wenn die angegebene Sperre nicht existiert.</td>
+								</tr>
+								<tr><td>repeat(str,count)</td><td>Gibt einen String zur&uuml;ck, der aus dem <span class="emphasis">count</span>-mal wiederholten String <span class="emphasis">str</span> besteht. Ist <span class="emphasis">count</span> &lt;= 0, wird ein leerer String zur&uuml;ckgegeben. Gibt NULL zur&uuml;ck, wenn <span class="emphasis">str</span> oder <span class="emphasis">count</span> NULL sind.</td>
+								</tr>
+								<tr><td>replace(str, from_str,to_str)</td><td>Gibt den String <span class="emphasis">str</span> zur&uuml;ck, bei dem alle Vorkommen von <span class="emphasis">from_str</span> durch <span class="emphasis">to_str</span> ersetzt wurden.</td>
+								</tr>
+								<tr><td>reverse(str)</td><td>Gibt den String <span class="emphasis">str</span> in umgekehrter Zeichenreihenfolge zur&uuml;ck.</td>
+								</tr>
+								<tr><td>right(str,ten)</td><td>Gibt die 10 am weitesten rechts stehenden Zeichen des Strings <span class="emphasis">str</span> zur&uuml;ck.</td>
+								</tr>
+								<tr><td>round(X)</td><td>Gibt das Argument <span class="emphasis">X</span>, gerundet auf eine Ganzzahl, zur&uuml;ck.</td>
+								</tr>
+								<tr><td>round(X,D)</td><td>Gibt das Argument <span class="emphasis">X</span>, gerundet auf eine Zahl mit <span class="emphasis">D</span> Nachkommastellen, zur&uuml;ck. Wenn <span class="emphasis">D</span> 0 ist, hat das Ergebnis keine Nachkommastellen.</td>
+								</tr>
+								<tr><td>rpad(str,len,padstr)</td><td>Gibt den String <span class="emphasis">str</span> zur&uuml;ck, der auf der rechten Seite mit dem String <span class="emphasis">padstr</span> aufgef&uuml;llt wird, bis <span class="emphasis">str</span> 10 Zeichen lang ist.</td>
+								</tr>
+								<tr><td>rtrim(str)</td><td>Gibt den String <span class="emphasis">str</span> zur&uuml;ck, bei dem die nachgestellten Leerzeichen entfernt wurden.</td>
+								</tr>
+								<tr><td>sec_to_time(seconds)</td><td>Wandelt das Argument <span class="emphasis">seconds</span> in Stunden, Minuten und Sekunden um und gibt einen Wert im Format "HH:MM:SS" oder "HHMMSS" zur&uuml;ck, je nachdem, ob die Funktion in einem String- oder einem numerischen Kontext verwendet wird.</td>
+								</tr>
+								<tr><td>second(time)</td><td>Gibt die Sekundenzahl der Uhrzeit im Bereich 0 bis 59 zur&uuml;ck.</td>
+								</tr>
+								<tr><td>sign(X)</td><td>Gibt das Vorzeichen des Arguments als -1, 0 oder 1 zur&uuml;ck, je nachdem, ob <span class="emphasis">X</span> negativ, Null oder positiv ist.</td>
+								</tr>
+								<tr><td>sin(X)</td><td>Gibt den Sinus von <span class="emphasis">X</span> im Bogenma&szlig; zur&uuml;ck.</td>
+								</tr>
+								<tr><td>soundex(str)</td><td>Gibt einen <span class="emphasis">soundex</span>-String zu <span class="emphasis">str</span> zur&uuml;ck. Zwei Strings, die "in etwa gleich" klingen, sollten identische <span class="emphasis">soundex</span>-Strings haben.Ein "Standard"-<span class="emphasis">soundex</span>-String ist vier Zeichen lang, aber die Funktion SOUNDEX( ) gibt einen String beliebiger L&auml;nge zur&uuml;ck. Anhand der Funktion SUBSTRING( ) kann aus dem Ergebniswert ein "Standard"-<span class="emphasis">soundex</span>-String extrahiert werden. Alle nicht-alphanumerischen Zeichen im Eingabestring werden ignoriert. Alle internationalen alphabetischen Zeichen au&szlig;erhalb des Bereichs A-Z werden als Vokale behandelt.</td>
+								</tr>
+								<tr><td>space(N)</td><td>Gibt einen String zur&uuml;ck, der aus <span class="emphasis">N</span> Leerzeichen besteht.</td>
+								</tr>
+								<tr><td>sqrt(X)</td><td>Gibt die nicht-negative Quardratwurzel von <span class="emphasis">X</span> zur&uuml;ck.</td>
+								</tr>
+								<tr><td>std(expr)stddev(expr)</td><td>Gibt die Standardabweichung von <span class="emphasis">expr</span> zur&uuml;ck. Die STDDEV( )-Form dieser Funktion dient der Kompatibilit&auml;t mit Oracle.</td>
+								</tr>
+								<tr><td>strcmp(expr1,expr2)</td><td>STRCMP( ) gibt 0 zur&uuml;ck, wenn die Strings gleich sind, -1, wenn das erste Argument in der aktuellen Sortierreihenfolge kleiner ist als das zweite, ansonsten 1.</td>
+								</tr>
+								<tr>
+								<td>
+
+								<p>substring(str,pos,len)</p>
+
+
+								<p>substring(str FROM pos FOR len)</p>
+
+
+								<p>mid(str,pos,len)</p>
+</td>
+								<td>Gibt einen 10 Zeichen langen Substring aus dem String <span class="emphasis">str</span> zur&uuml;ck, beginnend an Position <span class="emphasis">pos</span>. Die Variante mit FROM entspricht der Syntax gem&auml;&szlig; ANSI SQL92.</td>
+								</tr>
+								<tr><td>substring_index(str,delim,count)</td><td>Gibt den Substring aus dem String <span class="emphasis">str</span> zur&uuml;ck, der auf <span class="emphasis">count</span> Vorkommen des Begrenzungszeichens <span class="emphasis">delim</span> folgt. Wenn <span class="emphasis">count</span> positiv ist, wird alles links neben dem letzten Begrenzungszeichen (von links gesehen) zur&uuml;ckgegeben. Wenn <span class="emphasis">count</span> negativ ist, wird alles rechts neben dem letzten Begrenzungszeichen (von rechts gesehen) zur&uuml;ckgegeben.</td>
+								</tr>
+								<tr>
+								<td>
+
+								<p>substring(str,pos)</p>
+
+
+								<p>substring(str FROM pos)</p>
+</td>
+								<td>Gibt einen Substring aus dem String <span class="emphasis">str</span> zur&uuml;ck, beginnend an Position <span class="emphasis">pos</span>.</td>
+								</tr>
+								<tr><td>sum(expr)</td><td>Gibt die Summe des angegebenen Ausdrucks zur&uuml;ck. Beachten Sie, dass NULL zur&uuml;ckgegeben wird, wenn die Ergebnismenge keine Zeilen enth&auml;lt.</td>
+								</tr>
+								<tr><td>tan(X)</td><td>Gibt den Tangens von <span class="emphasis">X</span> im Bogenma&szlig; zur&uuml;ck.</td>
+								</tr>
+								<tr><td>time_ format(time, format)</td><td>Wird wie DATE_FORMAT( ) verwendet, au&szlig;er dass der Formatstring nur Formatangaben enthalten darf, die sich auf Stunden, Minuten oder Sekunden beziehen. Alle anderen Angaben haben einen NULL-Wert oder 0 zur Folge.</td>
+								</tr>
+								<tr><td>time_to_sec(time)</td><td>Wandelt das Argument <span class="emphasis">time</span> in Sekunden um und gibt das Ergebnis zur&uuml;ck.</td>
+								</tr>
+								<tr><td>to_days(date)</td><td>Gibt die Tagesnummer (die Anzahl an Tagen seit dem Jahr 0) zu einem Datum zur&uuml;ck.</td>
+								</tr>
+								<tr><td>trim([[BOTH | LEADING | TRAILING] [remstr] FROM] str)</td><td>Gibt den String <span class="emphasis">str</span> zur&uuml;ck, bei dem alle <span class="emphasis">remstr</span>-Pr&auml;fixe und/oder -Suffixe entfernt wurden. Wird weder BOTH noch LEADING oder TRAILING angegeben, gilt BOTH. Wird <span class="emphasis">remstr</span> nicht angegeben, werden Leerzeichen entfernt.</td>
+								</tr>
+								<tr><td>truncate(X,D)</td><td>Gibt die Zahl <span class="emphasis">X</span>, gek&uuml;rzt auf <span class="emphasis">D</span> Nachkommastellen, zur&uuml;ck. Wenn <span class="emphasis">D</span> 0 ist, hat das Ergebnis keine Nachkommastellen.</td>
+								</tr>
+								<tr><td>ucase(str)upper(str)</td><td>Gibt den String <span class="emphasis">str</span> zur&uuml;ck, bei dem alle Zeichen entsprechend der aktuellen Zeichensatzzuordnung (Standard ist ISO-8859-1 Latin1) in Gro&szlig;buchstaben umgewandelt wurden.</td>
+								</tr>
+								<tr><td>unix_timestamp(  )unix_timestamp(date)</td><td>Wenn diese Funktion ohne Argument aufgerufen wird, wird ein Unix-Zeitstempel (Sekunden seit 1970-01-01 00:00:00 GMT) zur&uuml;ckgegeben. Wenn UNIX_TIMESTAMP( ) mit einem Datumsargument aufgerufen wird, wird der Wert des Arguments als Sekunden seit 1970-01-01 00:00:00 GMT zur&uuml;ckgegeben.</td>
+								</tr>
+								<tr><td>user(  )system_user(  )session_user(  )</td><td>Diese Funktionen geben den aktuellen MySQL-Benutzernamen zur&uuml;ck.</td>
+								</tr>
+								<tr><td>version(  )</td><td>Gibt einen String zur&uuml;ck, der die Version des MySQL-Servers angibt.</td>
+								</tr>
+								<tr><td>week(date)week(date, first)</td><td>Wird ein einzelnes Argument &uuml;bergeben, wird die Woche des Datums im Bereich 0 bis 53 zur&uuml;ckgegeben (in manchen Jahren ist eine Woche 53 m&ouml;glich). Bei der zweiargumentigen Form von WEEK( ) kann der Benutzer angeben, ob die Woche am Sonntag (0) oder Montag (1) beginnt.</td>
+								</tr>
+								<tr><td>weekday(date)</td><td>Gibt den Wochentagsindex f&uuml;r das Datum zur&uuml;ck (0 = Montag, 1 = Dienstag, . . . 6 = Sonntag).</td>
+								</tr>
+								<tr><td>year(date)</td><td>Gibt das Jahr des Datums im Bereich 1000 bis 9999 zur&uuml;ck.</td>
+								</tr>
+								<tr><td>yearweek(date)yearweek(date, first)</td><td>Gibt das Jahr und die Woche eines Datums zur&uuml;ck. Das zweite Argument funktioniert genau wie das zweite Argument von WEEK( ). Beachten Sie, dass sich das Jahr bei der ersten und letzten Woche des Jahres vom Jahr im Datumsargument unterscheiden kann.</td>
+								</tr>
+							</tbody></table>
+					</td>
+				</tr>
+			</table>
+		</div>
+<div id="In Oracle unterst&uuml;tzte SQL-Funktionen">
+			<table width="100%" cellspacing="0" cellpadding="0" border="0" class="main">
+				<tr><td valign="top" class="name">In Oracle unterst&uuml;tzte SQL-Funktionen</td><td valign="top" nowrap class="compatibility">&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Tabelle 4.9 enth&auml;lt eine alphabetische Aufstellung der Oracle-spezifischen SQL-Funktionen.</p>
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<table border="1"><tbody><tr><th>Funktion</th><th>Beschreibung</th></tr>
+								<tr><td>abs(number)</td><td>Gibt den absoluten Wert der angegebenen Zahl zur&uuml;ck.</td>
+								</tr>
+								<tr><td>acos(number)</td><td>Gibt den Arcuskosinus der angegebenen Zahl im Bereich -1 bis 1 zur&uuml;ck. Das Ergebnis liegt zwischen 0 und &pi; und wird im Bogenma&szlig; angegeben.</td>
+								</tr>
+								<tr><td>add_months(date, int)</td><td>Gibt das Datum <span class="emphasis">date</span> plus <span class="emphasis">int</span> Monate zur&uuml;ck.</td>
+								</tr>
+								<tr><td>ascii(string)</td><td>Gibt den Dezimalwert des ersten Zeichens von <span class="emphasis">string</span> im Zeichensatz der Datenbank zur&uuml;ck; gibt einen ASCII-Wert zur&uuml;ck, wenn der Datenbankzeichensatz 7-Bit-ASCII ist; gibt EBCDIC-Werte zur&uuml;ck, wenn der Datenbankzeichensatz EBCDIC-Codeseite 500 ist.</td>
+								</tr>
+								<tr><td>asin(number)</td><td>Gibt den Arcussinus der angegebenen Zahlim Bereich -1 bis 1 zur&uuml;ck. Der Ergebniswert liegt zwischen -&pi;/2 und &pi;/2 und wird im Bogenma&szlig; angegeben.</td>
+								</tr>
+								<tr><td>atan(number)</td><td>Gibt den Arcustangens der angegebenen Zahl zur&uuml;ck. Der Ergebniswert liegt zwischen -&pi;/2 und &pi;/2 und wird im Bogenma&szlig; angegeben.</td>
+								</tr>
+								<tr><td>atan2(number,nbr)</td><td>Gibt den Arcustangens von <span class="emphasis">number</span> und <span class="emphasis">nbr</span> zur&uuml;ck. F&uuml;r die Werte f&uuml;r <span class="emphasis">number</span> und <span class="emphasis">nbr</span> gibt es keine Einschr&auml;nkungen; die Ergebnisse liegen zwischen -&pi; und &pi; und werden im Bogenma&szlig; angegeben.</td>
+								</tr>
+								<tr><td>avg([DISTINCT ] expression) over (analytics)</td><td>Gibt den Durchschnittswert des Ausdrucks zur&uuml;ck. Kann als Aggregat- oder analytische Funktion verwendet werden (analytische Funktionen sind nicht Gegenstand dieses Buches).</td>
+								</tr>
+								<tr><td>bfilename(`directory','filename')</td><td>Gibt einen BFILE-Locator zur&uuml;ck, der zu einem physischen LOB-Bin&auml;rdateinamen im angegebenen Verzeichnis auf dem Dateisystem des Servers geh&ouml;rt.</td>
+								</tr>
+								<tr><td>ceil(number)</td><td>Gibt den kleinsten Integerwert zur&uuml;ck, der gr&ouml;&szlig;er oder gleich der angegebenen Zahl ist.</td>
+								</tr>
+								<tr><td>chartorowid(char)</td><td>Konvertiert den Wert eines Zeichendatentyps (CHAR oder VARCHAR2) in einen ROWID-Datentyp.</td>
+								</tr>
+								<tr><td>chr(number [USING NCHAR_CS])</td><td>Gibt das Zeichen zur&uuml;ck, das das bin&auml;re &Auml;quivalent zur angegebenen Zahl ist, entweder im Datenbankzeichensatz (wenn USING NCHAR_CS nicht verwendet wird) oder im NLS-Zeichensatz (wenn USING NCHAR_CS verwendet wird).</td>
+								</tr>
+								<tr><td>concat(string1, string2)</td><td>Gibt <span class="emphasis">string1</span>verkettet mit <span class="emphasis">string2</span> zur&uuml;ck. Entspricht dem Verkettungsoperator (||).</td>
+								</tr>
+								<tr><td>convert(char_value, target_char_set, source_char_set)</td><td>Konvertiert einen Zeichenstring von einem Zeichensatz in einen anderen; gibt den Zeichenwert (<span class="emphasis">char_value</span>) im Zielzeichensatz (<span class="emphasis">target_char_set</span>) nach dem Konvertieren des Zeichenwerts aus dem Ausgangszeichensatz (<span class="emphasis">source_char_set</span>) zur&uuml;ck.</td>
+								</tr>
+								<tr><td>corr(expression1, expression2) over (analytics)</td><td>Gibt den Korrelationskoeffizienten einer Menge von nummerierten Paaren (<span class="emphasis">expression1</span> und <span class="emphasis">expression2</span>) zur&uuml;ck. Kann als Aggregat- oder analytische Funktion verwendet werden (analytische Funktionen sind nicht Gegenstand dieses Buches).</td>
+								</tr>
+								<tr><td>cos(number)</td><td>Gibt den Kosinus der angegebenen Zahl als Winkel im Bogenma&szlig; zur&uuml;ck.</td>
+								</tr>
+								<tr><td>cosh(number)</td><td>Gibt den Hyperbelkosinus der angegebenen Zahl zur&uuml;ck.</td>
+								</tr>
+								<tr><td>count</td><td>Gibt die Anzahl der Zeilen in der Abfrage zur&uuml;ck; n&auml;here Informationen dazu finden Sie weiter vorne unter COUNT.</td>
+								</tr>
+								<tr><td>covar_pop(expression1, expression2) over(analytics)</td><td>Gibt die Populationskovarianz einer Menge von nummerierten Paaren (<span class="emphasis">expression1</span> und <span class="emphasis">expression2</span>) zur&uuml;ck. Kann als Aggregat- oder analytische Funktion verwendet werden (analytische Funktionen sind nicht Gegenstand dieses Buches).</td>
+								</tr>
+								<tr><td>covar_samp(expression1, expression2) over(analytics)</td><td>Gibt die Stichprobenkovarianz einer Menge von nummerierten Paaren (<span class="emphasis">expression1</span> und <span class="emphasis">expression2</span>) zur&uuml;ck. Kann als Aggregat- oder analytische Funktion verwendet werden (analytische Funktionen sind nicht Gegenstand dieses Buches).</td>
+								</tr>
+								<tr><td>cume_dist( ) ( [OVER (query)] ORDER BY...)</td><td>Die kumulative Verteilungsfunktion berechnet die relative Position des angegebenen Werts in einer Gruppe von Werten.</td>
+								</tr>
+								<tr><td>decode(expr  search , result [,. n] [,default])</td><td>Vergleicht den Ausdruck mit dem Suchwert; wenn der Ausdruck gleich dem Suchwert ist, wird das Ergebnis zur&uuml;ckgegeben. Gibt es keine &Uuml;bereinstimmung, gibt DECODE den angegebenen Standardwert (<span class="emphasis">default</span>) zur&uuml;ck oder NULL, wenn <span class="emphasis">default</span> nicht angegeben ist. N&auml;here Informationen hierzu finden Sie in der Oracle-Dokumentation.</td>
+								</tr>
+								<tr><td>dense_rank( ) ( [OVER (query)] ORDER BY...)</td><td>Berechnet den Rang jeder von einer Abfrage zur&uuml;ckgegebenen Zeile im Verh&auml;ltnis zu den anderen Zeilen, basierend auf den Werten in der ORDER BY-Klausel.</td>
+								</tr>
+								<tr><td>deref(expression)</td><td>Gibt die Objektreferenz des angegebenen Ausdrucks zur&uuml;ck, wobei der Ausdruck eine REF auf ein Objekt zur&uuml;ckgeben muss.</td>
+								</tr>
+								<tr><td>dump(expression [,return_ format [, starting_at [,length]]] )</td><td>Gibt einen VARCHAR2-Wert zur&uuml;ck, der einen Datentypcode, die L&auml;nge in Byte und die interne Darstellung des angegebenen Ausdrucks enth&auml;lt. Der Ergebniswert wird im angegebenen R&uuml;ckgabeformat zur&uuml;ckgegeben.</td>
+								</tr>
+								<tr><td>empth[B | C]lob( )</td><td>Gibt einen leeren LOB-Locator zur&uuml;ck, der zum Initialisieren einer LOB-Variablen verwendet werden kann. Kann auch zum Initialisieren einer LOB-Spalte oder eines LOB-Attributs zum Leeren einer INSERT- oder UPDATE-Anweisung verwendet werden.</td>
+								</tr>
+								<tr><td>exp(number)</td><td>Gibt E hoch <span class="emphasis">number</span> zur&uuml;ck, wobei E = 2.71828183.</td>
+								</tr>
+								<tr><td>first_value( expression) over (analytics)</td><td>Gibt den ersten Wert in einer geordneten Menge von Werten zur&uuml;ck.</td>
+								</tr>
+								<tr><td>floor(number)</td><td>Gibt den gr&ouml;&szlig;ten Integerwert zur&uuml;ck, der kleiner oder gleich der angegebenen Zahl ist.</td>
+								</tr>
+								<tr><td>greatest(expression [,...n])</td><td>Gibt den gr&ouml;&szlig;ten Wert in einer Liste von Ausdr&uuml;cken zur&uuml;ck. Alle Ausdr&uuml;cke nach dem ersten werden vor dem Vergleich in den Datentyp des ersten Ausdrucks konvertiert.</td>
+								</tr>
+								<tr><td>grouping(expression)</td><td>Unterscheidet den Grund f&uuml;r eine Null durch eine Superaggregation in der GROUP BY-Erweiterung von einem tats&auml;chlichen Nullwert.</td>
+								</tr>
+								<tr><td>hextoraw(string)</td><td>Konvertiert einen String, der Hexadezimalziffern enth&auml;lt, in einen rohen Wert.</td>
+								</tr>
+								<tr><td>initcap(string)</td><td>Wandelt den ersten Buchstaben eines jeden Wortes im angegebenen String in Gro&szlig;buchstaben und alle anderen Buchstaben in Kleinbuchstaben um.</td>
+								</tr>
+								<tr><td>instr(string1, string2, start_at, occurrence)</td><td>Durchsucht einen Zeichenstring nach einem anderen Zeichenstring. <span class="emphasis">string1</span> wird ab Position <span class="emphasis">start_at</span> (Integerwert) nach dem in <span class="emphasis">occurrence</span> angegebenen Auftreten von <span class="emphasis">string2</span> durchsucht. Gibt die Position des ersten Auftretens dieses Zeichens in <span class="emphasis">string1</span> zur&uuml;ck.</td>
+								</tr>
+								<tr><td>instrb(string1, string2, [start_a[t, occurrence]])</td><td>Genau wie INSTR, allerdings werden hier <span class="emphasis">start_at</span> und der R&uuml;ckgabewert in Byte und nicht als Zeichen angegeben.</td>
+								</tr>
+								<tr><td>lag(expression [,offset][,default]) over(analytics)</td><td>Erm&ouml;glicht den Zugriff auf mehrere Tabellenzeilen gleichzeitig, ohne dass ein Self-Join erforderlich ist; n&auml;here Informationen dazu finden Sie in der Dokumentation des Herstellers.</td>
+								</tr>
+								<tr><td>last_day(date)</td><td>Gibt das Datum des letzten Tages in dem Monat zur&uuml;ck, der <span class="emphasis">date</span> enth&auml;lt.</td>
+								</tr>
+								<tr><td>last_value(expression) over (analytics)</td><td>Gibt den letzten Wert in einer geordneten Menge an Werten zur&uuml;ck; n&auml;here Informationen dazu finden Sie in der Dokumentation des Herstellers.</td>
+								</tr>
+								<tr><td>lead(expression [,offset][,default]) over(analytics)</td><td>Erm&ouml;glicht den Zugriff auf mehrere Tabellenzeilen gleichzeitig, ohne dass ein Self-Join erforderlich ist. Analytische Funktionen sind nicht Gegenstand dieses Buches.</td>
+								</tr>
+								<tr><td>least(expression [,...n])</td><td>Gibt den kleinsten Wert in einer Liste von Ausdr&uuml;cken zur&uuml;ck.</td>
+								</tr>
+								<tr><td>length(string)</td><td>Gibt die L&auml;nge (Ganzzahl) des angegebenen Strings zur&uuml;ck, oder <span class="literal">null</span>, wenn der String <span class="literal">null</span> ist.</td>
+								</tr>
+								<tr><td>lengthb(string)</td><td>Gibt die L&auml;nge des angegebenen Stringsin Byte zur&uuml;ck; ansonsten wie LENGTH.</td>
+								</tr>
+								<tr><td>ln(number)</td><td>Gibt den nat&uuml;rlichen Logarithmus der angegebenen Zahl zur&uuml;ck, wobei die Zahl gr&ouml;&szlig;er als 0 ist.</td>
+								</tr>
+								<tr><td>log(base_number, number)</td><td>Gibt den Logarithmus einer <span class="emphasis">base_number</span> von <span class="emphasis">number</span> zur&uuml;ck.</td>
+								</tr>
+								<tr><td>lower(string)</td><td>Wandelt alle Zeichen im String in Kleinbuchstaben um und gibt das Ergebnis im gleichen Datentyp zur&uuml;ck, in dem der String &uuml;bergeben wurde.</td>
+								</tr>
+								<tr><td>lpad(string1, number [,string2])</td><td>Gibt den String <span class="emphasis">string1</span> zur&uuml;ck, der auf der linken Seite mit dem String <span class="emphasis">string2</span> aufgef&uuml;llt wird, bis er so lang ist, wie in <span class="emphasis">number</span> angegeben; <span class="emphasis">string2</span>ist standardm&auml;&szlig;ig ein einzelnes Leerzeichen.</td>
+								</tr>
+								<tr><td>ltrim(string[, set])</td><td>Entfernt alle in <span class="emphasis">set</span> enthaltenen Zeichen auf der linken Seite von <span class="emphasis">string</span>. <span class="emphasis">Set</span>ist standardm&auml;&szlig;ig ein einzelnes Leerzeichen.</td>
+								</tr>
+								<tr><td>make_ref({table_name | view_name} , key [,...n])</td><td>Erstellt eine Referenz (REF) auf eine Zeile in einem Objekt-View oder auf eine Zeile in einer Objekttabelle, deren Objekt-Identifier auf einem Prim&auml;rschl&uuml;ssel basiert.</td>
+								</tr>
+								<tr><td>max([DISTINCT] expression) over (analytics)</td><td>Gibt den Maximalwert des angegebenen Ausdrucks zur&uuml;ck. Kann als Aggregat- oder analytische Funktion verwendet werden (analytische Funktionen sind nicht Gegenstand dieses Buches).</td>
+								</tr>
+								<tr><td>min([DISTINCT] expression) over (analytics)</td><td>Gibt den Minimalwert des angegebenen Ausdrucks zur&uuml;ck. Kann als Aggregat- oder analytische Funktion verwendet werden (analytische Funktionen sind nicht Gegenstand dieses Buches).</td>
+								</tr>
+								<tr><td>mod(dividend, divider)</td><td>Gibt den Rest der Division von <span class="emphasis">dividend</span>durch <span class="emphasis">divider</span> zur&uuml;ck; gibt <span class="emphasis">dividend</span> zur&uuml;ck, wenn <span class="emphasis">divider</span> 0 ist.</td>
+								</tr>
+								<tr><td>months_between(date1, date2)</td><td>Gibt die Anzahl der Monate zwischen <span class="emphasis">date1</span> und <span class="emphasis">date2</span> zur&uuml;ck. Wenn <span class="emphasis">date1</span>nach <span class="emphasis">date2</span> liegt, ist das Ergebnis positiv. Liegt es davor, ist das Ergebnis negativ.</td>
+								</tr>
+								<tr><td>new_time(date, time_zone1, time_zone2)</td><td><p>Gibt das Datum und die Uhrzeit in <span class="emphasis">time_zone2</span> zur&uuml;ck, wenn Datum und Uhrzeit in <span class="emphasis">time_zone1</span> <span class="emphasis">date</span> sind. Die Zeitzonen 1 und 2 k&ouml;nnen mit folgenden Strings angegeben werden:</p>
+
+								<itemizedlist>
+								<listitem><p>AST, ADT: Atlantic Standard oder Daylight Time</p></listitem>
+								<listitem><p>BST, BDT: Bering Standard oder Daylight Time</p></listitem>
+								<listitem><p>CST, CDT: Central Standard oder Daylight Time</p></listitem>
+								<listitem><p>EST, EDT: Eastern Standard oder Daylight Time</p></listitem></itemizedlist>
+								<itemizedlist><listitem><p>GMT: Greenwich Mean Time</p></listitem>
+								<listitem><p>HST, HDT: Alaska-Hawaii Standard Time oder Daylight Time</p></listitem>
+								<listitem><p>MST, MDT: Mountain Standard oder Daylight Time</p></listitem>
+								<listitem><p>NST: Newfoundland Standard Time</p></listitem>
+								<listitem><p>PST, PDT: Pacific Standard oder Daylight Time</p></listitem>
+								<listitem><p>YST, YDT: Yukon Standard oder Daylight Time</p></listitem></itemizedlist>
+								</tr>
+								<tr><td>next_day(date, string)</td><td>Gibt das Datum des ersten in <span class="emphasis">string</span> angegebenen Wochentags an, das nach <span class="emphasis">date</span> liegt. Der Argumentstring muss entweder der vollst&auml;ndige Name oder die Abk&uuml;rzung eines Wochentags in der Datumssprache der Sitzung sein.</td>
+								</tr>
+								<tr><td>nls_charset_decl_len(bytecnt, csid)</td><td>Gibt die Deklarationsbreite (<span class="emphasis">bytecnt</span>) einer NCHAR-Spalte mit der Zeichensatz-ID (<span class="emphasis">csid</span>) der Spalte zur&uuml;ck.</td>
+								</tr>
+								<tr><td>nls_charset_id(text)</td><td>Gibt die ID des NLS-Zeichensatzes zur&uuml;ck, die zu <span class="emphasis">text</span> geh&ouml;rt.</td>
+								</tr>
+								<tr><td>nls_charset_name(number)</td><td>Gibt den VARCHAR2-Namen f&uuml;r den NLS-Zeichensatz zur&uuml;ck, der zur ID <span class="emphasis">number</span> geh&ouml;rt.</td>
+								</tr>
+								<tr><td>nls_initcap(string [,'nlsparameter'])</td><td>Wandelt den ersten Buchstaben eines jeden Wortes im angegebenen String in Gro&szlig;buchstaben und alle anderen Buchstaben in Kleinbuchstaben um. <span class="emphasis">nlsparameter</span> bietet spezielle linguistische Sortierm&ouml;glichkeiten.</td>
+								</tr>
+								<tr><td>nls_lower(string, [,'nlsparameter'])</td><td>Wandelt den gesamten String in Kleinbuchstaben um. <span class="emphasis">nlsparameter</span> bietet spezielle linguistische Sortierm&ouml;glichkeiten.</td>
+								</tr>
+								<tr><td>nlssort(string [,'nlsparameter'])</td><td>Gibt den Byte-String zur&uuml;ck, der verwendet wird, um den angegebenen String zu sortieren. <span class="emphasis">nlsparameter</span> bietet spezielle linguistische Sortierm&ouml;glichkeiten.</td>
+								</tr>
+								<tr><td>nls_upper string [,'nlsparameter'])</td><td>Wandelt den gesamten String in Gro&szlig;buchstaben um. <span class="emphasis">nlsparameter</span> bietet spezielle linguistische Sortierm&ouml;glichkeiten.</td>
+								</tr>
+								<tr><td>ntile(expression) over ( query_partition ORDER BY...)</td><td>Teilt eine geordnete Datenmenge in verschiedene von 1 bis <span class="emphasis">expression</span> nummerierte Buckets auf und weist jeder Zeile die entsprechende Bucket-Nummer zu.</td>
+								</tr>
+								<tr><td>numtodsinterval(number, `string')</td><td>Konvertiert <span class="emphasis">number</span> in ein INTERVAL DAY TO SECOND-Literal, wobei <span class="emphasis">number</span> eine Zahl oder ein Ausdruck ist, der zu einer Zahl aufgel&ouml;st werden kann, wie zum Beispiel eine Spalte eines numerischen Datentyps.</td>
+								</tr>
+								<tr><td>numtoyminterval(number, `string')</td><td>Konvertiert <span class="emphasis">number</span> in ein INTERVAL DAY TO MONTH-Literal, wobei <span class="emphasis">number</span> eine Zahl oder ein Ausdruck ist, der zu einer Zahl aufgel&ouml;st werden kann, wie zum Beispiel eine Spalte eines numerischen Datentyps.</td>
+								</tr>
+								<tr><td>nvl(expression1, expression2)</td><td>Wenn <span class="emphasis">expression1</span> <span class="literal">null</span> ist, wird <span class="emphasis">expression2</span> an Stelle eines Nullwerts zur&uuml;ckgegeben, ansonsten <span class="emphasis">expression1</span>. Die Ausdr&uuml;cke k&ouml;nnen einen beliebigen Datentyp haben.</td>
+								</tr>
+								<tr><td>nvl2(expression1, expression2, expression3)</td><td>&Auml;hnlich wie NLV, nur dass <span class="emphasis">expression2</span> zur&uuml;ckgegeben wird, wenn <span class="emphasis">expression1</span> nicht <span class="literal">null</span> ist. Ist <span class="emphasis">expression1</span> <span class="literal">null</span>, wird <span class="emphasis">expression3</span> zur&uuml;ckgegeben. Die Ausdr&uuml;cke k&ouml;nnen einen beliebigen Datentyp au&szlig;er LONG haben.</td>
+								</tr>
+								<tr><td>percent_rank( ) over ( query_partition ORDER BY...)</td><td>&Auml;hnlich wie die analytische Funktion CUME_DIST. Hier wird alerdings nicht die kumulative Verteilung zur&uuml;ckgegeben, sondern der prozentuale Rang einer Zeile im Verh&auml;ltnis zu den anderen Zeilen in der Ergebnismenge. N&auml;heres dazu finden Sie in der Dokumentation des Herstellers.</td>
+								</tr>
+								<tr><td>power(number, power)</td><td>Gibt <span class="emphasis">number</span> hoch <span class="emphasis">power</span> zur&uuml;ck. Die Basis und der Exponent k&ouml;nnen beliebige Zahlen sein, aber wenn <span class="emphasis">number</span> negativ ist, muss <span class="emphasis">power</span> eine Ganzzahl sein.</td>
+								</tr>
+								<tr><td>rank (value_expression) over ( query_partition ORDER BY ...)</td><td>Berechnet den Rang jeder von einer Abfrage zur&uuml;ckgegebenen Zeile im Verh&auml;ltnis zu den anderen von der Abfrage zur&uuml;ckgegebenen Zeilen, basierend auf den Werten in der ORDER BY-Klausel.</td>
+								</tr>
+								<tr><td>ratio_to_report (value_exprs) over ( query_partition)</td><td>Berechnet das Verh&auml;ltnis eines Wertes zur Summe einer Menge von Werten. Wenn <span class="emphasis">values_expr</span> <span class="literal">null</span> ist, wird <span class="literal">null</span> zur&uuml;ckgegeben.</td>
+								</tr>
+								<tr><td>rawtohex(raw)</td><td>Konvertiert einen rohen Wert in einen String (Zeichendatentyp), der sein hexadezimales &Auml;quivalent darstellt.</td>
+								</tr>
+								<tr><td>ref(table_alias)</td><td>REF erwartet einen Tabellenalias, der zu einer Zeile aus einer Tabelle oder einem View geh&ouml;rt. F&uuml;r die Objektinstanz, die an die Variable oder Zeile gebunden ist, wird ein spezieller Referenzwert zur&uuml;ckgegeben.</td>
+								</tr>
+								<tr><td>reftohex(expression)</td><td>Konvertiert das Argument <span class="emphasis">expression</span> in einen Zeichenwert, der sein hexadezimales &Auml;quivalent darstellt.</td>
+								</tr>
+								<tr><td>regr_ xxx(expression1, expression2) over (analytics)</td><td>Lineare Regressionsfunktionen passen eine Regressionsgerade nach der Methode der kleinsten Quadrate in eine Menge von Zahlenpaaren ein, wobei <span class="emphasis">expression1</span> die abh&auml;ngige und <span class="emphasis">expression2</span> die unabh&auml;ngige Variable ist. Die linearen Regressionsfunktionen sind:
+							<itemizedlist><listitem><p>	REGR_SLOPE: Gibt die Steigung der Geraden zur&uuml;ck.</p></listitem>
+							<listitem><p>	REGR_INTERCEPT: gibt den y-Abschnitt der Regressionsgeraden zur&uuml;ck.</p></listitem>
+							<listitem><p>	REGR_COUNT: Gibt die Anzahl der Nicht-Null-Paare zur&uuml;ck, die auf die Regressionsgerade passen.</p></listitem>
+							<listitem><p> REGR_R2: Gibt den Bestimmtheitskoeffizient der Regression zur&uuml;ck.</p></listitem>
+							<listitem><p> REGR_AVGX: Gibt den Durchschnittswert der unabh&auml;ngigen Variablen zur&uuml;ck.</p></listitem>
+							<listitem><p> REGR_AVGY: Gibt den Durchschnittswert der abh&auml;ngigen Variablen zur&uuml;ck.</p></listitem>
+							<listitem><p> REGR_SXX: Berechnet REGR_COUNT(exp1, exp2) * VAR_POP(exp2).</p></listitem>
+							<listitem><p>	REGR_SYY: Berechnet REGR_COUNT(exp1, exp2) * VAR_POP(exp1).</p></listitem>
+							<listitem><p>	REGR_SXY: Berechnet REGR_COUNT(exp1, exp2) * COVAR_POP(exp1, exp2).</p></listitem></itemizedlist>
+								<p>Diese k&ouml;nnen als Aggregat- oder analytische Funktionen verwendet werden.</p></td>
+								</tr>
+								<tr><td>replace(string, search_string [,replacement_string])</td><td>Ersetzt jedes Vorkommen von <span class="emphasis">search_string</span>in <span class="emphasis">string</span> durch <span class="emphasis">replacement_string</span> und gibt das Ergebnis zur&uuml;ck.</td>
+								</tr>
+								<tr><td>round (number, decimal)</td><td>Gibt <span class="emphasis">number</span> gerundet auf <span class="emphasis">decimal</span> Stellen zur&uuml;ck. Wenn <span class="emphasis">decimal</span>weggelassen wird, wird <span class="emphasis">number</span><span class="emphasis"></span>auf eine ganze Zahl gerundet. Beachten Sie, dass <span class="emphasis">decimal</span>, ein Integerwert, negativ sein kann, um Stellen links vom Dezimalkomma zu runden.</td>
+								</tr>
+								<tr><td>round (date[, format])</td><td>Gibt den Datumswert, gerundet auf die im Formatmodell <span class="emphasis">format</span> angegebene Einheit, zur&uuml;ck. Wenn <span class="emphasis">format</span> weggelassen wird, wird <span class="emphasis">date</span> auf den n&auml;chsten Tag gerundet.</td>
+								</tr>
+								<tr><td>row_number ( ) over ( query_partition ORDER BY ... )</td><td>Weist jeder Zeile einer geordneten Folge von Zeilen, die durch die ORDER BY-Klausel angegeben wird, eine eindeutige Nummer ab 1 zu.</td>
+								</tr>
+								<tr><td>rowidtochar(rowid)</td><td>Konvertiert einen <span class="emphasis">rowid</span>-Wert in einen VARCHAR2-Datentyp mit einer L&auml;nge von 18 Zeichen.</td>
+								</tr>
+								<tr><td>rpad(string1, number [, string2])</td><td>Gibt den String <span class="emphasis">string1</span> zur&uuml;ck, der auf der rechten Seite mit dem String <span class="emphasis">string2</span> aufgef&uuml;llt wird, bis er so lang ist, wie in <span class="emphasis">number</span> angegeben. <span class="emphasis">string2</span> ist standardm&auml;&szlig;ig ein einzelnes Leerzeichen.</td>
+								</tr>
+								<tr><td>rtrim(string[,set])</td><td>Gibt <span class="emphasis">string</span> zur&uuml;ck, wobei alle rechts stehenden Zeichen, die in <span class="emphasis">set</span>enthalten ist, entfernt werden; <span class="emphasis">set</span><span class="emphasis"></span>ist standardm&auml;&szlig;ig ein einzelnes Leerzeichen.</td>
+								</tr>
+								<tr><td>sign(number)</td><td>Wenn <span class="emphasis">number</span> &lt; 0, wird &#8211;1 zur&uuml;ckgegeben. Wenn <span class="emphasis">number</span> = 0, wird 0 zur&uuml;ckgegeben. Wenn <span class="emphasis">number</span> &gt; 0, wird 1 zur&uuml;ckgegeben.</td>
+								</tr>
+								<tr><td>sin(number)</td><td>Gibt den Sinus der angegebenen Zahl als Winkel im Bogenma&szlig; zur&uuml;ck.</td>
+								</tr>
+								<tr><td>sinh(number)</td><td>Gibt den Hyperbelsinus der angegebenen Zahl zur&uuml;ck.</td>
+								</tr>
+								<tr><td>soundex(string)</td><td>Gibt einen Zeichenstring zur&uuml;ck, der die phonetische Darstellung von <span class="emphasis">string</span> enth&auml;lt. Mit dieser Funktion k&ouml;nnen W&ouml;rter, die im Englischen unterschiedlich geschrieben werden, aber gleich klingen, miteinander verglichen werden.</td>
+								</tr>
+								<tr><td>sqrt(number)</td><td>Gibt die Quadratwurzel der angegebenen nicht negativen Zahl zur&uuml;ck.</td>
+								</tr>
+								<tr><td>stddev( [DISTINCT] expression) over (analytics)</td><td>Gibt die Stichproben-Standardabweichung einer in <span class="emphasis">expression</span> angegebenen Menge von Zahlen zur&uuml;ck.</td>
+								</tr>
+								<tr><td>stdev_pop(expression) over (analytics)</td><td>Berechnet die Populations-Standardabweichung und gibt die Quadratwurzel der Populationsvarianz zur&uuml;ck.</td>
+								</tr>
+								<tr><td>seddev_samp(expression) over (analytics)</td><td>Berechnet die kumulative Stichproben-Standardabweichung und gibt die Quadratwurzel der Stichprobenvarianz zur&uuml;ck.</td>
+								</tr>
+								<tr><td>substr(extraction_string [FROM starting_position] [FOR length])</td><td>N&auml;heres dazu im Abschnitt zu SUBSTR weiter oben.</td>
+								</tr>
+								<tr><td>substrb(extraction_string [FROM starting_position] [FOR length])</td><td>SUBSTRB funktioniert wie SUBSTR, au&szlig;er dass die Argumente <span class="emphasis">starting_position</span> und <span class="emphasis">length</span> in Byte angegeben werden und nicht als Zeichen.</td>
+								</tr>
+								<tr><td>sum([DISTINCT ] expression) over (analytics)</td><td>Gibt die Summe der Werte von <span class="emphasis">expression</span> zur&uuml;ck; n&auml;here Informationen zu analytischen Funktionen und zur OVER-Unterklausel finden Sie in der Dokumentation des Herstellers.</td>
+								</tr>
+								<tr><td>sys_context(`namespace','attribute'[,length])</td><td>Gibt den Wert von <span class="emphasis">attribute</span> im Kontext von <span class="emphasis">namespace</span> zur&uuml;ck; kann sowohl in SQL- als auch in PL/SQL-Anweisungen verwendet werden.</td>
+								</tr>
+								<tr><td>sys_guid( )</td><td>Erzeugt einen global eindeutigen Identifier <span class="literal">(</span>RAW-Wert), der aus 16 Byte besteht, und gibt diesen zur&uuml;ck.</td>
+								</tr>
+								<tr><td>sysdate</td><td>Gibt das aktuelle Datum und die aktuelle Uhrzeit zur&uuml;ck; Argumente sind nicht erforderlich.</td>
+								</tr>
+								<tr><td>tan(number)</td><td>Gibt den Tangens der angegebenen Zahl als Winkel im Bogenma&szlig; zur&uuml;ck.</td>
+								</tr>
+								<tr><td>tanh(number)</td><td>Gibt den Hyperbeltangens der angegebenen Zahl zur&uuml;ck.</td>
+								</tr>
+								<tr><td>to_char (date [, format [, `nls_parameter']])</td><td>Konvertiert <span class="emphasis">date</span> in einen VARCHAR2-Wert in dem durch das Datumsformat <span class="emphasis">format</span> angegebenen Format. Wenn <span class="emphasis">format</span> weggelassen wird, wird <span class="emphasis">date</span> in das Standarddatumsformat konvertiert. Mit der Option <span class="emphasis">nls_parameter</span> k&ouml;nnen Sie die Formatierung noch genauer steuern.</td>
+								</tr>
+								<tr><td>to_char (number [, format [, `nls_parameter']])</td><td>Konvertiert die angegebene Zahl in einen VARCHAR2-Wert in dem durch das Zahlenformat <span class="emphasis">format</span> angegebenen Format. Wenn <span class="emphasis">format</span> weggelassen wird, wird <span class="emphasis">number</span> in einen entsprechend langen String konvertiert. Mit der Option <span class="emphasis">nls_parameter</span> k&ouml;nnen Sie die Formatierung noch genauer steuern.</td>
+								</tr>
+								<tr><td>to_date(string [, format [, `nls_parameter']])</td><td>Konvertiert den angegebenen String (in CHAR oder VARCHAR2) in einen DATE-Datentyp. Mit der Option <span class="emphasis">nls_parameter</span> k&ouml;nnen Sie die Formatierung noch genauer steuern.</td>
+								</tr>
+								<tr><td>to_lob(long_column)</td><td>Kann nur in LONG- oder LONG RAW-Ausdr&uuml;cken verwendet werden; konvertiert LONG- oder LONG RAW-Werte in der Spalte <span class="emphasis">long_column</span> in LOB-Werte. Diese Funktion kann nur in der SELECT-Liste einer Unterabfrage in einer INSERT-Anweisung verwendet werden.</td>
+								</tr>
+								<tr><td>to_multi_byte(string)</td><td>Gibt <span class="emphasis">string</span> zur&uuml;ck, wobei alle Einbyte-Zeichen in die entsprechenden Multibyte-Zeichen konvertiert wurden.</td>
+								</tr>
+								<tr><td>to_number(string [, format [,'nls_parameter']])</td><td>Konvertiert einen numerischen String (vom Datentyp CHAR oder VARCHAR2) in einen Wert vom Datentyp NUMBER in dem im optionalen Formatmodell <span class="emphasis">format</span> angegebenen Format. Mit der Option <span class="emphasis">nls_parameter</span> k&ouml;nnen Sie die Formatierung noch genauer steuern.</td>
+								</tr>
+								<tr><td>to_single_byte(string)</td><td>Gibt <span class="emphasis">string</span> zur&uuml;ck, wobei alle Multibyte-Zeichen in die entsprechenden Einbyte-Zeichen konvertiert wurden.</td>
+								</tr>
+								<tr><td>translate(`char_value', `from_text', `to_text')</td><td>Gibt <span class="emphasis">char_value</span> zur&uuml;ck, wobei alle Vorkommen jedes Zeichens in <span class="emphasis">from_text</span> durch die entsprechenden Zeichen in <span class="emphasis">to_text</span> ersetzt werden; N&auml;heres zu TRANSLATE finden Sie unter CONVERT und TRANSLATE weiter oben.</td>
+								</tr>
+								<tr><td>translate (text USING [CHAR_CS | NCHAR_CS] )</td><td>Konvertiert Text in den Zeichensatz, der f&uuml;r Konvertierungen in den/aus dem Datenbankzeichensatz oder in den/aus dem NLS-Zeichensatz festgelegt ist.</td>
+								</tr>
+								<tr><td>trim({[LEADING | TRAILING | BOTH] trim_char | trim_char }FROM trim_source} )</td><td>Hiermit k&ouml;nnen f&uuml;hrende und/oder nachgestellte Zeichen aus einem Zeichenstring entfernt werden.</td>
+								</tr>
+								<tr><td>trunc (base [, number])</td><td>Gibt <span class="emphasis">base</span> verk&uuml;rzt auf <span class="emphasis">number</span> Nachkommastellen zur&uuml;ck. Wenn <span class="emphasis">number</span> weggelassen wird, wird <span class="emphasis">base</span> auf 0 Nachkommastellen verk&uuml;rzt. <span class="emphasis">number</span> kann negativ sein, um <span class="emphasis">number</span> Stellen links vom Komma zu Nullen zu machen.</td>
+								</tr>
+								<tr><td>trunc (date [, format])</td><td>Gibt <span class="emphasis">date</span> zur&uuml;ck, wobei alle Zeitangaben auf die in <span class="emphasis">format</span> angegebene Einheit verk&uuml;rzt werden. Wenn <span class="emphasis">format</span> weggelassen wird, wird <span class="emphasis">date</span> auf den n&auml;chsten vollen Tag verk&uuml;rzt.</td>
+								</tr>
+								<tr><td>uid</td><td>Gibt eine Ganzzahl zur&uuml;ck, die den eingeloggten Sitzungsbenutzer eindeutig identifiziert. Es sind keine Parameter erforderlich.</td>
+								</tr>
+								<tr><td>upper(string)</td><td>Gibt <span class="emphasis">string</span> zur&uuml;ck, wobei alle Buchstaben Gro&szlig;buchstaben sind.</td>
+								</tr>
+								<tr><td>user</td><td>Gibt den Namen des eingeloggten Sitzungsbenutzers als VARCHAR2 zur&uuml;ck.</td>
+								</tr>
+								<tr><td>userenv(option)</td><td>Gibt Informationen &uuml;ber die aktuelle Sitzung als VARCHAR2 zur&uuml;ck.</td>
+								</tr>
+								<tr><td>value(table_alias)</td><td>Erwartet einen Tabellenalias, der mit einer Zeile in einer Objekttabelle verkn&uuml;pft ist, und gibt Objektinstanzen zur&uuml;ck, die in der Objekttabelle gespeichert sind.</td>
+								</tr>
+								<tr><td>var_pop(expression) over (analytics)</td><td>Gibt die Populationsvarianz einer Menge von Zahlen zur&uuml;ck, nachdem die Nullwerte aus der Menge <span class="emphasis">expression</span> entfernt wurden. Analytische Funktionen werden in der Dokumentation des Herstellers behandelt.</td>
+								</tr>
+								<tr><td>var_samp(expression) over (analytics)</td><td>Gibt die Stichprobenvarianz einer Menge von Zahlen zur&uuml;ck, nachdem die Nullwerte aus der Menge <span class="emphasis">expression</span> entfernt wurden. Analytische Funktionen werden in der Dokumentation des Herstellers behandelt.</td>
+								</tr>
+								<tr><td>variance([DISTINCT] expression) over (analytics)</td><td>Gibt die Varianz von <span class="emphasis">expression</span> zur&uuml;ck, die wie folgt berechnet wird:0, wenn die Anzahl der Zeilen in <span class="emphasis">expression</span> = 1VAR_SAMP, wenn die Anzahl der Zeilen in <span class="emphasis">expression</span> &gt; 1</td>
+								</tr>
+								<tr><td>vsize(expression)</td><td>Gibt die Anzahl der Byte in der internen Darstellung von <span class="emphasis">expression</span> zur&uuml;ck. Wenn <span class="emphasis">expression</span> <span class="literal">null</span> ist, wird auch <span class="literal">null</span> zur&uuml;ckgegeben.</td>
+								</tr>
+							</tbody></table>
+					</td>
+				</tr>
+			</table>
+		</div>
+<div id="In PostgreSQL unterst&uuml;tzte Funktionen">
+			<table width="100%" cellspacing="0" cellpadding="0" border="0" class="main">
+				<tr><td valign="top" class="name">In PostgreSQL unterst&uuml;tzte Funktionen</td><td valign="top" nowrap class="compatibility">&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Tabelle 4.10 enth&auml;lt die PostgreSQL-spezifischen Funktionen.</p>
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<table border="1"><tbody><tr><th>Funktion</th><th>Beschreibung</th></tr>
+								<tr><td>abstime(timestamp)</td><td>Konvertiert <span class="emphasis">timestamp</span> in abstime.</td>
+								</tr>
+								<tr><td>abs(float8)</td><td>Gibt den absoluten Wert zur&uuml;ck.</td>
+								</tr>
+								<tr><td>acos(float8)</td><td>Gibt den Arcuskosinus zur&uuml;ck.</td>
+								</tr>
+								<tr><td>age(timestamp)</td><td>L&auml;sst Monate und Jahre stehen.</td>
+								</tr>
+								<tr><td>age(timestamp,timestamp)</td><td>L&auml;sst Monate und Jahre stehen.</td>
+								</tr>
+								<tr><td>area(object)</td><td>Gibt die Fl&auml;che von <span class="emphasis">object</span> zur&uuml;ck.</td>
+								</tr>
+								<tr><td>asin(float8)</td><td>Gibt den Arcussinus zur&uuml;ck.</td>
+								</tr>
+								<tr><td>atan(float8)</td><td>Gibt den Arcustangens zur&uuml;ck.</td>
+								</tr>
+								<tr><td>atan2(float8,float8)</td><td>Gibt den Arcustangens zur&uuml;ck.</td>
+								</tr>
+								<tr><td>box(box,box)</td><td>Gibt das Schnittmengenrechteck zur&uuml;ck.</td>
+								</tr>
+								<tr><td>box(circle)</td><td>Konvertiert einen Kreis in ein Rechteck.</td>
+								</tr>
+								<tr><td>box(point,point)</td><td>Konvertiert Punkte in ein Rechteck.</td>
+								</tr>
+								<tr><td>box(polygon)</td><td>Konvertiert ein Polygon in ein Rechteck.</td>
+								</tr>
+								<tr><td>broadcast(cidr)</td><td>Erzeugt eine Broadcast-Adresse als Text.</td>
+								</tr>
+								<tr><td>broadcast(inet)</td><td>Erzeugt eine Broadcast-Adresse als Text.</td>
+								</tr>
+								<tr><td>CASE WHEN expr THEN expr [...] ELSE expr END</td><td>Gibt den Ausdruck der ersten wahren WHEN-Klausel zur&uuml;ck.</td>
+								</tr>
+								<tr><td>cbrt(float8)</td><td>Gibt die Kubikwurzel zur&uuml;ck.</td>
+								</tr>
+								<tr><td>center(object)</td><td>Gibt den Mittelpunkt von <span class="emphasis">object</span> zur&uuml;ck.</td>
+								</tr>
+								<tr><td>char(text)</td><td>Konvertiert <span class="emphasis">text</span> in den Datentyp Char.</td>
+								</tr>
+								<tr><td>char(varchar)</td><td>Konvertiert <span class="emphasis">varchar</span> in den Datentyp Char.</td>
+								</tr>
+								<tr><td>char_length(string)</td><td>Gibt die L&auml;nge von <span class="emphasis">string</span> zur&uuml;ck.</td>
+								</tr>
+								<tr><td>character_length(string)</td><td>Gibt die L&auml;nge von <span class="emphasis">string</span> zur&uuml;ck.</td>
+								</tr>
+								<tr><td>circle(box)</td><td>Konvertiert <span class="emphasis">box</span> in einen Kreis.</td>
+								</tr>
+								<tr><td>circle(point,float8)</td><td>Konvertiert <span class="emphasis">point</span> in einen Kreis.</td>
+								</tr>
+								<tr><td>COALESCE(list)</td><td>Gibt den ersten Nicht-NULL-Wert in der Liste zur&uuml;ck.</td>
+								</tr>
+								<tr><td>cos(float8)</td><td>Gibt den Kosinus zur&uuml;ck.</td>
+								</tr>
+								<tr><td>cot(float8)</td><td>Gibt den Kotangens zur&uuml;ck.</td>
+								</tr>
+								<tr><td>date_part(text,timestamp)</td><td>Gibt einen Teil des Datums zur&uuml;ck.</td>
+								</tr>
+								<tr><td>date_part(text,interval)</td><td>Gibt einen Teil der Uhrzeit zur&uuml;ck.</td>
+								</tr>
+								<tr><td>date_trunc(text,timestamp)</td><td>Verk&uuml;rzt das Datum.</td>
+								</tr>
+								<tr><td>degrees (float8)</td><td>Konvertiert Bogenma&szlig; in Grad.</td>
+								</tr>
+								<tr><td>diameter(circle)</td><td>Gibt den Durchmesser von <span class="emphasis">circle</span> zur&uuml;ck.</td>
+								</tr>
+								<tr><td>exp(float8)</td><td>Gibt e hoch <span class="emphasis">float8</span> zur&uuml;ck.</td>
+								</tr>
+								<tr><td>float(int)</td><td>Konvertiert einen Integerwert in einen Flie&szlig;kommawert.</td>
+								</tr>
+								<tr><td>float4(int)</td><td>Konvertiert einen Integerwert in einen Flie&szlig;kommawert.</td>
+								</tr>
+								<tr><td>height(box)</td><td>Gibt die H&ouml;he von <span class="emphasis">box</span> zur&uuml;ck.</td>
+								</tr>
+								<tr><td>host(inet)</td><td>Extrahiert die Hostadresse als Text.</td>
+								</tr>
+								<tr><td>initcap(text)</td><td>Konvertiert den ersten Buchstaben jedes Wortes in Gro&szlig;buchstaben.</td>
+								</tr>
+								<tr><td>interval(reltime)</td><td>Konvertiert <span class="emphasis">reltime</span> in ein Intervall.</td>
+								</tr>
+								<tr><td>integer(float)</td><td>Konvertiert <span class="emphasis">float</span> in einen Integerwert.</td>
+								</tr>
+								<tr><td>isclosed(path)</td><td>Gibt einen geschlossenen Pfad zur&uuml;ck.</td>
+								</tr>
+								<tr><td>isopen(path)</td><td>Gibt einen offenen Pfad zur&uuml;ck.</td>
+								</tr>
+								<tr><td>isfinite(timestamp)</td><td>Gibt eine endliche Uhrzeit zur&uuml;ck.</td>
+								</tr>
+								<tr><td>isfinite(interval)</td><td>Gibt eine endliche Uhrzeit zur&uuml;ck.</td>
+								</tr>
+								<tr><td>length(object)</td><td>Gibt die L&auml;nge von <span class="emphasis">object</span> zur&uuml;ck.</td>
+								</tr>
+								<tr><td>ln(float8)</td><td>Gibt den nat&uuml;rlichen Logarithmus zur&uuml;ck.</td>
+								</tr>
+								<tr><td>log(float8)</td><td>Gibt den Logarithmus zur Basis 10 zur&uuml;ck.</td>
+								</tr>
+								<tr><td>lower(string)</td><td>Konvertiert <span class="emphasis">string</span> in Kleinbuchstaben.</td>
+								</tr>
+								<tr><td>lseg(box)</td><td>Konvertiert die Rechteckdiagonale in einen lseg-Wert.</td>
+								</tr>
+								<tr><td>lseg(point,point)</td><td>Konvertiert die Punkte in einen lseg-Wert.</td>
+								</tr>
+								<tr><td>lpad(text,int,text)</td><td>Gibt einen links auf die angegebene L&auml;nge aufgef&uuml;llten String zur&uuml;ck.</td>
+								</tr>
+								<tr><td>ltrim(text,text)</td><td>Entfernt links stehende Zeichen aus <span class="emphasis">text</span>.</td>
+								</tr>
+								<tr><td>masklen(cidr)</td><td>Berechnet die L&auml;nge der Netzmaske.</td>
+								</tr>
+								<tr><td>masklen(inet)</td><td>Berechnet die L&auml;nge der Netzmaske.</td>
+								</tr>
+								<tr><td>netmask(inet)</td><td>Erzeugt die Netzmaske als Text.</td>
+								</tr>
+								<tr><td>npoint(path)</td><td>Gibt die Anzahl der Punkte zur&uuml;ck.</td>
+								</tr>
+								<tr><td>NULLIF(input,value)</td><td>Gibt NULL zur&uuml;ck, wenn <span class="emphasis">input</span> = <span class="emphasis">value</span>, ansonsten <span class="emphasis">input</span>.</td>
+								</tr>
+								<tr><td>octet_length(string)</td><td>Gibt die Speicherl&auml;nge von <span class="emphasis">string</span> zur&uuml;ck.</td>
+								</tr>
+								<tr><td>path(polygon)</td><td>Konvertiert ein Polygon in einen Pfad.</td>
+								</tr>
+								<tr><td>pclose(path)</td><td>Konvertiert einen Pfad in einen geschlossenen Pfad.</td>
+								</tr>
+								<tr><td>pi(  )</td><td>Gibt die fundamentale Konstante pi zur&uuml;ck.</td>
+								</tr>
+								<tr><td>polygon(box)</td><td>Gibt ein 12-Punkt-Polygon zur&uuml;ck.</td>
+								</tr>
+								<tr><td>polygon(circle)</td><td>Gibt ein 12-Punkt-Polygon zur&uuml;ck.</td>
+								</tr>
+								<tr><td>polygon(npts,circle)</td><td>Gibt ein n-Punkt-Polygon zur&uuml;ck.</td>
+								</tr>
+								<tr><td>polygon(path)</td><td>Konvertiert einen Pfad in ein Polygon.</td>
+								</tr>
+								<tr><td>point(circle)</td><td>Gibt den Mittelpunkt zur&uuml;ck.</td>
+								</tr>
+								<tr><td>point(lseg,lseg)</td><td>Gibt die Schnittmenge zur&uuml;ck.</td>
+								</tr>
+								<tr><td>point(polygon)</td><td>Gibt den Mittelpunkt zur&uuml;ck.</td>
+								</tr>
+								<tr><td>position(string in string)</td><td>Gibt die Position des angegebenen Substrings zur&uuml;ck.</td>
+								</tr>
+								<tr><td>pow (float8,float8)</td><td>Potenziert eine Zahl wie angegeben.</td>
+								</tr>
+								<tr><td>popen(path)</td><td>Konvertiert einen Pfad in einen offenen Pfad.</td>
+								</tr>
+								<tr><td>reltime(interval)</td><td>Konvertiert <span class="emphasis">interval</span> in einen reltime-Wert.</td>
+								</tr>
+								<tr><td>radians(float8)</td><td>Konvertiert Grad in Bogenma&szlig;.</td>
+								</tr>
+								<tr><td>radius(circle)</td><td>Gibt den Radius des Kreises zur&uuml;ck.</td>
+								</tr>
+								<tr><td>round(float8)</td><td>Rundet auf die n&auml;chste ganze Zahl auf oder ab.</td>
+								</tr>
+								<tr><td>rpad(text,int,text)</td><td>Bringt einen rechts aufgef&uuml;llten String auf die angegebene L&auml;nge.</td>
+								</tr>
+								<tr><td>rtrim(text,text)</td><td>Entfernt rechts stehende Zeichen aus dem Text.</td>
+								</tr>
+								<tr><td>sin(float8)</td><td>Gibt den Sinus zur&uuml;ck.</td>
+								</tr>
+								<tr><td>sqrt(float8)</td><td>Gibt die Quadratwurzel zur&uuml;ck.</td>
+								</tr>
+								<tr><td>substring(string [from int] [for int])</td><td>Extrahiert den angegebenen Substring.</td>
+								</tr>
+								<tr><td>substr(text,int[,int])</td><td>Extrahiert den angegebenen Substring.</td>
+								</tr>
+								<tr><td>tan(float8)</td><td>Gibt den Tangens zur&uuml;ck.</td>
+								</tr>
+								<tr><td>text(char)</td><td>Konvertiert <span class="emphasis">char</span> in den Datentyp Text.</td>
+								</tr>
+								<tr><td>text(varchar)</td><td>Konvertiert <span class="emphasis">varchar</span> in den Datentyp Text.</td>
+								</tr>
+								<tr><td>textpos(text,text)</td><td>Sucht den angegebenen Substring.</td>
+								</tr>
+								<tr><td>timestamp(date)</td><td>Konvertiert <span class="emphasis">date</span> in einen Zeitstempel.</td>
+								</tr>
+								<tr><td>timestamp(date,time)</td><td>Konvertiert <span class="emphasis">date,time</span> in einen Zeitstempel.</td>
+								</tr>
+								<tr><td>to_char(timestamp, text)</td><td>Konvertiert <span class="emphasis">timestamp</span> in einen String.</td>
+								</tr>
+								<tr><td>to_char(int, text)</td><td>Konvertiert int4/int8 in einen String.</td>
+								</tr>
+								<tr><td>to_char(float, text)</td><td>Konvertiert float4/float8 in einen String.</td>
+								</tr>
+								<tr><td>to_char(numeric, text)</td><td>Konvertiert einen numerischen Wert in einen String.</td>
+								</tr>
+								<tr><td>to_date(text, text)</td><td>Konvertiert einen String in ein Datum.</td>
+								</tr>
+								<tr><td>to_number(text, text)</td><td>Konvertiert einen String in einen numerischen Wert.</td>
+								</tr>
+								<tr><td>to_timestamp(text, text)</td><td>Konvertiert einen String in einen Zeitstempel.</td>
+								</tr>
+								<tr><td>translate(text,from,to)</td><td>Konvertiert Zeichen in einem String.</td>
+								</tr>
+								<tr><td>trim([leading|trailing|both] [string] from string)</td><td>Entfernt Zeichen aus einem String.</td>
+								</tr>
+								<tr><td>trunc(float8)</td><td>Verk&uuml;rzt einen Wert (in Richtung 0).</td>
+								</tr>
+								<tr><td>upper(text)</td><td>Konvertiert Text in Gro&szlig;buchstaben.</td>
+								</tr>
+								<tr><td>varchar(char)</td><td>Konvertiert <span class="emphasis">char</span> in den Datentyp Varchar.</td>
+								</tr>
+								<tr><td>varchar(text)</td><td>Konvertiert <span class="emphasis">text</span> in den Datentyp Varchar.</td>
+								</tr>
+								<tr><td>width(box)</td><td>Gibt die Breite zur&uuml;ck.</td>
+								</tr>
+							</tbody></table>
+					</td>
+				</tr>
+			</table>
+		</div>
+	</body></html>

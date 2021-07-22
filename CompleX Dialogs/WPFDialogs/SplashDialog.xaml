@@ -1,0 +1,143 @@
+﻿<Window MouseDown="Window_MouseDown"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        x:Class="CompleX.Presentation.Controls.WPFDialogs.SplashDialog"
+        x:Name="Window"
+        Title="{Binding Product}"
+        Width="531"
+        Height="300"
+        Background="White"
+        OpacityMask="Black"
+        ShowInTaskbar="True"
+        ResizeMode="NoResize"
+        WindowStyle="None"
+        WindowStartupLocation="CenterScreen"
+        BorderThickness="1"
+        BorderBrush="Black"
+        AllowsTransparency="True">
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/PresentationFramework.Aero;V3.0.0.0;31bf3856ad364e35;component\themes/aero.normalcolor.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+            <Storyboard x:Key="FadeIn">
+                <DoubleAnimation Storyboard.TargetName="Window"
+                                 Storyboard.TargetProperty="Opacity"
+                                 From="0"
+                                 To="1"
+                                 Duration="0:0:1" />
+            </Storyboard>
+            <Storyboard x:Key="FadeOut">
+                <DoubleAnimation Storyboard.TargetName="Window"
+                                 Storyboard.TargetProperty="Opacity"
+                                 From="1"
+                                 To="0"
+                                 Duration="0:0:1" />
+            </Storyboard>
+            <Storyboard x:Key="ColorLineAnimation"
+                        RepeatBehavior="Forever"
+                        AutoReverse="True">
+                <ColorAnimationUsingKeyFrames BeginTime="00:00:00"
+                                              Storyboard.TargetName="rectangle"
+                                              Storyboard.TargetProperty="(Shape.Fill).(GradientBrush.GradientStops)[0].(GradientStop.Color)">
+                    <SplineColorKeyFrame KeyTime="00:00:00.9000000"
+                                         Value="#FFC4DCF4" />
+                    <SplineColorKeyFrame KeyTime="00:00:01.7000000"
+                                         Value="#FFF4E5C4" />
+                    <SplineColorKeyFrame KeyTime="00:00:02.3000000"
+                                         Value="#FFF4CAC4" />
+                    <SplineColorKeyFrame KeyTime="00:00:02.8000000"
+                                         Value="#FFC4E3F4" />
+                    <SplineColorKeyFrame KeyTime="00:00:03.5000000"
+                                         Value="sc#1, 0.8713671, 0.456411034, 0.318546772" />
+                </ColorAnimationUsingKeyFrames>
+                <ColorAnimationUsingKeyFrames BeginTime="00:00:00"
+                                              Storyboard.TargetName="rectangle"
+                                              Storyboard.TargetProperty="(Shape.Fill).(GradientBrush.GradientStops)[1].(GradientStop.Color)">
+                    <SplineColorKeyFrame KeyTime="00:00:01.7000000"
+                                         Value="#FFFAFCFE" />
+                    <SplineColorKeyFrame KeyTime="00:00:02.3000000"
+                                         Value="#FFFEFAFB" />
+                </ColorAnimationUsingKeyFrames>
+            </Storyboard>
+        </ResourceDictionary>
+
+    </Window.Resources>
+    <Window.Triggers>
+        <EventTrigger RoutedEvent="FrameworkElement.Loaded">
+            <BeginStoryboard Storyboard="{StaticResource FadeIn}" />
+            <BeginStoryboard Storyboard="{StaticResource ColorLineAnimation}" />
+        </EventTrigger>
+    </Window.Triggers>
+
+    <Grid x:Name="LayoutRoot"
+          Width="537">
+        <Grid.Background>
+            <ImageBrush ImageSource="../Resources/Images/splash.png" />
+        </Grid.Background>
+        <Label x:Name="ProductName"
+               HorizontalAlignment="Center"
+               Margin="152,26,50,0"
+               Foreground="Black"
+               VerticalAlignment="Top"
+               Height="36"
+               Content="{Binding Product}"
+               FontFamily="Segoe UI"
+               FontSize="18.667"
+               FontWeight="Bold" />
+        <Label x:Name="ProductVersion"
+               HorizontalAlignment="Center"
+               Margin="152,53,50,180"
+               Content="{Binding Version}"
+               FontFamily="Segoe UI"
+               FontSize="16" />
+        <Label x:Name="ExtraInfo"
+               HorizontalAlignment="Center"
+               Content="{Binding Info}"
+               FontFamily="Segoe UI"
+               FontSize="10"
+               Height="27"
+               Margin="152,79,50,0"
+               VerticalAlignment="Top"></Label>
+
+        <Label x:Name="Copyright"
+               Margin="32,0,81,36"
+               Content="[Copyright]"
+               FontFamily="Segoe UI"
+               FontSize="9.333"
+               VerticalAlignment="Bottom"
+               Height="22" />
+        <Label x:Name="Status"
+               Margin="32,0,81,57"
+               Content="{Binding StatusText}"
+               FontFamily="Segoe UI"
+               FontSize="9.333"
+               VerticalAlignment="Bottom"
+               Height="28" />
+
+        <Rectangle x:Name="rectangle"
+                   Margin="12,0,23,0"
+                   Height="12"
+                   VerticalAlignment="Top">
+            <Rectangle.Fill>
+                <RadialGradientBrush>
+                    <GradientStop Color="#FFC4C4F4" />
+                    <GradientStop Color="#FFFAFCFE"
+                                  Offset="1" />
+
+                </RadialGradientBrush>
+            </Rectangle.Fill>
+        </Rectangle>
+        <ProgressBar Height="10"
+                     Margin="35,0,50,55"
+                     Name="progressBar"
+                     VerticalAlignment="Bottom"
+                     Visibility="Hidden"
+                     Background="AliceBlue"
+                     Foreground="LightBlue"
+                     IsIndeterminate="{Binding IsIndeterminate}"
+                     Minimum="0"
+                     Maximum="{Binding Maximum}"
+                     Value="{Binding ProgressValue}" />
+    </Grid>
+</Window>

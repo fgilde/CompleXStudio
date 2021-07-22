@@ -1,0 +1,898 @@
+<html>
+<link rel="stylesheet" href="josh.css">
+<body bgcolor="#FFFFFF">
+
+		<div id="Beschreibung">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">area</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">3</span>  IE <span class="emphasis">4</span>  DOM <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Das <span class="literal">area</span>-Objekt spiegelt das <span class="literal">area</span>-Element wider, das die Form, die Koordinaten und das Ziel eines anklickbaren Bereichs einer Client-Imagemap definiert. Navigator und Internet Explorer behandeln ein <span class="literal">area</span>-Objekt als ein Mitglied der <span class="literal">links</span>-Objektsammlung, da sich ein <span class="literal">area</span>-Objekt – wenngleich in Bezug auf einen Bildabschnitt – im Wesentlichen wie ein Hyperlink verh&auml;lt.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="htmlequivalent"><span class="title">HTML-&Auml;quivalent</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>&lt;area&gt;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectmodelreference"><span class="title">Objektmodellreferenz</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>[window.]document.links[i]
+[window.]document.getElementById("<span class="replaceable">elementID</span>")</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectspecificproperties"><span class="title">Objektspezifische Eigenschaften</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<table border="1"><tbody><tr><td><span class="literal">alt</span></td><td><span class="literal">coords</span></td><td><span class="literal">hash</span></td><td><span class="literal">host</span></td><td><span class="literal">hostname</span></td>
+								</tr>
+								<tr><td><span class="literal">href</span></td><td><span class="literal">noHref</span></td><td><span class="literal">pathname</span></td><td><span class="literal">port</span></td><td><span class="literal">protocol</span></td>
+								</tr>
+								<tr><td><span class="literal">search</span></td><td><span class="literal">shape</span></td><td><span class="literal">target</span></td><td></td><td></td>
+								</tr>
+							</tbody></table>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectspecificmethods"><span class="title">Objektspezifische Methoden</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Keine.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectspecificeventhandlerproperties"><span class="title">Objektspezifische Ereignisbehandlungsroutineneigenschaften</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Keine.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="alt">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">alt</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">4</span>  DOM <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Lesen/Schreiben</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Zuk&uuml;nftige nichtgrafische Browser k&ouml;nnen die <span class="literal">alt</span>-Eigenschaftseinstellung verwenden, um eine Kurzbeschreibung der (unsichtbaren) Hotspots eines Bildes anzuzeigen.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>document.getElementById("<span class="replaceable">elementID</span>").alt = "To Next Page";</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Eine beliebige Zeichenfolge in Anf&uuml;hrungszeichen.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Standardwert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Keiner.  </p>
+					</td>
+				</tr>
+			</table>
+		</div>
+		<div id="blur( )">
+					<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+						<tr><td valign="top" class="name">blur( )</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">2</span> IE <span class="emphasis">3</span> DOM <span class="emphasis">1</span></td>
+						</tr>
+						<tr>
+							<td valign="top" nowrap class="usage"><p class="literal"></p>
+							</td><td valign="top" nowrap class="requirements"></td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="description"><p>Entfernt den Fokus vom aktuellen Objekt und l&ouml;st damit das <span class="literal">onblur</span>-Ereignis des Objekts aus. Beachten Sie, dass die Palette der Elemente, die Fokus und Blur (Ereignisse und Methoden) unterst&uuml;tzen, in allen Browsern mit Ausnahme der neuesten Versionen von IE eingeschr&auml;nkt ist (weitere Informationen finden Sie in der Abhandlung des Attributs <span class="literal">tabindex</span> in Kapitel 8). Am zuverl&auml;ssigsten im Hinblick auf die R&uuml;ckw&auml;rtskompatibilit&auml;t funktioniert die Methode <span class="literal">blur( )</span> in Verbindung mit eindeutig fokusf&auml;higen Elementen wie Text-<span class="literal">input</span>- und <span class="literal">textarea</span>-Elementen. Die Zuweisung des Attributs <span class="literal">onfocus="this.blur( );"</span> zu einem Text-<span class="literal">input</span>-Element ist beispielsweise eine simple, aber effektive und r&uuml;ckw&auml;rtskompatible M&ouml;glichkeit, ein Feld f&uuml;r Browser zu deaktivieren, die keine eigene Funktion zum Deaktivieren von Elementen aufweisen.
+		</p>
+									</td>
+								</tr>
+								<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+								</tr>
+								<tr>
+									<td colspan="2"><p>Verwenden Sie die Methoden <span class="literal">blur( )</span> und <span class="literal">focus( )</span> vorsichtig in ein- und derselben Seite, da hierbei durch eingeblendete Warndialogfelder versehentlich Blur- und Fokus-Endlosschleifen ausgel&ouml;st werden k&ouml;nnen. Denken Sie au&szlig;erdem daran, dass der Aufruf der Methode <span class="literal">blur( )</span> eines Objekts bewirkt, dass ein anderes Objekt (m&ouml;glicherweise das <span class="literal">window</span>-Objekt) ein <span class="literal">onfocus</span>-Ereignis empf&auml;ngt.
+		</p>
+									</td>
+								</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="parameters"><span class="title">Parameter</span></td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Keine.</p>
+							</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="returnedvalue"><span class="title">Zur&uuml;ckgegebener Wert</span></td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Keiner.</p>
+							</td>
+						</tr>
+					</table>
+		</div>
+		<div id="coords">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">coords</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6  </span>IE <span class="emphasis">4  </span>DOM <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Lesen/Schreiben</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Definiert den Umriss des Bereichs, der einem bestimmten Hyperlink oder einer geskripteten Aktion zugeordnet werden soll. Koordinaten werden als Liste mit durch Kommas getrennten Werten &uuml;bergeben. Falls die Hotspots zweier Bereiche &uuml;berlappen sollten, hat der Bereich Vorrang, der zuerst im Code definiert wurde.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>document.getElementById("mapArea2").coords = "25, 5, 50, 70";</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Jede Koordinate ist ein L&auml;ngenwert in Pixel, aber die Anzahl und Reihenfolge der Koordinaten h&auml;ngt von der Form ab, die durch das <span class="literal">shape</span>-Attribut angegeben ist, das dem Element optional zugewiesen werden kann. F&uuml;r <span class="literal">shape="rect"</span> gibt es vier Koordinaten (links, oben, rechts, unten); f&uuml;r <span class="literal">shape="circle"</span> gibt es drei Koordinaten (Mitte-x, Mitte-y, Radius); f&uuml;r <span class="literal">shape="poly"</span> gibt es zwei Koordinatenwerte f&uuml;r jeden Punkt, der die Form des Vielecks definiert.
+</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Standardwert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Keiner.  </p>
+					</td>
+				</tr>
+			</table>
+		</div>
+		<div id="focus( )">
+					<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+						<tr><td valign="top" class="name">focus( )</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">2</span> IE <span class="emphasis">3</span> DOM <span class="emphasis">1</span></td>
+						</tr>
+						<tr>
+							<td valign="top" nowrap class="usage"><p class="literal"></p>
+							</td><td valign="top" nowrap class="requirements"></td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="description"><p>&Uuml;bergibt den Fokus an das aktuelle Objekt und l&ouml;st damit das <span class="literal">onfocus</span>-Ereignis des Objekts aus. Beachten Sie, dass die Palette der Elemente, die Fokus und Blur (Ereignisse und Methoden) unterst&uuml;tzen, in allen Browsern mit Ausnahme der neuesten Versionen von IE eingeschr&auml;nkt ist (weitere Informationen finden Sie in der Abhandlung des Attributs <span class="literal">tabindex</span> in Kapitel 8). Am zuverl&auml;ssigsten im Hinblick auf die R&uuml;ckw&auml;rtskompatibilit&auml;t funktioniert die Methode <span class="literal">focus( )</span> in Verbindung mit eindeutig fokusf&auml;higen Elementen wie Text-<span class="literal">input</span>- und <span class="literal">textarea</span>-Elementen.
+		</p>
+									</td>
+								</tr>
+								<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+								</tr>
+								<tr>
+									<td colspan="2"><p>Um einem Textfeld den Fokus zuzuweisen und zugleich den in diesem Feld enthaltenen Text zu markieren, wenden Sie die Methoden <span class="literal">focus( )</span> und <span class="literal">select( )</span> nacheinander auf das Element an. Wenn dies unmittelbar nach einer Ver&auml;nderung im Fenster geschehen soll (z. B. nachdem ein Wardialogfeld geschlossen wurde), stellen Sie die beiden Methoden in eine separate Funktion und rufen Sie diese im Anschluss an die <span class="literal">alert( )</span>-Methode des Dialogfelds &uuml;ber die Methode <span class="literal">setTimeout( )</span> auf. Auf diese Weise k&ouml;nnen Sie gew&auml;hrleisten, dass IE/Windows die Anweisungen in der richtigen Reihenfolge ausf&uuml;hrt.
+		</p>
+									</td>
+								</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="parameters"><span class="title">Parameter</span></td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Keine. </p>
+							</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="returnedvalue"><span class="title">Zur&uuml;ckgegebener Wert</span></td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Keiner.</p>
+							</td>
+						</tr>
+					</table>
+		</div>
+		<div id="hash">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">hash</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">2</span>  IE <span class="emphasis">3</span>  DOM <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Lesen/Schreiben</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Der Anteil der URL eines <span class="literal">href</span>-Attributs nach dem <span class="literal">#</span>-Symbol; verweist auf eine Ankerposition in einem Dokument. Geben Sie das Symbol <span class="literal">#</span> nicht mit an, wenn Sie die Eigenschaft definieren.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>document.getElementById("mapArea2").hash = "section3";</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Zeichenfolge.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Standardwert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Keiner.  </p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="host">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">host</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">2</span>  IE <span class="emphasis">3</span>  DOM <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Lesen/Schreiben</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Stellt die Kombination von Hostname und Port (falls vorhanden) des Zieldokument-Servers f&uuml;r den Bereichs-Hyperlink bereit. Wenn der Port ausdr&uuml;cklich ein Teil der URL ist, werden Hostname und Port - wie in der URL - durch einen Doppelpunkt getrennt. Ist die Portnummer nicht in einer HTTP-URL f&uuml;r IE angegeben, so wird diese Einstellung automatisch auf die Standardeinstellung, Port 80, gesetzt.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>document.getElementById("mapArea2").host = "www.megacorp.com:80";</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Zeichenfolge mit dem Hostnamen, optional gefolgt von einem Doppelpunkt und der Portnummer.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Standardwert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Abh&auml;ngig vom Server.  </p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="hostname">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">hostname</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">2</span>  IE <span class="emphasis">3</span>  DOM <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Lesen/Schreiben</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Stellt den Hostnamen des Zieldokument-Servers f&uuml;r den Bereichs-Hyperlink (d. h. eine "Zwei-Punkt"-Adresse, die aus dem Servernamen und der Dom&auml;ne besteht) bereit. Die Eigenschaft <span class="literal">hostname</span> enth&auml;lt nicht die Portnummer.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>document.links[2].hostname = "www.megacorp.com";</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Zeichenfolge mit dem Hostnamen (Server und Dom&auml;ne).</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Standardwert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Abh&auml;ngig vom Server.  </p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="href">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">href</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">2</span>  IE <span class="emphasis">3</span>  DOM <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Lesen/Schreiben</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Die URL, die vom <span class="literal">href</span>-Attribut des Elements angegeben wird.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>document.links[2].href = "http://www.megacorp.com";</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Zeichenfolge mit einer vollst&auml;ndigen oder relativen URL.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Standardwert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Keiner.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="noHref">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">noHref</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">4</span>  DOM <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Lesen/Schreiben</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Gibt an, ob dem Bereich, der durch die Koordinaten definiert wird, ein Hyperlink zugeordnet ist. Wenn Sie diese Eigenschaft mit <span class="literal">true</span> festlegen, behandeln skriptf&auml;hige Browser das Element nicht mehr als einen Hyperlink.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>document.links[4].noHref = "true";</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Boolescher Wert: <span class="literal">true</span> | <span class="literal">false</span>.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Standardwert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p><span class="literal">false</span> </p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="pathname">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">pathname</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">2</span>  IE <span class="emphasis">3</span>  DOM <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Lesen/Schreiben</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Gibt die Pfadnamen-Komponente der URL an, die dem <span class="literal">href</span>-Attribut des Elements zugewiesen ist. Sie besteht aus allen URL-Informationen nach dem letzten Zeichen des Dom&auml;nennamens, einschlie&szlig;lich des einleitenden Vorw&auml;rtsschr&auml;gstrichs.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>document.getElementById("myLink").pathname = "/images/logoHiRes.gif";</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Zeichenfolge.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Standardwert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Keiner.  </p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="port">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">port</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">2</span>  IE <span class="emphasis">3</span>  DOM <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Lesen/Schreiben</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Gibt die Port-Komponente der URL an, die dem <span class="literal">href</span>-Attribut des Elements zugewiesen ist. Sie besteht aus allen URL-Informationen nach dem Doppelpunkt hinter dem letzten Zeichen des Dom&auml;nennamens. Der Doppelpunkt ist kein Teil des Werts der Eigenschaft <span class="literal">port</span>.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>document.getElementById("myLink").port = "80";</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Zeichenfolge (ein numerischer Wert als Zeichenfolge).</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Standardwert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Keiner.  </p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="protocol">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">protocol</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">2</span>  IE <span class="emphasis">3</span>  DOM <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Lesen/Schreiben</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Gibt die Protokoll-Komponente der URL an , die dem <span class="literal">href</span>-Attribut des Elements zugewiesen ist. Sie besteht aus allen URL-Informationen bis zum und einschlie&szlig;lich des ersten Doppelpunkts einer URL. Typische Werte sind <span class="literal">"http:"</span>, <span class="literal">"file:"</span>, <span class="literal">"ftp:"</span> und <span class="literal">"mailto:"</span>.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>document.getElementById("secureLink").protocol = "https:";</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Zeichenfolge.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Standardwert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Keiner.  </p>
+					</td>
+				</tr>
+			</table>
+		</div>
+		<div id="tabIndex">
+					<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+						<tr><td valign="top" class="name">tabIndex</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">4</span> DOM <span class="emphasis">1</span></td>
+						</tr>
+						<tr>
+							<td valign="top" nowrap class="usage"><p class="literal"></p>
+							</td><td valign="top" nowrap class="requirements"><span class="emphasis">Lesen/Schreiben</span></td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="description"><p>Dies ist eine Zahl, die die Position dieses Elements innerhalb der Tabulatorreihenfolge aller aktivierbaren Elemente im Dokument angibt. F&uuml;r die Tabulatorreihenfolge gelten sehr strenge Regeln. Elemente, deren <span class="literal">tabIndex</span>-Eigenschaften Werte (nicht Null) zugewiesen wurden, befinden sich in der Reihenfolge an erster Stelle, wenn ein Benutzer die Tabulatortaste auf einer Seite verwendet. Der Fokus beginnt bei dem Element mit dem niedrigsten <span class="literal">tabIndex</span>-Wert und folgt der Reihenfolge bis zum h&ouml;chsten Wert, unabh&auml;ngig von der physischen Position eines Objekts auf der Seite oder in einem Dokument. Falls zwei Elemente die gleichen <span class="literal">tabIndex</span>-Werte aufweisen, erh&auml;lt das Element, das zuerst im Dokument erscheint, auch zuerst den Fokus. Dann kommen alle Elemente, die entweder die Eigenschaft <span class="literal">tabIndex</span> nicht unterst&uuml;tzen oder deren Wert auf Null gesetzt ist. Diese Elemente werden in der Reihenfolge aktiviert, in der sie im Dokument angeordnet sind.
+		</p>
+									</td>
+								</tr>
+								<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+								</tr>
+								<tr>
+									<td colspan="2"><p>Im W3C-DOM und in Netscape 6 ist die Eigenschaft <span class="literal">tabIndex</span> auf folgende Elementobjekte beschr&auml;nkt: <span class="literal">a</span>, <span class="literal">area</span>, <span class="literal">button</span>, <span class="literal">input</span>, <span class="literal">object</span>, <span class="literal">select</span> und <span class="literal">textarea</span>. IE 4 unterst&uuml;tzt es dar&uuml;ber hinaus f&uuml;r die Elemente <span class="literal">applet</span>, <span class="literal">body</span>, <span class="literal">div</span>, <span class="literal">embed</span>, <span class="literal">isindex</span>, <span class="literal">marquee</span>, <span class="literal">span</span>, <span class="literal">table</span> und <span class="literal">td</span>. IE 5 erkennt dieses Attribut in Verbindung mit allen darstellbaren Elementen. Ein negativer Wert entfernt ein Element (nur in IE) vollst&auml;ndig aus der Tabulatorreihenfolge.
+		</p>
+									</td>
+								</tr>
+								<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+								</tr>
+								<tr>
+									<td colspan="2"><p>Da Hyperlinks und Anker in der Mac-Version von IE 4 nicht &uuml;ber die Tabulatortaste zu erreichen sind, wird die Eigenschaft <span class="literal">tabIndex</span> bei <span class="literal">a</span>-Elementen in dieser Version ignoriert.
+		</p>
+									</td>
+								</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td><span class="programlisting"><pre>document.getElementById("link3").tabIndex = 6;</pre>
+								</span></td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Eine ganze Zahl.</p>
+							</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td valign="top" nowrap colspan="2" class="default"><span class="title">Standardwert</span></td>
+						</tr>
+						<tr>
+							<td colspan="2"><p><span class="literal">0</span> </p>
+							</td>
+						</tr>
+					</table>
+		</div>
+		<div id="search">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">search</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">2</span>  IE <span class="emphasis">3</span>  DOM <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Lesen/Schreiben</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Der URL-kodierte Teil einer URL, die dem durch das Fragezeichen (<span class="literal">?</span>) eingeleiteten <span class="literal">href</span>-Attribut zugewiesen ist. Bei einem Dokument, das bei einer Suche zur&uuml;ckgegeben wird, kann der Suchabschnitt ebenfalls als Teil der <span class="literal">window.location</span>-Eigenschaft zur Verf&uuml;gung stehen. Sie k&ouml;nnen diese Eigenschaft mit einem Skript &auml;ndern. Dabei werden die URL und die Suchkriterien an den Server gesendet. Zum Ausf&uuml;hren dieser Eigenschaft m&uuml;ssen Sie das vom Server erwartete Datenformat (in der Regel Namens-/Wertpaare) kennen.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>document.getElementById("searchLink").search="?p=Tony+Blair&amp;d=y&amp;g=0&amp;s=a&amp;w=s&amp;m=25";</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Eine Zeichenfolge, die mit dem Symbol <span class="literal">?</span> beginnt.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Standardwert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Keiner.  </p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="shape">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">shape</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">4</span>  DOM <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Lesen/Schreiben</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Gibt die Form eines serverseitigen Imagemap-Bereichs an, dessen Koordinaten mit dem Attribut <span class="literal">coords</span> festgelegt werden.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>document.getElementById("area51").shape = "circle";</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Von der Gro&szlig;-/Kleinschreibung unabh&auml;ngige Formkonstante als Zeichenfolge: <span class="literal">default</span>
+<span class="literal">|</span> <span class="literal">rect</span> <span class="literal">|</span>
+<span class="literal">rectangle</span> <span class="literal">|</span>
+<span class="literal">circle</span> <span class="literal">|</span>
+<span class="literal">poly</span> | <span class="literal">polygon</span>.
+</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Standardwert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p><span class="literal">rect</span> (IE); leere Zeichenfolge, aber <span class="literal">rect</span> impliziert (Netscape 6).
+</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="target">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">target</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">2</span>  IE <span class="emphasis">3</span>  DOM <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Lesen/Schreiben</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Der Name des Fensters bzw. Frames, das/der Inhalte als Ergebnis des Navigierens zu einem Bereichs-Hyperlink empfangen soll. Diese Namen werden den Frames durch das <span class="literal">name</span>-Attribut des Elements <span class="literal">frame</span> zugewiesen; bei Unterfenstern wird der Name &uuml;ber den zweiten Parameter der Methode <span class="literal">window.open( )</span> zugewiesen. Wenn Sie die Funktion eines <span class="literal">target</span>-Attributs ben&ouml;tigen, um eine verkn&uuml;pfte Seite in einem leeren Browserfenster zu &ouml;ffnen, der HTML-Code zugleich aber unter Strict-HTML- oder XHTML-DTDs validiert werden muss, k&ouml;nnen Sie das <span class="literal">target</span>-Attribut im Code weglassen und dem <span class="literal">area</span>-Element nach dem Laden der Seite per Skript einen <span class="literal">target</span>-Eigenschaftswert zuweisen.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>document.getElementById("homeArea").target = "_blank";</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Zeichenfolge mit dem Fenster- oder Framenamen oder eine der folgenden Konstanten (als Zeichenfolge): <span class="literal">_parent</span> | <span class="literal">_self</span> | <span class="literal">_top</span> | <span class="literal">_blank</span>. Der Wert <span class="literal">_parent</span> zielt auf den Frameset, zu dem das aktuelle Dokument geh&ouml;rt; der Wert <span class="literal">_self</span> zielt auf das aktuelle Fenster; der Wert <span class="literal">_top</span> zielt auf das Hauptbrowserfenster und eliminiert dabei alle Frames; und der Wert <span class="literal">_blank</span> erstellt ein neues Fenster in der Standardgr&ouml;&szlig;e.
+</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Standardwert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Keiner. </p>
+					</td>
+				</tr>
+			</table>
+		</div>
+
+<div id="focus( )">
+
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">focus( )</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">2</span> IE <span class="emphasis">3</span> DOM <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>&Uuml;bergibt den Fokus an das aktuelle Objekt und l&ouml;st damit das <span class="literal">onfocus</span>-Ereignis des Objekts aus. Beachten Sie, dass die Palette der Elemente, die Fokus und Blur (Ereignisse und Methoden) unterst&uuml;tzen, in allen Browsern mit Ausnahme der neuesten Versionen von IE eingeschr&auml;nkt ist (weitere Informationen finden Sie in der Abhandlung des Attributs <span class="literal">tabindex</span> in Kapitel 8). Am zuverl&auml;ssigsten im Hinblick auf die R&uuml;ckw&auml;rtskompatibilit&auml;t funktioniert die Methode <span class="literal">focus( )</span> in Verbindung mit eindeutig fokusf&auml;higen Elementen wie Text-<span class="literal">input</span>- und <span class="literal">textarea</span>-Elementen.</p>
+							</td>
+						</tr>
+						<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Um einem Textfeld den Fokus zuzuweisen und zugleich den in diesem Feld enthaltenen Text zu markieren, wenden Sie die Methoden <span class="literal">focus( )</span> und <span class="literal">select( )</span> nacheinander auf das Element an. Wenn dies unmittelbar nach einer Ver&auml;nderung im Fenster geschehen soll (z.&#160;B. nachdem ein Wardialogfeld geschlossen wurde), stellen Sie die beiden Methoden in eine separate Funktion und rufen Sie diese im Anschluss an die <span class="literal">alert( )</span>-Methode des Dialogfelds &uuml;ber die Methode <span class="literal">setTimeout( )</span> auf. Auf diese Weise k&ouml;nnen Sie gew&auml;hrleisten, dass IE/Windows die Anweisungen in der richtigen Reihenfolge ausf&uuml;hrt.</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Parameter</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Keine. </p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Zur&uuml;ckgegebener Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Keiner.</p>
+					</td>
+				</tr>
+			</table>
+		</div>
+</body>
+</html>

@@ -1,0 +1,188 @@
+<html>
+<link rel="stylesheet" href="josh.css">
+<body bgcolor="#FFFFFF">
+
+		<div id="Beschreibung">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">comment, Comment</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">4</span>  DOM <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Das <span class="literal">comment</span>-Objekt spiegelt das Element <span class="literal">!</span> in einem HTML-Dokument wider. In einer W3C-DOM-Umgebung wie Netscape 6 handelt es sich bei diesem Objekt jedoch nicht um ein echtes Element im Kontext des W3C-DOM-Abstraktmodells, sondern einfach um eine spezielle Art von Node. Eine solche Node weist den <span class="literal">nodeType</span>-Wert 8 auf, der sie als <span class="literal">Comment</span>-Node kennzeichnet. F&uuml;r eine <span class="literal">Comment</span>-Node gilt im DOM-Abstraktmodell die Erbfolge <span class="literal">Node</span>-&gt;<span class="literal">CharacterData</span>-&gt;<span class="literal">Comment</span>. W&auml;hrend einigen Eigenschaften der <span class="literal">Comment</span>-Node (z. B. <span class="literal">nodeValue</span>)automatisch bestimmte Werte zugewiesen werden, weist die <span class="literal">Comment</span>-Node selbst nur diejenigen Eigenschaften und Methoden auf, die sie von den <span class="literal">Node</span>- und <span class="literal">CharacterData</span>-Objekten geerbt hat. <span class="literal">Node</span>-Eigenschaften und -Methoden werden weiter vorne in diesem Kapitel in der Abhandlung der gemeinsam genutzten Elemente beschrieben. Eine ausf&uuml;hrliche Beschreibung der <span class="literal">CharacterData</span>-Eigenschaften und -Methoden finden Sie im Abschnitt &uuml;ber das <span class="literal">Text</span>-Objekt, das seine Eigenschaften und Methoden vom <span class="literal">CharacterData</span>-Objekt erbt und h&auml;ufiger in Skripts verwendet wird.
+</p>
+							</td>
+						</tr>
+						<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Verwenden Sie zum Referenzieren eines Kommentarelements relative Element- und Node-Eigenschaften. IE stellt zwar kraft seines Vererbungsmodells eine <span class="literal">id</span>-Eigenschaft bereit, doch ist es nicht m&ouml;glich, dem Element &uuml;ber ein <span class="literal">id</span>-Attribut einen Bezeichner zuzuweisen. Da ein solches Element in IE jedoch den Tag-Namenswert <span class="literal">!</span> aufweist, k&ouml;nnen Sie ein HTML-Kommentarelement &uuml;ber die von der Methode <span class="literal">document.all.tags("!")</span> zur&uuml;ckgegebene Elementsammlung referenzieren.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="htmlequivalent"><span class="title">HTML-&Auml;quivalent</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>&lt;!--<span class="replaceable">comment text</span>--&gt;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectmodelreference"><span class="title">Objektmodellreferenz</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre><span class="replaceable">nodeReference</span></pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectspecificproperties"><span class="title">Objektspezifische Eigenschaften</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<table border="1"><tbody><tr><td><span class="literal">data</span></td><td><span class="literal">length</span></td><td><span class="literal">text</span></td>
+								</tr>
+							</tbody></table>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectspecificmethods"><span class="title">Objektspezifische Methoden</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<table border="1"><tbody><tr><td><span class="literal">appendData( )</span></td><td><span class="literal">deleteData( )</span></td><td><span class="literal">insertData( )</span></td><td><span class="literal">replaceData( )</span></td>
+								</tr>
+								<tr><td><span class="literal">substringData( )</span></td><td></td><td></td><td></td>
+								</tr>
+							</tbody></table>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectspecificeventhandlerproperties"><span class="title">Objektspezifische Ereignisbehandlungsroutineneigenschaften</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Keine. </p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="data">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">data</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">6</span>  DOM <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Lesen/Schreiben</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Stellt den Textinhalt des Kommentars bereit. Siehe <span class="literal">Text.data</span>.
+</p>
+							</td>
+						</tr>
+			</table>
+		</div><div id="length">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">length</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">6</span>  DOM <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Schreibgesch&uuml;tzt</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Gibt die Anzahl von Zeichen in den Kommentardaten an. Siehe <span class="literal">Text.length</span>.
+</p>
+							</td>
+						</tr>
+			</table>
+		</div><div id="text">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">text</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">nicht zutreffend</span> IE <span class="emphasis">4</span>  DOM <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Lesen/Schreiben</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Gibt den Textinhalt des Elements an. Naturgem&auml;&szlig; ist der Wert der <span class="literal">text</span>-Eigenschaft identisch mit den Werten der Eigenschaften <span class="literal">innerHTML</span> und <span class="literal">outerHTML</span>. &Auml;nderungen an dieser Eigenschaft wirken sich nicht auf den Text des Kommentars aus, so wie er in der Quellcodeversion des Dokuments im Browser angezeigt wird. Diese Eigenschaft ist in IE 4 f&uuml;r den Macintosh nicht verf&uuml;gbar.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>document.all.tags("!")[4].text = "Replaced comment, but no one will know.";</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Zeichenfolge.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Standardwert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Keiner. </p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="appendData( ), deleteData( ), insertData( ), replaceData( ), substringData( )">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">appendData( ), deleteData( ), insertData( ), replaceData( ), substringData( )</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">6</span>  DOM <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Stellen Methoden zur Manipulation von Kommentartext bereit. Informationen hierzu finden Sie unter den entsprechenden Methoden in der Abhandlung des <span class="literal">Text</span>-Objekts.
+</p>
+							</td>
+						</tr>
+			</table>
+		</div>
+
+</body>
+</html>

@@ -1,0 +1,143 @@
+<html>
+<head>
+<title>&lt;xsl:namespace-alias&gt;</title>
+</head>
+<body bgcolor="#FFFFFF" text="#000000">
+<div id="Beschreibung">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">&lt;xsl:namespace-alias&gt;</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description">
+Mit Hilfe dieser Anweisung k&ouml;nnen Sie ein Alias f&uuml;r einen Namensraum definieren, wenn eine direkte Verwendung des Namensraums die Verarbeitung komplizieren w&uuml;rde. Dieses selten verwendete Element ist die einfachste Art, ein Stylesheet zu schreiben, das ein anderes Stylesheet erzeugt.</td></tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Kategorie</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<p>Element der obersten Ebene</p>
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Obligatorische Attribute</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<dl>
+<dt>
+stylesheet-prefix
+</dt>
+<dd>
+Definiert das Pr&auml;fix, das verwendet wird, um im Stylesheet auf den Namensraum zu verweisen.
+<P></p>
+<dt>
+result-prefix
+</dt>
+<dd>
+Definiert das Pr&auml;fix f&uuml;r den Namensraum, auf den von dem Alias verwiesen wird. Dieses Pr&auml;fix muss im Stylesheet deklariert werden, und zwar unabh&auml;ngig davon, ob irgendwelche Elemente im Stylesheet dieses Pr&auml;fix &uuml;berhaupt verwenden.
+<P></p>
+</dl>
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Optionale Attribute</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<p>Keine</p>
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Inhalt</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<p>Keiner. <span class="LITERAL">&lt;xsl:namespace-alias&gt;</span> ist ein leeres Element. </p>
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">&Uuml;bergeordnetes Element</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<p>
+<span class="LITERAL">&lt;xsl:stylesheet&gt;</span>. <span class="LITERAL">&lt;xsl:namespace-alias&gt;</span> ist ein Element der obersten Ebene und kann nur dem Element <span class="LITERAL">&lt;xsl:stylesheet&gt;</span> untergeordnet werden.</p>
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Definition</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<p>XSLT-Abschnitt 7.1.1, Literale Ergebniselemente. </p>
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Beispiel</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<p>Dieses Element wird nicht oft eingesetzt und die Gr&uuml;nde f&uuml;r sein Vorhandensein basieren auf dem etwas obskuren Fall, dass mit Hilfe eines XSLT-Stylesheets ein anderes XSLT-Stylesheet erzeugt wird. Im Beispiel wird ein Stylesheet erzeugt, das eine Identit&auml;tstransformation erzeugt, ein Stylesheet, das das Eingabedokument einfach in den Ergebnisbaum kopiert. Hier das urspr&uuml;ngliche Stylesheet, das das Namensraumalias verwendet:</p>
+<span class="PROGRAMLISTING"><pre>
+&lt;xsl:stylesheet version="1.0"
+  xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+  xmlns:xslout="(the namespace URI doesn't matter here)"&gt;
+
+  &lt;xsl:output method="xml" indent="yes"/&gt;
+ 
+  &lt;xsl:namespace-alias stylesheet-prefix="xslout"
+    result-prefix="xsl"/&gt;
+
+  &lt;xsl:template match="/"&gt;
+    &lt;xslout:stylesheet version="1.0"&gt;
+      &lt;xslout:output method="xml"/&gt;
+      &lt;xslout:template match="/"&gt;
+        &lt;xslout:copy-of select="."/&gt;
+      &lt;/xslout:template&gt;
+    &lt;/xslout:stylesheet&gt;
+  &lt;/xsl:template&gt;
+
+&lt;/xsl:stylesheet&gt;</pre></span>
+<p>Wenn Sie dieses Stylesheet auf ein beliebiges XML-Dokument anwenden, erhalten Sie ein neues Stylesheet:</p>
+<span class="PROGRAMLISTING"><pre>
+&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;xslout:stylesheet xmlns:xslout="http://www.w3.org/1999/XSL/Transform" 
+  version="1.0"&gt;
+&lt;xslout:output method="xml"/&gt;
+&lt;xslout:template match="/"&gt;
+&lt;xslout:copy-of select="."/&gt;
+&lt;/xslout:template&gt;
+&lt;/xslout:stylesheet&gt;</pre></span>
+<p>Mit Hilfe dieses erzeugten Stylesheets k&ouml;nnen Sie ein beliebiges XML-Dokument kopieren. Im urspr&uuml;nglichen Stylesheet wird ein <span class="LITERAL">&lt;xsl:namespace-alias&gt;</span> verwendet, da es keine andere M&ouml;glichkeit gibt, dem XSLT-Prozessor mitzuteilen, welche XSLT-Elemente verarbeitet und welche als Literale an die Ausgabe &uuml;bergeben werden sollen. Durch die Verwendung eines Namensraumalias lassen sich die XSLT-Elemente erzeugen, die in der Ausgabe ben&ouml;tigt werden. Beachten Sie im Ergebnisdokument, dass der korrekte Namensraumwert automatisch f&uuml;r das <span class="LITERAL">&lt;xslout:stylesheet&gt;</span>-Element deklariert worden ist. </p>
+</td>
+</tr>
+</table>
+</div>
+</body>
+</html>

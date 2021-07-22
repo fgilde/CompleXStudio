@@ -1,0 +1,93 @@
+<html>
+<head>
+<title>Attributlistendeklaration</title>
+</head>
+<body bgcolor="#FFFFFF" text="#000000">
+<div id="Beschreibung">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">Attributlistendeklaration</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description">
+<span class="PROGRAMLISTING"><pre><strong class="userinput">&lt;!ATTLIST</strong> <var class="replaceable">element_name</var> <var class="replaceable">[attribute_name attribute_type default_decl]</var><strong class="userinput">*&gt;</strong></pre></span>
+<p>In einem g&uuml;ltigen XML-Dokument ist es notwendig, den Namen, den Typ und die Vorgabewerte der Attribute zu deklarieren, die mit den verschiedenen Elementen verwendet werden.</p>
+
+<p>Der Attributname muss den Regeln f&uuml;r XML-Namen entsprechen, und innerhalb einer bestimmten Deklaration darf derselbe Name nur einmal vorkommen.</p>
+
+<p>Attributen wird bei der Deklaration ein spezifischer Typ zugewiesen. Je nach deklariertem Typ wird ein XML-Parser f&uuml;r die G&uuml;ltigkeitspr&uuml;fung die Werte einschr&auml;nken, die in den Instanzen dieser Attribute innerhalb des Dokuments vorkommen d&uuml;rfen. In der folgenden Tabelle sind die verschiedenen Attributtypen und deren Bedeutung aufgef&uuml;hrt:</p>
+
+<table border="1">
+
+
+
+<thead>
+<tr valign="top">
+<td>
+<p>Attributtyp</p>
+</td>
+<td>
+<p>Bedeutung</p>
+</td>
+</tr>
+</thead>
+<tbody>
+<tr valign="top">
+<td>
+<p><span class="LITERAL">CDATA</span></p>
+</td>
+<td>
+<p>Einfache Zeichendaten.</p>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<p>
+<span class="LITERAL">ID</span></p>
+</td>
+<td>
+<p>Ein eindeutiger <span class="LITERAL">ID</span>-Wert innerhalb des aktuellen XML-Dokuments. Zwei <span class="LITERAL">ID</span>-Attributwerte innerhalb eines Dokuments d&uuml;rfen nicht denselben Wert haben, und ein Element darf jeweils nur ein Attribut des Typs <span class="LITERAL">ID</span> besitzen.</p>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<p>
+IDREF,
+
+IDREFS</p>
+</td>
+<td>
+<p>Eine einzelne Referenz auf eine Element-<span class="LITERAL">ID</span> (<span class="LITERAL">IDREF</span>) bzw. eine Liste an, durch Leerzeichen getrennten, <span class="LITERAL">IDs</span> (<span class="LITERAL">IDREFS</span>). Jedes <span class="LITERAL">ID</span>-Token muss auf eine g&uuml;ltige <span class="LITERAL">ID</span> verweisen, die sich irgendwo im Dokument befindet und als der Attributwert des <span class="LITERAL">ID</span>-Typs erscheint.</p>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<p>
+ENTITY,
+
+ENTITIES</p>
+</td>
+<td>
+<p>Eine einzelne Referenz auf eine deklarierte, nicht analysierbare externe Entity (<span class="LITERAL">ENTITY</span>) bzw. eine Liste an, durch Leerr&auml;ume getrennten, Referenzen (<span class="LITERAL">ENTITIES</span>).</p>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<p>NMTOKEN, NMTOKENS</p>
+</td>
+<td>
+<p>Ein einzelner Namens-Token-Wert (<span class="LITERAL">NMTOKEN</span>) bzw. eine Liste an, durch Leerzeichen getrennten, Namens-Token (<span class="LITERAL">NMTOKENS</span>).</p>
+</td>
+</tr>
+</tbody>
+
+</table>
+</td></tr>
+</table>
+</div>
+</body>
+</html>

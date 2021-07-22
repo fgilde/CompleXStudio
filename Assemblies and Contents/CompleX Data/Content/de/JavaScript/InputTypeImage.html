@@ -1,0 +1,465 @@
+<html>
+<link rel="stylesheet" href="josh.css">
+<body bgcolor="#FFFFFF">
+
+		<div id="Beschreibung">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">input (type="image")</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">4</span>  DOM <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Das <span class="literal">input</span>-Bildobjekt ist in erster Linie ein Formularsteuerelement in Form einer Schaltfl&auml;che, weist jedoch auch verschiedene Merkmale eines <span class="literal">img</span>-Elements auf. Sein Standardverhalten entspricht dem einer <span class="literal">submit</span>-Schaltfl&auml;che. Die Koordinaten des Mausklicks innerhalb des rechteckigen Bildbereichs werden beim &Uuml;bertragen des Formulars als Formulardaten (im Format <span class="replaceable">elemName</span><span class="literal">.x=65&amp;</span><span class="replaceable">elemName</span><span class="literal">.y=44</span>) &uuml;bergeben. Beachten Sie, dass dieser Eingabetyp im Gegensatz zu den meisten anderen <span class="literal">input</span>-Elementtypen in fr&uuml;hen Browsern nicht skriptf&auml;hig war. IE f&uuml;r Windows erkennt eine Referenz auf dieses Element &uuml;ber das Formular, in dem es enthalten ist, unter Umst&auml;nden nicht. &Uuml;ber den Bezeichner kann jedoch vollkommen zuverl&auml;ssig auf das Formular zugegriffen werden.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="htmlequivalent"><span class="title">HTML-&Auml;quivalent</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>&lt;input type="image"&gt;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectmodelreference"><span class="title">Objektmodellreferenz</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>[window.]document.<span class="replaceable">formName</span>.<span class="replaceable">elementName</span>
+[window.]document.forms[<span class="replaceable">i</span>].elements[<span class="replaceable">i</span>]
+[window.]document.getElementById("<span class="replaceable">elementID</span>")</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectspecificproperties"><span class="title">Objektspezifische Eigenschaften</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<table border="1"><tbody><tr><td><span class="literal">alt</span></td><td><span class="literal">complete</span></td><td><span class="literal">dynsrc</span></td><td><span class="literal">form</span></td><td><span class="literal">height</span></td>
+								</tr>
+								<tr><td><span class="literal">hspace</span></td><td><span class="literal">loop</span></td><td><span class="literal">lowsrc</span></td><td><span class="literal">name</span></td><td><span class="literal">src</span></td>
+								</tr>
+								<tr><td><span class="literal">start</span></td><td><span class="literal">type</span></td><td><span class="literal">useMap</span></td><td><span class="literal">vspace</span></td><td><span class="literal">width</span></td>
+								</tr>
+							</tbody></table>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectspecificmethods"><span class="title">Objektspezifische Methoden</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<table border="1"><tbody><tr><td><span class="literal">handleEvent( )</span></td>
+								</tr>
+							</tbody></table>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectspecificeventhandlerproperties"><span class="title">Objektspezifische Ereignisbehandlungsroutineneigenschaften</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<table border="1"><tbody><th>Behandlungsroutine</th><th>NN</th><th>IE</th><th>DOM</th><tr><td><span class="literal">onblur</span></td><td>--</td><td>4</td><td>--</td>
+								</tr>
+								<tr><td><span class="literal">onclick</span></td><td>2</td><td>3</td><td>2</td>
+								</tr>
+								<tr><td><span class="literal">onfocus</span></td><td>--</td><td>4</td><td>--</td>
+								</tr>
+								<tr><td><span class="literal">onmousedown</span></td><td>4</td><td>4</td><td>2</td>
+								</tr>
+								<tr><td><span class="literal">onmousemove</span></td><td>6</td><td>4</td><td>2</td>
+								</tr>
+								<tr><td><span class="literal">onmouseout</span></td><td>6</td><td>4</td><td>2</td>
+								</tr>
+								<tr><td><span class="literal">onmouseover</span></td><td>6</td><td>4</td><td>2</td>
+								</tr>
+								<tr><td><span class="literal">onmouseup</span></td><td>4</td><td>4</td><td>2</td>
+								</tr>
+							</tbody></table>
+					</td>
+				</tr>
+			</table>
+		</div><div id="alt">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">alt</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">4</span>  DOM <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Lesen/Schreiben</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Stellt den Text bereit, der an der vom <span class="literal">input</span>-Bildelement auf der Seite belegten Stelle angezeigt oder gesprochen werden soll, wenn ein Browser keine Grafiken herunterl&auml;dt (oder auf das Herunterladen eines Bildes wartet). Weitere Informationen finden Sie unter der Eigenschaft <span class="literal">alt</span> des <span class="literal">img</span>-Objekts.
+</p>
+							</td>
+						</tr>
+			</table>
+		</div><div id="complete">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">complete</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">nicht zutreffend</span> IE <span class="emphasis">4</span>  DOM <span class="emphasis">nicht zutreffend</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Schreibgesch&uuml;tzt</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Gibt an, ob die <span class="literal">src</span>- oder <span class="literal">lowsrc</span>-Bilddatei des <span class="literal">input</span>-Bildelements vollst&auml;ndig geladen wurde. Weitere Informationen finden Sie unter der Eigenschaft <span class="literal">complete</span> des <span class="literal">img</span>-Objekts.
+</p>
+							</td>
+						</tr>
+			</table>
+		</div><div id="dynsrc">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">dynsrc</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">nicht zutreffend</span> IE <span class="emphasis">4</span>  DOM <span class="emphasis">nicht zutreffend</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Lesen/Schreiben</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Stellt die URL eines Videoclips bereit, der &uuml;ber das Bild des <span class="literal">input</span>-Bildelements angezeigt werden kann. Weitere Informationen finden Sie unter der Eigenschaft <span class="literal">dynsrc</span> des <span class="literal">img</span>-Objekts.
+</p>
+							</td>
+						</tr>
+			</table>
+		</div><div id="form">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">form</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">4</span>  DOM <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Schreibgesch&uuml;tzt</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Gibt eine Referenz auf das <span class="literal">form</span>-Element zur&uuml;ck, das das aktuelle Element enth&auml;lt. W&auml;hrend der Verarbeitung eines von diesem Element stammenden Ereignisses hat die Ereignisbehandlungsroutinenfunktion automatisch Zugriff auf das <span class="literal">input</span>-Element (als <span class="literal">target</span>- oder <span class="literal">srcElement</span>-Eigenschaft des Ereignisobjekts). Durch Lesen der <span class="literal">form</span>-Eigenschaft kann das Skript problemlos auf andere Steuerelemente innerhalb desselben Formulars zugreifen.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>var theForm = evt.srcElement.form;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p><span class="literal">form</span>-Elementobjektreferenz</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Standardwert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Keiner.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="height, width">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">height, width</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">nicht zutreffend</span> IE <span class="emphasis">4</span>  DOM <span class="emphasis">nicht zutreffend</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Lesen/Schreiben</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Geben die H&ouml;he und Breite des im <span class="literal">input</span>-Element dargestellten Bildes in Pixel an. Weitere Informationen finden Sie unter den Eigenschaften <span class="literal">height</span> und <span class="literal">width</span> des <span class="literal">img</span>-Objekts.
+</p>
+							</td>
+						</tr>
+			</table>
+		</div><div id="hspace, vspace">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">hspace, vspace</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">nicht zutreffend</span> IE <span class="emphasis">4</span>  DOM <span class="emphasis">nicht zutreffend</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Lesen/Schreiben</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Geben die Pixelma&szlig;e der horizontalen und vertikalen R&auml;nder um ein <span class="literal">input</span>-Bildobjekt an. Weitere Informationen finden Sie unter den Eigenschaften <span class="literal">hspace</span> und <span class="literal">vspace</span> des <span class="literal">img</span>-Objekts.
+</p>
+							</td>
+						</tr>
+			</table>
+		</div><div id="loop">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">loop</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">nicht zutreffend</span> IE <span class="emphasis">4</span>  DOM <span class="emphasis">nicht zutreffend</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Lesen/Schreiben</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Wenn Sie einen Videoclip mit dem <span class="literal">dynsrc</span>-Attribut angeben, steuert die Eigenschaft <span class="literal">loop</span>, wie oft der Clip wiederholt werden soll. Weitere Informationen finden Sie unter der Eigenschaft <span class="literal">loop</span> des <span class="literal">img</span>-Objekts.
+</p>
+							</td>
+						</tr>
+			</table>
+		</div><div id="lowsrc">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">lowsrc</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">nicht zutreffend</span> IE <span class="emphasis">4</span>  DOM <span class="emphasis">nicht zutreffend</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Lesen/Schreiben</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Stellt die URL eines Bildes mit niedrigerer Aufl&ouml;sung (oder eines alternativen Bildes) bereit, das in den Dokumentbereich heruntergeladen werden kann, wenn das Herunterladen des durch das <span class="literal">scr</span>-Attribut festgelegten Bildes zu viel Zeit in Anspruch nimmt. Weitere Informationen finden Sie unter der Eigenschaft <span class="literal">lowsrc</span> des <span class="literal">img</span>-Objekts.
+</p>
+							</td>
+						</tr>
+			</table>
+		</div><div id="name">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">name</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">2</span>  IE <span class="emphasis">3</span>  DOM <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Lesen/Schreiben</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Dies ist der dem Formularsteuerelement zugeordnete Bezeichner. Der Wert dieser Eigenschaft wird beim &Uuml;bertragen des Formulars im Format <span class="replaceable">elemName</span><span class="literal">.x=65&amp;</span><span class="replaceable">elemName</span><span class="literal">.y=44</span> zusammen mit den Koordinatenwerten des Mausklicks (innerhalb des rechteckigen Bildbereichs) gesendet. Diese Koordinaten treten an die Stelle des Attributs und der Eigenschaft <span class="literal">value</span> anderer <span class="literal">input</span>-Elementtypen. Obwohl in modernen Standards das <span class="literal">id</span>-Attribut bevorzugt wird, setzen viele Browser beim &Uuml;bertragen des Wertes eines Steuerelements noch immer voraus, dass dem Formularsteuerelement ein <span class="literal">name</span>-Attribut zugeordnet ist.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>document.orderForm.myButton.name = "Win32";</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Ein von der Gro&szlig;-/Kleinschreibung abh&auml;ngiger Bezeichner, der den Regeln der Bezeichnerbenennung folgt: Er darf keine Leerzeichen enthalten, nicht mit einer Ziffer beginnen und sollte keine Satzzeichen enthalten (mit Ausnahme des Unterstrichs).
+</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Standardwert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Keiner.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="src">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">src</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">4</span>  DOM <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Lesen/Schreiben</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Stellt die relative oder vollst&auml;ndige URL der Bilddatei bereit, die momentan geladen ist oder in das <span class="literal">input</span>-Bildelement geladen werden soll. Weitere Informationen finden Sie unter der Eigenschaft <span class="literal">src</span> des <span class="literal">img</span>-Objekts.
+</p>
+							</td>
+						</tr>
+			</table>
+		</div><div id="start">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">start</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">nicht zutreffend</span> IE <span class="emphasis">4</span>  DOM <span class="emphasis">nicht zutreffend</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Lesen/Schreiben</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Wenn Sie einen Videoclip mit dem <span class="literal">dynsrc</span>-Attribut angeben, bestimmt die Eigenschaft <span class="literal">start</span>, durch welche Aktion der Clip gestartet wird. Weitere Informationen finden Sie unter der Eigenschaft <span class="literal">start</span> des <span class="literal">img</span>-Objekts.
+</p>
+							</td>
+						</tr>
+			</table>
+		</div><div id="type">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">type</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">4</span>  DOM <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Schreibgesch&uuml;tzt</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Gibt den Typ des Formularsteuerelements zur&uuml;ck. Dieser Wert wird in Kleinbuchstaben zur&uuml;ckgegeben. Es kann notwendig sein, alle Formularsteuerelemente bei einer Suche nach bestimmten Typen zu durchlaufen, um eine Verarbeitung auszuf&uuml;hren (z. B. das Entfernen von Inhalten aus allen Formularsteuerelementen des Typs <span class="literal">"text"</span>, w&auml;hrend alle anderen Steuerelemente unber&uuml;hrt bleiben).
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>if (document.forms[0].elements[3].type == "image") {
+    // process image input type here
+}</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Eine der folgenden Konstanten als Zeichenfolge: <span class="literal">button</span> | <span class="literal">checkbox</span> | <span class="literal">file</span> | <span class="literal">hidden</span> | <span class="literal">image</span> | <span class="literal">password</span> | <span class="literal">radio</span> | <span class="literal">reset</span> | <span class="literal">select-multiple</span> | <span class="literal">select-one</span> | <span class="literal">submit</span> | <span class="literal">text</span> | <span class="literal">textarea</span>.
+</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Standardwert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p><span class="literal">image</span></p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="useMap">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">useMap</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">4</span>  DOM <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Lesen/Schreiben</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Stellt die URL des <span class="literal">map</span>-Elements in dem Dokument bereit, das die f&uuml;r das Bild geltenden Hotareas und Hyperlinks der clientseitigen Imagemap enth&auml;lt. Weitere Informationen finden Sie unter der Eigenschaft <span class="literal">useMap</span> des <span class="literal">img</span>-Objekts.
+</p>
+							</td>
+						</tr>
+			</table>
+		</div><div id="vspace">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">vspace</td><td valign="top" nowrap class="compatibility"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Siehe hspace.</p>
+							</td>
+						</tr>
+			</table>
+		</div><div id="width">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">width</td><td valign="top" nowrap class="compatibility"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Siehe height. </p>
+							</td>
+						</tr>
+			</table>
+		</div><div id="handleEvent( )">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">handleEvent( )</td><td valign="top" nowrap class="compatibility">NN |<span class="emphasis">4|</span>  IE <span class="emphasis">nicht zutreffend</span> DOM <span class="emphasis">nicht zutreffend</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">handleEvent(<span class="replaceable">event</span>)</p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Weist das Objekt an, ein Ereignis, dessen Spezifikationen als Parameter an die Methode &uuml;bergeben werden, zu akzeptieren und zu verarbeiten. Das Objekt muss eine Ereignisbehandlungsroutine f&uuml;r den Ereignistyp besitzen, um das Ereignis verarbeiten zu k&ouml;nnen. Nur Navigator 4.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Parameter</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<ul><li><span class="literal"></span>Ein <span class="literal">event</span>-Objekt von Navigator 4. </li></ul>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Zur&uuml;ckgegebener Wert</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Keiner.</p>
+					</td>
+				</tr>
+			</table>
+		</div>
+
+</body>
+</html>

@@ -1,0 +1,153 @@
+<html>
+<head>
+<title>&lt;xsl:text&gt;</title>
+</head>
+<body bgcolor="#FFFFFF" text="#000000">
+<div id="Beschreibung">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">&lt;xsl:text&gt;</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description">
+Diese Anweisung gestattet es Ihnen, Literaltext in das Ausgabedokument zu schreiben. </td></tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Kategorie</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<p>Anweisung</p>
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Obligatorische Attribute</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<p>Keine</p>
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Optionale Attribute</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<dl>
+<dt>
+disable-output-escaping
+</dt>
+<dd>
+Dieses Attribut bestimmt, ob Sonderzeichen als Zeichenreferenzen ins Ausgabedokument geschrieben werden. Angenommen, der Literaltext enth&auml;lt das Zeichen <span class="LITERAL"> &gt; </span>, das normalerweise als <span class="LITERAL"> &amp; gt; </span> ins Ausgabedokument geschrieben wird. Wenn Sie <span class="LITERAL"> disable-output-escaping= " yes " </span> setzen, wird nicht die Referenz, sondern das Zeichen <span class="LITERAL"> &gt; </span> selbst geschrieben. Der XSLT-Prozessor verwendet dieses Attribut nur, wenn Sie die Ausgabemethoden <span class="LITERAL"> html </span> oder <span class="LITERAL"> xml </span> verwenden. Wenn Sie <span class="LITERAL"> &lt; xsl:output method= " text " &gt; </span> verwenden, wird das Attribut ignoriert, da bei der Ausgabemethode <span class="LITERAL"> text </span> keine Zeichenreferenzierung verwendet wird.
+<P></p>
+</dl>
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Inhalt</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<p>
+<span class="LITERAL">#PCDATA</span>, Literaltext und Entity-Referenzen.</p>
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">&Uuml;bergeordnetes Element</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<p>
+<span class="LITERAL">&lt;xsl:text&gt;</span> erscheint innerhalb einer Template.</p>
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Definition</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<p>XSLT-Abschnitt 7.2, Erzeugung von Text </p>
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Beispiel</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<p>Im folgenden Beispiel-Stylesheet wird mit Hilfe von <span class="LITERAL">&lt;xsl:text&gt;</span> Text erzeugt. Um einen zusammenh&auml;ngenden Satz zu schaffen, werden <span class="LITERAL">&lt;xsl:text&gt;</span>- und <span class="LITERAL">&lt;xsl:value-of&gt;</span>-Elemente vermischt. In diesem Fall wird einfach ein Textdokument erzeugt, doch funktioniert die Technik genau so gut zur Erstellung des Texts f&uuml;r ein HTML- oder XML-Element. Hier das Stylesheet:</p>
+<span class="PROGRAMLISTING"><pre>
+&lt;?xml version="1.0"?&gt;
+&lt;xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform"&gt;
+
+  &lt;xsl:output method="text"/&gt;
+
+  &lt;xsl:variable name="newline"&gt;
+&lt;xsl:text&gt;
+&lt;/xsl:text&gt;
+  &lt;/xsl:variable&gt;
+
+  &lt;xsl:template match="/"&gt;
+    &lt;xsl:text&gt;Your document contains &lt;/xsl:text&gt;
+    &lt;xsl:value-of select="count(//*)"/&gt;
+    &lt;xsl:text&gt; elements and &lt;/xsl:text&gt;
+    &lt;xsl:value-of select="count(//@*)"/&gt;
+    &lt;xsl:text&gt; attributes. &lt;/xsl:text&gt;
+    &lt;xsl:value-of select="$newline"/&gt;
+    &lt;xsl:text disable-output-escaping="yes"&gt;&lt;Have a great day!&gt;&lt;/xsl:text&gt;
+  &lt;/xsl:template&gt;
+&lt;/xsl:stylesheet&gt;</pre></span>
+<p>Beachten Sie auch den Einsatz von <span class="LITERAL">&lt;xsl:variable&gt;</span> zur Erzeugung von Zeilenumbr&uuml;chen. Das <span class="LITERAL">&lt;xsl:text&gt;</span>-Element innerhalb des <span class="LITERAL">&lt;xsl:variable&gt;</span>-Elements enth&auml;lt einen Zeilenumbruch. Wenn also der Wert dieser Variablen in den Ergebnisbaum geschrieben wird, entsteht der gew&uuml;nschte Zeilenumbruch. Als Eingabe wird das folgende XML-Dokument verwendet:</p>
+<span class="PROGRAMLISTING"><pre>
+&lt;?xml version="1.0"?&gt;
+&lt;list xml:lang="en"&gt;
+  &lt;title&gt;Albums I've bought recently:&lt;/title&gt;
+  &lt;listitem&gt;The Sacred Art of Dub&lt;/listitem&gt;
+  &lt;listitem&gt;Only the Poor Man Feel It&lt;/listitem&gt;
+  &lt;listitem&gt;Excitable Boy&lt;/listitem&gt;
+  &lt;listitem xml:lang="sw"&gt;Aki Special&lt;/listitem&gt;
+  &lt;listitem xml:lang="en-gb"&gt;Combat Rock&lt;/listitem&gt;
+  &lt;listitem xml:lang="zu"&gt;Talking Timbuktu&lt;/listitem&gt;
+  &lt;listitem xml:lang="jz"&gt;The Birth of the Cool&lt;/listitem&gt;
+&lt;/list&gt;</pre></span>
+<p>Das Beispiel-Stylesheet erzeugt die folgenden Ergebnisse:</p>
+<span class="PROGRAMLISTING"><pre>
+Your document contains 9 elements and 5 attributes.
+&lt;Have a great day!&gt;</pre></span>
+<p>Da die Ausgabemethode (Output Method) <span class="LITERAL">text</span> verwendet wird, hat das Attribut <span class="LITERAL">disable-output-escaping</span> keinerlei Auswirkung. Wenn Sie das Stylesheet so &auml;ndern, dass es <span class="LITERAL">&lt;xsl:output method="html"/&gt;</span> oder <span class="LITERAL">&lt;xsl:output method="xml"/&gt;</span> verwendet, so wird <span class="LITERAL">disable-output-escaping</span> ber&uuml;cksichtigt. Hier die Ergebnisse f&uuml;r <span class="LITERAL">disable-output-escaping="yes"</span>:</p>
+<span class="PROGRAMLISTING"><pre>
+Your document contains 10 elements and 2 attributes.
+&lt;Have a great day!&gt;</pre></span>
+<p>Und hier die Ergebnisse f&uuml;r <span class="LITERAL">disable-output-escaping="no"</span>, dem Standard:</p>
+<span class="PROGRAMLISTING"><pre>
+Your document contains 10 elements and 2 attributes.
+&amp;lt;Have a great day!&amp;gt;</pre></span>
+</td>
+</tr>
+</table>
+</div>
+</body>
+</html>

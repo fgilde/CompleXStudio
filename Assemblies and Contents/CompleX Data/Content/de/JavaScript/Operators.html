@@ -1,0 +1,2856 @@
+<html>
+<link rel="stylesheet" href="josh.css">
+
+<!-- Inserted by TRADOS: --><META HTTP-EQUIV="content-type" CONTENT="text/html; charset=windows-1252">
+<body bgcolor="#FFFFFF">
+<div id="=">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="name">=</td>
+<td valign="top" nowrap class="compatibility">NN <span class="emphasis">2</span> IE <span class="emphasis">3</span> ECMA <span class="emphasis">1</span>&nbsp;&nbsp;</td>
+</tr>
+<tr>
+<td valign="top" nowrap class="usage"><p class="literal">
+</p></td>
+<td valign="top" nowrap class="requirements">&nbsp;&nbsp;</td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+Der Zuweisungsoperator ordnet den ausgewerteten Wert des rechten Operanden der Variablen auf der linken Seite zu. Nach diesem Vorgang enth&auml;lt die Variable Daten, die denselben Datentyp aufweisen wie der urspr&uuml;ngliche Wert. Es ist auch m&ouml;glich, Zuweisungsoperationen zu verketten. Dabei erfolgt die Auswertung der gesamten Anweisung von rechts nach links. Daher entsprechen nach dem folgenden Ausdruck:
+</p>
+<span class="PROGRAMLISTING"><pre>a = b = c = 25;</pre></span>
+</td>
+</tr>
+<tr>
+<td colspan="2"><p>
+alle drei Variablen 25.
+</p></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td><span class="programlisting">
+<pre>var myName = &quot;Theodore Roosevelt&quot;;
+var now = new Date( );</pre>
+</span></td>
+</tr>
+</table>
+</div>
+<div id="&">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="name">&amp;</td>
+<td valign="top" nowrap class="compatibility">NN <span class="emphasis">2</span> IE <span class="emphasis">3</span> ECMA <span class="emphasis">1</span>&nbsp;&nbsp;</td>
+</tr>
+<tr>
+<td valign="top" nowrap class="usage"><p class="literal">
+</p></td>
+<td valign="top" nowrap class="requirements">&nbsp;&nbsp;</td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+Der bitweise AND-Operator f&uuml;hrt eine bin&auml;re mathematische Operation f&uuml;r zwei Operanden (bzw. ihre bin&auml;ren Werte) aus. Jede Bit-Spalte wird einer Booleschen AND-Operation unterzogen. Wenn der Wert einer Spalte in beiden Operanden 1 ist, ist das Ergebnis f&uuml;r diese Spaltenposition 1. Alle anderen Kombinationen ergeben Null. Der daraus resultierende Wert des Operators ist das dezimale &Auml;quivalent des bin&auml;ren Ergebnisses. Die bin&auml;ren Werte von 3 und 6 sind z.&nbsp;B. 0011 bzw. 0110. Nachdem eine AND-Operation f&uuml;r diese beiden Werte ausgef&uuml;hrt wurde, ist das bin&auml;re Ergebnis 0010, und das Dezimal&auml;quivalent lautet 2.
+</p></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td><span class="programlisting">
+<pre>var n = 3 &amp; 6;</pre>
+</span></td>
+</tr>
+</table>
+</div>
+<div id="<<">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="name">&lt;&lt;</td>
+<td valign="top" nowrap class="compatibility">NN <span class="emphasis">2</span> IE <span class="emphasis">3</span> ECMA <span class="emphasis">1</span>&nbsp;&nbsp;</td>
+</tr>
+<tr>
+<td valign="top" nowrap class="usage"><p class="literal">
+</p></td>
+<td valign="top" nowrap class="requirements">&nbsp;&nbsp;</td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+Der Nach-links-Operator verschiebt die Bits des ersten Operanden um die Anzahl von Spalten, die im zweiten Operanden angegeben ist. Wenn z.&nbsp;B. die Bits des bin&auml;ren Wertes von 3 (0011) um 2 nach links verschoben werden, ist das bin&auml;re Ergebnis 1100, und das Dezimal&auml;quivalent ist 12.
+</p></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td><span class="programlisting">
+<pre>var shifted = 3 &lt;&lt; 2;</pre>
+</span></td>
+</tr>
+</table>
+</div>
+<div id="~">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="name">~</td>
+<td valign="top" nowrap class="compatibility">NN <span class="emphasis">2</span> IE <span class="emphasis">3</span> ECMA <span class="emphasis">1</span>&nbsp;&nbsp;</td>
+</tr>
+<tr>
+<td valign="top" nowrap class="usage"><p class="literal">
+</p></td>
+<td valign="top" nowrap class="requirements">&nbsp;&nbsp;</td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+Dies ist der bitweise NOT-Operator. Dieser unit&auml;re Operator kehrt den Wert der Bin&auml;rziffer in jeder Spalte einer Zahl um. Der bin&auml;re Wert von 6 ist z.&nbsp;B. 0110 (mit vielen weiteren Nullen, die auf der linken Seite abgeschnitten wurden). Nach dem Negieren der Werte aller Spalten lautet das bin&auml;re Ergebnis 1001 zuz&uuml;glich aller Nullen auf der linken Seite, die in 1 umgewandelt werden. Das Dezimal&auml;quivalent ist ein negativer Wert (-5)
+</p></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td><span class="programlisting">
+<pre>var n = ~6;</pre>
+</span></td>
+</tr>
+</table>
+</div>
+<div id="|">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="name">|</td>
+<td valign="top" nowrap class="compatibility">NN <span class="emphasis">2</span> IE <span class="emphasis">3</span> ECMA <span class="emphasis">1</span>&nbsp;&nbsp;</td>
+</tr>
+<tr>
+<td valign="top" nowrap class="usage"><p class="literal">
+</p></td>
+<td valign="top" nowrap class="requirements">&nbsp;&nbsp;</td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+Der bitweise OR-Operator f&uuml;hrt eine bin&auml;re mathematische Operation f&uuml;r zwei Operanden (bzw. ihre bin&auml;ren Werte) aus. Jede Bit-Spalte wird der Booleschen OR-Operation unterzogen. Wenn der Wert einer Spalte in beiden Operanden 0 ist, lautet das Ergebnis f&uuml;r diese Spaltenposition 0. Alle anderen Kombinationen ergeben 1. Der f&uuml;r den Operator resultierende Wert ist das Dezimal&auml;quivalent des bin&auml;ren Ergebnisses. Die bin&auml;ren Werte von 3 und 6 sind z.&nbsp;B. 0011 bzw. 0110. Nachdem eine OR-Operation f&uuml;r diese beiden Werte ausgef&uuml;hrt wurde, ist das bin&auml;re Ergebnis 0111, und das Dezimal&auml;quivalent lautet 7.
+</p></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td><span class="programlisting">
+<pre>var n = 3 | 6;</pre>
+</span></td>
+</tr>
+</table>
+</div>
+<div id=">>">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="name">&gt;&gt;</td>
+<td valign="top" nowrap class="compatibility">NN <span class="emphasis">2</span> IE <span class="emphasis">3</span> ECMA <span class="emphasis">1</span>&nbsp;&nbsp;</td>
+</tr>
+<tr>
+<td valign="top" nowrap class="usage"><p class="literal">
+</p></td>
+<td valign="top" nowrap class="requirements">&nbsp;&nbsp;</td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+Der bitweise Nach-rechts-Operator verschiebt die Bits des ersten Operanden um die Anzahl von Spalten, die im zweiten Operanden angegeben ist. Wenn z.&nbsp;B. die Bits des bin&auml;ren Wertes von 6 (0110) um 2 nach rechts verschoben werden, ist das bin&auml;re Ergebnis 0001, und das Dezimal&auml;quivalent ist 1. Alle Stellen, die rechts von der Zahl wegfallen, werden ignoriert.
+</p></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td><span class="programlisting">
+<pre>var shifted = 6 &gt;&gt; 2;</pre>
+</span></td>
+</tr>
+</table>
+</div>
+<div id="^">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="name">^</td>
+<td valign="top" nowrap class="compatibility">NN <span class="emphasis">2</span> IE <span class="emphasis">3</span> ECMA <span class="emphasis">1</span>&nbsp;&nbsp;</td>
+</tr>
+<tr>
+<td valign="top" nowrap class="usage"><p class="literal">
+</p></td>
+<td valign="top" nowrap class="requirements">&nbsp;&nbsp;</td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+Der bitweise XOR-Operator (exklusives OR) f&uuml;hrt eine bin&auml;re mathematische Operation f&uuml;r zwei Operanden (bzw. ihre bin&auml;ren Werte) aus. Jede Bit-Spalte wird der Booleschen XOR-Operation unterzogen. Wenn der Wert einer Spalte in einem Operand (nicht in beiden) 1 ist, lautet das Ergebnis f&uuml;r diese Spaltenposition 1. Alle anderen Kombinationen ergeben 0. Der f&uuml;r den Operator resultierende Wert ist das Dezimal&auml;quivalent des bin&auml;ren Ergebnisses. Die bin&auml;ren Werte von 3 und 6 sind z.&nbsp;B. 0011 bzw. 0110. Nachdem eine XOR-Operation f&uuml;r diese beiden Werte ausgef&uuml;hrt wurde, ist das bin&auml;re Ergebnis 0101, und das Dezimal&auml;quivalent lautet 5.
+</p></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td><span class="programlisting">
+<pre>var n = 3 ^ 6;</pre>
+</span></td>
+</tr>
+</table>
+</div>
+<div id=">>>">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="name">&gt;&gt;&gt;</td>
+<td valign="top" nowrap class="compatibility">NN <span class="emphasis">2</span> IE <span class="emphasis">3</span> ECMA <span class="emphasis">1</span>&nbsp;&nbsp;</td>
+</tr>
+<tr>
+<td valign="top" nowrap class="usage"><p class="literal">
+</p></td>
+<td valign="top" nowrap class="requirements">&nbsp;&nbsp;</td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+Dies ist der bitweise Nach-rechts-mit-Nullen-Operator. Dieser Operator verschiebt die Bits des ersten Operanden um die Anzahl von Spalten (nach rechts), die im zweiten Operanden angegeben ist. Beim bitweisen Rechtsshift-Operator (&gt;&gt;) ist jede neue, von links eingef&uuml;gte Ziffer eine Eins (1); beim Null-Rechtsshift-Operator (&gt;&gt;&gt;) ist jede neue, von links eingef&uuml;gte Ziffer eine Null (0). Alle Stellen, die auf der rechten Seite der Zahl wegfallen, werden ignoriert. Microsoft bezeichnet diesen Operator aus als &quot;Nach-rechts-verschieben-Operator ohne Vorzeichen&quot;.
+</p></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td><span class="programlisting">
+<pre>var shifted = 6 &gt;&gt;&gt; 2;</pre>
+</span></td>
+</tr>
+</table>
+</div>
+<div id=",">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="name">,</td>
+<td valign="top" nowrap class="compatibility">NN <span class="emphasis">2</span> IE <span class="emphasis">3</span> ECMA <span class="emphasis">1</span>&nbsp;&nbsp;</td>
+</tr>
+<tr>
+<td valign="top" nowrap class="usage"><p class="literal">
+</p></td>
+<td valign="top" nowrap class="requirements">&nbsp;&nbsp;</td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+Der Komma-Operator (mit oder ohne optionalem nachgestellten Leerzeichen) dient zum Begrenzen von Ausdr&uuml;cken, die in derselben Skriptzeile stehen. Es gibt zahlreiche Verwendungsm&ouml;glichkeiten f&uuml;r diesen Operator. Zum Deklarieren von mehreren Variablen lautet die Syntax z.&nbsp;B. wie folgt:
+</p>
+<programlisting>var varName1, varName2, ... varNameN;</programlisting>
+</td>
+</tr>
+<tr>
+<td colspan="2"><p>
+Es ist auch m&ouml;glich, mehrere Skriptanweisungen in einer Zeile zu verbinden. Daher werden durch die folgende Skriptzeile:
+</p>
+<programlisting>alert(&quot;Howdy&quot;), alert(&quot;Doody&quot;);</programlisting>
+</td>
+</tr>
+<tr>
+<td colspan="2"><p>
+nacheinander zwei Warndialogfelder dargestellt (das zweite wird angezeigt, nachdem das erste vom Benutzer geschlossen wurde). Der Operator kann au&szlig;erdem in <span class="literal">for</span>-Schleifen verwendet werden, wenn die Schleife zwei (oder mehrere) Variablen enthalten sollen:
+</p>
+<span class="PROGRAMLISTING"><pre>for (var i = 0, var j = 2; i&lt; 20; i++, j++) &#123;
+    ...
+} </pre></span>
+</td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td><span class="programlisting">
+<pre>var isCSS, isIEMac;</pre>
+</span></td>
+</tr>
+</table>
+</div>
+<div id="/*...*/">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="name">//, /*...*/</td>
+<td valign="top" nowrap class="compatibility">NN <span class="emphasis">2</span> IE <span class="emphasis">3</span> ECMA <span class="emphasis">1</span>&nbsp;&nbsp;</td>
+</tr>
+<tr>
+<td valign="top" nowrap class="usage"><p class="literal">
+</p></td>
+<td valign="top" nowrap class="requirements">&nbsp;&nbsp;</td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+Mithilfe dieser Kommentaranweisungen k&ouml;nnen Sie Text in ein Skript einf&uuml;gen, der nicht ausgef&uuml;hrt wird. Text hinter dem Symbol <span class="literal">//</span> an einer beliebigen Stelle in einer Anweisungszeile wird vom Sprachinterpreter ignoriert. Vom Browser wird dann die n&auml;chste Zeile im Skript ausgef&uuml;hrt, es sei denn, ihr steht wieder das Symbol <span class="literal">//</span> voran.
+</p></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2"><p>
+Bei mehrzeiligen Kommentaren k&ouml;nnen Sie den Block mit dem Symbol <span class="literal">/*</span> beginnen. Der Kommentar kann sich jetzt &uuml;ber beliebig viele Zeilen erstrecken. Der Block wird mit dem Symbol <span class="literal">*/</span> beendet. Danach f&uuml;hrt der Browser wieder Anweisungen aus.
+</p></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td><span class="programlisting">
+<pre>// convert temp from C to F
+
+/*
+many lines
+of
+comments
+*/</pre>
+</span></td>
+</tr>
+</table>
+</div>
+<div id="//">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="name">//, /*...*/</td>
+<td valign="top" nowrap class="compatibility">NN <span class="emphasis">2</span> IE <span class="emphasis">3</span> ECMA <span class="emphasis">1</span>&nbsp;&nbsp;</td>
+</tr>
+<tr>
+<td valign="top" nowrap class="usage"><p class="literal">
+</p></td>
+<td valign="top" nowrap class="requirements">&nbsp;&nbsp;</td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+Mithilfe dieser Kommentaranweisungen k&ouml;nnen Sie Text in ein Skript einf&uuml;gen, der nicht ausgef&uuml;hrt wird. Text hinter dem Symbol <span class="literal">//</span> an einer beliebigen Stelle in einer Anweisungszeile wird vom Sprachinterpreter ignoriert. Vom Browser wird dann die n&auml;chste Zeile im Skript ausgef&uuml;hrt, es sei denn, ihr steht wieder das Symbol <span class="literal">//</span> voran.
+</p></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2"><p>
+Bei mehrzeiligen Kommentaren k&ouml;nnen Sie den Block mit dem Symbol <span class="literal">/*</span> beginnen. Der Kommentar kann sich jetzt &uuml;ber beliebig viele Zeilen erstrecken. Der Block wird mit dem Symbol <span class="literal">*/</span> beendet. Danach f&uuml;hrt der Browser wieder Anweisungen aus.
+</p></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td><span class="programlisting">
+<pre>// convert temp from C to F
+
+/*
+many lines
+of
+comments
+*/</pre>
+</span></td>
+</tr>
+</table>
+</div>
+<div id="@cc_on">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="name">@cc_on, @if, @end, @set</td>
+<td valign="top" nowrap class="compatibility">NN <span class="emphasis">n/a</span> IE <span class="emphasis">4(Win)</span> ECMA <span class="emphasis">n/a</span>&nbsp;&nbsp;</td>
+</tr>
+<tr>
+<td valign="top" nowrap class="usage"><p class="literal">
+</p></td>
+<td valign="top" nowrap class="requirements">&nbsp;&nbsp;</td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+In IE f&uuml;r Windows gibt es ein Skriptmerkmal namens <span class="emphasis">bedingte Kompilierung</span>. Dieser Modus wird mithilfe der Anweisung <span class="literal">@cc_on</span> aktiviert und erm&ouml;glicht die Ausf&uuml;hrung von JScript-Anweisungen unter Bedingungen, die innerhalb dieser bedingten Umgebung getestet werden k&ouml;nnen. Wenn Sie eine bedingte Kompilierungsanweisung in JavaScript-Kommentare einschlie&szlig;en, wird sie nur in IE f&uuml;r Windows ab Version 4 ausgef&uuml;hrt und ger&auml;t anderen Browsern nicht in die Quere.
+</p></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2"><p>
+Die &quot;Bedingtheit&quot; dieser Anweisung stammt von verschiedenen globalen Eigenschaften (mit vorangestelltem <span class="literal">@</span>-Symbol), die Umgebungseigenschaften wie die Version der Skriptengine, das Betriebssystem und den CPU-Typ offen legen. Alle diese Informationen k&ouml;nnen in den meisten Browsern aus den Eigenschaften des <span class="literal">navigator</span>-Objekts abgerufen werden und stehen daher nicht ausschlie&szlig;lich in dieser bedingten Umgebung zur Verf&uuml;gung.
+</p></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2"><p>
+Zum Aktivieren der bedingten Kompilierung f&uuml;gen Sie die folgende Anweisung in Ihr Skript ein:
+</p>
+<span class="PROGRAMLISTING"><pre>/*@cc_on @*/</pre></span>
+</td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2"><p>
+Hierbei handelt es sich um einen Einwegschalter: Einmal aktiviert, l&auml;sst sich der Modus in der aktuellen Seite nicht wieder deaktivieren.
+</p></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2"><p>
+Das folgende Fragment zeigt, wie die <span class="literal">@if</span>-Anweisung und &auml;hnliche Anweisungen Umgebungsinformationen in der Statusleiste des Fensters anzeigen, wenn der Browser mit JScript ab Version 5.6 arbeitet (IE ab Version 6):
+</p>
+<span class="PROGRAMLISTING"><pre>/*@cc_on @*/
+/*@if (@_jscript_version&gt;= 5.6 &amp;&amp; @_x86)
+    status = &quot;Now running JScript version &quot; + @_jscript_version + 
+    &quot; with Intel inside.&quot;;
+   @else @*/
+    status = &quot;Have a nice day.&quot;;
+/*@end @*/ </pre></span>
+</td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2"><p>
+Mit der Anweisung <span class="literal">@set</span> k&ouml;nnen Sie einer Variablen (mit dem Pr&auml;fix <span class="literal">@</span>) innerhalb eines bedingten Kompilierungsabschnitts einen numerischen oder Booleschen Wert (keine Strings) zuweisen.
+</p>
+<span class="PROGRAMLISTING"><pre>@set @isOK = @_win32</pre></span>
+</td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2"><p>
+Nach dem Initialisieren kann diese Variable (einschlie&szlig;lich ihres ansonsten unzul&auml;ssigen Bezeichners) in Skriptanweisungen &uuml;berall in der Seite eingesetzt werden. Beachten Sie, dass die an Visual Basic angelehnte Syntax von <span class="literal">@</span>-Anweisungen in bedingten Kompilierungsanweisungen keinen abschlie&szlig;enden Strichpunkt zul&auml;sst.
+</p></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2"><p>
+Auf der einen Seite k&ouml;nnte die bedingte Kompilierung bei der Anwendungsentwicklung f&uuml;r IE hilfreich sein, um &auml;ltere IE-Versionen vor neuen Sprachfunktionen (z.&nbsp;B. <span class="literal">try-catch</span>-Konstruktionen) abzuschirmen, die zu Kompilierungsfehlern f&uuml;hren w&uuml;rden, weil sich die entsprechenden Anweisungen nur unter ganz bestimmten Versionen kompilieren lassen. Ein Entwickler, der f&uuml;r verschiedene Browsertypen arbeitet, d&uuml;rfte diese Funktion bestenfalls beim Debuggen IE-spezifischer Probleme verwenden k&ouml;nnen; f&uuml;r die eigentliche Anwendungsentwicklung hingegen ist sie uninteressant.
+</p></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+</tr>
+<tr>
+<td colspan="2"><p>
+Siehe oben stehende Beschreibung.
+</p></td>
+</tr>
+</table>
+</div>
+<div id="@if">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="name">@cc_on, @if, @end, @set</td>
+<td valign="top" nowrap class="compatibility">NN <span class="emphasis">n/a</span> IE <span class="emphasis">4(Win)</span> ECMA <span class="emphasis">n/a</span>&nbsp;&nbsp;</td>
+</tr>
+<tr>
+<td valign="top" nowrap class="usage"><p class="literal">
+</p></td>
+<td valign="top" nowrap class="requirements">&nbsp;&nbsp;</td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+In IE f&uuml;r Windows gibt es ein Skriptmerkmal namens <span class="emphasis">bedingte Kompilierung</span>. Dieser Modus wird mithilfe der Anweisung <span class="literal">@cc_on</span> aktiviert und erm&ouml;glicht die Ausf&uuml;hrung von JScript-Anweisungen unter Bedingungen, die innerhalb dieser bedingten Umgebung getestet werden k&ouml;nnen. Wenn Sie eine bedingte Kompilierungsanweisung in JavaScript-Kommentare einschlie&szlig;en, wird sie nur in IE f&uuml;r Windows ab Version 4 ausgef&uuml;hrt und ger&auml;t anderen Browsern nicht in die Quere.
+</p></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2"><p>
+Die &quot;Bedingtheit&quot; dieser Anweisung stammt von verschiedenen globalen Eigenschaften (mit vorangestelltem <span class="literal">@</span>-Symbol), die Umgebungseigenschaften wie die Version der Skriptengine, das Betriebssystem und den CPU-Typ offen legen. Alle diese Informationen k&ouml;nnen in den meisten Browsern aus den Eigenschaften des <span class="literal">navigator</span>-Objekts abgerufen werden und stehen daher nicht ausschlie&szlig;lich in dieser bedingten Umgebung zur Verf&uuml;gung.
+</p></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2"><p>
+Zum Aktivieren der bedingten Kompilierung f&uuml;gen Sie die folgende Anweisung in Ihr Skript ein:
+</p>
+<span class="PROGRAMLISTING"><pre>/*@cc_on @*/</pre></span>
+</td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2"><p>
+Hierbei handelt es sich um einen Einwegschalter: Einmal aktiviert, l&auml;sst sich der Modus in der aktuellen Seite nicht wieder deaktivieren.
+</p></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2"><p>
+Das folgende Fragment zeigt, wie die <span class="literal">@if</span>-Anweisung und &auml;hnliche Anweisungen Umgebungsinformationen in der Statusleiste des Fensters anzeigen, wenn der Browser mit JScript ab Version 5.6 arbeitet (IE ab Version 6):
+</p>
+<span class="PROGRAMLISTING"><pre>/*@cc_on @*/
+/*@if (@_jscript_version&gt;= 5.6 &amp;&amp; @_x86)
+    status = &quot;Now running JScript version &quot; + @_jscript_version + 
+    &quot; with Intel inside.&quot;;
+   @else @*/
+    status = &quot;Have a nice day.&quot;;
+/*@end @*/ </pre></span>
+</td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2"><p>
+Mit der Anweisung <span class="literal">@set</span> k&ouml;nnen Sie einer Variablen (mit dem Pr&auml;fix <span class="literal">@</span>) innerhalb eines bedingten Kompilierungsabschnitts einen numerischen oder Booleschen Wert (keine Strings) zuweisen.
+</p>
+<span class="PROGRAMLISTING"><pre>@set @isOK = @_win32</pre></span>
+</td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2"><p>
+Nach dem Initialisieren kann diese Variable (einschlie&szlig;lich ihres ansonsten unzul&auml;ssigen Bezeichners) in Skriptanweisungen &uuml;berall in der Seite eingesetzt werden. Beachten Sie, dass die an Visual Basic angelehnte Syntax von <span class="literal">@</span>-Anweisungen in bedingten Kompilierungsanweisungen keinen abschlie&szlig;enden Strichpunkt zul&auml;sst.
+</p></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2"><p>
+Auf der einen Seite k&ouml;nnte die bedingte Kompilierung bei der Anwendungsentwicklung f&uuml;r IE hilfreich sein, um &auml;ltere IE-Versionen vor neuen Sprachfunktionen (z.&nbsp;B. <span class="literal">try-catch</span>-Konstruktionen) abzuschirmen, die zu Kompilierungsfehlern f&uuml;hren w&uuml;rden, weil sich die entsprechenden Anweisungen nur unter ganz bestimmten Versionen kompilieren lassen. Ein Entwickler, der f&uuml;r verschiedene Browsertypen arbeitet, d&uuml;rfte diese Funktion bestenfalls beim Debuggen IE-spezifischer Probleme verwenden k&ouml;nnen; f&uuml;r die eigentliche Anwendungsentwicklung hingegen ist sie uninteressant.
+</p></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+</tr>
+<tr>
+<td colspan="2"><p>
+Siehe oben stehende Beschreibung.
+</p></td>
+</tr>
+</table>
+</div>
+<div id="@end">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="name">@cc_on, @if, @end, @set</td>
+<td valign="top" nowrap class="compatibility">NN <span class="emphasis">n/a</span> IE <span class="emphasis">4(Win)</span> ECMA <span class="emphasis">n/a</span>&nbsp;&nbsp;</td>
+</tr>
+<tr>
+<td valign="top" nowrap class="usage"><p class="literal">
+</p></td>
+<td valign="top" nowrap class="requirements">&nbsp;&nbsp;</td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+In IE f&uuml;r Windows gibt es ein Skriptmerkmal namens <span class="emphasis">bedingte Kompilierung</span>. Dieser Modus wird mithilfe der Anweisung <span class="literal">@cc_on</span> aktiviert und erm&ouml;glicht die Ausf&uuml;hrung von JScript-Anweisungen unter Bedingungen, die innerhalb dieser bedingten Umgebung getestet werden k&ouml;nnen. Wenn Sie eine bedingte Kompilierungsanweisung in JavaScript-Kommentare einschlie&szlig;en, wird sie nur in IE f&uuml;r Windows ab Version 4 ausgef&uuml;hrt und ger&auml;t anderen Browsern nicht in die Quere.
+</p></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2"><p>
+Die &quot;Bedingtheit&quot; dieser Anweisung stammt von verschiedenen globalen Eigenschaften (mit vorangestelltem <span class="literal">@</span>-Symbol), die Umgebungseigenschaften wie die Version der Skriptengine, das Betriebssystem und den CPU-Typ offen legen. Alle diese Informationen k&ouml;nnen in den meisten Browsern aus den Eigenschaften des <span class="literal">navigator</span>-Objekts abgerufen werden und stehen daher nicht ausschlie&szlig;lich in dieser bedingten Umgebung zur Verf&uuml;gung.
+</p></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2"><p>
+Zum Aktivieren der bedingten Kompilierung f&uuml;gen Sie die folgende Anweisung in Ihr Skript ein:
+</p>
+<span class="PROGRAMLISTING"><pre>/*@cc_on @*/</pre></span>
+</td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2"><p>
+Hierbei handelt es sich um einen Einwegschalter: Einmal aktiviert, l&auml;sst sich der Modus in der aktuellen Seite nicht wieder deaktivieren.
+</p></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2"><p>
+Das folgende Fragment zeigt, wie die <span class="literal">@if</span>-Anweisung und &auml;hnliche Anweisungen Umgebungsinformationen in der Statusleiste des Fensters anzeigen, wenn der Browser mit JScript ab Version 5.6 arbeitet (IE ab Version 6):
+</p>
+<span class="PROGRAMLISTING"><pre>/*@cc_on @*/
+/*@if (@_jscript_version&gt;= 5.6 &amp;&amp; @_x86)
+    status = &quot;Now running JScript version &quot; + @_jscript_version + 
+    &quot; with Intel inside.&quot;;
+   @else @*/
+    status = &quot;Have a nice day.&quot;;
+/*@end @*/ </pre></span>
+</td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2"><p>
+Mit der Anweisung <span class="literal">@set</span> k&ouml;nnen Sie einer Variablen (mit dem Pr&auml;fix <span class="literal">@</span>) innerhalb eines bedingten Kompilierungsabschnitts einen numerischen oder Booleschen Wert (keine Strings) zuweisen.
+</p>
+<span class="PROGRAMLISTING"><pre>@set @isOK = @_win32</pre></span>
+</td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2"><p>
+Nach dem Initialisieren kann diese Variable (einschlie&szlig;lich ihres ansonsten unzul&auml;ssigen Bezeichners) in Skriptanweisungen &uuml;berall in der Seite eingesetzt werden. Beachten Sie, dass die an Visual Basic angelehnte Syntax von <span class="literal">@</span>-Anweisungen in bedingten Kompilierungsanweisungen keinen abschlie&szlig;enden Strichpunkt zul&auml;sst.
+</p></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2"><p>
+Auf der einen Seite k&ouml;nnte die bedingte Kompilierung bei der Anwendungsentwicklung f&uuml;r IE hilfreich sein, um &auml;ltere IE-Versionen vor neuen Sprachfunktionen (z.&nbsp;B. <span class="literal">try-catch</span>-Konstruktionen) abzuschirmen, die zu Kompilierungsfehlern f&uuml;hren w&uuml;rden, weil sich die entsprechenden Anweisungen nur unter ganz bestimmten Versionen kompilieren lassen. Ein Entwickler, der f&uuml;r verschiedene Browsertypen arbeitet, d&uuml;rfte diese Funktion bestenfalls beim Debuggen IE-spezifischer Probleme verwenden k&ouml;nnen; f&uuml;r die eigentliche Anwendungsentwicklung hingegen ist sie uninteressant.
+</p></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+</tr>
+<tr>
+<td colspan="2"><p>
+Siehe oben stehende Beschreibung.
+</p></td>
+</tr>
+</table>
+</div>
+<div id="@set">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="name">@cc_on, @if, @end, @set</td>
+<td valign="top" nowrap class="compatibility">NN <span class="emphasis">n/a</span> IE <span class="emphasis">4(Win)</span> ECMA <span class="emphasis">n/a</span>&nbsp;&nbsp;</td>
+</tr>
+<tr>
+<td valign="top" nowrap class="usage"><p class="literal">
+</p></td>
+<td valign="top" nowrap class="requirements">&nbsp;&nbsp;</td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+In IE f&uuml;r Windows gibt es ein Skriptmerkmal namens <span class="emphasis">bedingte Kompilierung</span>. Dieser Modus wird mithilfe der Anweisung <span class="literal">@cc_on</span> aktiviert und erm&ouml;glicht die Ausf&uuml;hrung von JScript-Anweisungen unter Bedingungen, die innerhalb dieser bedingten Umgebung getestet werden k&ouml;nnen. Wenn Sie eine bedingte Kompilierungsanweisung in JavaScript-Kommentare einschlie&szlig;en, wird sie nur in IE f&uuml;r Windows ab Version 4 ausgef&uuml;hrt und ger&auml;t anderen Browsern nicht in die Quere.
+</p></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2"><p>
+Die &quot;Bedingtheit&quot; dieser Anweisung stammt von verschiedenen globalen Eigenschaften (mit vorangestelltem <span class="literal">@</span>-Symbol), die Umgebungseigenschaften wie die Version der Skriptengine, das Betriebssystem und den CPU-Typ offen legen. Alle diese Informationen k&ouml;nnen in den meisten Browsern aus den Eigenschaften des <span class="literal">navigator</span>-Objekts abgerufen werden und stehen daher nicht ausschlie&szlig;lich in dieser bedingten Umgebung zur Verf&uuml;gung.
+</p></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2"><p>
+Zum Aktivieren der bedingten Kompilierung f&uuml;gen Sie die folgende Anweisung in Ihr Skript ein:
+</p>
+<span class="PROGRAMLISTING"><pre>/*@cc_on @*/</pre></span>
+</td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2"><p>
+Hierbei handelt es sich um einen Einwegschalter: Einmal aktiviert, l&auml;sst sich der Modus in der aktuellen Seite nicht wieder deaktivieren.
+</p></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2"><p>
+Das folgende Fragment zeigt, wie die <span class="literal">@if</span>-Anweisung und &auml;hnliche Anweisungen Umgebungsinformationen in der Statusleiste des Fensters anzeigen, wenn der Browser mit JScript ab Version 5.6 arbeitet (IE ab Version 6):
+</p>
+<span class="PROGRAMLISTING"><pre>/*@cc_on @*/
+/*@if (@_jscript_version&gt;= 5.6 &amp;&amp; @_x86)
+    status = &quot;Now running JScript version &quot; + @_jscript_version + 
+    &quot; with Intel inside.&quot;;
+   @else @*/
+    status = &quot;Have a nice day.&quot;;
+/*@end @*/ </pre></span>
+</td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2"><p>
+Mit der Anweisung <span class="literal">@set</span> k&ouml;nnen Sie einer Variablen (mit dem Pr&auml;fix <span class="literal">@</span>) innerhalb eines bedingten Kompilierungsabschnitts einen numerischen oder Booleschen Wert (keine Strings) zuweisen.
+</p>
+<span class="PROGRAMLISTING"><pre>@set @isOK = @_win32</pre></span>
+</td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2"><p>
+Nach dem Initialisieren kann diese Variable (einschlie&szlig;lich ihres ansonsten unzul&auml;ssigen Bezeichners) in Skriptanweisungen &uuml;berall in der Seite eingesetzt werden. Beachten Sie, dass die an Visual Basic angelehnte Syntax von <span class="literal">@</span>-Anweisungen in bedingten Kompilierungsanweisungen keinen abschlie&szlig;enden Strichpunkt zul&auml;sst.
+</p></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2"><p>
+Auf der einen Seite k&ouml;nnte die bedingte Kompilierung bei der Anwendungsentwicklung f&uuml;r IE hilfreich sein, um &auml;ltere IE-Versionen vor neuen Sprachfunktionen (z.&nbsp;B. <span class="literal">try-catch</span>-Konstruktionen) abzuschirmen, die zu Kompilierungsfehlern f&uuml;hren w&uuml;rden, weil sich die entsprechenden Anweisungen nur unter ganz bestimmten Versionen kompilieren lassen. Ein Entwickler, der f&uuml;r verschiedene Browsertypen arbeitet, d&uuml;rfte diese Funktion bestenfalls beim Debuggen IE-spezifischer Probleme verwenden k&ouml;nnen; f&uuml;r die eigentliche Anwendungsentwicklung hingegen ist sie uninteressant.
+</p></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+</tr>
+<tr>
+<td colspan="2"><p>
+Siehe oben stehende Beschreibung.
+</p></td>
+</tr>
+</table>
+</div>
+<div id="?:">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="name">?:</td>
+<td valign="top" nowrap class="compatibility">NN <span class="emphasis">2</span> IE <span class="emphasis">3</span> ECMA <span class="emphasis">1</span>&nbsp;&nbsp;</td>
+</tr>
+<tr>
+<td valign="top" nowrap class="usage"><p class="literal">
+</p></td>
+<td valign="top" nowrap class="requirements">&nbsp;&nbsp;</td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+Der Bedingungsoperator stellt eine verk&uuml;rzte Syntax f&uuml;r eine <span class="literal">if/else</span>-Steuerungsstruktur bereit. F&uuml;r die Verwendung dieses Operators sind drei Komponenten erforderlich: eine Bedingung und zwei Anweisungen. Ergibt die Bedingung <span class="literal">true</span>, wird die erste Anweisung ausgef&uuml;hrt, ergibt sie <span class="literal">false</span>, die zweite. Die Syntax lautet wie folgt:
+</p>
+<span class="PROGRAMLISTING">
+<pre><var class="replaceable">condition </var>?<var class="replaceable"> statement1 </var>:<var class="replaceable"> statement2</var></pre>
+</span> </td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2"><p>
+Sie k&ouml;nnen diese Operatoren verschachteln, um mehrere Entscheidungspfade innerhalb einer einzelnen Anweisung bereitzustellen. Im folgenden Syntaxbeispiel wird, wenn die Bedingung <var class="replaceable">conditionA</var> den Wert <span class="literal">false</span> ergibt, die Bedingung <var class="replaceable">conditionB</var> ausgewertet und je nachdem Ergebnis von <var class="replaceable">conditionB</var> als Wert des gesamten Ausdrucks entweder <var class="replaceable">statement2</var> oder <var class="replaceable">statement3</var> zur&uuml;ckgegeben.
+</p></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2"><p>
+Dieser Operator ist nur hinsichtlich seiner Darstellung eine Kurzform. Er ruft dieselben internen Verarbeitungsschritte wie eine <span class="literal">if...else</span>-Konstruktion auf.
+</p></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td><span class="programlisting">
+<pre>var newColor = (temp &gt; 100) ? &quot;red&quot; : &quot;blue&quot;;</pre>
+</span></td>
+</tr>
+</table>
+</div>
+<div id="continue">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="name">continue</td>
+<td valign="top" nowrap class="compatibility">NN <span class="emphasis">2</span> IE <span class="emphasis">3</span> ECMA <span class="emphasis">1</span>&nbsp;&nbsp;</td>
+</tr>
+<tr>
+<td valign="top" nowrap class="usage"><p class="literal">
+</p></td>
+<td valign="top" nowrap class="requirements">&nbsp;&nbsp;</td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+Stoppt die Ausf&uuml;hrung der aktuellen Iteration durch die Schleife und kehrt zum Anfang der Schleife zur&uuml;ck, um einen neuen Durchlauf auszuf&uuml;hren (der <span class="literal">update</span>-Ausdruck wird ausgef&uuml;hrt, wenn er in der <literal>for</literal>-Schleife angegeben ist). Wenn Sie eine verschachtelte Schleife verwenden, weisen Sie jeder verschachtelten Ebene eine Beschriftung zu, und verwenden die gew&uuml;nschte Beschriftung dann als Parameter f&uuml;r die Anweisung <span class="literal">continue</span>. Weitere Informationen finden Sie unter der Anweisung <span class="literal">label</span> (ab Navigator 4 und Internet Explorer 4).
+</p></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td><span class="programlisting">
+<pre>outerLoop:
+for (var i = 0; i &lt;= maxValue1; i++) &#123;
+    for (var j = 0; j &lt;= maxValue2; j++) &#123;
+        if (j*i == magic2) &#123;
+            continue outerLoop;
+        }
+    }
+}</pre>
+</span></td>
+</tr>
+</table>
+</div>
+<div id="/char">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="name">/char</td>
+<td valign="top" nowrap class="compatibility">NN <span class="emphasis">2</span> IE <span class="emphasis">3</span> ECMA <span class="emphasis">1</span>&nbsp;&nbsp;</td>
+</tr>
+<tr>
+<td valign="top" nowrap class="usage"><p class="literal">
+</p></td>
+<td valign="top" nowrap class="requirements">&nbsp;&nbsp;</td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+JavaScript stellt einen Mechanismus bereit, der das Einf&uuml;gen von allgemeinen Leerraumzeichen (manchmal auch Whitespace-Zeichen oder Steuercodes genannt) und Symbolen, die sonst zu Konflikten mit der Stringdarstellung f&uuml;hren, in Strings erm&ouml;glicht. Der Schl&uuml;ssel besteht aus einem umgekehrten Schr&auml;gstrich (\) und einem nachfolgenden einzelnen Zeichen mit einer bestimmten Bedeutung. In der folgenden Tabelle finden Sie eine &Uuml;bersicht &uuml;ber die erkannten Escape-Zeichen und ihre Bedeutung.
+</p></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2"><p>
+Diese Zeichen erleichtern das Erstellen von Text f&uuml;r Warn-, Best&auml;tigungs- und Eingabedialogfelder. Wenn Sie beispielsweise in einem Warndialogfeld mehrere Abs&auml;tze anzeigen m&ouml;chten, die jeweils durch eine Leerzeile getrennt sind, f&uuml;gen Sie am Absatzende Zeilenvorschubzeichen (LF-Zeichen) ein:
+</p>
+<span class="PROGRAMLISTING"><pre>alert(&quot;First paragraph.\n\nSecond paragraph.&quot;)</pre></span>
+</td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2"><p>
+Beachten Sie, dass diese Zeichen nur in Strings anwendbar sind und keinen Einfluss auf die Formatierung von HTML-Inhalten mit Wagenr&uuml;ckl&auml;ufen (CR-Zeichen) haben.
+</p></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td><table border="1">
+<tbody>
+<tr>
+<th>Escape-Sequenz</th>
+<th>Beschreibung</th>
+</tr>
+<tr>
+<td><span class="literal">\b</span></td>
+<td>R&uuml;ckschritt</td>
+</tr>
+<tr>
+<td><span class="literal">\t</span></td>
+<td>Horizontaler Tabulator</td>
+</tr>
+<tr>
+<td><span class="literal">\n</span></td>
+<td>Zeilenvorschub (Line Feed, LF bzw. New Line, NL)</td>
+</tr>
+<tr>
+<td><span class="literal">\v</span></td>
+<td>Vertikaler Tabulator</td>
+</tr>
+<tr>
+<td><span class="literal">\f</span></td>
+<td>Formularvorschub (Form Feed, FF)</td>
+</tr>
+<tr>
+<td><span class="literal">\r</span></td>
+<td>Wagenr&uuml;cklauf (Carriage Return, CR)</td>
+</tr>
+<tr>
+<td><span class="literal">\&quot;</span></td>
+<td>Doppeltes Anf&uuml;hrungszeichen (&quot;)</td>
+</tr>
+<tr>
+<td><span class="literal">\'</span></td>
+<td>Einfaches Anf&uuml;hrungszeichen (')</td>
+</tr>
+<tr>
+<td><span class="literal">\\</span></td>
+<td>Backslash</td>
+</tr>
+</tbody>
+</table></td>
+</tr>
+</table>
+</div>
+<div id="-">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="name">&mdash;</td>
+<td valign="top" nowrap class="compatibility">NN <span class="emphasis">2</span> IE <span class="emphasis">3</span> ECMA <span class="emphasis">1</span>&nbsp;&nbsp;</td>
+</tr>
+<tr>
+<td valign="top" nowrap class="usage"><p class="literal">
+</p></td>
+<td valign="top" nowrap class="requirements">&nbsp;&nbsp;</td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+Der unit&auml;re Dekrementierungsoperator subtrahiert 1 vom aktuellen Wert eines variablen Ausdrucks. Sie k&ouml;nnen den Operator vor oder hinter der Variablen platzieren, um eine unterschiedliche Wirkung zu erzielen. Steht der Operator vor der Variablen, wird diese vermindert, bevor sie in der aktuellen Anweisung ausgewertet wird. In der folgenden Sequenz:
+</p>
+<span class="PROGRAMLISTING"><pre>var a, b;
+a = 5;
+b = --a;</pre></span>
+</td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2"><p>
+wird z.&nbsp;B. von <span class="literal">a</span> 1 subtrahiert, bevor a <span class="literal">b</span> zugeordnet wird. Daher sind sowohl <span class="literal">b</span> als auch <span class="literal">a</span> nach der Ausf&uuml;hrung dieser Anweisungen 4. In der folgenden Sequenz:
+</p>
+<span class="PROGRAMLISTING"><pre>var a, b;
+a = 5;
+b = a--;</pre></span>
+</td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2"><p>
+erfolgt die Subtraktion allerdings erst, nachdem <span class="literal">a</span> <span class="literal">b</span> zugeordnet wurde. Nachdem Ausf&uuml;hrung der Anweisungen ist <span class="literal">b</span> gleich 5 und <span class="literal">a</span> gleich 4.
+</p></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2"><p>
+Dieses Verhalten wirkt sich darauf aus, wie z&auml;hlende Variablen in <span class="literal">for</span>-Schleifen definiert und verwendet werden. Normalerweise vermindert ein Schleifenz&auml;hler, der von einem maximalen Wert r&uuml;ckw&auml;rts z&auml;hlt, den Z&auml;hler, nachdem die Anweisungen in der Schleife ausgef&uuml;hrt wurden. Daher wird der Operator in den meisten Schleifenz&auml;hlern hinter der Z&auml;hlervariablen platziert:
+</p>
+<span class="PROGRAMLISTING"><pre>for (var i = 10; i&gt;=0; i--) &#123;...} </pre></span>
+</td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td><span class="programlisting">
+<pre>--n
+n--</pre>
+</span></td>
+</tr>
+</table>
+</div>
+<div id="delete">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="name">delete</td>
+<td valign="top" nowrap class="compatibility">NN <span class="emphasis">4</span> IE <span class="emphasis">4</span> ECMA <span class="emphasis">1</span>&nbsp;&nbsp;</td>
+</tr>
+<tr>
+<td valign="top" nowrap class="usage"><p class="literal">
+</p></td>
+<td valign="top" nowrap class="requirements">&nbsp;&nbsp;</td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+Der <span class="literal">delete</span>-Operator entfernt eine Eigenschaft aus einem Objekt (z.&nbsp;B. eine Prototypeigenschaft aus einer Objektinstanz, deren statischem Objekt der Prototyp an einer fr&uuml;heren Stelle im Skript hinzugef&uuml;gt wurde) oder ein Element aus einem durch ein Skript erstellten Array. Beim Entfernen eines Eintrags aus einem Array werden weder die L&auml;nge des Arrays noch die numerischen Indizes der verbleibenden Eintr&auml;ge ge&auml;ndert, sondern lediglich der Wert des gel&ouml;schten Elements auf <span class="literal">undefined</span> gesetzt. Der <span class="literal">delete</span>-Operator ist kein Werkzeug zur Speicherverwaltung.
+</p></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td><span class="programlisting">
+<pre>delete myString.author;</pre>
+</span></td>
+</tr>
+</table>
+</div>
+<div id="/">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="name">/</td>
+<td valign="top" nowrap class="compatibility">NN <span class="emphasis">2</span> IE <span class="emphasis">3</span> ECMA <span class="emphasis">1</span>&nbsp;&nbsp;</td>
+</tr>
+<tr>
+<td valign="top" nowrap class="usage"><p class="literal">
+</p></td>
+<td valign="top" nowrap class="requirements">&nbsp;&nbsp;</td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+Der Divisionsoperator dividiert die Zahl auf der linken durch die Zahl auf der rechten Seite. Beide Operanden m&uuml;ssen Zahlen sein. Das Ergebnis eines Ausdrucks mit diesem Operator ist eine Zahl.
+</p></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td><span class="programlisting">
+<pre>var myQuotient = number1 / number2;</pre>
+</span></td>
+</tr>
+</table>
+</div>
+<div id="do/while">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="name">do/while</td>
+<td valign="top" nowrap class="compatibility">NN <span class="emphasis">4</span> IE <span class="emphasis">4</span> ECMA <span class="emphasis">3</span>&nbsp;&nbsp;</td>
+</tr>
+<tr>
+<td valign="top" nowrap class="usage"><p class="literal">
+</p></td>
+<td valign="top" nowrap class="requirements">&nbsp;&nbsp;</td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+F&uuml;hrt Anweisungen in einer Schleife aus, w&auml;hrend eine Bedingung wahr ist. Da die Bedingung am Ende der Schleife getestet wird, werden die Anweisungen immer mindestens einmal ausgef&uuml;hrt. Nat&uuml;rlich muss sich f&uuml;r den Ausdruck, der die Bedingung bildet, ein Aspekt seines Wertes in den Anweisungen &auml;ndern. Andernfalls entsteht eine unendliche Schleife.
+</p></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td><span class="programlisting">
+<pre>var i = 1;
+do &#123;
+    window.status = &quot;Loop number &quot; + i++;
+} while (i &lt;= 10)
+window.status = &quot;&quot;;</pre>
+</span></td>
+</tr>
+</table>
+</div>
+<div id="==">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="name">==</td>
+<td valign="top" nowrap class="compatibility">NN <span class="emphasis">2</span> IE <span class="emphasis">3</span> ECMA <span class="emphasis">1</span>&nbsp;&nbsp;</td>
+</tr>
+<tr>
+<td valign="top" nowrap class="usage"><p class="literal">
+</p></td>
+<td valign="top" nowrap class="requirements">&nbsp;&nbsp;</td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+Der Gleichheitsoperator vergleicht zwei Operandenwerte und gibt ein Boolesches Ergebnis zur&uuml;ck. Das Verhalten dieses Operators h&auml;ngt von der f&uuml;r das <span class="literal">script</span>-Element angegebenen JavaScript-Version ab. Wenn das <span class="literal">language</span>-Attribut auf <span class="literal">JavaScript</span> oder <span class="literal">JavaScript1.1</span> gesetzt ist, werden einige Operanden, wie in der folgenden Tabelle dargestellt, automatisch konvertiert:
+</p>
+<table border="1">
+<tbody>
+<tr>
+<th>Linker Operand</th>
+<th>Rechter Operand</th>
+<th>Beschreibung</th>
+</tr>
+<tr>
+<td>Objektreferenz.</td>
+<td>Objektreferenz.</td>
+<td>Vergleichende Auswertung von Objektreferenzen.</td>
+</tr>
+<tr>
+<td>Beliebiger Datentyp</td>
+<td>Boolean</td>
+<td>Konvertieren einen Booleschen Operanden in eine Zahl (<span class="literal">1</span> f&uuml;r <span class="literal">true</span>, <span class="literal">0</span> f&uuml;r <span class="literal">false</span>) und vergleichen ihn mit dem anderen Operanden. </td>
+</tr>
+<tr>
+<td>Objektreferenz.</td>
+<td>String</td>
+<td>Konvertieren ein Objekt in einen String (mit <span class="literal">toString( )</span>) und f&uuml;hren einen Stringvergleich durch. </td>
+</tr>
+<tr>
+<td>String</td>
+<td>Number</td>
+<td>Konvertieren einen String in eine Zahl und f&uuml;hren einen Vergleich numerischer Werte durch.</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2"><p>
+Navigator ab Version 4 gehorcht leicht ver&auml;nderten Wertumwandlungsregeln zur Bestimmung der Gleichheit, wenn Sie im <span class="literal">script</span>-Element explizit <span class="literal">language=&quot;JavaScript1.2&quot;</span> angeben. Der Browser geht bez&uuml;glich der Gleichheit getreu den Regeln vor, d.&nbsp;h. es werden keine automatischen Datenkonvertierungen durchgef&uuml;hrt. W&auml;hrend der folgende Ausdruck:
+</p>
+<span class="PROGRAMLISTING"><pre>123 == &quot;123&quot;</pre></span>
+</td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2"><p>
+aufgrund der automatischen Datentypkonvertierung in den meisten F&auml;llen <span class="literal">true</span> ergibt, lautet das Ergebnis in Navigator ab Version 4 <span class="literal">false</span>. Dies ist jedoch nur bei Anweisungen in Skripts der Fall, f&uuml;r die explizit JavaScript 1.2 definiert wurde. Da neuere DOM- und XHTML-Standards keine M&ouml;glichkeit bieten, die Version der Skriptsprache anzugeben, sollten Sie solche Sonderf&auml;lle nach M&ouml;glichkeit vermeiden. Wenn in Ihren Skripts Tests auf absolute Gleichheit von Operanden erforderlich sind, verwenden Sie stattdessen den neueren Identit&auml;tsoperator (<span class="literal">===</span>). F&uuml;r typische Wertgleichheitstests sind die standardm&auml;&szlig;igen Gleichheitsoperatoren vollkommen ausreichend.
+</p></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2"><p>
+Wenn Sie die Werte von Objekten vergleichen m&ouml;chten (z.&nbsp;B. Strings, die mit dem <span class="literal">new</span> <span class="literal">String( )</span>-Konstruktor explizit erstellt wurden), sollten Sie, unabh&auml;ngig von der Version, die von Methoden wie <span class="literal">toString( )</span> oder <span class="literal">valueOf( )</span> abgeleiteten Werte vergleichen.
+</p></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td><span class="programlisting">
+<pre>if (n == m) &#123;
+    ...
+}</pre>
+</span></td>
+</tr>
+</table>
+</div>
+<div id=">=">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="name">&gt;=</td>
+<td valign="top" nowrap class="compatibility">NN <span class="emphasis">2</span> IE <span class="emphasis">3</span> ECMA <span class="emphasis">1</span>&nbsp;&nbsp;</td>
+</tr>
+<tr>
+<td valign="top" nowrap class="usage"><p class="literal">
+</p></td>
+<td valign="top" nowrap class="requirements">&nbsp;&nbsp;</td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+Der Gr&ouml;&szlig;er-oder-gleich-Operator vergleicht die Werte der Operanden auf beiden Seiten des Operators. Ist der numerische Wert des linken Operanden gr&ouml;&szlig;er oder gleich dem rechten Operanden, wird f&uuml;r den Ausdruck <span class="literal">true</span> zur&uuml;ckgegeben. Strings werden zum Vergleich dieser numerischen Werte in Unicode-Werte konvertiert.
+</p></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td><span class="programlisting">
+<pre>if (a &gt;= b) &#123;
+    ...
+}</pre>
+</span></td>
+</tr>
+</table>
+</div>
+<div id=">">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="name">&gt;</td>
+<td valign="top" nowrap class="compatibility">NN <span class="emphasis">2</span> IE <span class="emphasis">3</span> ECMA <span class="emphasis">1</span>&nbsp;&nbsp;</td>
+</tr>
+<tr>
+<td valign="top" nowrap class="usage"><p class="literal">
+</p></td>
+<td valign="top" nowrap class="requirements">&nbsp;&nbsp;</td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+Der Gr&ouml;&szlig;er-als-Operator vergleicht die Werte der Operanden auf beiden Seiten des Operators. Ist der numerische Wert des linken Operanden gr&ouml;&szlig;er als der rechte Operand, wird f&uuml;r den Ausdruck <span class="literal">true</span> zur&uuml;ckgegeben. Strings werden zum Vergleich in Unicode-Werte konvertiert.
+</p></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td><span class="programlisting">
+<pre>if (a &gt; b) &#123;
+    ...
+}</pre>
+</span></td>
+</tr>
+</table>
+</div>
+<div id="if">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="name">if</td>
+<td valign="top" nowrap class="compatibility">NN <span class="emphasis">2</span> IE <span class="emphasis">3</span> ECMA <span class="emphasis">1</span>&nbsp;&nbsp;</td>
+</tr>
+<tr>
+<td valign="top" nowrap class="usage"><p class="literal">
+</p></td>
+<td valign="top" nowrap class="requirements">&nbsp;&nbsp;</td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+Dies ist eine einfache Bedingungsanweisung, die einen alternativen Ausf&uuml;hrungspfad bereitstellt.
+</p></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td><span class="programlisting">
+<pre>if (myDateObj.getMonth( ) == 1) &#123;
+    calcMonthLength( );
+}</pre>
+</span></td>
+</tr>
+</table>
+</div>
+<div id="if/else">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="name">if/else</td>
+<td valign="top" nowrap class="compatibility">NN <span class="emphasis">2</span> IE <span class="emphasis">3</span> ECMA <span class="emphasis">1</span>&nbsp;&nbsp;</td>
+</tr>
+<tr>
+<td valign="top" nowrap class="usage"><p class="literal">
+</p></td>
+<td valign="top" nowrap class="requirements">&nbsp;&nbsp;</td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+Dies ist eine einfache Bedingungsanweisung, die zwei Ausf&uuml;hrungspfade bereitstellt, die je nach dem Ergebnis der Bedingung ausgew&auml;hlt werden. Sie k&ouml;nnen eine weitere <span class="literal">if</span>- oder <span class="literal">if</span>/<span class="literal">else</span>-Anweisung in einem der Pfade der <span class="literal">if</span>/<span class="literal">else</span>-Anweisung verwenden.
+</p></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td><span class="programlisting">
+<pre>var theMonth = myDateObj.getMonth( );
+if (theMonth == 1) &#123;
+    monLength = calcLeapMonthLength( );
+} else &#123;
+    monLength = calcMonthLength(theMonth);
+}</pre>
+</span></td>
+</tr>
+</table>
+</div>
+<div id="in">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="name">in</td>
+<td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">5.5(Win)</span> ECMA <span class="emphasis">n/a</span>&nbsp;&nbsp;</td>
+</tr>
+<tr>
+<td valign="top" nowrap class="usage"><p class="literal">
+</p></td>
+<td valign="top" nowrap class="requirements">&nbsp;&nbsp;</td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+Mithilfe des <span class="literal">in</span>-Operators l&auml;sst sich in einem Skript rasch feststellen, ob f&uuml;r ein Objekt eine bestimmte Eigenschaft oder Methode implementiert ist. Der linke Operand ist ein String, der den Namen der Eigenschaft oder Methode (ohne die Klammer) enth&auml;lt, der rechte Operand ist eine Referenz auf das Objekt. Wenn Ihre Untersuchung DOM-Referenzen mit Punktnotierung erfordert, setzen Sie diese auf der Objektreferenzseite des Ausdrucks. In other words, instead of trying <span class="literal">&quot;style.filter&quot; in</span> <span class="literal">document.body</span>, use <span class="literal">&quot;filter&quot; in document.body.style</span>. Wenn er nicht in nur so wenigen Browsern implementiert w&auml;re, k&ouml;nnte dieser k&uuml;nftige ECMA-Operator ein sehr hilfreiches Werkzeug bei der Objekterkennung sein.
+</p></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td><span class="programlisting">
+<pre>if (&quot;createDocument&quot; in document.implementation) &#123;
+    // go ahead and use document.implementation.createDocument( )
+}</pre>
+</span></td>
+</tr>
+</table>
+</div>
+<div id="++">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="name">++</td>
+<td valign="top" nowrap class="compatibility">NN <span class="emphasis">2</span> IE <span class="emphasis">3</span> ECMA <span class="emphasis">1</span>&nbsp;&nbsp;</td>
+</tr>
+<tr>
+<td valign="top" nowrap class="usage"><p class="literal">
+</p></td>
+<td valign="top" nowrap class="requirements">&nbsp;&nbsp;</td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+Der unit&auml;re Inkrementierungsoperator addiert 1 zum aktuellen Wert eines variablen Ausdrucks. Sie k&ouml;nnen den Operator vor oder hinter der Variablen platzieren, um eine unterschiedliche Wirkung zu erzielen. Steht der Operator vor der Variablen, wird diese erh&ouml;ht, bevor sie in der aktuellen Anweisung ausgewertet wird. In der folgenden Sequenz:
+</p>
+<span class="PROGRAMLISTING"><pre>var a, b;
+a = 5;
+b = ++a;</pre></span>
+</td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2"><p>
+wird zu <span class="literal">a</span> 1 addiert, bevor <span class="literal">a</span> <literal>b</literal> zugeordnet wird. Daher sind sowohl <span class="literal">b</span> als auch <span class="literal">a</span> nach der Ausf&uuml;hrung dieser Anweisungen 6. In der folgenden Sequenz:
+</p>
+<span class="PROGRAMLISTING"><pre>var a, b;
+a = 5;
+b = a++;</pre></span>
+</td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2"><p>
+erfolgt die Addition allerdings erst, nachdem <span class="literal">a</span> <span class="literal">b</span> zugeordnet wurde. Nach Ausf&uuml;hrung dieser Anweisungen ist <span class="literal">b</span> gleich 5 und <span class="literal">a</span> gleich 6.
+</p></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2"><p>
+Dieses Verhalten wirkt sich darauf aus, wie z&auml;hlende Variablen in <span class="literal">for</span>-Schleifen definiert und verwendet werden. Normalerweise erh&ouml;ht ein Schleifenz&auml;hler, der von einem Mindestwert aus vorw&auml;rts z&auml;hlt, den Z&auml;hler, nachdem die Anweisungen in der Schleife ausgef&uuml;hrt wurden. Daher wird der Operator in den meisten Schleifenz&auml;hlern hinter der Z&auml;hlervariablen platziert:
+</p>
+<programlisting>for (var i = 10; i&gt;=0; i++) &#123;...} </programlisting>
+</td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td><span class="programlisting">
+<pre>++n
+		n++</pre>
+</span></td>
+</tr>
+</table>
+</div>
+<div id="!=">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="name"><span class="emphasis">!</span>=</td>
+<td valign="top" nowrap class="compatibility">NN <span class="emphasis">2</span> IE <span class="emphasis">3</span> ECMA <span class="emphasis">1</span>&nbsp;&nbsp;</td>
+</tr>
+<tr>
+<td valign="top" nowrap class="usage"><p class="literal">
+</p></td>
+<td valign="top" nowrap class="requirements">&nbsp;&nbsp;</td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+Der Ungleichheitsoperator vergleicht zwei Operandenwerte und gibt ein Boolesches Ergebnis zur&uuml;ck. Das Verhalten dieses Operators h&auml;ngt von der f&uuml;r das <span class="literal">script</span>-Element angegebenen JavaScript-Version ab. Wenn das <span class="literal">language</span>-Attribut auf <span class="literal">JavaScript</span> oder <span class="literal">JavaScript1.1</span> gesetzt ist, werden einige Operanden wie beim Gleichheitsoperator (<span class="literal">==</span>) automatisch konvertiert. Bei Navigator ab Version 4 liegt der Fall ein wenig anders, wenn im <span class="literal">script</span>-Element <span class="literal">language=&quot;JavaScript1.2&quot;</span> angegeben ist. Der Browser geht bez&uuml;glich der Ungleichheit getreu den Regeln vor, d.&nbsp;h. es werden keine automatischen Datenkonvertierungen durchgef&uuml;hrt. W&auml;hrend der folgende Ausdruck:
+</p>
+<span class="PROGRAMLISTING"><pre>123 != &quot;123&quot;</pre></span>
+</td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2"><p>
+aufgrund der automatischen Datentypkonvertierung in den meisten F&auml;llen <span class="literal">false</span> ergibt, lautet das Ergebnis in Navigator ab Version 4 <span class="literal">true</span>. Dies ist jedoch nur bei Anweisungen in Skripts der Fall, f&uuml;r die explizit JavaScript 1.2 definiert wurde. Da neuere DOM- und XHTML-Standards keine M&ouml;glichkeit bieten, die Version der Skriptsprache anzugeben, sollten Sie solche Sonderf&auml;lle nach M&ouml;glichkeit vermeiden. Wenn in Ihren Skripts Tests auf absolute Ungleichheit von Operanden erforderlich sind, verwenden Sie stattdessen den neueren Nichtidentit&auml;tsoperator (<span class="literal">!==</span>). F&uuml;r typische Wertungleichheitstests sind die standardm&auml;&szlig;igen Ungleichheitsoperatoren vollkommen ausreichend.
+</p></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2"><p>
+Wenn Sie die Werte von Objekten vergleichen m&ouml;chten (z.&nbsp;B. Strings, die mit dem <span class="literal">new</span> <span class="literal">String( )</span>-Konstruktor explizit erstellt wurden), sollten Sie, unabh&auml;ngig von der Version, die von Methoden wie <span class="literal">toString( )</span> oder <span class="literal">valueOf( )</span> abgeleiteten Werte vergleichen.
+</p></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td><span class="programlisting">
+<pre>if (n != m) &#123;
+    ...
+}</pre>
+</span></td>
+</tr>
+</table>
+</div>
+<div id="instanceof">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="name">instanceof</td>
+<td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">5(Win)</span> ECMA <span class="emphasis">n/a</span>&nbsp;&nbsp;</td>
+</tr>
+<tr>
+<td valign="top" nowrap class="usage"><p class="literal">
+</p></td>
+<td valign="top" nowrap class="requirements">&nbsp;&nbsp;</td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+Mithilfe des <span class="literal">instanceof</span>-Operators kann ein Skript feststellen, ob ein Objekt (der linke Operand) eine Instanz eines bekannten Objekts ist (oder von dem bekannten Objekt vererbt wurde). In gewisser Weise &auml;hnelt dieser Operator dem <span class="literal">typeof</span>-Operator, doch statt eines breiten Objekttyps gibt ein Ausdruck mit dem <span class="literal">instanceof</span>-Operator einen Booleschen Wert zur&uuml;ck, der das Ergebnis der Suche nach einem spezielleren Objekttyp darstellt. Tats&auml;chlich k&ouml;nnen Sie mit seiner Hilfe ein Objekt mit benutzerdefinierten Objekttypen und, in Netscape 6, mit W3C-DOM-Baumobjektprototypen vergleichen. W&auml;hrend der <span class="literal">typeof</span>-Operator bei einem Array <span class="literal">object</span> zur&uuml;ckgibt, k&ouml;nnen Sie mit ihm feststellen, ob ein Objekt speziell als ein Array instanziiert wurde:
+</p>
+<span class="PROGRAMLISTING"><pre>myVar instanceof Array</pre></span>
+</td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2"><p>
+Beachten Sie jedoch, dass, wenn der oben stehende Ausdruck <span class="literal">true</span> ergibt, dies ebenso f&uuml;r den folgenden Ausdruck gilt:
+</p>
+<span class="PROGRAMLISTING"><pre>myVar instanceof Object</pre></span>
+</td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2"><p>
+Ein Array ist ein Abk&ouml;mmling des Root-<span class="literal">Object</span>-Objekts und somit zugleich eine Instanz dieses Root-Objekts.
+</p></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2"><p>
+In Netscape 6 kann es sich bei jedem der beiden Operanden auch um eine Referenz auf ein DOM-Prototypobjekt handeln. Daher handelt es sich bei dem folgenden Ausdruck in Netscape 6 um einen zul&auml;ssigen und funktionsf&auml;higen Ausdruck:
+</p>
+<span class="PROGRAMLISTING"><pre>document.getElementById(&quot;widget&quot;) instanceof HTMLDivElement </pre></span>
+</td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td><span class="programlisting">
+<pre>if (theVal instanceof Array) &#123;
+    // go ahead and treat theVal as an array
+}</pre>
+</span></td>
+</tr>
+</table>
+</div>
+<div id="<=">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="name">&lt;=</td>
+<td valign="top" nowrap class="compatibility">NN <span class="emphasis">2</span> IE <span class="emphasis">3</span> ECMA <span class="emphasis">1</span>&nbsp;&nbsp;</td>
+</tr>
+<tr>
+<td valign="top" nowrap class="usage"><p class="literal">
+</p></td>
+<td valign="top" nowrap class="requirements">&nbsp;&nbsp;</td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+Der Kleiner-oder-gleich-Operator vergleicht die Werte der Operanden auf beiden Seiten des Operators. Ist der numerische Wert des linken Operanden kleiner oder gleich dem rechten Operanden, wird f&uuml;r den Ausdruck <span class="literal">true</span> zur&uuml;ckgegeben. Strings werden zum Vergleich dieser numerischen Werte in Unicode-Werte konvertiert.
+</p></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td><span class="programlisting">
+<pre>if (a &lt;= b) &#123;
+    ...
+}</pre>
+</span></td>
+</tr>
+</table>
+</div>
+<div id="<">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="name">&lt;</td>
+<td valign="top" nowrap class="compatibility">NN <span class="emphasis">2</span> IE <span class="emphasis">3</span> ECMA <span class="emphasis">1</span>&nbsp;&nbsp;</td>
+</tr>
+<tr>
+<td valign="top" nowrap class="usage"><p class="literal">
+</p></td>
+<td valign="top" nowrap class="requirements">&nbsp;&nbsp;</td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+Der Kleiner-als-Operator vergleicht die Werte der Operanden auf beiden Seiten des Operators. Ist der numerische Wert des linken Operanden kleiner als der rechte Operand, wird f&uuml;r den Ausdruck <span class="literal">true</span> zur&uuml;ckgegeben. Strings werden zum Vergleich in Unicode-Werte konvertiert.
+</p></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td><span class="programlisting">
+<pre>if (a &lt; b) &#123;
+    ...
+}</pre>
+</span></td>
+</tr>
+</table>
+</div>
+<div id="%">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="name">%</td>
+<td valign="top" nowrap class="compatibility">NN <span class="emphasis">2</span> IE <span class="emphasis">3</span> ECMA <span class="emphasis">1</span>&nbsp;&nbsp;</td>
+</tr>
+<tr>
+<td valign="top" nowrap class="usage"><p class="literal">
+</p></td>
+<td valign="top" nowrap class="requirements">&nbsp;&nbsp;</td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+Der Modulusoperator dividiert die Zahl auf der linken durch die Zahl auf der rechten Seite des Operators. Ist nach der Division ein Teilungsrest vorhanden, ist dieser Rest (in Form eines Integers) das Ergebnis des Ausdrucks. Wenn kein Rest vorhanden ist, wird Null zur&uuml;ckgegeben. Beide Operanden m&uuml;ssen Zahlen sein. Das Ergebnis eines Ausdrucks mit diesem Operator ist eine Zahl. Auch wenn der Wert des Teilungsrestes f&uuml;r Sie nicht von Interesse ist, bietet dieser Operator eine schnelle M&ouml;glichkeit herauszufinden, ob zwei Werte glatt durcheinander dividiert werden k&ouml;nnen.
+</p></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td><span class="programlisting">
+<pre>if ((dayCount % 7) &gt; 0) &#123;
+    ...
+}</pre>
+</span></td>
+</tr>
+</table>
+</div>
+<div id="*">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="name">*</td>
+<td valign="top" nowrap class="compatibility">NN <span class="emphasis">2</span> IE <span class="emphasis">3</span> ECMA <span class="emphasis">1</span>&nbsp;&nbsp;</td>
+</tr>
+<tr>
+<td valign="top" nowrap class="usage"><p class="literal">
+</p></td>
+<td valign="top" nowrap class="requirements">&nbsp;&nbsp;</td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+Der Multiplikationsoperator multipliziert die Zahl auf der linken mit der Zahl auf der rechten Seite des Operators. Beide Operanden m&uuml;ssen Zahlen sein. Das Ergebnis eines Ausdrucks mit diesem Operator ist eine Zahl.
+</p></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td><span class="programlisting">
+<pre>var myProduct = <var class="replaceable">number1</var> * <var class="replaceable">number2</var>;</pre>
+</span></td>
+</tr>
+</table>
+</div>
+<div id="-">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="name">-</td>
+<td valign="top" nowrap class="compatibility">NN <span class="emphasis">2</span> IE <span class="emphasis">3</span> ECMA <span class="emphasis">1</span>&nbsp;&nbsp;</td>
+</tr>
+<tr>
+<td valign="top" nowrap class="usage"><p class="literal">
+</p></td>
+<td valign="top" nowrap class="requirements">&nbsp;&nbsp;</td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+Dies ist der Negationsoperator. Dieser unit&auml;re Operator negiert den Wert des einzigen Operanden. In den folgenden Anweisungen:
+</p>
+<span class="PROGRAMLISTING"><pre>a = 5;
+b = -a;</pre></span>
+</td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2"><p>
+wird der Wert von <span class="literal">b</span> z.&nbsp;B. zu -5. Ein Negationsoperator, der auf einen negativen Wert angewendet wird, gibt einen positiven Wert zur&uuml;ck.
+</p></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td><span class="programlisting">
+<pre>var myOpposite = -me;</pre>
+</span></td>
+</tr>
+</table>
+</div>
+<div id="new">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="name">new</td>
+<td valign="top" nowrap class="compatibility">NN <span class="emphasis">2</span> IE <span class="emphasis">3</span> ECMA <span class="emphasis">1</span>&nbsp;&nbsp;</td>
+</tr>
+<tr>
+<td valign="top" nowrap class="usage"><p class="literal">
+</p></td>
+<td valign="top" nowrap class="requirements">&nbsp;&nbsp;</td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+Der <span class="literal">new</span>-Operator erstellt Instanzen der folgenden statischen ECMA-Standardobjekte:
+</p>
+<ul>
+<li><span class="LITERAL">Array</span></li>
+
+<li><span class="LITERAL">Boolean</span></li>
+
+<li><span class="LITERAL">Date</span></li>
+
+<li><span class="LITERAL">Function</span></li>
+
+<li><span class="LITERAL">Number</span></li>
+
+<li><span class="LITERAL">Object</span></li>
+
+<li><span class="LITERAL">RegExp</span></li>
+
+<li><span class="LITERAL">String</span></li>
+</ul></td>
+</tr>
+<tr>
+<td colspan="2"><p>
+Das Ergebnis eines Ausdrucks mit diesem Operator ist eine Instanz des jeweiligen Objekts. Mit anderen Worten, der Aufruf dieses Operators bewirkt, dass JavaScript nach einer Konstruktorfunktion sucht, die denselben Namen aufweist. Somit funktioniert der <span class="literal">new</span>-Operator auch bei benutzerdefinierten Objekten, die mithilfe von Konstruktorfunktionen erstellt wurden. In IE f&uuml;r Windows lassen sich mit diesem Operator auch propriet&auml;re Objekte wie ActiveX- und VBArray-Objekte erstellen.
+</p></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2"><p>
+Gem&auml;&szlig; den Syntaxregeln k&ouml;nnen statische Objekte, statische Objekte mit leeren Klammern und statische Objekte mit in Klammern gesetzten Parametern benannt werden.
+</p>
+<span class="PROGRAMLISTING"><pre>var myArray = new Array;
+var myArray = new Array( );
+var myArray = new Array(&quot;Larry&quot;, &quot;Moe&quot;, &quot;Curly&quot;);</pre></span>
+</td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2"><p>
+Es ist nur bei den letzten beiden Beispielen gew&auml;hrleistet, dass sie in allen skriptf&auml;higen Browserversionen funktionieren. Ordnen Sie beim Erstellen eines nativen Objekts keine Parameter zu, so besitzt die neue Instanz nur die Eigenschaften, die dem Prototyp des statischen Objekts zugeordnet wurden. Eine Ausnahme von dieser Regel ist das <span class="literal">Date</span>-Objekt.
+</p></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td><span class="programlisting">
+<pre>var now = new Date( );</pre>
+</span></td>
+</tr>
+</table>
+</div>
+<div id="!">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="name"><span class="emphasis">!</span></td>
+<td valign="top" nowrap class="compatibility">NN <span class="emphasis">2</span> IE <span class="emphasis">3</span> ECMA <span class="emphasis">1</span>&nbsp;&nbsp;</td>
+</tr>
+<tr>
+<td valign="top" nowrap class="usage"><p class="literal">
+</p></td>
+<td valign="top" nowrap class="requirements">&nbsp;&nbsp;</td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+Dies ist der NOT-Operator. F&uuml;r diesen unit&auml;ren Operator wird der negative Wert eines einzelnen Booleschen Operanden zur&uuml;ckgegeben. Der NOT-Operator sollte mit expliziten Booleschen Werten verwendet werden, z.&nbsp;B. dem Ergebnis eines Vergleichs oder einer Booleschen Eigenschaftseinstellung.
+</p></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td><span class="programlisting">
+<pre>if (a == !b) &#123;
+    ...
+}</pre>
+</span></td>
+</tr>
+</table>
+</div>
+<div id="||">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="name">||</td>
+<td valign="top" nowrap class="compatibility">NN <span class="emphasis">2</span> IE <span class="emphasis">3</span> ECMA <span class="emphasis">1</span>&nbsp;&nbsp;</td>
+</tr>
+<tr>
+<td valign="top" nowrap class="usage"><p class="literal">
+</p></td>
+<td valign="top" nowrap class="requirements">&nbsp;&nbsp;</td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+Der OR-Operator &uuml;berpr&uuml;ft, ob zwei Boolesche Ausdr&uuml;cke gleich sind. Wenn f&uuml;r einen oder beide Ausdr&uuml;cke <span class="literal">true</span> zur&uuml;ckgegeben wird, lautet das Ergebnis des <span class="literal">||</span>-Operators <span class="literal">true</span>. Wenn beide Ausdr&uuml;cke jeweils <span class="literal">false</span> ergeben, lautet das Ergebnis des <span class="literal">||</span>-Operators ebenfalls <span class="literal">false</span>. Ein Boolescher Ausdruck kann aus einem Vergleichsausdruck (mit einem der zahlreichen Vergleichsoperatoren) oder einer Vielzahl anderer Werte bestehen. Eine Zusammenfassung der am h&auml;ufigsten verwendeten Datentypen, Werte und dazugeh&ouml;rigen Booleschen Wert&auml;quivalente finden Sie im Abschnitt zum AND-Operator.
+</p></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2"><p>
+Mithilfe des <span class="literal">||</span>-Operators k&ouml;nnen Sie zusammengesetzte Bedingungen erstellen. Wenn Sie z.&nbsp;B. &uuml;berpr&uuml;fen m&ouml;chten, ob von zwei Bedingungen eine oder beide zutreffen (<literal>true</literal>), erstellen Sie die folgende Bedingung: <span class="PROGRAMLISTING"><pre>var userEntry1 = document.forms[0].entry1.value;
+var userEntry2 = document.forms[0].entry2.value;
+if (userEntry1 || userEntry2) &#123;
+    ...
+}</pre></span>
+</p>
+</td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2"><p>
+In der zusammengesetzten Bedingung &uuml;berpr&uuml;ft der <span class="literal">||</span>-Operator, ob f&uuml;r einen oder beide Operanden <span class="literal">true</span> zur&uuml;ckgegeben wird, bevor er <span class="literal">true</span> zur&uuml;ckgibt. Gibt der Benutzer Text in das erste Feld ein, wird die Bedingung kurzgeschlossen, da der Wert <span class="literal">true</span> f&uuml;r einen Operanden zu dem Endergebnis <span class="literal">true</span> f&uuml;hrt. Wird nur in das zweite Feld Text eingegeben, wird der zweite Operand ausgewertet. Da f&uuml;r den zweiten Operanden <span class="literal">true</span> zur&uuml;ckgegeben wird (ein nicht leerer String), lautet das Ergebnis der Bedingung <span class="literal">true</span>. Nur wenn f&uuml;r beide Operanden <span class="literal">false</span> zur&uuml;ckgegeben wird, ist das Ergebnis der zusammengesetzten Bedingung <span class="literal">false</span>.
+</p></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td><span class="programlisting">
+<pre>if (a &lt;= b || b &gt;= c) &#123;
+    ...
+}</pre>
+</span></td>
+</tr>
+</table>
+</div>
+<div id="===">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="name">===</td>
+<td valign="top" nowrap class="compatibility">NN <span class="emphasis">4</span> IE <span class="emphasis">4</span> ECMA <span class="emphasis">2</span>&nbsp;&nbsp;</td>
+</tr>
+<tr>
+<td valign="top" nowrap class="usage"><p class="literal">
+</p></td>
+<td valign="top" nowrap class="requirements">&nbsp;&nbsp;</td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+Der Identit&auml;tsoperator vergleicht zwei Operandenwerte und gibt ein Boolesches Ergebnis zur&uuml;ck. Sowohl der Wert als auch der Datentyp der beiden Operanden m&uuml;ssen identisch sein, damit f&uuml;r diesen Operator <span class="literal">true</span> zur&uuml;ckgegeben wird (es wirk keine automatische Datentypumwandlung durchgef&uuml;hrt). Informationen zu weniger strengen Vergleichen finden Sie in der Abhandlung des Gleichheitsoperators (<span class="literal">==</span>).
+</p></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td><span class="programlisting">
+<pre>if (n === m) &#123;
+    ...
+}</pre>
+</span></td>
+</tr>
+</table>
+</div>
+<div id="!==">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="name"><span class="emphasis">!</span>==</td>
+<td valign="top" nowrap class="compatibility">NN <span class="emphasis">4</span> IE <span class="emphasis">4</span> ECMA <span class="emphasis">n/a</span>&nbsp;&nbsp;</td>
+</tr>
+<tr>
+<td valign="top" nowrap class="usage"><p class="literal">
+</p></td>
+<td valign="top" nowrap class="requirements">&nbsp;&nbsp;</td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+Der Nichtidentit&auml;tsoperator vergleicht zwei Operandenwerte und gibt ein Boolesches Ergebnis zur&uuml;ck. Sowohl der Wert als auch der Datentyp der beiden Operanden muss identisch sein, damit f&uuml;r diesen Operator <span class="literal">false</span> zur&uuml;ckgegeben wird. Informationen zu weniger strengen Vergleichen finden Sie in der Abhandlung des Ungleichheitsoperators (<span class="literal">!=</span>).
+</p></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td><span class="programlisting">
+<pre>if (n !== m) &#123;
+    ...
+}</pre>
+</span></td>
+</tr>
+</table>
+</div>
+<div id="for">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="name">for</td>
+<td valign="top" nowrap class="compatibility">NN <span class="emphasis">2</span> IE <span class="emphasis">3</span> ECMA <span class="emphasis">1</span>&nbsp;&nbsp;</td>
+</tr>
+<tr>
+<td valign="top" nowrap class="usage"><p class="literal">
+</p></td>
+<td valign="top" nowrap class="requirements">&nbsp;&nbsp;</td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+Dies ist eine Konstruktion, die eine wiederholte Ausf&uuml;hrung von Anweisungen erm&ouml;glicht. Sie wird im Allgemeinen f&uuml;r eine bestimmte Anzahl von Durchl&auml;ufen verwendet.
+</p></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td><span class="programlisting">
+<pre>var userEntry = document.forms[0].entry.value;
+var oneChar;
+for (var i = 0; i &lt; userEntry.length; i++) &#123;
+    oneChar = userEntry.charAt(i);
+    if (oneChar &lt; &quot;0&quot; || oneChar &gt; &quot;9&quot;) &#123;
+        alert(&quot;The entry must be numerals only.&quot;);
+    }
+}</pre>
+</span></td>
+</tr>
+</table>
+</div>
+<div id="for/in">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="name">for/in</td>
+<td valign="top" nowrap class="compatibility">NN <span class="emphasis">2</span> IE <span class="emphasis">3</span> ECMA <span class="emphasis">1</span>&nbsp;&nbsp;</td>
+</tr>
+<tr>
+<td valign="top" nowrap class="usage"><p class="literal">
+</p></td>
+<td valign="top" nowrap class="requirements">&nbsp;&nbsp;</td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+Dies ist eine Variation der normalen <span class="literal">for</span>-Schleife, die Eigenschaftsnamen und -werte eines Objekts extrahieren kann. Die Ausgabe dieser Konstruktion enth&auml;lt nur solche Eigenschaften (und, in Netscape 6, Methoden), die aufgrund ihrer Einstellung vom Browser intern aufz&auml;hlbar sind. Opera 6 unterst&uuml;tzt diese Konstruktion nur f&uuml;r benutzerdefinierte Objekte, die per Skript erzeugt wurden.
+</p></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td><span class="programlisting">
+<pre>function showProps( ) &#123;
+    objName = &quot;image&quot;;
+    obj = document.images[0];
+    var msg = &quot;&quot;;
+    for (var i in obj) &#123;
+        msg += objName + &quot;.&quot; + i + &quot;=&quot; + obj[i] + &quot;\n&quot;;
+    }
+    alert(msg);
+}</pre>
+</span></td>
+</tr>
+</table>
+</div>
+<div id="-">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="name">-</td>
+<td valign="top" nowrap class="compatibility">NN <span class="emphasis">2</span> IE <span class="emphasis">3</span> ECMA <span class="emphasis">1</span>&nbsp;&nbsp;</td>
+</tr>
+<tr>
+<td valign="top" nowrap class="usage"><p class="literal">
+</p></td>
+<td valign="top" nowrap class="requirements">&nbsp;&nbsp;</td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+Der Subtraktionsoperator subtrahiert die Zahl auf der rechten von der Zahl auf der linken Seite des Operators. Beide Operanden m&uuml;ssen Zahlen sein. Das Ergebnis eines Ausdrucks mit diesem Operator ist eine Zahl.
+</p></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td><span class="programlisting">
+<pre>var myDifference = <var class="replaceable">number1</var> - <var class="replaceable">number2</var>;</pre>
+</span></td>
+</tr>
+</table>
+</div>
+<div id="switch/case">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="name">switch/case</td>
+<td valign="top" nowrap class="compatibility">NN <span class="emphasis">4</span> IE <span class="emphasis">4</span> ECMA <span class="emphasis">3</span>&nbsp;&nbsp;</td>
+</tr>
+<tr>
+<td valign="top" nowrap class="usage"><p class="literal">
+</p></td>
+<td valign="top" nowrap class="requirements">&nbsp;&nbsp;</td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+Damit k&ouml;nnen Sie gezielt zu den Ausf&uuml;hrungspfaden f&uuml;r verschiedene Bedingungen eines Ausdrucks gelangen. Die optionale <span class="literal">break</span>-Anweisung am Ende eines jeden <span class="literal">case</span>-Blocks umgeht die <span class="literal">switch</span>-Anweisung und verhindert, dass der <span class="literal">default</span>-Block (sofern vorhanden) versehentlich ausgef&uuml;hrt wird.
+</p></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td><span class="programlisting">
+<pre>var productList = document.forms[0].prodList;
+var chosenItem = productList.options[productList.selectedIndex].value;
+switch(chosenItem) &#123;
+    case &quot;Small Widget&quot;:
+        document.forms[0].price.value = &quot;44.95&quot;;
+        break;
+    case &quot;Medium Widget&quot;:
+        document.forms[0].price.value = &quot;54.95&quot;;
+        break;
+    case &quot;Large Widget&quot;:
+        document.forms[0].price.value = &quot;64.95&quot;;
+        break;
+    default:
+        document.forms[0].price.value = &quot;Nothing Selected&quot;;
+}</pre>
+</span></td>
+</tr>
+</table>
+</div>
+<div id="this">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="name">this</td>
+<td valign="top" nowrap class="compatibility">NN <span class="emphasis">2</span> IE <span class="emphasis">3</span> ECMA <span class="emphasis">1</span>&nbsp;&nbsp;</td>
+</tr>
+<tr>
+<td valign="top" nowrap class="usage"><p class="literal">
+</p></td>
+<td valign="top" nowrap class="requirements">&nbsp;&nbsp;</td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+Verweist auf das aktuelle Objekt. Bei einer Ereignisbehandlungsroutine f&uuml;r Formularsteuerelemente k&ouml;nnen Sie das Objekt als Parameter an die Funktion &uuml;bergeben:
+</p>
+<span class="PROGRAMLISTING"><pre>&lt;input type=&quot;text&quot; name=&quot;ZIP&quot; onchange=&quot;validate(this);&gt;&quot;</pre></span>
+</td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2"><p>
+In einem benutzerdefinierten Objektkonstuktor bezieht sich das Schl&uuml;sselwort immer auf das Objekt selbst. So k&ouml;nnen Sie den Eigenschaften Werte zuweisen (und sogar die Eigenschaften gleichzeitig erstellen):
+</p>
+<span class="PROGRAMLISTING"><pre>function CD(label, num, artist) &#123;
+    this.label = label;
+    this.num = num;
+    this.artist = artist;
+}</pre></span>
+</td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2"><p>
+Innerhalb einer Funktion bezieht sich das Schl&uuml;sselwort <span class="literal">this</span> auf das Funktionsobjekt. Wenn die Funktion jedoch als Methode eines benutzerdefinierten Objektkonstruktors zugewiesen ist, verweist <span class="literal">this</span> auf die Instanz des Objekts, in dessen Kontext die Funktion ausgef&uuml;hrt wird.
+</p></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td><span class="programlisting">
+<pre>&lt;input type=&quot;text&quot; name=&quot;phone&quot; onchange=&quot;validate(this.value);&quot;&gt;</pre>
+</span></td>
+</tr>
+</table>
+</div>
+<div id="throw">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="name">throw</td>
+<td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">5</span> ECMA <span class="emphasis">3</span>&nbsp;&nbsp;</td>
+</tr>
+<tr>
+<td valign="top" nowrap class="usage"><p class="literal">
+</p></td>
+<td valign="top" nowrap class="requirements">&nbsp;&nbsp;</td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+L&ouml;st eine Ausnahmebedingung aus und &uuml;bergibt zusammen mit der Ausnahme einen Wert. Obwohl es sich bei diesem Wert um einen einfachen String handeln kann, sollten Sie nach M&ouml;glichkeit eine Instanz des JavaScript-<span class="literal">Error</span>-Objekts &uuml;bergeben, die gen&uuml;gend Informationen f&uuml;r die intelligente Fehlerbehandlung durch eine <literal>catch</literal>-Anweisung enth&auml;lt. Eine <span class="literal">throw</span>-Anweisung muss in der <span class="literal">try</span>-Komponente einer <span class="literal">try-catch</span>-Konstruktion eingeschlossen sein.
+</p></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td><span class="programlisting">
+<pre>function processNumber(inputField) &#123;
+    try &#123;
+        var inpVal = parseInt(inputField.value, 10);
+        if (isNaN(inpVal)) &#123;
+            var msg = &quot;Please enter a number only.&quot;;
+            var err = new Error(msg);
+            if (!err.message) &#123;
+                err.message = msg;
+            }
+            throw err;
+        }
+        // process number
+    }
+    catch (e) &#123;
+        alert(e.message);
+        inputField.focus( );
+        inputField.select( );
+    }
+}</pre>
+</span></td>
+</tr>
+</table>
+</div>
+<div id="try/catch">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="name">try/catch</td>
+<td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">5</span> ECMA <span class="emphasis">3</span>&nbsp;&nbsp;</td>
+</tr>
+<tr>
+<td valign="top" nowrap class="usage"><p class="literal">
+</p></td>
+<td valign="top" nowrap class="requirements">&nbsp;&nbsp;</td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+Diese Konstruktion erm&ouml;glicht das Erfassen und Behandeln von Fehlern (Ausnahmen) ohne Unterbrechung des Anwendungsablaufs. Beide Teile dieser Ausnahmebehandlungskonstruktion sind erforderlich. Wenn ein Fehler in der <span class="literal">try</span>-Komponente auftritt, verzweigt die Ausf&uuml;hrung sofort zur <span class="literal">catch</span>-Komponente, in der Ihre Skripts Warndialogfelder anzeigen, Daten modifizieren oder eine beliebige andere Aufgabe ausf&uuml;hren k&ouml;nnen, um zu verhindern, dass der JavaScript-Interpreter eine den Ablauf unterbrechende Fehlermeldung ausl&ouml;st. Ausnahmen, die auf nat&uuml;rliche Weise (d.&nbsp;h. nicht durch eine <span class="literal">throw</span>-Anweisung ausgel&ouml;st) auftreten, &uuml;bergeben eine Instanz des <span class="literal">Error</span>-Objekts als Parameter an die <span class="literal">catch</span>-Komponente. Anweisungen innerhalb der <span class="literal">catch</span>-Komponente k&ouml;nnen Eigenschaften des Fehlerobjekts untersuchen, um festzustellen, wie die dort angekommenen Ausnahmen zu behandeln sind. Auf diese Weise kann eine <span class="literal">catch</span>-Komponente verschiedene Arten von Fehlern verarbeiten.
+</p></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2"><p>
+<span class="literal">try</span>/<span class="literal">catch</span>-Konstruktionen k&ouml;nnen nur in Browsern eingesetzt werden, die sie unterst&uuml;tzen. Um zu  verhindern, dass &auml;ltere Browser diese Konstruktion sehen, platzieren Sie den  gesamten betroffenen Code in einem &lt;script&gt;-Tag, das ausdr&uuml;cklich  JavaScript 1.5 oder h&ouml;her (mit dem Attribute language =  &quot;JavaScript1.5&quot;) erfordert.</p></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td><span class="programlisting">
+<pre>function insertOneNode(baseNode, newNode, position) &#123;
+    try &#123;
+        baseNode.insertBefore(newNode, baseNode.childNodes[position]);
+    }
+    catch (e) &#123;
+        // handle W3C DOM Exception types
+        switch (e.name) &#123;
+            case &quot;HIERARCHY_REQUEST_ERR&quot; :
+                // process bad tree hierarchy reference
+                break;
+            case &quot;NOT_FOUND_ERR&quot; :
+                // process bad refNode reference
+                break;
+            default:
+                // process all other exceptions
+        }
+    }
+    return true;
+}</pre>
+</span></td>
+</tr>
+</table>
+</div>
+<div id="typeof">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="name">typeof</td>
+<td valign="top" nowrap class="compatibility">NN <span class="emphasis">3</span> IE <span class="emphasis">3</span> ECMA <span class="emphasis">1</span>&nbsp;&nbsp;</td>
+</tr>
+<tr>
+<td valign="top" nowrap class="usage"><p class="literal">
+</p></td>
+<td valign="top" nowrap class="requirements">&nbsp;&nbsp;</td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+Der <span class="literal">typeof</span>-Operator gibt eine von sechs Stringbeschreibungen des Datentyps eines Wertes zur&uuml;ck: Die folgenden Datentypen werden zur&uuml;ckgegeben:
+</p>
+<ul>
+<li><span class="LITERAL">boolean</span></li>
+
+<li><span class="LITERAL">function</span></li>
+
+<li><span class="LITERAL">number</span></li>
+
+<li><span class="LITERAL">object</span></li>
+
+<li><span class="LITERAL">string</span></li>
+
+<li><span class="LITERAL">undefined</span></li>
+</ul>
+</td>
+</tr>
+<tr>
+<td colspan="2"><p>
+Zum Objekttyp geh&ouml;ren zwar auch Arrays, der Operator stellt jedoch keine weiteren Informationen zum Objekt- oder Array-Typ des Wertes bereit (siehe <span class="literal">instanceof</span>-Operator).
+</p></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td><span class="programlisting">
+<pre>if (typeof someVar == &quot;string&quot;) &#123;
+    ...
+}</pre>
+</span></td>
+</tr>
+</table>
+</div>
+<div id="void">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="name">void</td>
+<td valign="top" nowrap class="compatibility">NN <span class="emphasis">3</span> IE <span class="emphasis">4</span> ECMA <span class="emphasis">1</span>&nbsp;&nbsp;</td>
+</tr>
+<tr>
+<td valign="top" nowrap class="usage"><p class="literal">
+</p></td>
+<td valign="top" nowrap class="requirements">&nbsp;&nbsp;</td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+Dieser unit&auml;re Operator wertet zwar den Ausdruck auf seiner rechten Seite aus, gibt jedoch immer den Wert <span class="literal">undefined</span> zur&uuml;ck. Dies ist auch dann der Fall, wenn der Ausdruck selbst (z.&nbsp;B. ein Funktionsaufruf) einen Wert ergibt. Dieser Operator wird h&auml;ufig in Verbindung mit <span class="literal">javascript:</span> -Pseudo-URLs verwendet, die Funktionen aufrufen. Wenn die Funktion einen Wert zur&uuml;ckgibt, wird dieser von dem aufrufenden Ausdruck ignoriert.
+</p></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td><span class="programlisting">
+<pre>&lt;a href=&quot;javascript: void getSound( );&quot; &gt;...&lt;/a&gt;</pre>
+</span></td>
+</tr>
+</table>
+</div>
+<div id="while">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="name">while</td>
+<td valign="top" nowrap class="compatibility">NN <span class="emphasis">2</span> IE <span class="emphasis">3</span> ECMA <span class="emphasis">1</span>&nbsp;&nbsp;</td>
+</tr>
+<tr>
+<td valign="top" nowrap class="usage"><p class="literal">
+</p></td>
+<td valign="top" nowrap class="requirements">&nbsp;&nbsp;</td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+F&uuml;hrt Anweisungen in einer Schleife aus, solange eine Bedingung wahr ist. Da die Bedingung am Anfang der Schleife ausgewertet wird, ist es unter bestimmten Umst&auml;nden m&ouml;glich, dass die Anweisungen in der Schleife nicht ausgef&uuml;hrt werden. Nat&uuml;rlich muss sich f&uuml;r den Ausdruck, der die Bedingung bildet, ein Aspekt seines Wertes in den Anweisungen &auml;ndern. Andernfalls entsteht eine unendliche Schleife.
+</p></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td><span class="programlisting">
+<pre>var i = 0;
+while (!document.forms[0].radioGroup[i].checked) &#123;
+    i++;
+}
+alert(&quot;You selected item number &quot; + (i+1) + &quot;.&quot;);</pre>
+</span></td>
+</tr>
+</table>
+</div>
+<div id="with">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="name">with</td>
+<td valign="top" nowrap class="compatibility">NN <span class="emphasis">2</span> IE <span class="emphasis">3</span> ECMA <span class="emphasis">1</span>&nbsp;&nbsp;</td>
+</tr>
+<tr>
+<td valign="top" nowrap class="usage"><p class="literal">
+</p></td>
+<td valign="top" nowrap class="requirements">&nbsp;&nbsp;</td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+Die <span class="literal">with</span>-Anweisung dient zum Hinzuf&uuml;gen eines Objekts zum G&uuml;ltigkeitsbereich jeder darin verschachtelten Anweisung. Auf diese Weise kann der Code bei bestimmten Anweisungsgruppen, die auf einer bestimmten Objektreferenz beruhen, gek&uuml;rzt werden. Beachten Sie, dass <span class="literal">with</span>-Konstruktionen im Allgemeinen sehr ineffizient sind. Eine wesentlich bessere Leistung erzielen Sie, indem Sie die Objektreferenz einer lokalen Variablen zuweisen und diese Variable in Ihrer Funktion verwenden.
+</p></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td><span class="programlisting">
+<pre>with (document.forms[0]) &#123;
+    name1 = firstName.value;
+    name2 = lastName.value;
+    mail = eMail.value;
+}</pre>
+</span></td>
+</tr>
+</table>
+</div>
+<div id="return">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="name">return</td>
+<td valign="top" nowrap class="compatibility">NN <span class="emphasis">2</span> IE <span class="emphasis">3</span> ECMA <span class="emphasis">1</span>&nbsp;&nbsp;</td>
+</tr>
+<tr>
+<td valign="top" nowrap class="usage"><p class="literal">
+</p></td>
+<td valign="top" nowrap class="requirements">&nbsp;&nbsp;</td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+Stoppt die Ausf&uuml;hrung der aktuellen Funktion. Eine <span class="literal">return</span>-Anweisung kann sich an einer beliebigen Stelle in der Funktion befinden, auch in Steuerstrukturen. Sie k&ouml;nnen optional einen Wert angeben, der an die aufrufende Anweisung zur&uuml;ckgegeben wird. Dieser zur&uuml;ckgegebene Wert kann ein beliebiger JavaScript-Datentyp sein. Falls sich die <span class="literal">return</span>-Anweisung, die einen Wert zur&uuml;ckgibt, in einer Schleife oder einer anderen Steuerstruktur befindet, muss in jedem Zweig der Ausf&uuml;hrungsstruktur vorhanden eine <span class="literal">return</span>-Anweisung sein. Dazu z&auml;hlt auch eine standardm&auml;&szlig;ige <span class="literal">return</span>-Anweisung, wenn die Ausf&uuml;hrung den Hauptausf&uuml;hrungsbereich in der N&auml;he oder direkt am Ende der Funktion erreicht.
+</p></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td><span class="programlisting">
+<pre>function validateNumber(form) &#123;
+    var oneChar;
+    for (var i = 0; i &lt; userEntry.length; i++) &#123;
+        oneChar = form.entry.value.charAt(i);
+        if (oneChar &lt; &quot;0&quot; || oneChar &gt; &quot;9&quot;) &#123;
+            return false;
+        }
+    }
+    return true;
+}</pre>
+</span></td>
+</tr>
+</table>
+</div>
+<div id="+=">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="name">+=</td>
+<td valign="top" nowrap class="compatibility">NN <span class="emphasis">2</span> IE <span class="emphasis">3</span> ECMA <span class="emphasis">1</span>&nbsp;&nbsp;</td>
+</tr>
+<tr>
+<td valign="top" nowrap class="usage"><p class="literal">
+</p></td>
+<td valign="top" nowrap class="requirements">&nbsp;&nbsp;</td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+Dies ist der Nach-Wert-hinzuf&uuml;gen-Operator. In dieser Operatorklasse wird ein regul&auml;rer Zuweisungsoperator (<span class="literal">=</span>) mit einem der vielen anderen Operatoren kombiniert, um eine Zuweisung auszuf&uuml;hren. Dazu wird die f&uuml;r den linken Operanden angegebene Operation mit dem Wert des rechten Operanden ausgef&uuml;hrt. Wenn z.&nbsp;B. in einer Variable namens <span class="literal">a</span> ein String gespeichert ist, k&ouml;nnen Sie mit dem Operator <span class="literal">+=</span> an <span class="literal">a</span> einen String anh&auml;ngen:
+</p>
+<span class="PROGRAMLISTING"><pre>a += &quot; and some more.&quot;;</pre></span>
+</td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2"><p>
+Ohne den Nach-Wert-hinzuf&uuml;gen-Operator m&uuml;sste die Operation wie folgt strukturiert werden:
+</p>
+<span class="PROGRAMLISTING">
+<pre>a = a + &quot; and some more&quot;;</pre>
+</span> </td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2"><p>
+Die folgende Tabelle enth&auml;lt alle Zuweisungsoperatoren, die auf diese Weise funktionieren:
+</p></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td><table border="1">
+<tbody>
+<tr>
+<th>Operator</th>
+<th>Beispiel</th>
+<th>&Auml;quivalent</th>
+</tr>
+<tr>
+<td> +=</td>
+<td> a += b</td>
+<td> a = a + b</td>
+</tr>
+<tr>
+<td> -=</td>
+<td> a -= b</td>
+<td> a = a - b</td>
+</tr>
+<tr>
+<td> *=</td>
+<td> a *= b</td>
+<td> a = a * b</td>
+</tr>
+<tr>
+<td> /=</td>
+<td> a /= b</td>
+<td> a = a / b</td>
+</tr>
+<tr>
+<td> %=</td>
+<td> a %= b</td>
+<td> a = a % b</td>
+</tr>
+<tr>
+<td>&lt;&lt;=</td>
+<td> a &lt;&lt;= b</td>
+<td> a = a &lt;&lt; b</td>
+</tr>
+<tr>
+<td>&gt;&gt;=</td>
+<td> a &gt;&gt;= b</td>
+<td> a = a &gt;&gt; b</td>
+</tr>
+<tr>
+<td>&gt;&gt;&gt;=</td>
+<td> a &gt;&gt;&gt;= b</td>
+<td> a = a &gt;&gt;&gt; b</td>
+</tr>
+<tr>
+<td>&amp;=</td>
+<td> a &amp;= b</td>
+<td> a = a &amp; b</td>
+</tr>
+<tr>
+<td> |=</td>
+<td> a |= b</td>
+<td> a = a | b</td>
+</tr>
+<tr>
+<td> ^=</td>
+<td> a ^= b</td>
+<td> a = a ^ b</td>
+</tr>
+</tbody>
+</table></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td><span class="programlisting">
+<pre>output += &quot;&lt;H1&gt;Section 2&lt;/H1&gt;&quot;;
+		total *= .95;</pre>
+</span></td>
+</tr>
+</table>
+</div>
+<div id="+">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="name">+</td>
+<td valign="top" nowrap class="compatibility">NN <span class="emphasis">2</span> IE <span class="emphasis">3</span> ECMA <span class="emphasis">1</span>&nbsp;&nbsp;</td>
+</tr>
+<tr>
+<td valign="top" nowrap class="usage"><p class="literal">
+</p></td>
+<td valign="top" nowrap class="requirements">&nbsp;&nbsp;</td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+Der Additionsoperator funktioniert sowohl f&uuml;r Zahlen als auch f&uuml;r Strings. Die Ergebnisse sind jedoch je nach Datentyp der Operanden unterschiedlich. Wenn beide Operanden Zahlen sind, ist das Ergebnis die Summe der beiden Zahlen. Sind beide Operanden Strings, ist das Ergebnis eine Verkettung der beiden Strings (in der Reihenfolge der Operanden). Handelt es sich bei einem der Operanden um eine Zahl und bei dem anderen um einen String, wird der numerische Datentyp in einen String konvertiert, und die beiden Strings werden verkettet. Zum Konvertieren eines Stringoperanden in eine Zahl wird die Funktion <span class="literal">parseInt( )</span> oder <span class="literal">parseFloat( )</span> verwendet.
+</p></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td><span class="programlisting">
+<pre>var mySum = number1 + number2;
+var newString = &quot;string1&quot; + &quot;string2&quot;;</pre>
+</span></td>
+</tr>
+</table>
+</div>
+<div id="&&">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="name">&amp;&amp;</td>
+<td valign="top" nowrap class="compatibility">NN <span class="emphasis">2</span> IE <span class="emphasis">3</span> ECMA <span class="emphasis">1</span>&nbsp;&nbsp;</td>
+</tr>
+<tr>
+<td valign="top" nowrap class="usage"><p class="literal">
+</p></td>
+<td valign="top" nowrap class="requirements">&nbsp;&nbsp;</td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+Der AND-Operator &uuml;berpr&uuml;ft, ob zwei Boolesche Ausdr&uuml;cke gleich sind. Wenn beide Ausdr&uuml;cke den Wert &quot;true&quot; aufweisen, ist auch der Wert des &amp;&amp;-Operators &quot;true&quot;. Wenn ein Ausdruck bzw. beide Ausdr&uuml;cke den Wert &quot;false&quot; aufweisen, hat auch der &amp;&amp;-Operator den Wert &quot;false&quot;.</p></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2"><p>
+Ein Boolescher Ausdruck kann aus einem Vergleichsausdruck (mit einem der zahlreichen Vergleichsoperatoren) oder einer Vielzahl anderer Werte bestehen. Im Folgenden finden Sie die am h&auml;ufigsten verwendeten Datentypen, Werte und die dazugeh&ouml;rigen Booleschen &Auml;quivalente.
+</p>
+<table border="1">
+<tbody>
+<tr>
+<th>Datentyp</th>
+<th>Boolesches &Auml;quivalent</th>
+</tr>
+<tr>
+<td>Zahl au&szlig;er Null</td>
+<td> true</td>
+</tr>
+<tr>
+<td>Null</td>
+<td> false</td>
+</tr>
+<tr>
+<td>Beliebiger nicht leerer String</td>
+<td> true</td>
+</tr>
+<tr>
+<td>Leerer String</td>
+<td> false</td>
+</tr>
+<tr>
+<td>Beliebiges Objekt</td>
+<td> true</td>
+</tr>
+<tr>
+<td><span class="literal">null</span></td>
+<td> false</td>
+</tr>
+<tr>
+<td><span class="literal">undefined</span></td>
+<td> false</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2"><p>
+Anhand  dieser Informationen k&ouml;nnen Sie mithilfe des &amp;&amp;-Operators  zusammengesetzte Bedingungen erstellen. Wenn Sie z.&nbsp;B. &uuml;berpr&uuml;fen m&ouml;chten, ob ein Wert in ein Formularfeld eingegeben wurde und ob die eingegebene Zahl gr&ouml;&szlig;er als 100 ist, w&uuml;rde die Bedingung wie folgt aussehen:
+</p>
+<span class="PROGRAMLISTING"><pre>var userEntry = document.forms[0].entry.value ;
+if (userEntry&amp;&amp; parseInt(userEntry) &gt;= 100) &#123;
+    ...
+} </pre></span>
+</td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2"><p>
+Wenn der Benutzer keinen Wert eingegeben hat, ist der String ein leerer String. Wenn  der erste Operand in der zusammengesetzten Bedingung als falsch bewertet wird,  sorgen die Regeln des &amp;&amp;-Operators daf&uuml;r, dass der gesamte Ausdruck als  falsch zur&uuml;ckgegeben wird (da der Operator nur dann true zur&uuml;ckgibt, wenn beide  Operanden true sind). Da Ausdr&uuml;cke wie zusammengesetzte Bedingungen von links nach rechts ausgewertet werden, schlie&szlig;t der Wert <span class="literal">false</span> des ersten Operanden die Bedingung kurz, so dass als Endergebnis <span class="literal">false</span> zur&uuml;ckgegeben wird, d.&nbsp;h. der zweite Operand wird nicht ausgewertet.
+</p></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td><span class="programlisting">
+<pre>if (a &lt;= b &amp;&amp; b &gt;= c) &#123;
+    ...
+}</pre>
+</span></td>
+</tr>
+</table>
+</div>
+<div id="break">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="name">break</td>
+<td valign="top" nowrap class="compatibility">NN <span class="emphasis">2</span> IE <span class="emphasis">3</span> ECMA <span class="emphasis">1</span>&nbsp;&nbsp;</td>
+</tr>
+<tr>
+<td valign="top" nowrap class="usage"><p class="literal">
+</p></td>
+<td valign="top" nowrap class="requirements">&nbsp;&nbsp;</td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+Stoppt die Ausf&uuml;hrung der aktuellen Schleife und &uuml;bergibt die Steuerung an die n&auml;chste Skriptanweisung nach dem Ende der aktuellen Schleife. Der G&uuml;ltigkeitsbereich einer <span class="literal">break</span>-Anweisung ohne <replaceable>label</replaceable>-Parameter ist die eigene Schleife. Um aus einer verschachtelten Schleife auszubrechen, weisen Sie jeder verschachtelten Ebene eine Beschriftung zu, und verwenden die gew&uuml;nschte Beschriftung dann als Parameter f&uuml;r die Anweisung <span class="literal">break</span>. Weitere Informationen finden Sie unter der Anweisung <span class="literal">label</span> (ab Navigator 4 und Internet Explorer 4).
+</p></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+</tr>
+<tr>
+<td colspan="2"><p>
+Siehe Anweisung <span class="literal">label</span>.
+</p></td>
+</tr>
+</table>
+</div>
+<div id="continue">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="name">continue</td>
+<td valign="top" nowrap class="compatibility">NN <span class="emphasis">2</span> IE <span class="emphasis">3</span> ECMA <span class="emphasis">1</span>&nbsp;&nbsp;</td>
+</tr>
+<tr>
+<td valign="top" nowrap class="usage"><p class="literal">
+</p></td>
+<td valign="top" nowrap class="requirements">&nbsp;&nbsp;</td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+Stoppt die Ausf&uuml;hrung der aktuellen Iteration durch die Schleife und kehrt zum Anfang der Schleife zur&uuml;ck, um einen neuen Durchlauf auszuf&uuml;hren (der <span class="literal">update</span>-Ausdruck wird ausgef&uuml;hrt, wenn er in der <literal>for</literal>-Schleife angegeben ist). Wenn Sie eine verschachtelte Schleife verwenden, weisen Sie jeder verschachtelten Ebene eine Beschriftung zu, und verwenden die gew&uuml;nschte Beschriftung dann als Parameter f&uuml;r die Anweisung <span class="literal">continue</span>. Weitere Informationen finden Sie unter der Anweisung <span class="literal">label</span> (ab Navigator 4 und Internet Explorer 4).
+</p></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="example"><span class="title">Beispiel</span></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td><span class="programlisting">
+<pre>outerLoop:
+for (var i = 0; i &lt;= maxValue1; i++) &#123;
+    for (var j = 0; j &lt;= maxValue2; j++) &#123;
+        if (j*i == magic2) &#123;
+            continue outerLoop;
+        }
+    }
+}</pre>
+</span></td>
+</tr>
+</table>
+</div>
+<div id="catch">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="name">catch</td>
+<td valign="top" nowrap class="compatibility">NN <span class="emphasis">2</span> IE <span class="emphasis">3</span> ECMA <span class="emphasis">1</span>&nbsp;&nbsp;</td>
+</tr>
+<tr>
+<td valign="top" nowrap class="usage"><p class="literal">
+</p></td>
+<td valign="top" nowrap class="requirements">&nbsp;&nbsp;</td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+Siehe try
+</p></td>
+</tr>
+</table>
+</div>
+</body>
+</html>
