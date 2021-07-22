@@ -14,5 +14,7 @@ For moving to github I changed Target Framework to .Net 4.8 and updated DevExpre
 
 This Project uses DevExpress 21.1 what can be installed as trial from https://www.devexpress.com/
 
+Important Notice: First run requires Admin Privilliges to get and select associated file types (Select Context Menu "Run as Administrator") otherwise exception occurs.
+This needs to be changed.
 
 ![alt text](https://raw.githubusercontent.com/fgilde/CompleXStudio/main/Screenshots/Main.png "Main")
